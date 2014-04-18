@@ -19,8 +19,6 @@
 
 #include "latexila-post-processor-all-output.h"
 
-typedef struct _LatexilaPostProcessorAllOutputPrivate LatexilaPostProcessorAllOutputPrivate;
-
 struct _LatexilaPostProcessorAllOutputPrivate
 {
   GSList *messages;
@@ -32,17 +30,15 @@ static void
 latexila_post_processor_all_output_process (LatexilaPostProcessor *post_processor,
                                             const gchar           *output)
 {
-  LatexilaPostProcessorAllOutputPrivate *priv;
+  LatexilaPostProcessorAllOutput *pp = LATEXILA_POST_PROCESSOR_ALL_OUTPUT (post_processor);
   gchar **lines;
   gchar **l;
-
-  priv = latexila_post_processor_all_output_get_instance_private (LATEXILA_POST_PROCESSOR_ALL_OUTPUT (post_processor));
 
   lines = g_strsplit (output, "\n", 0);
 
   for (l = lines; l != NULL && *l != NULL; l++)
     {
-      priv->messages = g_slist_prepend (priv->messages, *l);
+      pp->priv->messages = g_slist_prepend (pp->priv->messages, *l);
     }
 
   /* Generally a single \n is present at the end of the output, so an empty line
@@ -50,23 +46,23 @@ latexila_post_processor_all_output_process (LatexilaPostProcessor *post_processo
    * TODO check if it is still the case in C.
    */
 #if 0
-  if (priv->messages != NULL)
+  if (pp->priv->messages != NULL)
     {
-      gchar *line = priv->messages->data;
+      gchar *line = pp->priv->messages->data;
       g_assert (line != NULL);
 
       if (line[0] == '\0')
         {
-          GSList *removed_element = priv->messages;
+          GSList *removed_element = pp->priv->messages;
 
-          priv->messages = g_slist_remove_link (priv->messages, priv->messages);
+          pp->priv->messages = g_slist_remove_link (pp->priv->messages, pp->priv->messages);
 
           g_slist_free_full (removed_element, g_free);
         }
     }
 #endif
 
-  priv->messages = g_slist_reverse (priv->messages);
+  pp->priv->messages = g_slist_reverse (pp->priv->messages);
 
   /* Do not use g_strfreev() because the strings are reused in the list. */
   g_free (lines);
@@ -75,11 +71,9 @@ latexila_post_processor_all_output_process (LatexilaPostProcessor *post_processo
 static GSList *
 latexila_post_processor_all_output_get_messages (LatexilaPostProcessor *post_processor)
 {
-  LatexilaPostProcessorAllOutputPrivate *priv;
+  LatexilaPostProcessorAllOutput *pp = LATEXILA_POST_PROCESSOR_ALL_OUTPUT (post_processor);
 
-  priv = latexila_post_processor_all_output_get_instance_private (LATEXILA_POST_PROCESSOR_ALL_OUTPUT (post_processor));
-
-  return priv->messages;
+  return pp->priv->messages;
 }
 
 static void
@@ -108,8 +102,9 @@ latexila_post_processor_all_output_class_init (LatexilaPostProcessorAllOutputCla
 }
 
 static void
-latexila_post_processor_all_output_init (LatexilaPostProcessorAllOutput *self)
+latexila_post_processor_all_output_init (LatexilaPostProcessorAllOutput *pp)
 {
+  pp->priv = latexila_post_processor_all_output_get_instance_private (pp);
 }
 
 LatexilaPostProcessor *

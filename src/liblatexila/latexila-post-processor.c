@@ -19,8 +19,6 @@
 
 #include "latexila-post-processor.h"
 
-typedef struct _LatexilaPostProcessorPrivate LatexilaPostProcessorPrivate;
-
 struct _LatexilaPostProcessorPrivate
 {
   guint has_details : 1;
@@ -42,20 +40,16 @@ latexila_post_processor_get_property (GObject    *object,
                                       GValue     *value,
                                       GParamSpec *pspec)
 {
-  LatexilaPostProcessorPrivate *priv;
-
-  g_return_if_fail (LATEXILA_IS_POST_PROCESSOR (object));
-
-  priv = latexila_post_processor_get_instance_private (LATEXILA_POST_PROCESSOR (object));
+  LatexilaPostProcessor *pp = LATEXILA_POST_PROCESSOR (object);
 
   switch (prop_id)
     {
     case PROP_HAS_DETAILS:
-      g_value_set_boolean (value, priv->has_details);
+      g_value_set_boolean (value, pp->priv->has_details);
       break;
 
     case PROP_SHOW_DETAILS:
-      g_value_set_boolean (value, priv->show_details);
+      g_value_set_boolean (value, pp->priv->show_details);
       break;
 
     default:
@@ -70,20 +64,16 @@ latexila_post_processor_set_property (GObject      *object,
                                       const GValue *value,
                                       GParamSpec   *pspec)
 {
-  LatexilaPostProcessorPrivate *priv;
-
-  g_return_if_fail (LATEXILA_IS_POST_PROCESSOR (object));
-
-  priv = latexila_post_processor_get_instance_private (LATEXILA_POST_PROCESSOR (object));
+  LatexilaPostProcessor *pp = LATEXILA_POST_PROCESSOR (object);
 
   switch (prop_id)
     {
     case PROP_HAS_DETAILS:
-      priv->has_details = g_value_get_boolean (value);
+      pp->priv->has_details = g_value_get_boolean (value);
       break;
 
     case PROP_SHOW_DETAILS:
-      priv->show_details = g_value_get_boolean (value);
+      pp->priv->show_details = g_value_get_boolean (value);
       break;
 
     default:
@@ -93,16 +83,16 @@ latexila_post_processor_set_property (GObject      *object,
 }
 
 static void
-latexila_post_processor_process_default (LatexilaPostProcessor *post_processor,
+latexila_post_processor_process_default (LatexilaPostProcessor *pp,
                                          const gchar           *output)
 {
-  g_return_if_fail (LATEXILA_IS_POST_PROCESSOR (post_processor));
+  g_return_if_fail (LATEXILA_IS_POST_PROCESSOR (pp));
 }
 
 static GSList *
-latexila_post_processor_get_messages_default (LatexilaPostProcessor *post_processor)
+latexila_post_processor_get_messages_default (LatexilaPostProcessor *pp)
 {
-  g_return_val_if_fail (LATEXILA_IS_POST_PROCESSOR (post_processor), NULL);
+  g_return_val_if_fail (LATEXILA_IS_POST_PROCESSOR (pp), NULL);
 
   return NULL;
 }
@@ -140,8 +130,9 @@ latexila_post_processor_class_init (LatexilaPostProcessorClass *klass)
 }
 
 static void
-latexila_post_processor_init (LatexilaPostProcessor *post_processor)
+latexila_post_processor_init (LatexilaPostProcessor *pp)
 {
+  pp->priv = latexila_post_processor_get_instance_private (pp);
 }
 
 LatexilaPostProcessor *
@@ -151,18 +142,18 @@ latexila_post_processor_new (void)
 }
 
 void
-latexila_post_processor_process (LatexilaPostProcessor *post_processor,
+latexila_post_processor_process (LatexilaPostProcessor *pp,
                                  const gchar           *output)
 {
-  g_return_if_fail (LATEXILA_IS_POST_PROCESSOR (post_processor));
+  g_return_if_fail (LATEXILA_IS_POST_PROCESSOR (pp));
 
-  LATEXILA_POST_PROCESSOR_GET_CLASS (post_processor)->process (post_processor, output);
+  LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->process (pp, output);
 }
 
 GSList *
-latexila_post_processor_get_messages (LatexilaPostProcessor *post_processor)
+latexila_post_processor_get_messages (LatexilaPostProcessor *pp)
 {
-  g_return_val_if_fail (LATEXILA_IS_POST_PROCESSOR (post_processor), NULL);
+  g_return_val_if_fail (LATEXILA_IS_POST_PROCESSOR (pp), NULL);
 
-  return LATEXILA_POST_PROCESSOR_GET_CLASS (post_processor)->get_messages (post_processor);
+  return LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->get_messages (pp);
 }
