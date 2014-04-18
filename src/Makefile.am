@@ -1,4 +1,4 @@
-SUBDIRS = gedit ui
+SUBDIRS = gedit liblatexila ui
 
 bin_PROGRAMS = latexila
 
