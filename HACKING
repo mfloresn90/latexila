@@ -24,6 +24,9 @@ An easy way to build LaTeXila and its dependencies is to use jhbuild
 If you want to contribute to LaTeXila, contact the main developer (see the
 file AUTHORS).
 
+Commits
+=======
+
 To create a patch, make first one or several commits (in another branch) and
 then use the 'git format-patch' command. You can submit your patch to the
 GNOME bugzilla.
@@ -32,10 +35,23 @@ A GitHub repository is available, so you can fork it easily:
 
     https://github.com/GNOME/latexila
 
-There are some rules to follow when coding:
+Git commits should have maximum 72 characters for the first line, followed by a
+blank line and then the description.
+
+Code conventions
+================
+
+For consistency, there are some conventions to follow when coding.
+
+For Vala and C:
+    - no trailing spaces
+    - use blank lines to space out the code (only one blank line is enough)
+    - as a general rule of thumb, when modifying a file use the same coding
+      style of that file.
+
+For Vala:
     - indentation: 4 spaces
     - lines: 90 characters maximum (in some cases it can be a little more)
-    - no trailing spaces
     - /* ... */ comments for delimiting code sections
     - // ... comments otherwise (e.g. for explaining just one line)
     - some spaces almost everywhere:
@@ -45,9 +61,21 @@ There are some rules to follow when coding:
         - for (int i = 0 ; i < max ; i++) // not for(int i=0;i<max;i++)
         - etc...
     - do not use 'var' for declaring variables, unless the type is very long
-    - git commits: max 72 characters for the first line, followed by a blank
-      line and then the description
-    - same coding style everywhere
+
+For the C code in src/liblatexila/ (newest code):
+    - follow the GLib/GTK+ conventions:
+      https://wiki.gnome.org/Projects/GTK%2B/BestPractices
+    - indentation: GNU style
+    - use curly brackets around all blocks, even for one-line blocks (adding and
+      removing brackets all the time is boring)
+    - no maximum line length (but short lines are better)
+    - only /* ... */ comments (for C89 compatibility)
+    - spacing differences (see above):
+    	- if (!foo)
+	- for (int i = 0; i < max; i++)
+
+Debug
+=====
 
 How to debug LaTeXila with gdb?
     Run:
