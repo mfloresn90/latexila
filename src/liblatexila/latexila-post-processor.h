@@ -50,12 +50,14 @@ struct _LatexilaPostProcessorClass
   GSList * (* get_messages) (LatexilaPostProcessor *post_processor);
 };
 
-GType     latexila_post_processor_get_type      (void) G_GNUC_CONST;
+GType                   latexila_post_processor_get_type      (void) G_GNUC_CONST;
 
-void      latexila_post_processor_process       (LatexilaPostProcessor *post_processor,
-                                                 const gchar           *output);
+LatexilaPostProcessor * latexila_post_processor_new           (void);
 
-GSList *  latexila_post_processor_get_messages  (LatexilaPostProcessor *post_processor);
+void                    latexila_post_processor_process       (LatexilaPostProcessor *post_processor,
+                                                               const gchar           *output);
+
+GSList *                latexila_post_processor_get_messages  (LatexilaPostProcessor *post_processor);
 
 G_END_DECLS
 

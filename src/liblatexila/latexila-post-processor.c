@@ -144,6 +144,12 @@ latexila_post_processor_init (LatexilaPostProcessor *post_processor)
 {
 }
 
+LatexilaPostProcessor *
+latexila_post_processor_new (void)
+{
+  return g_object_new (LATEXILA_TYPE_POST_PROCESSOR, NULL);
+}
+
 void
 latexila_post_processor_process (LatexilaPostProcessor *post_processor,
                                  const gchar           *output)
