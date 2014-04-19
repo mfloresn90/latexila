@@ -22,6 +22,7 @@
 
 #include <glib.h>
 #include <glib-object.h>
+#include "latexila-types.h"
 
 G_BEGIN_DECLS
 
@@ -32,7 +33,6 @@ G_BEGIN_DECLS
 #define LATEXILA_IS_POST_PROCESSOR_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), LATEXILA_TYPE_POST_PROCESSOR))
 #define LATEXILA_POST_PROCESSOR_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), LATEXILA_TYPE_POST_PROCESSOR, LatexilaPostProcessorClass))
 
-typedef struct _LatexilaPostProcessor        LatexilaPostProcessor;
 typedef struct _LatexilaPostProcessorClass   LatexilaPostProcessorClass;
 typedef struct _LatexilaPostProcessorPrivate LatexilaPostProcessorPrivate;
 

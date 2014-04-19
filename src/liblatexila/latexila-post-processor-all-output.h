@@ -20,7 +20,9 @@
 #ifndef __LATEXILA_POST_PROCESSOR_ALL_OUTPUT_H__
 #define __LATEXILA_POST_PROCESSOR_ALL_OUTPUT_H__
 
+#include <glib-object.h>
 #include "latexila-post-processor.h"
+#include "latexila-types.h"
 
 G_BEGIN_DECLS
 
@@ -31,7 +33,6 @@ G_BEGIN_DECLS
 #define LATEXILA_IS_POST_PROCESSOR_ALL_OUTPUT_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), LATEXILA_TYPE_POST_PROCESSOR_ALL_OUTPUT))
 #define LATEXILA_POST_PROCESSOR_ALL_OUTPUT_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), LATEXILA_TYPE_POST_PROCESSOR_ALL_OUTPUT, LatexilaPostProcessorAllOutputClass))
 
-typedef struct _LatexilaPostProcessorAllOutput        LatexilaPostProcessorAllOutput;
 typedef struct _LatexilaPostProcessorAllOutputClass   LatexilaPostProcessorAllOutputClass;
 typedef struct _LatexilaPostProcessorAllOutputPrivate LatexilaPostProcessorAllOutputPrivate;
 
