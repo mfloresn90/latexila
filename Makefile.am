@@ -2,6 +2,8 @@ ACLOCAL_AMFLAGS = -I m4
 
 SUBDIRS = data man po help src
 
+DISTCHECK_CONFIGURE_FLAGS = --enable-introspection
+
 EXTRA_DIST =			\
 	README			\
 	HACKING			\

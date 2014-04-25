@@ -138,6 +138,7 @@ AC_DEFINE_UNQUOTED([LOCALE_DIR],
 YELP_HELP_INIT
 GLIB_GSETTINGS
 GNOME_COMPILE_WARNINGS([maximum])
+GOBJECT_INTROSPECTION_CHECK([1.30.0])
 
 # Generate files
 AC_CONFIG_FILES([Makefile
@@ -185,4 +186,5 @@ Configuration:
     Prefix: ${prefix}
     Vala Compiler: ${vala_compiler}
     C Compiler: ${CC}
+    GObject introspection: ${found_introspection}
 "
