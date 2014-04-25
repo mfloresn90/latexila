@@ -15,6 +15,7 @@ liblatexila_la_SOURCES = 			\
 	latexila-post-processor-all-output.h	\
 	latexila-types.h
 
+noinst_DATA =
 CLEANFILES =
 
 if HAVE_INTROSPECTION
@@ -33,9 +34,24 @@ Latexila_gir_INCLUDES = Gio-2.0
 Latexila_gir_LIBS = liblatexila.la
 Latexila_gir_FILES = $(liblatexila_la_SOURCES)
 
-noinst_DATA = Latexila.gir Latexila.typelib
-
+noinst_DATA += Latexila.gir Latexila.typelib
 CLEANFILES += Latexila.gir Latexila.typelib
-endif
+
+endif # HAVE_INTROSPECTION
+
+if ENABLE_VAPIGEN
+include $(VAPIGEN_MAKEFILE)
+
+latexila.vapi: Latexila.gir
+
+VAPIGEN_VAPIS = latexila.vapi
+
+latexila_vapi_DEPS = gio-2.0
+latexila_vapi_FILES = Latexila.gir
+
+noinst_DATA += latexila.vapi
+CLEANFILES += latexila.vapi
+
+endif # ENABLE_VAPIGEN
 
 -include $(top_srcdir)/git.mk
