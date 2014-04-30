@@ -1,37 +1,37 @@
 <tools xmlns:its="http://www.w3.org/2005/11/its">
   <!-- Latexmk -->
 
-  <tool id="0" show="true" extensions=".tex" icon="compile_pdf">
+  <tool id="0" enabled="true" extensions=".tex" icon="compile_pdf">
     <label its:translate="no">LaTeX → PDF (Latexmk)</label>
     <job postProcessor="latexmk">latexmk -pdf -synctex=1 $filename</job>
     <open>$shortname.pdf</open>
   </tool>
 
-  <tool id="1" show="true" extensions=".tex" icon="compile_dvi">
+  <tool id="1" enabled="true" extensions=".tex" icon="compile_dvi">
     <label its:translate="no">LaTeX → DVI → PDF (Latexmk)</label>
     <job postProcessor="latexmk">latexmk -pdfdvi -synctex=1 $filename</job>
     <open>$shortname.pdf</open>
   </tool>
 
-  <tool id="2" show="true" extensions=".tex" icon="compile_ps">
+  <tool id="2" enabled="true" extensions=".tex" icon="compile_ps">
     <label its:translate="no">LaTeX → DVI → PS → PDF (Latexmk)</label>
     <job postProcessor="latexmk">latexmk -pdfps -synctex=1 $filename</job>
     <open>$shortname.pdf</open>
   </tool>
 
-  <tool id="3" show="false" extensions=".tex" icon="compile_dvi">
+  <tool id="3" enabled="false" extensions=".tex" icon="compile_dvi">
     <label its:translate="no">LaTeX → DVI (Latexmk)</label>
     <job postProcessor="latexmk">latexmk -synctex=1 $filename</job>
     <open>$shortname.dvi</open>
   </tool>
 
-  <tool id="4" show="false" extensions=".tex" icon="compile_ps">
+  <tool id="4" enabled="false" extensions=".tex" icon="compile_ps">
     <label its:translate="no">LaTeX → DVI → PS (Latexmk)</label>
     <job postProcessor="latexmk">latexmk -ps -synctex=1 $filename</job>
     <open>$shortname.ps</open>
   </tool>
 
-  <tool id="5" show="false" extensions=".tex" icon="compile_pdf">
+  <tool id="5" enabled="false" extensions=".tex" icon="compile_pdf">
     <label its:translate="no">XeTeX → PDF (Latexmk)</label>
     <job postProcessor="latexmk">latexmk -xelatex -synctex=1 $filename</job>
     <open>$shortname.pdf</open>
@@ -39,19 +39,19 @@
 
   <!-- View DVI/PDF/PS -->
 
-  <tool id="6" show="true" extensions=".tex .pdf" icon="view_pdf">
+  <tool id="6" enabled="true" extensions=".tex .pdf" icon="view_pdf">
     <label>View PDF</label>
     <description>View the PDF file</description>
     <open>$shortname.pdf</open>
   </tool>
 
-  <tool id="7" show="true" extensions=".tex .dvi" icon="view_dvi">
+  <tool id="7" enabled="true" extensions=".tex .dvi" icon="view_dvi">
     <label>View DVI</label>
     <description>View the DVI file</description>
     <open>$shortname.dvi</open>
   </tool>
 
-  <tool id="8" show="true" extensions=".tex .ps" icon="view_ps">
+  <tool id="8" enabled="true" extensions=".tex .ps" icon="view_ps">
     <label>View PS</label>
     <description>View the PostScript file</description>
     <open>$shortname.ps</open>
@@ -59,13 +59,13 @@
 
   <!-- latex, pdflatex -->
 
-  <tool id="12" show="false" extensions=".tex" icon="compile_pdf">
+  <tool id="12" enabled="false" extensions=".tex" icon="compile_pdf">
     <label its:translate="no">LaTeX → PDF (pdflatex)</label>
     <description>Create a PDF file from LaTeX sources with the "pdflatex" command</description>
     <job postProcessor="latex">pdflatex -interaction=nonstopmode -synctex=1 $filename</job>
   </tool>
 
-  <tool id="13" show="false" extensions=".tex" icon="compile_dvi">
+  <tool id="13" enabled="false" extensions=".tex" icon="compile_dvi">
     <label its:translate="no">LaTeX → DVI (latex)</label>
     <description>Create a DVI file from LaTeX sources with the "latex" command</description>
     <job postProcessor="latex">latex -interaction=nonstopmode -synctex=1 $filename</job>
@@ -73,13 +73,13 @@
 
   <!-- BibTeX, MakeIndex -->
 
-  <tool id="14" show="false" extensions=".tex" icon="gtk-execute">
+  <tool id="14" enabled="false" extensions=".tex" icon="gtk-execute">
     <label its:translate="no">BibTeX</label>
     <description>Run BibTeX (bibliography)</description>
     <job postProcessor="all-output">bibtex $shortname.aux</job>
   </tool>
 
-  <tool id="15" show="false" extensions=".tex" icon="gtk-execute">
+  <tool id="15" enabled="false" extensions=".tex" icon="gtk-execute">
     <label its:translate="no">MakeIndex</label>
     <description>Run MakeIndex</description>
     <job postProcessor="all-output">makeindex $shortname.idx</job>
@@ -87,19 +87,19 @@
 
   <!-- Convert -->
 
-  <tool id="16" show="false" extensions=".tex" icon="gtk-convert">
+  <tool id="16" enabled="false" extensions=".tex" icon="gtk-convert">
     <label its:translate="no">DVI → PDF</label>
     <description>Convert the DVI document to the PDF format</description>
     <job postProcessor="all-output">dvipdf $shortname.dvi</job>
   </tool>
 
-  <tool id="17" show="false" extensions=".tex" icon="gtk-convert">
+  <tool id="17" enabled="false" extensions=".tex" icon="gtk-convert">
     <label its:translate="no">DVI → PS</label>
     <description>Convert the DVI document to the PostScript format</description>
     <job postProcessor="all-output">dvips $shortname.dvi</job>
   </tool>
 
-  <tool id="18" show="false" extensions=".tex" icon="gtk-convert">
+  <tool id="18" enabled="false" extensions=".tex" icon="gtk-convert">
     <label its:translate="no">PS → PDF</label>
     <description>Convert the PostScript document to the PDF format</description>
     <job postProcessor="all-output">ps2pdf $shortname.ps</job>
