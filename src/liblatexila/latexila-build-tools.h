@@ -34,16 +34,23 @@ G_BEGIN_DECLS
 
 typedef struct _LatexilaBuildToolsClass   LatexilaBuildToolsClass;
 typedef struct _LatexilaBuildToolsPrivate LatexilaBuildToolsPrivate;
+typedef struct _LatexilaBuildJob          LatexilaBuildJob;
+typedef struct _LatexilaBuildTool         LatexilaBuildTool;
 
+/**
+ * LatexilaBuildTools:
+ * @build_tools: a list of #LatexilaBuildTool's. External code should just read
+ * the list, not modify it.
+ */
 struct _LatexilaBuildTools
 {
+  /*< private >*/
   GObject parent;
 
-  /* A list of LatexilaBuildTool's.
-   * External code should just read the list, not modify it.
-   */
+  /*< public >*/
   GList *build_tools;
 
+  /*< private >*/
   LatexilaBuildToolsPrivate *priv;
 };
 
@@ -52,6 +59,15 @@ struct _LatexilaBuildToolsClass
   GObjectClass parent_class;
 };
 
+/**
+ * LatexilaPostProcessorType:
+ * @LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT: no output.
+ * @LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT: all output.
+ * @LATEXILA_POST_PROCESSOR_TYPE_LATEX: for a LaTeX command.
+ * @LATEXILA_POST_PROCESSOR_TYPE_LATEXMK: for the latexmk command.
+ *
+ * Types of post-processors.
+ */
 typedef enum
 {
   LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT,
@@ -60,30 +76,40 @@ typedef enum
   LATEXILA_POST_PROCESSOR_TYPE_LATEXMK
 } LatexilaPostProcessorType;
 
-typedef struct
+/**
+ * LatexilaBuildJob:
+ * @post_processor_type: the post-processor type.
+ * @command: the command to run.
+ */
+struct _LatexilaBuildJob
 {
   LatexilaPostProcessorType post_processor_type;
   gchar *command;
-} LatexilaBuildJob;
+};
 
-typedef struct
+/**
+ * LatexilaBuildTool:
+ * @label: the label.
+ * @description: the description.
+ * @extensions: the extensions.
+ * @icon: the icon.
+ * @files_to_open: the files to open.
+ * @jobs: a list of #LatexilaBuildJob's.
+ * @id: ID of the build tool. It is used only by the default build tools, for
+ * saving in #GSettings the lists of enabled/disabled build tools.
+ * @enabled: whether the build tool is enabled (for showing it in the UI).
+ */
+struct _LatexilaBuildTool
 {
   gchar *label;
   gchar *description;
   gchar *extensions;
   gchar *icon;
   gchar *files_to_open;
-
-  /* A list of LatexilaBuildJob's */
   GSList *jobs;
-
-  /* The id is used only by the default build tools.
-   * It is used to save those are enabled or disabled.
-   */
   gint id;
-
   guint enabled : 1;
-} LatexilaBuildTool;
+};
 
 GType                 latexila_build_tools_get_type                 (void) G_GNUC_CONST;
 

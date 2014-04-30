@@ -150,7 +150,7 @@ save_cb (GFile                      *xml_file,
 
 /**
  * latexila_build_tools_personal_save:
- * @build_tools: a #LatexilaBuildToolsPersonal object.
+ * @build_tools: the #LatexilaBuildToolsPersonal instance.
  *
  * Saves the personal build tools into the XML file.
  */
@@ -243,8 +243,8 @@ latexila_build_tools_personal_save (LatexilaBuildToolsPersonal *build_tools)
 
 /**
  * latexila_build_tools_personal_move_up:
- * @build_tools:
- * @tool_num:
+ * @build_tools: the #LatexilaBuildToolsPersonal instance.
+ * @tool_num: the build tool position in the list.
  *
  * Move a build tool up. The first build tool is at the top.
  */
@@ -277,8 +277,8 @@ latexila_build_tools_personal_move_up (LatexilaBuildToolsPersonal *build_tools,
 
 /**
  * latexila_build_tools_personal_move_down:
- * @build_tools:
- * @tool_num:
+ * @build_tools: the #LatexilaBuildToolsPersonal instance.
+ * @tool_num: the build tool position in the list.
  *
  * Move a build tool down. The first build tool is at the top.
  */
@@ -335,10 +335,10 @@ latexila_build_tools_personal_delete (LatexilaBuildToolsPersonal *build_tools,
 
 /**
  * latexila_build_tools_personal_add:
- * @build_tools:
- * @new_build_tool:
+ * @build_tools: the #LatexilaBuildToolsPersonal instance.
+ * @new_build_tool: the new build tool structure.
  *
- * Append the new build tool at the end.
+ * Append the new build tool at the end of the list.
  */
 void
 latexila_build_tools_personal_add (LatexilaBuildToolsPersonal *build_tools,
@@ -356,9 +356,9 @@ latexila_build_tools_personal_add (LatexilaBuildToolsPersonal *build_tools,
 
 /**
  * latexila_build_tools_personal_insert:
- * @build_tools:
- * @new_build_tool:
- * @position:
+ * @build_tools: the #LatexilaBuildToolsPersonal instance.
+ * @new_build_tool: the new build tool structure.
+ * @position: the position in the list where to insert the new build tool.
  *
  * Inserts a new build tool at a given position.
  */
@@ -380,9 +380,10 @@ latexila_build_tools_personal_insert (LatexilaBuildToolsPersonal *build_tools,
 
 /**
  * latexila_build_tools_personal_replace:
- * @build_tools:
- * @new_build_tool:
- * @position:
+ * @build_tools: the #LatexilaBuildToolsPersonal instance.
+ * @new_build_tool: the new build tool structure.
+ * @position: the position in the list where to replace the build tool. The old
+ * build tool structure located at @position will be freed.
  *
  * Replaces a build tool.
  */

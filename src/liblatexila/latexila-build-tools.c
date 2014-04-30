@@ -23,7 +23,12 @@
  * @short_description: Build tools base class
  *
  * Base class for the build tools. The build tools are stored in an XML file.
- * The XML file is loaded into data structures in memory.
+ * The XML file contents is loaded into data structures in memory.
+ * There are two subclasses: #LatexilaBuildToolsDefault and
+ * #LatexilaBuildToolsPersonal. The default build tools and personal build tools
+ * have a different behavior. A personal build tool can be modified for example,
+ * while a default build tool can only be enabled or disabled. That's why
+ * subclasses exist.
  */
 
 #include "config.h"
@@ -524,8 +529,8 @@ load_contents_cb (GFile              *xml_file,
 
 /**
  * latexila_build_tools_load:
- * @build_tools:
- * @xml_file:
+ * @build_tools: a #LatexilaBuildTools object.
+ * @xml_file: the XML file.
  *
  * Loads asynchronously the XML file contents and parses it.
  * This function is used by subclasses of #LatexilaBuildTools.
@@ -550,9 +555,9 @@ latexila_build_tools_load (LatexilaBuildTools *build_tools,
 
 /**
  * latexila_build_tools_set_enabled:
- * @build_tools:
- * @tool_num:
- * @enabled:
+ * @build_tools: a #LatexilaBuildTools object.
+ * @tool_num: the build tool position in the list.
+ * @enabled: whether to enable the build tool.
  */
 void
 latexila_build_tools_set_enabled (LatexilaBuildTools *build_tools,
