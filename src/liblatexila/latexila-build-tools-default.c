@@ -210,7 +210,7 @@ latexila_build_tools_default_init (LatexilaBuildToolsDefault *build_tools)
  *
  * Gets the instance of the #LatexilaBuildToolsDefault singleton.
  *
- * Returns: the instance of #LatexilaBuildToolsDefault.
+ * Returns: (transfer none): the instance of #LatexilaBuildToolsDefault.
  */
 LatexilaBuildToolsDefault *
 latexila_build_tools_default_get_instance (void)

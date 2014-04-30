@@ -109,7 +109,7 @@ latexila_build_tools_personal_init (LatexilaBuildToolsPersonal *build_tools)
  *
  * Gets the instance of the #LatexilaBuildToolsPersonal singleton.
  *
- * Returns: the instance of #LatexilaBuildToolsPersonal.
+ * Returns: (transfer none): the instance of #LatexilaBuildToolsPersonal.
  */
 LatexilaBuildToolsPersonal *
 latexila_build_tools_personal_get_instance (void)
