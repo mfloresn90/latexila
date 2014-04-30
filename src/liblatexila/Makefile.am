@@ -24,6 +24,7 @@ if HAVE_INTROSPECTION
 INTROSPECTION_SCANNER_ARGS =	\
 	-I$(top_srcdir)		\
 	-I$(top_builddir)	\
+	--c-include=latexila.h	\
 	--warn-all
 
 INTROSPECTION_GIRS = Latexila.gir
