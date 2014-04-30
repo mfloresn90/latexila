@@ -140,6 +140,7 @@ GLIB_GSETTINGS
 GNOME_COMPILE_WARNINGS([maximum])
 GOBJECT_INTROSPECTION_CHECK([1.30.0])
 VAPIGEN_CHECK
+GTK_DOC_CHECK([1.14], [--flavour no-tmpl])
 
 # Generate files
 AC_CONFIG_FILES([Makefile
@@ -159,6 +160,8 @@ AC_CONFIG_FILES([Makefile
 		 data/images/app/Makefile
 		 data/org.gnome.latexila.gschema.xml
 		 data/templates/Makefile
+		 docs/Makefile
+		 docs/reference/Makefile
 		 help/Makefile
 		 man/Makefile
 		 po/Makefile.in

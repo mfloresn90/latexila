@@ -1,6 +1,6 @@
 ACLOCAL_AMFLAGS = -I m4
 
-SUBDIRS = data man po help src
+SUBDIRS = data man po help src docs
 
 DISTCHECK_CONFIGURE_FLAGS = --enable-introspection
 
@@ -29,12 +29,14 @@ MAINTAINERCLEANFILES =		\
 	config.sub		\
 	configure.scan		\
 	depcomp			\
+	gtk-doc.make		\
 	install-sh		\
 	ltmain.sh		\
 	m4/codeset.m4		\
 	m4/gettext.m4		\
 	m4/glibc21.m4		\
 	m4/glibc2.m4		\
+	m4/gtk-doc.m4		\
 	m4/iconv.m4		\
 	m4/intdiv0.m4		\
 	m4/intldir.m4		\
@@ -76,6 +78,7 @@ MAINTAINERCLEANFILES =		\
 	po/insert-header.sin	\
 	po/quot.sed		\
 	po/remove-potcdate.sin	\
+	test-driver		\
 	`find "$(srcdir)" -type f -name Makefile.in -print`
 
 -include $(top_srcdir)/git.mk
