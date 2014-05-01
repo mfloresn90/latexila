@@ -29,6 +29,7 @@
 
 #include "latexila-build-tools-personal.h"
 #include <gio/gio.h>
+#include "latexila-build-tool.h"
 
 static LatexilaBuildToolsPersonal *instance = NULL;
 
@@ -182,43 +183,10 @@ latexila_build_tools_personal_save (LatexilaBuildToolsPersonal *build_tools)
        cur_build_tool = cur_build_tool->next)
     {
       LatexilaBuildTool *build_tool = cur_build_tool->data;
-      gchar *escaped_text;
-      GSList *cur_build_job;
+      gchar *build_tool_xml = latexila_build_tool_to_xml (build_tool);
 
-      g_string_append_printf (contents,
-                              "\n  <tool enabled=\"%s\" extensions=\"%s\" icon=\"%s\">\n",
-                              build_tool->enabled ? "true" : "false",
-                              build_tool->extensions != NULL ? build_tool->extensions : "",
-                              build_tool->icon != NULL ? build_tool->icon : "");
-
-      escaped_text = g_markup_printf_escaped ("    <label>%s</label>\n"
-                                              "    <description>%s</description>\n",
-                                              build_tool->label != NULL ? build_tool->label : "",
-                                              build_tool->description != NULL ? build_tool->description : "");
-
-      g_string_append (contents, escaped_text);
-      g_free (escaped_text);
-
-      for (cur_build_job = build_tool->jobs;
-           cur_build_job != NULL;
-           cur_build_job = cur_build_job->next)
-        {
-          LatexilaBuildJob *build_job = cur_build_job->data;
-
-          escaped_text = g_markup_printf_escaped ("    <job postProcessor=\"%s\">%s</job>\n",
-                                                  latexila_get_post_processor_name_from_type (build_job->post_processor_type),
-                                                  build_job->command != NULL ? build_job->command : "");
-
-          g_string_append (contents, escaped_text);
-          g_free (escaped_text);
-        }
-
-      escaped_text = g_markup_printf_escaped ("    <open>%s</open>\n",
-                                              build_tool->files_to_open != NULL ? build_tool->files_to_open : "");
-      g_string_append (contents, escaped_text);
-      g_free (escaped_text);
-
-      g_string_append (contents, "  </tool>\n");
+      g_string_append (contents, build_tool_xml);
+      g_free (build_tool_xml);
     }
 
   g_string_append (contents, "</tools>\n");
@@ -311,8 +279,10 @@ latexila_build_tools_personal_move_down (LatexilaBuildToolsPersonal *build_tools
 
 /**
  * latexila_build_tools_personal_delete:
- * @build_tools:
- * @tool_num:
+ * @build_tools: the #LatexilaBuildToolsPersonal instance.
+ * @tool_num: the build tool position in the list.
+ *
+ * Deletes a build tool.
  */
 void
 latexila_build_tools_personal_delete (LatexilaBuildToolsPersonal *build_tools,
@@ -328,7 +298,7 @@ latexila_build_tools_personal_delete (LatexilaBuildToolsPersonal *build_tools,
 
   build_tools_parent->build_tools = g_list_remove_link (build_tools_parent->build_tools, node);
 
-  g_list_free_full (node, (GDestroyNotify) latexila_build_tool_free);
+  g_list_free_full (node, g_object_unref);
 
   g_signal_emit_by_name (build_tools, "modified");
 }
@@ -336,7 +306,7 @@ latexila_build_tools_personal_delete (LatexilaBuildToolsPersonal *build_tools,
 /**
  * latexila_build_tools_personal_add:
  * @build_tools: the #LatexilaBuildToolsPersonal instance.
- * @new_build_tool: the new build tool structure.
+ * @new_build_tool: the new build tool object.
  *
  * Append the new build tool at the end of the list.
  */
@@ -351,13 +321,15 @@ latexila_build_tools_personal_add (LatexilaBuildToolsPersonal *build_tools,
   build_tools_parent->build_tools = g_list_append (build_tools_parent->build_tools,
                                                    new_build_tool);
 
+  g_object_ref (new_build_tool);
+
   g_signal_emit_by_name (build_tools, "modified");
 }
 
 /**
  * latexila_build_tools_personal_insert:
  * @build_tools: the #LatexilaBuildToolsPersonal instance.
- * @new_build_tool: the new build tool structure.
+ * @new_build_tool: the new build tool object.
  * @position: the position in the list where to insert the new build tool.
  *
  * Inserts a new build tool at a given position.
@@ -375,15 +347,17 @@ latexila_build_tools_personal_insert (LatexilaBuildToolsPersonal *build_tools,
                                                    new_build_tool,
                                                    position);
 
+  g_object_ref (new_build_tool);
+
   g_signal_emit_by_name (build_tools, "modified");
 }
 
 /**
  * latexila_build_tools_personal_replace:
  * @build_tools: the #LatexilaBuildToolsPersonal instance.
- * @new_build_tool: the new build tool structure.
+ * @new_build_tool: the new build tool object.
  * @position: the position in the list where to replace the build tool. The old
- * build tool structure located at @position will be freed.
+ * build tool located at @position will be unreffed.
  *
  * Replaces a build tool.
  */
@@ -402,8 +376,8 @@ latexila_build_tools_personal_replace (LatexilaBuildToolsPersonal *build_tools,
 
   if (node->data != new_build_tool)
     {
-      latexila_build_tool_free (node->data);
-      node->data = new_build_tool;
+      g_object_unref (node->data);
+      node->data = g_object_ref (new_build_tool);
 
       g_signal_emit_by_name (build_tools, "modified");
     }

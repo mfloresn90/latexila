@@ -4,13 +4,6 @@
 <FILE>build-tools</FILE>
 <TITLE>LatexilaBuildTools</TITLE>
 LatexilaBuildTools
-LatexilaBuildTool
-LatexilaBuildJob
-LatexilaPostProcessorType
-latexila_build_tool_get_description
-latexila_build_tool_free
-latexila_get_post_processor_type_from_name
-latexila_get_post_processor_name_from_type
 latexila_build_tools_load
 latexila_build_tools_set_enabled
 <SUBSECTION Standard>
@@ -61,4 +54,42 @@ LATEXILA_IS_BUILD_TOOLS_PERSONAL_CLASS
 LATEXILA_TYPE_BUILD_TOOLS_PERSONAL
 latexila_build_tools_personal_get_type
 LatexilaBuildToolsPersonalPrivate
+</SECTION>
+
+<SECTION>
+<FILE>build-tool</FILE>
+<TITLE>LatexilaBuildTool</TITLE>
+LatexilaBuildTool
+latexila_build_tool_new
+latexila_build_tool_add_job
+latexila_build_tool_get_description
+latexila_build_tool_to_xml
+<SUBSECTION Standard>
+LATEXILA_BUILD_TOOL
+LATEXILA_BUILD_TOOL_CLASS
+LATEXILA_BUILD_TOOL_GET_CLASS
+LATEXILA_IS_BUILD_TOOL
+LATEXILA_IS_BUILD_TOOL_CLASS
+LATEXILA_TYPE_BUILD_TOOL
+LatexilaBuildToolClass
+LatexilaBuildToolPrivate
+latexila_build_tool_get_type
+</SECTION>
+
+<SECTION>
+<FILE>build-job</FILE>
+<TITLE>LatexilaBuildJob</TITLE>
+LatexilaBuildJob
+latexila_build_job_new
+latexila_build_job_to_xml
+<SUBSECTION Standard>
+LATEXILA_BUILD_JOB
+LATEXILA_BUILD_JOB_CLASS
+LATEXILA_BUILD_JOB_GET_CLASS
+LATEXILA_IS_BUILD_JOB
+LATEXILA_IS_BUILD_JOB_CLASS
+LATEXILA_TYPE_BUILD_JOB
+LatexilaBuildJobClass
+LatexilaBuildJobPrivate
+latexila_build_job_get_type
 </SECTION>

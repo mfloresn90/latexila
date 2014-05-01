@@ -34,8 +34,6 @@ G_BEGIN_DECLS
 
 typedef struct _LatexilaBuildToolsClass   LatexilaBuildToolsClass;
 typedef struct _LatexilaBuildToolsPrivate LatexilaBuildToolsPrivate;
-typedef struct _LatexilaBuildJob          LatexilaBuildJob;
-typedef struct _LatexilaBuildTool         LatexilaBuildTool;
 
 /**
  * LatexilaBuildTools:
@@ -59,68 +57,7 @@ struct _LatexilaBuildToolsClass
   GObjectClass parent_class;
 };
 
-/**
- * LatexilaPostProcessorType:
- * @LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT: no output.
- * @LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT: all output.
- * @LATEXILA_POST_PROCESSOR_TYPE_LATEX: for a LaTeX command.
- * @LATEXILA_POST_PROCESSOR_TYPE_LATEXMK: for the latexmk command.
- *
- * Types of post-processors.
- */
-typedef enum
-{
-  LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT,
-  LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT,
-  LATEXILA_POST_PROCESSOR_TYPE_LATEX,
-  LATEXILA_POST_PROCESSOR_TYPE_LATEXMK
-} LatexilaPostProcessorType;
-
-/**
- * LatexilaBuildJob:
- * @post_processor_type: the post-processor type.
- * @command: the command to run.
- */
-struct _LatexilaBuildJob
-{
-  LatexilaPostProcessorType post_processor_type;
-  gchar *command;
-};
-
-/**
- * LatexilaBuildTool:
- * @label: the label.
- * @description: the description.
- * @extensions: the extensions.
- * @icon: the icon.
- * @files_to_open: the files to open.
- * @jobs: a list of #LatexilaBuildJob's.
- * @id: ID of the build tool. It is used only by the default build tools, for
- * saving in #GSettings the lists of enabled/disabled build tools.
- * @enabled: whether the build tool is enabled (for showing it in the UI).
- */
-struct _LatexilaBuildTool
-{
-  gchar *label;
-  gchar *description;
-  gchar *extensions;
-  gchar *icon;
-  gchar *files_to_open;
-  GSList *jobs;
-  gint id;
-  guint enabled : 1;
-};
-
 GType                 latexila_build_tools_get_type                 (void) G_GNUC_CONST;
-
-void                  latexila_build_tool_free                      (LatexilaBuildTool *build_tool);
-
-const gchar *         latexila_build_tool_get_description           (LatexilaBuildTool *build_tool);
-
-gboolean              latexila_get_post_processor_type_from_name    (const gchar               *name,
-                                                                     LatexilaPostProcessorType *type);
-
-const gchar *         latexila_get_post_processor_name_from_type    (LatexilaPostProcessorType type);
 
 void                  latexila_build_tools_load                     (LatexilaBuildTools *build_tools,
                                                                      GFile              *xml_file);

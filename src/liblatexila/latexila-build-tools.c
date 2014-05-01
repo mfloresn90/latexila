@@ -35,6 +35,9 @@
 #include "latexila-build-tools.h"
 #include <glib/gi18n.h>
 #include "latexila-build-tools-default.h"
+#include "latexila-build-tool.h"
+#include "latexila-build-job.h"
+#include "latexila-post-processor.h"
 
 struct _LatexilaBuildToolsPrivate
 {
@@ -54,147 +57,18 @@ G_DEFINE_TYPE_WITH_PRIVATE (LatexilaBuildTools, latexila_build_tools, G_TYPE_OBJ
 
 static guint signals[LAST_SIGNAL];
 
-static LatexilaBuildJob *
-build_job_new (void)
-{
-  return g_slice_new0 (LatexilaBuildJob);
-}
-
 static void
-build_job_free (LatexilaBuildJob *build_job)
-{
-  if (build_job != NULL)
-    {
-      g_free (build_job->command);
-      g_slice_free (LatexilaBuildJob, build_job);
-    }
-}
-
-static LatexilaBuildTool *
-build_tool_new (void)
-{
-  return g_slice_new0 (LatexilaBuildTool);
-}
-
-/**
- * latexila_build_tool_free:
- * @build_tool: the build tool to free.
- */
-void
-latexila_build_tool_free (LatexilaBuildTool *build_tool)
-{
-  if (build_tool != NULL)
-    {
-      g_free (build_tool->label);
-      g_free (build_tool->description);
-      g_free (build_tool->extensions);
-      g_free (build_tool->icon);
-      g_free (build_tool->files_to_open);
-
-      g_slist_free_full (build_tool->jobs, (GDestroyNotify) build_job_free);
-
-      g_slice_free (LatexilaBuildTool, build_tool);
-    }
-}
-
-/**
- * latexila_build_tool_get_description:
- * @build_tool: a #LatexilaBuildTool.
- *
- * Gets the description. The label is returned if the description is empty.
- *
- * Returns: the description.
- */
-const gchar *
-latexila_build_tool_get_description (LatexilaBuildTool *build_tool)
-{
-  if (build_tool->description == NULL ||
-      build_tool->description[0] == '\0')
-    {
-      return build_tool->label;
-    }
-
-  return build_tool->description;
-}
-
-/**
- * latexila_get_post_processor_type_from_name:
- * @name: the name of the post-processor.
- * @type: the output post-processor type.
- *
- * Returns: %TRUE on success, %FALSE otherwise.
- */
-gboolean
-latexila_get_post_processor_type_from_name (const gchar               *name,
-                                            LatexilaPostProcessorType *type)
-{
-  g_assert (type != NULL);
-
-  if (g_str_equal (name, "latexmk"))
-    {
-      *type = LATEXILA_POST_PROCESSOR_TYPE_LATEXMK;
-      return TRUE;
-    }
-
-  if (g_str_equal (name, "latex"))
-    {
-      *type = LATEXILA_POST_PROCESSOR_TYPE_LATEX;
-      return TRUE;
-    }
-
-  if (g_str_equal (name, "all-output"))
-    {
-      *type = LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT;
-      return TRUE;
-    }
-
-  if (g_str_equal (name, "no-output"))
-    {
-      *type = LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT;
-      return TRUE;
-    }
-
-  return FALSE;
-}
-
-/**
- * latexila_get_post_processor_name_from_type:
- * @type: the post-processor type.
- *
- * Returns: the post-processor name.
- */
-const gchar *
-latexila_get_post_processor_name_from_type (LatexilaPostProcessorType type)
-{
-  switch (type)
-    {
-    case LATEXILA_POST_PROCESSOR_TYPE_LATEXMK:
-      return "latexmk";
-
-    case LATEXILA_POST_PROCESSOR_TYPE_LATEX:
-      return "latex";
-
-    case LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT:
-      return "all-output";
-
-    case LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT:
-      return "no-output";
-
-    default:
-      g_return_val_if_reached (NULL);
-    }
-}
-
-static void
-latexila_build_tools_finalize (GObject *object)
+latexila_build_tools_dispose (GObject *object)
 {
   LatexilaBuildTools *build_tools = LATEXILA_BUILD_TOOLS (object);
 
-  g_list_free_full (build_tools->build_tools, (GDestroyNotify) latexila_build_tool_free);
-  latexila_build_tool_free (build_tools->priv->cur_tool);
-  build_job_free (build_tools->priv->cur_job);
+  g_list_free_full (build_tools->build_tools, g_object_unref);
+  build_tools->build_tools = NULL;
 
-  G_OBJECT_CLASS (latexila_build_tools_parent_class)->finalize (object);
+  g_clear_object (&build_tools->priv->cur_tool);
+  g_clear_object (&build_tools->priv->cur_job);
+
+  G_OBJECT_CLASS (latexila_build_tools_parent_class)->dispose (object);
 }
 
 static void
@@ -202,7 +76,7 @@ latexila_build_tools_class_init (LatexilaBuildToolsClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-  object_class->finalize = latexila_build_tools_finalize;
+  object_class->dispose = latexila_build_tools_dispose;
 
   /**
    * LatexilaBuildTools::loaded:
@@ -257,29 +131,31 @@ parser_start_element (GMarkupParseContext  *context,
       LatexilaBuildTool *cur_tool;
       gint i;
 
-      latexila_build_tool_free (build_tools->priv->cur_tool);
-      cur_tool = build_tool_new ();
+      g_clear_object (&build_tools->priv->cur_tool);
+      cur_tool = latexila_build_tool_new ();
       build_tools->priv->cur_tool = cur_tool;
 
       for (i = 0; attribute_names[i] != NULL; i++)
         {
           if (g_str_equal (attribute_names[i], "id"))
             {
-              cur_tool->id = g_strtod (attribute_values[i], NULL);
+              gint id = g_strtod (attribute_values[i], NULL);
+              g_object_set (cur_tool, "id", id, NULL);
             }
           /* "show" was the previous name of "enabled" */
           else if (g_str_equal (attribute_names[i], "show") ||
                    g_str_equal (attribute_names[i], "enabled"))
             {
-              cur_tool->enabled = g_str_equal (attribute_values[i], "true");
+              gboolean enabled = g_str_equal (attribute_values[i], "true");
+              g_object_set (cur_tool, "enabled", enabled, NULL);
             }
           else if (g_str_equal (attribute_names[i], "extensions"))
             {
-              cur_tool->extensions = g_strdup (attribute_values[i]);
+              g_object_set (cur_tool, "extensions", attribute_values[i], NULL);
             }
           else if (g_str_equal (attribute_names[i], "icon"))
             {
-              cur_tool->icon = g_strdup (attribute_values[i]);
+              g_object_set (cur_tool, "icon", attribute_values[i], NULL);
             }
           else if (error != NULL)
             {
@@ -296,8 +172,8 @@ parser_start_element (GMarkupParseContext  *context,
       LatexilaBuildJob *cur_job;
       gint i;
 
-      build_job_free (build_tools->priv->cur_job);
-      cur_job = build_job_new ();
+      g_clear_object (&build_tools->priv->cur_job);
+      cur_job = latexila_build_job_new ();
       build_tools->priv->cur_job = cur_job;
 
       for (i = 0; attribute_names[i] != NULL; i++)
@@ -306,9 +182,9 @@ parser_start_element (GMarkupParseContext  *context,
             {
               LatexilaPostProcessorType type;
 
-              if (latexila_get_post_processor_type_from_name (attribute_values[i], &type))
+              if (latexila_post_processor_get_type_from_name (attribute_values[i], &type))
                 {
-                  cur_job->post_processor_type = type;
+                  g_object_set (cur_job, "post-processor-type", type, NULL);
                 }
               else if (error != NULL)
                 {
@@ -361,22 +237,15 @@ parser_end_element (GMarkupParseContext  *context,
 
   else if (g_str_equal (element_name, "tool"))
     {
-      LatexilaBuildTool *cur_tool = build_tools->priv->cur_tool;
-
-      cur_tool->jobs = g_slist_reverse (cur_tool->jobs);
-
-      build_tools->build_tools = g_list_prepend (build_tools->build_tools, cur_tool);
-
+      build_tools->build_tools = g_list_prepend (build_tools->build_tools,
+                                                 build_tools->priv->cur_tool);
       build_tools->priv->cur_tool = NULL;
     }
 
   else if (g_str_equal (element_name, "job"))
     {
-      LatexilaBuildTool *cur_tool = build_tools->priv->cur_tool;
-
-      cur_tool->jobs = g_slist_prepend (cur_tool->jobs,
-                                        build_tools->priv->cur_job);
-
+      latexila_build_tool_add_job (build_tools->priv->cur_tool,
+                                   build_tools->priv->cur_job);
       build_tools->priv->cur_job = NULL;
     }
 
@@ -401,42 +270,24 @@ parser_text (GMarkupParseContext  *context,
   gchar *stripped_text = g_strdup (text);
   stripped_text = g_strstrip (stripped_text);
 
-  if (g_str_equal (element_name, "job") &&
-      build_tools->priv->cur_job != NULL)
+  if (g_str_equal (element_name, "job"))
     {
-      g_free (build_tools->priv->cur_job->command);
-      build_tools->priv->cur_job->command = stripped_text;
+      g_object_set (build_tools->priv->cur_job, "command", stripped_text, NULL);
+    }
+  else if (g_str_equal (element_name, "label"))
+    {
+      g_object_set (build_tools->priv->cur_tool, "label", _(stripped_text), NULL);
+    }
+  else if (g_str_equal (element_name, "description"))
+    {
+      g_object_set (build_tools->priv->cur_tool, "description", _(stripped_text), NULL);
+    }
+  else if (g_str_equal (element_name, "open"))
+    {
+      g_object_set (build_tools->priv->cur_tool, "files-to-open", stripped_text, NULL);
     }
 
-  else if (g_str_equal (element_name, "label") &&
-           build_tools->priv->cur_tool != NULL)
-    {
-      g_free (build_tools->priv->cur_tool->label);
-      build_tools->priv->cur_tool->label = g_strdup (_(stripped_text));
-
-      g_free (stripped_text);
-    }
-
-  else if (g_str_equal (element_name, "description") &&
-           build_tools->priv->cur_tool != NULL)
-    {
-      g_free (build_tools->priv->cur_tool->description);
-      build_tools->priv->cur_tool->description = g_strdup (_(stripped_text));
-
-      g_free (stripped_text);
-    }
-
-  else if (g_str_equal (element_name, "open") &&
-           build_tools->priv->cur_tool != NULL)
-    {
-      g_free (build_tools->priv->cur_tool->files_to_open);
-      build_tools->priv->cur_tool->files_to_open = stripped_text;
-    }
-
-  else
-    {
-      g_free (stripped_text);
-    }
+  g_free (stripped_text);
 }
 
 static void
@@ -568,9 +419,6 @@ latexila_build_tools_set_enabled (LatexilaBuildTools *build_tools,
 
   g_return_if_fail (build_tool != NULL);
 
-  if (build_tool->enabled != enabled)
-    {
-      build_tool->enabled = enabled;
-      g_signal_emit (build_tools, signals[SIGNAL_MODIFIED], 0);
-    }
+  g_object_set (build_tool, "enabled", enabled, NULL);
+  g_signal_emit (build_tools, signals[SIGNAL_MODIFIED], 0);
 }

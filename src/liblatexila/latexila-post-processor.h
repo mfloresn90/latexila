@@ -36,6 +36,22 @@ G_BEGIN_DECLS
 typedef struct _LatexilaPostProcessorClass   LatexilaPostProcessorClass;
 typedef struct _LatexilaPostProcessorPrivate LatexilaPostProcessorPrivate;
 
+/**
+ * LatexilaPostProcessorType:
+ * @LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT: no output.
+ * @LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT: all output.
+ * @LATEXILA_POST_PROCESSOR_TYPE_LATEX: for a LaTeX command.
+ * @LATEXILA_POST_PROCESSOR_TYPE_LATEXMK: for the latexmk command.
+ *
+ * Types of post-processors.
+ */
+typedef enum
+{
+  LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT,
+  LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT,
+  LATEXILA_POST_PROCESSOR_TYPE_LATEX,
+  LATEXILA_POST_PROCESSOR_TYPE_LATEXMK
+} LatexilaPostProcessorType;
 
 struct _LatexilaPostProcessor
 {
@@ -54,14 +70,19 @@ struct _LatexilaPostProcessorClass
   GSList * (* get_messages) (LatexilaPostProcessor *post_processor);
 };
 
-GType                   latexila_post_processor_get_type      (void) G_GNUC_CONST;
+GType                   latexila_post_processor_get_type              (void) G_GNUC_CONST;
 
-LatexilaPostProcessor * latexila_post_processor_new           (void);
+gboolean                latexila_post_processor_get_type_from_name    (const gchar               *name,
+                                                                       LatexilaPostProcessorType *type);
 
-void                    latexila_post_processor_process       (LatexilaPostProcessor *post_processor,
-                                                               const gchar           *output);
+const gchar *           latexila_post_processor_get_name_from_type    (LatexilaPostProcessorType type);
 
-GSList *                latexila_post_processor_get_messages  (LatexilaPostProcessor *post_processor);
+LatexilaPostProcessor * latexila_post_processor_new                   (void);
+
+void                    latexila_post_processor_process               (LatexilaPostProcessor *post_processor,
+                                                                       const gchar           *output);
+
+GSList *                latexila_post_processor_get_messages          (LatexilaPostProcessor *post_processor);
 
 G_END_DECLS
 

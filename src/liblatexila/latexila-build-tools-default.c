@@ -57,10 +57,13 @@ set_enabled_by_id (LatexilaBuildToolsDefault *build_tools,
   for (l = build_tools_parent->build_tools; l != NULL; l = l->next)
     {
       LatexilaBuildTool *build_tool = l->data;
+      gint id;
 
-      if (build_tool->id == build_tool_id)
+      g_object_get (build_tool, "id", &id, NULL);
+
+      if (id == build_tool_id)
         {
-          build_tool->enabled = enabled;
+          g_object_set (build_tool, "enabled", enabled, NULL);
           return;
         }
     }
@@ -124,14 +127,21 @@ save_settings (LatexilaBuildToolsDefault *build_tools)
   for (l = build_tools_parent->build_tools; l != NULL; l = l->next)
     {
       LatexilaBuildTool *build_tool = l->data;
+      gboolean enabled;
+      gint id;
 
-      if (build_tool->enabled)
+      g_object_get (build_tool,
+                    "enabled", &enabled,
+                    "id", &id,
+                    NULL);
+
+      if (enabled)
         {
-          g_variant_builder_add (&builder_enabled, "i", build_tool->id);
+          g_variant_builder_add (&builder_enabled, "i", id);
         }
       else
         {
-          g_variant_builder_add (&builder_disabled, "i", build_tool->id);
+          g_variant_builder_add (&builder_disabled, "i", id);
         }
     }
 

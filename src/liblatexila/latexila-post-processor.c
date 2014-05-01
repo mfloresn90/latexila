@@ -34,6 +34,74 @@ enum
 
 G_DEFINE_TYPE_WITH_PRIVATE (LatexilaPostProcessor, latexila_post_processor, G_TYPE_OBJECT)
 
+/**
+ * latexila_post_processor_get_type_from_name:
+ * @name: the name of the post-processor.
+ * @type: (out): the output post-processor type.
+ *
+ * Returns: %TRUE on success, %FALSE otherwise.
+ */
+gboolean
+latexila_post_processor_get_type_from_name (const gchar               *name,
+                                            LatexilaPostProcessorType *type)
+{
+  g_assert (type != NULL);
+
+  if (g_str_equal (name, "latexmk"))
+    {
+      *type = LATEXILA_POST_PROCESSOR_TYPE_LATEXMK;
+      return TRUE;
+    }
+
+  if (g_str_equal (name, "latex"))
+    {
+      *type = LATEXILA_POST_PROCESSOR_TYPE_LATEX;
+      return TRUE;
+    }
+
+  if (g_str_equal (name, "all-output"))
+    {
+      *type = LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT;
+      return TRUE;
+    }
+
+  if (g_str_equal (name, "no-output"))
+    {
+      *type = LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT;
+      return TRUE;
+    }
+
+  return FALSE;
+}
+
+/**
+ * latexila_post_processor_get_name_from_type:
+ * @type: the post-processor type.
+ *
+ * Returns: the post-processor name.
+ */
+const gchar *
+latexila_post_processor_get_name_from_type (LatexilaPostProcessorType type)
+{
+  switch (type)
+    {
+    case LATEXILA_POST_PROCESSOR_TYPE_LATEXMK:
+      return "latexmk";
+
+    case LATEXILA_POST_PROCESSOR_TYPE_LATEX:
+      return "latex";
+
+    case LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT:
+      return "all-output";
+
+    case LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT:
+      return "no-output";
+
+    default:
+      g_return_val_if_reached (NULL);
+    }
+}
+
 static void
 latexila_post_processor_get_property (GObject    *object,
                                       guint       prop_id,

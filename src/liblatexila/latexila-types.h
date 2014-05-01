@@ -24,6 +24,8 @@
 
 G_BEGIN_DECLS
 
+typedef struct _LatexilaBuildJob                LatexilaBuildJob;
+typedef struct _LatexilaBuildTool               LatexilaBuildTool;
 typedef struct _LatexilaBuildTools              LatexilaBuildTools;
 typedef struct _LatexilaBuildToolsDefault       LatexilaBuildToolsDefault;
 typedef struct _LatexilaBuildToolsPersonal      LatexilaBuildToolsPersonal;

@@ -2,18 +2,42 @@ AM_CPPFLAGS = $(WARN_CFLAGS)
 
 noinst_LTLIBRARIES = liblatexila.la
 
-liblatexila_la_SOURCES = 			\
-	latexila-build-tools.c			\
+liblatexila_headers =				\
+	latexila-build-job.h			\
+	latexila-build-tool.h			\
 	latexila-build-tools.h			\
-	latexila-build-tools-default.c		\
 	latexila-build-tools-default.h		\
-	latexila-build-tools-personal.c		\
 	latexila-build-tools-personal.h		\
-	latexila-post-processor.c		\
 	latexila-post-processor.h		\
-	latexila-post-processor-all-output.c	\
 	latexila-post-processor-all-output.h	\
 	latexila-types.h
+
+BUILT_SOURCES =			\
+	latexila-enum-types.c	\
+	latexila-enum-types.h
+
+liblatexila_la_SOURCES = 			\
+	latexila-build-job.c			\
+	latexila-build-tool.c			\
+	latexila-build-tools.c			\
+	latexila-build-tools-default.c		\
+	latexila-build-tools-personal.c		\
+	latexila-post-processor.c		\
+	latexila-post-processor-all-output.c	\
+	$(liblatexila_headers)			\
+	$(BUILT_SOURCES)
+
+ENUM_TYPES = $(liblatexila_headers)
+
+latexila-enum-types.h: latexila-enum-types.h.template $(ENUM_TYPES) $(GLIB_MKENUMS)
+	$(AM_V_GEN) (cd $(srcdir) && $(GLIB_MKENUMS) --template latexila-enum-types.h.template $(ENUM_TYPES)) > $@
+
+latexila-enum-types.c: latexila-enum-types.c.template $(ENUM_TYPES) $(GLIB_MKENUMS)
+	$(AM_V_GEN) (cd $(srcdir) && $(GLIB_MKENUMS) --template latexila-enum-types.c.template $(ENUM_TYPES)) > $@
+
+EXTRA_DIST =				\
+	latexila-enum-types.c.template	\
+	latexila-enum-types.h.template
 
 noinst_DATA =
 CLEANFILES =
