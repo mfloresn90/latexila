@@ -165,14 +165,10 @@ latexila_build_tools_personal_save (LatexilaBuildToolsPersonal *build_tools)
 
   g_return_if_fail (LATEXILA_IS_BUILD_TOOLS_PERSONAL (build_tools));
 
-  if (!build_tools->priv->modified)
+  if (!build_tools->priv->modified ||
+      build_tools->priv->xml_file_contents != NULL)
     {
       return;
-    }
-
-  if (build_tools->priv->xml_file_contents != NULL)
-    {
-      g_string_free (build_tools->priv->xml_file_contents, TRUE);
     }
 
   contents = g_string_new ("<tools>");
