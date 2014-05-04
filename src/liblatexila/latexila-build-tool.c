@@ -324,6 +324,22 @@ latexila_build_tool_add_job (LatexilaBuildTool *build_tool,
   g_return_if_fail (LATEXILA_IS_BUILD_JOB (build_job));
 
   g_queue_push_tail (build_tool->priv->jobs, build_job);
+  g_object_ref (build_job);
+}
+
+/**
+ * latexila_build_tool_get_jobs:
+ * @build_tool: a #LatexilaBuildTool.
+ *
+ * Returns: (element-type LatexilaBuildJob) (transfer none): the list of
+ * #LatexilaBuildJob's.
+ */
+GList *
+latexila_build_tool_get_jobs (LatexilaBuildTool *build_tool)
+{
+  g_return_val_if_fail (LATEXILA_IS_BUILD_TOOL (build_tool), NULL);
+
+  return build_tool->priv->jobs->head;
 }
 
 /**

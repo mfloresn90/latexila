@@ -1,0 +1,12 @@
+<tools>
+  <tool id="1" enabled="true" extensions=".tex" icon="compile_pdf">
+    <label>LaTeX → PDF (Latexmk)</label>
+    <job postProcessor="latexmk">latexmk -pdf -synctex=1 $filename</job>
+    <job postProcessor="no-output">build job 2</job>
+    <open>$shortname.pdf</open>
+  </tool>
+
+  <tool enabled="false">
+    <label>build tool 2</label>
+  </tool>
+</tools>

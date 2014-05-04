@@ -62,6 +62,7 @@ LatexilaBuildToolsPersonalPrivate
 LatexilaBuildTool
 latexila_build_tool_new
 latexila_build_tool_add_job
+latexila_build_tool_get_jobs
 latexila_build_tool_get_description
 latexila_build_tool_to_xml
 <SUBSECTION Standard>

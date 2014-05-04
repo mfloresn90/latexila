@@ -20,6 +20,8 @@
 #ifndef __LATEXILA_H__
 #define __LATEXILA_H__
 
+#include "latexila-build-job.h"
+#include "latexila-build-tool.h"
 #include "latexila-build-tools.h"
 #include "latexila-build-tools-default.h"
 #include "latexila-build-tools-personal.h"

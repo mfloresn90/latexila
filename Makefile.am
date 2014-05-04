@@ -1,6 +1,6 @@
 ACLOCAL_AMFLAGS = -I m4
 
-SUBDIRS = data man po help src docs
+SUBDIRS = data man po help src tests docs
 
 DISTCHECK_CONFIGURE_FLAGS = --enable-introspection
 

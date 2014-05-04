@@ -56,6 +56,8 @@ const gchar *         latexila_build_tool_get_description           (LatexilaBui
 void                  latexila_build_tool_add_job                   (LatexilaBuildTool *build_tool,
                                                                      LatexilaBuildJob  *build_job);
 
+GList *               latexila_build_tool_get_jobs                  (LatexilaBuildTool *build_tool);
+
 gchar *               latexila_build_tool_to_xml                    (LatexilaBuildTool *tool);
 
 G_END_DECLS
