@@ -29,6 +29,7 @@ typedef struct _LatexilaBuildTool               LatexilaBuildTool;
 typedef struct _LatexilaBuildTools              LatexilaBuildTools;
 typedef struct _LatexilaBuildToolsDefault       LatexilaBuildToolsDefault;
 typedef struct _LatexilaBuildToolsPersonal      LatexilaBuildToolsPersonal;
+typedef struct _LatexilaBuildView               LatexilaBuildView;
 typedef struct _LatexilaPostProcessor           LatexilaPostProcessor;
 typedef struct _LatexilaPostProcessorAllOutput  LatexilaPostProcessorAllOutput;
 

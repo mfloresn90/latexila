@@ -11,11 +11,12 @@
 
   <chapter>
     <title>API reference</title>
+    <xi:include href="xml/build-job.xml"/>
+    <xi:include href="xml/build-tool.xml"/>
     <xi:include href="xml/build-tools.xml"/>
     <xi:include href="xml/build-tools-default.xml"/>
     <xi:include href="xml/build-tools-personal.xml"/>
-    <xi:include href="xml/build-tool.xml"/>
-    <xi:include href="xml/build-job.xml"/>
+    <xi:include href="xml/build-view.xml"/>
   </chapter>
 
   <chapter id="object-tree">
