@@ -122,8 +122,6 @@ LIBS="$LIBS `pkg-config --libs ${dependencies}`"
 
 # Native Language Support
 IT_PROG_INTLTOOL([0.50.1])
-AM_GNU_GETTEXT_VERSION([0.17])
-AM_GNU_GETTEXT([external])
 
 GETTEXT_PACKAGE=${PACKAGE_TARNAME}
 AC_SUBST([GETTEXT_PACKAGE])

@@ -1,31 +1,20 @@
 #!/bin/sh
 # Run this to generate all the initial makefiles, etc.
 
-test -n "$srcdir" || srcdir=`dirname "$0"`
-test -n "$srcdir" || srcdir=.
+srcdir=`dirname $0`
+[ -z "$srcdir" ] && srcdir=.
 
-olddir=`pwd`
-cd "$srcdir"
+PKG_NAME=latexila
+REQUIRED_AUTOMAKE_VERSION=1.7
 
-INTLTOOLIZE=`which intltoolize`
-if test -z $INTLTOOLIZE; then
-        echo "*** No intltoolize found, please install the intltool package ***"
-        exit 1
+if [ ! -f "$srcdir/configure.ac" ]; then
+ echo "$srcdir doesn't look like source directory for $PKG_NAME" >&2
+ exit 1
 fi
 
-AUTORECONF=`which autoreconf`
-if test -z $AUTORECONF; then
-        echo "*** No autoreconf found, please install it ***"
+which gnome-autogen.sh || {
+        echo "You need to install gnome-common from GNOME Git"
         exit 1
-fi
+}
 
-if test -z `which autopoint`; then
-        echo "*** No autopoint found, please install it ***"
-        exit 1
-fi
-
-autopoint --force || exit $?
-AUTOPOINT='intltoolize --automake --copy' autoreconf --force --install --verbose
-
-cd "$olddir"
-test -n "$NOCONFIGURE" || "$srcdir/configure" "$@"
+. gnome-autogen.sh "$@"
