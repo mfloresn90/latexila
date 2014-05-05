@@ -1,6 +1,9 @@
-AM_CPPFLAGS = $(WARN_CFLAGS)
+@GNOME_CODE_COVERAGE_RULES@
 
 noinst_LTLIBRARIES = liblatexila.la
+
+liblatexila_la_CFLAGS = $(WARN_CFLAGS) $(CODE_COVERAGE_CFLAGS)
+liblatexila_la_LDFLAGS = $(CODE_COVERAGE_LDFLAGS)
 
 liblatexila_headers =				\
 	latexila-build-job.h			\

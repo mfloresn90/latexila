@@ -81,4 +81,6 @@ MAINTAINERCLEANFILES =		\
 	test-driver		\
 	`find "$(srcdir)" -type f -name Makefile.in -print`
 
+@GNOME_CODE_COVERAGE_RULES@
+
 -include $(top_srcdir)/git.mk
