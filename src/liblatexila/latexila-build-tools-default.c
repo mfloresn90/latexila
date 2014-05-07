@@ -152,8 +152,6 @@ save_settings (LatexilaBuildToolsDefault *build_tools)
   g_settings_set_value (settings, "enabled-default-build-tools", enabled_tools);
   g_settings_set_value (settings, "disabled-default-build-tools", disabled_tools);
 
-  g_variant_unref (enabled_tools);
-  g_variant_unref (disabled_tools);
   g_object_unref (settings);
 }
 
