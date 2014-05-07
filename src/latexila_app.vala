@@ -47,7 +47,6 @@ public class LatexilaApp : Gtk.Application
         {
             hold ();
             Projects.get_default ().save ();
-            Latexila.BuildToolsPersonal.get_instance ().save ();
             MostUsedSymbols.get_default ().save ();
             Gtk.AccelMap.save (get_accel_filename ());
             release ();

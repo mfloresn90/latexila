@@ -67,6 +67,7 @@ public class BuildToolsPreferences : GLib.Object
 
         _dialog.run ();
         _dialog.destroy ();
+        Latexila.BuildToolsPersonal.get_instance ().save ();
     }
 
     private void init_views ()

@@ -147,13 +147,14 @@ save_cb (GFile                      *xml_file,
   build_tools->priv->xml_file_contents = NULL;
 
   g_object_unref (build_tools);
+  g_application_release (g_application_get_default ());
 }
 
 /**
  * latexila_build_tools_personal_save:
  * @build_tools: the #LatexilaBuildToolsPersonal instance.
  *
- * Saves the personal build tools into the XML file.
+ * Saves asynchronously the personal build tools into the XML file.
  */
 void
 latexila_build_tools_personal_save (LatexilaBuildToolsPersonal *build_tools)
@@ -187,8 +188,11 @@ latexila_build_tools_personal_save (LatexilaBuildToolsPersonal *build_tools)
 
   g_string_append (contents, "</tools>\n");
 
-  /* Avoid finalization of build_tools during the async operation. */
+  /* Avoid finalization of build_tools during the async operation. And keep the
+   * application running.
+   */
   g_object_ref (build_tools);
+  g_application_hold (g_application_get_default ());
 
   xml_file = get_xml_file ();
 
