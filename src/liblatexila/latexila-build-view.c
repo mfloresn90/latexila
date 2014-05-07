@@ -27,6 +27,7 @@
  */
 
 #include "latexila-build-view.h"
+#include "latexila-utils.h"
 #include "latexila-enum-types.h"
 
 struct _LatexilaBuildViewPrivate
@@ -624,12 +625,13 @@ latexila_build_view_append_single_message (LatexilaBuildView *build_view,
 
   if (message->filename != NULL)
     {
+      gchar *filename_with_tilde;
+
       file = g_file_new_for_path (message->filename);
 
-      /* TODO implement and call latexila_utils_replace_home_dir_with_tilde() on
-       * the path. See if gedit has already this function in C.
-       */
-      path = g_markup_escape_text (message->filename, -1);
+      filename_with_tilde = latexila_utils_replace_home_dir_with_tilde (message->filename);
+      path = g_markup_escape_text (filename_with_tilde, -1);
+      g_free (filename_with_tilde);
 
       basename = g_file_get_basename (file);
     }
