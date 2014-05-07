@@ -30,6 +30,7 @@
 
 #include "latexila-build-tool.h"
 #include "latexila-build-job.h"
+#include "latexila-build-view.h"
 
 struct _LatexilaBuildToolPrivate
 {
@@ -390,4 +391,28 @@ latexila_build_tool_to_xml (LatexilaBuildTool *tool)
   g_string_append (contents, "  </tool>\n");
 
   return g_string_free (contents, FALSE);
+}
+
+/**
+ * latexila_build_tool_run:
+ * @build_tool: a build tool.
+ * @file: a file.
+ * @build_view: a build view.
+ *
+ * Run a build tool on a file with the messages displayed in a build view.
+ */
+void
+latexila_build_tool_run (LatexilaBuildTool *build_tool,
+                         GFile             *file,
+                         LatexilaBuildView *build_view)
+{
+  g_return_if_fail (LATEXILA_IS_BUILD_TOOL (build_tool));
+  g_return_if_fail (G_IS_FILE (file));
+  g_return_if_fail (LATEXILA_IS_BUILD_VIEW (build_view));
+
+  latexila_build_view_clear (build_view);
+
+  latexila_build_view_add_main_title (build_view,
+                                      build_tool->priv->label,
+                                      LATEXILA_BUILD_STATE_RUNNING);
 }

@@ -21,7 +21,7 @@
 #define __LATEXILA_BUILD_TOOL_H__
 
 #include "latexila-types.h"
-#include <glib-object.h>
+#include <gio/gio.h>
 
 G_BEGIN_DECLS
 
@@ -59,6 +59,10 @@ void                  latexila_build_tool_add_job                   (LatexilaBui
 GList *               latexila_build_tool_get_jobs                  (LatexilaBuildTool *build_tool);
 
 gchar *               latexila_build_tool_to_xml                    (LatexilaBuildTool *tool);
+
+void                  latexila_build_tool_run                       (LatexilaBuildTool *build_tool,
+                                                                     GFile             *file,
+                                                                     LatexilaBuildView *build_view);
 
 G_END_DECLS
 
