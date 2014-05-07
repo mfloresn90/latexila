@@ -282,7 +282,7 @@ public class MainWindowDocuments
         return_if_fail (tab != null);
         return_if_fail (_documents_panel != null);
 
-        MainWindow new_window = Latexila.get_instance ().create_window ();
+        MainWindow new_window = LatexilaApp.get_instance ().create_window ();
         DocumentView view = tab.view;
         _documents_panel.remove_tab (tab);
 

@@ -405,6 +405,27 @@ latexila_build_tools_load (LatexilaBuildTools *build_tools,
 }
 
 /**
+ * latexila_build_tools_nth:
+ * @build_tools: a #LatexilaBuildTools object.
+ * @tool_num: the build tool position in the list.
+ *
+ * Returns: (transfer none): the #LatexilaBuildTool located at @tool_num.
+ */
+LatexilaBuildTool *
+latexila_build_tools_nth (LatexilaBuildTools *build_tools,
+                          guint               tool_num)
+{
+  LatexilaBuildTool *build_tool;
+
+  g_return_val_if_fail (LATEXILA_IS_BUILD_TOOLS (build_tools), NULL);
+
+  build_tool = g_list_nth_data (build_tools->build_tools, tool_num);
+  g_return_val_if_fail (build_tool != NULL, NULL);
+
+  return build_tool;
+}
+
+/**
  * latexila_build_tools_set_enabled:
  * @build_tools: a #LatexilaBuildTools object.
  * @tool_num: the build tool position in the list.

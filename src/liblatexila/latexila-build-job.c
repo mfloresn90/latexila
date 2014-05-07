@@ -159,6 +159,25 @@ latexila_build_job_new (void)
 }
 
 /**
+ * latexila_build_job_clone:
+ * @build_job: the build job to clone.
+ *
+ * Clones a build job (deep copy).
+ *
+ * Returns: (transfer full): the cloned build job.
+ */
+LatexilaBuildJob *
+latexila_build_job_clone (LatexilaBuildJob *build_job)
+{
+  g_return_val_if_fail (LATEXILA_IS_BUILD_JOB (build_job), NULL);
+
+  return g_object_new (LATEXILA_TYPE_BUILD_JOB,
+                       "command", build_job->priv->command,
+                       "post-processor-type", build_job->priv->post_processor_type,
+                       NULL);
+}
+
+/**
  * latexila_build_job_to_xml:
  * @build_job: a #LatexilaBuildJob object.
  *

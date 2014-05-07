@@ -17,13 +17,8 @@ vapidir = ../vapi
 vala_files =				\
 	app_settings.vala		\
 	bottom_panel.vala		\
-	build_command_runner.vala	\
-	build_job_runner.vala		\
 	build_tool_dialog.vala		\
-	build_tool_runner.vala		\
 	build_tools_preferences.vala	\
-	build_tools.vala		\
-	build_view.vala			\
 	clean_build_files.vala		\
 	completion.vala			\
 	custom_statusbar.vala		\
@@ -36,9 +31,8 @@ vala_files =				\
 	encodings.vala			\
 	error_entry.vala		\
 	file_browser.vala		\
-	latexila.vala			\
+	latexila_app.vala		\
 	latex_menu.vala			\
-	latex_post_processor.vala	\
 	main.vala			\
 	main_window_build_tools.vala	\
 	main_window_documents.vala	\
@@ -48,7 +42,6 @@ vala_files =				\
 	main_window.vala		\
 	menu_in_toolbar.vala		\
 	most_used_symbols.vala		\
-	post_processors.vala		\
 	preferences_dialog.vala		\
 	project_dialogs.vala		\
 	projects.vala			\
@@ -65,19 +58,22 @@ vala_files =				\
 	templates.vala			\
 	utils.vala
 
-latexila_SOURCES = 			\
-	$(vala_files)			\
-	$(vapidir)/config.vapi		\
-	$(vapidir)/gedit.vapi		\
-	$(vapidir)/menu_tool_action.vapi
+latexila_SOURCES = 				\
+	$(vala_files)				\
+	$(vapidir)/config.vapi			\
+	$(vapidir)/gedit.vapi			\
+	$(vapidir)/menu_tool_action.vapi	\
+	liblatexila/latexila.vapi
 
 latexila_CPPFLAGS =		\
 	-I$(top_srcdir)		\
 	-I$(srcdir)/gedit	\
+	-I$(srcdir)/liblatexila	\
 	-include config.h
 
-latexila_LDADD = 		\
-	gedit/libgedit.la
+latexila_LDADD = 			\
+	gedit/libgedit.la		\
+	liblatexila/liblatexila.la
 
 MAINTAINERCLEANFILES =		\
 	$(vala_files:.vala=.c)	\

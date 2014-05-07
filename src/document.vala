@@ -305,7 +305,7 @@ public class Document : Gtk.SourceBuffer
 
         // get all unsaved document numbers
         uint[] all_nums = {};
-        foreach (Document doc in Latexila.get_instance ().get_documents ())
+        foreach (Document doc in LatexilaApp.get_instance ().get_documents ())
         {
             // avoid infinite loop
             if (doc == this)

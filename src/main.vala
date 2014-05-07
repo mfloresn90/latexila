@@ -94,7 +94,7 @@ private CmdLineData parse_cmd_line_options (string[] args)
         string[] uris = {};
         foreach (string filename in files_list)
         {
-            // Call File.new_for_commandline_arg() here (and not in the Latexila class)
+            // Call File.new_for_commandline_arg() here (and not in the LatexilaApp class)
             // because relative path resolution needs the right current working directory,
             // which can be different for the primary instance.
             File file = File.new_for_commandline_arg (filename);
@@ -113,7 +113,7 @@ int main (string[] args)
 
     CmdLineData data = parse_cmd_line_options (args);
 
-    Latexila app = new Latexila ();
+    LatexilaApp app = new LatexilaApp ();
 
     try
     {

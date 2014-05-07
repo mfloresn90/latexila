@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2012 Sébastien Wilmet
+ * Copyright © 2012, 2014 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -55,13 +55,12 @@ public class MainWindowBuildTools
 
     private unowned MainWindow _main_window;
     private UIManager _ui_manager;
-    private BuildView _build_view;
+    private Latexila.BuildView _build_view;
     private BottomPanel _bottom_panel;
 
     private Gtk.ActionGroup _static_action_group;
     private Gtk.ActionGroup _dynamic_action_group;
     private uint _menu_ui_id;
-    private BuildToolRunner _build_tool_runner;
 
     public MainWindowBuildTools (MainWindow main_window, UIManager ui_manager)
     {
@@ -84,14 +83,16 @@ public class MainWindowBuildTools
         ui_manager.insert_action_group (_dynamic_action_group, 0);
         update_menu ();
 
-        PersonalBuildTools personal_build_tools = PersonalBuildTools.get_default ();
+        Latexila.BuildToolsPersonal personal_build_tools =
+            Latexila.BuildToolsPersonal.get_instance ();
         personal_build_tools.modified.connect (() => update_menu ());
 
-        DefaultBuildTools default_build_tools = DefaultBuildTools.get_default ();
+        Latexila.BuildToolsDefault default_build_tools =
+            Latexila.BuildToolsDefault.get_instance ();
         default_build_tools.modified.connect (() => update_menu ());
     }
 
-    public void set_build_view (BuildView build_view)
+    public void set_build_view (Latexila.BuildView build_view)
     {
         _build_view = build_view;
         connect_toggle_actions ();
@@ -121,16 +122,20 @@ public class MainWindowBuildTools
         clean_action.set_sensitive (is_tex);
         view_log_action.set_sensitive (is_tex);
 
+        Latexila.BuildTools build_tools =
+            Latexila.BuildToolsDefault.get_instance () as Latexila.BuildTools;
+
         int tool_num = 0;
-        foreach (BuildTool tool in DefaultBuildTools.get_default ())
+        foreach (Latexila.BuildTool tool in build_tools.build_tools)
         {
             string action_name = get_default_build_tool_name (tool_num);
             update_build_tool_sensitivity (tool, action_name);
             tool_num++;
         }
 
+        build_tools = Latexila.BuildToolsPersonal.get_instance () as Latexila.BuildTools;
         tool_num = 0;
-        foreach (BuildTool tool in PersonalBuildTools.get_default ())
+        foreach (Latexila.BuildTool tool in build_tools.build_tools)
         {
             string action_name = get_personal_build_tool_name (tool_num);
             update_build_tool_sensitivity (tool, action_name);
@@ -148,15 +153,15 @@ public class MainWindowBuildTools
         return @"PersonalBuildTool_$tool_num";
     }
 
-    private BuildTool? get_build_tool_from_name (string action_name)
+    private Latexila.BuildTool? get_build_tool_from_name (string action_name)
     {
-        BuildTools build_tools;
+        Latexila.BuildTools build_tools;
 
         if (action_name.has_prefix ("DefaultBuildTool_"))
-            build_tools = DefaultBuildTools.get_default ();
+            build_tools = Latexila.BuildToolsDefault.get_instance () as Latexila.BuildTools;
 
         else if (action_name.has_prefix ("PersonalBuildTool_"))
-            build_tools = PersonalBuildTools.get_default ();
+            build_tools = Latexila.BuildToolsPersonal.get_instance () as Latexila.BuildTools;
 
         else
             return_val_if_reached (null);
@@ -166,10 +171,11 @@ public class MainWindowBuildTools
 
         int tool_num = int.parse (name[1]);
 
-        return build_tools.get_build_tool (tool_num);
+        return build_tools.nth (tool_num);
     }
 
-    private void update_build_tool_sensitivity (BuildTool tool, string action_name)
+    private void update_build_tool_sensitivity (Latexila.BuildTool tool,
+        string action_name)
     {
         if (! tool.enabled)
             return;
@@ -181,7 +187,7 @@ public class MainWindowBuildTools
 
         if (unsaved_doc)
         {
-            action.set_sensitive (tool.has_jobs ());
+            action.set_sensitive (tool.get_jobs () != null);
             return;
         }
 
@@ -219,11 +225,14 @@ public class MainWindowBuildTools
             _dynamic_action_group.remove_action (action);
         }
 
+        Latexila.BuildTools default_build_tools =
+            Latexila.BuildToolsDefault.get_instance () as Latexila.BuildTools;
+        Latexila.BuildTools personal_build_tools =
+            Latexila.BuildToolsPersonal.get_instance () as Latexila.BuildTools;
 
-        DefaultBuildTools default_build_tools = DefaultBuildTools.get_default ();
-        PersonalBuildTools personal_build_tools = PersonalBuildTools.get_default ();
-
-        if (default_build_tools.is_empty () && personal_build_tools.is_empty ())
+        /* Empty */
+        if (default_build_tools.build_tools == null &&
+            personal_build_tools.build_tools == null)
         {
             _menu_ui_id = 0;
             return;
@@ -234,7 +243,7 @@ public class MainWindowBuildTools
         /* Add the default build tools */
         int tool_num = 0;
         int accel_num = 2;
-        foreach (BuildTool build_tool in default_build_tools)
+        foreach (Latexila.BuildTool build_tool in default_build_tools.build_tools)
         {
             string action_name = get_default_build_tool_name (tool_num);
             add_dynamic_action (build_tool, action_name, ref accel_num);
@@ -245,7 +254,7 @@ public class MainWindowBuildTools
 
         /* Add the personal build tools */
         tool_num = 0;
-        foreach (BuildTool build_tool in personal_build_tools)
+        foreach (Latexila.BuildTool build_tool in personal_build_tools.build_tools)
         {
             string action_name = get_personal_build_tool_name (tool_num);
             add_dynamic_action (build_tool, action_name, ref accel_num);
@@ -266,7 +275,7 @@ public class MainWindowBuildTools
             "BuildToolsSeparator", null, UIManagerItemType.SEPARATOR, false);
     }
 
-    private void add_dynamic_action (BuildTool build_tool, string action_name,
+    private void add_dynamic_action (Latexila.BuildTool build_tool, string action_name,
         ref int accel_num)
     {
         if (! build_tool.enabled)
@@ -301,16 +310,16 @@ public class MainWindowBuildTools
         return_if_fail (_build_view != null);
         return_if_fail (_bottom_panel != null);
 
-        BuildTool? tool = get_build_tool_from_name (action.name);
+        Latexila.BuildTool? tool = get_build_tool_from_name (action.name);
         return_if_fail (tool != null);
 
         Document active_doc = _main_window.active_document;
 
-        if (! tool.has_jobs ())
+        if (tool.get_jobs () == null)
             return_if_fail (active_doc.location != null);
 
         /* Save the document if jobs are executed */
-        if (tool.has_jobs ())
+        if (tool.get_jobs () != null)
         {
             if (active_doc.location == null)
             {
@@ -326,7 +335,7 @@ public class MainWindowBuildTools
             // Save all the documents belonging to the project
             else
             {
-                Gee.List<Document> docs = Latexila.get_instance ().get_documents ();
+                Gee.List<Document> docs = LatexilaApp.get_instance ().get_documents ();
                 foreach (Document doc in docs)
                 {
                     if (doc.project_id == project_id)
@@ -344,9 +353,13 @@ public class MainWindowBuildTools
         stop_exec.sensitive = true;
 
         File main_file = active_doc.get_main_file ();
+        tool.run (main_file, _build_view);
+        /* TODO port this code. */
+        /*
         _build_tool_runner = new BuildToolRunner (tool, main_file, _build_view);
         _build_tool_runner.finished.connect (() => stop_exec.sensitive = false);
         _build_tool_runner.run ();
+        */
     }
 
     private void connect_toggle_actions ()
@@ -393,8 +406,11 @@ public class MainWindowBuildTools
 
     public void on_stop_execution ()
     {
+        /* TODO port this code. */
+        /*
         return_if_fail (_build_tool_runner != null);
         _build_tool_runner.abort ();
+        */
     }
 
     public void on_clean ()

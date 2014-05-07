@@ -6,6 +6,7 @@
 LatexilaBuildTools
 latexila_build_tools_load
 latexila_build_tools_set_enabled
+latexila_build_tools_nth
 <SUBSECTION Standard>
 LATEXILA_BUILD_TOOLS
 LATEXILA_BUILD_TOOLS_CLASS
@@ -61,10 +62,12 @@ LatexilaBuildToolsPersonalPrivate
 <TITLE>LatexilaBuildTool</TITLE>
 LatexilaBuildTool
 latexila_build_tool_new
+latexila_build_tool_clone
 latexila_build_tool_add_job
 latexila_build_tool_get_jobs
 latexila_build_tool_get_description
 latexila_build_tool_to_xml
+latexila_build_tool_run
 <SUBSECTION Standard>
 LATEXILA_BUILD_TOOL
 LATEXILA_BUILD_TOOL_CLASS
@@ -82,6 +85,7 @@ latexila_build_tool_get_type
 <TITLE>LatexilaBuildJob</TITLE>
 LatexilaBuildJob
 latexila_build_job_new
+latexila_build_job_clone
 latexila_build_job_to_xml
 <SUBSECTION Standard>
 LATEXILA_BUILD_JOB

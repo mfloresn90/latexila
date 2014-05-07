@@ -51,6 +51,8 @@ GType                 latexila_build_tool_get_type                  (void) G_GNU
 
 LatexilaBuildTool *   latexila_build_tool_new                       (void);
 
+LatexilaBuildTool *   latexila_build_tool_clone                     (LatexilaBuildTool *build_tool);
+
 const gchar *         latexila_build_tool_get_description           (LatexilaBuildTool *build_tool);
 
 void                  latexila_build_tool_add_job                   (LatexilaBuildTool *build_tool,

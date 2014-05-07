@@ -52,6 +52,8 @@ GType               latexila_build_job_get_type                   (void) G_GNUC_
 
 LatexilaBuildJob *  latexila_build_job_new                        (void);
 
+LatexilaBuildJob *  latexila_build_job_clone                      (LatexilaBuildJob *build_job);
+
 gchar *             latexila_build_job_to_xml                     (LatexilaBuildJob *build_job);
 
 G_END_DECLS

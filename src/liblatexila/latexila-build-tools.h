@@ -37,8 +37,8 @@ typedef struct _LatexilaBuildToolsPrivate LatexilaBuildToolsPrivate;
 
 /**
  * LatexilaBuildTools:
- * @build_tools: a list of #LatexilaBuildTool's. External code should just read
- * the list, not modify it.
+ * @build_tools: (element-type LatexilaBuildTool): a list of
+ * #LatexilaBuildTool's. External code should just read the list, not modify it.
  */
 struct _LatexilaBuildTools
 {
@@ -61,6 +61,9 @@ GType                 latexila_build_tools_get_type                 (void) G_GNU
 
 void                  latexila_build_tools_load                     (LatexilaBuildTools *build_tools,
                                                                      GFile              *xml_file);
+
+LatexilaBuildTool *   latexila_build_tools_nth                      (LatexilaBuildTools *build_tools,
+                                                                     guint               tool_num);
 
 void                  latexila_build_tools_set_enabled              (LatexilaBuildTools *build_tools,
                                                                      guint               tool_num,

@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2012 Sébastien Wilmet
+ * Copyright © 2012, 2014 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -72,10 +72,10 @@ public class BuildToolsPreferences : GLib.Object
     private void init_views ()
     {
         _default_view = get_new_view (_default_store,
-            DefaultBuildTools.get_default ());
+            Latexila.BuildToolsDefault.get_instance ());
 
         _personal_view = get_new_view (_personal_store,
-            PersonalBuildTools.get_default ());
+            Latexila.BuildToolsPersonal.get_instance ());
 
         // Only one item of the two views can be selected at once.
 
@@ -95,7 +95,8 @@ public class BuildToolsPreferences : GLib.Object
 
     private Grid get_default_grid ()
     {
-        BuildTools default_build_tools = DefaultBuildTools.get_default ();
+        Latexila.BuildTools default_build_tools =
+            Latexila.BuildToolsDefault.get_instance () as Latexila.BuildTools;
         ToolButton properties_button = get_properties_button (_default_view,
             default_build_tools);
         ToolButton copy_button = get_copy_button (_default_view, default_build_tools);
@@ -111,7 +112,8 @@ public class BuildToolsPreferences : GLib.Object
 
     private Grid get_personal_grid ()
     {
-        BuildTools personal_build_tools = PersonalBuildTools.get_default ();
+        Latexila.BuildTools personal_build_tools =
+            Latexila.BuildToolsPersonal.get_instance () as Latexila.BuildTools;
         ToolButton properties_button = get_properties_button (_personal_view,
             personal_build_tools);
         ToolButton copy_button = get_copy_button (_personal_view, personal_build_tools);
@@ -163,7 +165,7 @@ public class BuildToolsPreferences : GLib.Object
         );
     }
 
-    private TreeView get_new_view (ListStore store, BuildTools build_tools)
+    private TreeView get_new_view (ListStore store, Latexila.BuildTools build_tools)
     {
         TreeView view = new TreeView.with_model (store);
         view.set_rules_hint (true);
@@ -234,7 +236,8 @@ public class BuildToolsPreferences : GLib.Object
             other_select.unselect_all ();
     }
 
-    private ToolButton get_properties_button (TreeView view, BuildTools build_tools)
+    private ToolButton get_properties_button (TreeView view,
+        Latexila.BuildTools build_tools)
     {
         ToolButton properties_button = new ToolButton (null, null);
         properties_button.set_icon_name ("document-properties-symbolic");
@@ -253,7 +256,7 @@ public class BuildToolsPreferences : GLib.Object
         return properties_button;
     }
 
-    private ToolButton get_copy_button (TreeView view, BuildTools build_tools)
+    private ToolButton get_copy_button (TreeView view, Latexila.BuildTools build_tools)
     {
         ToolButton copy_button = new ToolButton (null, null);
         copy_button.set_icon_name ("edit-copy-symbolic");
@@ -267,13 +270,15 @@ public class BuildToolsPreferences : GLib.Object
             if (selected_row < 0)
                 return;
 
-            BuildTool? tool = build_tools.get_build_tool (selected_row);
+            Latexila.BuildTool? tool = build_tools.nth (selected_row);
             return_if_fail (tool != null);
 
+            tool = tool.clone ();
             tool.enabled = false;
             tool.label = _("%s [copy]").printf (tool.label);
 
-            PersonalBuildTools personal_build_tools = PersonalBuildTools.get_default ();
+            Latexila.BuildToolsPersonal personal_build_tools =
+                Latexila.BuildToolsPersonal.get_instance ();
             personal_build_tools.add (tool);
 
             update_personal_store ();
@@ -330,7 +335,7 @@ public class BuildToolsPreferences : GLib.Object
             if (dialog.run () == ResponseType.YES)
             {
                 _personal_store.remove (iter);
-                PersonalBuildTools.get_default ().delete (selected_row);
+                Latexila.BuildToolsPersonal.get_instance ().delete (selected_row);
             }
 
             dialog.destroy ();
@@ -380,7 +385,7 @@ public class BuildToolsPreferences : GLib.Object
                 if (Utils.tree_model_iter_prev (_personal_store, ref iter_up))
                 {
                     _personal_store.swap (iter_selected, iter_up);
-                    PersonalBuildTools.get_default ().move_up (selected_row);
+                    Latexila.BuildToolsPersonal.get_instance ().move_up (selected_row);
 
                     // Force the 'changed' signal on the selection to be emitted
                     select.changed ();
@@ -435,7 +440,7 @@ public class BuildToolsPreferences : GLib.Object
                 if (_personal_store.iter_next (ref iter_down))
                 {
                     _personal_store.swap (iter_selected, iter_down);
-                    PersonalBuildTools.get_default ().move_down (selected_row);
+                    Latexila.BuildToolsPersonal.get_instance ().move_down (selected_row);
 
                     // Force the 'changed' signal on the selection to be emitted
                     select.changed ();
@@ -448,19 +453,19 @@ public class BuildToolsPreferences : GLib.Object
 
     private void update_default_store ()
     {
-        update_store (_default_store, DefaultBuildTools.get_default ());
+        update_store (_default_store, Latexila.BuildToolsDefault.get_instance ());
     }
 
     private void update_personal_store ()
     {
-        update_store (_personal_store, PersonalBuildTools.get_default ());
+        update_store (_personal_store, Latexila.BuildToolsPersonal.get_instance ());
     }
 
-    private void update_store (ListStore store, BuildTools build_tools)
+    private void update_store (ListStore store, Latexila.BuildTools build_tools)
     {
         store.clear ();
 
-        foreach (BuildTool tool in build_tools)
+        foreach (Latexila.BuildTool tool in build_tools.build_tools)
         {
             string description = Markup.escape_text (tool.get_description ());
 
@@ -475,7 +480,7 @@ public class BuildToolsPreferences : GLib.Object
         }
     }
 
-    private void open_build_tool (BuildTools build_tools, int build_tool_num)
+    private void open_build_tool (Latexila.BuildTools build_tools, int build_tool_num)
     {
         BuildToolDialog dialog = new BuildToolDialog (_dialog);
 

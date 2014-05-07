@@ -473,7 +473,7 @@ public class MainWindow : Window
 
     private BottomPanel get_bottom_panel ()
     {
-        BuildView build_view = new BuildView (this);
+        Latexila.BuildView build_view = new Latexila.BuildView ();
         _main_window_build_tools.set_build_view (build_view);
 
         Toolbar build_toolbar = _ui_manager.get_widget ("/BuildToolbar") as Toolbar;
@@ -529,7 +529,7 @@ public class MainWindow : Window
         Gtk.drag_dest_add_uri_targets (this);
         drag_data_received.connect ((dc, x, y, selection_data, info, time) =>
         {
-            Latexila app = Latexila.get_instance ();
+            LatexilaApp app = LatexilaApp.get_instance ();
 
             File[] files = {};
             foreach (string uri in selection_data.get_uris ())
@@ -634,7 +634,7 @@ public class MainWindow : Window
     public DocumentTab? open_document (File location, bool jump_to = true)
     {
         /* check if the document is already opened */
-        foreach (Window window in Latexila.get_instance ().get_windows ())
+        foreach (Window window in LatexilaApp.get_instance ().get_windows ())
         {
             MainWindow w = window as MainWindow;
 

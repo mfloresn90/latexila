@@ -291,6 +291,44 @@ latexila_build_tool_new (void)
 }
 
 /**
+ * latexila_build_tool_clone:
+ * @build_tool: the build tool to clone.
+ *
+ * Clones a build tool (deep copy).
+ *
+ * Returns: (transfer full): the cloned build tool.
+ */
+LatexilaBuildTool *
+latexila_build_tool_clone (LatexilaBuildTool *build_tool)
+{
+  LatexilaBuildTool *new_build_tool;
+  GList *l;
+
+  g_return_val_if_fail (LATEXILA_IS_BUILD_TOOL (build_tool), NULL);
+
+  new_build_tool = g_object_new (LATEXILA_TYPE_BUILD_TOOL,
+                                 "label", build_tool->priv->label,
+                                 "description", build_tool->priv->description,
+                                 "extensions", build_tool->priv->extensions,
+                                 "icon", build_tool->priv->icon,
+                                 "files-to-open", build_tool->priv->files_to_open,
+                                 "enabled", build_tool->priv->enabled,
+                                 "id", build_tool->priv->id,
+                                 NULL);
+
+  for (l = build_tool->priv->jobs->head; l != NULL; l = l->next)
+    {
+      LatexilaBuildJob *build_job = l->data;
+      LatexilaBuildJob *new_build_job = latexila_build_job_clone (build_job);
+
+      latexila_build_tool_add_job (new_build_tool, new_build_job);
+      g_object_unref (new_build_job);
+    }
+
+  return new_build_tool;
+}
+
+/**
  * latexila_build_tool_get_description:
  * @build_tool: a #LatexilaBuildTool.
  *

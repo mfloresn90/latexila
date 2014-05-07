@@ -10,7 +10,7 @@ AC_INIT([LaTeXila],
 	[latexila],
 	[https://wiki.gnome.org/Apps/LaTeXila])
 
-AC_CONFIG_SRCDIR([src/latexila.vala])
+AC_CONFIG_SRCDIR([src/liblatexila/latexila.h])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 

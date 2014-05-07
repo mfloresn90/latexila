@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2010-2012 Sébastien Wilmet
+ * Copyright © 2010-2012, 2014 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -89,12 +89,12 @@ public class BuildToolDialog : GLib.Object
     }
 
     // Returns true if the build tool is edited.
-    public bool open_build_tool (BuildTools build_tools, int build_tool_num)
+    public bool open_build_tool (Latexila.BuildTools build_tools, int build_tool_num)
     {
-        BuildTool? build_tool = build_tools.get_build_tool (build_tool_num);
+        Latexila.BuildTool? build_tool = build_tools.nth (build_tool_num);
         return_val_if_fail (build_tool != null, false);
 
-        if (build_tools is DefaultBuildTools)
+        if (build_tools is Latexila.BuildToolsDefault)
             set_read_only ();
         else
             set_editable ();
@@ -105,11 +105,12 @@ public class BuildToolDialog : GLib.Object
 
         if (ok)
         {
-            BuildTool new_build_tool = retrieve_build_tool ();
+            Latexila.BuildTool new_build_tool = retrieve_build_tool ();
             new_build_tool.enabled = build_tool.enabled;
 
-            PersonalBuildTools personal_build_tools = build_tools as PersonalBuildTools;
-            personal_build_tools.update (build_tool_num, new_build_tool);
+            Latexila.BuildToolsPersonal personal_build_tools =
+                build_tools as Latexila.BuildToolsPersonal;
+            personal_build_tools.replace (new_build_tool, build_tool_num);
         }
 
         _dialog.destroy ();
@@ -127,10 +128,11 @@ public class BuildToolDialog : GLib.Object
 
         if (ok)
         {
-            BuildTool new_build_tool = retrieve_build_tool ();
+            Latexila.BuildTool new_build_tool = retrieve_build_tool ();
             new_build_tool.enabled = true;
 
-            PersonalBuildTools build_tools = PersonalBuildTools.get_default ();
+            Latexila.BuildToolsPersonal build_tools =
+                Latexila.BuildToolsPersonal.get_instance ();
             build_tools.add (new_build_tool);
         }
 
@@ -207,10 +209,10 @@ public class BuildToolDialog : GLib.Object
             typeof (string) // the name of the post processor
         );
 
-        for (int type = 0 ; type < PostProcessorType.N_POST_PROCESSORS ; type++)
+        for (int type = 0 ; type < Latexila.PostProcessorType.NB_TYPES ; type++)
         {
-            string name = BuildTools.get_post_processor_name_from_type (
-                (PostProcessorType) type);
+            unowned string name = Latexila.PostProcessor.get_name_from_type (
+                (Latexila.PostProcessorType) type);
 
             TreeIter iter;
             post_processor_store.append (out iter);
@@ -266,9 +268,9 @@ public class BuildToolDialog : GLib.Object
 
         add_button.clicked.connect (() =>
         {
-            BuildJob new_job = BuildJob ();
+            Latexila.BuildJob new_job = new Latexila.BuildJob ();
             new_job.command = "";
-            new_job.post_processor = PostProcessorType.ALL_OUTPUT;
+            new_job.post_processor_type = Latexila.PostProcessorType.ALL_OUTPUT;
             add_build_job (new_job);
         });
 
@@ -426,7 +428,7 @@ public class BuildToolDialog : GLib.Object
         _jobs_view.columns_autosize ();
     }
 
-    private void set_build_tool (BuildTool build_tool)
+    private void set_build_tool (Latexila.BuildTool build_tool)
     {
         /* Text entries */
 
@@ -461,21 +463,21 @@ public class BuildToolDialog : GLib.Object
         /* Jobs */
 
         _jobs_store.clear ();
-        foreach (BuildJob build_job in build_tool.jobs)
+        foreach (Latexila.BuildJob build_job in build_tool.get_jobs ())
             add_build_job (build_job);
 
         _jobs_view.columns_autosize ();
     }
 
     // Retrieve the build tool from the data stored in the main widgets of the dialog.
-    private BuildTool retrieve_build_tool ()
+    private Latexila.BuildTool retrieve_build_tool ()
     {
-        BuildTool tool = BuildTool ();
+        Latexila.BuildTool tool = new Latexila.BuildTool ();
 
         /* Text entries */
 
         tool.label = _entry_label.text.strip ();
-        tool.set_description (_entry_desc.text.strip ());
+        tool.description = _entry_desc.text.strip ();
         tool.extensions = _entry_extensions.text.strip ();
         tool.files_to_open = _entry_files_to_open.text.strip ();
 
@@ -484,7 +486,9 @@ public class BuildToolDialog : GLib.Object
         TreeIter iter;
         _icons_combobox.get_active_iter (out iter);
         TreeModel model = _icons_store as TreeModel;
-        model.get (iter, IconColumn.STOCK_ID, out tool.icon);
+        string icon;
+        model.get (iter, IconColumn.STOCK_ID, out icon);
+        tool.icon = icon;
 
         /* Jobs */
 
@@ -493,7 +497,7 @@ public class BuildToolDialog : GLib.Object
 
         while (valid)
         {
-            BuildJob job = BuildJob ();
+            Latexila.BuildJob job = new Latexila.BuildJob ();
             string command;
             string post_processor_name;
 
@@ -503,10 +507,12 @@ public class BuildToolDialog : GLib.Object
             );
 
             job.command = command.strip ();
-            job.post_processor = BuildTools.get_post_processor_type_from_name (
-                post_processor_name);
 
-            tool.jobs.add (job);
+            Latexila.PostProcessorType type;
+            if (Latexila.PostProcessor.get_type_from_name (post_processor_name, out type))
+                job.post_processor_type = type;
+
+            tool.add_job (job);
 
             valid = _jobs_store.iter_next (ref iter);
         }
@@ -517,10 +523,10 @@ public class BuildToolDialog : GLib.Object
     /*************************************************************************/
     // Misc utilities functions
 
-    private void add_build_job (BuildJob job)
+    private void add_build_job (Latexila.BuildJob job)
     {
         string post_processor_name =
-            BuildTools.get_post_processor_name_from_type (job.post_processor);
+            Latexila.PostProcessor.get_name_from_type (job.post_processor_type);
 
         TreeIter iter;
         _jobs_store.append (out iter);

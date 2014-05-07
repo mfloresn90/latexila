@@ -23,7 +23,7 @@ using Gtk;
 
 public class BottomPanel : Grid
 {
-    public BottomPanel (BuildView build_view, Toolbar toolbar)
+    public BottomPanel (Latexila.BuildView build_view, Toolbar toolbar)
     {
         set_orientation (Orientation.HORIZONTAL);
 

@@ -42,6 +42,7 @@ typedef struct _LatexilaPostProcessorPrivate LatexilaPostProcessorPrivate;
  * @LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT: all output.
  * @LATEXILA_POST_PROCESSOR_TYPE_LATEX: for a LaTeX command.
  * @LATEXILA_POST_PROCESSOR_TYPE_LATEXMK: for the latexmk command.
+ * @LATEXILA_POST_PROCESSOR_TYPE_NB_TYPES: number of post-processor types.
  *
  * Types of post-processors.
  */
@@ -50,7 +51,8 @@ typedef enum
   LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT,
   LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT,
   LATEXILA_POST_PROCESSOR_TYPE_LATEX,
-  LATEXILA_POST_PROCESSOR_TYPE_LATEXMK
+  LATEXILA_POST_PROCESSOR_TYPE_LATEXMK,
+  LATEXILA_POST_PROCESSOR_TYPE_NB_TYPES
 } LatexilaPostProcessorType;
 
 struct _LatexilaPostProcessor

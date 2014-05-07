@@ -211,7 +211,7 @@ latexila_build_tools_default_init (LatexilaBuildToolsDefault *build_tools)
                     NULL);
 
   xml_file = get_xml_file ();
-  latexila_build_tools_load (LATEXILA_BUILD_TOOLS (instance), xml_file);
+  latexila_build_tools_load (LATEXILA_BUILD_TOOLS (build_tools), xml_file);
   g_object_unref (xml_file);
 }
 

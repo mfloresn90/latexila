@@ -116,7 +116,7 @@ public class Synctex : Object
 
     private void show_warning (string message)
     {
-        MainWindow main_window = Latexila.get_instance ().active_window as MainWindow;
+        MainWindow main_window = LatexilaApp.get_instance ().active_window as MainWindow;
 
         MessageDialog dialog = new MessageDialog (main_window,
             DialogFlags.DESTROY_WITH_PARENT,
@@ -256,7 +256,7 @@ public class Synctex : Object
                 return;
             }
 
-            MainWindow main_window = Latexila.get_instance ().active_window as MainWindow;
+            MainWindow main_window = LatexilaApp.get_instance ().active_window as MainWindow;
             main_window.jump_to_file_position (tex_file, pos.line - 1, pos.line);
             main_window.present_with_time (timestamp);
         });

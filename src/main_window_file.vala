@@ -135,7 +135,7 @@ public class MainWindowFile
 
     public void on_new_window ()
     {
-        Latexila.get_instance ().create_window ();
+        LatexilaApp.get_instance ().create_window ();
     }
 
     public void on_file_open ()
