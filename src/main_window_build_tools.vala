@@ -86,10 +86,12 @@ public class MainWindowBuildTools
         Latexila.BuildToolsPersonal personal_build_tools =
             Latexila.BuildToolsPersonal.get_instance ();
         personal_build_tools.modified.connect (() => update_menu ());
+        personal_build_tools.loaded.connect (() => update_menu ());
 
         Latexila.BuildToolsDefault default_build_tools =
             Latexila.BuildToolsDefault.get_instance ();
         default_build_tools.modified.connect (() => update_menu ());
+        default_build_tools.loaded.connect (() => update_menu ());
     }
 
     public void set_build_view (Latexila.BuildView build_view)
