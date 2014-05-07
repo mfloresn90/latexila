@@ -126,3 +126,9 @@ LATEXILA_TYPE_BUILD_VIEW
 LatexilaBuildViewPrivate
 latexila_build_view_get_type
 </SECTION>
+
+<SECTION>
+<FILE>utils</FILE>
+<TITLE>LatexilaUtils</TITLE>
+latexila_utils_replace_home_dir_with_tilde
+</SECTION>

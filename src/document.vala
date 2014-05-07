@@ -279,7 +279,7 @@ public class Document : Gtk.SourceBuffer
         if (location == null)
             return get_unsaved_document_name ();
 
-        return Utils.replace_home_dir_with_tilde (location.get_parse_name ());
+        return Latexila.utils_replace_home_dir_with_tilde (location.get_parse_name ());
     }
 
     public string get_short_name_for_display ()

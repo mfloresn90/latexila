@@ -14,7 +14,8 @@ liblatexila_headers =				\
 	latexila-build-view.h			\
 	latexila-post-processor.h		\
 	latexila-post-processor-all-output.h	\
-	latexila-types.h
+	latexila-types.h			\
+	latexila-utils.h
 
 BUILT_SOURCES =			\
 	latexila-enum-types.c	\
@@ -29,6 +30,7 @@ liblatexila_la_SOURCES = 			\
 	latexila-build-view.c			\
 	latexila-post-processor.c		\
 	latexila-post-processor-all-output.c	\
+	latexila-utils.c			\
 	$(liblatexila_headers)			\
 	$(BUILT_SOURCES)
 

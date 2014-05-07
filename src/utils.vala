@@ -71,24 +71,13 @@ namespace Utils
     /*************************************************************************/
     // URI, File or Path utilities
 
-    public string replace_home_dir_with_tilde (string uri)
-    {
-        return_val_if_fail (uri != null, null);
-        string home = Environment.get_home_dir ();
-        if (uri == home)
-            return "~";
-        if (uri.has_prefix (home))
-            return "~" + uri[home.length:uri.length];
-        return uri;
-    }
-
     public string? uri_get_dirname (string uri)
     {
         return_val_if_fail (uri != null, null);
         string dir = Path.get_dirname (uri);
         if (dir == ".")
             return null;
-        return replace_home_dir_with_tilde (dir);
+        return Latexila.utils_replace_home_dir_with_tilde (dir);
     }
 
     /* Returns a string suitable to be displayed in the UI indicating

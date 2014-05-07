@@ -17,20 +17,15 @@
  * along with LaTeXila.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __LATEXILA_H__
-#define __LATEXILA_H__
+#ifndef __LATEXILA_UTILS_H__
+#define __LATEXILA_UTILS_H__
 
-#include "latexila-types.h"
-#include "latexila-enum-types.h"
+#include <glib.h>
 
-#include "latexila-build-job.h"
-#include "latexila-build-tool.h"
-#include "latexila-build-tools.h"
-#include "latexila-build-tools-default.h"
-#include "latexila-build-tools-personal.h"
-#include "latexila-build-view.h"
-#include "latexila-post-processor.h"
-#include "latexila-post-processor-all-output.h"
-#include "latexila-utils.h"
+G_BEGIN_DECLS
 
-#endif /* __LATEXILA_H__ */
+gchar *         latexila_utils_replace_home_dir_with_tilde      (const gchar *filename);
+
+G_END_DECLS
+
+#endif /* __LATEXILA_UTILS_H__ */
