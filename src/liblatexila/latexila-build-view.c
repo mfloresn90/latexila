@@ -112,6 +112,56 @@ latexila_build_msg_free (LatexilaBuildMsg *build_msg)
     }
 }
 
+static const gchar *
+get_icon_name_from_state (LatexilaBuildState state)
+{
+  switch (state)
+    {
+    case LATEXILA_BUILD_STATE_RUNNING:
+      return "system-run";
+
+    case LATEXILA_BUILD_STATE_SUCCEEDED:
+      /* This stock item doesn't have an icon name replacement, but the stock-id
+       * works fine. For GTK+ 4 it will probably be removed, so we can copy the
+       * icon (at the good size) in the latexila sources.
+       */
+      G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+      return GTK_STOCK_APPLY;
+      G_GNUC_END_IGNORE_DEPRECATIONS
+
+    case LATEXILA_BUILD_STATE_FAILED:
+      return "dialog-error";
+
+    case LATEXILA_BUILD_STATE_ABORTED:
+      return "process-stop";
+
+    default:
+      g_return_val_if_reached (NULL);
+    }
+}
+
+static const gchar *
+get_icon_name_from_msg_type (LatexilaBuildMsgType type)
+{
+  switch (type)
+    {
+    case LATEXILA_BUILD_MSG_TYPE_JOB_SUB_COMMAND:
+      return "latexila-gray-square";
+
+    case LATEXILA_BUILD_MSG_TYPE_ERROR:
+      return "dialog-error";
+
+    case LATEXILA_BUILD_MSG_TYPE_WARNING:
+      return "dialog-warning";
+
+    case LATEXILA_BUILD_MSG_TYPE_BADBOX:
+      return "latexila-badbox";
+
+    default:
+      return NULL;
+    }
+}
+
 static void
 latexila_build_view_get_property (GObject    *object,
                                   guint       prop_id,
@@ -311,7 +361,7 @@ init_tree_models (LatexilaBuildView *build_view)
   g_assert (build_view->priv->store == NULL);
 
   build_view->priv->store = gtk_tree_store_new (NB_COLUMNS,
-                                                GDK_TYPE_PIXBUF,  /* icon */
+                                                G_TYPE_STRING,    /* icon name */
                                                 G_TYPE_STRING,    /* message */
                                                 LATEXILA_TYPE_BUILD_MSG_TYPE,
                                                 G_TYPE_INT,       /* weight (normal or bold) */
@@ -428,7 +478,7 @@ init_tree_view (LatexilaBuildView *build_view)
 
   renderer = gtk_cell_renderer_pixbuf_new ();
   gtk_tree_view_column_pack_start (column, renderer, FALSE);
-  gtk_tree_view_column_add_attribute (column, renderer, "pixbuf", COLUMN_ICON);
+  gtk_tree_view_column_add_attribute (column, renderer, "icon-name", COLUMN_ICON);
 
   renderer = gtk_cell_renderer_text_new ();
   g_object_set (renderer,
@@ -529,7 +579,7 @@ add_title (LatexilaBuildView    *build_view,
 
   gtk_tree_store_append (build_view->priv->store, &iter, NULL);
   gtk_tree_store_set (build_view->priv->store, &iter,
-                      COLUMN_ICON, NULL, /* TODO */
+                      COLUMN_ICON, get_icon_name_from_state (state),
                       COLUMN_MESSAGE, message,
                       COLUMN_MESSAGE_TYPE, type,
                       COLUMN_WEIGHT, bold ? 800 : 400,
@@ -597,7 +647,7 @@ latexila_build_view_set_title_state (LatexilaBuildView  *build_view,
   g_return_if_fail (title_id != NULL);
 
   gtk_tree_store_set (build_view->priv->store, title_id,
-                      COLUMN_ICON, NULL, /* TODO */
+                      COLUMN_ICON, get_icon_name_from_state (state),
                       -1);
 }
 
@@ -649,7 +699,7 @@ latexila_build_view_append_single_message (LatexilaBuildView *build_view,
 
   gtk_tree_store_append (build_view->priv->store, &iter, parent);
   gtk_tree_store_set (build_view->priv->store, &iter,
-                      COLUMN_ICON, NULL, /* TODO */
+                      COLUMN_ICON, get_icon_name_from_msg_type (message->type),
                       COLUMN_MESSAGE, message->text,
                       COLUMN_MESSAGE_TYPE, message->type,
                       COLUMN_WEIGHT, 400,

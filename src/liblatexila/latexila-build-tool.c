@@ -453,4 +453,8 @@ latexila_build_tool_run (LatexilaBuildTool *build_tool,
   latexila_build_view_add_main_title (build_view,
                                       build_tool->priv->label,
                                       LATEXILA_BUILD_STATE_RUNNING);
+
+  latexila_build_view_add_job_title (build_view,
+                                     "job",
+                                     LATEXILA_BUILD_STATE_SUCCEEDED);
 }
