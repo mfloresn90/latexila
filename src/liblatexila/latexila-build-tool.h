@@ -62,9 +62,15 @@ GList *               latexila_build_tool_get_jobs                  (LatexilaBui
 
 gchar *               latexila_build_tool_to_xml                    (LatexilaBuildTool *tool);
 
-void                  latexila_build_tool_run                       (LatexilaBuildTool *build_tool,
-                                                                     GFile             *file,
-                                                                     LatexilaBuildView *build_view);
+void                  latexila_build_tool_run_async                 (LatexilaBuildTool   *build_tool,
+                                                                     GFile               *file,
+                                                                     LatexilaBuildView   *build_view,
+                                                                     GCancellable        *cancellable,
+                                                                     GAsyncReadyCallback  callback,
+                                                                     gpointer             user_data);
+
+void                  latexila_build_tool_run_finish                (LatexilaBuildTool *build_tool,
+                                                                     GAsyncResult      *result);
 
 G_END_DECLS
 

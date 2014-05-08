@@ -20,7 +20,7 @@
 #ifndef __LATEXILA_BUILD_JOB_H__
 #define __LATEXILA_BUILD_JOB_H__
 
-#include <glib-object.h>
+#include <gio/gio.h>
 #include "latexila-types.h"
 #include "latexila-post-processor.h"
 
@@ -55,6 +55,16 @@ LatexilaBuildJob *  latexila_build_job_new                        (void);
 LatexilaBuildJob *  latexila_build_job_clone                      (LatexilaBuildJob *build_job);
 
 gchar *             latexila_build_job_to_xml                     (LatexilaBuildJob *build_job);
+
+void                latexila_build_job_run_async                  (LatexilaBuildJob    *build_job,
+                                                                   GFile               *file,
+                                                                   LatexilaBuildView   *build_view,
+                                                                   GCancellable        *cancellable,
+                                                                   GAsyncReadyCallback  callback,
+                                                                   gpointer             user_data);
+
+gboolean            latexila_build_job_run_finish                 (LatexilaBuildJob *build_job,
+                                                                   GAsyncResult     *result);
 
 G_END_DECLS
 

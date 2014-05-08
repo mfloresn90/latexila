@@ -57,6 +57,7 @@ public class MainWindowBuildTools
     private UIManager _ui_manager;
     private Latexila.BuildView _build_view;
     private BottomPanel _bottom_panel;
+    private Cancellable? _cancellable;
 
     private Gtk.ActionGroup _static_action_group;
     private Gtk.ActionGroup _dynamic_action_group;
@@ -355,13 +356,13 @@ public class MainWindowBuildTools
         stop_exec.sensitive = true;
 
         File main_file = active_doc.get_main_file ();
-        tool.run (main_file, _build_view);
-        /* TODO port this code. */
-        /*
-        _build_tool_runner = new BuildToolRunner (tool, main_file, _build_view);
-        _build_tool_runner.finished.connect (() => stop_exec.sensitive = false);
-        _build_tool_runner.run ();
-        */
+        _cancellable = new Cancellable ();
+        tool.run_async.begin (main_file, _build_view, _cancellable, (obj, result) =>
+        {
+            tool.run_async.end (result);
+            _cancellable = null;
+            stop_exec.sensitive = false;
+        });
     }
 
     private void connect_toggle_actions ()
@@ -408,11 +409,8 @@ public class MainWindowBuildTools
 
     public void on_stop_execution ()
     {
-        /* TODO port this code. */
-        /*
-        return_if_fail (_build_tool_runner != null);
-        _build_tool_runner.abort ();
-        */
+        return_if_fail (_cancellable != null);
+        _cancellable.cancel ();
     }
 
     public void on_clean ()

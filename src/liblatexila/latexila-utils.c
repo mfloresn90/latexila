@@ -201,3 +201,39 @@ latexila_utils_register_icons (void)
 
   g_strfreev (icon_files);
 }
+
+/**
+ * latexila_utils_str_replace:
+ * @string: a string
+ * @search: the search string
+ * @replacement: the replacement string
+ *
+ * Replaces all occurences of @search by @replacement.
+ *
+ * Returns: A newly allocated string with the replacements. Free with g_free().
+ */
+gchar *
+latexila_utils_str_replace (const gchar *string,
+                            const gchar *search,
+                            const gchar *replacement)
+{
+  gchar **chunks;
+  gchar *ret;
+
+  g_return_val_if_fail (string != NULL, NULL);
+  g_return_val_if_fail (search != NULL, NULL);
+  g_return_val_if_fail (replacement != NULL, NULL);
+
+  chunks = g_strsplit (string, search, -1);
+  if (chunks != NULL && chunks[0] != NULL)
+    {
+      ret = g_strjoinv (replacement, chunks);
+    }
+  else
+    {
+      ret = g_strdup (string);
+    }
+
+  g_strfreev (chunks);
+  return ret;
+}

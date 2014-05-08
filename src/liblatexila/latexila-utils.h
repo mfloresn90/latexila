@@ -30,6 +30,10 @@ gchar *         latexila_utils_replace_home_dir_with_tilde      (const gchar *fi
 
 void            latexila_utils_register_icons                   (void);
 
+gchar *         latexila_utils_str_replace                      (const gchar *string,
+                                                                 const gchar *search,
+                                                                 const gchar *replacement);
+
 G_END_DECLS
 
 #endif /* __LATEXILA_UTILS_H__ */

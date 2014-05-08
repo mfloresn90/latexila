@@ -565,6 +565,9 @@ latexila_build_view_clear (LatexilaBuildView *build_view)
   gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
 
   gtk_tree_view_columns_autosize (GTK_TREE_VIEW (build_view));
+
+  build_view->priv->has_details = FALSE;
+  g_object_notify (G_OBJECT (build_view), "has-details");
 }
 
 static GtkTreeIter
@@ -711,7 +714,11 @@ latexila_build_view_append_single_message (LatexilaBuildView *build_view,
                       COLUMN_LINE_STR, line_str,
                       -1);
 
-  g_object_unref (file);
+  if (file != NULL)
+    {
+      g_object_unref (file);
+    }
+
   g_free (path);
   g_free (basename);
   g_free (line_str);

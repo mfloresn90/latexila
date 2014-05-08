@@ -63,6 +63,28 @@ test_replace_home_dir_with_tilde (void)
   g_free (after);
 }
 
+static void
+test_str_replace (void)
+{
+  gchar *result;
+
+  result = latexila_utils_str_replace ("$filename", "$filename", "blah");
+  g_assert_cmpstr (result, ==, "blah");
+  g_free (result);
+
+  result = latexila_utils_str_replace ("$shortname.pdf", "$shortname", "blah");
+  g_assert_cmpstr (result, ==, "blah.pdf");
+  g_free (result);
+
+  result = latexila_utils_str_replace ("abcdabcd", "ab", "r");
+  g_assert_cmpstr (result, ==, "rcdrcd");
+  g_free (result);
+
+  result = latexila_utils_str_replace ("abcd", "ef", "r");
+  g_assert_cmpstr (result, ==, "abcd");
+  g_free (result);
+}
+
 gint
 main (gint    argc,
       gchar **argv)
@@ -71,6 +93,7 @@ main (gint    argc,
 
   g_test_add_func ("/utils/get-shortname", test_get_shortname);
   g_test_add_func ("/utils/replace-home-dir-with-tilde", test_replace_home_dir_with_tilde);
+  g_test_add_func ("/utils/str-replace", test_str_replace);
 
   return g_test_run ();
 }

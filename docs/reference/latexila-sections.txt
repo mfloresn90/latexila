@@ -67,7 +67,8 @@ latexila_build_tool_add_job
 latexila_build_tool_get_jobs
 latexila_build_tool_get_description
 latexila_build_tool_to_xml
-latexila_build_tool_run
+latexila_build_tool_run_async
+latexila_build_tool_run_finish
 <SUBSECTION Standard>
 LATEXILA_BUILD_TOOL
 LATEXILA_BUILD_TOOL_CLASS
@@ -87,6 +88,8 @@ LatexilaBuildJob
 latexila_build_job_new
 latexila_build_job_clone
 latexila_build_job_to_xml
+latexila_build_job_run_async
+latexila_build_job_run_finish
 <SUBSECTION Standard>
 LATEXILA_BUILD_JOB
 LATEXILA_BUILD_JOB_CLASS
@@ -133,4 +136,5 @@ latexila_build_view_get_type
 latexila_utils_get_shortname
 latexila_utils_replace_home_dir_with_tilde
 latexila_utils_register_icons
+latexila_utils_str_replace
 </SECTION>
