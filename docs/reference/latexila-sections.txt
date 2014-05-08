@@ -130,5 +130,7 @@ latexila_build_view_get_type
 <SECTION>
 <FILE>utils</FILE>
 <TITLE>LatexilaUtils</TITLE>
+latexila_utils_get_shortname
 latexila_utils_replace_home_dir_with_tilde
+latexila_utils_register_icons
 </SECTION>

@@ -24,7 +24,11 @@
 
 G_BEGIN_DECLS
 
+gchar *         latexila_utils_get_shortname                    (const gchar *filename);
+
 gchar *         latexila_utils_replace_home_dir_with_tilde      (const gchar *filename);
+
+void            latexila_utils_register_icons                   (void);
 
 G_END_DECLS
 
