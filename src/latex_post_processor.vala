@@ -102,7 +102,7 @@ private class LatexPostProcessor : PostProcessor
             reg_badbox_lines = new Regex ("(.*) at lines (\\d+)--(\\d+)");
             reg_badbox_line = new Regex ("(.*) at line (\\d+)");
             reg_badbox_output =
-                new Regex ("(.*)has occurred while \\output is active");
+                new Regex ("(.*)has occurred while \\\\output is active");
 
             string warning_str = "^(((! )?(La|pdf)TeX)|Package|Class)";
             warning_str += "(?P<name>.*) Warning[^:]*:\\s*(?P<contents>.*)";
