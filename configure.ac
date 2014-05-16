@@ -75,6 +75,7 @@ AC_PROG_INSTALL
 AM_PROG_CC_C_O
 AC_PATH_PROG([GLIB_COMPILE_RESOURCES], [glib-compile-resources])
 AC_PATH_PROG([GLIB_MKENUMS], [glib-mkenums])
+AC_PATH_PROG([GDBUS_CODEGEN], [gdbus-codegen])
 AM_PROG_VALAC([${VALA_REQUIRED_VERSION}],
               [found_vala=true]
 	      [found_vala=false])
@@ -168,6 +169,7 @@ AC_CONFIG_FILES([Makefile
 		 man/Makefile
 		 po/Makefile.in
                  src/Makefile
+		 src/evince/Makefile
 		 src/gedit/Makefile
 		 src/liblatexila/Makefile
 		 src/ui/Makefile

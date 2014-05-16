@@ -237,3 +237,56 @@ latexila_utils_str_replace (const gchar *string,
   g_strfreev (chunks);
   return ret;
 }
+
+/**
+ * latexila_utils_file_query_exists_async:
+ * @file: a #GFile.
+ * @cancellable: a #GCancellable.
+ * @callback: the callback to call when the operation is finished.
+ * @user_data: the data to pass to the callback function.
+ *
+ * The asynchronous version of g_file_query_exists(). When the operation is
+ * finished, @callback will be called. You can then call
+ * latexila_utils_file_query_exists_finish() to get the result of the operation.
+ */
+void
+latexila_utils_file_query_exists_async (GFile               *file,
+                                        GCancellable        *cancellable,
+                                        GAsyncReadyCallback  callback,
+                                        gpointer             user_data)
+{
+  g_file_query_info_async (file,
+                           G_FILE_ATTRIBUTE_STANDARD_TYPE,
+                           G_FILE_QUERY_INFO_NONE,
+                           G_PRIORITY_DEFAULT,
+                           cancellable,
+                           callback,
+                           user_data);
+}
+
+/**
+ * latexila_utils_file_query_exists_finish:
+ * @file: a #GFile.
+ * @result: a #GAsyncResult.
+ *
+ * Finishes the operation started with latexila_utils_file_query_exists_async().
+ * There is no output #GError parameter, so you should check if the operation
+ * has been cancelled (in which case %FALSE will be returned).
+ *
+ * Returns: %TRUE if the file exists and the operation hasn't been cancelled,
+ * %FALSE otherwise.
+ */
+gboolean
+latexila_utils_file_query_exists_finish (GFile        *file,
+                                         GAsyncResult *result)
+{
+  GFileInfo *info = g_file_query_info_finish (file, result, NULL);
+
+  if (info != NULL)
+    {
+      g_object_unref (info);
+      return TRUE;
+    }
+
+  return FALSE;
+}

@@ -131,10 +131,33 @@ latexila_build_view_get_type
 </SECTION>
 
 <SECTION>
+<FILE>synctex</FILE>
+<TITLE>LatexilaSynctex</TITLE>
+LatexilaSynctex
+latexila_synctex_get_instance
+latexila_synctex_connect_evince_window
+latexila_synctex_connect_evince_window_async
+latexila_synctex_connect_evince_window_finish
+latexila_synctex_forward_search
+<SUBSECTION Standard>
+LATEXILA_IS_SYNCTEX
+LATEXILA_IS_SYNCTEX_CLASS
+LATEXILA_SYNCTEX
+LATEXILA_SYNCTEX_CLASS
+LATEXILA_SYNCTEX_GET_CLASS
+LATEXILA_TYPE_SYNCTEX
+LatexilaSynctexClass
+LatexilaSynctexPrivate
+latexila_synctex_get_type
+</SECTION>
+
+<SECTION>
 <FILE>utils</FILE>
 <TITLE>LatexilaUtils</TITLE>
 latexila_utils_get_shortname
 latexila_utils_replace_home_dir_with_tilde
 latexila_utils_register_icons
 latexila_utils_str_replace
+latexila_utils_file_query_exists_async
+latexila_utils_file_query_exists_finish
 </SECTION>

@@ -1,4 +1,4 @@
-SUBDIRS = gedit liblatexila ui
+SUBDIRS = evince gedit liblatexila ui
 
 bin_PROGRAMS = latexila
 

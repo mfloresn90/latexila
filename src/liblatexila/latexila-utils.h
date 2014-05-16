@@ -20,7 +20,7 @@
 #ifndef __LATEXILA_UTILS_H__
 #define __LATEXILA_UTILS_H__
 
-#include <glib.h>
+#include <gio/gio.h>
 
 G_BEGIN_DECLS
 
@@ -33,6 +33,14 @@ void            latexila_utils_register_icons                   (void);
 gchar *         latexila_utils_str_replace                      (const gchar *string,
                                                                  const gchar *search,
                                                                  const gchar *replacement);
+
+void            latexila_utils_file_query_exists_async          (GFile               *file,
+                                                                 GCancellable        *cancellable,
+                                                                 GAsyncReadyCallback  callback,
+                                                                 gpointer             user_data);
+
+gboolean        latexila_utils_file_query_exists_finish         (GFile        *file,
+                                                                 GAsyncResult *result);
 
 G_END_DECLS
 

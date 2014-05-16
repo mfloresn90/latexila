@@ -2,10 +2,16 @@
 
 noinst_LTLIBRARIES = liblatexila.la
 
-liblatexila_la_CFLAGS = $(WARN_CFLAGS) $(CODE_COVERAGE_CFLAGS)
+liblatexila_la_CFLAGS =			\
+	$(WARN_CFLAGS)			\
+	$(CODE_COVERAGE_CFLAGS)		\
+	-I$(top_builddir)/src/evince
+
 liblatexila_la_LDFLAGS = $(CODE_COVERAGE_LDFLAGS)
+liblatexila_la_LIBADD = ../evince/libevince.la
 
 liblatexila_headers =				\
+	latexila.h				\
 	latexila-build-job.h			\
 	latexila-build-tool.h			\
 	latexila-build-tools.h			\
@@ -14,14 +20,11 @@ liblatexila_headers =				\
 	latexila-build-view.h			\
 	latexila-post-processor.h		\
 	latexila-post-processor-all-output.h	\
+	latexila-synctex.h			\
 	latexila-types.h			\
 	latexila-utils.h
 
-BUILT_SOURCES =			\
-	latexila-enum-types.c	\
-	latexila-enum-types.h
-
-liblatexila_la_SOURCES = 			\
+liblatexila_sources =				\
 	latexila-build-job.c			\
 	latexila-build-tool.c			\
 	latexila-build-tools.c			\
@@ -30,9 +33,20 @@ liblatexila_la_SOURCES = 			\
 	latexila-build-view.c			\
 	latexila-post-processor.c		\
 	latexila-post-processor-all-output.c	\
-	latexila-utils.c			\
-	$(liblatexila_headers)			\
-	$(BUILT_SOURCES)
+	latexila-synctex.c			\
+	latexila-utils.c
+
+liblatexila_built_sources =	\
+	latexila-enum-types.c	\
+	latexila-enum-types.h
+
+liblatexila_la_SOURCES = 		\
+	$(liblatexila_headers)		\
+	$(liblatexila_sources)
+
+nodist_liblatexila_la_SOURCES = $(liblatexila_built_sources)
+
+BUILT_SOURCES = $(liblatexila_built_sources)
 
 ENUM_TYPES = $(liblatexila_headers)
 
@@ -64,7 +78,7 @@ Latexila.gir: liblatexila.la
 Latexila_gir_NAMESPACE = Latexila
 Latexila_gir_INCLUDES = Gtk-3.0
 Latexila_gir_LIBS = liblatexila.la
-Latexila_gir_FILES = $(liblatexila_la_SOURCES)
+Latexila_gir_FILES = $(liblatexila_la_SOURCES) $(nodist_liblatexila_la_SOURCES)
 
 noinst_DATA += Latexila.gir Latexila.typelib
 CLEANFILES += Latexila.gir Latexila.typelib

@@ -495,13 +495,12 @@ query_exists_cb (GFile             *file,
                  GAsyncResult      *result,
                  LatexilaBuildTool *build_tool)
 {
-  GFileInfo *info;
-  GCancellable *cancellable;
   gboolean file_exists;
+  GCancellable *cancellable;
   gchar *uri = NULL;
   GError *error = NULL;
 
-  info = g_file_query_info_finish (file, result, NULL);
+  file_exists = latexila_utils_file_query_exists_finish (file, result);
 
   cancellable = g_task_get_cancellable (build_tool->priv->task);
   if (g_cancellable_is_cancelled (cancellable))
@@ -512,9 +511,6 @@ query_exists_cb (GFile             *file,
       failed (build_tool);
       goto out;
     }
-
-  file_exists = info != NULL;
-  g_clear_object (&info);
 
   uri = g_file_get_uri (file);
 
@@ -660,13 +656,10 @@ open_file (LatexilaBuildTool *build_tool)
 
   file = g_file_new_for_uri (uri);
 
-  g_file_query_info_async (file,
-                           G_FILE_ATTRIBUTE_STANDARD_TYPE,
-                           G_FILE_QUERY_INFO_NONE,
-                           G_PRIORITY_DEFAULT,
-                           g_task_get_cancellable (build_tool->priv->task),
-                           (GAsyncReadyCallback) query_exists_cb,
-                           build_tool);
+  latexila_utils_file_query_exists_async (file,
+                                          g_task_get_cancellable (build_tool->priv->task),
+                                          (GAsyncReadyCallback) query_exists_cb,
+                                          build_tool);
 
   g_free (filename);
   g_free (shortname);

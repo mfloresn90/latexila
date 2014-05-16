@@ -32,6 +32,7 @@ typedef struct _LatexilaBuildToolsPersonal      LatexilaBuildToolsPersonal;
 typedef struct _LatexilaBuildView               LatexilaBuildView;
 typedef struct _LatexilaPostProcessor           LatexilaPostProcessor;
 typedef struct _LatexilaPostProcessorAllOutput  LatexilaPostProcessorAllOutput;
+typedef struct _LatexilaSynctex                 LatexilaSynctex;
 
 G_END_DECLS
 
