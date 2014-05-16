@@ -106,12 +106,6 @@ namespace Utils
         }
     }
 
-    // get filename without extension (without the dot)
-    public string get_shortname (string path)
-    {
-        return path[0:get_extension_pos (path)];
-    }
-
     // get file's extension (with the dot)
     public string get_extension (string path)
     {

@@ -89,7 +89,7 @@ public class CleanBuildFiles : GLib.Object
         string exts = _settings.get_string ("clean-extensions");
         string[] extensions = exts.split (" ");
 
-        string shortname = Utils.get_shortname (location.get_basename ());
+        string shortname = Latexila.utils_get_shortname (location.get_basename ());
 
         Gee.ArrayList<File> files_to_delete = new Gee.ArrayList<File> ();
 

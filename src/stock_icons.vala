@@ -83,7 +83,7 @@ public class StockIcons
             icon_source.set_pixbuf (pixbuf);
             icon_set.add_source (icon_source);
 
-            string icon_name = Utils.get_shortname (icon_file);
+            string icon_name = Latexila.utils_get_shortname (icon_file);
             icon_factory.add (icon_name, icon_set);
         }
 

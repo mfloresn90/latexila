@@ -92,7 +92,7 @@ public class Synctex : Object
             return;
         }
 
-        string synctex_uri = Utils.get_shortname (pdf_uri) + ".synctex.gz";
+        string synctex_uri = Latexila.utils_get_shortname (pdf_uri) + ".synctex.gz";
         File synctex_file = File.new_for_uri (synctex_uri);
         if (! synctex_file.query_exists ())
         {
@@ -153,7 +153,7 @@ public class Synctex : Object
             return null;
 
         string uri = main_file.get_uri ();
-        return Utils.get_shortname (uri) + ".pdf";
+        return Latexila.utils_get_shortname (uri) + ".pdf";
     }
 
     private EvinceWindow? get_evince_window (string pdf_uri)
