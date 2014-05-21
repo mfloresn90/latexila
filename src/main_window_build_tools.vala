@@ -195,7 +195,7 @@ public class MainWindowBuildTools
         }
 
         string path = active_doc.get_main_file ().get_parse_name ();
-        string ext = Utils.get_extension (path);
+        string ext = Latexila.utils_get_extension (path);
 
         string[] extensions = tool.extensions.split (" ");
         bool sensitive = tool.extensions.length == 0 || ext in extensions;

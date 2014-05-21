@@ -175,7 +175,7 @@ public class FileBrowser : Grid
                 return;
             }
 
-            string extension = Utils.get_extension (basename);
+            string extension = Latexila.utils_get_extension (basename);
             if (extension != ".dvi" &&
                 extension != ".pdf" &&
                 extension != ".ps")
@@ -435,7 +435,7 @@ public class FileBrowser : Grid
                     continue;
             }
 
-            string extension = Utils.get_extension (basename);
+            string extension = Latexila.utils_get_extension (basename);
             string stock_id = get_extension_stock_id (extension);
             insert_file (false, stock_id, basename);
         }

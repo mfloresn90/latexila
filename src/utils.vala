@@ -106,27 +106,6 @@ namespace Utils
         }
     }
 
-    // get file's extension (with the dot)
-    public string get_extension (string path)
-    {
-        return path[get_extension_pos (path):path.length].down ();
-    }
-
-    private long get_extension_pos (string path)
-    {
-        long l = path.length;
-
-        for (long i = l - 1 ; i >= 0 ; i--)
-        {
-            if (path[i] == '/')
-                return l;
-            else if (path[i] == '.')
-                return i;
-        }
-
-        return l;
-    }
-
     public void delete_file (File file)
     {
         if (! file.query_exists ())
