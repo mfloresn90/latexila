@@ -712,7 +712,7 @@ public class Structure : Grid
     {
         try
         {
-            Utils.show_uri (get_screen (), referenced_file.get_uri ());
+            Latexila.utils_show_uri (get_screen (), referenced_file.get_uri ());
         }
         catch (Error e)
         {

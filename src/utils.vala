@@ -183,7 +183,7 @@ namespace Utils
         return true;
     }
 
-    // Retruns null on error.
+    // Returns null on error.
     public string? load_file (File file)
     {
         try
@@ -266,39 +266,6 @@ namespace Utils
         // add the target basename
         relative_path += target.get_basename ();
         return relative_path;
-    }
-
-    public void show_uri (Gdk.Screen? screen, string uri) throws Error
-    {
-        if (! Gtk.show_uri (screen, uri, Gdk.CURRENT_TIME))
-            return;
-
-        // Backward search for PDF documents.
-        if (get_extension (uri) == ".pdf" &&
-            default_document_viewer_is_evince (uri))
-        {
-            Synctex synctex = Synctex.get_default ();
-            synctex.create_evince_window (uri);
-        }
-    }
-
-    private bool default_document_viewer_is_evince (string uri)
-    {
-        File file = File.new_for_uri (uri);
-        AppInfo app;
-
-        try
-        {
-            app = file.query_default_handler ();
-        }
-        catch (Error e)
-        {
-            warning ("Impossible to know if evince is the default document viewer: %s",
-                e.message);
-            return false;
-        }
-
-        return app.get_executable ().contains ("evince");
     }
 
 

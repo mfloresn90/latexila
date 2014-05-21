@@ -1139,8 +1139,9 @@ public class MainWindow : Window
     {
         return_if_fail (active_tab != null);
 
-        Synctex synctex = Synctex.get_default ();
-        synctex.forward_search (active_document);
+        Latexila.Synctex synctex = Latexila.Synctex.get_instance ();
+        synctex.forward_search (active_document, active_document.location,
+            active_document.get_main_file ());
     }
 
     /* Projects */

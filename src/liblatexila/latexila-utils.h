@@ -20,11 +20,13 @@
 #ifndef __LATEXILA_UTILS_H__
 #define __LATEXILA_UTILS_H__
 
-#include <gio/gio.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
 gchar *         latexila_utils_get_shortname                    (const gchar *filename);
+
+gchar *         latexila_utils_get_extension                    (const gchar *filename);
 
 gchar *         latexila_utils_replace_home_dir_with_tilde      (const gchar *filename);
 
@@ -41,6 +43,10 @@ void            latexila_utils_file_query_exists_async          (GFile          
 
 gboolean        latexila_utils_file_query_exists_finish         (GFile        *file,
                                                                  GAsyncResult *result);
+
+void            latexila_utils_show_uri                         (GdkScreen    *screen,
+                                                                 const gchar  *uri,
+                                                                 GError      **error);
 
 G_END_DECLS
 

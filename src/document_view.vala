@@ -203,8 +203,9 @@ public class DocumentView : Gtk.SourceView
         if (event.button == 1 &&
             Gdk.ModifierType.CONTROL_MASK in event.state)
         {
-            Synctex synctex = Synctex.get_default ();
-            synctex.forward_search (this.buffer as Document);
+            Latexila.Synctex synctex = Latexila.Synctex.get_instance ();
+            Document doc = this.buffer as Document;
+            synctex.forward_search (this.buffer, doc.location, doc.get_main_file ());
         }
 
         // propagate the event further

@@ -52,7 +52,6 @@ vala_files =				\
 	structure.vala			\
 	symbols.vala			\
 	symbols_view.vala		\
-	synctex.vala			\
 	tab_info_bar.vala		\
 	templates_dialogs.vala		\
 	templates.vala			\

@@ -50,7 +50,6 @@ src/structure_model.vala
 src/structure.vala
 src/symbols.vala
 src/symbols_view.vala
-src/synctex.vala
 src/tab_info_bar.vala
 src/templates_dialogs.vala
 src/templates.vala

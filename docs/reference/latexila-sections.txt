@@ -155,9 +155,11 @@ latexila_synctex_get_type
 <FILE>utils</FILE>
 <TITLE>LatexilaUtils</TITLE>
 latexila_utils_get_shortname
+latexila_utils_get_extension
 latexila_utils_replace_home_dir_with_tilde
 latexila_utils_register_icons
 latexila_utils_str_replace
 latexila_utils_file_query_exists_async
 latexila_utils_file_query_exists_finish
+latexila_utils_show_uri
 </SECTION>

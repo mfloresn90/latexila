@@ -31,8 +31,8 @@
  */
 
 #include "latexila-utils.h"
-#include <gtk/gtk.h>
 #include <string.h>
+#include "latexila-synctex.h"
 
 static gint
 get_extension_position (const gchar *filename)
@@ -77,6 +77,20 @@ gchar *
 latexila_utils_get_shortname (const gchar *filename)
 {
   return g_strndup (filename, get_extension_position (filename));
+}
+
+/**
+ * latexila_utils_get_extension:
+ * @filename: a filename.
+ *
+ * Returns: the @filename's extension with the dot, in lowercase. Free with
+ * g_free().
+ */
+gchar *
+latexila_utils_get_extension (const gchar *filename)
+{
+  gint pos = get_extension_position (filename);
+  return g_ascii_strdown (filename + pos, -1);
 }
 
 /**
@@ -289,4 +303,66 @@ latexila_utils_file_query_exists_finish (GFile        *file,
     }
 
   return FALSE;
+}
+
+static gboolean
+default_document_viewer_is_evince (const gchar *uri)
+{
+  GFile *file;
+  GAppInfo *app_info;
+  const gchar *executable;
+  gboolean ret;
+  GError *error = NULL;
+
+  file = g_file_new_for_uri (uri);
+  app_info = g_file_query_default_handler (file, NULL, &error);
+  g_object_unref (file);
+
+  if (error != NULL)
+    {
+      g_warning ("Impossible to know if evince is the default document viewer: %s",
+                 error->message);
+
+      g_error_free (error);
+      return FALSE;
+    }
+
+  executable = g_app_info_get_executable (app_info);
+  ret = strstr (executable, "evince") != NULL;
+
+  g_object_unref (app_info);
+  return ret;
+}
+
+/**
+ * latexila_utils_show_uri:
+ * @screen: (nullable): a #GdkScreen, or %NULL.
+ * @uri: the URI to show
+ * @error: (out) (optional): a %NULL #GError, or %NULL.
+ *
+ * Shows the @uri. If the URI is a PDF file and if Evince is the default
+ * document viewer, this function also connects the Evince window so the
+ * backward search works (switch from the PDF to the source file).
+ */
+void
+latexila_utils_show_uri (GdkScreen    *screen,
+                         const gchar  *uri,
+                         GError      **error)
+{
+  g_return_if_fail (uri != NULL);
+  g_return_if_fail (error == NULL || *error == NULL);
+
+  if (gtk_show_uri (screen, uri, GDK_CURRENT_TIME, error))
+    {
+      gchar *extension = latexila_utils_get_extension (uri);
+
+      if (g_strcmp0 (extension, ".pdf") == 0 &&
+          default_document_viewer_is_evince (uri))
+        {
+          LatexilaSynctex *synctex = latexila_synctex_get_instance ();
+          latexila_synctex_connect_evince_window (synctex, uri);
+        }
+
+      g_free (extension);
+    }
 }
