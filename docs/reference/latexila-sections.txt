@@ -136,8 +136,6 @@ latexila_build_view_get_type
 LatexilaSynctex
 latexila_synctex_get_instance
 latexila_synctex_connect_evince_window
-latexila_synctex_connect_evince_window_async
-latexila_synctex_connect_evince_window_finish
 latexila_synctex_forward_search
 <SUBSECTION Standard>
 LATEXILA_IS_SYNCTEX

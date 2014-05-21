@@ -254,7 +254,7 @@ window_proxy_cb (GObject      *object,
 
   data->pdf_uri = NULL;
 
-  /* latexila_synctex_connect_evince_window_async() is finally finished! */
+  /* connect_evince_window_async() is finally finished! */
   g_task_return_boolean (task, TRUE);
   g_object_unref (task);
 }
@@ -389,25 +389,11 @@ daemon_proxy_cb (GObject      *object,
                                     task);
 }
 
-/**
- * latexila_synctex_connect_evince_window_async:
- * @synctex: the #LatexilaSynctex instance.
- * @pdf_uri: the PDF URI
- * @callback: the callback to call when the operation is finished.
- * @user_data: the data to pass to the callback function.
- *
- * Connects asynchronously the evince window for @pdf_uri. LaTeXila will then
- * listen the signals emitted by the evince window when the user wants to switch
- * from the PDF to the corresponding *.tex file.
- *
- * The callback will be called when the operation is finished. You can then call
- * latexila_synctex_connect_evince_window_finish().
- */
-void
-latexila_synctex_connect_evince_window_async (LatexilaSynctex     *synctex,
-                                              const gchar         *pdf_uri,
-                                              GAsyncReadyCallback  callback,
-                                              gpointer             user_data)
+static void
+connect_evince_window_async (LatexilaSynctex     *synctex,
+                             const gchar         *pdf_uri,
+                             GAsyncReadyCallback  callback,
+                             gpointer             user_data)
 {
   GTask *task;
   ConnectEvinceWindowData *data;
@@ -438,17 +424,9 @@ latexila_synctex_connect_evince_window_async (LatexilaSynctex     *synctex,
                                    task);
 }
 
-/**
- * latexila_synctex_connect_evince_window_finish:
- * @synctex: the #LatexilaSynctex instance.
- * @result: a #GAsyncResult.
- *
- * Finishes the operation started with
- * latexila_synctex_connect_evince_window_async().
- */
-void
-latexila_synctex_connect_evince_window_finish (LatexilaSynctex *synctex,
-                                               GAsyncResult    *result)
+static void
+connect_evince_window_finish (LatexilaSynctex *synctex,
+                              GAsyncResult    *result)
 {
   g_return_if_fail (g_task_is_valid (result, synctex));
 
@@ -460,17 +438,18 @@ latexila_synctex_connect_evince_window_finish (LatexilaSynctex *synctex,
  * @synctex: the #LatexilaSynctex instance.
  * @pdf_uri: the PDF URI.
  *
- * Simple version of latexila_synctex_connect_evince_window_async().
- * This function is also asynchronous, but without callback.
+ * Connects asynchronously the evince window for @pdf_uri. LaTeXila will then
+ * listen the signals emitted by the evince window when the user wants to switch
+ * from the PDF to the corresponding *.tex file.
  */
 void
 latexila_synctex_connect_evince_window (LatexilaSynctex *synctex,
                                         const gchar     *pdf_uri)
 {
-  latexila_synctex_connect_evince_window_async (synctex,
-                                                pdf_uri,
-                                                (GAsyncReadyCallback) latexila_synctex_connect_evince_window_finish,
-                                                NULL);
+  connect_evince_window_async (synctex,
+                               pdf_uri,
+                               (GAsyncReadyCallback) connect_evince_window_finish,
+                               NULL);
 }
 
 static void
@@ -500,7 +479,7 @@ connect_evince_window_cb (LatexilaSynctex   *synctex,
   EvinceWindow *evince_window;
   gchar *buffer_path;
 
-  latexila_synctex_connect_evince_window_finish (synctex, result);
+  connect_evince_window_finish (synctex, result);
 
   evince_window = g_hash_table_lookup (synctex->priv->evince_windows, data->pdf_uri);
 
@@ -547,10 +526,10 @@ synctex_file_query_exists_cb (GFile             *synctex_file,
       return;
     }
 
-  latexila_synctex_connect_evince_window_async (instance,
-                                                data->pdf_uri,
-                                                (GAsyncReadyCallback) connect_evince_window_cb,
-                                                data);
+  connect_evince_window_async (instance,
+                               data->pdf_uri,
+                               (GAsyncReadyCallback) connect_evince_window_cb,
+                               data);
 
   g_object_unref (synctex_file);
 }

@@ -51,14 +51,6 @@ GType             latexila_synctex_get_type                       (void) G_GNUC_
 
 LatexilaSynctex * latexila_synctex_get_instance                   (void);
 
-void              latexila_synctex_connect_evince_window_async    (LatexilaSynctex     *synctex,
-                                                                   const gchar         *pdf_uri,
-                                                                   GAsyncReadyCallback  callback,
-                                                                   gpointer             user_data);
-
-void              latexila_synctex_connect_evince_window_finish   (LatexilaSynctex *synctex,
-                                                                   GAsyncResult    *result);
-
 void              latexila_synctex_connect_evince_window          (LatexilaSynctex *synctex,
                                                                    const gchar     *pdf_uri);
 
