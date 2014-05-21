@@ -115,6 +115,7 @@ public class LatexilaApp : Gtk.Application
         create_window ();
         reopen_files ();
         Gtk.AccelMap.load (get_accel_filename ());
+        support_backward_search ();
         release ();
     }
 
@@ -258,5 +259,24 @@ public class LatexilaApp : Gtk.Application
     {
         return Path.build_filename (Environment.get_user_config_dir (),
             "latexila", "accels");
+    }
+
+    private void support_backward_search ()
+    {
+        Latexila.Synctex synctex = Latexila.Synctex.get_instance ();
+
+        synctex.backward_search.connect ((tex_uri, line, timestamp) =>
+        {
+            File tex_file = File.new_for_uri (tex_uri);
+            if (! tex_file.query_exists ())
+            {
+                warning (@"Backward search: the file \"$tex_uri\" doesn't exist.");
+                return;
+            }
+
+            MainWindow main_window = active_window as MainWindow;
+            main_window.jump_to_file_position (tex_file, line, line + 1);
+            main_window.present_with_time (timestamp);
+        });
     }
 }

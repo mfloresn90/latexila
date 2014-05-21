@@ -30,14 +30,15 @@
  *
  * D-Bus is used to communicate between LaTeXila and Evince. The implementation
  * uses the asynchronous gdbus generated functions.
+ *
+ * For the position, only the line is used, not the column. The column is a bit
+ * buggy.
  */
 
 #include "latexila-synctex.h"
 #include <glib/gi18n.h>
 #include "evince-gdbus-generated.h"
 #include "latexila-utils.h"
-
-static LatexilaSynctex *instance = NULL;
 
 struct _LatexilaSynctexPrivate
 {
@@ -58,7 +59,16 @@ typedef struct
   gchar *owner;
 } ConnectEvinceWindowData;
 
+enum
+{
+  SIGNAL_BACKWARD_SEARCH,
+  LAST_SIGNAL
+};
+
 G_DEFINE_TYPE_WITH_PRIVATE (LatexilaSynctex, latexila_synctex, G_TYPE_OBJECT)
+
+static LatexilaSynctex *instance = NULL;
+static guint signals[LAST_SIGNAL];
 
 static ForwardSearchData *
 forward_search_data_new (void)
@@ -115,6 +125,25 @@ latexila_synctex_class_init (LatexilaSynctexClass *klass)
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
   object_class->dispose = latexila_synctex_dispose;
+
+  /**
+   * LatexilaSynctex::backward-search:
+   * @synctex: the #LatexilaSynctex instance.
+   * @tex_uri: the *.tex file URI.
+   * @line: the line to jump to.
+   * @timestamp: timestamp of the event.
+   *
+   * The ::backward-search signal is emitted to perform a backward search, i.e.
+   * switching from the PDF to the source *.tex file.
+   */
+  signals[SIGNAL_BACKWARD_SEARCH] = g_signal_new ("backward-search",
+                                                  LATEXILA_TYPE_SYNCTEX,
+                                                  G_SIGNAL_RUN_LAST,
+                                                  0, NULL, NULL, NULL,
+                                                  G_TYPE_NONE, 3,
+                                                  G_TYPE_STRING,
+                                                  G_TYPE_INT,
+                                                  G_TYPE_UINT);
 }
 
 static void
@@ -216,6 +245,16 @@ sync_source_cb (EvinceWindow    *window,
                 guint            timestamp,
                 LatexilaSynctex *synctex)
 {
+  gint line;
+  gint column; /* not used */
+
+  g_variant_get (pos, "(ii)", &line, &column);
+
+  g_signal_emit (synctex,
+                 signals[SIGNAL_BACKWARD_SEARCH], 0,
+                 tex_uri,
+                 line - 1,
+                 timestamp);
 }
 
 static void
