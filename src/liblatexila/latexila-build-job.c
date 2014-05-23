@@ -29,6 +29,7 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include "latexila-build-view.h"
+#include "latexila-post-processor-all-output.h"
 #include "latexila-utils.h"
 #include "latexila-enum-types.h"
 
@@ -42,7 +43,7 @@ struct _LatexilaBuildJobPrivate
   GFile *file;
   LatexilaBuildView *build_view;
   GtkTreeIter job_title;
-  GNode *build_messages;
+  LatexilaPostProcessor *post_processor;
 };
 
 enum
@@ -53,30 +54,6 @@ enum
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (LatexilaBuildJob, latexila_build_job, G_TYPE_OBJECT)
-
-static gboolean
-free_build_msg (GNode    *node,
-                gpointer  user_data)
-{
-  latexila_build_msg_free (node->data);
-  return FALSE;
-}
-
-static void
-free_build_messages (GNode *build_messages)
-{
-  if (build_messages != NULL)
-    {
-      g_node_traverse (build_messages,
-                       G_POST_ORDER,
-                       G_TRAVERSE_ALL,
-                       -1,
-                       free_build_msg,
-                       NULL);
-
-      g_node_destroy (build_messages);
-    }
-}
 
 static void
 latexila_build_job_get_property (GObject    *object,
@@ -138,6 +115,7 @@ latexila_build_job_dispose (GObject *object)
   g_clear_object (&build_job->priv->task);
   g_clear_object (&build_job->priv->file);
   g_clear_object (&build_job->priv->build_view);
+  g_clear_object (&build_job->priv->post_processor);
 
   G_OBJECT_CLASS (latexila_build_job_parent_class)->dispose (object);
 }
@@ -148,7 +126,6 @@ latexila_build_job_finalize (GObject *object)
   LatexilaBuildJob *build_job = LATEXILA_BUILD_JOB (object);
 
   g_free (build_job->priv->command);
-  free_build_messages (build_job->priv->build_messages);
 
   G_OBJECT_CLASS (latexila_build_job_parent_class)->finalize (object);
 }
@@ -408,11 +385,27 @@ display_command_line (LatexilaBuildJob *build_job)
 }
 
 static void
+post_processor_cb (LatexilaPostProcessor *pp,
+                   GAsyncResult          *result,
+                   LatexilaBuildJob      *build_job)
+{
+  const GNode *messages;
+
+  latexila_post_processor_process_finish (pp, result);
+
+  messages = latexila_post_processor_get_messages (pp);
+
+  latexila_build_view_append_messages (build_job->priv->build_view,
+                                       &build_job->priv->job_title,
+                                       messages,
+                                       TRUE);
+}
+
+static void
 subprocess_wait_cb (GSubprocess      *subprocess,
                     GAsyncResult     *result,
                     LatexilaBuildJob *build_job)
 {
-  LatexilaBuildMsg *msg;
   gboolean ret;
   LatexilaBuildState state;
 
@@ -433,21 +426,11 @@ subprocess_wait_cb (GSubprocess      *subprocess,
       state = LATEXILA_BUILD_STATE_FAILED;
     }
 
-  msg = latexila_build_msg_new ();
-  msg->text = g_strdup ("build job output");
-  msg->type = LATEXILA_BUILD_MSG_TYPE_INFO;
-
-  latexila_build_view_append_single_message (build_job->priv->build_view,
-                                             &build_job->priv->job_title,
-                                             msg);
-
   latexila_build_view_set_title_state (build_job->priv->build_view,
                                        &build_job->priv->job_title,
                                        state);
 
   g_task_return_boolean (build_job->priv->task, ret);
-
-  latexila_build_msg_free (msg);
   g_object_unref (subprocess);
 }
 
@@ -461,9 +444,16 @@ launch_subprocess (LatexilaBuildJob *build_job)
   gchar **argv;
   GError *error = NULL;
 
-  /* No output for the moment */
-  launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_STDOUT_SILENCE |
-                                        G_SUBPROCESS_FLAGS_STDERR_SILENCE);
+  if (build_job->priv->post_processor_type == LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT)
+    {
+      launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_STDOUT_SILENCE |
+                                            G_SUBPROCESS_FLAGS_STDERR_SILENCE);
+    }
+  else
+    {
+      launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_STDOUT_PIPE |
+                                            G_SUBPROCESS_FLAGS_STDERR_MERGE);
+    }
 
   parent_dir = g_file_get_parent (build_job->priv->file);
   working_directory = g_file_get_path (parent_dir);
@@ -483,6 +473,18 @@ launch_subprocess (LatexilaBuildJob *build_job)
     {
       display_error (build_job, "Failed to launch command:", error);
       return;
+    }
+
+  if (build_job->priv->post_processor_type != LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT)
+    {
+      g_clear_object (&build_job->priv->post_processor);
+      build_job->priv->post_processor = latexila_post_processor_all_output_new ();
+
+      latexila_post_processor_process_async (build_job->priv->post_processor,
+                                             g_subprocess_get_stdout_pipe (subprocess),
+                                             g_task_get_cancellable (build_job->priv->task),
+                                             (GAsyncReadyCallback) post_processor_cb,
+                                             build_job);
     }
 
   g_subprocess_wait_async (subprocess,
@@ -525,7 +527,7 @@ latexila_build_job_run_async (LatexilaBuildJob    *build_job,
   g_clear_object (&build_job->priv->build_view);
   build_job->priv->build_view = g_object_ref (build_view);
 
-  free_build_messages (build_job->priv->build_messages);
+  g_clear_object (&build_job->priv->post_processor);
 
   if (!display_command_line (build_job))
     {

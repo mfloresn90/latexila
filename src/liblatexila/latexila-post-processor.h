@@ -20,8 +20,7 @@
 #ifndef __LATEXILA_POST_PROCESSOR_H__
 #define __LATEXILA_POST_PROCESSOR_H__
 
-#include <glib.h>
-#include <glib-object.h>
+#include <gio/gio.h>
 #include "latexila-types.h"
 
 G_BEGIN_DECLS
@@ -66,10 +65,10 @@ struct _LatexilaPostProcessorClass
 {
   GObjectClass parent_class;
 
-  void (* process) (LatexilaPostProcessor *post_processor,
-                    const gchar           *output);
+  void (* process_lines) (LatexilaPostProcessor  *pp,
+                          gchar                 **lines);
 
-  GSList * (* get_messages) (LatexilaPostProcessor *post_processor);
+  const GNode * (* get_messages) (LatexilaPostProcessor *pp);
 };
 
 GType                   latexila_post_processor_get_type              (void) G_GNUC_CONST;
@@ -79,12 +78,18 @@ gboolean                latexila_post_processor_get_type_from_name    (const gch
 
 const gchar *           latexila_post_processor_get_name_from_type    (LatexilaPostProcessorType type);
 
-LatexilaPostProcessor * latexila_post_processor_new                   (void);
+void                    latexila_build_messages_free                  (GNode *build_messages);
 
-void                    latexila_post_processor_process               (LatexilaPostProcessor *post_processor,
-                                                                       const gchar           *output);
+void                    latexila_post_processor_process_async         (LatexilaPostProcessor *pp,
+                                                                       GInputStream          *stream,
+                                                                       GCancellable          *cancellable,
+                                                                       GAsyncReadyCallback    callback,
+                                                                       gpointer               user_data);
 
-GSList *                latexila_post_processor_get_messages          (LatexilaPostProcessor *post_processor);
+void                    latexila_post_processor_process_finish        (LatexilaPostProcessor *pp,
+                                                                       GAsyncResult          *result);
+
+const GNode *           latexila_post_processor_get_messages          (LatexilaPostProcessor *pp);
 
 G_END_DECLS
 

@@ -17,74 +17,60 @@
  * along with LaTeXila.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * SECTION:post-processor-all-output
+ * @title: LatexilaPostProcessorAllOutput
+ * @short_description: all-output post-processor
+ *
+ * A post-processor that keeps all the output. Nothing is filtered.
+ */
+
 #include "latexila-post-processor-all-output.h"
+#include "latexila-build-view.h"
 
 struct _LatexilaPostProcessorAllOutputPrivate
 {
-  GSList *messages;
+  GNode *messages;
+  GNode *last_message;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (LatexilaPostProcessorAllOutput, latexila_post_processor_all_output, LATEXILA_TYPE_POST_PROCESSOR)
 
 static void
-latexila_post_processor_all_output_process (LatexilaPostProcessor *post_processor,
-                                            const gchar           *output)
+latexila_post_processor_all_output_process_lines (LatexilaPostProcessor  *post_processor,
+                                                  gchar                 **lines)
 {
   LatexilaPostProcessorAllOutput *pp = LATEXILA_POST_PROCESSOR_ALL_OUTPUT (post_processor);
-  gchar **lines;
-  gchar **l;
+  gint i;
 
-  lines = g_strsplit (output, "\n", 0);
-
-  for (l = lines; l != NULL && *l != NULL; l++)
+  for (i = 0; lines != NULL && lines[i] != NULL; i++)
     {
-      pp->priv->messages = g_slist_prepend (pp->priv->messages, *l);
+      LatexilaBuildMsg *msg = latexila_build_msg_new ();
+      msg->text = lines[i];
+      msg->type = LATEXILA_BUILD_MSG_TYPE_INFO;
+
+      pp->priv->last_message = g_node_insert_data_after (pp->priv->messages,
+                                                         pp->priv->last_message,
+                                                         msg);
     }
 
-  /* Generally a single \n is present at the end of the output, so an empty line
-   * is added to the list. But we don't want to display it.
-   * TODO check if it is still the case in C.
-   */
-#if 0
-  if (pp->priv->messages != NULL)
-    {
-      gchar *line = pp->priv->messages->data;
-      g_assert (line != NULL);
-
-      if (line[0] == '\0')
-        {
-          GSList *removed_element = pp->priv->messages;
-
-          pp->priv->messages = g_slist_remove_link (pp->priv->messages, pp->priv->messages);
-
-          g_slist_free_full (removed_element, g_free);
-        }
-    }
-#endif
-
-  pp->priv->messages = g_slist_reverse (pp->priv->messages);
-
-  /* Do not use g_strfreev() because the strings are reused in the list. */
   g_free (lines);
 }
 
-static GSList *
+static const GNode *
 latexila_post_processor_all_output_get_messages (LatexilaPostProcessor *post_processor)
 {
   LatexilaPostProcessorAllOutput *pp = LATEXILA_POST_PROCESSOR_ALL_OUTPUT (post_processor);
 
-  return pp->priv->messages;
+  return pp->priv->messages->children;
 }
 
 static void
 latexila_post_processor_all_output_finalize (GObject *object)
 {
-  LatexilaPostProcessorAllOutputPrivate *priv;
+  LatexilaPostProcessorAllOutput *pp = LATEXILA_POST_PROCESSOR_ALL_OUTPUT (object);
 
-  priv = latexila_post_processor_all_output_get_instance_private (LATEXILA_POST_PROCESSOR_ALL_OUTPUT (object));
-
-  g_slist_free_full (priv->messages, g_free);
-  priv->messages = NULL;
+  latexila_build_messages_free (pp->priv->messages);
 
   G_OBJECT_CLASS (latexila_post_processor_all_output_parent_class)->finalize (object);
 }
@@ -97,7 +83,7 @@ latexila_post_processor_all_output_class_init (LatexilaPostProcessorAllOutputCla
 
   object_class->finalize = latexila_post_processor_all_output_finalize;
 
-  post_processor_class->process = latexila_post_processor_all_output_process;
+  post_processor_class->process_lines = latexila_post_processor_all_output_process_lines;
   post_processor_class->get_messages = latexila_post_processor_all_output_get_messages;
 }
 
@@ -105,8 +91,15 @@ static void
 latexila_post_processor_all_output_init (LatexilaPostProcessorAllOutput *pp)
 {
   pp->priv = latexila_post_processor_all_output_get_instance_private (pp);
+
+  pp->priv->messages = g_node_new (NULL);
 }
 
+/**
+ * latexila_post_processor_all_output_new:
+ *
+ * Returns: a new #LatexilaPostProcessorAllOutput object.
+ */
 LatexilaPostProcessor *
 latexila_post_processor_all_output_new (void)
 {

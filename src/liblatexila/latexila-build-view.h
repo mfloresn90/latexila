@@ -139,7 +139,7 @@ GtkTreeIter           latexila_build_view_append_single_message     (LatexilaBui
 
 void                  latexila_build_view_append_messages           (LatexilaBuildView *build_view,
                                                                      GtkTreeIter       *parent,
-                                                                     GNode             *messages,
+                                                                     const GNode       *messages,
                                                                      gboolean           expand);
 
 void                  latexila_build_view_remove_children           (LatexilaBuildView *build_view,

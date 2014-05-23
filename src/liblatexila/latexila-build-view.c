@@ -738,10 +738,10 @@ latexila_build_view_append_single_message (LatexilaBuildView *build_view,
 void
 latexila_build_view_append_messages (LatexilaBuildView *build_view,
                                      GtkTreeIter       *parent,
-                                     GNode             *messages,
+                                     const GNode       *messages,
                                      gboolean           expand)
 {
-  GNode *node;
+  const GNode *node;
 
   for (node = messages; node != NULL; node = node->next)
     {
