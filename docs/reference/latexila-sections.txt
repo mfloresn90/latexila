@@ -69,6 +69,7 @@ latexila_build_tool_get_description
 latexila_build_tool_to_xml
 latexila_build_tool_run_async
 latexila_build_tool_run_finish
+latexila_build_tool_clear
 <SUBSECTION Standard>
 LATEXILA_BUILD_TOOL
 LATEXILA_BUILD_TOOL_CLASS
@@ -90,6 +91,7 @@ latexila_build_job_clone
 latexila_build_job_to_xml
 latexila_build_job_run_async
 latexila_build_job_run_finish
+latexila_build_job_clear
 <SUBSECTION Standard>
 LATEXILA_BUILD_JOB
 LATEXILA_BUILD_JOB_CLASS

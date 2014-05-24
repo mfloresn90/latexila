@@ -72,6 +72,8 @@ void                  latexila_build_tool_run_async                 (LatexilaBui
 void                  latexila_build_tool_run_finish                (LatexilaBuildTool *build_tool,
                                                                      GAsyncResult      *result);
 
+void                  latexila_build_tool_clear                     (LatexilaBuildTool *build_tool);
+
 G_END_DECLS
 
 #endif /* __LATEXILA_BUILD_TOOL_H__ */

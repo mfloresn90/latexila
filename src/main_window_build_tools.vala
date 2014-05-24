@@ -57,6 +57,9 @@ public class MainWindowBuildTools
     private UIManager _ui_manager;
     private Latexila.BuildView _build_view;
     private BottomPanel _bottom_panel;
+
+    // Used for running a build tool, and clear it when running another build tool.
+    private Latexila.BuildTool? _build_tool;
     private Cancellable? _cancellable;
 
     private Gtk.ActionGroup _static_action_group;
@@ -350,7 +353,12 @@ public class MainWindowBuildTools
             Utils.flush_queue ();
         }
 
-        _bottom_panel.show ();
+        if (_build_tool != null)
+            _build_tool.clear ();
+
+        _build_tool = tool;
+
+        /* Run the build tool */
 
         Gtk.Action stop_exec = _static_action_group.get_action ("BuildStopExecution");
         stop_exec.sensitive = true;
@@ -363,6 +371,8 @@ public class MainWindowBuildTools
             _cancellable = null;
             stop_exec.sensitive = false;
         });
+
+        _bottom_panel.show ();
     }
 
     private void connect_toggle_actions ()

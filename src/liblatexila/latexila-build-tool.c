@@ -787,5 +787,32 @@ latexila_build_tool_run_finish (LatexilaBuildTool *build_tool,
     }
 
   g_task_propagate_boolean (G_TASK (result), NULL);
+
   g_clear_object (&build_tool->priv->task);
+  g_clear_object (&build_tool->priv->file);
+  g_clear_object (&build_tool->priv->build_view);
+}
+
+/**
+ * latexila_build_tool_clear:
+ * @build_tool: a build tool
+ *
+ * Clears the last run operation. latexila_build_tool_run_finish() must have
+ * been called before calling this function.
+ *
+ * The build tool can keep build messages or other information in memory. For
+ * example if a build job contains detailed messages, the two trees of messages
+ * must be kept in memory so it can switch between them when the "More details"
+ * button is toggled.
+ */
+void
+latexila_build_tool_clear (LatexilaBuildTool *build_tool)
+{
+  GList *l;
+
+  for (l = build_tool->priv->jobs->head; l != NULL; l = l->next)
+    {
+      LatexilaBuildJob *build_job = l->data;
+      latexila_build_job_clear (build_job);
+    }
 }

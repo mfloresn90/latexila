@@ -228,6 +228,7 @@ latexila_post_processor_finalize (GObject *object)
   if (pp->priv->line_buffer != NULL)
     {
       g_string_free (pp->priv->line_buffer, TRUE);
+      pp->priv->line_buffer = NULL;
     }
 
   G_OBJECT_CLASS (latexila_post_processor_parent_class)->finalize (object);
@@ -467,6 +468,7 @@ latexila_post_processor_process_finish (LatexilaPostProcessor *pp,
   if (pp->priv->line_buffer != NULL)
     {
       g_string_free (pp->priv->line_buffer, TRUE);
+      pp->priv->line_buffer = NULL;
     }
 }
 

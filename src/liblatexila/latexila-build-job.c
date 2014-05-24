@@ -572,5 +572,21 @@ latexila_build_job_run_finish (LatexilaBuildJob *build_job,
     }
 
   g_clear_object (&build_job->priv->task);
+  g_clear_object (&build_job->priv->file);
+
   return succeed;
+}
+
+/**
+ * latexila_build_job_clear:
+ * @build_job: a build job.
+ *
+ * Clears the last run operation. latexila_build_job_run_finish() must have been
+ * called before calling this function.
+ */
+void
+latexila_build_job_clear (LatexilaBuildJob *build_job)
+{
+  g_clear_object (&build_job->priv->build_view);
+  g_clear_object (&build_job->priv->post_processor);
 }
