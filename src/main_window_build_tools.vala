@@ -111,6 +111,15 @@ public class MainWindowBuildTools
 
     public void update_sensitivity ()
     {
+        bool build_tool_is_running = _cancellable != null;
+
+        Gtk.Action stop_exec_action = _static_action_group.get_action ("BuildStopExecution");
+        Gtk.Action preferences_action = _static_action_group.get_action ("BuildToolsPreferences");
+        stop_exec_action.set_sensitive (build_tool_is_running);
+
+        // a build tool can not be modified when it is running
+        preferences_action.set_sensitive (! build_tool_is_running);
+
         Gtk.Action clean_action = _static_action_group.get_action ("BuildClean");
         Gtk.Action view_log_action = _static_action_group.get_action ("BuildViewLog");
 
@@ -122,11 +131,18 @@ public class MainWindowBuildTools
             return;
         }
 
-        _dynamic_action_group.set_sensitive (true);
-
         bool is_tex = _main_window.active_document.is_main_file_a_tex_file ();
-        clean_action.set_sensitive (is_tex);
         view_log_action.set_sensitive (is_tex);
+
+        if (build_tool_is_running)
+        {
+            _dynamic_action_group.set_sensitive (false);
+            clean_action.set_sensitive (false);
+            return;
+        }
+
+        _dynamic_action_group.set_sensitive (true);
+        clean_action.set_sensitive (is_tex);
 
         Latexila.BuildTools build_tools =
             Latexila.BuildToolsDefault.get_instance () as Latexila.BuildTools;
@@ -360,16 +376,14 @@ public class MainWindowBuildTools
 
         /* Run the build tool */
 
-        Gtk.Action stop_exec = _static_action_group.get_action ("BuildStopExecution");
-        stop_exec.sensitive = true;
-
         File main_file = active_doc.get_main_file ();
         _cancellable = new Cancellable ();
+        update_sensitivity ();
         tool.run_async.begin (main_file, _build_view, _cancellable, (obj, result) =>
         {
             tool.run_async.end (result);
             _cancellable = null;
-            stop_exec.sensitive = false;
+            update_sensitivity ();
         });
 
         _bottom_panel.show ();
