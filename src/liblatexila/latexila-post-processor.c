@@ -23,8 +23,11 @@
  * @short_description: post-processor base class
  *
  * When running a build tool, a post-processor is used to filter the output to
- * display only the relevant messages. It can be the output of a build job
- * command, or a log file, etc.
+ * display only the relevant messages. The output can come from the
+ * stdout/stderr of a build job command, or the contents of a log file, etc.
+ *
+ * For the no-output post-processor type, you should not need to create a
+ * #LatexilaPostProcessor object, since the result is empty.
  */
 
 #include "latexila-post-processor.h"
