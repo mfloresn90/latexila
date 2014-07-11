@@ -123,7 +123,7 @@ get_icon_name_from_state (LatexilaBuildState state)
     case LATEXILA_BUILD_STATE_SUCCEEDED:
       /* This stock item doesn't have an icon name replacement, but the stock-id
        * works fine. For GTK+ 4 it will probably be removed, so we can copy the
-       * icon (at the good size) in the latexila sources.
+       * icon in the latexila sources.
        */
       G_GNUC_BEGIN_IGNORE_DEPRECATIONS
       return GTK_STOCK_APPLY;
@@ -146,7 +146,7 @@ get_icon_name_from_msg_type (LatexilaBuildMsgType type)
   switch (type)
     {
     case LATEXILA_BUILD_MSG_TYPE_JOB_SUB_COMMAND:
-      return "latexila-gray-square";
+      return "gray-square";
 
     case LATEXILA_BUILD_MSG_TYPE_ERROR:
       return "dialog-error";
@@ -155,7 +155,7 @@ get_icon_name_from_msg_type (LatexilaBuildMsgType type)
       return "dialog-warning";
 
     case LATEXILA_BUILD_MSG_TYPE_BADBOX:
-      return "latexila-badbox";
+      return "badbox";
 
     default:
       return NULL;

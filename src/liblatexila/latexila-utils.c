@@ -150,70 +150,22 @@ latexila_utils_replace_home_dir_with_tilde (const gchar *filename)
 /**
  * latexila_utils_register_icons:
  *
- * Register the LaTeXila icons to the #GtkIconTheme as built-in icons prefixed
- * with "latexila-". For example the icon located at
- * data/images/stock-icons/badbox.png in the LaTeXila git repository will be
- * available with the icon name "latexila-badbox". The "stock-icons" directory
- * name is for historical reasons and should be changed when stock icons are no
- * longer used in LaTeXila.
+ * Register the LaTeXila icons to the #GtkIconTheme as built-in icons. For
+ * example the icon located at data/images/stock-icons/badbox.png in the
+ * LaTeXila git repository will be available with the icon name "badbox". The
+ * "stock-icons" directory name is for historical reasons and should be changed
+ * when stock icons are no longer used in LaTeXila.
+ *
+ * TODO: prefix icon names with "latexila-", so the badbox.png would be
+ * "latexila-badbox". Also, put icons in subdirectories for each size, so it is
+ * better for icons available in several sizes. As an example there is currently
+ * table-size16.png and table-size24.png.
  */
 void
 latexila_utils_register_icons (void)
 {
-  gchar *resource_path = "/org/gnome/latexila/stock-icons/";
-  gchar **icon_files;
-  gchar **icon_file;
-  GError *error = NULL;
-
-  icon_files = g_resources_enumerate_children (resource_path,
-                                               G_RESOURCE_LOOKUP_FLAGS_NONE,
-                                               &error);
-
-  if (error != NULL)
-    {
-      g_warning ("Failed to register new icons: %s", error->message);
-      g_error_free (error);
-      return;
-    }
-
-  for (icon_file = icon_files; icon_file != NULL && *icon_file != NULL; icon_file++)
-    {
-      gchar *icon_path;
-      GdkPixbuf *pixbuf;
-
-      icon_path = g_strdup_printf ("%s%s", resource_path, *icon_file);
-      pixbuf = gdk_pixbuf_new_from_resource (icon_path, &error);
-
-      if (error == NULL)
-        {
-          gint width = gdk_pixbuf_get_width (pixbuf);
-          gint height = gdk_pixbuf_get_height (pixbuf);
-          gint size = MAX (width, height);
-          gchar *short_name = latexila_utils_get_shortname (*icon_file);
-          gchar *icon_name = g_strdup_printf ("latexila-%s", short_name);
-
-          if (width != height)
-            {
-              g_warning ("Icon with different width and height: %s", *icon_file);
-            }
-
-          gtk_icon_theme_add_builtin_icon (icon_name, size, pixbuf);
-
-          g_free (short_name);
-          g_free (icon_name);
-        }
-      else
-        {
-          g_warning ("Failed to register icon: %s", error->message);
-          g_error_free (error);
-          error = NULL;
-        }
-
-      g_free (icon_path);
-      g_object_unref (pixbuf);
-    }
-
-  g_strfreev (icon_files);
+  gtk_icon_theme_add_resource_path (gtk_icon_theme_get_default (),
+                                    "/org/gnome/latexila/stock-icons/");
 }
 
 /**
