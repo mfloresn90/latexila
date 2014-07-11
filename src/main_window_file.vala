@@ -41,7 +41,7 @@ public class MainWindowFile
         { "FileSave", Stock.SAVE, null, null,
             N_("Save the current file"), on_file_save },
 
-        { "FileSaveAs", Stock.SAVE_AS, null, null,
+        { "FileSaveAs", Stock.SAVE_AS, null, "<Shift><Control>S",
             N_("Save the current file with a different name"), on_file_save_as },
 
         { "FileCreateTemplate", null, N_("Create _Template From Document..."), null,
