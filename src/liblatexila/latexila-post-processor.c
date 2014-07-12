@@ -238,10 +238,23 @@ latexila_post_processor_finalize (GObject *object)
 }
 
 static void
+latexila_post_processor_start_default (LatexilaPostProcessor *pp,
+                                       GFile                 *file)
+{
+  /* Do nothing. */
+}
+
+static void
 latexila_post_processor_process_lines_default (LatexilaPostProcessor  *pp,
                                                gchar                 **lines)
 {
   g_strfreev (lines);
+}
+
+static void
+latexila_post_processor_end_default (LatexilaPostProcessor *pp)
+{
+  /* Do nothing. */
 }
 
 static const GNode *
@@ -260,7 +273,9 @@ latexila_post_processor_class_init (LatexilaPostProcessorClass *klass)
   object_class->dispose = latexila_post_processor_dispose;
   object_class->finalize = latexila_post_processor_finalize;
 
+  klass->start = latexila_post_processor_start_default;
   klass->process_lines = latexila_post_processor_process_lines_default;
+  klass->end = latexila_post_processor_end_default;
   klass->get_messages = latexila_post_processor_get_messages_default;
 
   g_object_class_install_property (object_class,
@@ -412,6 +427,7 @@ read_stream (LatexilaPostProcessor *pp)
 /**
  * latexila_post_processor_process_async:
  * @pp: a post-processor.
+ * @file: the #GFile on which the build tool is run.
  * @stream: the input stream to process.
  * @cancellable: a #GCancellable.
  * @callback: the callback to call when the operation is finished.
@@ -426,18 +442,22 @@ read_stream (LatexilaPostProcessor *pp)
  */
 void
 latexila_post_processor_process_async (LatexilaPostProcessor *pp,
+                                       GFile                 *file,
                                        GInputStream          *stream,
                                        GCancellable          *cancellable,
                                        GAsyncReadyCallback    callback,
                                        gpointer               user_data)
 {
   g_return_if_fail (LATEXILA_IS_POST_PROCESSOR (pp));
+  g_return_if_fail (G_IS_FILE (file));
   g_return_if_fail (G_IS_INPUT_STREAM (stream));
   g_return_if_fail (G_IS_CANCELLABLE (cancellable));
   g_return_if_fail (pp->priv->task == NULL);
 
   pp->priv->task = g_task_new (pp, cancellable, callback, user_data);
   pp->priv->stream = g_object_ref (stream);
+
+  LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->start (pp, file);
 
   if (pp->priv->line_buffer != NULL)
     {
@@ -464,6 +484,8 @@ latexila_post_processor_process_finish (LatexilaPostProcessor *pp,
   g_return_if_fail (g_task_is_valid (result, pp));
 
   g_task_propagate_boolean (G_TASK (result), NULL);
+
+  LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->end (pp);
 
   g_clear_object (&pp->priv->task);
   g_clear_object (&pp->priv->stream);

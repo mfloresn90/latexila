@@ -20,6 +20,7 @@ liblatexila_headers =				\
 	latexila-build-view.h			\
 	latexila-post-processor.h		\
 	latexila-post-processor-all-output.h	\
+	latexila-post-processor-latex.h		\
 	latexila-synctex.h			\
 	latexila-types.h			\
 	latexila-utils.h
@@ -33,6 +34,7 @@ liblatexila_sources =				\
 	latexila-build-view.c			\
 	latexila-post-processor.c		\
 	latexila-post-processor-all-output.c	\
+	latexila-post-processor-latex.c		\
 	latexila-synctex.c			\
 	latexila-utils.c
 

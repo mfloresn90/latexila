@@ -30,6 +30,7 @@
 #include <glib/gi18n.h>
 #include "latexila-build-view.h"
 #include "latexila-post-processor-all-output.h"
+#include "latexila-post-processor-latex.h"
 #include "latexila-utils.h"
 #include "latexila-enum-types.h"
 
@@ -475,12 +476,34 @@ launch_subprocess (LatexilaBuildJob *build_job)
       return;
     }
 
-  if (build_job->priv->post_processor_type != LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT)
-    {
-      g_clear_object (&build_job->priv->post_processor);
-      build_job->priv->post_processor = latexila_post_processor_all_output_new ();
+  g_clear_object (&build_job->priv->post_processor);
 
+  switch (build_job->priv->post_processor_type)
+    {
+    case LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT:
+      break;
+
+    case LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT:
+      build_job->priv->post_processor = latexila_post_processor_all_output_new ();
+      break;
+
+    case LATEXILA_POST_PROCESSOR_TYPE_LATEX:
+      build_job->priv->post_processor = latexila_post_processor_latex_new ();
+      break;
+
+    case LATEXILA_POST_PROCESSOR_TYPE_LATEXMK:
+      /* TODO implement the latexmk post-processor. */
+      build_job->priv->post_processor = latexila_post_processor_all_output_new ();
+      break;
+
+    default:
+      g_return_if_reached ();
+    }
+
+  if (build_job->priv->post_processor != NULL)
+    {
       latexila_post_processor_process_async (build_job->priv->post_processor,
+                                             build_job->priv->file,
                                              g_subprocess_get_stdout_pipe (subprocess),
                                              g_task_get_cancellable (build_job->priv->task),
                                              (GAsyncReadyCallback) post_processor_cb,

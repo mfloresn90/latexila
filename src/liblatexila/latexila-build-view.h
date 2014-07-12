@@ -113,6 +113,8 @@ struct _LatexilaBuildViewClass
 
 LatexilaBuildMsg *    latexila_build_msg_new                        (void);
 
+void                  latexila_build_msg_reinit                     (LatexilaBuildMsg *build_msg);
+
 void                  latexila_build_msg_free                       (LatexilaBuildMsg *build_msg);
 
 GType                 latexila_build_view_get_type                  (void) G_GNUC_CONST;

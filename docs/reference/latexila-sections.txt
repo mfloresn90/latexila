@@ -113,6 +113,7 @@ LatexilaBuildMsgType
 LatexilaBuildState
 latexila_build_msg_new
 latexila_build_msg_free
+latexila_build_msg_reinit
 latexila_build_view_new
 latexila_build_view_clear
 latexila_build_view_add_main_title
@@ -170,6 +171,23 @@ LATEXILA_TYPE_POST_PROCESSOR_ALL_OUTPUT
 LatexilaPostProcessorAllOutputClass
 LatexilaPostProcessorAllOutputPrivate
 latexila_post_processor_all_output_get_type
+</SECTION>
+
+<SECTION>
+<FILE>post-processor-latex</FILE>
+<TITLE>LatexilaPostProcessorLatex</TITLE>
+LatexilaPostProcessorLatex
+latexila_post_processor_latex_new
+<SUBSECTION Standard>
+LATEXILA_IS_POST_PROCESSOR_LATEX
+LATEXILA_IS_POST_PROCESSOR_LATEX_CLASS
+LATEXILA_POST_PROCESSOR_LATEX
+LATEXILA_POST_PROCESSOR_LATEX_CLASS
+LATEXILA_POST_PROCESSOR_LATEX_GET_CLASS
+LATEXILA_TYPE_POST_PROCESSOR_LATEX
+LatexilaPostProcessorLatexClass
+LatexilaPostProcessorLatexPrivate
+latexila_post_processor_latex_get_type
 </SECTION>
 
 <SECTION>

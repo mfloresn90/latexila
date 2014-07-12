@@ -27,6 +27,7 @@
  */
 
 #include "latexila-build-view.h"
+#include <string.h>
 #include "latexila-utils.h"
 #include "latexila-enum-types.h"
 
@@ -77,6 +78,27 @@ G_DEFINE_TYPE_WITH_PRIVATE (LatexilaBuildView, latexila_build_view, GTK_TYPE_TRE
 static guint signals[LAST_SIGNAL];
 
 /**
+ * latexila_build_msg_reinit:
+ * @build_msg: a #LatexilaBuildMsg.
+ *
+ * Reinitializes a #LatexilaBuildMsg.
+ */
+void
+latexila_build_msg_reinit (LatexilaBuildMsg *build_msg)
+{
+  g_assert (build_msg != NULL);
+
+  g_free (build_msg->text);
+  g_free (build_msg->filename);
+
+  memset (build_msg, 0, sizeof (LatexilaBuildMsg));
+
+  build_msg->start_line = -1;
+  build_msg->end_line = -1;
+  build_msg->expand = TRUE;
+}
+
+/**
  * latexila_build_msg_new: (skip)
  *
  * Free the return value with latexila_build_msg_free() when no longer needed.
@@ -86,7 +108,9 @@ static guint signals[LAST_SIGNAL];
 LatexilaBuildMsg *
 latexila_build_msg_new (void)
 {
-  LatexilaBuildMsg *build_msg = g_slice_new0 (LatexilaBuildMsg);
+  LatexilaBuildMsg *build_msg;
+
+  build_msg = g_slice_new0 (LatexilaBuildMsg);
 
   build_msg->start_line = -1;
   build_msg->end_line = -1;

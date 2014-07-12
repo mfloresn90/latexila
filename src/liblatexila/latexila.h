@@ -31,6 +31,7 @@
 #include "latexila-build-view.h"
 #include "latexila-post-processor.h"
 #include "latexila-post-processor-all-output.h"
+#include "latexila-post-processor-latex.h"
 #include "latexila-synctex.h"
 #include "latexila-utils.h"
 
