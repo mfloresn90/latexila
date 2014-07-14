@@ -6,7 +6,7 @@
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: LaTeXila_help 2.12\n"
+"Project-Id-Version: LaTeXila_help master\n"
 "POT-Creation-Date: 2014-07-14 09:17+0000\n"
 "PO-Revision-Date: 2014-07-14 19:12+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
