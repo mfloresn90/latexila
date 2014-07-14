@@ -1,0 +1,659 @@
+# Hungarian translation of LaTeXila_help
+# Copyright (C) 2014. Free Software Foundation, Inc.
+# This file is distributed under the same license as the user help.
+#
+# Anca Tibor Attila <anca dot tibor at posteo dot de>, 2014.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: LaTeXila_help 2.12\n"
+"POT-Creation-Date: 2014-07-14 09:17+0000\n"
+"PO-Revision-Date: 2014-07-14 19:12+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <openscope at gmail dot com>\n"
+"Language: hu_HU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Kelemen Gábor <kelemeng at gnome dot hu>\n"
+"Anca Tibor Attila <anca dot tibor at posteo dot de>"
+
+#. (itstool) path: page/title
+#: C/build_tools.page:10
+msgid "Build Tools"
+msgstr "Összeállítási eszközök"
+
+#. (itstool) path: synopsis/p
+#: C/build_tools.page:13
+msgid ""
+"The purpose of the build tools is to generate a document in the PDF, DVI or "
+"PS format."
+msgstr ""
+"Az összeállítási eszközökkel PDF, DVI vagy PS formátumú dokumentumok "
+"készíthetők."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:20
+msgid "Introduction"
+msgstr "Bevezetés"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:22
+msgid ""
+"Several different tools can be used for a document compilation. There are "
+"some low-level commands, and one higher-level tool: Latexmk."
+msgstr ""
+"Egy dokumentum összeállításához többféle eszköz használható. Van néhány "
+"alacsony szintű parancs, és egy magas szintű parancs: a Latexmk."
+
+#. (itstool) path: table/title
+#: C/build_tools.page:26
+msgid "Low-level commands"
+msgstr "Alacsony szintű parancsok"
+
+#. (itstool) path: td/p
+#: C/build_tools.page:29
+msgid "Label"
+msgstr "Címke"
+
+#. (itstool) path: td/p
+#: C/build_tools.page:30
+msgid "Command"
+msgstr "Parancs"
+
+#. (itstool) path: td/p
+#: C/build_tools.page:59
+msgid "Bibliography"
+msgstr "Irodalomjegyzék"
+
+#. (itstool) path: td/p
+#: C/build_tools.page:63
+msgid "Index"
+msgstr "Tárgymutató"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:69
+msgid ""
+"Compiling a LaTeX document can involve to execute several low-level "
+"commands, in a certain order and a certain number of times. Here is an "
+"example:"
+msgstr ""
+"Egy LaTeX dokumentum összeállítása egyszerre több alacsony szintű parancs, "
+"megadott sorrendben és több alkalommal történő végrehajtását is "
+"megkövetelheti. Egy példa erre:"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:78
+msgid ""
+"Using a higher-level tool such as Latexmk simplify a lot all this process, "
+"since only one command is required. Indeed, Latexmk can detect how many "
+"times the <cmd>latex</cmd> or <cmd>pdflatex</cmd> command must be called, "
+"and whether <cmd>bibtex</cmd> or <cmd>makeindex</cmd> is required. By "
+"default, LaTeXila uses Latexmk."
+msgstr ""
+"Egy, a Latexmk-hoz hasonló felső szintű eszköz használata nagyban "
+"leegyszerűsíti ezt a folyamatot, mert csak egy parancsra van szükség. A "
+"Latexmk valójában önállóan meg tudja állapítani, hogy hányszor szükséges a "
+"<cmd>latex</cmd> vagy a <cmd>pdflatex</cmd> parancs végrehajtása, illetve, "
+"hogy szükséges-e a <cmd>bibtex</cmd> vagy a <cmd>makeindex</cmd> használata. "
+"A LaTeXila alapértelmezetten a Latexmk-t használja. "
+
+#. (itstool) path: section/title
+#: C/build_tools.page:86
+msgid "Execute a Build Tool"
+msgstr "Egy összeállítási eszköz futtatása"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:88
+msgid "There are several means to execute a build tool:"
+msgstr "Egy összeállítási eszköz végrehajtásának többféle módja van:"
+
+#. (itstool) path: item/p
+#: C/build_tools.page:90
+msgid "Open the <gui style=\"menu\">Build</gui> menu."
+msgstr "Nyissa meg az <gui style=\"menu\">Összeállítás</gui> menüt."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:91
+msgid "Use the buttons in the main toolbar."
+msgstr "Használja a fő eszköztár gombjait."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:92
+msgid "Use the shortcut: <key>F2</key> → <key>F11</key>."
+msgstr "Használja az <key>F2</key> → <key>F11</key> gyorsbillentyűt."
+
+#. (itstool) path: section/p
+#: C/build_tools.page:95
+msgid ""
+"The build tool is executed on the currently opened file. If the file belongs "
+"to a <link xref=\"projects\">project</link>, it is executed on the project's "
+"main file."
+msgstr ""
+"Az összeállítási eszköz az éppen megnyitott fájlon kerül végrehajtásra. Ha "
+"az illető fájl egy <link xref=\"projects\">projekthez</link> tartozik, akkor "
+"a projekt fő fájlján lesz végrehajtva."
+
+#. (itstool) path: note/title
+#: C/build_tools.page:99
+msgid "Hidden Build Tools"
+msgstr "Rejtett összeállítási eszközök"
+
+#. (itstool) path: note/p
+#: C/build_tools.page:100
+msgid ""
+"By default, a lot of build tools are hidden, so they can't be executed. To "
+"view the full list of build tools, activate or configure them, read the "
+"<link xref=\"#general_configuration\"/> section."
+msgstr ""
+"Alapértelmezésben számos összeállítási eszköz rejtve van, ezért ezeket nem "
+"lehet futtatni. Az összeállítási eszközök teljes listájának megtekintéséhez, "
+"aktiválásukhoz, vagy beállításukhoz olvassa el az <link xref="
+"\"#general_configuration\"/> részt."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:107
+msgid "General Configuration"
+msgstr "Általános beállítás"
+
+# Thei <gui>Manage Buld Tools</gui> should have the style of a menuitem in the original help file!
+#. (itstool) path: section/p
+#: C/build_tools.page:109
+msgid ""
+"To configure the build tools, go to: <guiseq> <gui style=\"menu\">Build</"
+"gui> <gui style=\"menu\">Manage Build Tools</gui> </guiseq>"
+msgstr ""
+"Az összeállítási eszközök beállítását az <guiseq> <gui style=\"menu"
+"\">Összeállítás</gui><gui style=\"menu\">Összeállítási eszközök kezelése</"
+"gui> </guiseq> menüpont alatt végezheti el."
+
+#. (itstool) path: section/p
+#: C/build_tools.page:117
+msgid ""
+"You will see the list of all the default build tools, and a second list with "
+"your personal build tools. There are check buttons to enable or disable "
+"them. When a build tool is disabled, it's not possible to execute it. You "
+"can perform some actions, like moving a tool up or down, open its "
+"properties, delete or copy it, create a new one, etc."
+msgstr ""
+"Itt látni fogja az alapértelmezett és a saját összeállítási eszközök külön "
+"listáját. Az eszközöket a jelölőnégyzetek segítségével engedélyezheti vagy "
+"tilthatja le. Ha egy összeállítási eszköz le lett tiltva, akkor azt nem "
+"lehet végrehajtani sem. További műveleteket is elvégezhet, például "
+"megváltoztathatja az eszközök sorrendjét, megnyithatja az eszközök "
+"tulajdonságait, másolhat vagy törölhet egy adott eszközt, illetve új eszközt "
+"hozhat létre."
+
+#. (itstool) path: note/p
+#: C/build_tools.page:124
+msgid "Double-click on a build tool will open its properties."
+msgstr ""
+"Egy dupla kattintás az illető összeállítási eszköz tulajdonságait nyitja meg."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:129
+msgid "Jobs of a Build Tool"
+msgstr "Egy összeállítási eszköz műveletei"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:131
+msgid ""
+"In the properties of a build tool, the tricky part is to configure the jobs. "
+"A build tool can execute several jobs. Each job contains two pieces of "
+"information:"
+msgstr ""
+"Az összeállítási eszközök tulajdonságait illetően a műveletek beállítása "
+"igényli a legnagyobb figyelmet. Egy összeállítási eszköz több művelet "
+"végrehajtására is képes. Minden egyes művelet kétféle információt tartalmaz:"
+
+#. (itstool) path: item/p
+#: C/build_tools.page:135
+msgid "The command, which can use placeholders."
+msgstr "A helyőrzők kezelésére alkalmas parancsot."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:136
+msgid "The post processor (see <link xref=\"#post-processors\"/>)."
+msgstr "A posztprocesszort (lásd: <link xref=\"#post-processors\"/>)."
+
+#. (itstool) path: section/p
+#: C/build_tools.page:139
+msgid ""
+"When an error occurs during a job's execution, the execution of the build "
+"tool is aborted, so the next jobs are not launched."
+msgstr ""
+"Ha egy művelet végrehajtása során hiba történik, az összeállítási eszköz "
+"futtatása leáll, így a soron következő műveletek nem indulnak el."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:144
+msgid "Post Processors"
+msgstr "Posztprocesszorok"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:145
+msgid ""
+"The purpose of a post processor is to filter the command output and extract "
+"the useful information. Four post processors are available:"
+msgstr ""
+"Egy posztprocesszor feladata a parancskimenet szűrése és a hasznos "
+"információk kivonatolása. Négy posztprocesszor áll rendelkezésre:"
+
+#. (itstool) path: item/p
+#: C/build_tools.page:151
+msgid "The output is simply not displayed."
+msgstr "A kimenet egyszerűen nem jelenik meg."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:155
+msgid "All the output is displayed, without filter."
+msgstr "A teljes kimenet megjelenik, szűrés nélkül."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:159
+msgid ""
+"Filter the output of the <cmd>latex</cmd> or <cmd>pdflatex</cmd> commands. "
+"There can be three types of errors: critical errors, warnings, or bad boxes. "
+"There are also some other useful information: the size of the document, the "
+"number of pages, and the number of errors."
+msgstr ""
+"A <cmd>latex</cmd> vagy a <cmd>pdflatex</cmd> parancs kimenetének szűrése. "
+"Háromféle hibatípus létezik: kritikus hiba, figyelmeztetés vagy bad box. A "
+"további hasznos információk között szerepel a dokumentum mérete, az oldalak "
+"száma, és a talált hibák száma."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:166
+msgid ""
+"Used for the <cmd>latexmk</cmd> command. Internally, this post processor "
+"uses other ones: <em>latex</em> and <em>all-output</em>."
+msgstr ""
+"A <cmd>latexmk</cmd> parancshoz használatos. Ez a posztprocesszor belsőleg "
+"további parancsokat használ: <em>latex</em> és <em>all-output</em>."
+
+#. (itstool) path: page/title
+#: C/completion.page:10
+msgid "Completion of LaTeX commands"
+msgstr "LaTeX parancsok kiegészítése"
+
+#. (itstool) path: synopsis/p
+#: C/completion.page:13
+msgid ""
+"The purpose is to facilitate the writing of LaTeX commands, by showing "
+"proposals."
+msgstr ""
+"LaTeX parancsok írásának megkönnyítése kiegészítési javaslatok "
+"megjelenítésével."
+
+#. (itstool) path: section/title
+#: C/completion.page:17
+msgid "Interactive completion"
+msgstr "Interaktív kiegészítés"
+
+#. (itstool) path: section/p
+#: C/completion.page:18
+msgid ""
+"By default, when a LaTeX command is typed, proposals will be shown after two "
+"characters. This can be configured in the preferences dialog: <guiseq> <gui "
+"style=\"menu\">Edit</gui> <gui style=\"menu\">Preferences</gui> <gui style="
+"\"tab\">Other</gui> </guiseq>"
+msgstr ""
+"Alapértelmezetten minden LaTeX parancshoz kiegészítési javaslatok jelennek "
+"meg két karakter leütése után. Ezt a beállítást a <guiseq><gui style=\"menu"
+"\">Szerkesztés</gui> <gui style=\"menu\">Beállítások</gui></guiseq> "
+"pontjának <gui style=\"tab\">Egyéb</gui> lapján végezheti el."
+
+#. (itstool) path: section/title
+#: C/completion.page:30
+msgid "Manual completion"
+msgstr "Manuális kiegészítés"
+
+#. (itstool) path: section/p
+#: C/completion.page:31
+msgid ""
+"At any time, press <keyseq> <key>Ctrl</key> <key>Space</key> </keyseq> to "
+"show proposals."
+msgstr ""
+"A javaslatok megjelenítéséhez bármikor használhatja a <keyseq><key>Ctrl</"
+"key><key>Szóköz</key></keyseq> billentyűkombinációt."
+
+#. (itstool) path: page/title
+#: C/index.page:4
+msgid "LaTeXila Help"
+msgstr "A LaTeXila súgója"
+
+#. (itstool) path: page/title
+#: C/projects.page:10
+msgid "Projects"
+msgstr "Projektek"
+
+#. (itstool) path: synopsis/p
+#: C/projects.page:13
+msgid ""
+"When a LaTeX document is split into several *.tex files, creating a project "
+"is useful."
+msgstr ""
+"Egy több *.tex fájlra kiterjedő LaTeX dokumentum kezeléséhez ajánlott egy "
+"projekt létrehozása."
+
+#. (itstool) path: section/title
+#: C/projects.page:18
+msgid "Manage projects"
+msgstr "Projektek kezelése"
+
+#. (itstool) path: section/p
+#: C/projects.page:20
+msgid ""
+"All actions related to projects are located in the <gui style=\"menu"
+"\">Projects</gui> menu. A project contains only two pieces of information:"
+msgstr ""
+"Az összes projekthez kapcsolódó műveletet a <gui style=\"menü\">Projektek</"
+"gui> menüben találja. Egy projekt mindössze két darab információt tartalmaz:"
+
+#. (itstool) path: item/p
+#: C/projects.page:25
+msgid "The directory where the project is located."
+msgstr "A könyvtár, amelyben a projekt található."
+
+#. (itstool) path: item/p
+#: C/projects.page:26
+msgid "The main *.tex file."
+msgstr "A fő *.tex fájl."
+
+#. (itstool) path: section/p
+#: C/projects.page:29
+msgid ""
+"As a consequence, a directory can contain only one project, which is quite "
+"logical."
+msgstr ""
+"Ennek következtében minden könyvtár csak egyetlen projektet tartalmazhat."
+
+#. (itstool) path: section/title
+#: C/projects.page:35
+msgid "Usefulness of projects"
+msgstr "A projektek haszna"
+
+#. (itstool) path: item/p
+#: C/projects.page:37
+msgid ""
+"A <link xref=\"build_tools\">build tool</link> is executed on the project's "
+"main file."
+msgstr ""
+"Lefuttat egy <link xref=\"build_tools\">összeállítási eszközt</link> a "
+"projekt fő fájlján."
+
+#. (itstool) path: item/p
+#: C/projects.page:39
+msgid ""
+"The <link xref=\"synctex#forward_search\">forward search</link> works for a "
+"secondary file of a project."
+msgstr ""
+"Az <link xref=\"synctex#forward_search\">előre ugró keresés</link> a projekt "
+"egy másodlagos fájljával működik."
+
+#. (itstool) path: page/title
+#: C/spell_checking.page:10
+msgid "Spell Checking"
+msgstr "Helyesírás-ellenőrzés"
+
+#. (itstool) path: synopsis/p
+#: C/spell_checking.page:13
+msgid "The purpose is to correct spelling mistakes easily."
+msgstr "A cél a helyesírási hibák egyszerű javítása."
+
+#. (itstool) path: section/title
+#: C/spell_checking.page:17
+msgid "Use the spell checking"
+msgstr "A helyesírás-ellenőrzés használata"
+
+# The gui Spell Checking should have the style of a menuitem in the original help description.
+#. (itstool) path: section/p
+#: C/spell_checking.page:18
+msgid ""
+"The spell checking can be activated or disabled via the menu: <guiseq> <gui "
+"style=\"menu\">Edit</gui> <gui style=\"menu\">Spell Check</gui> </guiseq>"
+msgstr ""
+"A helyesírás-ellenőrzést a <guiseq><gui style=\"menu\">Szerkesztés</gui><gui "
+"style=\"menu\">Helyesírás-ellenőrzés</gui></guiseq> menüponttal lehet "
+"aktiválni vagy letiltani."
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:26
+msgid ""
+"Once the spell checking is activated, the misspelled words will be "
+"underlined in red. A right click on a misspelled word will show proposals."
+msgstr ""
+"A helyesírás-ellenőrzés aktiválását követően a helytelenül írt szavak "
+"pirossal lesznek aláhúzva. Ha a jobb egérgombbal ezekre a szavakra kattint, "
+"megjelennek a javítási javaslatok."
+
+# "do a right click somewhere in the document" would be less ambiguous.
+#. (itstool) path: section/p
+#: C/spell_checking.page:31
+msgid "To change the language, do a right click on the document."
+msgstr ""
+"A nyelv megváltoztatásához kattintson a jobb egérgombbal a dokumentumba."
+
+#. (itstool) path: section/title
+#: C/spell_checking.page:35
+msgid "Dictionaries"
+msgstr "Szótárak"
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:36
+msgid ""
+"<link href=\"http://www.abisource.com/projects/enchant/\">Enchant</link> is "
+"used for the spell checking in LaTeXila. Enchant uses one or several "
+"backends such as Hunspell or Aspell for the dictionaries."
+msgstr ""
+"A LaTeXilában a helyesírás-ellenőrzésért az <link href=\"http://www."
+"abisource.com/projects/enchant/\">Enchant</link> felel. Az Enchant a "
+"szótárak kezelésére egy vagy több háttérprogramot (például Hunspell vagy "
+"Aspell) használ."
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:42
+msgid ""
+"If your language is not listed when doing a right click, install a "
+"dictionary for one of the supported backends."
+msgstr ""
+"Ha a jobb oldali egérgombbal való kattintáskor az Ön nyelve nem jelenik meg, "
+"akkor telepítsen egy szótárt, amely illik a támogatott háttérprogramok "
+"egyikéhez."
+
+#. (itstool) path: page/title
+#: C/structure.page:10
+msgid "Document's Structure"
+msgstr "A dokumentum szerkezete"
+
+#. (itstool) path: synopsis/p
+#: C/structure.page:13
+msgid ""
+"The list of chapters, sections, sub-sections and other things like tables, "
+"figures, … of a document, to easily navigate in it."
+msgstr ""
+"Egy dokumentum fejezeteinek, szakaszainak, alszakaszainak, vagy más "
+"elemeinek (táblázatok, ábrák stb.) a navigációt megkönnyítő listázása."
+
+#. (itstool) path: section/title
+#: C/structure.page:18
+msgid "Display the structure"
+msgstr "A szerkezet megjelenítése"
+
+# The gui Side panel should have the style of a menuitem in teh original help file.
+#. (itstool) path: section/p
+#: C/structure.page:20
+msgid ""
+"The structure can be displayed in the side panel. If the side panel is "
+"hidden, go to <guiseq> <gui style=\"menu\">View</gui> <gui style=\"menu"
+"\">Side panel</gui> </guiseq>."
+msgstr ""
+"A szerkezet az oldalsávban jelenik meg. Ha az oldalsáv nem látható, akkor "
+"azt a <guiseq><gui style=\"menu\">Nézet</gui><gui style=\"menu\">Oldalsáv</"
+"gui></guiseq> menüpont kiválasztásával lehet megjeleníteni."
+
+#. (itstool) path: section/p
+#: C/structure.page:29
+msgid ""
+"The structure's content is not automatically updated. That's why there is a "
+"refresh button. If text is inserted in the document, the position of an item "
+"(e.g. a section) remains correct, as far as the item is still there, and is "
+"not modified."
+msgstr ""
+"A dokumentumszerkezet tartalma nem frissül automatikusan. Erre szolgál a "
+"frissítés gomb. Ha új szöveg kerül egy dokumentumba, a szerkezeti elem "
+"(például szakasz) információja továbbra is érvényes marad mindaddig, amíg "
+"annak tartalma és helye meg nem változik."
+
+#. (itstool) path: section/title
+#: C/structure.page:37
+msgid "Actions"
+msgstr "Műveletek"
+
+#. (itstool) path: section/p
+#: C/structure.page:39
+msgid ""
+"Some actions such as \"cut\", \"copy\" or \"comment\" can be performed on a "
+"structure's item. Either by a right click, or via the <gui style=\"menu"
+"\">Structure</gui> menu."
+msgstr ""
+"Egy szerkezeti elemen néhány műveletet is végre lehet hajtani („kivágás\", "
+"„másolás\" vagy „megjegyzés\"), vagy a jobboldali egérgombra kattintva, vagy "
+"a <gui style=\"menu\">Szerkesztés</gui> menü menüpontjai segítségével."
+
+#. (itstool) path: section/title
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:48
+msgid "TODOs and FIXMEs"
+msgstr "TODO-k és FIXME-k"
+
+#. (itstool) path: section/p
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:50
+msgid ""
+"It can be useful to add TODOs and FIXMEs comments in the document. They will "
+"be displayed in the structure. Example:"
+msgstr ""
+"Hasznos lehet a TODO és FIXME megjegyzések hozzáadása a dokumentumhoz. Ezek "
+"a szerkezetben fognak megjelenni. Példa erre:"
+
+#. (itstool) path: section/code
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:55
+#, no-wrap
+msgid ""
+"\n"
+"%TODO a remaining task\n"
+"%FIXME something is broken"
+msgstr ""
+"\n"
+"%TODO egy hátralévő feladat\n"
+"%FIXME valami elromlott"
+
+#. (itstool) path: page/title
+#: C/synctex.page:10
+msgid "Forward and Backward Search"
+msgstr "Előre és hátra ugró keresés"
+
+#. (itstool) path: synopsis/p
+#: C/synctex.page:13
+msgid ""
+"Synchronization between the document's *.tex files and the resulting PDF "
+"output, opened with the <app>Evince</app> document viewer."
+msgstr ""
+"A dokumentum .tex fájljai és az <app>Evince</app> dokumentummegjelenítő "
+"által megnyitott PDF kimenet közötti szinkronizáció."
+
+#. (itstool) path: note/p
+#: C/synctex.page:18
+msgid ""
+"For more information, read the <link href=\"help:evince#synctex"
+"\"><app>Evince</app> documentation</link>."
+msgstr ""
+"További információért tanulmányozza az <link href=\"help:evince#synctex"
+"\"><app>Evince</app> dokumentációját</link>."
+
+#. (itstool) path: section/title
+#: C/synctex.page:23
+msgid "Forward Search: from .tex to PDF"
+msgstr "Előre ugró keresés: .tex-ből PDF-be"
+
+#. (itstool) path: section/p
+#: C/synctex.page:25
+msgid ""
+"From a certain position in the .tex source file, jump to the corresponding "
+"position in the PDF file."
+msgstr ""
+"A .tex forrásfájl egy adott pontjáról a PDF fájl megfelelő pontjára ugrik."
+
+#. (itstool) path: section/p
+#: C/synctex.page:28
+msgid "There are different ways to do a forward search:"
+msgstr "Az előre ugró keresésnek több módja van:"
+
+# The gui Search forward should have the style "menuitem" in the original help file.
+#. (itstool) path: item/p
+#: C/synctex.page:30
+msgid ""
+"In the menu: <guiseq> <gui style=\"menu\">Search</gui> <gui style=\"menu"
+"\">Search Forward</gui> </guiseq>"
+msgstr ""
+"A <guiseq><gui style=\"menu\">Keresés</gui><gui style=\"menu\">Keresés "
+"előre</gui></guiseq> menüpont segítségével"
+
+#. (itstool) path: item/p
+#: C/synctex.page:36
+msgid "By pressing <keyseq> <key>Ctrl</key> <key>left click</key> </keyseq>"
+msgstr ""
+"A <keyseq><key>Ctrl</key><key>bal kattintás</key></keyseq> használatával"
+
+#. (itstool) path: section/p
+#: C/synctex.page:44
+msgid ""
+"If a document is split into several .tex files, create a <link xref="
+"\"projects\">project</link>. There is no need to mention the main file with "
+"a LaTeX comment in each secondary .tex file, like it is explained in the "
+"<link href=\"help:evince/synctex-search#forward-search\"> <app>Evince</app> "
+"documentation. </link>"
+msgstr ""
+"Ha egy dokumentum több .tex fájlra terjed ki, akkor hozzon létre egy <link "
+"xref=\"projects\">projektet</link>. Az <link href=\"help:evince/synctex-"
+"search#forward-search\"><app>Evince</app> dokumentációjában</link> "
+"leírtakkal ellentétben nincs szükség arra, hogy minden egyes másodlagos .tex "
+"fájlban LaTeX-parancs utaljon a fő .tex fájlra."
+
+#. (itstool) path: section/title
+#: C/synctex.page:53
+msgid "Backward Search"
+msgstr "Hátra ugró keresés"
+
+#. (itstool) path: section/p
+#: C/synctex.page:55
+msgid ""
+"In <app>Evince</app>, press <keyseq> <key>Ctrl</key> <key>left click</key> </"
+"keyseq>, and the corresponding position in the .tex file will be opened in "
+"<app>LaTeXila</app>."
+msgstr ""
+"Ha az <app>Evince</app> alkalmazásban a <keyseq><key>Ctrl</key><key>bal "
+"egérgomb</key></keyseq> kombinációt használja, a <app>LaTeXila</app> a .tex "
+"fájl megfelelő pozíciójára ugrik."
+
+#. (itstool) path: section/p
+#: C/synctex.page:63
+msgid ""
+"<app>Evince</app> have to be launched by <app>LaTeXila</app>. Else, the "
+"backward search will not work."
+msgstr ""
+"Az <app>Evince</app> alkalmazást a <app>LaTeXila</app> kell indítsa, másképp "
+"nem működik a hátra ugró keresés."
