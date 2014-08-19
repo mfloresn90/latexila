@@ -21,6 +21,8 @@
 
 public class Latexila : Gtk.Application
 {
+    static Gtk.CssProvider? _provider = null;
+
     public Latexila ()
     {
         Object (application_id: "org.gnome.latexila");
@@ -107,6 +109,7 @@ public class Latexila : Gtk.Application
         hold ();
         set_application_icons ();
         new StockIcons ();
+        setup_theme_extensions ();
 
         AppSettings.get_default ();
         create_window ();
@@ -137,6 +140,44 @@ public class Latexila : Gtk.Application
         }
 
         Gtk.Window.set_default_icon_list ((owned) list);
+    }
+
+    private void setup_theme_extensions ()
+    {
+        Gtk.Settings settings = Gtk.Settings.get_default ();
+        settings.notify["gtk-theme-name"].connect (update_theme);
+        update_theme ();
+    }
+
+    private void update_theme ()
+    {
+        Gtk.Settings settings = Gtk.Settings.get_default ();
+        Gdk.Screen screen = Gdk.Screen.get_default ();
+
+        if (settings.gtk_theme_name == "Adwaita")
+        {
+            if (_provider == null)
+            {
+                _provider = new Gtk.CssProvider ();
+                File file = File.new_for_uri ("resource:///org/gnome/latexila/ui/latexila.adwaita.css");
+                try
+                {
+                    _provider.load_from_file (file);
+                }
+                catch (Error e)
+                {
+                    warning ("Cannot load CSS: %s", e.message);
+                }
+            }
+
+            Gtk.StyleContext.add_provider_for_screen (screen, _provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        else if (_provider != null)
+        {
+            Gtk.StyleContext.remove_provider_for_screen (screen, _provider);
+            _provider = null;
+        }
     }
 
     private void reopen_files ()

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <gresources>
+  <gresource prefix="/org/gnome/latexila">
+    <file>ui/latexila.adwaita.css</file>
+  </gresource>
+
   <gresource prefix="/org/gnome/latexila/stock-icons">
     <!--
     List of icons that are registered as new stock icons, so it can be used

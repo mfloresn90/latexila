@@ -371,6 +371,9 @@ public class MainWindow : Window
         Toolbar edit_toolbar = _ui_manager.get_widget ("/EditToolbar") as Toolbar;
         edit_toolbar.set_style (ToolbarStyle.ICONS);
 
+        StyleContext context = edit_toolbar.get_style_context ();
+        context.add_class ("latexila-edit-toolbar");
+
         edit_toolbar.show_all ();
 
         ToggleAction action =
