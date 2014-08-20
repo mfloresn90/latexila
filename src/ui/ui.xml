@@ -43,11 +43,12 @@ along with LaTeXila.  If not, see <http://www.gnu.org/licenses/>.
       <menuitem action="EditCopy" />
       <menuitem action="EditPaste" />
       <menuitem action="EditDelete" />
-      <separator />
       <menuitem action="EditSelectAll" />
       <separator />
       <menuitem action="EditComment" />
       <menuitem action="EditUncomment" />
+      <separator />
+      <menuitem action="EditCompletion" />
       <separator />
       <menuitem action="EditSpellChecking" />
       <separator />

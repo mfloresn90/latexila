@@ -62,6 +62,9 @@ public class MainWindowEdit
             N_("Uncomment the selected lines (remove the character \"%\")"),
             on_uncomment },
 
+        { "EditCompletion", null, N_("_Completion"), "<Control>space",
+            N_("Complete the LaTeX command"), on_completion },
+
         { "EditPreferences", Stock.PREFERENCES, null, null,
             N_("Configure the application"), on_open_preferences }
     };
@@ -126,7 +129,8 @@ public class MainWindowEdit
             "EditDelete",
             "EditSelectAll",
             "EditComment",
-            "EditUncomment"
+            "EditUncomment",
+            "EditCompletion"
         };
 
         foreach (string action_name in action_names)
@@ -246,6 +250,12 @@ public class MainWindowEdit
     {
         return_if_fail (_main_window.active_tab != null);
         _main_window.active_document.uncomment_selected_lines ();
+    }
+
+    public void on_completion ()
+    {
+        return_if_fail (_main_window.active_tab != null);
+        _main_window.active_view.show_completion ();
     }
 
     public void on_spell_checking (Gtk.Action action)
