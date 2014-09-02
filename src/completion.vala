@@ -66,7 +66,7 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
     // contains only environments that have extra info
     private Gee.HashMap<string, CompletionChoice?> _environments;
 
-    // while parsing, keep track of current command/argument/choice
+    // While parsing the XML file, keep track of current command/argument/choice.
     private CompletionCommand _current_command;
     private CompletionArgument _current_arg;
     private CompletionChoice _current_choice;
@@ -297,6 +297,9 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
             return;
         }
 
+        // TODO this is a O(n) time complexity. This could be reduced to a O(log n) by
+        // using a GSequence for example, like it is done by the words completion provider
+        // in GtkSourceView.
         List<SourceCompletionItem> filtered_proposals = null;
         foreach (SourceCompletionItem item in proposals_to_filter)
         {
