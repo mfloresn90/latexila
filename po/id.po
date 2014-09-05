@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: latexila master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-30 09:49+0000\n"
-"PO-Revision-Date: 2014-03-30 19:32+0700\n"
+"POT-Creation-Date: 2014-09-05 09:22+0000\n"
+"PO-Revision-Date: 2014-09-05 19:56+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -18,57 +18,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.9\n"
 
-#: build_tools.xml:43(tool/label) ../src/build_tool_dialog.vala:166
+#. (itstool) path: tool/label
+#: build_tools.xml:43 ../src/build_tool_dialog.vala:166
 msgid "View PDF"
 msgstr "Tilik PDF"
 
-#: build_tools.xml:44(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:44
 msgid "View the PDF file"
 msgstr "Tilik berkas PDF"
 
-#: build_tools.xml:49(tool/label) ../src/build_tool_dialog.vala:165
+#. (itstool) path: tool/label
+#: build_tools.xml:49 ../src/build_tool_dialog.vala:165
 msgid "View DVI"
 msgstr "Tilik DVI"
 
-#: build_tools.xml:50(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:50
 msgid "View the DVI file"
 msgstr "Tilik berkas DVI"
 
-#: build_tools.xml:55(tool/label) ../src/build_tool_dialog.vala:167
+#. (itstool) path: tool/label
+#: build_tools.xml:55 ../src/build_tool_dialog.vala:167
 msgid "View PS"
 msgstr "Tilik PS"
 
-#: build_tools.xml:56(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:56
 msgid "View the PostScript file"
 msgstr "Tilik berkas PostScript"
 
-#: build_tools.xml:64(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:64
 msgid "Create a PDF file from LaTeX sources with the \"pdflatex\" command"
 msgstr "Buat berkas PDF dari sumber LaTeX dengan perintah \"pdflatex\""
 
-#: build_tools.xml:70(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:70
 msgid "Create a DVI file from LaTeX sources with the \"latex\" command"
 msgstr "Buat berkas DVI dari sumber LaTeX dengan perintah \"latex\""
 
-#: build_tools.xml:78(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:78
 msgid "Run BibTeX (bibliography)"
 msgstr "Jalankan BibTeX (bibliografi)"
 
-#: build_tools.xml:84(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:84
 msgid "Run MakeIndex"
 msgstr "Jalankan MakeIndex"
 
-#: build_tools.xml:92(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:92
 msgid "Convert the DVI document to the PDF format"
 msgstr "Konversikan dokumen DVI ke format PDF"
 
-#: build_tools.xml:98(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:98
 msgid "Convert the DVI document to the PostScript format"
 msgstr "Konversikan dokumen DVI ke format PostScript"
 
-#: build_tools.xml:104(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:104
 msgid "Convert the PostScript document to the PDF format"
 msgstr "Konversikan dokumen PostScript ke format PDF"
 
@@ -84,11 +97,11 @@ msgstr ""
 
 #: ../data/latexila.appdata.xml.in.h:2
 msgid ""
-"There are menus and toolbars with the principal LaTeX commands. To help the "
-"writing of the LaTeX markup, there is also LaTeX commands completion."
+"To help the writing of the LaTeX markup, auto-completion is available as "
+"well as menus and toolbars with the principal commands."
 msgstr ""
-"Ada menu dan bilah alat dengan perintah LaTeX utama. Untuk membantu menulis "
-"markup LaTeX, ada juga pelengkapan perintah LaTeX."
+"Untuk membantu menulis markup LaTeX, pelengkapan otomatis tersedia maupun "
+"menu dan bilah alat dengan perintah-perintah utama."
 
 #: ../data/latexila.appdata.xml.in.h:3
 msgid ""
@@ -102,12 +115,12 @@ msgstr ""
 
 #: ../data/latexila.appdata.xml.in.h:4
 msgid ""
-"There is a side panel with three components: the document structure to "
-"easily navigate in it; lists of symbols to insert them in a document; and an "
+"A side panel contains three components: the document structure to easily "
+"navigate in it; lists of symbols to insert them in a document; and an "
 "integrated file browser."
 msgstr ""
-"Ada panel sisi dengan tiga komponen: struktur dokumen untuk menavigasi "
-"dengan mudah; daftar simbol untuk disisipkan dalam dokumen; dan suatu "
+"Panel sisi memuat tiga komponen: struktur dokumen untuk menavigasi dengan "
+"mudah; daftar simbol untuk menyisipkan mereka ke dalam dokumen; dan suatu "
 "peramban berkas terintegrasi."
 
 #: ../data/latexila.appdata.xml.in.h:5
@@ -138,11 +151,11 @@ msgstr "Buka Jendela Baru"
 msgid "Open a New Document"
 msgstr "Buka Dokumen Baru"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:1
+#: ../data/org.gnome.latexila.gschema.xml.in.h:1
 msgid "Use Default Font"
 msgstr "Pakai Fonta Baku"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:2
+#: ../data/org.gnome.latexila.gschema.xml.in.h:2
 msgid ""
 "Whether to use the system's default fixed width font for editing text "
 "instead of a font specific to LaTeXila. If this option is turned off, then "
@@ -154,11 +167,11 @@ msgstr ""
 "yang namanya ada dalam opsi \"Fonta Penyunting\" akan dipakai sebagai ganti "
 "fonta sistem."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:3
+#: ../data/org.gnome.latexila.gschema.xml.in.h:3
 msgid "Editor Font"
 msgstr "Fonta Penyunting"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:4
+#: ../data/org.gnome.latexila.gschema.xml.in.h:4
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
@@ -166,28 +179,28 @@ msgstr ""
 "Suatu fonta gubahan yang akan dipakai untuk area penyuntingan. Ini hanya "
 "akan berdampak bila opsi \"Pakai Fonta Baku\" dimatikan."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:5
+#: ../data/org.gnome.latexila.gschema.xml.in.h:5
 msgid "Style Scheme"
 msgstr "Skema Gaya"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:6
+#: ../data/org.gnome.latexila.gschema.xml.in.h:6
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
 msgstr "ID dari Skema Gaya GtkSourceView yang dipakai untuk mewarnai teks."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:7
+#: ../data/org.gnome.latexila.gschema.xml.in.h:7
 msgid "Create Backup Copies"
 msgstr "Buat Salinan Cadangan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:8
+#: ../data/org.gnome.latexila.gschema.xml.in.h:8
 msgid "Whether LaTeXila should create backup copies for the files it saves."
 msgstr ""
 "Apakah LaTeXila mesti membuat salinan cadangan bagi berkas yang dia simpan."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:9
+#: ../data/org.gnome.latexila.gschema.xml.in.h:9
 msgid "Autosave"
 msgstr "Simpan Otomatis"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:10
+#: ../data/org.gnome.latexila.gschema.xml.in.h:10
 msgid ""
 "Whether LaTeXila should automatically save modified files after a time "
 "interval. You can set the time interval with the \"Autosave Interval\" "
@@ -197,11 +210,11 @@ msgstr ""
 "suatu selang waktu. Anda dapat mengatur selang waktu dengan opsi \"Interval "
 "Simpan Otomatis\"."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:11
+#: ../data/org.gnome.latexila.gschema.xml.in.h:11
 msgid "Autosave Interval"
 msgstr "Interval Simpan Otomatis"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:12
+#: ../data/org.gnome.latexila.gschema.xml.in.h:12
 msgid ""
 "Number of minutes after which LaTeXila will automatically save modified "
 "files. This will only take effect if the \"Autosave\" option is turned on."
@@ -209,20 +222,20 @@ msgstr ""
 "Berapa menit LaTeXila menunggu sebelum secara otomatis menyimpan berkas yang "
 "berubah. Ini hanya akan berdampak bila opsi \"Simpan Otomatis\" dinyalakan."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:13
+#: ../data/org.gnome.latexila.gschema.xml.in.h:13
 #: ../src/ui/preferences_dialog.ui.h:9
 msgid "Reopen files on startup"
 msgstr "Buka ulang berkas saat awal mula"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:14
+#: ../data/org.gnome.latexila.gschema.xml.in.h:14
 msgid "Whether LaTeXila should reopen the files that was opened the last time."
 msgstr "Apakah LaTeXila mesti membuka ulang berkas yang terbuka terakhir kali."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:15
+#: ../data/org.gnome.latexila.gschema.xml.in.h:15
 msgid "Tab Size"
 msgstr "Ukuran Tab"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:16
+#: ../data/org.gnome.latexila.gschema.xml.in.h:16
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
@@ -230,118 +243,118 @@ msgstr ""
 "Menyatakan banyaknya spasi yang mesti ditampilkan sebagai pengganti karakter "
 "Tab."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:17
+#: ../data/org.gnome.latexila.gschema.xml.in.h:17
 msgid "Insert spaces"
 msgstr "Sispkan spasi"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:18
+#: ../data/org.gnome.latexila.gschema.xml.in.h:18
 msgid "Whether LaTeXila should insert spaces instead of tabs."
 msgstr "Apakah LaTeXila mesti menyisipkan spasi sebagai pengganti tab."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:19
+#: ../data/org.gnome.latexila.gschema.xml.in.h:19
 msgid "Forget lack of tabulations"
 msgstr "Lupakan ketiadaan tabulasi"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:20
+#: ../data/org.gnome.latexila.gschema.xml.in.h:20
 msgid "Forget you are not using tabulations."
 msgstr "Lupakan bahwa Anda tak memakai tabulasi."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:21
+#: ../data/org.gnome.latexila.gschema.xml.in.h:21
 msgid "Display Line Numbers"
 msgstr "Tampilkan Nomor Baris"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:22
+#: ../data/org.gnome.latexila.gschema.xml.in.h:22
 msgid "Whether LaTeXila should display line numbers in the editing area."
 msgstr "Apakah LaTeXila mesti menampilkan nomor baris dalam area penyuntingan."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:23
+#: ../data/org.gnome.latexila.gschema.xml.in.h:23
 msgid "Highlight Current Line"
 msgstr "Tandai Baris Kini"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:24
+#: ../data/org.gnome.latexila.gschema.xml.in.h:24
 msgid "Whether LaTeXila should highlight the current line."
 msgstr "Apakah LaTeXila mesti menyorot baris saat ini."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:25
+#: ../data/org.gnome.latexila.gschema.xml.in.h:25
 msgid "Highlight Matching Brackets"
 msgstr "Tandai Kurung Pasangan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:26
+#: ../data/org.gnome.latexila.gschema.xml.in.h:26
 msgid "Whether LaTeXila should highlight matching brackets."
 msgstr "Apakah LaTeXila mesti menyorot kurung pasangan."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:27
+#: ../data/org.gnome.latexila.gschema.xml.in.h:27
 msgid "Spell checking"
 msgstr "Pemeriksaan ejaan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:28
+#: ../data/org.gnome.latexila.gschema.xml.in.h:28
 msgid "Main toolbar is visible"
 msgstr "Bilah alat utama tampak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:29
+#: ../data/org.gnome.latexila.gschema.xml.in.h:29
 msgid ""
 "Whether the main toolbar (file open, close, build, ...) should be visible."
 msgstr ""
 "Apakah bilah alat utama (berkas buka, tutup, bangun, ...) mesti tampak."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:30
+#: ../data/org.gnome.latexila.gschema.xml.in.h:30
 msgid "Edit toolbar is visible"
 msgstr "Bilah alat penyuntingan tampak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:31
+#: ../data/org.gnome.latexila.gschema.xml.in.h:31
 msgid ""
 "Whether the edit toolbar (bold, italic, character sizes, ...) should be "
 "visible."
 msgstr ""
 "Apakah bilah sunting (tebal, miring, ukuran karakter, ...) mesti tampak."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:32
+#: ../data/org.gnome.latexila.gschema.xml.in.h:32
 msgid "Side panel is Visible"
 msgstr "Panel sisi tampak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:33
+#: ../data/org.gnome.latexila.gschema.xml.in.h:33
 msgid ""
 "Whether the side panel at the left of editing windows should be visible."
 msgstr "Apakah panel sisi di kiri jendela penyuntingan mesti tampak."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:34
+#: ../data/org.gnome.latexila.gschema.xml.in.h:34
 msgid "Bottom panel is Visible"
 msgstr "Panel bawah tampak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:35
+#: ../data/org.gnome.latexila.gschema.xml.in.h:35
 msgid "Whether the bottom panel containing the build view should be visible."
 msgstr "Apakah panel bawah yang memuat tilikan bangun mesti tampak."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:36
+#: ../data/org.gnome.latexila.gschema.xml.in.h:36
 msgid "Side panel component"
 msgstr "Komponen panel sisi"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:37
+#: ../data/org.gnome.latexila.gschema.xml.in.h:37
 msgid ""
 "Side panel's active component. 0: Symbols. 1: File browser. 2: Structure."
 msgstr "Komponen aktif panel sisi. 0: Simbol. 1: Peramban berkas. 2: Struktur."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:38
+#: ../data/org.gnome.latexila.gschema.xml.in.h:38
 msgid "Show build output warnings"
 msgstr "Tampilkan peringatan keluaran pembangunan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:39
+#: ../data/org.gnome.latexila.gschema.xml.in.h:39
 msgid "Show build output badboxes"
 msgstr "Tampilkan kotak buruk keluaran pembangunan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:40
+#: ../data/org.gnome.latexila.gschema.xml.in.h:40
 msgid "Interactive completion"
 msgstr "Pelengkapan interaktif"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:41
+#: ../data/org.gnome.latexila.gschema.xml.in.h:41
 msgid "Automatically show LaTeX commands proposals"
 msgstr "Secara otomatis menampilkan usulan perintah LaTeX"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:42
+#: ../data/org.gnome.latexila.gschema.xml.in.h:42
 msgid "Minimum number of characters for interactive completion"
 msgstr "Cacah karakter minimum untuk pelengkapan interaktif"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:43
+#: ../data/org.gnome.latexila.gschema.xml.in.h:43
 msgid ""
 "Minimum number of characters after \"\\\" for the interactive completion of "
 "LaTeX commands"
@@ -349,72 +362,70 @@ msgstr ""
 "Cacah karakter minimum setelah \"\\\" untuk pelengkapan interaktif perintah "
 "LaTeX"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:44
+#: ../data/org.gnome.latexila.gschema.xml.in.h:44
 #: ../src/ui/preferences_dialog.ui.h:19
 msgid "No confirmation when cleaning-up"
 msgstr "Tanpa konfirmasi ketika membersihkan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:45
+#: ../data/org.gnome.latexila.gschema.xml.in.h:45
 msgid "Automatic clean-up"
 msgstr "Otomatis bersihkan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:46
+#: ../data/org.gnome.latexila.gschema.xml.in.h:46
 msgid ""
 "Automatically clean-up files after close. no-confirm-clean must be true."
 msgstr ""
 "Otomatis bersihkan berkas setelah menutup. no-confirm-clean mesti berisi "
 "true."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:47
+#: ../data/org.gnome.latexila.gschema.xml.in.h:47
 msgid "File extensions for the clean-up"
 msgstr "Ekstensi berkas untuk pembersihan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:48
+#: ../data/org.gnome.latexila.gschema.xml.in.h:48
 msgid "The list of file extensions for the clean-up, separated by spaces"
 msgstr "Daftar ekstensi berkas untuk pembersihan, dipisahkan dengan spasi"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:49
+#: ../data/org.gnome.latexila.gschema.xml.in.h:49
 msgid "Enabled default build tools"
 msgstr "Fungsikan alat bangun baku"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:50
+#: ../data/org.gnome.latexila.gschema.xml.in.h:50
 msgid "The list of the default build tools that are enabled"
 msgstr "Daftar dari alat bangun baku yang difungsikan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:51
+#: ../data/org.gnome.latexila.gschema.xml.in.h:51
 msgid "Disabled default build tools"
 msgstr "Alat bangun baku yang dinonaktifkan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:52
+#: ../data/org.gnome.latexila.gschema.xml.in.h:52
 msgid "The list of the default build tools that are disabled"
 msgstr "Daftar dari alat bangun baku yang dinonaktifkan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:53
+#: ../data/org.gnome.latexila.gschema.xml.in.h:53
 msgid "Current directory"
 msgstr "Direktori saat ini"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:54
+#: ../data/org.gnome.latexila.gschema.xml.in.h:54
 msgid "URI of the file browser current directory"
 msgstr "URI dari direktori peramban berkas saat ini"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:55
-#: ../src/file_browser.vala:281
+#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:281
 msgid "Show build files"
 msgstr "Tampilkan berkas bangun"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:56
+#: ../data/org.gnome.latexila.gschema.xml.in.h:56
 msgid ""
 "Show files with an extension present in preferences.latex.clean-extensions."
 msgstr ""
 "Tampilkan berkas dengan ekstensi yang ada dalam preferences.latex.clean-"
 "extensions."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:57
-#: ../src/file_browser.vala:289
+#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:289
 msgid "Show hidden files"
 msgstr "Tampilkan berkas tersembunyi"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.in.h:58
+#: ../data/org.gnome.latexila.gschema.xml.in.h:58
 msgid "Show files beginning with a dot."
 msgstr "Tampilkan berkas yang diawali dengan titik."
 
@@ -665,7 +676,7 @@ msgstr "Pilih berkas yang ingin Anda hapus:"
 msgid "No build file to clean up."
 msgstr "Tak ada berkas build untuk dibersihkan."
 
-#: ../src/completion.vala:315
+#: ../src/completion.vala:318
 msgid "No matching proposal"
 msgstr "Tak ada proposal yang cocok"
 
@@ -879,631 +890,631 @@ msgstr "Rata Kanan - \\begin{flushright}"
 msgid "Figure - \\begin{figure}"
 msgstr "Gambar - \\begin{figure}"
 
-#: ../src/latex_menu.vala:76
+#: ../src/latex_menu.vala:76 ../src/latex_menu.vala:78
 msgid "Table - \\begin{table}"
 msgstr "Tabel - \\begin{table}"
 
-#: ../src/latex_menu.vala:78
+#: ../src/latex_menu.vala:80
 msgid "Quote - \\begin{quote}"
 msgstr "Kutip - \\begin{quote}"
 
-#: ../src/latex_menu.vala:80
+#: ../src/latex_menu.vala:82
 msgid "Quotation - \\begin{quotation}"
 msgstr "Kutipan - \\begin{quotation}"
 
-#: ../src/latex_menu.vala:82
+#: ../src/latex_menu.vala:84
 msgid "Verse - \\begin{verse}"
 msgstr "Verse - \\begin{verse}"
 
-#: ../src/latex_menu.vala:84
+#: ../src/latex_menu.vala:86
 msgid "Verbatim - \\begin{verbatim}"
 msgstr "Verbatim - \\begin{verbatim}"
 
-#: ../src/latex_menu.vala:86
+#: ../src/latex_menu.vala:88
 msgid "Minipage - \\begin{minipage}"
 msgstr "Laman mini - \\begin{minipage}"
 
-#: ../src/latex_menu.vala:88
+#: ../src/latex_menu.vala:90
 msgid "Title page - \\begin{titlepage}"
 msgstr "Halaman judul - \\begin{titlepage}"
 
 #. LaTeX: list environments
-#: ../src/latex_menu.vala:92
+#: ../src/latex_menu.vala:94
 msgid "_List Environments"
 msgstr "Daftar _Lingkungan"
 
-#: ../src/latex_menu.vala:94
+#: ../src/latex_menu.vala:96 ../src/latex_menu.vala:98
 msgid "Bulleted List - \\begin{itemize}"
 msgstr "Daftar Bulet - \\begin{itemize}"
 
-#: ../src/latex_menu.vala:96
+#: ../src/latex_menu.vala:100 ../src/latex_menu.vala:102
 msgid "Enumeration - \\begin{enumerate}"
 msgstr "Enumerasi - \\begin{enumerate}"
 
-#: ../src/latex_menu.vala:98
+#: ../src/latex_menu.vala:104 ../src/latex_menu.vala:106
 msgid "Description - \\begin{description}"
 msgstr "Deskripsi - \\begin{description}"
 
-#: ../src/latex_menu.vala:100
+#: ../src/latex_menu.vala:108
 msgid "Custom list - \\begin{list}"
 msgstr "Daftar ubahan - \\begin{list}"
 
-#: ../src/latex_menu.vala:102
+#: ../src/latex_menu.vala:110
 msgid "List item - \\item"
 msgstr "Butir daftar - \\item"
 
 #. LaTeX: character sizes
-#: ../src/latex_menu.vala:106
+#: ../src/latex_menu.vala:114
 msgid "_Characters Sizes"
 msgstr "Ukuran _Karakter"
 
 #. LaTeX: font styles
-#: ../src/latex_menu.vala:130
+#: ../src/latex_menu.vala:138
 msgid "_Font Styles"
 msgstr "Gaya _Fonta"
 
-#: ../src/latex_menu.vala:132
+#: ../src/latex_menu.vala:140
 msgid "Bold - \\textbf"
 msgstr "Tebal - \\textbf"
 
-#: ../src/latex_menu.vala:134
+#: ../src/latex_menu.vala:142
 msgid "Italic - \\textit"
 msgstr "Miring - \\textit"
 
-#: ../src/latex_menu.vala:136
+#: ../src/latex_menu.vala:144
 msgid "Typewriter - \\texttt"
 msgstr "Mesin tik - \\texttt"
 
-#: ../src/latex_menu.vala:138
+#: ../src/latex_menu.vala:146
 msgid "Slanted - \\textsl"
 msgstr "Slanted - \\textsl"
 
-#: ../src/latex_menu.vala:140
+#: ../src/latex_menu.vala:148
 msgid "Small Capitals - \\textsc"
 msgstr "Kapital Kecil - \\textsc"
 
-#: ../src/latex_menu.vala:142
+#: ../src/latex_menu.vala:150
 msgid "Sans Serif - \\textsf"
 msgstr "Sans Serif - \\textsf"
 
-#: ../src/latex_menu.vala:144
+#: ../src/latex_menu.vala:152
 msgid "Emphasized - \\emph"
 msgstr "Ditegaskan - \\emph"
 
-#: ../src/latex_menu.vala:146
+#: ../src/latex_menu.vala:154
 msgid "Underline - \\underline"
 msgstr "Garis bawah - \\underline"
 
-#: ../src/latex_menu.vala:148
+#: ../src/latex_menu.vala:156
 msgid "_Font Family"
 msgstr "Keluarga _Fonta"
 
-#: ../src/latex_menu.vala:150
+#: ../src/latex_menu.vala:158
 msgid "Roman - \\rmfamily"
 msgstr "Roman - \\rmfamily"
 
-#: ../src/latex_menu.vala:152
+#: ../src/latex_menu.vala:160
 msgid "Sans Serif - \\sffamily"
 msgstr "Sans Serif - \\sffamily"
 
-#: ../src/latex_menu.vala:154
+#: ../src/latex_menu.vala:162
 msgid "Monospace - \\ttfamily"
 msgstr "Monospace - \\ttfamily"
 
-#: ../src/latex_menu.vala:156
+#: ../src/latex_menu.vala:164
 msgid "F_ont Series"
 msgstr "Seri F_onta"
 
-#: ../src/latex_menu.vala:158
+#: ../src/latex_menu.vala:166
 msgid "Medium - \\mdseries"
 msgstr "Medium - \\mdseries"
 
-#: ../src/latex_menu.vala:160
+#: ../src/latex_menu.vala:168
 msgid "Bold - \\bfseries"
 msgstr "Tebal - \\bfseries"
 
-#: ../src/latex_menu.vala:162
+#: ../src/latex_menu.vala:170
 msgid "Fo_nt Shape"
 msgstr "Bentuk Fo_nta"
 
-#: ../src/latex_menu.vala:164
+#: ../src/latex_menu.vala:172
 msgid "Upright - \\upshape"
 msgstr "Tegak - \\upshape"
 
-#: ../src/latex_menu.vala:166
+#: ../src/latex_menu.vala:174
 msgid "Italic - \\itshape"
 msgstr "Miring - \\itshape"
 
-#: ../src/latex_menu.vala:168
+#: ../src/latex_menu.vala:176
 msgid "Slanted - \\slshape"
 msgstr "Slanted - \\slshape"
 
-#: ../src/latex_menu.vala:170
+#: ../src/latex_menu.vala:178
 msgid "Small Capitals - \\scshape"
 msgstr "Kapital Kecil - \\scshape"
 
 #. LaTeX: Tabular
-#: ../src/latex_menu.vala:174
+#: ../src/latex_menu.vala:182
 msgid "_Tabular"
 msgstr "_Tabular"
 
-#: ../src/latex_menu.vala:176
+#: ../src/latex_menu.vala:184
 msgid "Tabbing - \\begin{tabbing}"
 msgstr "Tabbing - \\begin{tabbing}"
 
-#: ../src/latex_menu.vala:178
+#: ../src/latex_menu.vala:186
 msgid "Tabular - \\begin{tabular}"
 msgstr "Tabular - \\begin{tabular}"
 
-#: ../src/latex_menu.vala:180
+#: ../src/latex_menu.vala:188
 msgid "Multicolumn - \\multicolumn"
 msgstr "Multi kolom - \\multicolumn"
 
-#: ../src/latex_menu.vala:182
+#: ../src/latex_menu.vala:190
 msgid "Horizontal line - \\hline"
 msgstr "Garis horisontal - \\hline"
 
-#: ../src/latex_menu.vala:184
+#: ../src/latex_menu.vala:192
 msgid "Vertical line - \\vline"
 msgstr "Garis vertikal - \\vline"
 
-#: ../src/latex_menu.vala:186
+#: ../src/latex_menu.vala:194
 msgid "Horizontal line (columns specified) - \\cline"
 msgstr "Garis horisontal (kolom dinyatakan) - \\cline"
 
-#: ../src/latex_menu.vala:192
+#: ../src/latex_menu.vala:200
 msgid "Frame - \\begin{frame}"
 msgstr "Bingkai - \\begin{frame}"
 
-#: ../src/latex_menu.vala:194
+#: ../src/latex_menu.vala:202
 msgid "Block - \\begin{block}"
 msgstr "Blok - \\begin{block}"
 
-#: ../src/latex_menu.vala:196
+#: ../src/latex_menu.vala:204
 msgid "Two columns - \\begin{columns}"
 msgstr "Dua kolom - \\begin{columns}"
 
 #. LaTeX: Spacing
-#: ../src/latex_menu.vala:200
+#: ../src/latex_menu.vala:208
 msgid "_Spacing"
 msgstr "Jarak bari_s"
 
-#: ../src/latex_menu.vala:201
+#: ../src/latex_menu.vala:209
 msgid "New _Line"
 msgstr "_Baris Baru"
 
-#: ../src/latex_menu.vala:202
+#: ../src/latex_menu.vala:210
 msgid "New Line - \\\\"
 msgstr "Baris Baru - \\\\"
 
-#: ../src/latex_menu.vala:204
+#: ../src/latex_menu.vala:212
 msgid "New page - \\newpage"
 msgstr "Halaman baru - \\newpage"
 
-#: ../src/latex_menu.vala:206
+#: ../src/latex_menu.vala:214
 msgid "Line break - \\linebreak"
 msgstr "Putus baris - \\linebreak"
 
-#: ../src/latex_menu.vala:208
+#: ../src/latex_menu.vala:216
 msgid "Page break - \\pagebreak"
 msgstr "Putus halaman - \\pagebreak"
 
-#: ../src/latex_menu.vala:210
+#: ../src/latex_menu.vala:218
 msgid "Big skip - \\bigskip"
 msgstr "Lewati banyak - \\bigskip"
 
-#: ../src/latex_menu.vala:212
+#: ../src/latex_menu.vala:220
 msgid "Medium skip - \\medskip"
 msgstr "Lewati sedang - \\medskip"
 
-#: ../src/latex_menu.vala:214
+#: ../src/latex_menu.vala:222
 msgid "Horizontal space - \\hspace"
 msgstr "Spasi horisontal - \\hspace"
 
-#: ../src/latex_menu.vala:216
+#: ../src/latex_menu.vala:224
 msgid "Vertical space - \\vspace"
 msgstr "Spasi vertikal - \\vspace"
 
-#: ../src/latex_menu.vala:218
+#: ../src/latex_menu.vala:226
 msgid "No paragraph indentation - \\noindent"
 msgstr "Tanpa indentasi paragraf - \\noindent"
 
 #. LaTeX: International accents
-#: ../src/latex_menu.vala:222
+#: ../src/latex_menu.vala:230
 msgid "International _Accents"
 msgstr "_Aksen Internasional"
 
-#: ../src/latex_menu.vala:223
+#: ../src/latex_menu.vala:231
 msgid "Acute accent - \\'"
 msgstr "Aksen acute - \\'"
 
-#: ../src/latex_menu.vala:224
+#: ../src/latex_menu.vala:232
 msgid "Grave accent - \\`"
 msgstr "Aksen grave - \\`"
 
-#: ../src/latex_menu.vala:225
+#: ../src/latex_menu.vala:233
 msgid "Circumflex accent - \\^"
 msgstr "Akses circumflex - \\^"
 
-#: ../src/latex_menu.vala:226
+#: ../src/latex_menu.vala:234
 msgid "Trema - \\\""
 msgstr "Trema - \\\""
 
-#: ../src/latex_menu.vala:227
+#: ../src/latex_menu.vala:235
 msgid "Tilde - \\~"
 msgstr "Tilde - \\~"
 
-#: ../src/latex_menu.vala:228
+#: ../src/latex_menu.vala:236
 msgid "Macron - \\="
 msgstr "Macron - \\="
 
-#: ../src/latex_menu.vala:229
+#: ../src/latex_menu.vala:237
 msgid "Dot above - \\."
 msgstr "Titik di atas - \\."
 
-#: ../src/latex_menu.vala:230
+#: ../src/latex_menu.vala:238
 msgid "Caron - \\v"
 msgstr "Caron - \\v"
 
-#: ../src/latex_menu.vala:231
+#: ../src/latex_menu.vala:239
 msgid "Breve - \\u"
 msgstr "Breve - \\u"
 
-#: ../src/latex_menu.vala:233
+#: ../src/latex_menu.vala:241
 msgid "Double acute accent - \\H"
 msgstr "Aksen acute ganda - \\H"
 
-#: ../src/latex_menu.vala:234
+#: ../src/latex_menu.vala:242
 msgid "Cedilla - \\c"
 msgstr "Cedilla - \\c"
 
-#: ../src/latex_menu.vala:235
+#: ../src/latex_menu.vala:243
 msgid "Ogonek - \\k"
 msgstr "Ogonek - \\k"
 
-#: ../src/latex_menu.vala:236
+#: ../src/latex_menu.vala:244
 msgid "Dot below - \\d"
 msgstr "Titik di bawah - \\d"
 
-#: ../src/latex_menu.vala:237
+#: ../src/latex_menu.vala:245
 msgid "Macron below - \\b"
 msgstr "Macron di bawah - \\b"
 
-#: ../src/latex_menu.vala:238
+#: ../src/latex_menu.vala:246
 msgid "Ring - \\r"
 msgstr "Cincin - \\r"
 
-#: ../src/latex_menu.vala:239
+#: ../src/latex_menu.vala:247
 msgid "Tie - \\t"
 msgstr "Tie - \\t"
 
 #. LaTeX: Others
-#: ../src/latex_menu.vala:243
+#: ../src/latex_menu.vala:251
 msgid "_Misc"
 msgstr "_Rupa-rupa"
 
-#: ../src/latex_menu.vala:245
+#: ../src/latex_menu.vala:253
 msgid "Document class - \\documentclass"
 msgstr "Kelas dokumen - \\documentclass"
 
-#: ../src/latex_menu.vala:247
+#: ../src/latex_menu.vala:255
 msgid "Use package - \\usepackage"
 msgstr "Gunakan paket - \\usepackage"
 
-#: ../src/latex_menu.vala:248
+#: ../src/latex_menu.vala:256
 msgid "_AMS packages"
 msgstr "Paket _AMS"
 
-#: ../src/latex_menu.vala:249
+#: ../src/latex_menu.vala:257
 msgid "AMS packages"
 msgstr "Paket AMS"
 
-#: ../src/latex_menu.vala:250
+#: ../src/latex_menu.vala:258
 msgid "Author - \\author"
 msgstr "Penulis - \\author"
 
-#: ../src/latex_menu.vala:251
+#: ../src/latex_menu.vala:259
 msgid "Title - \\title"
 msgstr "Judul - \\title"
 
-#: ../src/latex_menu.vala:253
+#: ../src/latex_menu.vala:261
 msgid "Content of the document - \\begin{document}"
 msgstr "Isi dokumen - \\begin{document}"
 
-#: ../src/latex_menu.vala:255
+#: ../src/latex_menu.vala:263
 msgid "Make title - \\maketitle"
 msgstr "Buat judul - \\maketitle"
 
-#: ../src/latex_menu.vala:257
+#: ../src/latex_menu.vala:265
 msgid "Table of contents - \\tableofcontents"
 msgstr "Daftar isi - \\tableofcontents"
 
-#: ../src/latex_menu.vala:259
+#: ../src/latex_menu.vala:267
 msgid "Abstract - \\begin{abstract}"
 msgstr "Abstrak - \\begin{abstract}"
 
-#: ../src/latex_menu.vala:261
+#: ../src/latex_menu.vala:269
 msgid "Include an image (graphicx package) - \\includegraphics"
 msgstr "Sisipkan citra (paket graphicx) - \\includegraphics"
 
-#: ../src/latex_menu.vala:264
+#: ../src/latex_menu.vala:272
 msgid "Include a file - \\input"
 msgstr "Sertakan suatu berkas - \\input"
 
 #. Math
-#: ../src/latex_menu.vala:268
+#: ../src/latex_menu.vala:276
 msgid "_Math"
 msgstr "_Matematika"
 
 #. Math Environments
-#: ../src/latex_menu.vala:272
+#: ../src/latex_menu.vala:280
 msgid "_Math Environments"
 msgstr "Lingkungan _Math"
 
-#: ../src/latex_menu.vala:273
+#: ../src/latex_menu.vala:281
 msgid "_Mathematical Environment - $...$"
 msgstr "Lingkungan _Matematis - $...$"
 
-#: ../src/latex_menu.vala:274
+#: ../src/latex_menu.vala:282
 msgid "Mathematical Environment - $...$"
 msgstr "Lingkungan Matematis - $...$"
 
-#: ../src/latex_menu.vala:275
+#: ../src/latex_menu.vala:283
 msgid "_Centered Formula - \\[...\\]"
 msgstr "Rumus Di _Tengah - \\[...\\]"
 
-#: ../src/latex_menu.vala:276
+#: ../src/latex_menu.vala:284
 msgid "Centered Formula - \\[...\\]"
 msgstr "Rumus Di Tengah - \\[...\\]"
 
-#: ../src/latex_menu.vala:278
+#: ../src/latex_menu.vala:286
 msgid "_Numbered Equation - \\begin{equation}"
 msgstr "Persamaan Ber_nomor - \\begin{equation}"
 
-#: ../src/latex_menu.vala:279
+#: ../src/latex_menu.vala:287
 msgid "Numbered Equation - \\begin{equation}"
 msgstr "Persamaan Bernomor - \\begin{equation}"
 
-#: ../src/latex_menu.vala:280
+#: ../src/latex_menu.vala:288
 msgid "_Array of Equations - \\begin{align*}"
 msgstr "L_arik Persamaan - \\begin{align*}"
 
-#: ../src/latex_menu.vala:281
+#: ../src/latex_menu.vala:289
 msgid "Array of Equations - \\begin{align*}"
 msgstr "Larik Persamaan - \\begin{align*}"
 
-#: ../src/latex_menu.vala:283
+#: ../src/latex_menu.vala:291
 msgid "Numbered Array of _Equations - \\begin{align}"
 msgstr "Larik P_ersamaan Bernomor - \\begin{align}"
 
-#: ../src/latex_menu.vala:284
+#: ../src/latex_menu.vala:292
 msgid "Numbered Array of Equations - \\begin{align}"
 msgstr "Larik Persamaan Bernomor - \\begin{align}"
 
-#: ../src/latex_menu.vala:287
+#: ../src/latex_menu.vala:295
 msgid "_Superscript - ^{}"
 msgstr "_Superskrip - ^{}"
 
-#: ../src/latex_menu.vala:288
+#: ../src/latex_menu.vala:296
 msgid "Superscript - ^{}"
 msgstr "Superskrip - ^{}"
 
-#: ../src/latex_menu.vala:289
+#: ../src/latex_menu.vala:297
 msgid "Su_bscript - __{}"
 msgstr "Su_bskrip - __{}"
 
-#: ../src/latex_menu.vala:290
+#: ../src/latex_menu.vala:298
 msgid "Subscript - _{}"
 msgstr "Subskrip - _{}"
 
-#: ../src/latex_menu.vala:291
+#: ../src/latex_menu.vala:299
 msgid "_Fraction - \\frac{}{}"
 msgstr "_Pecahan - \\frac{}{}"
 
-#: ../src/latex_menu.vala:292
+#: ../src/latex_menu.vala:300
 msgid "Fraction - \\frac{}{}"
 msgstr "Pecahan - \\frac{}{}"
 
-#: ../src/latex_menu.vala:293
+#: ../src/latex_menu.vala:301
 msgid "Square _Root - \\sqrt{}"
 msgstr "Aka_r Kuadrat - \\sqrt{}"
 
-#: ../src/latex_menu.vala:294
+#: ../src/latex_menu.vala:302
 msgid "Square Root - \\sqrt{}"
 msgstr "Akar Kuadrat - \\sqrt{}"
 
-#: ../src/latex_menu.vala:295
+#: ../src/latex_menu.vala:303
 msgid "_N-th Root - \\sqrt[]{}"
 msgstr "Akar Pangkat-_N - \\sqrt[]{}"
 
-#: ../src/latex_menu.vala:296
+#: ../src/latex_menu.vala:304
 msgid "N-th Root - \\sqrt[]{}"
 msgstr "Akar Pangkat-N - \\sqrt[]{}"
 
 #. Math functions
-#: ../src/latex_menu.vala:300
+#: ../src/latex_menu.vala:308
 msgid "Math _Functions"
 msgstr "_Fungsi-fungsi Matematika"
 
 #. Math Font Styles
-#: ../src/latex_menu.vala:334
+#: ../src/latex_menu.vala:342
 msgid "Math Font _Styles"
 msgstr "_Gaya Fonta Math"
 
-#: ../src/latex_menu.vala:336
+#: ../src/latex_menu.vala:344
 msgid "Roman - \\mathrm"
 msgstr "Roman - \\mathrm"
 
-#: ../src/latex_menu.vala:338
+#: ../src/latex_menu.vala:346
 msgid "Italic - \\mathit"
 msgstr "Miring - \\mathit"
 
-#: ../src/latex_menu.vala:340
+#: ../src/latex_menu.vala:348
 msgid "Bold - \\mathbf"
 msgstr "Tebal - \\mathbf"
 
-#: ../src/latex_menu.vala:342
+#: ../src/latex_menu.vala:350
 msgid "Sans Serif - \\mathsf"
 msgstr "Sans Serif - \\mathsf"
 
-#: ../src/latex_menu.vala:344
+#: ../src/latex_menu.vala:352
 msgid "Typewriter - \\mathtt"
 msgstr "Mesin tik - \\mathtt"
 
-#: ../src/latex_menu.vala:346
+#: ../src/latex_menu.vala:354
 msgid "Calligraphic - \\mathcal"
 msgstr "Kaligrafis - \\mathcal"
 
-#: ../src/latex_menu.vala:348
+#: ../src/latex_menu.vala:356
 msgid "Blackboard (uppercase only)  - \\mathbb (amsfonts package)"
 msgstr "Blackboard (hanya huruf besar)  - \\mathbb (paket amsfonts)"
 
-#: ../src/latex_menu.vala:351
+#: ../src/latex_menu.vala:359
 msgid "Euler Fraktur - \\mathfrak (amsfonts package)"
 msgstr "Fraktur Euler - \\mathfrak (paket amsfonts)"
 
 #. Math Accents
-#: ../src/latex_menu.vala:356
+#: ../src/latex_menu.vala:364
 msgid "Math _Accents"
 msgstr "_Aksen Math"
 
 #. Math Spaces
-#: ../src/latex_menu.vala:377
+#: ../src/latex_menu.vala:385
 msgid "Math _Spaces"
 msgstr "_Spasi Math"
 
-#: ../src/latex_menu.vala:378
+#: ../src/latex_menu.vala:386
 msgid "_Small"
 msgstr "_Kecil"
 
-#: ../src/latex_menu.vala:379
+#: ../src/latex_menu.vala:387
 msgid "Small - \\,"
 msgstr "Kecil - \\,"
 
-#: ../src/latex_menu.vala:380
+#: ../src/latex_menu.vala:388
 msgid "_Medium"
 msgstr "_Sedang"
 
-#: ../src/latex_menu.vala:381
+#: ../src/latex_menu.vala:389
 msgid "Medium - \\:"
 msgstr "Sedang - \\:"
 
-#: ../src/latex_menu.vala:382
+#: ../src/latex_menu.vala:390
 msgid "_Large"
 msgstr "_Besar"
 
-#: ../src/latex_menu.vala:383
+#: ../src/latex_menu.vala:391
 msgid "Large - \\;"
 msgstr "Besar - \\;"
 
 #. Math: Left Delimiters
-#: ../src/latex_menu.vala:389
+#: ../src/latex_menu.vala:397
 msgid "_Left Delimiters"
 msgstr "Pembatas K_iri"
 
-#: ../src/latex_menu.vala:390
+#: ../src/latex_menu.vala:398
 msgid "left ("
 msgstr "( kiri"
 
-#: ../src/latex_menu.vala:392
+#: ../src/latex_menu.vala:400
 msgid "left ["
 msgstr "[ kiri"
 
-#: ../src/latex_menu.vala:394
+#: ../src/latex_menu.vala:402
 msgid "left { "
 msgstr "{ kiri"
 
-#: ../src/latex_menu.vala:396
+#: ../src/latex_menu.vala:404
 msgid "left <"
 msgstr "< kiri"
 
-#: ../src/latex_menu.vala:398
+#: ../src/latex_menu.vala:406
 msgid "left )"
 msgstr ") kiri"
 
-#: ../src/latex_menu.vala:400
+#: ../src/latex_menu.vala:408
 msgid "left ]"
 msgstr "] kiri"
 
-#: ../src/latex_menu.vala:402
+#: ../src/latex_menu.vala:410
 msgid "left  }"
 msgstr "} kiri"
 
-#: ../src/latex_menu.vala:404
+#: ../src/latex_menu.vala:412
 msgid "left >"
 msgstr "> kiri"
 
-#: ../src/latex_menu.vala:406
+#: ../src/latex_menu.vala:414
 msgid "left ."
 msgstr ". kiri"
 
 #. Math: Right Delimiters
-#: ../src/latex_menu.vala:411
+#: ../src/latex_menu.vala:419
 msgid "Right _Delimiters"
 msgstr "Pembatas K_anan"
 
-#: ../src/latex_menu.vala:412
+#: ../src/latex_menu.vala:420
 msgid "right )"
 msgstr ") kanan"
 
-#: ../src/latex_menu.vala:414
+#: ../src/latex_menu.vala:422
 msgid "right ]"
 msgstr "] kanan"
 
-#: ../src/latex_menu.vala:416
+#: ../src/latex_menu.vala:424
 msgid "right  }"
 msgstr "} kanan"
 
-#: ../src/latex_menu.vala:418
+#: ../src/latex_menu.vala:426
 msgid "right >"
 msgstr "> kanan"
 
-#: ../src/latex_menu.vala:420
+#: ../src/latex_menu.vala:428
 msgid "right ("
 msgstr "( kanan"
 
-#: ../src/latex_menu.vala:422
+#: ../src/latex_menu.vala:430
 msgid "right ["
 msgstr "[ kanan"
 
-#: ../src/latex_menu.vala:424
+#: ../src/latex_menu.vala:432
 msgid "right { "
 msgstr "{ kanan"
 
-#: ../src/latex_menu.vala:426
+#: ../src/latex_menu.vala:434
 msgid "right <"
 msgstr "< kanan"
 
-#: ../src/latex_menu.vala:428
+#: ../src/latex_menu.vala:436
 msgid "right ."
 msgstr ". kanan"
 
 #. menus under toolitems
-#: ../src/latex_menu.vala:443
+#: ../src/latex_menu.vala:451
 msgid "Sectioning"
 msgstr "Penentuan Seksi"
 
-#: ../src/latex_menu.vala:446
+#: ../src/latex_menu.vala:454
 msgid "Characters Sizes"
 msgstr "Ukuran Karakter"
 
-#: ../src/latex_menu.vala:449
+#: ../src/latex_menu.vala:457
 msgid "References"
 msgstr "Rujukan"
 
-#: ../src/latex_menu.vala:452
+#: ../src/latex_menu.vala:460
 msgid "Presentation Environments"
 msgstr "Lingkungan Presentasi"
 
-#: ../src/latex_menu.vala:455
+#: ../src/latex_menu.vala:463
 msgid "Math Environments"
 msgstr "Lingkungan Math"
 
-#: ../src/latex_menu.vala:458
+#: ../src/latex_menu.vala:466
 msgid "Left Delimiters"
 msgstr "Pembatas Kiri"
 
-#: ../src/latex_menu.vala:461
+#: ../src/latex_menu.vala:469
 msgid "Right Delimiters"
 msgstr "Pembatas Kanan"
 
@@ -1686,11 +1697,19 @@ msgstr "Hap_us Komentar"
 msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "Jadikan bukan komentar baris yang dipilih (hapus karakter \"%\")"
 
+#: ../src/main_window_edit.vala:65
+msgid "_Completion"
+msgstr "_Pelengkapan"
+
 #: ../src/main_window_edit.vala:66
+msgid "Complete the LaTeX command"
+msgstr "Lengkapi perintah LaTeX"
+
+#: ../src/main_window_edit.vala:69
 msgid "Configure the application"
 msgstr "Mengonfigurasi aplikasi"
 
-#: ../src/main_window_edit.vala:72
+#: ../src/main_window_edit.vala:75
 msgid "Activate or disable the spell checking"
 msgstr "Aktifkan atau nonaktifkan pemeriksaan ejaan"
 
