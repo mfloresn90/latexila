@@ -8,68 +8,81 @@ msgstr ""
 "Project-Id-Version: latexila master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-06-28 21:20+0000\n"
-"PO-Revision-Date: 2014-06-29 16:27+0300\n"
+"POT-Creation-Date: 2014-09-05 21:25+0000\n"
+"PO-Revision-Date: 2014-09-06 09:06+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n%"
-"10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: build_tools.xml:43(tool/label) ../src/build_tool_dialog.vala:166
+#. (itstool) path: tool/label
+#: build_tools.xml:43 ../src/build_tool_dialog.vala:166
 msgid "View PDF"
 msgstr "Переглянути PDF"
 
-#: build_tools.xml:44(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:44
 msgid "View the PDF file"
 msgstr "Переглянути файл PDF"
 
-#: build_tools.xml:49(tool/label) ../src/build_tool_dialog.vala:165
+#. (itstool) path: tool/label
+#: build_tools.xml:49 ../src/build_tool_dialog.vala:165
 msgid "View DVI"
 msgstr "Переглянути DVI"
 
-#: build_tools.xml:50(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:50
 msgid "View the DVI file"
 msgstr "Переглянути файл DVI"
 
-#: build_tools.xml:55(tool/label) ../src/build_tool_dialog.vala:167
+#. (itstool) path: tool/label
+#: build_tools.xml:55 ../src/build_tool_dialog.vala:167
 msgid "View PS"
 msgstr "Переглянути PS"
 
-#: build_tools.xml:56(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:56
 msgid "View the PostScript file"
 msgstr "Переглянути файл PostScript"
 
-#: build_tools.xml:64(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:64
 msgid "Create a PDF file from LaTeX sources with the \"pdflatex\" command"
 msgstr ""
 "Створити файл PDF на основі коду LaTeX за допомогою програми «pdflatex»"
 
-#: build_tools.xml:70(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:70
 msgid "Create a DVI file from LaTeX sources with the \"latex\" command"
 msgstr "Створити файл DVI на основі коду LaTeX за допомогою програми «latex»"
 
-#: build_tools.xml:78(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:78
 msgid "Run BibTeX (bibliography)"
 msgstr "Запустити BibTeX (створити бібліографію)"
 
-#: build_tools.xml:84(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:84
 msgid "Run MakeIndex"
 msgstr "Запустити MakeIndex"
 
-#: build_tools.xml:92(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:92
 msgid "Convert the DVI document to the PDF format"
 msgstr "Перетворити документ у форматі DVI на документ у форматі PDF"
 
-#: build_tools.xml:98(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:98
 msgid "Convert the DVI document to the PostScript format"
 msgstr "Перетворити документ у форматі DVI на документ у форматі PostScript"
 
-#: build_tools.xml:104(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:104
 msgid "Convert the PostScript document to the PDF format"
 msgstr "Перетворити документ у форматі PostScript на документ у форматі PDF"
 
@@ -100,8 +113,8 @@ msgid ""
 msgstr ""
 "Нові документи створюються на основі шаблонів. Передбачено кнопки для "
 "збирання, перетворення та перегляду документів у відповідь на одне клацання "
-"кнопкою миші. Передбачено інструмент для керування проектів, що складаються з "
-"декількох файлів .tex."
+"кнопкою миші. Передбачено інструмент для керування проектів, що складаються "
+"з декількох файлів .tex."
 
 #: ../data/latexila.appdata.xml.in.h:4
 msgid ""
@@ -119,8 +132,8 @@ msgid ""
 "backward search to switch between the .tex and the PDF."
 msgstr ""
 "Крім того, LaTeXila може перевіряти правопис слів документа і здійснювати "
-"двобічний перехід між кодом у форматі .tex та остаточним документом у форматі "
-"PDF."
+"двобічний перехід між кодом у форматі .tex та остаточним документом у "
+"форматі PDF."
 
 #: ../data/latexila.desktop.in.in.h:1
 msgid "LaTeXila"
@@ -201,8 +214,8 @@ msgid ""
 "option."
 msgstr ""
 "Визначає, чи слід LaTeXila автоматично і регулярно зберігати змінені файли. "
-"Інтервал між сеансами збереження даних можна визначити за допомогою параметра "
-"«Інтервал автозбереження»."
+"Інтервал між сеансами збереження даних можна визначити за допомогою "
+"параметра «Інтервал автозбереження»."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:11
 msgid "Autosave Interval"
@@ -338,8 +351,8 @@ msgstr "Компонент бічної панелі"
 msgid ""
 "Side panel's active component. 0: Symbols. 1: File browser. 2: Structure."
 msgstr ""
-"Активний компонент бічної панелі. 0: символи. 1: навігатор файловою системою. "
-"2: структура документа."
+"Активний компонент бічної панелі. 0: символи. 1: навігатор файловою "
+"системою. 2: структура документа."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:38
 msgid "Show build output warnings"
@@ -426,8 +439,8 @@ msgstr "Показувати тимчасові файли"
 msgid ""
 "Show files with an extension present in preferences.latex.clean-extensions."
 msgstr ""
-"Показувати файли з суфіксами назв, визначеними у "
-"preferences.latex.clean-extensions."
+"Показувати файли з суфіксами назв, визначеними у preferences.latex.clean-"
+"extensions."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:289
 msgid "Show hidden files"
@@ -686,7 +699,7 @@ msgstr "Виберіть файли, які ви хочете вилучити:"
 msgid "No build file to clean up."
 msgstr "Немає тимчасових файлів для вилучення."
 
-#: ../src/completion.vala:315
+#: ../src/completion.vala:318
 msgid "No matching proposal"
 msgstr "Немає відповідних варіантів"
 
@@ -1707,11 +1720,20 @@ msgstr "_Розкоментувати"
 msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "Зняти коментування позначених рядків (вилучити символ «%»)"
 
+#: ../src/main_window_edit.vala:65
+#| msgid "_Comment"
+msgid "_Completion"
+msgstr "_Доповнення"
+
 #: ../src/main_window_edit.vala:66
+msgid "Complete the LaTeX command"
+msgstr "Доповнення команди LaTeX"
+
+#: ../src/main_window_edit.vala:69
 msgid "Configure the application"
 msgstr "Налаштувати програму"
 
-#: ../src/main_window_edit.vala:72
+#: ../src/main_window_edit.vala:75
 msgid "Activate or disable the spell checking"
 msgstr "Задіяти або вимкнути перевірку правопису"
 
@@ -2238,7 +2260,8 @@ msgstr "Помилка дії зі структурою: %s"
 #: ../src/structure.vala:638
 msgid "The structure data seems outdated. Please refresh the structure."
 msgstr ""
-"Здається, дані щодо структури застарілі. Будь ласка, оновіть записи структури."
+"Здається, дані щодо структури застарілі. Будь ласка, оновіть записи "
+"структури."
 
 #. Translators: it's a verb
 #: ../src/structure.vala:729
@@ -2487,5 +2510,4 @@ msgstr "Кількість символів після «\\»"
 #: ../src/ui/preferences_dialog.ui.h:24
 msgid "Other"
 msgstr "Інше"
-
 
