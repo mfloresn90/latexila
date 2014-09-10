@@ -6,7 +6,7 @@ available at the following location:
 
     git://git.gnome.org/latexila
 
-A Web Interface is available at:
+A web interface is available at:
 
     http://git.gnome.org/browse/latexila
 
@@ -36,7 +36,7 @@ A GitHub repository is available, so you can fork it easily:
     https://github.com/GNOME/latexila
 
 Git commits should have maximum 72 characters for the first line, followed by a
-blank line and then the description.
+blank line and then a longer description.
 
 Code conventions
 ================
@@ -45,7 +45,7 @@ For consistency, there are some conventions to follow when coding.
 
 For Vala and C:
     - no trailing spaces
-    - use blank lines to space out the code (only one blank line is enough)
+    - use blank lines to space out blocks of code (only one blank line is enough)
     - as a general rule of thumb, when modifying a file use the same coding
       style of that file.
 
@@ -60,17 +60,16 @@ For Vala:
         - if (! foo)                      // not if (!foo)
         - for (int i = 0 ; i < max ; i++) // not for(int i=0;i<max;i++)
         - etc...
-    - do not use 'var' for declaring variables, unless the type is very long
+    - do not use 'var' for declaring variables, unless the type is very long.
+      The type of a variable is a form of auto-documentation.
 
-For the C code in src/liblatexila/ (newest code):
+For C:
     - follow the GLib/GTK+ conventions:
       https://wiki.gnome.org/Projects/GTK%2B/BestPractices
     - indentation: GNU style
-    - use curly brackets around all blocks, even for one-line blocks (adding and
-      removing brackets all the time is boring)
     - no maximum line length (but short lines are better)
     - only /* ... */ comments (for C89 compatibility)
-    - spacing differences (see above):
+    - spacing differences with Vala:
     	- if (!foo)
 	- for (int i = 0; i < max; i++)
 
@@ -78,11 +77,11 @@ Debug
 =====
 
 How to debug LaTeXila with gdb?
-    Run:
-    $ make CFLAGS="-g"
+    Build LaTeXila with the option -g in the CFLAGS.
 
     Here is how you can get the backtrace after a crash:
-    $ gdb ./latexila
+    $ gdb latexila
     > run
     [segmentation fault]
-    > bt
+    > backtrace
+    > quit
