@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: LaTeXila 2.12\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-06-30 18:19+0000\n"
-"PO-Revision-Date: 2014-06-30 20:25+0200\n"
+"POT-Creation-Date: 2014-09-11 09:22+0000\n"
+"PO-Revision-Date: 2014-09-11 20:33+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu_HU\n"
@@ -20,55 +20,68 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: build_tools.xml:43(tool/label) ../src/build_tool_dialog.vala:166
+#. (itstool) path: tool/label
+#: build_tools.xml:43 ../src/build_tool_dialog.vala:166
 msgid "View PDF"
 msgstr "PDF megtekintése"
 
-#: build_tools.xml:44(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:44
 msgid "View the PDF file"
 msgstr "A PDF fájl megtekintése"
 
-#: build_tools.xml:49(tool/label) ../src/build_tool_dialog.vala:165
+#. (itstool) path: tool/label
+#: build_tools.xml:49 ../src/build_tool_dialog.vala:165
 msgid "View DVI"
 msgstr "DVI megtekintése"
 
-#: build_tools.xml:50(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:50
 msgid "View the DVI file"
 msgstr "A DVI fájl megtekintése"
 
-#: build_tools.xml:55(tool/label) ../src/build_tool_dialog.vala:167
+#. (itstool) path: tool/label
+#: build_tools.xml:55 ../src/build_tool_dialog.vala:167
 msgid "View PS"
 msgstr "PS megtekintése"
 
-#: build_tools.xml:56(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:56
 msgid "View the PostScript file"
 msgstr "A PostScript fájl megtekintése"
 
-#: build_tools.xml:64(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:64
 msgid "Create a PDF file from LaTeX sources with the \"pdflatex\" command"
 msgstr "PDF fájl létrehozása a LaTeX forrásokból a „pdflatex” paranccsal"
 
-#: build_tools.xml:70(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:70
 msgid "Create a DVI file from LaTeX sources with the \"latex\" command"
 msgstr "DVI fájl létrehozása a LaTeX forrásokból a „latex” paranccsal"
 
-#: build_tools.xml:78(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:78
 msgid "Run BibTeX (bibliography)"
 msgstr "BibTeX futtatása (irodalomjegyzék)"
 
-#: build_tools.xml:84(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:84
 msgid "Run MakeIndex"
 msgstr "MakeIndex futtatása"
 
-#: build_tools.xml:92(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:92
 msgid "Convert the DVI document to the PDF format"
 msgstr "A DVI dokumentum átalakítása PDF formátumba"
 
-#: build_tools.xml:98(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:98
 msgid "Convert the DVI document to the PostScript format"
 msgstr "A DVI dokumentum átalakítása PostScript formátumba"
 
-#: build_tools.xml:104(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:104
 msgid "Convert the PostScript document to the PDF format"
 msgstr "A PostScript dokumentum átalakítása PDF formátumba"
 
@@ -101,10 +114,6 @@ msgstr ""
 "könnyedén kezeli a több .tex fájlt tartalmazó projekteket is."
 
 #: ../data/latexila.appdata.xml.in.h:4
-#| msgid ""
-#| "There is a side panel with three components: the document structure to "
-#| "easily navigate in it; lists of symbols to insert them in a document; and "
-#| "an integrated file browser."
 msgid ""
 "A side panel contains three components: the document structure to easily "
 "navigate in it; lists of symbols to insert them in a document; and an "
@@ -671,7 +680,7 @@ msgstr "Válassza ki a törölni kívánt fájlokat:"
 msgid "No build file to clean up."
 msgstr "Nincs tisztítandó összeállítási fájl."
 
-#: ../src/completion.vala:315
+#: ../src/completion.vala:318
 msgid "No matching proposal"
 msgstr "Nincs egyező javaslat"
 
@@ -1688,11 +1697,20 @@ msgstr "Megjegyzés _törlése"
 msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "A kijelölt sorok megjegyzésének törlése (a „%” karakter eltávolítása)"
 
+#: ../src/main_window_edit.vala:65
+#| msgid "_Comment"
+msgid "_Completion"
+msgstr "_Befejezés"
+
 #: ../src/main_window_edit.vala:66
+msgid "Complete the LaTeX command"
+msgstr "A LaTeX parancs befejezése"
+
+#: ../src/main_window_edit.vala:69
 msgid "Configure the application"
 msgstr "Az alkalmazás beállítása"
 
-#: ../src/main_window_edit.vala:72
+#: ../src/main_window_edit.vala:75
 msgid "Activate or disable the spell checking"
 msgstr "A helyesírás-ellenőrzés aktiválása vagy letiltása"
 
