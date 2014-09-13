@@ -33,8 +33,6 @@
 #include <string.h>
 #include "latexila-build-view.h"
 
-/* TODO This file needs a really good bunch of code clean-up and unit tests. */
-
 #define NO_LINE (-1)
 
 /* If a message is split into several lines, we enter in a different state to
@@ -51,20 +49,39 @@ typedef enum
   STATE_FILENAME_HEURISTIC
 } State;
 
-/* Opened file. They are present in a stack. It is used to know on which file an
- * error or warning occurred.
+/* File opened by TeX. It is used to know on which file an error or warning
+ * occurred. File's are pushed and popped in a stack.
  */
-typedef struct
+typedef struct _File File;
+struct _File
 {
   gchar *filename;
+
+  /* There are basically two ways to detect the current file TeX is processing:
+   * 1) Use \Input (srctex or srcltx package) and \include exclusively. This will
+   *    cause (La)TeX to print the line ":<+ filename" in the log file when opening
+   *    a file, ":<-" when closing a file. Filenames pushed on the stack in this mode
+   *    are marked as reliable.
+   *
+   * 2) Since people will probably also use the \input command, we also have to
+   *    detect the old-fashioned way. TeX prints '(filename' when opening a file
+   *    and a ')' when closing one. It is impossible to detect this with 100%
+   *    certainty (TeX prints many messages and even text (a context) from the
+   *    TeX source file, there could be unbalanced parentheses), so we use an
+   *    heuristic algorithm. In heuristic mode a ')' will only be considered as
+   *    a signal that TeX is closing a file if the top of the stack is not
+   *    marked as "reliable".
+   *
+   * The method used here is almost the same as in Kile.
+   */
   guint reliable : 1;
 
   /* Non-existent files are also pushed on the stack, because the corresponding
-   * ')' will pop it. If we don't push them, wrong files are popped.
+   * ')' will pop them. If we don't push them, wrong files are popped.
    * When a new message is added, the last _existing_ file is taken.
    */
   guint exists : 1;
-} OpenedFile;
+};
 
 struct _LatexilaPostProcessorLatexPrivate
 {
@@ -82,24 +99,27 @@ struct _LatexilaPostProcessorLatexPrivate
    * line_buffer.
    */
   GString *line_buffer;
-  gint nb_lines;
+
+  /* Number of lines in @line_buffer. */
+  gint lines_count;
 
   /* If a filename is split into several lines. */
   GString *filename_buffer;
 
   /* The stack containing the files that TeX is processing. The top of the stack
    * is the beginning of the list.
-   * Elements type: pointer to OpenedFile
+   * Elements type: pointer to File
    */
   GSList *stack_files;
 
   /* The directory where the document is compiled. */
+  /* FIXME why not storing the GFile? */
   gchar *directory_path;
 
   /* For statistics. */
-  gint nb_badboxes;
-  gint nb_warnings;
-  gint nb_errors;
+  gint badboxes_count;
+  gint warnings_count;
+  gint errors_count;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (LatexilaPostProcessorLatex,
@@ -107,18 +127,56 @@ G_DEFINE_TYPE_WITH_PRIVATE (LatexilaPostProcessorLatex,
                             LATEXILA_TYPE_POST_PROCESSOR)
 
 #if 0
-static OpenedFile *
-opened_file_new (void)
+static File *
+file_new (void)
 {
-  return g_slice_new0 (OpenedFile);
+  return g_slice_new0 (File);
 }
 #endif
 
 static void
-opened_file_free (OpenedFile *opened_file)
+file_free (File *file)
 {
-  if (opened_file != NULL)
-    g_slice_free (OpenedFile, opened_file);
+  if (file != NULL)
+    g_slice_free (File, file);
+}
+
+static void
+set_line_buffer (LatexilaPostProcessorLatex *pp,
+                 const gchar                *line)
+{
+  if (pp->priv->line_buffer != NULL)
+    g_string_free (pp->priv->line_buffer, TRUE);
+
+  pp->priv->line_buffer = g_string_new (line);
+  pp->priv->lines_count = 1;
+}
+
+static void
+append_to_line_buffer (LatexilaPostProcessorLatex *pp,
+                       const gchar                *line)
+{
+  g_return_if_fail (pp->priv->line_buffer != NULL);
+  g_string_append (pp->priv->line_buffer, line);
+  pp->priv->lines_count++;
+}
+
+static void
+set_filename_buffer (LatexilaPostProcessorLatex *pp,
+                     const gchar                *content)
+{
+  if (pp->priv->filename_buffer != NULL)
+    g_string_free (pp->priv->filename_buffer, TRUE);
+
+  pp->priv->filename_buffer = g_string_new (content);
+}
+
+static void
+append_to_filename_buffer (LatexilaPostProcessorLatex *pp,
+                           const gchar                *content)
+{
+  g_return_if_fail (pp->priv->filename_buffer != NULL);
+  g_string_append (pp->priv->filename_buffer, content);
 }
 
 static gchar *
@@ -128,7 +186,7 @@ get_current_filename (LatexilaPostProcessorLatex *pp)
 
   for (l = pp->priv->stack_files; l != NULL; l = l->next)
     {
-      OpenedFile *file = l->data;
+      File *file = l->data;
 
       /* TODO check lazily if the file exists */
       if (file->exists)
@@ -154,7 +212,7 @@ add_message (LatexilaPostProcessorLatex *pp,
       g_strcmp0 (cur_msg->text, "There were undefined references.") == 0)
     {
       latexila_build_msg_reinit (cur_msg);
-      return;
+      goto end;
     }
 
   if (set_filename)
@@ -205,15 +263,15 @@ add_message (LatexilaPostProcessorLatex *pp,
   switch (cur_msg->type)
     {
     case LATEXILA_BUILD_MSG_TYPE_BADBOX:
-      pp->priv->nb_badboxes++;
+      pp->priv->badboxes_count++;
       break;
 
     case LATEXILA_BUILD_MSG_TYPE_WARNING:
-      pp->priv->nb_warnings++;
+      pp->priv->warnings_count++;
       break;
 
     case LATEXILA_BUILD_MSG_TYPE_ERROR:
-      pp->priv->nb_errors++;
+      pp->priv->errors_count++;
       break;
 
     default:
@@ -225,6 +283,17 @@ add_message (LatexilaPostProcessorLatex *pp,
                                                      cur_msg);
 
   pp->priv->cur_msg = latexila_build_msg_new ();
+
+end:
+  pp->priv->state = STATE_START;
+
+  if (pp->priv->line_buffer != NULL)
+    {
+      g_string_free (pp->priv->line_buffer, TRUE);
+      pp->priv->line_buffer = NULL;
+    }
+
+  pp->priv->lines_count = 0;
 }
 
 static void
@@ -255,17 +324,17 @@ latexila_post_processor_latex_end (LatexilaPostProcessor *post_processor)
    */
   cur_msg->type = LATEXILA_BUILD_MSG_TYPE_INFO;
   cur_msg->text = g_strdup_printf ("%d %s, %d %s, %d %s",
-                                   pp->priv->nb_errors,
-                                   pp->priv->nb_errors == 1 ? "error" : "errors",
-                                   pp->priv->nb_warnings,
-                                   pp->priv->nb_warnings == 1 ? "warning" : "warnings",
-                                   pp->priv->nb_badboxes,
-                                   pp->priv->nb_badboxes == 1 ? "badbox" : "badboxes");
+                                   pp->priv->errors_count,
+                                   pp->priv->errors_count == 1 ? "error" : "errors",
+                                   pp->priv->warnings_count,
+                                   pp->priv->warnings_count == 1 ? "warning" : "warnings",
+                                   pp->priv->badboxes_count,
+                                   pp->priv->badboxes_count == 1 ? "badbox" : "badboxes");
 
   add_message (pp, FALSE);
 }
 
-static gboolean
+static void
 detect_badbox_line (LatexilaPostProcessorLatex *pp,
                     const gchar                *badbox_line,
                     gboolean                    current_line_is_empty)
@@ -287,8 +356,7 @@ detect_badbox_line (LatexilaPostProcessorLatex *pp,
         {
           g_warning ("PostProcessorLatex: %s", error->message);
           g_error_free (error);
-          error = NULL;
-          return FALSE;
+          return;
         }
     }
 
@@ -303,8 +371,7 @@ detect_badbox_line (LatexilaPostProcessorLatex *pp,
         {
           g_warning ("PostProcessorLatex: %s", error->message);
           g_error_free (error);
-          error = NULL;
-          return FALSE;
+          return;
         }
     }
 
@@ -319,8 +386,7 @@ detect_badbox_line (LatexilaPostProcessorLatex *pp,
         {
           g_warning ("PostProcessorLatex: %s", error->message);
           g_error_free (error);
-          error = NULL;
-          return FALSE;
+          return;
         }
     }
 
@@ -329,8 +395,6 @@ detect_badbox_line (LatexilaPostProcessorLatex *pp,
       gchar **strings;
       gint n1;
       gint n2;
-
-      pp->priv->state = STATE_START;
 
       /* TODO use g_match_info_fetch_named() */
       strings = g_regex_split (regex_badbox_lines, badbox_line, 0);
@@ -352,15 +416,15 @@ detect_badbox_line (LatexilaPostProcessorLatex *pp,
           cur_msg->end_line = n1;
         }
 
+      add_message (pp, TRUE);
+
       g_strfreev (strings);
-      return TRUE;
+      return;
     }
 
   if (g_regex_match (regex_badbox_line, badbox_line, 0, NULL))
     {
       gchar **strings;
-
-      pp->priv->state = STATE_START;
 
       strings = g_regex_split (regex_badbox_line, badbox_line, 0);
 
@@ -369,15 +433,15 @@ detect_badbox_line (LatexilaPostProcessorLatex *pp,
 
       cur_msg->start_line = atoi (strings[2]);
 
+      add_message (pp, TRUE);
+
       g_strfreev (strings);
-      return TRUE;
+      return;
     }
 
   if (g_regex_match (regex_badbox_output, badbox_line, 0, NULL))
     {
       gchar **strings;
-
-      pp->priv->state = STATE_START;
 
       strings = g_regex_split (regex_badbox_output, badbox_line, 0);
 
@@ -385,23 +449,28 @@ detect_badbox_line (LatexilaPostProcessorLatex *pp,
       cur_msg->text = g_strdup (strings[1]);
       cur_msg->start_line = NO_LINE;
 
+      add_message (pp, TRUE);
+
       g_strfreev (strings);
-      return TRUE;
+      return;
     }
 
-  if (pp->priv->nb_lines > 4 || current_line_is_empty)
+  if (pp->priv->lines_count > 4 || current_line_is_empty)
     {
-      pp->priv->state = STATE_START;
-
       g_free (cur_msg->text);
       cur_msg->text = g_strdup (badbox_line);
 
       cur_msg->start_line = NO_LINE;
-      return TRUE;
+
+      add_message (pp, TRUE);
+      return;
     }
 
-  pp->priv->state = STATE_BADBOX;
-  return FALSE;
+  if (pp->priv->state == STATE_START)
+    {
+      pp->priv->state = STATE_BADBOX;
+      set_line_buffer (pp, badbox_line);
+    }
 }
 
 static gboolean
@@ -422,7 +491,6 @@ detect_badbox (LatexilaPostProcessorLatex *pp,
         {
           g_warning ("PostProcessorLatex: %s", error->message);
           g_error_free (error);
-          error = NULL;
           return FALSE;
         }
     }
@@ -434,43 +502,23 @@ detect_badbox (LatexilaPostProcessorLatex *pp,
         return FALSE;
 
       pp->priv->cur_msg->type = LATEXILA_BUILD_MSG_TYPE_BADBOX;
-
-      if (detect_badbox_line (pp, line, FALSE))
-        {
-          add_message (pp, TRUE);
-        }
-      else
-        {
-          if (pp->priv->line_buffer != NULL)
-            g_string_free (pp->priv->line_buffer, TRUE);
-
-          pp->priv->line_buffer = g_string_new (line);
-          pp->priv->nb_lines++;
-        }
-
+      detect_badbox_line (pp, line, FALSE);
       return TRUE;
 
     case STATE_BADBOX:
-      g_string_append (pp->priv->line_buffer, line);
-      pp->priv->nb_lines++;
-
-      if (detect_badbox_line (pp,
-                              pp->priv->line_buffer->str,
-                              line[0] == '\0'))
-        {
-          add_message (pp, TRUE);
-          pp->priv->nb_lines = 0;
-        }
+      detect_badbox_line (pp,
+                          pp->priv->line_buffer->str,
+                          line[0] == '\0');
 
       /* The return value is not important here. */
       return TRUE;
 
     default:
-      return FALSE;
+      g_return_val_if_reached (FALSE);
     }
 }
 
-static gboolean
+static void
 detect_warning_line (LatexilaPostProcessorLatex *pp,
                      const gchar                *warning,
                      gboolean                    current_line_is_empty)
@@ -492,7 +540,7 @@ detect_warning_line (LatexilaPostProcessorLatex *pp,
         {
           g_warning ("PostProcessorLatex: %s", error->message);
           g_error_free (error);
-          return FALSE;
+          return;
         }
     }
 
@@ -507,15 +555,13 @@ detect_warning_line (LatexilaPostProcessorLatex *pp,
         {
           g_warning ("PostProcessorLatex: %s", error->message);
           g_error_free (error);
-          return FALSE;
+          return;
         }
     }
 
   if (g_regex_match (regex_warning_line, warning, 0, NULL))
     {
       gchar **strings;
-
-      pp->priv->state = STATE_START;
 
       strings = g_regex_split (regex_warning_line, warning, 0);
 
@@ -524,15 +570,15 @@ detect_warning_line (LatexilaPostProcessorLatex *pp,
 
       cur_msg->start_line = atoi (strings[2]);
 
+      add_message (pp, TRUE);
+
       g_strfreev (strings);
-      return TRUE;
+      return;
     }
 
   if (g_regex_match (regex_warning_international_line, warning, 0, NULL))
     {
       gchar **strings;
-
-      pp->priv->state = STATE_START;
 
       strings = g_regex_split (regex_warning_international_line, warning, 0);
 
@@ -541,24 +587,29 @@ detect_warning_line (LatexilaPostProcessorLatex *pp,
 
       cur_msg->start_line = atoi (strings[2]);
 
+      add_message (pp, TRUE);
+
       g_strfreev (strings);
-      return TRUE;
+      return;
     }
 
   len = strlen (warning);
-  if (warning[len-1] == '.' || pp->priv->nb_lines > 5 || current_line_is_empty)
+  if (warning[len-1] == '.' || pp->priv->lines_count > 5 || current_line_is_empty)
     {
-      pp->priv->state = STATE_START;
-
       g_free (cur_msg->text);
       cur_msg->text = g_strdup (warning);
 
       cur_msg->start_line = NO_LINE;
-      return TRUE;
+
+      add_message (pp, TRUE);
+      return;
     }
 
-  pp->priv->state = STATE_WARNING;
-  return FALSE;
+  if (pp->priv->state == STATE_START)
+    {
+      pp->priv->state = STATE_WARNING;
+      set_line_buffer (pp, warning);
+    }
 }
 
 static gboolean
@@ -624,18 +675,7 @@ detect_warning (LatexilaPostProcessorLatex *pp,
               contents = new_contents;
             }
 
-          if (detect_warning_line (pp, contents, FALSE))
-            {
-              add_message (pp, TRUE);
-            }
-          else
-            {
-              if (pp->priv->line_buffer != NULL)
-                g_string_free (pp->priv->line_buffer, TRUE);
-
-              pp->priv->line_buffer = g_string_new (contents);
-              pp->priv->nb_lines++;
-            }
+          detect_warning_line (pp, contents, FALSE);
 
           g_free (contents);
           g_free (name);
@@ -668,22 +708,15 @@ detect_warning (LatexilaPostProcessorLatex *pp,
       return FALSE;
 
     case STATE_WARNING:
-      g_string_append (pp->priv->line_buffer, line);
-      pp->priv->nb_lines++;
-
-      if (detect_warning_line (pp,
-                               pp->priv->line_buffer->str,
-                               line[0] == '\0'))
-        {
-          add_message (pp, TRUE);
-          pp->priv->nb_lines = 0;
-        }
+      detect_warning_line (pp,
+                           pp->priv->line_buffer->str,
+                           line[0] == '\0');
 
       /* The return value is not important here. */
       return TRUE;
 
     default:
-      return FALSE;
+      g_return_val_if_reached (FALSE);
     }
 }
 
@@ -764,35 +797,34 @@ detect_error (LatexilaPostProcessorLatex *pp,
   switch (pp->priv->state)
     {
     case STATE_START:
-      found = TRUE;
+      found = FALSE;
       msg = NULL;
 
       if (g_regex_match (regex_latex_error, line, 0, NULL))
         {
           gchar **strings = g_regex_split (regex_latex_error, line, 0);
           msg = g_strdup (strings[1]);
+          found = TRUE;
           g_strfreev (strings);
         }
       else if (g_regex_match (regex_pdflatex_error, line, 0, NULL))
         {
           gchar **strings = g_regex_split (regex_pdflatex_error, line, 0);
           msg = g_strdup (strings[1]);
+          found = TRUE;
           g_strfreev (strings);
         }
       else if (g_regex_match (regex_tex_error, line, 0, NULL))
         {
           gchar **strings = g_regex_split (regex_tex_error, line, 0);
           msg = g_strdup (strings[1]);
+          found = TRUE;
           g_strfreev (strings);
-        }
-      else
-        {
-          found = FALSE;
         }
 
       if (found)
         {
-          pp->priv->nb_lines++;
+          pp->priv->lines_count++;
           cur_msg->type = LATEXILA_BUILD_MSG_TYPE_ERROR;
 
           len = strlen (line);
@@ -809,12 +841,8 @@ detect_error (LatexilaPostProcessorLatex *pp,
           /* The message is split into several lines. */
           else
             {
-              if (pp->priv->line_buffer != NULL)
-                g_string_free (pp->priv->line_buffer, TRUE);
-
-              pp->priv->line_buffer = g_string_new (msg);
+              set_line_buffer (pp, msg);
               pp->priv->state = STATE_ERROR;
-
               g_free (msg);
             }
 
@@ -824,9 +852,6 @@ detect_error (LatexilaPostProcessorLatex *pp,
       return FALSE;
 
     case STATE_ERROR:
-      g_string_append (pp->priv->line_buffer, line);
-      pp->priv->nb_lines++;
-
       len = strlen (line);
 
       if (line[len-1] == '.')
@@ -835,9 +860,11 @@ detect_error (LatexilaPostProcessorLatex *pp,
           cur_msg->text = g_string_free (pp->priv->line_buffer, FALSE);
           pp->priv->line_buffer = NULL;
 
+          /* FIXME set lines_count to 0? */
+
           pp->priv->state = STATE_ERROR_SEARCH_LINE;
         }
-      else if (pp->priv->nb_lines > 4)
+      else if (pp->priv->lines_count > 4)
         {
           g_free (cur_msg->text);
           cur_msg->text = g_string_free (pp->priv->line_buffer, FALSE);
@@ -846,17 +873,12 @@ detect_error (LatexilaPostProcessorLatex *pp,
           cur_msg->start_line = NO_LINE;
 
           add_message (pp, TRUE);
-
-          pp->priv->nb_lines = 0;
-          pp->priv->state = STATE_START;
         }
 
       /* The return value is not important here. */
       return TRUE;
 
     case STATE_ERROR_SEARCH_LINE:
-      pp->priv->nb_lines++;
-
       if (g_regex_match (regex_error_line, line, 0, NULL))
         {
           gchar **strings = g_regex_split (regex_error_line, line, 0);
@@ -864,27 +886,21 @@ detect_error (LatexilaPostProcessorLatex *pp,
 
           add_message (pp, TRUE);
 
-          pp->priv->nb_lines = 0;
-          pp->priv->state = STATE_START;
-
           g_strfreev (strings);
           return TRUE;
         }
-      else if (pp->priv->nb_lines > 11)
+      else if (pp->priv->lines_count > 11)
         {
           cur_msg->start_line = NO_LINE;
           add_message (pp, TRUE);
-          pp->priv->nb_lines = 0;
-          pp->priv->state = STATE_START;
           return TRUE;
         }
-      break;
+
+      return FALSE;
 
     default:
-      break;
+      g_return_val_if_reached (FALSE);
     }
-
-  return FALSE;
 }
 
 static gboolean
@@ -934,17 +950,19 @@ detect_other (LatexilaPostProcessorLatex *pp,
 
       new_line = g_regex_replace_literal (regex_other_bytes, line, -1, 0, human_size, 0, &error);
 
-      if (error == NULL)
-        {
-          g_free (cur_msg->text);
-          cur_msg->text = new_line;
-        }
-      else
+      if (error != NULL)
         {
           g_warning ("PostProcessorLatex: %s", error->message);
+          g_error_free (error);
+          error = NULL;
 
           g_free (cur_msg->text);
           cur_msg->text = g_strdup (line);
+        }
+      else
+        {
+          g_free (cur_msg->text);
+          cur_msg->text = new_line;
         }
 
       g_free (nb_bytes_str);
@@ -964,10 +982,10 @@ detect_other (LatexilaPostProcessorLatex *pp,
 
 static void
 push_file_on_stack (LatexilaPostProcessorLatex *pp,
-                    const gchar                *filename,
                     gboolean                    reliable)
 {
   /* TODO */
+  /* filename: pp->priv->filename_buffer->str */
 }
 
 static void
@@ -975,8 +993,8 @@ pop_file_from_stack (LatexilaPostProcessorLatex *pp)
 {
   if (pp->priv->stack_files != NULL)
     {
-      OpenedFile *opened_file = pp->priv->stack_files->data;
-      opened_file_free (opened_file);
+      File *file = pp->priv->stack_files->data;
+      file_free (file);
     }
 
   pp->priv->stack_files = g_slist_remove_link (pp->priv->stack_files,
@@ -1022,7 +1040,7 @@ update_stack_file_heuristic (LatexilaPostProcessorLatex *pp,
   /* Handle special case. */
   if (expect_filename && line[0] == ')')
     {
-      push_file_on_stack (pp, pp->priv->filename_buffer->str, FALSE);
+      push_file_on_stack (pp, FALSE);
       expect_filename = FALSE;
       pp->priv->state = STATE_START;
     }
@@ -1077,7 +1095,7 @@ update_stack_file_heuristic (LatexilaPostProcessorLatex *pp,
               next_is_terminator ||
               file_exists (pp, pp->priv->filename_buffer->str))
             {
-              push_file_on_stack (pp, pp->priv->filename_buffer->str, FALSE);
+              push_file_on_stack (pp, FALSE);
               expect_filename = FALSE;
               pp->priv->state = STATE_START;
             }
@@ -1089,7 +1107,7 @@ update_stack_file_heuristic (LatexilaPostProcessorLatex *pp,
             {
               if (file_exists (pp, pp->priv->filename_buffer->str))
                 {
-                  push_file_on_stack (pp, pp->priv->filename_buffer->str, FALSE);
+                  push_file_on_stack (pp, FALSE);
                   expect_filename = FALSE;
                   pp->priv->state = STATE_START;
                 }
@@ -1104,13 +1122,10 @@ update_stack_file_heuristic (LatexilaPostProcessorLatex *pp,
             {
               pp->priv->state = STATE_START;
 
-              if (pp->priv->filename_buffer != NULL)
-                g_string_free (pp->priv->filename_buffer, TRUE);
-
               /* TODO ensure that filename_buffer is correctly initialized when
                * using it.
                */
-              pp->priv->filename_buffer = g_string_new ("");
+              set_filename_buffer (pp, "");
 
               expect_filename = FALSE;
             }
@@ -1134,22 +1149,6 @@ update_stack_file_heuristic (LatexilaPostProcessorLatex *pp,
     }
 }
 
-/* There are basically two ways to detect the current file TeX is processing:
- * 1) Use \Input (srctex or srcltx package) and \include exclusively. This will
- *    cause (La)TeX to print the line ":<+ filename" in the log file when opening
- *    a file, ":<-" when closing a file. Filenames pushed on the stack in this mode
- *    are marked as reliable.
- *
- * 2) Since people will probably also use the \input command, we also have to be
- *    to detect the old-fashioned way. TeX prints '(filename' when opening a file
- *    and a ')' when closing one. It is impossible to detect this with 100% certainty
- *    (TeX prints many messages and even text (a context) from the TeX source file,
- *    there could be unbalanced parentheses), so we use an heuristic algorithm.
- *    In heuristic mode a ')' will only be considered as a signal that TeX is closing
- *    a file if the top of the stack is not marked as "reliable".
- *
- * The method used here is almost the same as in Kile.
- */
 static void
 update_stack_file (LatexilaPostProcessorLatex *pp,
                    const gchar                *line)
@@ -1181,16 +1180,13 @@ update_stack_file (LatexilaPostProcessorLatex *pp,
         {
           gchar *filename;
 
-          if (pp->priv->filename_buffer != NULL)
-            g_string_free (pp->priv->filename_buffer, TRUE);
-
           filename = g_strdup (line + 4);
           g_strstrip (filename);
 
-          pp->priv->filename_buffer = g_string_new (filename);
-          pp->priv->state = STATE_FILENAME;
-
+          set_filename_buffer (pp, filename);
           g_free (filename);
+
+          pp->priv->state = STATE_FILENAME;
         }
 
       /* TeX closed a file. */
@@ -1212,7 +1208,7 @@ update_stack_file (LatexilaPostProcessorLatex *pp,
       if (line[0] == '(' ||
           g_str_has_prefix (line, "\\openout"))
         {
-          push_file_on_stack (pp, pp->priv->filename_buffer->str, TRUE);
+          push_file_on_stack (pp, TRUE);
           pp->priv->state = STATE_START;
         }
 
@@ -1236,12 +1232,12 @@ update_stack_file (LatexilaPostProcessorLatex *pp,
         {
           gchar *line_stripped = g_strdup (line);
           g_strstrip (line_stripped);
-          g_string_append (pp->priv->filename_buffer, line_stripped);
+          append_to_filename_buffer (pp, line_stripped);
           g_free (line_stripped);
         }
 
     default:
-      break;
+      g_return_if_reached ();
     }
 }
 
@@ -1250,6 +1246,9 @@ process_line (LatexilaPostProcessorLatex *pp,
               const gchar                *line)
 {
   g_assert (line != NULL);
+
+  if (pp->priv->state != STATE_START)
+    append_to_line_buffer (pp, line);
 
   switch (pp->priv->state)
     {
@@ -1283,8 +1282,7 @@ process_line (LatexilaPostProcessorLatex *pp,
       break;
 
     default:
-      pp->priv->state = STATE_START;
-      break;
+      g_return_if_reached ();
     }
 }
 
@@ -1328,7 +1326,7 @@ latexila_post_processor_latex_finalize (GObject *object)
   if (pp->priv->filename_buffer != NULL)
     g_string_free (pp->priv->filename_buffer, TRUE);
 
-  g_slist_free_full (pp->priv->stack_files, (GDestroyNotify) opened_file_free);
+  g_slist_free_full (pp->priv->stack_files, (GDestroyNotify) file_free);
 
   g_free (pp->priv->directory_path);
 
