@@ -432,10 +432,10 @@ public class BuildToolDialog : GLib.Object
     {
         /* Text entries */
 
-        _entry_label.text = build_tool.label;
-        _entry_desc.text = build_tool.get_description ();
-        _entry_extensions.text = build_tool.extensions;
-        _entry_files_to_open.text = build_tool.files_to_open;
+        _entry_label.text = build_tool.label ?? "";
+        _entry_desc.text = build_tool.get_description () ?? "";
+        _entry_extensions.text = build_tool.extensions ?? "";
+        _entry_files_to_open.text = build_tool.files_to_open ?? "";
 
         /* Icon */
 
