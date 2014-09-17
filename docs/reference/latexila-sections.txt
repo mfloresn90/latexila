@@ -114,6 +114,7 @@ LatexilaBuildState
 latexila_build_msg_new
 latexila_build_msg_free
 latexila_build_msg_reinit
+latexila_build_msg_print
 latexila_build_view_new
 latexila_build_view_clear
 latexila_build_view_add_main_title

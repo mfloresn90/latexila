@@ -136,6 +136,33 @@ latexila_build_msg_free (LatexilaBuildMsg *build_msg)
     }
 }
 
+/**
+ * latexila_build_msg_print:
+ * @build_msg: a #LatexilaBuildMsg.
+ *
+ * Prints @build_msg on stdout, for debugging purposes.
+ */
+void
+latexila_build_msg_print (LatexilaBuildMsg *build_msg)
+{
+  GEnumClass *enum_class;
+  GEnumValue *enum_value;
+
+  enum_class = g_type_class_ref (LATEXILA_TYPE_BUILD_MSG_TYPE);
+  enum_value = g_enum_get_value (enum_class, build_msg->type);
+
+  g_print ("Build message:\n");
+  g_print ("\ttype: %s\n", enum_value->value_nick);
+  g_print ("\ttext: %s\n", build_msg->text);
+  g_print ("\tfilename: %s\n", build_msg->filename);
+  g_print ("\tstart line: %d\n", build_msg->start_line);
+  g_print ("\tend line: %d\n", build_msg->end_line);
+  g_print ("\texpand: %d\n", build_msg->expand);
+  g_print ("\n");
+
+  g_type_class_unref (enum_class);
+}
+
 static const gchar *
 get_icon_name_from_state (LatexilaBuildState state)
 {

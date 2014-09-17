@@ -117,6 +117,8 @@ void                  latexila_build_msg_reinit                     (LatexilaBui
 
 void                  latexila_build_msg_free                       (LatexilaBuildMsg *build_msg);
 
+void                  latexila_build_msg_print                      (LatexilaBuildMsg *build_msg);
+
 GType                 latexila_build_view_get_type                  (void) G_GNUC_CONST;
 
 LatexilaBuildView *   latexila_build_view_new                       (void);
