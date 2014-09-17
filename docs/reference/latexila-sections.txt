@@ -195,6 +195,23 @@ latexila_post_processor_latex_get_type
 </SECTION>
 
 <SECTION>
+<FILE>post-processor-latexmk</FILE>
+<TITLE>LatexilaPostProcessorLatexmk</TITLE>
+LatexilaPostProcessorLatexmk
+latexila_post_processor_latexmk_new
+<SUBSECTION Standard>
+LATEXILA_IS_POST_PROCESSOR_LATEXMK
+LATEXILA_IS_POST_PROCESSOR_LATEXMK_CLASS
+LATEXILA_POST_PROCESSOR_LATEXMK
+LATEXILA_POST_PROCESSOR_LATEXMK_CLASS
+LATEXILA_POST_PROCESSOR_LATEXMK_GET_CLASS
+LATEXILA_TYPE_POST_PROCESSOR_LATEXMK
+LatexilaPostProcessorLatexmkClass
+LatexilaPostProcessorLatexmkPrivate
+latexila_post_processor_latexmk_get_type
+</SECTION>
+
+<SECTION>
 <FILE>synctex</FILE>
 <TITLE>LatexilaSynctex</TITLE>
 LatexilaSynctex

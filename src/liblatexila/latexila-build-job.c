@@ -31,6 +31,7 @@
 #include "latexila-build-view.h"
 #include "latexila-post-processor-all-output.h"
 #include "latexila-post-processor-latex.h"
+#include "latexila-post-processor-latexmk.h"
 #include "latexila-utils.h"
 #include "latexila-enum-types.h"
 
@@ -492,8 +493,7 @@ launch_subprocess (LatexilaBuildJob *build_job)
       break;
 
     case LATEXILA_POST_PROCESSOR_TYPE_LATEXMK:
-      /* TODO implement the latexmk post-processor. */
-      build_job->priv->post_processor = latexila_post_processor_all_output_new ();
+      build_job->priv->post_processor = latexila_post_processor_latexmk_new ();
       break;
 
     default:
