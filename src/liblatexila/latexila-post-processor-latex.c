@@ -126,19 +126,20 @@ G_DEFINE_TYPE_WITH_PRIVATE (LatexilaPostProcessorLatex,
                             latexila_post_processor_latex,
                             LATEXILA_TYPE_POST_PROCESSOR)
 
-#if 0
 static File *
 file_new (void)
 {
   return g_slice_new0 (File);
 }
-#endif
 
 static void
 file_free (File *file)
 {
   if (file != NULL)
-    g_slice_free (File, file);
+    {
+      g_free (file->filename);
+      g_slice_free (File, file);
+    }
 }
 
 static void
@@ -980,12 +981,88 @@ detect_other (LatexilaPostProcessorLatex *pp,
   return TRUE;
 }
 
+/* Returns NULL if the filename does not exist.
+ * Returns the path of the filename if it exists.
+ */
+static gchar *
+get_path_if_file_exists (LatexilaPostProcessorLatex *pp,
+                         const gchar                *filename)
+{
+  gchar *full_path;
+  const gchar *extensions[] = {".tex", ".ltx", ".latex", ".dtx", ".ins", NULL};
+  gint i;
+
+  if (g_path_is_absolute (filename))
+    {
+      if (g_file_test (filename, G_FILE_TEST_IS_REGULAR))
+        return g_strdup (filename);
+      else
+        return NULL;
+    }
+
+  if (g_str_has_prefix (filename, "./"))
+    full_path = g_build_filename (pp->priv->directory_path,
+                                  filename + 2,
+                                  NULL);
+  else
+    full_path = g_build_filename (pp->priv->directory_path,
+                                  filename,
+                                  NULL);
+
+  if (g_file_test (full_path, G_FILE_TEST_IS_REGULAR))
+    return full_path;
+
+  for (i = 0; extensions[i] != NULL; i++)
+    {
+      gchar *path_with_ext = g_strdup_printf ("%s%s", full_path, extensions[i]);
+
+      if (g_file_test (path_with_ext, G_FILE_TEST_IS_REGULAR))
+        {
+          g_free (full_path);
+          return path_with_ext;
+        }
+
+      g_free (path_with_ext);
+    }
+
+  g_free (full_path);
+  return NULL;
+}
+
 static void
 push_file_on_stack (LatexilaPostProcessorLatex *pp,
                     gboolean                    reliable)
 {
-  /* TODO */
-  /* filename: pp->priv->filename_buffer->str */
+  File *file;
+  const gchar *bad_suffix = "pdfTeX";
+  gchar *path;
+
+  file = file_new ();
+  file->reliable = reliable;
+  file->filename = g_string_free (pp->priv->filename_buffer, FALSE);
+  pp->priv->filename_buffer = NULL;
+
+  /* Handle special case when a warning message is collapsed. */
+  if (g_str_has_suffix (file->filename, bad_suffix))
+    {
+      gint pos = strlen (file->filename) - strlen (bad_suffix);
+      file->filename[pos] = '\0';
+    }
+
+  path = get_path_if_file_exists (pp, file->filename);
+
+  if (path != NULL)
+    {
+      g_free (file->filename);
+      file->filename = path;
+      file->exists = TRUE;
+    }
+  else
+    {
+      file->exists = FALSE;
+    }
+
+  pp->priv->stack_files = g_slist_prepend (pp->priv->stack_files, file);
 }
 
 static void
@@ -999,17 +1076,6 @@ pop_file_from_stack (LatexilaPostProcessorLatex *pp)
 
   pp->priv->stack_files = g_slist_remove_link (pp->priv->stack_files,
                                                pp->priv->stack_files);
-}
-
-/* Returns NULL if the filename does not exist.
- * Returns the path of the filename if it exists.
- */
-static gchar *
-get_path_if_file_exists (LatexilaPostProcessorLatex *pp,
-                         const gchar                *filename)
-{
-  /* TODO */
-  return NULL;
 }
 
 static gboolean
@@ -1031,9 +1097,11 @@ update_stack_file_heuristic (LatexilaPostProcessorLatex *pp,
                              const gchar                *line)
 {
   gboolean expect_filename;
-  const gchar *start_filename = line;
   const gchar *line_pos;
   const gchar *line_pos_next;
+
+  /* This is where the filename is supposed to start. */
+  const gchar *start_filename = line;
 
   expect_filename = pp->priv->state == STATE_FILENAME_HEURISTIC;
 
@@ -1134,7 +1202,12 @@ update_stack_file_heuristic (LatexilaPostProcessorLatex *pp,
       /* TeX is opening a file. */
       else if (cur_char == '(')
         {
-          /* TODO */
+          pp->priv->state = STATE_START;
+          set_filename_buffer (pp, "");
+
+          /* We need to extract the filename. */
+          expect_filename = TRUE;
+          start_filename = line_pos_next;
         }
 
       /* TeX is closing a file.
@@ -1142,9 +1215,12 @@ update_stack_file_heuristic (LatexilaPostProcessorLatex *pp,
        * method, don't pop, a ":<-" will follow. This helps in preventing
        * unbalanced ')' from popping filenames from the stack too soon.
        */
-      else if (cur_char == ')')
+      else if (cur_char == ')' && pp->priv->stack_files != NULL)
         {
-          /* TODO */
+          File *file = pp->priv->stack_files->data;
+
+          if (!file->reliable)
+            pop_file_from_stack (pp);
         }
     }
 }
