@@ -84,7 +84,7 @@ typedef enum
  * A build message, one line in the #GtkTreeView. If a @filename is provided,
  * the file will be opened when the user clicks on the message. If @start_line
  * and @end_line are provided, the lines between the two positions will be
- * selected (or just @start_line will be selected if @end_line is -1).
+ * selected.
  *
  * The @expand field assumes that a #LatexilaBuildMsg is included in a #GNode or
  * similar N-ary tree structure.

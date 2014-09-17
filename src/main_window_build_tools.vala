@@ -102,6 +102,14 @@ public class MainWindowBuildTools
     {
         _build_view = build_view;
         connect_toggle_actions ();
+
+        _build_view.jump_to_file.connect ((file, start_line, end_line) =>
+        {
+            if (start_line == -1)
+                _main_window.open_document (file);
+            else
+                _main_window.jump_to_file_position (file, start_line - 1, end_line -1);
+        });
     }
 
     public void set_bottom_panel (BottomPanel bottom_panel)

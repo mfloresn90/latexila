@@ -368,7 +368,7 @@ latexila_build_view_class_init (LatexilaBuildViewClass *klass)
    * selected. The row must contain a file, otherwise the signal is not emitted.
    * The file should be opened and presented to the user. If @start_line and
    * @end_line are not -1, jump to the @start_line and select those lines. If
-   * only @start_line is provided, jump to it and select it.
+   * @start_line is provided, @end_line is also provided (different than -1).
    */
   signals[SIGNAL_JUMP_TO_FILE] = g_signal_new ("jump-to-file",
                                                LATEXILA_TYPE_BUILD_VIEW,
