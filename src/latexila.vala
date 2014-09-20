@@ -136,7 +136,7 @@ public class Latexila : Gtk.Application
             }
         }
 
-        Gtk.Window.set_default_icon_list (list);
+        Gtk.Window.set_default_icon_list ((owned) list);
     }
 
     private void reopen_files ()
