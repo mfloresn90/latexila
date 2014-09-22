@@ -1,5 +1,13 @@
 LaTeXila NEWS
 
+Release 3.14.0
+--------------
+* Now LaTeXila follows the GNOME versions
+* Better icons
+* Upgrade to gee-0.8
+* Other small improvements
+* Translation updates
+
 Release 2.12.0
 --------------
 * Refresh structure when saving
