@@ -36,7 +36,7 @@ public struct BuildJob
 
 public struct BuildTool
 {
-    private string _description;
+    string _description;
     string extensions;
     string label;
     string icon;
