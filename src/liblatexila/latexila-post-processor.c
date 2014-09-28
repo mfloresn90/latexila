@@ -134,36 +134,6 @@ latexila_post_processor_get_name_from_type (LatexilaPostProcessorType type)
     }
 }
 
-static gboolean
-free_build_msg (GNode    *node,
-                gpointer  user_data)
-{
-  latexila_build_msg_free (node->data);
-  return FALSE;
-}
-
-/**
- * latexila_build_messages_free:
- * @build_messages: a tree of #LatexilaBuildMsg's.
- *
- * Frees a tree of #LatexilaBuildMsg's.
- */
-void
-latexila_build_messages_free (GNode *build_messages)
-{
-  if (build_messages != NULL)
-    {
-      g_node_traverse (build_messages,
-                       G_POST_ORDER,
-                       G_TRAVERSE_ALL,
-                       -1,
-                       free_build_msg,
-                       NULL);
-
-      g_node_destroy (build_messages);
-    }
-}
-
 static void
 latexila_post_processor_get_property (GObject    *object,
                                       guint       prop_id,
@@ -257,7 +227,7 @@ latexila_post_processor_end_default (LatexilaPostProcessor *pp)
   /* Do nothing. */
 }
 
-static const GNode *
+static const GQueue *
 latexila_post_processor_get_messages_default (LatexilaPostProcessor *pp)
 {
   return NULL;
@@ -514,18 +484,18 @@ latexila_post_processor_process_finish (LatexilaPostProcessor *pp,
  * Obviously if the build view is passed to the post-processor, the latexmk
  * post-processor can output its messages only at the end. But another reason to
  * not pass the build view is for the unit tests. It is easier for the unit
- * tests to check the returned #GNode than analyzing a #GtkTreeView. Of course
- * it would be possible to keep also the messages in a #GNode and have this
+ * tests to check the returned #GQueue than analyzing a #GtkTreeView. Of course
+ * it would be possible to keep also the messages in a #GQueue and have this
  * function only for the unit tests, but it takes more memory (unless a custom
  * #GtkTreeModel is implemented), or another function is needed to configure
- * whether a #GNode is kept in memory or not... It becomes a little too
+ * whether a #GQueue is kept in memory or not... It becomes a little too
  * complicated, and doesn't really worth the effort as most users use latexmk.
  *
- * The current solution is "good enough".
+ * The current solution is "good enough". And "good enough" is... "good enough".
  *
  * Returns: the tree of filtered messages.
  */
-const GNode *
+const GQueue *
 latexila_post_processor_get_messages (LatexilaPostProcessor *pp)
 {
   g_return_val_if_fail (LATEXILA_IS_POST_PROCESSOR (pp), NULL);

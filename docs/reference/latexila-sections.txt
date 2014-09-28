@@ -139,7 +139,6 @@ latexila_build_view_get_type
 <TITLE>LatexilaPostProcessor</TITLE>
 LatexilaPostProcessor
 LatexilaPostProcessorType
-latexila_build_messages_free
 latexila_post_processor_get_name_from_type
 latexila_post_processor_get_type_from_name
 latexila_post_processor_process_async

@@ -132,6 +132,10 @@ latexila_build_msg_free (LatexilaBuildMsg *build_msg)
     {
       g_free (build_msg->text);
       g_free (build_msg->filename);
+
+      if (build_msg->children != NULL)
+        g_queue_free_full (build_msg->children, (GDestroyNotify) latexila_build_msg_free);
+
       g_slice_free (LatexilaBuildMsg, build_msg);
     }
 }
@@ -789,25 +793,28 @@ latexila_build_view_append_single_message (LatexilaBuildView *build_view,
 void
 latexila_build_view_append_messages (LatexilaBuildView *build_view,
                                      GtkTreeIter       *parent,
-                                     const GNode       *messages,
+                                     const GQueue      *messages,
                                      gboolean           expand)
 {
-  const GNode *node;
+  GList *l;
 
-  for (node = messages; node != NULL; node = node->next)
+  if (messages == NULL)
+    return;
+
+  for (l = messages->head; l != NULL; l = l->next)
     {
       GtkTreeIter child;
-      LatexilaBuildMsg *build_msg = node->data;
+      LatexilaBuildMsg *build_msg = l->data;
 
       g_assert (build_msg != NULL);
 
       child = latexila_build_view_append_single_message (build_view, parent, build_msg);
 
-      if (node->children != NULL)
+      if (build_msg->children != NULL)
         {
           latexila_build_view_append_messages (build_view,
                                                &child,
-                                               node->children,
+                                               build_msg->children,
                                                build_msg->expand);
         }
     }

@@ -390,7 +390,7 @@ post_processor_cb (LatexilaPostProcessor *pp,
                    GAsyncResult          *result,
                    LatexilaBuildJob      *build_job)
 {
-  const GNode *messages;
+  const GQueue *messages;
 
   latexila_post_processor_process_finish (pp, result);
 

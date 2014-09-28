@@ -79,15 +79,13 @@ typedef enum
  * @filename: reference to a certain file.
  * @start_line: reference to a line in the file. -1 to unset.
  * @end_line: reference to a line in the file. -1 to unset.
- * @expand: if the message has children, whether to show them by default.
+ * @children: list of children of type #LatexilaBuildMsg.
+ * @expand: if the message has children, whether to initially show them.
  *
  * A build message, one line in the #GtkTreeView. If a @filename is provided,
  * the file will be opened when the user clicks on the message. If @start_line
  * and @end_line are provided, the lines between the two positions will be
  * selected.
- *
- * The @expand field assumes that a #LatexilaBuildMsg is included in a #GNode or
- * similar N-ary tree structure.
  */
 struct _LatexilaBuildMsg
 {
@@ -96,6 +94,18 @@ struct _LatexilaBuildMsg
   gchar *filename;
   gint start_line;
   gint end_line;
+
+  /* There are several reasons to use a GQueue:
+   * 1. A GQueue is convenient for appending at the end of the list.
+   * 2. An external GNode containing the build messages is not convenient for
+   * running sub-post-processors, for example the latex post-processor inside
+   * latexmk. A GNode has a reference to its parent, so it's more difficult to
+   * embed the messages of a sub-post-processor. Moreover, we don't need to know
+   * the parent, a GNode uses useless memory. A GSList would use even less
+   * memory, but it's less convenient to use.
+   */
+  GQueue *children;
+
   guint expand : 1;
 };
 
@@ -143,7 +153,7 @@ GtkTreeIter           latexila_build_view_append_single_message     (LatexilaBui
 
 void                  latexila_build_view_append_messages           (LatexilaBuildView *build_view,
                                                                      GtkTreeIter       *parent,
-                                                                     const GNode       *messages,
+                                                                     const GQueue      *messages,
                                                                      gboolean           expand);
 
 void                  latexila_build_view_remove_children           (LatexilaBuildView *build_view,

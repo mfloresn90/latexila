@@ -83,7 +83,7 @@ struct _LatexilaPostProcessorClass
   /* Get the build messages. The elements are of type "LatexilaBuildMsg *".
    * This function is called after end().
    */
-  const GNode * (* get_messages) (LatexilaPostProcessor *pp);
+  const GQueue * (* get_messages) (LatexilaPostProcessor *pp);
 };
 
 GType                   latexila_post_processor_get_type              (void) G_GNUC_CONST;
@@ -92,8 +92,6 @@ gboolean                latexila_post_processor_get_type_from_name    (const gch
                                                                        LatexilaPostProcessorType *type);
 
 const gchar *           latexila_post_processor_get_name_from_type    (LatexilaPostProcessorType type);
-
-void                    latexila_build_messages_free                  (GNode *build_messages);
 
 void                    latexila_post_processor_process_async         (LatexilaPostProcessor *pp,
                                                                        GFile                 *file,
@@ -105,7 +103,7 @@ void                    latexila_post_processor_process_async         (LatexilaP
 void                    latexila_post_processor_process_finish        (LatexilaPostProcessor *pp,
                                                                        GAsyncResult          *result);
 
-const GNode *           latexila_post_processor_get_messages          (LatexilaPostProcessor *pp);
+const GQueue *          latexila_post_processor_get_messages          (LatexilaPostProcessor *pp);
 
 G_END_DECLS
 

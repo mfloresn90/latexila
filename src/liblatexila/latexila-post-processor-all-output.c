@@ -30,11 +30,12 @@
 
 struct _LatexilaPostProcessorAllOutputPrivate
 {
-  GNode *messages;
-  GNode *last_message;
+  GQueue *messages;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (LatexilaPostProcessorAllOutput, latexila_post_processor_all_output, LATEXILA_TYPE_POST_PROCESSOR)
+G_DEFINE_TYPE_WITH_PRIVATE (LatexilaPostProcessorAllOutput,
+                            latexila_post_processor_all_output,
+                            LATEXILA_TYPE_POST_PROCESSOR)
 
 static void
 latexila_post_processor_all_output_process_lines (LatexilaPostProcessor  *post_processor,
@@ -49,20 +50,18 @@ latexila_post_processor_all_output_process_lines (LatexilaPostProcessor  *post_p
       msg->text = lines[i];
       msg->type = LATEXILA_BUILD_MSG_TYPE_INFO;
 
-      pp->priv->last_message = g_node_insert_data_after (pp->priv->messages,
-                                                         pp->priv->last_message,
-                                                         msg);
+      g_queue_push_tail (pp->priv->messages, msg);
     }
 
   g_free (lines);
 }
 
-static const GNode *
+static const GQueue *
 latexila_post_processor_all_output_get_messages (LatexilaPostProcessor *post_processor)
 {
   LatexilaPostProcessorAllOutput *pp = LATEXILA_POST_PROCESSOR_ALL_OUTPUT (post_processor);
 
-  return pp->priv->messages->children;
+  return pp->priv->messages;
 }
 
 static void
@@ -70,7 +69,7 @@ latexila_post_processor_all_output_finalize (GObject *object)
 {
   LatexilaPostProcessorAllOutput *pp = LATEXILA_POST_PROCESSOR_ALL_OUTPUT (object);
 
-  latexila_build_messages_free (pp->priv->messages);
+  g_queue_free_full (pp->priv->messages, (GDestroyNotify) latexila_build_msg_free);
 
   G_OBJECT_CLASS (latexila_post_processor_all_output_parent_class)->finalize (object);
 }
@@ -92,7 +91,7 @@ latexila_post_processor_all_output_init (LatexilaPostProcessorAllOutput *pp)
 {
   pp->priv = latexila_post_processor_all_output_get_instance_private (pp);
 
-  pp->priv->messages = g_node_new (NULL);
+  pp->priv->messages = g_queue_new ();
 }
 
 /**

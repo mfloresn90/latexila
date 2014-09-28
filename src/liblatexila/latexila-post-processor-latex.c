@@ -85,10 +85,7 @@ struct _File
 
 struct _LatexilaPostProcessorLatexPrivate
 {
-  GNode *messages;
-
-  /* The last message is used to insert in O(1) at the end of 'messages'. */
-  GNode *last_message;
+  GQueue *messages;
 
   /* Current message. */
   LatexilaBuildMsg *cur_msg;
@@ -279,9 +276,7 @@ add_message (LatexilaPostProcessorLatex *pp,
       break;
     }
 
-  pp->priv->last_message = g_node_insert_data_after (pp->priv->messages,
-                                                     pp->priv->last_message,
-                                                     cur_msg);
+  g_queue_push_tail (pp->priv->messages, cur_msg);
 
   pp->priv->cur_msg = latexila_build_msg_new ();
 
@@ -1378,12 +1373,12 @@ latexila_post_processor_latex_process_lines (LatexilaPostProcessor  *post_proces
   g_free (lines);
 }
 
-static const GNode *
+static const GQueue *
 latexila_post_processor_latex_get_messages (LatexilaPostProcessor *post_processor)
 {
   LatexilaPostProcessorLatex *pp = LATEXILA_POST_PROCESSOR_LATEX (post_processor);
 
-  return pp->priv->messages->children;
+  return pp->priv->messages;
 }
 
 static void
@@ -1391,7 +1386,7 @@ latexila_post_processor_latex_finalize (GObject *object)
 {
   LatexilaPostProcessorLatex *pp = LATEXILA_POST_PROCESSOR_LATEX (object);
 
-  latexila_build_messages_free (pp->priv->messages);
+  g_queue_free_full (pp->priv->messages, (GDestroyNotify) latexila_build_msg_free);
 
   if (pp->priv->cur_msg != NULL)
     latexila_build_msg_free (pp->priv->cur_msg);
@@ -1428,7 +1423,7 @@ latexila_post_processor_latex_init (LatexilaPostProcessorLatex *pp)
 {
   pp->priv = latexila_post_processor_latex_get_instance_private (pp);
 
-  pp->priv->messages = g_node_new (NULL);
+  pp->priv->messages = g_queue_new ();
   pp->priv->cur_msg = latexila_build_msg_new ();
   pp->priv->state = STATE_START;
 }
