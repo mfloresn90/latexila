@@ -6,7 +6,7 @@ Exec=latexila %U
 Icon=latexila
 Terminal=false
 Type=Application
-Categories=GTK;GNOME;Office;Publishing;
+Categories=GNOME;GTK;Office;WordProcessor;Publishing;
 MimeType=text/x-tex;
 Actions=Window;Document;
 
