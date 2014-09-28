@@ -27,7 +27,7 @@ public class MainWindowBuildTools
     {
         { "Build", null, N_("_Build") },
 
-        { "BuildClean", Stock.CLEAR, N_("Cleanup Build _Files"), null,
+        { "BuildClean", "edit-clear-all", N_("Cleanup Build _Files"), null,
             N_("Clean-up build files (*.aux, *.log, *.out, *.toc, etc)"),
             on_clean },
 
