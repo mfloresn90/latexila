@@ -1313,10 +1313,13 @@ update_stack_file (LatexilaPostProcessorLatex *pp,
 }
 
 static void
-process_line (LatexilaPostProcessorLatex *pp,
-              const gchar                *line)
+latexila_post_processor_latex_process_line (LatexilaPostProcessor *post_processor,
+                                            gchar                 *line)
 {
-  g_assert (line != NULL);
+  LatexilaPostProcessorLatex *pp = LATEXILA_POST_PROCESSOR_LATEX (post_processor);
+
+  if (line == NULL)
+    return;
 
   if (pp->priv->state != STATE_START)
     append_to_line_buffer (pp, line);
@@ -1325,7 +1328,7 @@ process_line (LatexilaPostProcessorLatex *pp,
     {
     case STATE_START:
       if (line[0] == '\0')
-        return;
+        break;
 
       if (!(detect_badbox (pp, line) ||
             detect_warning (pp, line) ||
@@ -1355,22 +1358,8 @@ process_line (LatexilaPostProcessorLatex *pp,
     default:
       g_return_if_reached ();
     }
-}
 
-static void
-latexila_post_processor_latex_process_lines (LatexilaPostProcessor  *post_processor,
-                                             gchar                 **lines)
-{
-  LatexilaPostProcessorLatex *pp = LATEXILA_POST_PROCESSOR_LATEX (post_processor);
-  gint i;
-
-  for (i = 0; lines != NULL && lines[i] != NULL; i++)
-    {
-      process_line (pp, lines[i]);
-      g_free (lines[i]);
-    }
-
-  g_free (lines);
+  g_free (line);
 }
 
 static const GQueue *
@@ -1414,7 +1403,7 @@ latexila_post_processor_latex_class_init (LatexilaPostProcessorLatexClass *klass
 
   pp_class->start = latexila_post_processor_latex_start;
   pp_class->end = latexila_post_processor_latex_end;
-  pp_class->process_lines = latexila_post_processor_latex_process_lines;
+  pp_class->process_line = latexila_post_processor_latex_process_line;
   pp_class->get_messages = latexila_post_processor_latex_get_messages;
 }
 

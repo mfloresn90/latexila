@@ -215,10 +215,10 @@ latexila_post_processor_start_default (LatexilaPostProcessor *pp,
 }
 
 static void
-latexila_post_processor_process_lines_default (LatexilaPostProcessor  *pp,
-                                               gchar                 **lines)
+latexila_post_processor_process_line_default (LatexilaPostProcessor *pp,
+                                              gchar                 *line)
 {
-  g_strfreev (lines);
+  g_free (line);
 }
 
 static void
@@ -244,7 +244,7 @@ latexila_post_processor_class_init (LatexilaPostProcessorClass *klass)
   object_class->finalize = latexila_post_processor_finalize;
 
   klass->start = latexila_post_processor_start_default;
-  klass->process_lines = latexila_post_processor_process_lines_default;
+  klass->process_line = latexila_post_processor_process_line_default;
   klass->end = latexila_post_processor_end_default;
   klass->get_messages = latexila_post_processor_get_messages_default;
 
@@ -318,13 +318,12 @@ read_stream_cb (GInputStream          *stream,
           pp->priv->line_buffer->str != NULL &&
           pp->priv->line_buffer->str[0] != '\0')
         {
-          lines = g_new (gchar *, 2);
-          lines[0] = g_string_free (pp->priv->line_buffer, FALSE);
-          lines[1] = NULL;
+          gchar *line;
 
+          line = g_string_free (pp->priv->line_buffer, FALSE);
           pp->priv->line_buffer = NULL;
 
-          LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->process_lines (pp, lines);
+          LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->process_line (pp, line);
         }
 
       /* finished! */
@@ -344,13 +343,14 @@ read_stream_cb (GInputStream          *stream,
       g_string_append (pp->priv->line_buffer, lines[0]);
     }
 
-  /* If a second line exists, we can call process_lines().
+  /* If a second line exists, we can call process_line().
    * The first line must be replaced by the contents of line_buffer.
    * And the last line must go to line_buffer.
    */
   if (lines[1] != NULL)
     {
       gint last_line;
+      gint i;
 
       if (pp->priv->line_buffer != NULL)
         {
@@ -365,15 +365,16 @@ read_stream_cb (GInputStream          *stream,
       g_free (lines[last_line]);
       lines[last_line] = NULL;
 
-      LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->process_lines (pp, lines);
+      for (i = 0; lines[i] != NULL; i++)
+        LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->process_line (pp, lines[i]);
+
+      g_free (lines);
     }
   else
     {
       /* If not already done above, put the first line to line_buffer. */
       if (pp->priv->line_buffer == NULL)
-        {
-          pp->priv->line_buffer = g_string_new (lines[0]);
-        }
+        pp->priv->line_buffer = g_string_new (lines[0]);
 
       g_strfreev (lines);
     }

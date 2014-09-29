@@ -71,11 +71,11 @@ struct _LatexilaPostProcessorClass
   void (* start) (LatexilaPostProcessor *pp,
                   GFile                 *file);
 
-  /* The process_lines function takes ownership of @lines. Free with
-   * g_strfreev() if you don't reuse the contents.
+  /* The process_line function takes ownership of @line. Free with
+   * g_free() if you don't reuse the content.
    */
-  void (* process_lines) (LatexilaPostProcessor  *pp,
-                          gchar                 **lines);
+  void (* process_line) (LatexilaPostProcessor *pp,
+                         gchar                 *line);
 
   /* End of processing. */
   void (* end) (LatexilaPostProcessor *pp);

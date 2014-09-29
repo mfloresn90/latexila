@@ -38,22 +38,21 @@ G_DEFINE_TYPE_WITH_PRIVATE (LatexilaPostProcessorAllOutput,
                             LATEXILA_TYPE_POST_PROCESSOR)
 
 static void
-latexila_post_processor_all_output_process_lines (LatexilaPostProcessor  *post_processor,
-                                                  gchar                 **lines)
+latexila_post_processor_all_output_process_line (LatexilaPostProcessor *post_processor,
+                                                 gchar                 *line)
 {
   LatexilaPostProcessorAllOutput *pp = LATEXILA_POST_PROCESSOR_ALL_OUTPUT (post_processor);
-  gint i;
 
-  for (i = 0; lines != NULL && lines[i] != NULL; i++)
+  if (line != NULL)
     {
-      LatexilaBuildMsg *msg = latexila_build_msg_new ();
-      msg->text = lines[i];
+      LatexilaBuildMsg *msg;
+
+      msg = latexila_build_msg_new ();
+      msg->text = line;
       msg->type = LATEXILA_BUILD_MSG_TYPE_INFO;
 
       g_queue_push_tail (pp->priv->messages, msg);
     }
-
-  g_free (lines);
 }
 
 static const GQueue *
@@ -82,7 +81,7 @@ latexila_post_processor_all_output_class_init (LatexilaPostProcessorAllOutputCla
 
   object_class->finalize = latexila_post_processor_all_output_finalize;
 
-  post_processor_class->process_lines = latexila_post_processor_all_output_process_lines;
+  post_processor_class->process_line = latexila_post_processor_all_output_process_line;
   post_processor_class->get_messages = latexila_post_processor_all_output_get_messages;
 }
 
