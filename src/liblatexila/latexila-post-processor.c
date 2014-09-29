@@ -323,7 +323,7 @@ read_stream_cb (GInputStream          *stream,
           line = g_string_free (pp->priv->line_buffer, FALSE);
           pp->priv->line_buffer = NULL;
 
-          LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->process_line (pp, line);
+          latexila_post_processor_process_line (pp, line);
         }
 
       /* finished! */
@@ -366,7 +366,7 @@ read_stream_cb (GInputStream          *stream,
       lines[last_line] = NULL;
 
       for (i = 0; lines[i] != NULL; i++)
-        LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->process_line (pp, lines[i]);
+        latexila_post_processor_process_line (pp, lines[i]);
 
       g_free (lines);
     }
@@ -428,7 +428,7 @@ latexila_post_processor_process_async (LatexilaPostProcessor *pp,
   pp->priv->task = g_task_new (pp, cancellable, callback, user_data);
   pp->priv->stream = g_object_ref (stream);
 
-  LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->start (pp, file);
+  latexila_post_processor_start (pp, file);
 
   if (pp->priv->line_buffer != NULL)
     {
@@ -456,7 +456,7 @@ latexila_post_processor_process_finish (LatexilaPostProcessor *pp,
 
   g_task_propagate_boolean (G_TASK (result), NULL);
 
-  LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->end (pp);
+  latexila_post_processor_end (pp);
 
   g_clear_object (&pp->priv->task);
   g_clear_object (&pp->priv->stream);
@@ -469,11 +469,64 @@ latexila_post_processor_process_finish (LatexilaPostProcessor *pp,
 }
 
 /**
+ * latexila_post_processor_start:
+ * @pp: a #LatexilaPostProcessor.
+ * @file: the #GFile on which the build tool is run.
+ *
+ * Manually starts the post-processor.
+ *
+ * Not needed if you use latexila_post_processor_process_async().
+ */
+void
+latexila_post_processor_start (LatexilaPostProcessor *pp,
+                               GFile                 *file)
+{
+  g_return_if_fail (LATEXILA_IS_POST_PROCESSOR (pp));
+
+  return LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->start (pp, file);
+}
+
+/**
+ * latexila_post_processor_process_line:
+ * @pp: a #LatexilaPostProcessor.
+ * @line: (transfer full): a line, without the newline character(s).
+ *
+ * Manually processes a line. This function takes ownership of @line. Free with
+ * g_free() if you don't reuse the content.
+ *
+ * Not needed if you use latexila_post_processor_process_async().
+ */
+void
+latexila_post_processor_process_line (LatexilaPostProcessor *pp,
+                                      gchar                 *line)
+{
+  g_return_if_fail (LATEXILA_IS_POST_PROCESSOR (pp));
+
+  return LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->process_line (pp, line);
+}
+
+/**
+ * latexila_post_processor_end:
+ * @pp: a #LatexilaPostProcessor.
+ *
+ * Manually ends the processing.
+ *
+ * Not needed if you use latexila_post_processor_process_async().
+ */
+void
+latexila_post_processor_end (LatexilaPostProcessor *pp)
+{
+  g_return_if_fail (LATEXILA_IS_POST_PROCESSOR (pp));
+
+  return LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->end (pp);
+}
+
+/**
  * latexila_post_processor_get_messages:
  * @pp: a post-processor.
  *
  * Gets the filtered messages. Call this function only after calling
- * latexila_post_processor_process_finish().
+ * latexila_post_processor_process_finish() or latexila_post_processor_end().
  *
  * Another solution would have been to pass the #LatexilaBuildView to the
  * post-processor, so the filtered messages can directly be outputed to the
@@ -494,7 +547,8 @@ latexila_post_processor_process_finish (LatexilaPostProcessor *pp,
  *
  * The current solution is "good enough". And "good enough" is... "good enough".
  *
- * Returns: the tree of filtered messages.
+ * Returns: (transfer none): the tree of filtered messages. Element types:
+ * #LatexilaBuildMsg.
  */
 const GQueue *
 latexila_post_processor_get_messages (LatexilaPostProcessor *pp)

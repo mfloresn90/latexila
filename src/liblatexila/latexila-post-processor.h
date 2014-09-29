@@ -65,24 +65,14 @@ struct _LatexilaPostProcessorClass
 {
   GObjectClass parent_class;
 
-  /* Start of processing.
-   * @file is the GFile on which the build tool is run.
-   */
   void (* start) (LatexilaPostProcessor *pp,
                   GFile                 *file);
 
-  /* The process_line function takes ownership of @line. Free with
-   * g_free() if you don't reuse the content.
-   */
   void (* process_line) (LatexilaPostProcessor *pp,
                          gchar                 *line);
 
-  /* End of processing. */
   void (* end) (LatexilaPostProcessor *pp);
 
-  /* Get the build messages. The elements are of type "LatexilaBuildMsg *".
-   * This function is called after end().
-   */
   const GQueue * (* get_messages) (LatexilaPostProcessor *pp);
 };
 
@@ -102,6 +92,14 @@ void                    latexila_post_processor_process_async         (LatexilaP
 
 void                    latexila_post_processor_process_finish        (LatexilaPostProcessor *pp,
                                                                        GAsyncResult          *result);
+
+void                    latexila_post_processor_start                 (LatexilaPostProcessor *pp,
+                                                                       GFile                 *file);
+
+void                    latexila_post_processor_process_line          (LatexilaPostProcessor *pp,
+                                                                       gchar                 *line);
+
+void                    latexila_post_processor_end                   (LatexilaPostProcessor *pp);
 
 const GQueue *          latexila_post_processor_get_messages          (LatexilaPostProcessor *pp);
 
