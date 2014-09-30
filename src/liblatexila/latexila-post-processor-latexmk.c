@@ -70,8 +70,15 @@ struct _LatexilaPostProcessorLatexmkPrivate
   /* Number of separators encountered for the current state. */
   gint separator_count;
 
+  /* We run the 'latex' post-processor only on the last latex or pdflatex rule.
+   * The first latex rules most probably have warnings that are fixed in the
+   * last latex rule.
+   * @last_latex_sub_command and @last_latex_messages are simple pointers inside
+   * @messages, so don't free them.
+   */
   LatexilaBuildMsg *last_latex_sub_command;
   GQueue *last_latex_lines;
+  GList *last_latex_messages;
 
   GFile *file;
 
@@ -531,9 +538,14 @@ run_latex_post_processor (LatexilaPostProcessorLatexmk *pp)
   latexila_post_processor_end (pp_latex);
 
   msg = pp->priv->last_latex_sub_command;
+
+  /* The initial children contain the command, for example. */
   initial_children = msg->children;
+
   msg->children = latexila_post_processor_take_messages (pp_latex);
   g_object_unref (pp_latex);
+
+  pp->priv->last_latex_messages = msg->children->head;
 
   if (initial_children != NULL)
     {
@@ -599,12 +611,7 @@ latexila_post_processor_latexmk_get_messages (LatexilaPostProcessor *post_proces
   g_object_get (pp, "has-details", &has_details, NULL);
 
   if (has_details && !show_details)
-    {
-      /* TODO don't display the command line */
-      LatexilaBuildMsg *msg = pp->priv->last_latex_sub_command;
-      g_assert (msg != NULL);
-      return msg->children != NULL ? msg->children->head : NULL;
-    }
+    return pp->priv->last_latex_messages;
 
   return pp->priv->messages != NULL ? pp->priv->messages->head : NULL;
 }
@@ -616,7 +623,10 @@ latexila_post_processor_latexmk_take_messages (LatexilaPostProcessor *post_proce
   GQueue *ret;
 
   ret = pp->priv->messages;
+
   pp->priv->messages = NULL;
+  pp->priv->last_latex_messages = NULL;
+  pp->priv->last_latex_sub_command = NULL;
 
   return ret;
 }
