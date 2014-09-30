@@ -308,7 +308,8 @@ latexila_post_processor_latex_start (LatexilaPostProcessor *post_processor,
 }
 
 static void
-latexila_post_processor_latex_end (LatexilaPostProcessor *post_processor)
+latexila_post_processor_latex_end (LatexilaPostProcessor *post_processor,
+                                   gboolean               succeeded)
 {
   LatexilaPostProcessorLatex *pp = LATEXILA_POST_PROCESSOR_LATEX (post_processor);
   LatexilaBuildMsg *cur_msg = pp->priv->cur_msg;

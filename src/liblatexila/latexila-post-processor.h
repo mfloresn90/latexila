@@ -71,7 +71,8 @@ struct _LatexilaPostProcessorClass
   void (* process_line) (LatexilaPostProcessor *pp,
                          gchar                 *line);
 
-  void (* end) (LatexilaPostProcessor *pp);
+  void (* end) (LatexilaPostProcessor *pp,
+                gboolean               succeeded);
 
   const GList * (* get_messages) (LatexilaPostProcessor *pp,
                                   gboolean               show_details);
@@ -94,7 +95,8 @@ void                    latexila_post_processor_process_async         (LatexilaP
                                                                        gpointer               user_data);
 
 void                    latexila_post_processor_process_finish        (LatexilaPostProcessor *pp,
-                                                                       GAsyncResult          *result);
+                                                                       GAsyncResult          *result,
+                                                                       gboolean               succeeded);
 
 void                    latexila_post_processor_start                 (LatexilaPostProcessor *pp,
                                                                        GFile                 *file);
@@ -102,7 +104,8 @@ void                    latexila_post_processor_start                 (LatexilaP
 void                    latexila_post_processor_process_line          (LatexilaPostProcessor *pp,
                                                                        gchar                 *line);
 
-void                    latexila_post_processor_end                   (LatexilaPostProcessor *pp);
+void                    latexila_post_processor_end                   (LatexilaPostProcessor *pp,
+                                                                       gboolean               succeeded);
 
 const GList *           latexila_post_processor_get_messages          (LatexilaPostProcessor *pp,
                                                                        gboolean               show_details);

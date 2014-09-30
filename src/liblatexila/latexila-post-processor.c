@@ -217,7 +217,8 @@ latexila_post_processor_process_line_default (LatexilaPostProcessor *pp,
 }
 
 static void
-latexila_post_processor_end_default (LatexilaPostProcessor *pp)
+latexila_post_processor_end_default (LatexilaPostProcessor *pp,
+                                     gboolean               succeeded)
 {
   /* Do nothing. */
 }
@@ -436,6 +437,7 @@ latexila_post_processor_process_async (LatexilaPostProcessor *pp,
  * latexila_post_processor_process_finish:
  * @pp: a post-processor.
  * @result: a #GAsyncResult.
+ * @succeeded: whether the subprocess has succeeded.
  *
  * Finishes an operation started with latexila_post_processor_process_async().
  * After calling this function, you can get the filtered messages with
@@ -443,13 +445,14 @@ latexila_post_processor_process_async (LatexilaPostProcessor *pp,
  */
 void
 latexila_post_processor_process_finish (LatexilaPostProcessor *pp,
-                                        GAsyncResult          *result)
+                                        GAsyncResult          *result,
+                                        gboolean               succeeded)
 {
   g_return_if_fail (g_task_is_valid (result, pp));
 
   g_task_propagate_boolean (G_TASK (result), NULL);
 
-  latexila_post_processor_end (pp);
+  latexila_post_processor_end (pp, succeeded);
 
   g_clear_object (&pp->priv->task);
   g_clear_object (&pp->priv->stream);
@@ -501,17 +504,21 @@ latexila_post_processor_process_line (LatexilaPostProcessor *pp,
 /**
  * latexila_post_processor_end:
  * @pp: a #LatexilaPostProcessor.
+ * @succeeded: whether the subprocess has succeeded.
  *
  * Manually ends the processing.
  *
  * Not needed if you use latexila_post_processor_process_async().
  */
 void
-latexila_post_processor_end (LatexilaPostProcessor *pp)
+latexila_post_processor_end (LatexilaPostProcessor *pp,
+                             gboolean               succeeded)
 {
   g_return_if_fail (LATEXILA_IS_POST_PROCESSOR (pp));
 
-  return LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->end (pp);
+  succeeded = succeeded != FALSE;
+
+  return LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->end (pp, succeeded);
 }
 
 /**

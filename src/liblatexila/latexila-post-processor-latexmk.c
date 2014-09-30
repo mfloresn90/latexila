@@ -515,7 +515,8 @@ latexila_post_processor_latexmk_process_line (LatexilaPostProcessor *post_proces
 }
 
 static void
-run_latex_post_processor (LatexilaPostProcessorLatexmk *pp)
+run_latex_post_processor (LatexilaPostProcessorLatexmk *pp,
+                          gboolean                      succeeded)
 {
   LatexilaPostProcessor *pp_latex;
   LatexilaBuildMsg *msg;
@@ -535,7 +536,7 @@ run_latex_post_processor (LatexilaPostProcessorLatexmk *pp)
   g_queue_free (pp->priv->last_latex_lines);
   pp->priv->last_latex_lines = NULL;
 
-  latexila_post_processor_end (pp_latex);
+  latexila_post_processor_end (pp_latex, succeeded);
 
   msg = pp->priv->last_latex_sub_command;
 
@@ -562,8 +563,7 @@ run_latex_post_processor (LatexilaPostProcessorLatexmk *pp)
    * If an error has occured, we verify if the last command was a latex command.
    * If it is the case, there is no need to show all output.
    */
-  /* TODO check the subprocess exit code */
-  if (pp->priv->last_rule_is_latex_rule)
+  if (succeeded || pp->priv->last_rule_is_latex_rule)
     g_object_set (pp, "has-details", TRUE, NULL);
 }
 
@@ -590,12 +590,13 @@ process_all_output (LatexilaPostProcessorLatexmk *pp)
 }
 
 static void
-latexila_post_processor_latexmk_end (LatexilaPostProcessor *post_processor)
+latexila_post_processor_latexmk_end (LatexilaPostProcessor *post_processor,
+                                     gboolean               succeeded)
 {
   LatexilaPostProcessorLatexmk *pp = LATEXILA_POST_PROCESSOR_LATEXMK (post_processor);
 
   if (pp->priv->last_latex_sub_command != NULL)
-    run_latex_post_processor (pp);
+    run_latex_post_processor (pp, succeeded);
 
   if (pp->priv->messages->length == 0)
     process_all_output (pp);

@@ -415,7 +415,8 @@ post_processor_cb (LatexilaPostProcessor *pp,
 {
   gboolean has_details;
 
-  latexila_post_processor_process_finish (pp, result);
+  /* TODO set succeeded */
+  latexila_post_processor_process_finish (pp, result, TRUE);
 
   g_object_get (pp, "has-details", &has_details, NULL);
 
