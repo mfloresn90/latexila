@@ -1363,7 +1363,8 @@ latexila_post_processor_latex_process_line (LatexilaPostProcessor *post_processo
 }
 
 static const GQueue *
-latexila_post_processor_latex_get_messages (LatexilaPostProcessor *post_processor)
+latexila_post_processor_latex_get_messages (LatexilaPostProcessor *post_processor,
+                                            gboolean               show_details)
 {
   LatexilaPostProcessorLatex *pp = LATEXILA_POST_PROCESSOR_LATEX (post_processor);
 

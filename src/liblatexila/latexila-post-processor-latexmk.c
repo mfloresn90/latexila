@@ -590,9 +590,20 @@ latexila_post_processor_latexmk_end (LatexilaPostProcessor *post_processor)
 }
 
 static const GQueue *
-latexila_post_processor_latexmk_get_messages (LatexilaPostProcessor *post_processor)
+latexila_post_processor_latexmk_get_messages (LatexilaPostProcessor *post_processor,
+                                              gboolean               show_details)
 {
   LatexilaPostProcessorLatexmk *pp = LATEXILA_POST_PROCESSOR_LATEXMK (post_processor);
+  gboolean has_details;
+
+  g_object_get (pp, "has-details", &has_details, NULL);
+
+  if (has_details && !show_details)
+    {
+      /* TODO don't display the command line */
+      g_assert (pp->priv->last_latex_sub_command != NULL);
+      return pp->priv->last_latex_sub_command->children;
+    }
 
   return pp->priv->messages;
 }

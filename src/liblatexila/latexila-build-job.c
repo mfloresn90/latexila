@@ -116,8 +116,8 @@ latexila_build_job_dispose (GObject *object)
 
   g_clear_object (&build_job->priv->task);
   g_clear_object (&build_job->priv->file);
-  g_clear_object (&build_job->priv->build_view);
-  g_clear_object (&build_job->priv->post_processor);
+
+  latexila_build_job_clear (build_job);
 
   G_OBJECT_CLASS (latexila_build_job_parent_class)->dispose (object);
 }
@@ -387,20 +387,51 @@ display_command_line (LatexilaBuildJob *build_job)
 }
 
 static void
+show_details_notify_cb (LatexilaBuildView *build_view,
+                        GParamSpec        *pspec,
+                        LatexilaBuildJob  *build_job)
+{
+  const GQueue *messages;
+  gboolean show_details;
+
+  latexila_build_view_remove_children (build_view,
+                                       &build_job->priv->job_title);
+
+  g_object_get (build_view, "show-details", &show_details, NULL);
+
+  messages = latexila_post_processor_get_messages (build_job->priv->post_processor,
+                                                   show_details);
+
+  latexila_build_view_append_messages (build_view,
+                                       &build_job->priv->job_title,
+                                       messages,
+                                       TRUE);
+}
+
+static void
 post_processor_cb (LatexilaPostProcessor *pp,
                    GAsyncResult          *result,
                    LatexilaBuildJob      *build_job)
 {
-  const GQueue *messages;
+  gboolean has_details;
 
   latexila_post_processor_process_finish (pp, result);
 
-  messages = latexila_post_processor_get_messages (pp);
+  g_object_get (pp, "has-details", &has_details, NULL);
 
-  latexila_build_view_append_messages (build_job->priv->build_view,
-                                       &build_job->priv->job_title,
-                                       messages,
-                                       TRUE);
+  if (has_details)
+    g_object_set (build_job->priv->build_view,
+                  "has-details", TRUE,
+                  NULL);
+
+  g_signal_connect (build_job->priv->build_view,
+                    "notify::show-details",
+                    G_CALLBACK (show_details_notify_cb),
+                    build_job);
+
+  show_details_notify_cb (build_job->priv->build_view,
+                          NULL,
+                          build_job);
 }
 
 static void
@@ -547,10 +578,9 @@ latexila_build_job_run_async (LatexilaBuildJob    *build_job,
   g_clear_object (&build_job->priv->file);
   build_job->priv->file = g_object_ref (file);
 
-  g_clear_object (&build_job->priv->build_view);
-  build_job->priv->build_view = g_object_ref (build_view);
+  latexila_build_job_clear (build_job);
 
-  g_clear_object (&build_job->priv->post_processor);
+  build_job->priv->build_view = g_object_ref (build_view);
 
   if (!display_command_line (build_job))
     {
@@ -610,6 +640,11 @@ latexila_build_job_run_finish (LatexilaBuildJob *build_job,
 void
 latexila_build_job_clear (LatexilaBuildJob *build_job)
 {
+  if (build_job->priv->build_view != NULL)
+    g_signal_handlers_disconnect_by_func (build_job->priv->build_view,
+                                          show_details_notify_cb,
+                                          build_job);
+
   g_clear_object (&build_job->priv->build_view);
   g_clear_object (&build_job->priv->post_processor);
 }

@@ -56,14 +56,12 @@ struct _LatexilaPostProcessorPrivate
   GString *line_buffer;
 
   guint has_details : 1;
-  guint show_details : 1;
 };
 
 enum
 {
   PROP_0,
-  PROP_HAS_DETAILS,
-  PROP_SHOW_DETAILS
+  PROP_HAS_DETAILS
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (LatexilaPostProcessor, latexila_post_processor, G_TYPE_OBJECT)
@@ -153,10 +151,6 @@ latexila_post_processor_get_property (GObject    *object,
       g_value_set_boolean (value, pp->priv->has_details);
       break;
 
-    case PROP_SHOW_DETAILS:
-      g_value_set_boolean (value, pp->priv->show_details);
-      break;
-
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -175,10 +169,6 @@ latexila_post_processor_set_property (GObject      *object,
     {
     case PROP_HAS_DETAILS:
       pp->priv->has_details = g_value_get_boolean (value);
-      break;
-
-    case PROP_SHOW_DETAILS:
-      pp->priv->show_details = g_value_get_boolean (value);
       break;
 
     default:
@@ -233,7 +223,8 @@ latexila_post_processor_end_default (LatexilaPostProcessor *pp)
 }
 
 static const GQueue *
-latexila_post_processor_get_messages_default (LatexilaPostProcessor *pp)
+latexila_post_processor_get_messages_default (LatexilaPostProcessor *pp,
+                                              gboolean               show_details)
 {
   return NULL;
 }
@@ -264,16 +255,6 @@ latexila_post_processor_class_init (LatexilaPostProcessorClass *klass)
                                    PROP_HAS_DETAILS,
                                    g_param_spec_boolean ("has-details",
                                                          "Has details",
-                                                         "",
-                                                         FALSE,
-                                                         G_PARAM_READWRITE |
-                                                         G_PARAM_CONSTRUCT |
-                                                         G_PARAM_STATIC_STRINGS));
-
-  g_object_class_install_property (object_class,
-                                   PROP_SHOW_DETAILS,
-                                   g_param_spec_boolean ("show-details",
-                                                         "Show details",
                                                          "",
                                                          FALSE,
                                                          G_PARAM_READWRITE |
@@ -536,6 +517,8 @@ latexila_post_processor_end (LatexilaPostProcessor *pp)
 /**
  * latexila_post_processor_get_messages:
  * @pp: a post-processor.
+ * @show_details: whether to show the details. Has no effect if
+ * #LatexilaPostProcessor:has-details is %FALSE.
  *
  * Gets the filtered messages. Call this function only after calling
  * latexila_post_processor_process_finish() or latexila_post_processor_end().
@@ -563,19 +546,22 @@ latexila_post_processor_end (LatexilaPostProcessor *pp)
  * Element types: #LatexilaBuildMsg.
  */
 const GQueue *
-latexila_post_processor_get_messages (LatexilaPostProcessor *pp)
+latexila_post_processor_get_messages (LatexilaPostProcessor *pp,
+                                      gboolean               show_details)
 {
   g_return_val_if_fail (LATEXILA_IS_POST_PROCESSOR (pp), NULL);
 
-  return LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->get_messages (pp);
+  show_details = show_details != FALSE;
+
+  return LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->get_messages (pp, show_details);
 }
 
 /**
  * latexila_post_processor_take_messages: (skip)
  * @pp: a #LatexilaPostProcessor.
  *
- * Takes ownership of the messages. Since #GQueue is not reference counted, @pp
- * is emptied and is thus useless after calling this function.
+ * Takes ownership of all the messages. Since #GQueue is not reference counted,
+ * @pp is emptied and is thus useless after calling this function.
  *
  * Returns: (transfer full) (nullable): the tree of filtered messages, or %NULL.
  * Element types: #LatexilaBuildMsg.
