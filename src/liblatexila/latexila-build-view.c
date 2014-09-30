@@ -608,11 +608,10 @@ latexila_build_view_clear (LatexilaBuildView *build_view)
   g_return_if_fail (LATEXILA_IS_BUILD_VIEW (build_view));
 
   /* No selection allowed when clearing the GtkTreeStore. Else, all the rows are
-   * selected, and if there are warnings or errors, the program jumps to all
-   * warnings/errors one by one. It's fun, but after four or five times, it
-   * becomes less fun because our text cursor moves all the time ;) Another
-   * means would have been to remove and re-add the select function, but I
-   * prefer this hack, shorter :)
+   * selected one by one, and if there are warnings or errors, the program jumps
+   * to all warnings/errors one by one.
+   * Another means would have been to remove and re-add the select function, but
+   * I prefer this hack, shorter :)
    */
   selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (build_view));
   gtk_tree_selection_set_mode (selection, GTK_SELECTION_NONE);
@@ -841,14 +840,19 @@ latexila_build_view_remove_children (LatexilaBuildView *build_view,
 {
   GtkTreeIter child;
   GtkTreeModel *model;
+  GtkTreeSelection *selection;
 
   g_return_if_fail (LATEXILA_IS_BUILD_VIEW (build_view));
 
   model = GTK_TREE_MODEL (build_view->priv->store);
   if (!gtk_tree_model_iter_children (model, &child, parent))
-    {
-      return;
-    }
+    return;
 
+  /* Do the same hack as in latexila_build_view_clear(). */
+  selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (build_view));
+  gtk_tree_selection_set_mode (selection, GTK_SELECTION_NONE);
   while (gtk_tree_store_remove (build_view->priv->store, &child));
+  gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+
+  gtk_tree_view_columns_autosize (GTK_TREE_VIEW (build_view));
 }
