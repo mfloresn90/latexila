@@ -73,8 +73,8 @@ struct _LatexilaPostProcessorClass
 
   void (* end) (LatexilaPostProcessor *pp);
 
-  const GQueue * (* get_messages) (LatexilaPostProcessor *pp,
-                                   gboolean               show_details);
+  const GList * (* get_messages) (LatexilaPostProcessor *pp,
+                                  gboolean               show_details);
 
   GQueue * (* take_messages) (LatexilaPostProcessor *pp);
 };
@@ -104,7 +104,7 @@ void                    latexila_post_processor_process_line          (LatexilaP
 
 void                    latexila_post_processor_end                   (LatexilaPostProcessor *pp);
 
-const GQueue *          latexila_post_processor_get_messages          (LatexilaPostProcessor *pp,
+const GList *           latexila_post_processor_get_messages          (LatexilaPostProcessor *pp,
                                                                        gboolean               show_details);
 
 GQueue *                latexila_post_processor_take_messages         (LatexilaPostProcessor *pp);

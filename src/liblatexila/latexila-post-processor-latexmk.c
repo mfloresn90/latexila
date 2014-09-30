@@ -589,7 +589,7 @@ latexila_post_processor_latexmk_end (LatexilaPostProcessor *post_processor)
     process_all_output (pp);
 }
 
-static const GQueue *
+static const GList *
 latexila_post_processor_latexmk_get_messages (LatexilaPostProcessor *post_processor,
                                               gboolean               show_details)
 {
@@ -601,11 +601,12 @@ latexila_post_processor_latexmk_get_messages (LatexilaPostProcessor *post_proces
   if (has_details && !show_details)
     {
       /* TODO don't display the command line */
-      g_assert (pp->priv->last_latex_sub_command != NULL);
-      return pp->priv->last_latex_sub_command->children;
+      LatexilaBuildMsg *msg = pp->priv->last_latex_sub_command;
+      g_assert (msg != NULL);
+      return msg->children != NULL ? msg->children->head : NULL;
     }
 
-  return pp->priv->messages;
+  return pp->priv->messages != NULL ? pp->priv->messages->head : NULL;
 }
 
 static GQueue *

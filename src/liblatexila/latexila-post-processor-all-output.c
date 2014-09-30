@@ -55,13 +55,13 @@ latexila_post_processor_all_output_process_line (LatexilaPostProcessor *post_pro
     }
 }
 
-static const GQueue *
+static const GList *
 latexila_post_processor_all_output_get_messages (LatexilaPostProcessor *post_processor,
                                                  gboolean               show_details)
 {
   LatexilaPostProcessorAllOutput *pp = LATEXILA_POST_PROCESSOR_ALL_OUTPUT (post_processor);
 
-  return pp->priv->messages;
+  return pp->priv->messages != NULL ? pp->priv->messages->head : NULL;
 }
 
 static GQueue *

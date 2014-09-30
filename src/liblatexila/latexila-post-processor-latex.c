@@ -1362,13 +1362,13 @@ latexila_post_processor_latex_process_line (LatexilaPostProcessor *post_processo
   g_free (line);
 }
 
-static const GQueue *
+static const GList *
 latexila_post_processor_latex_get_messages (LatexilaPostProcessor *post_processor,
                                             gboolean               show_details)
 {
   LatexilaPostProcessorLatex *pp = LATEXILA_POST_PROCESSOR_LATEX (post_processor);
 
-  return pp->priv->messages;
+  return pp->priv->messages != NULL ? pp->priv->messages->head : NULL;
 }
 
 static GQueue *

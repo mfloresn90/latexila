@@ -391,7 +391,7 @@ show_details_notify_cb (LatexilaBuildView *build_view,
                         GParamSpec        *pspec,
                         LatexilaBuildJob  *build_job)
 {
-  const GQueue *messages;
+  const GList *messages;
   gboolean show_details;
 
   latexila_build_view_remove_children (build_view,

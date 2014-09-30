@@ -784,7 +784,8 @@ latexila_build_view_append_single_message (LatexilaBuildView *build_view,
  * latexila_build_view_append_messages:
  * @build_view: a #LatexilaBuildView.
  * @parent: the parent row in the tree.
- * @messages: the tree of #LatexilaBuildMsg's to append.
+ * @messages: (element-type LatexilaBuildMsg): the tree of #LatexilaBuildMsg's
+ * to append.
  * @expand: whether to expand the @parent.
  *
  * Appends a tree of messages to the build view.
@@ -792,15 +793,12 @@ latexila_build_view_append_single_message (LatexilaBuildView *build_view,
 void
 latexila_build_view_append_messages (LatexilaBuildView *build_view,
                                      GtkTreeIter       *parent,
-                                     const GQueue      *messages,
+                                     const GList       *messages,
                                      gboolean           expand)
 {
-  GList *l;
+  const GList *l;
 
-  if (messages == NULL)
-    return;
-
-  for (l = messages->head; l != NULL; l = l->next)
+  for (l = messages; l != NULL; l = l->next)
     {
       GtkTreeIter child;
       LatexilaBuildMsg *build_msg = l->data;
@@ -813,7 +811,7 @@ latexila_build_view_append_messages (LatexilaBuildView *build_view,
         {
           latexila_build_view_append_messages (build_view,
                                                &child,
-                                               build_msg->children,
+                                               build_msg->children->head,
                                                build_msg->expand);
         }
     }

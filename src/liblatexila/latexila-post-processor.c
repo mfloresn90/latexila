@@ -222,7 +222,7 @@ latexila_post_processor_end_default (LatexilaPostProcessor *pp)
   /* Do nothing. */
 }
 
-static const GQueue *
+static const GList *
 latexila_post_processor_get_messages_default (LatexilaPostProcessor *pp,
                                               gboolean               show_details)
 {
@@ -533,19 +533,19 @@ latexila_post_processor_end (LatexilaPostProcessor *pp)
  * Obviously if the build view is passed to the post-processor, the latexmk
  * post-processor can output its messages only at the end. But another reason to
  * not pass the build view is for the unit tests. It is easier for the unit
- * tests to check the returned #GQueue than analyzing a #GtkTreeView. Of course
- * it would be possible to keep also the messages in a #GQueue and have this
+ * tests to check the returned #GList than analyzing a #GtkTreeView. Of course
+ * it would be possible to keep also the messages in a #GList and have this
  * function only for the unit tests, but it takes more memory (unless a custom
  * #GtkTreeModel is implemented), or another function is needed to configure
- * whether a #GQueue is kept in memory or not... It becomes a little too
+ * whether a #GList is kept in memory or not... It becomes a little too
  * complicated, and doesn't really worth the effort as most users use latexmk.
  *
  * The current solution is "good enough". And "good enough" is... "good enough".
  *
- * Returns: (transfer none) (nullable): the tree of filtered messages, or %NULL.
- * Element types: #LatexilaBuildMsg.
+ * Returns: (transfer none) (element-type LatexilaBuildMsg): the tree of
+ * filtered messages.
  */
-const GQueue *
+const GList *
 latexila_post_processor_get_messages (LatexilaPostProcessor *pp,
                                       gboolean               show_details)
 {
