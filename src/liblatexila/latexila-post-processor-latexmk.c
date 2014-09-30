@@ -522,6 +522,8 @@ run_latex_post_processor (LatexilaPostProcessorLatexmk *pp,
   LatexilaBuildMsg *msg;
   GQueue *initial_children;
   GList *l;
+  gboolean has_details;
+  gint latex_errors_count;
 
   g_assert (pp->priv->last_latex_sub_command != NULL);
   g_assert (pp->priv->last_latex_lines != NULL);
@@ -544,7 +546,6 @@ run_latex_post_processor (LatexilaPostProcessorLatexmk *pp,
   initial_children = msg->children;
 
   msg->children = latexila_post_processor_take_messages (pp_latex);
-  g_object_unref (pp_latex);
 
   pp->priv->last_latex_messages = msg->children->head;
 
@@ -559,12 +560,24 @@ run_latex_post_processor (LatexilaPostProcessorLatexmk *pp,
   /* Expand only the last latex command. */
   msg->expand = TRUE;
 
-  /* Almost all the time, the user wants to see only the latex output.
-   * If an error has occured, we verify if the last command was a latex command.
-   * If it is the case, there is no need to show all output.
+  /* Set has-details.
+   * Almost all the time, the user wants to see only the latex output.
    */
-  if (succeeded || pp->priv->last_rule_is_latex_rule)
-    g_object_set (pp, "has-details", TRUE, NULL);
+
+  /* Another solution is to know if the last rule was a latex rule, but it
+   * doesn't work well. For example if a BibTeX error occurs, Latexmk run the
+   * latex command a second time, so the last command is latex, but the latex
+   * output has no errors, the error is only in BibTeX.
+   * So it's probably better to check the number of latex errors, as is done
+   * below.
+   */
+
+  latex_errors_count = latexila_post_processor_latex_get_errors_count (LATEXILA_POST_PROCESSOR_LATEX (pp_latex));
+
+  has_details = succeeded || latex_errors_count > 0;
+  g_object_set (pp, "has-details", has_details, NULL);
+
+  g_object_unref (pp_latex);
 }
 
 static void

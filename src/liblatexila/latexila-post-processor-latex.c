@@ -1443,3 +1443,17 @@ latexila_post_processor_latex_new (void)
 {
   return g_object_new (LATEXILA_TYPE_POST_PROCESSOR_LATEX, NULL);
 }
+
+/**
+ * latexila_post_processor_latex_get_errors_count:
+ * @pp: a #LatexilaPostProcessorLatex.
+ *
+ * Returns: the number of errors.
+ */
+gint
+latexila_post_processor_latex_get_errors_count (LatexilaPostProcessorLatex *pp)
+{
+  g_return_val_if_fail (LATEXILA_IS_POST_PROCESSOR_LATEX (pp), 0);
+
+  return pp->priv->errors_count;
+}
