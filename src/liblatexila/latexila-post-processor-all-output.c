@@ -63,12 +63,25 @@ latexila_post_processor_all_output_get_messages (LatexilaPostProcessor *post_pro
   return pp->priv->messages;
 }
 
+static GQueue *
+latexila_post_processor_all_output_take_messages (LatexilaPostProcessor *post_processor)
+{
+  LatexilaPostProcessorAllOutput *pp = LATEXILA_POST_PROCESSOR_ALL_OUTPUT (post_processor);
+  GQueue *ret;
+
+  ret = pp->priv->messages;
+  pp->priv->messages = NULL;
+
+  return ret;
+}
+
 static void
 latexila_post_processor_all_output_finalize (GObject *object)
 {
   LatexilaPostProcessorAllOutput *pp = LATEXILA_POST_PROCESSOR_ALL_OUTPUT (object);
 
-  g_queue_free_full (pp->priv->messages, (GDestroyNotify) latexila_build_msg_free);
+  if (pp->priv->messages != NULL)
+    g_queue_free_full (pp->priv->messages, (GDestroyNotify) latexila_build_msg_free);
 
   G_OBJECT_CLASS (latexila_post_processor_all_output_parent_class)->finalize (object);
 }
@@ -83,6 +96,7 @@ latexila_post_processor_all_output_class_init (LatexilaPostProcessorAllOutputCla
 
   post_processor_class->process_line = latexila_post_processor_all_output_process_line;
   post_processor_class->get_messages = latexila_post_processor_all_output_get_messages;
+  post_processor_class->take_messages = latexila_post_processor_all_output_take_messages;
 }
 
 static void

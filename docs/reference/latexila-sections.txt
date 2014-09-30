@@ -147,6 +147,7 @@ latexila_post_processor_start
 latexila_post_processor_process_line
 latexila_post_processor_end
 latexila_post_processor_get_messages
+latexila_post_processor_take_messages
 <SUBSECTION Standard>
 LATEXILA_IS_POST_PROCESSOR
 LATEXILA_IS_POST_PROCESSOR_CLASS

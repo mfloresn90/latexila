@@ -74,6 +74,8 @@ struct _LatexilaPostProcessorClass
   void (* end) (LatexilaPostProcessor *pp);
 
   const GQueue * (* get_messages) (LatexilaPostProcessor *pp);
+
+  GQueue * (* take_messages) (LatexilaPostProcessor *pp);
 };
 
 GType                   latexila_post_processor_get_type              (void) G_GNUC_CONST;
@@ -102,6 +104,8 @@ void                    latexila_post_processor_process_line          (LatexilaP
 void                    latexila_post_processor_end                   (LatexilaPostProcessor *pp);
 
 const GQueue *          latexila_post_processor_get_messages          (LatexilaPostProcessor *pp);
+
+GQueue *                latexila_post_processor_take_messages         (LatexilaPostProcessor *pp);
 
 G_END_DECLS
 

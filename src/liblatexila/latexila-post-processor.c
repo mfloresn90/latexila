@@ -24,10 +24,15 @@
  *
  * When running a build tool, a post-processor is used to filter the output to
  * display only the relevant messages. The output can come from the
- * stdout/stderr of a build job command, or the contents of a log file, etc.
+ * stdout/stderr of a build job command, or the contents of a log file, etc. In
+ * LaTeXila only the former is currently used, but it would be more robust to
+ * read the LaTeX log file.
  *
  * For the no-output post-processor type, you should not need to create a
  * #LatexilaPostProcessor object, since the result is empty.
+ *
+ * The implementations sometimes assume that a post-processor can be used at
+ * most one time.
  */
 
 #include "latexila-post-processor.h"
@@ -233,6 +238,12 @@ latexila_post_processor_get_messages_default (LatexilaPostProcessor *pp)
   return NULL;
 }
 
+static GQueue *
+latexila_post_processor_take_messages_default (LatexilaPostProcessor *pp)
+{
+  return NULL;
+}
+
 static void
 latexila_post_processor_class_init (LatexilaPostProcessorClass *klass)
 {
@@ -247,6 +258,7 @@ latexila_post_processor_class_init (LatexilaPostProcessorClass *klass)
   klass->process_line = latexila_post_processor_process_line_default;
   klass->end = latexila_post_processor_end_default;
   klass->get_messages = latexila_post_processor_get_messages_default;
+  klass->take_messages = latexila_post_processor_take_messages_default;
 
   g_object_class_install_property (object_class,
                                    PROP_HAS_DETAILS,
@@ -547,8 +559,8 @@ latexila_post_processor_end (LatexilaPostProcessor *pp)
  *
  * The current solution is "good enough". And "good enough" is... "good enough".
  *
- * Returns: (transfer none): the tree of filtered messages. Element types:
- * #LatexilaBuildMsg.
+ * Returns: (transfer none) (nullable): the tree of filtered messages, or %NULL.
+ * Element types: #LatexilaBuildMsg.
  */
 const GQueue *
 latexila_post_processor_get_messages (LatexilaPostProcessor *pp)
@@ -556,4 +568,22 @@ latexila_post_processor_get_messages (LatexilaPostProcessor *pp)
   g_return_val_if_fail (LATEXILA_IS_POST_PROCESSOR (pp), NULL);
 
   return LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->get_messages (pp);
+}
+
+/**
+ * latexila_post_processor_take_messages: (skip)
+ * @pp: a #LatexilaPostProcessor.
+ *
+ * Takes ownership of the messages. Since #GQueue is not reference counted, @pp
+ * is emptied and is thus useless after calling this function.
+ *
+ * Returns: (transfer full) (nullable): the tree of filtered messages, or %NULL.
+ * Element types: #LatexilaBuildMsg.
+ */
+GQueue *
+latexila_post_processor_take_messages (LatexilaPostProcessor *pp)
+{
+  g_return_val_if_fail (LATEXILA_IS_POST_PROCESSOR (pp), NULL);
+
+  return LATEXILA_POST_PROCESSOR_GET_CLASS (pp)->take_messages (pp);
 }

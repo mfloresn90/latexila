@@ -1370,12 +1370,25 @@ latexila_post_processor_latex_get_messages (LatexilaPostProcessor *post_processo
   return pp->priv->messages;
 }
 
+static GQueue *
+latexila_post_processor_latex_take_messages (LatexilaPostProcessor *post_processor)
+{
+  LatexilaPostProcessorLatex *pp = LATEXILA_POST_PROCESSOR_LATEX (post_processor);
+  GQueue *ret;
+
+  ret = pp->priv->messages;
+  pp->priv->messages = NULL;
+
+  return ret;
+}
+
 static void
 latexila_post_processor_latex_finalize (GObject *object)
 {
   LatexilaPostProcessorLatex *pp = LATEXILA_POST_PROCESSOR_LATEX (object);
 
-  g_queue_free_full (pp->priv->messages, (GDestroyNotify) latexila_build_msg_free);
+  if (pp->priv->messages != NULL)
+    g_queue_free_full (pp->priv->messages, (GDestroyNotify) latexila_build_msg_free);
 
   if (pp->priv->cur_msg != NULL)
     latexila_build_msg_free (pp->priv->cur_msg);
@@ -1405,6 +1418,7 @@ latexila_post_processor_latex_class_init (LatexilaPostProcessorLatexClass *klass
   pp_class->end = latexila_post_processor_latex_end;
   pp_class->process_line = latexila_post_processor_latex_process_line;
   pp_class->get_messages = latexila_post_processor_latex_get_messages;
+  pp_class->take_messages = latexila_post_processor_latex_take_messages;
 }
 
 static void
