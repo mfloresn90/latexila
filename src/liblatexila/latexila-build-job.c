@@ -46,6 +46,15 @@ struct _LatexilaBuildJobPrivate
   LatexilaBuildView *build_view;
   GtkTreeIter job_title;
   LatexilaPostProcessor *post_processor;
+
+  /* To finish the post-processor we must know if the subprocess has succeeded.
+   * Since there are two different callbacks that can be called in any order, we
+   * store the needed results to pass to
+   * latexila_post_processor_process_finish().
+   */
+  GAsyncResult *post_processor_result;
+  guint succeeded : 1;
+  guint succeeded_set : 1;
 };
 
 enum
@@ -409,16 +418,22 @@ show_details_notify_cb (LatexilaBuildView *build_view,
 }
 
 static void
-post_processor_cb (LatexilaPostProcessor *pp,
-                   GAsyncResult          *result,
-                   LatexilaBuildJob      *build_job)
+finish_post_processor (LatexilaBuildJob *build_job)
 {
   gboolean has_details;
 
-  /* TODO set succeeded */
-  latexila_post_processor_process_finish (pp, result, TRUE);
+  g_assert (build_job->priv->succeeded_set);
+  g_assert (build_job->priv->post_processor_result != NULL);
 
-  g_object_get (pp, "has-details", &has_details, NULL);
+  latexila_post_processor_process_finish (build_job->priv->post_processor,
+                                          build_job->priv->post_processor_result,
+                                          build_job->priv->succeeded);
+
+  g_clear_object (&build_job->priv->post_processor_result);
+
+  g_object_get (build_job->priv->post_processor,
+                "has-details", &has_details,
+                NULL);
 
   if (has_details)
     g_object_set (build_job->priv->build_view,
@@ -436,6 +451,23 @@ post_processor_cb (LatexilaPostProcessor *pp,
 }
 
 static void
+post_processor_cb (LatexilaPostProcessor *pp,
+                   GAsyncResult          *result,
+                   LatexilaBuildJob      *build_job)
+{
+  if (build_job->priv->post_processor_result != NULL)
+    {
+      g_warning ("BuildJob: got two post-processor results.");
+      g_object_unref (build_job->priv->post_processor_result);
+    }
+
+  build_job->priv->post_processor_result = g_object_ref (result);
+
+  if (build_job->priv->succeeded_set)
+    finish_post_processor (build_job);
+}
+
+static void
 subprocess_wait_cb (GSubprocess      *subprocess,
                     GAsyncResult     *result,
                     LatexilaBuildJob *build_job)
@@ -445,12 +477,18 @@ subprocess_wait_cb (GSubprocess      *subprocess,
 
   ret = g_subprocess_wait_finish (subprocess, result, NULL);
 
+  if (build_job->priv->succeeded_set)
+    g_warning ("BuildJob: subprocess finished two times.");
+
+  build_job->priv->succeeded = g_subprocess_get_successful (subprocess);
+  build_job->priv->succeeded_set = TRUE;
+
   if (!ret)
     {
       state = LATEXILA_BUILD_STATE_ABORTED;
       g_subprocess_force_exit (subprocess);
     }
-  else if (g_subprocess_get_successful (subprocess))
+  else if (build_job->priv->succeeded)
     {
       state = LATEXILA_BUILD_STATE_SUCCEEDED;
     }
@@ -466,6 +504,9 @@ subprocess_wait_cb (GSubprocess      *subprocess,
 
   g_task_return_boolean (build_job->priv->task, ret);
   g_object_unref (subprocess);
+
+  if (build_job->priv->post_processor_result != NULL)
+    finish_post_processor (build_job);
 }
 
 static void
@@ -479,15 +520,11 @@ launch_subprocess (LatexilaBuildJob *build_job)
   GError *error = NULL;
 
   if (build_job->priv->post_processor_type == LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT)
-    {
-      launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_STDOUT_SILENCE |
-                                            G_SUBPROCESS_FLAGS_STDERR_SILENCE);
-    }
+    launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_STDOUT_SILENCE |
+                                          G_SUBPROCESS_FLAGS_STDERR_SILENCE);
   else
-    {
-      launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_STDOUT_PIPE |
-                                            G_SUBPROCESS_FLAGS_STDERR_MERGE);
-    }
+    launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_STDOUT_PIPE |
+                                          G_SUBPROCESS_FLAGS_STDERR_MERGE);
 
   parent_dir = g_file_get_parent (build_job->priv->file);
   working_directory = g_file_get_path (parent_dir);
@@ -533,14 +570,12 @@ launch_subprocess (LatexilaBuildJob *build_job)
     }
 
   if (build_job->priv->post_processor != NULL)
-    {
-      latexila_post_processor_process_async (build_job->priv->post_processor,
-                                             build_job->priv->file,
-                                             g_subprocess_get_stdout_pipe (subprocess),
-                                             g_task_get_cancellable (build_job->priv->task),
-                                             (GAsyncReadyCallback) post_processor_cb,
-                                             build_job);
-    }
+    latexila_post_processor_process_async (build_job->priv->post_processor,
+                                           build_job->priv->file,
+                                           g_subprocess_get_stdout_pipe (subprocess),
+                                           g_task_get_cancellable (build_job->priv->task),
+                                           (GAsyncReadyCallback) post_processor_cb,
+                                           build_job);
 
   g_subprocess_wait_async (subprocess,
                            g_task_get_cancellable (build_job->priv->task),
@@ -648,4 +683,6 @@ latexila_build_job_clear (LatexilaBuildJob *build_job)
 
   g_clear_object (&build_job->priv->build_view);
   g_clear_object (&build_job->priv->post_processor);
+  g_clear_object (&build_job->priv->post_processor_result);
+  build_job->priv->succeeded_set = FALSE;
 }
