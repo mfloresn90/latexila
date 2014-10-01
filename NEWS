@@ -1,5 +1,11 @@
 LaTeXila NEWS
 
+Release 3.14.1
+--------------
+* A few bug fixes and small improvements
+* GTK+ 3.14 is required because LaTeXila overrides some CSS properties
+  and assumes that GTK+ 3.14 is used.
+
 Release 3.14.0
 --------------
 * Now LaTeXila follows the GNOME versions
