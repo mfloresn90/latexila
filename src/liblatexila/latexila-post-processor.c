@@ -269,6 +269,40 @@ latexila_post_processor_init (LatexilaPostProcessor *pp)
   pp->priv = latexila_post_processor_get_instance_private (pp);
 }
 
+/* Use this function to process a line for the first time, it will convert the
+ * string to UTF-8.
+ */
+static void
+process_line (LatexilaPostProcessor *pp,
+              gchar                 *line)
+{
+  gchar *utf8_line = NULL;
+
+  /* locale is not UTF-8 */
+  if (!g_get_charset (NULL))
+    {
+      utf8_line = g_locale_to_utf8 (line, -1, NULL, NULL, NULL);
+    }
+  else if (g_utf8_validate (line, -1, NULL))
+    {
+      utf8_line = line;
+      line = NULL;
+    }
+
+  /* The LaTeX output can be in ISO-8859-1, with accents in a filename for
+   * instance.
+   */
+  if (utf8_line == NULL)
+    utf8_line = g_convert (line, -1, "UTF-8", "ISO-8859-1", NULL, NULL, NULL);
+
+  if (utf8_line != NULL)
+    latexila_post_processor_process_line (pp, utf8_line);
+  else
+    g_warning ("Failed to convert subprocess output to UTF-8: %s", line);
+
+  g_free (line);
+}
+
 static void
 read_stream_cb (GInputStream          *stream,
                 GAsyncResult          *result,
@@ -317,7 +351,7 @@ read_stream_cb (GInputStream          *stream,
           line = g_string_free (pp->priv->line_buffer, FALSE);
           pp->priv->line_buffer = NULL;
 
-          latexila_post_processor_process_line (pp, line);
+          process_line (pp, line);
         }
 
       /* finished! */
@@ -360,7 +394,7 @@ read_stream_cb (GInputStream          *stream,
       lines[last_line] = NULL;
 
       for (i = 0; lines[i] != NULL; i++)
-        latexila_post_processor_process_line (pp, lines[i]);
+        process_line (pp, lines[i]);
 
       g_free (lines);
     }
