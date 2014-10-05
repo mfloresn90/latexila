@@ -30,7 +30,6 @@ src/liblatexila/latexila-build-tools.c
 src/liblatexila/latexila-build-tools-default.c
 src/liblatexila/latexila-build-tools-personal.c
 src/liblatexila/latexila-build-view.c
-src/liblatexila/latexila-enum-types.c
 src/liblatexila/latexila-post-processor-all-output.c
 src/liblatexila/latexila-post-processor.c
 src/liblatexila/latexila-post-processor-latex.c
