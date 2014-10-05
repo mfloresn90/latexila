@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-09-04 16:39+0200\n"
+"POT-Creation-Date: 2014-10-05 19:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,11 +9,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. (itstool) path: template/babel
 #. This must be translated by a usepackage LaTeX command.
-#: article.xml:8(template/babel)
-#: beamer.xml:8(template/babel)
-#: book.xml:8(template/babel)
-#: report.xml:8(template/babel)
+#: article.xml:8
+#: beamer.xml:8
+#: book.xml:8
+#: report.xml:8
 #, no-wrap
 msgid ""
 "\n"
@@ -21,8 +22,9 @@ msgid ""
 ""
 msgstr ""
 
+#. (itstool) path: template/translatableChunk
 #. There is a helper script in data/templates/tex2po.sh
-#: letter.xml:2(template/translatableChunk)
+#: letter.xml:2
 #, no-wrap
 msgid ""
 "\n"
