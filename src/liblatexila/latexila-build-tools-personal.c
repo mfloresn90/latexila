@@ -116,9 +116,7 @@ LatexilaBuildToolsPersonal *
 latexila_build_tools_personal_get_instance (void)
 {
   if (instance == NULL)
-    {
-      instance = g_object_new (LATEXILA_TYPE_BUILD_TOOLS_PERSONAL, NULL);
-    }
+    instance = g_object_new (LATEXILA_TYPE_BUILD_TOOLS_PERSONAL, NULL);
 
   return instance;
 }
@@ -168,9 +166,7 @@ latexila_build_tools_personal_save (LatexilaBuildToolsPersonal *build_tools)
 
   if (!build_tools->priv->modified ||
       build_tools->priv->xml_file_contents != NULL)
-    {
-      return;
-    }
+    return;
 
   contents = g_string_new ("<tools>");
   build_tools->priv->xml_file_contents = contents;

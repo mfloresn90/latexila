@@ -41,9 +41,7 @@ get_extension_position (const gchar *filename)
   gint length;
 
   if (filename == NULL)
-    {
-      return 0;
-    }
+    return 0;
 
   length = strlen (filename);
   pos = filename + length;
@@ -54,14 +52,10 @@ get_extension_position (const gchar *filename)
       pos = g_utf8_find_prev_char (filename, pos);
 
       if (pos == NULL || pos[0] == '/')
-        {
-          break;
-        }
+        break;
 
       if (pos[0] == '.')
-        {
-          return pos - filename;
-        }
+        return pos - filename;
     }
 
   return length;
@@ -116,15 +110,11 @@ latexila_utils_replace_home_dir_with_tilde (const gchar *filename)
   tmp = (gchar *) g_get_home_dir ();
 
   if (tmp == NULL)
-    {
-      return g_strdup (filename);
-    }
+    return g_strdup (filename);
 
   home = g_filename_to_utf8 (tmp, -1, NULL, NULL, NULL);
   if (home == NULL)
-    {
-      return g_strdup (filename);
-    }
+    return g_strdup (filename);
 
   if (strcmp (filename, home) == 0)
     {
@@ -192,13 +182,9 @@ latexila_utils_str_replace (const gchar *string,
 
   chunks = g_strsplit (string, search, -1);
   if (chunks != NULL && chunks[0] != NULL)
-    {
-      ret = g_strjoinv (replacement, chunks);
-    }
+    ret = g_strjoinv (replacement, chunks);
   else
-    {
-      ret = g_strdup (string);
-    }
+    ret = g_strdup (string);
 
   g_strfreev (chunks);
   return ret;

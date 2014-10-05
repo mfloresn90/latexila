@@ -183,16 +183,12 @@ parser_start_element (GMarkupParseContext  *context,
               LatexilaPostProcessorType type;
 
               if (latexila_post_processor_get_type_from_name (attribute_values[i], &type))
-                {
-                  g_object_set (cur_job, "post-processor-type", type, NULL);
-                }
+                g_object_set (cur_job, "post-processor-type", type, NULL);
               else if (error != NULL)
-                {
-                  *error = g_error_new (G_MARKUP_ERROR,
-                                        G_MARKUP_ERROR_INVALID_CONTENT,
-                                        "unknown post processor \"%s\"",
-                                        attribute_values[i]);
-                }
+                *error = g_error_new (G_MARKUP_ERROR,
+                                      G_MARKUP_ERROR_INVALID_CONTENT,
+                                      "unknown post processor \"%s\"",
+                                      attribute_values[i]);
             }
 
           /* For compatibility (no longer used) */
@@ -271,21 +267,16 @@ parser_text (GMarkupParseContext  *context,
   stripped_text = g_strstrip (stripped_text);
 
   if (g_str_equal (element_name, "job"))
-    {
-      g_object_set (build_tools->priv->cur_job, "command", stripped_text, NULL);
-    }
+    g_object_set (build_tools->priv->cur_job, "command", stripped_text, NULL);
+
   else if (g_str_equal (element_name, "label"))
-    {
-      g_object_set (build_tools->priv->cur_tool, "label", _(stripped_text), NULL);
-    }
+    g_object_set (build_tools->priv->cur_tool, "label", _(stripped_text), NULL);
+
   else if (g_str_equal (element_name, "description"))
-    {
-      g_object_set (build_tools->priv->cur_tool, "description", _(stripped_text), NULL);
-    }
+    g_object_set (build_tools->priv->cur_tool, "description", _(stripped_text), NULL);
+
   else if (g_str_equal (element_name, "open"))
-    {
-      g_object_set (build_tools->priv->cur_tool, "files-to-open", stripped_text, NULL);
-    }
+    g_object_set (build_tools->priv->cur_tool, "files-to-open", stripped_text, NULL);
 
   g_free (stripped_text);
 }
@@ -371,9 +362,7 @@ load_contents_cb (GFile              *xml_file,
     }
 
   if (contents != NULL)
-    {
-      parse_contents (build_tools, contents);
-    }
+    parse_contents (build_tools, contents);
 
   g_object_unref (build_tools);
 }

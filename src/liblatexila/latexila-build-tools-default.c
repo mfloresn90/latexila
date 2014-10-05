@@ -90,9 +90,7 @@ load_settings (LatexilaBuildToolsDefault *build_tools)
   g_variant_get (tools, "ai", &iter);
 
   while (g_variant_iter_loop (iter, "i", &tool_id))
-    {
-      set_enabled_by_id (build_tools, tool_id, TRUE);
-    }
+    set_enabled_by_id (build_tools, tool_id, TRUE);
 
   g_variant_iter_free (iter);
   g_variant_unref (tools);
@@ -101,9 +99,7 @@ load_settings (LatexilaBuildToolsDefault *build_tools)
   g_variant_get (tools, "ai", &iter);
 
   while (g_variant_iter_loop (iter, "i", &tool_id))
-    {
-      set_enabled_by_id (build_tools, tool_id, FALSE);
-    }
+    set_enabled_by_id (build_tools, tool_id, FALSE);
 
   g_variant_iter_free (iter);
   g_variant_unref (tools);
@@ -136,13 +132,9 @@ save_settings (LatexilaBuildToolsDefault *build_tools)
                     NULL);
 
       if (enabled)
-        {
-          g_variant_builder_add (&builder_enabled, "i", id);
-        }
+        g_variant_builder_add (&builder_enabled, "i", id);
       else
-        {
-          g_variant_builder_add (&builder_disabled, "i", id);
-        }
+        g_variant_builder_add (&builder_disabled, "i", id);
     }
 
   enabled_tools = g_variant_builder_end (&builder_enabled);
@@ -155,23 +147,9 @@ save_settings (LatexilaBuildToolsDefault *build_tools)
   g_object_unref (settings);
 }
 
-#if 0
-static void
-latexila_build_tools_default_finalize (GObject *object)
-{
-
-  G_OBJECT_CLASS (latexila_build_tools_default_parent_class)->finalize (object);
-}
-#endif
-
 static void
 latexila_build_tools_default_class_init (LatexilaBuildToolsDefaultClass *klass)
 {
-#if 0
-  GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-  object_class->finalize = latexila_build_tools_default_finalize;
-#endif
 }
 
 static GFile *
@@ -224,9 +202,7 @@ LatexilaBuildToolsDefault *
 latexila_build_tools_default_get_instance (void)
 {
   if (instance == NULL)
-    {
-      instance = g_object_new (LATEXILA_TYPE_BUILD_TOOLS_DEFAULT, NULL);
-    }
+    instance = g_object_new (LATEXILA_TYPE_BUILD_TOOLS_DEFAULT, NULL);
 
   return instance;
 }

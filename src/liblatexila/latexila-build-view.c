@@ -263,18 +263,14 @@ latexila_build_view_set_property (GObject      *object,
       build_view->priv->show_warnings = g_value_get_boolean (value);
 
       if (build_view->priv->filtered_model != NULL)
-        {
-          gtk_tree_model_filter_refilter (build_view->priv->filtered_model);
-        }
+        gtk_tree_model_filter_refilter (build_view->priv->filtered_model);
       break;
 
     case PROP_SHOW_BADBOXES:
       build_view->priv->show_badboxes = g_value_get_boolean (value);
 
       if (build_view->priv->filtered_model != NULL)
-        {
-          gtk_tree_model_filter_refilter (build_view->priv->filtered_model);
-        }
+        gtk_tree_model_filter_refilter (build_view->priv->filtered_model);
       break;
 
     case PROP_SHOW_DETAILS:
@@ -302,15 +298,6 @@ latexila_build_view_dispose (GObject *object)
   G_OBJECT_CLASS (latexila_build_view_parent_class)->dispose (object);
 }
 
-#if 0
-static void
-latexila_build_view_finalize (GObject *object)
-{
-
-  G_OBJECT_CLASS (latexila_build_view_parent_class)->finalize (object);
-}
-#endif
-
 static void
 latexila_build_view_class_init (LatexilaBuildViewClass *klass)
 {
@@ -319,7 +306,6 @@ latexila_build_view_class_init (LatexilaBuildViewClass *klass)
   object_class->get_property = latexila_build_view_get_property;
   object_class->set_property = latexila_build_view_set_property;
   object_class->dispose = latexila_build_view_dispose;
-  /*object_class->finalize = latexila_build_view_finalize;*/
 
   g_object_class_install_property (object_class,
                                    PROP_SHOW_WARNINGS,
@@ -449,20 +435,14 @@ select_row (LatexilaBuildView *build_view,
   gint end_line;
 
   if (!gtk_tree_model_get_iter (model, &iter, path))
-    {
-      return FALSE;
-    }
+    return FALSE;
 
   if (gtk_tree_model_iter_has_child (model, &iter))
     {
       if (gtk_tree_view_row_expanded (tree_view, path))
-        {
-          gtk_tree_view_collapse_row (tree_view, path);
-        }
+        gtk_tree_view_collapse_row (tree_view, path);
       else
-        {
-          gtk_tree_view_expand_to_path (tree_view, path);
-        }
+        gtk_tree_view_expand_to_path (tree_view, path);
 
       return FALSE;
     }
@@ -744,15 +724,11 @@ latexila_build_view_append_single_message (LatexilaBuildView *build_view,
     }
 
   if (message->start_line != -1)
-    {
-      line_str = g_strdup_printf ("%d", message->start_line);
-    }
+    line_str = g_strdup_printf ("%d", message->start_line);
 
   end_line = message->end_line;
   if (message->start_line != -1 && end_line == -1)
-    {
-      end_line = message->start_line + 1;
-    }
+    end_line = message->start_line + 1;
 
   gtk_tree_store_append (build_view->priv->store, &iter, parent);
   gtk_tree_store_set (build_view->priv->store, &iter,
@@ -769,9 +745,7 @@ latexila_build_view_append_single_message (LatexilaBuildView *build_view,
                       -1);
 
   if (file != NULL)
-    {
-      g_object_unref (file);
-    }
+    g_object_unref (file);
 
   g_free (path);
   g_free (basename);
@@ -808,12 +782,10 @@ latexila_build_view_append_messages (LatexilaBuildView *build_view,
       child = latexila_build_view_append_single_message (build_view, parent, build_msg);
 
       if (build_msg->children != NULL)
-        {
-          latexila_build_view_append_messages (build_view,
-                                               &child,
-                                               build_msg->children->head,
-                                               build_msg->expand);
-        }
+        latexila_build_view_append_messages (build_view,
+                                             &child,
+                                             build_msg->children->head,
+                                             build_msg->expand);
     }
 
   if (expand)

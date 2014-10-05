@@ -238,9 +238,7 @@ get_command_argv (LatexilaBuildJob  *build_job,
   /* Separate arguments */
   if (!g_shell_parse_argv (build_job->priv->command, NULL, &argv, error) ||
       argv == NULL)
-    {
-      return NULL;
-    }
+    return NULL;
 
   /* Re-add quotes if needed */
   if (for_printing)
@@ -300,13 +298,9 @@ get_command_name (LatexilaBuildJob *build_job)
   argv = get_command_argv (build_job, TRUE, NULL);
 
   if (argv == NULL || argv[0] == NULL || argv[0][0] == '\0')
-    {
-      command_name = NULL;
-    }
+    command_name = NULL;
   else
-    {
-      command_name = g_strdup (argv[0]);
-    }
+    command_name = g_strdup (argv[0]);
 
   g_strfreev (argv);
   return command_name;
@@ -619,14 +613,10 @@ latexila_build_job_run_async (LatexilaBuildJob    *build_job,
   build_job->priv->build_view = g_object_ref (build_view);
 
   if (!display_command_line (build_job))
-    {
-      return;
-    }
+    return;
 
   if (!g_task_return_error_if_cancelled (build_job->priv->task))
-    {
-      launch_subprocess (build_job);
-    }
+    launch_subprocess (build_job);
 }
 
 /**

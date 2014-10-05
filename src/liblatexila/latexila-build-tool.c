@@ -163,9 +163,7 @@ latexila_build_tool_set_property (GObject      *object,
       g_strfreev (build_tool->priv->files_to_open_split);
       build_tool->priv->files_to_open_split = NULL;
       if (build_tool->priv->files_to_open != NULL)
-        {
-          build_tool->priv->files_to_open_split = g_strsplit (build_tool->priv->files_to_open, " ", -1);
-        }
+        build_tool->priv->files_to_open_split = g_strsplit (build_tool->priv->files_to_open, " ", -1);
       break;
 
     case PROP_ID:
@@ -374,9 +372,7 @@ latexila_build_tool_get_description (LatexilaBuildTool *build_tool)
 {
   if (build_tool->priv->description == NULL ||
       build_tool->priv->description[0] == '\0')
-    {
-      return build_tool->priv->label;
-    }
+    return build_tool->priv->label;
 
   return build_tool->priv->description;
 }
@@ -475,13 +471,9 @@ failed (LatexilaBuildTool *build_tool)
 
   cancellable = g_task_get_cancellable (build_tool->priv->task);
   if (g_cancellable_is_cancelled (cancellable))
-    {
-      state = LATEXILA_BUILD_STATE_ABORTED;
-    }
+    state = LATEXILA_BUILD_STATE_ABORTED;
   else
-    {
-      state = LATEXILA_BUILD_STATE_FAILED;
-    }
+    state = LATEXILA_BUILD_STATE_FAILED;
 
   latexila_build_view_set_title_state (build_tool->priv->build_view,
                                        &build_tool->priv->main_title,
@@ -614,13 +606,9 @@ open_file (LatexilaBuildTool *build_tool)
        * two contiguous spaces in priv->files_to_open for example.
        */
       if (build_tool->priv->current_file_to_open[0][0] == '\0')
-        {
-          build_tool->priv->current_file_to_open++;
-        }
+        build_tool->priv->current_file_to_open++;
       else
-        {
-          break;
-        }
+        break;
     }
 
   file_to_open = build_tool->priv->current_file_to_open[0];
@@ -631,17 +619,11 @@ open_file (LatexilaBuildTool *build_tool)
   shortname = latexila_utils_get_shortname (filename);
 
   if (strstr (file_to_open, "$filename") != NULL)
-    {
-      uri = latexila_utils_str_replace (file_to_open, "$filename", filename);
-    }
+    uri = latexila_utils_str_replace (file_to_open, "$filename", filename);
   else if (strstr (file_to_open, "$shortname") != NULL)
-    {
-      uri = latexila_utils_str_replace (file_to_open, "$shortname", shortname);
-    }
+    uri = latexila_utils_str_replace (file_to_open, "$shortname", shortname);
   else
-    {
-      uri = g_strdup_printf ("file://%s", file_to_open);
-    }
+    uri = g_strdup_printf ("file://%s", file_to_open);
 
   /* Add job title in the build view */
 
@@ -701,9 +683,7 @@ run_job (LatexilaBuildTool *build_tool)
   LatexilaBuildJob *build_job;
 
   if (g_task_return_error_if_cancelled (build_tool->priv->task))
-    {
-      return;
-    }
+    return;
 
   if (build_tool->priv->current_job == NULL)
     {
@@ -780,11 +760,9 @@ latexila_build_tool_run_finish (LatexilaBuildTool *build_tool,
 
   cancellable = g_task_get_cancellable (G_TASK (result));
   if (g_cancellable_is_cancelled (cancellable))
-    {
-      latexila_build_view_set_title_state (build_tool->priv->build_view,
-                                           &build_tool->priv->main_title,
-                                           LATEXILA_BUILD_STATE_ABORTED);
-    }
+    latexila_build_view_set_title_state (build_tool->priv->build_view,
+                                         &build_tool->priv->main_title,
+                                         LATEXILA_BUILD_STATE_ABORTED);
 
   g_task_propagate_boolean (G_TASK (result), NULL);
 

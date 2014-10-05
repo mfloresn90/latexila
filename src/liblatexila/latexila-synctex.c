@@ -166,9 +166,7 @@ LatexilaSynctex *
 latexila_synctex_get_instance (void)
 {
   if (instance == NULL)
-    {
-      instance = g_object_new (LATEXILA_TYPE_SYNCTEX, NULL);
-    }
+    instance = g_object_new (LATEXILA_TYPE_SYNCTEX, NULL);
 
   return instance;
 }

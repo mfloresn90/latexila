@@ -319,9 +319,7 @@ read_stream_cb (GInputStream          *stream,
   if (g_cancellable_is_cancelled (cancellable))
     {
       if (error != NULL)
-        {
-          g_error_free (error);
-        }
+        g_error_free (error);
 
       g_task_return_boolean (pp->priv->task, FALSE);
       return;
