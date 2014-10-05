@@ -65,17 +65,10 @@ Bugs should be reported on the GNOME bugzilla:
 Translations
 ============
 
-LaTeXila uses ITS Tool for translating XML files. This is used for the
-documentation (in Mallard), the build tools and the templates.
-
 Here is a summary page about the translation status of LaTeXila:
 
-    http://l10n.gnome.org/module/latexila/
+    https://l10n.gnome.org/module/latexila/
 
-If you want to help, see the "How Tos" section of this page:
+If you want to help, see:
 
     https://wiki.gnome.org/TranslationProject
-
-For translating the letter template (which require to translate it in one big
-block), there is a helper script in data/templates/tex2po.sh, so you can write
-the letter in a .tex file, with syntaxic color, etc.
