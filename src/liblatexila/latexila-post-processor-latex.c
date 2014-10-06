@@ -179,8 +179,10 @@ static void
 append_to_filename_buffer (LatexilaPostProcessorLatex *pp,
                            const gchar                *content)
 {
-  g_return_if_fail (pp->priv->filename_buffer != NULL);
-  g_string_append (pp->priv->filename_buffer, content);
+  if (pp->priv->filename_buffer == NULL)
+    set_filename_buffer (pp, content);
+  else
+    g_string_append (pp->priv->filename_buffer, content);
 }
 
 static gchar *
@@ -1151,6 +1153,9 @@ update_stack_file_heuristic (LatexilaPostProcessorLatex *pp,
         {
           gint pos;
 
+          if (pp->priv->filename_buffer == NULL)
+            set_filename_buffer (pp, "");
+
           g_string_append_len (pp->priv->filename_buffer,
                                start_filename,
                                line_pos_next - start_filename);
@@ -1192,10 +1197,11 @@ update_stack_file_heuristic (LatexilaPostProcessorLatex *pp,
             {
               pp->priv->state = STATE_START;
 
-              /* TODO ensure that filename_buffer is correctly initialized when
-               * using it.
-               */
-              set_filename_buffer (pp, "");
+              if (pp->priv->filename_buffer != NULL)
+                {
+                  g_string_free (pp->priv->filename_buffer, TRUE);
+                  pp->priv->filename_buffer = NULL;
+                }
 
               expect_filename = FALSE;
             }
