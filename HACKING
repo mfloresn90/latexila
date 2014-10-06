@@ -19,10 +19,9 @@ Later, to take the new commits you just have to do:
     $ git pull
 
 An easy way to build LaTeXila and its dependencies is to use jhbuild
-(gnome-world moduleset).
+(gnome-world moduleset). Put the following line in your jhbuild configuration:
 
-If you want to contribute to LaTeXila, contact the main developer (see the
-file AUTHORS).
+module_autogenargs['latexila'] = '--enable-gtk-doc --enable-introspection --enable-vala --enable-code-coverage'
 
 Commits
 =======
