@@ -42,23 +42,34 @@ struct _LatexilaBuildToolPrivate
   gchar *extensions;
   gchar *icon;
   gchar *files_to_open;
+  gchar **files_to_open_split;
   gint id;
 
   /* A list of LatexilaBuildJob's. */
   GQueue *jobs;
 
-  /* Used for running the build tool. */
-  GTask *task;
+  guint running_tasks_count;
+
+  guint enabled : 1;
+};
+
+/* Used for running the build tool. */
+typedef struct _TaskData TaskData;
+struct _TaskData
+{
   GFile *file;
   LatexilaBuildView *build_view;
   GtkTreeIter main_title;
+
+  /* Position in priv->jobs. */
   GList *current_job;
 
-  gchar **files_to_open_split;
-  gchar **current_file_to_open; /* Position in files_to_open_split */
+  /* Position in priv->files_to_open_split. */
+  gchar **current_file_to_open;
+
   GtkTreeIter open_file_job_title;
 
-  guint enabled : 1;
+  GSList *job_results;
 };
 
 enum
@@ -76,8 +87,27 @@ enum
 G_DEFINE_TYPE_WITH_PRIVATE (LatexilaBuildTool, latexila_build_tool, G_TYPE_OBJECT)
 
 /* Prototypes */
-static void run_job (LatexilaBuildTool *build_tool);
-static void open_file (LatexilaBuildTool *build_tool);
+static void run_job (GTask *task);
+static void open_file (GTask *task);
+
+static TaskData *
+task_data_new (void)
+{
+  return g_slice_new0 (TaskData);
+}
+
+static void
+task_data_free (TaskData *data)
+{
+  if (data != NULL)
+    {
+      g_clear_object (&data->file);
+      g_clear_object (&data->build_view);
+      g_slist_free_full (data->job_results, g_object_unref);
+
+      g_slice_free (TaskData, data);
+    }
+}
 
 static void
 latexila_build_tool_get_property (GObject    *object,
@@ -132,7 +162,7 @@ latexila_build_tool_set_property (GObject      *object,
   LatexilaBuildTool *build_tool = LATEXILA_BUILD_TOOL (object);
 
   /* The build tool can not be modified when it is running. */
-  g_return_if_fail (build_tool->priv->task == NULL);
+  g_return_if_fail (build_tool->priv->running_tasks_count == 0);
 
   switch (prop_id)
     {
@@ -190,10 +220,6 @@ latexila_build_tool_dispose (GObject *object)
       g_queue_free_full (build_tool->priv->jobs, g_object_unref);
       build_tool->priv->jobs = NULL;
     }
-
-  g_clear_object (&build_tool->priv->task);
-  g_clear_object (&build_tool->priv->file);
-  g_clear_object (&build_tool->priv->build_view);
 
   G_OBJECT_CLASS (latexila_build_tool_parent_class)->dispose (object);
 }
@@ -392,7 +418,7 @@ latexila_build_tool_add_job (LatexilaBuildTool *build_tool,
   g_return_if_fail (LATEXILA_IS_BUILD_JOB (build_job));
 
   /* The build tool can not be modified when it is running. */
-  g_return_if_fail (build_tool->priv->task == NULL);
+  g_return_if_fail (build_tool->priv->running_tasks_count == 0);
 
   g_queue_push_tail (build_tool->priv->jobs, build_job);
   g_object_ref (build_job);
@@ -464,29 +490,32 @@ latexila_build_tool_to_xml (LatexilaBuildTool *tool)
 }
 
 static void
-failed (LatexilaBuildTool *build_tool)
+failed (GTask *task)
 {
+  TaskData *data = g_task_get_task_data (task);
   GCancellable *cancellable;
   LatexilaBuildState state;
 
-  cancellable = g_task_get_cancellable (build_tool->priv->task);
+  cancellable = g_task_get_cancellable (task);
   if (g_cancellable_is_cancelled (cancellable))
     state = LATEXILA_BUILD_STATE_ABORTED;
   else
     state = LATEXILA_BUILD_STATE_FAILED;
 
-  latexila_build_view_set_title_state (build_tool->priv->build_view,
-                                       &build_tool->priv->main_title,
+  latexila_build_view_set_title_state (data->build_view,
+                                       &data->main_title,
                                        state);
 
-  g_task_return_boolean (build_tool->priv->task, FALSE);
+  g_task_return_boolean (task, FALSE);
+  g_object_unref (task);
 }
 
 static void
-query_exists_cb (GFile             *file,
-                 GAsyncResult      *result,
-                 LatexilaBuildTool *build_tool)
+query_exists_cb (GFile        *file,
+                 GAsyncResult *result,
+                 GTask        *task)
 {
+  TaskData *data = g_task_get_task_data (task);
   gboolean file_exists;
   GCancellable *cancellable;
   gchar *uri = NULL;
@@ -494,13 +523,13 @@ query_exists_cb (GFile             *file,
 
   file_exists = latexila_utils_file_query_exists_finish (file, result);
 
-  cancellable = g_task_get_cancellable (build_tool->priv->task);
+  cancellable = g_task_get_cancellable (task);
   if (g_cancellable_is_cancelled (cancellable))
     {
-      latexila_build_view_set_title_state (build_tool->priv->build_view,
-                                           &build_tool->priv->open_file_job_title,
+      latexila_build_view_set_title_state (data->build_view,
+                                           &data->open_file_job_title,
                                            LATEXILA_BUILD_STATE_ABORTED);
-      failed (build_tool);
+      failed (task);
       goto out;
     }
 
@@ -510,26 +539,26 @@ query_exists_cb (GFile             *file,
     {
       LatexilaBuildMsg *msg;
 
-      latexila_build_view_set_title_state (build_tool->priv->build_view,
-                                           &build_tool->priv->open_file_job_title,
+      latexila_build_view_set_title_state (data->build_view,
+                                           &data->open_file_job_title,
                                            LATEXILA_BUILD_STATE_FAILED);
 
       msg = latexila_build_msg_new ();
       msg->text = g_strdup_printf (_("The file '%s' doesn't exist."), uri);
       msg->type = LATEXILA_BUILD_MSG_TYPE_ERROR;
 
-      latexila_build_view_append_single_message (build_tool->priv->build_view,
-                                                 &build_tool->priv->open_file_job_title,
+      latexila_build_view_append_single_message (data->build_view,
+                                                 &data->open_file_job_title,
                                                  msg);
 
       latexila_build_msg_free (msg);
-      failed (build_tool);
+      failed (task);
       goto out;
     }
 
   /* Show URI */
 
-  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (build_tool->priv->build_view)),
+  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (data->build_view)),
                 uri,
                 GDK_CURRENT_TIME,
                 &error);
@@ -538,39 +567,39 @@ query_exists_cb (GFile             *file,
     {
       LatexilaBuildMsg *msg;
 
-      latexila_build_view_set_title_state (build_tool->priv->build_view,
-                                           &build_tool->priv->open_file_job_title,
+      latexila_build_view_set_title_state (data->build_view,
+                                           &data->open_file_job_title,
                                            LATEXILA_BUILD_STATE_FAILED);
 
       msg = latexila_build_msg_new ();
       msg->text = g_strdup_printf (_("Failed to open '%s':"), uri);
       msg->type = LATEXILA_BUILD_MSG_TYPE_ERROR;
 
-      latexila_build_view_append_single_message (build_tool->priv->build_view,
-                                                 &build_tool->priv->open_file_job_title,
+      latexila_build_view_append_single_message (data->build_view,
+                                                 &data->open_file_job_title,
                                                  msg);
 
       g_free (msg->text);
       msg->text = g_strdup (error->message);
       msg->type = LATEXILA_BUILD_MSG_TYPE_INFO;
 
-      latexila_build_view_append_single_message (build_tool->priv->build_view,
-                                                 &build_tool->priv->open_file_job_title,
+      latexila_build_view_append_single_message (data->build_view,
+                                                 &data->open_file_job_title,
                                                  msg);
 
       latexila_build_msg_free (msg);
       g_error_free (error);
 
-      failed (build_tool);
+      failed (task);
       goto out;
     }
 
-  latexila_build_view_set_title_state (build_tool->priv->build_view,
-                                       &build_tool->priv->open_file_job_title,
+  latexila_build_view_set_title_state (data->build_view,
+                                       &data->open_file_job_title,
                                        LATEXILA_BUILD_STATE_SUCCEEDED);
 
-  build_tool->priv->current_file_to_open++;
-  open_file (build_tool);
+  data->current_file_to_open++;
+  open_file (task);
 
 out:
   g_object_unref (file);
@@ -578,8 +607,9 @@ out:
 }
 
 static void
-open_file (LatexilaBuildTool *build_tool)
+open_file (GTask *task)
 {
+  TaskData *data = g_task_get_task_data (task);
   const gchar *file_to_open;
   gchar *filename;
   gchar *shortname;
@@ -590,32 +620,33 @@ open_file (LatexilaBuildTool *build_tool)
 
   while (TRUE)
     {
-      if (build_tool->priv->current_file_to_open == NULL ||
-          build_tool->priv->current_file_to_open[0] == NULL)
+      if (data->current_file_to_open == NULL ||
+          data->current_file_to_open[0] == NULL)
         {
           /* Finished */
-          latexila_build_view_set_title_state (build_tool->priv->build_view,
-                                               &build_tool->priv->main_title,
+          latexila_build_view_set_title_state (data->build_view,
+                                               &data->main_title,
                                                LATEXILA_BUILD_STATE_SUCCEEDED);
 
-          g_task_return_boolean (build_tool->priv->task, TRUE);
+          g_task_return_boolean (task, TRUE);
+          g_object_unref (task);
           return;
         }
 
       /* Check if the file to open is an empty string. It happens if there are
        * two contiguous spaces in priv->files_to_open for example.
        */
-      if (build_tool->priv->current_file_to_open[0][0] == '\0')
-        build_tool->priv->current_file_to_open++;
+      if (data->current_file_to_open[0][0] == '\0')
+        data->current_file_to_open++;
       else
         break;
     }
 
-  file_to_open = build_tool->priv->current_file_to_open[0];
+  file_to_open = data->current_file_to_open[0];
 
   /* Replace placeholders */
 
-  filename = g_file_get_uri (build_tool->priv->file);
+  filename = g_file_get_uri (data->file);
   shortname = latexila_utils_get_shortname (filename);
 
   if (strstr (file_to_open, "$filename") != NULL)
@@ -630,18 +661,18 @@ open_file (LatexilaBuildTool *build_tool)
   basename = g_path_get_basename (uri);
   message = g_strdup_printf (_("Open %s"), basename);
 
-  build_tool->priv->open_file_job_title = latexila_build_view_add_job_title (build_tool->priv->build_view,
-                                                                             message,
-                                                                             LATEXILA_BUILD_STATE_RUNNING);
+  data->open_file_job_title = latexila_build_view_add_job_title (data->build_view,
+                                                                 message,
+                                                                 LATEXILA_BUILD_STATE_RUNNING);
 
   /* Check if the file exists */
 
   file = g_file_new_for_uri (uri);
 
   latexila_utils_file_query_exists_async (file,
-                                          g_task_get_cancellable (build_tool->priv->task),
+                                          g_task_get_cancellable (task),
                                           (GAsyncReadyCallback) query_exists_cb,
-                                          build_tool);
+                                          task);
 
   g_free (filename);
   g_free (shortname);
@@ -651,54 +682,65 @@ open_file (LatexilaBuildTool *build_tool)
 }
 
 static void
-open_files (LatexilaBuildTool *build_tool)
+open_files (GTask *task)
 {
-  build_tool->priv->current_file_to_open = build_tool->priv->files_to_open_split;
-  open_file (build_tool);
+  TaskData *data = g_task_get_task_data (task);
+  LatexilaBuildTool *build_tool = g_task_get_source_object (task);
+
+  data->current_file_to_open = build_tool->priv->files_to_open_split;
+  open_file (task);
 }
 
 static void
-run_job_cb (LatexilaBuildJob  *build_job,
-            GAsyncResult      *result,
-            LatexilaBuildTool *build_tool)
+run_job_cb (LatexilaBuildJob *build_job,
+            GAsyncResult     *result,
+            GTask            *task)
 {
+  TaskData *data = g_task_get_task_data (task);
   gboolean success;
+
+  data->job_results = g_slist_prepend (data->job_results,
+                                       g_object_ref (result));
 
   success = latexila_build_job_run_finish (build_job, result);
 
   if (success)
     {
-      build_tool->priv->current_job = build_tool->priv->current_job->next;
-      run_job (build_tool);
+      data->current_job = data->current_job->next;
+      run_job (task);
     }
   else
     {
-      failed (build_tool);
+      failed (task);
     }
 }
 
 static void
-run_job (LatexilaBuildTool *build_tool)
+run_job (GTask *task)
 {
+  TaskData *data = g_task_get_task_data (task);
   LatexilaBuildJob *build_job;
 
-  if (g_task_return_error_if_cancelled (build_tool->priv->task))
-    return;
-
-  if (build_tool->priv->current_job == NULL)
+  if (g_task_return_error_if_cancelled (task))
     {
-      open_files (build_tool);
+      g_object_unref (task);
       return;
     }
 
-  build_job = build_tool->priv->current_job->data;
+  if (data->current_job == NULL)
+    {
+      open_files (task);
+      return;
+    }
+
+  build_job = data->current_job->data;
 
   latexila_build_job_run_async (build_job,
-                                build_tool->priv->file,
-                                build_tool->priv->build_view,
-                                g_task_get_cancellable (build_tool->priv->task),
+                                data->file,
+                                data->build_view,
+                                g_task_get_cancellable (task),
                                 (GAsyncReadyCallback) run_job_cb,
-                                build_tool);
+                                task);
 }
 
 /**
@@ -720,27 +762,30 @@ latexila_build_tool_run_async (LatexilaBuildTool   *build_tool,
                                GAsyncReadyCallback  callback,
                                gpointer             user_data)
 {
+  GTask *task;
+  TaskData *data;
+
   g_return_if_fail (LATEXILA_IS_BUILD_TOOL (build_tool));
   g_return_if_fail (G_IS_FILE (file));
   g_return_if_fail (LATEXILA_IS_BUILD_VIEW (build_view));
-  g_return_if_fail (build_tool->priv->task == NULL);
 
-  build_tool->priv->task = g_task_new (build_tool, cancellable, callback, user_data);
+  task = g_task_new (build_tool, cancellable, callback, user_data);
+  build_tool->priv->running_tasks_count++;
 
-  g_clear_object (&build_tool->priv->file);
-  build_tool->priv->file = g_object_ref (file);
+  data = task_data_new ();
+  g_task_set_task_data (task, data, (GDestroyNotify) task_data_free);
 
-  g_clear_object (&build_tool->priv->build_view);
-  build_tool->priv->build_view = g_object_ref (build_view);
+  data->file = g_object_ref (file);
+  data->build_view = g_object_ref (build_view);
 
   latexila_build_view_clear (build_view);
 
-  build_tool->priv->main_title = latexila_build_view_add_main_title (build_view,
-                                                                     build_tool->priv->label,
-                                                                     LATEXILA_BUILD_STATE_RUNNING);
+  data->main_title = latexila_build_view_add_main_title (build_view,
+                                                         build_tool->priv->label,
+                                                         LATEXILA_BUILD_STATE_RUNNING);
 
-  build_tool->priv->current_job = build_tool->priv->jobs->head;
-  run_job (build_tool);
+  data->current_job = build_tool->priv->jobs->head;
+  run_job (task);
 }
 
 /**
@@ -749,48 +794,30 @@ latexila_build_tool_run_async (LatexilaBuildTool   *build_tool,
  * @result: a #GAsyncResult.
  *
  * Finishes the operation started with latexila_build_tool_run_async().
+ *
+ * Before calling this function you should keep a reference to @result as long
+ * as the build messages are displayed in the build view. @result is needed for
+ * example to show/hide some messages when the "More details" button is toggled.
  */
 void
 latexila_build_tool_run_finish (LatexilaBuildTool *build_tool,
                                 GAsyncResult      *result)
 {
+  GTask *task;
+  TaskData *data;
   GCancellable *cancellable;
 
   g_return_if_fail (g_task_is_valid (result, build_tool));
 
-  cancellable = g_task_get_cancellable (G_TASK (result));
+  task = G_TASK (result);
+  data = g_task_get_task_data (task);
+
+  cancellable = g_task_get_cancellable (task);
   if (g_cancellable_is_cancelled (cancellable))
-    latexila_build_view_set_title_state (build_tool->priv->build_view,
-                                         &build_tool->priv->main_title,
+    latexila_build_view_set_title_state (data->build_view,
+                                         &data->main_title,
                                          LATEXILA_BUILD_STATE_ABORTED);
 
-  g_task_propagate_boolean (G_TASK (result), NULL);
-
-  g_clear_object (&build_tool->priv->task);
-  g_clear_object (&build_tool->priv->file);
-  g_clear_object (&build_tool->priv->build_view);
-}
-
-/**
- * latexila_build_tool_clear:
- * @build_tool: a build tool
- *
- * Clears the last run operation. latexila_build_tool_run_finish() must have
- * been called before calling this function.
- *
- * The build tool can keep build messages or other information in memory. For
- * example if a build job contains detailed messages, the two trees of messages
- * must be kept in memory so it can switch between them when the "More details"
- * button is toggled.
- */
-void
-latexila_build_tool_clear (LatexilaBuildTool *build_tool)
-{
-  GList *l;
-
-  for (l = build_tool->priv->jobs->head; l != NULL; l = l->next)
-    {
-      LatexilaBuildJob *build_job = l->data;
-      latexila_build_job_clear (build_job);
-    }
+  g_task_propagate_boolean (task, NULL);
+  build_tool->priv->running_tasks_count--;
 }

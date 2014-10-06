@@ -39,9 +39,13 @@ struct _LatexilaBuildJobPrivate
 {
   gchar *command;
   LatexilaPostProcessorType post_processor_type;
+  guint running_tasks_count;
+};
 
-  /* Used for running the build job. */
-  GTask *task;
+/* Used for running the build job. */
+typedef struct _TaskData TaskData;
+struct _TaskData
+{
   GFile *file;
   LatexilaBuildView *build_view;
   GtkTreeIter job_title;
@@ -65,6 +69,26 @@ enum
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (LatexilaBuildJob, latexila_build_job, G_TYPE_OBJECT)
+
+static TaskData *
+task_data_new (void)
+{
+  return g_slice_new0 (TaskData);
+}
+
+static void
+task_data_free (TaskData *data)
+{
+  if (data != NULL)
+    {
+      g_clear_object (&data->file);
+      g_clear_object (&data->build_view);
+      g_clear_object (&data->post_processor);
+      g_clear_object (&data->post_processor_result);
+
+      g_slice_free (TaskData, data);
+    }
+}
 
 static void
 latexila_build_job_get_property (GObject    *object,
@@ -99,7 +123,7 @@ latexila_build_job_set_property (GObject      *object,
   LatexilaBuildJob *build_job = LATEXILA_BUILD_JOB (object);
 
   /* The build job can not be modified when it is running. */
-  g_return_if_fail (build_job->priv->task == NULL);
+  g_return_if_fail (build_job->priv->running_tasks_count == 0);
 
   switch (prop_id)
     {
@@ -119,19 +143,6 @@ latexila_build_job_set_property (GObject      *object,
 }
 
 static void
-latexila_build_job_dispose (GObject *object)
-{
-  LatexilaBuildJob *build_job = LATEXILA_BUILD_JOB (object);
-
-  g_clear_object (&build_job->priv->task);
-  g_clear_object (&build_job->priv->file);
-
-  latexila_build_job_clear (build_job);
-
-  G_OBJECT_CLASS (latexila_build_job_parent_class)->dispose (object);
-}
-
-static void
 latexila_build_job_finalize (GObject *object)
 {
   LatexilaBuildJob *build_job = LATEXILA_BUILD_JOB (object);
@@ -148,7 +159,6 @@ latexila_build_job_class_init (LatexilaBuildJobClass *klass)
 
   object_class->get_property = latexila_build_job_get_property;
   object_class->set_property = latexila_build_job_set_property;
-  object_class->dispose = latexila_build_job_dispose;
   object_class->finalize = latexila_build_job_finalize;
 
   g_object_class_install_property (object_class,
@@ -174,9 +184,9 @@ latexila_build_job_class_init (LatexilaBuildJobClass *klass)
 }
 
 static void
-latexila_build_job_init (LatexilaBuildJob *self)
+latexila_build_job_init (LatexilaBuildJob *build_job)
 {
-  self->priv = latexila_build_job_get_instance_private (self);
+  build_job->priv = latexila_build_job_get_instance_private (build_job);
 }
 
 /**
@@ -226,10 +236,12 @@ latexila_build_job_to_xml (LatexilaBuildJob *build_job)
 }
 
 static gchar **
-get_command_argv (LatexilaBuildJob  *build_job,
-                  gboolean           for_printing,
-                  GError           **error)
+get_command_argv (GTask     *task,
+                  gboolean   for_printing,
+                  GError   **error)
 {
+  LatexilaBuildJob *build_job = g_task_get_source_object (task);
+  TaskData *data = g_task_get_task_data (task);
   gchar **argv;
   gchar *base_filename;
   gchar *base_shortname;
@@ -256,7 +268,7 @@ get_command_argv (LatexilaBuildJob  *build_job,
     }
 
   /* Replace placeholders */
-  base_filename = g_file_get_basename (build_job->priv->file);
+  base_filename = g_file_get_basename (data->file);
   base_shortname = latexila_utils_get_shortname (base_filename);
 
   for (i = 0; argv[i] != NULL; i++)
@@ -290,12 +302,12 @@ get_command_argv (LatexilaBuildJob  *build_job,
 }
 
 static gchar *
-get_command_name (LatexilaBuildJob *build_job)
+get_command_name (GTask *task)
 {
   gchar **argv;
   gchar *command_name;
 
-  argv = get_command_argv (build_job, TRUE, NULL);
+  argv = get_command_argv (task, TRUE, NULL);
 
   if (argv == NULL || argv[0] == NULL || argv[0][0] == '\0')
     command_name = NULL;
@@ -307,29 +319,30 @@ get_command_name (LatexilaBuildJob *build_job)
 }
 
 static void
-display_error (LatexilaBuildJob *build_job,
-               const gchar      *message,
-               GError           *error)
+display_error (GTask       *task,
+               const gchar *message,
+               GError      *error)
 {
+  TaskData *data = g_task_get_task_data (task);
   LatexilaBuildMsg *build_msg;
 
   g_assert (error != NULL);
 
-  latexila_build_view_set_title_state (build_job->priv->build_view,
-                                       &build_job->priv->job_title,
+  latexila_build_view_set_title_state (data->build_view,
+                                       &data->job_title,
                                        LATEXILA_BUILD_STATE_FAILED);
 
   build_msg = latexila_build_msg_new ();
   build_msg->text = (gchar *) message;
   build_msg->type = LATEXILA_BUILD_MSG_TYPE_ERROR;
-  latexila_build_view_append_single_message (build_job->priv->build_view,
-                                             &build_job->priv->job_title,
+  latexila_build_view_append_single_message (data->build_view,
+                                             &data->job_title,
                                              build_msg);
 
   build_msg->text = g_strdup (error->message);
   build_msg->type = LATEXILA_BUILD_MSG_TYPE_INFO;
-  latexila_build_view_append_single_message (build_job->priv->build_view,
-                                             &build_job->priv->job_title,
+  latexila_build_view_append_single_message (data->build_view,
+                                             &data->job_title,
                                              build_msg);
 
   /* If the command doesn't seem to be installed, display a more understandable
@@ -338,15 +351,15 @@ display_error (LatexilaBuildJob *build_job,
   if (error->domain == G_SPAWN_ERROR &&
       error->code == G_SPAWN_ERROR_NOENT)
     {
-      gchar *command_name = get_command_name (build_job);
+      gchar *command_name = get_command_name (task);
 
       if (command_name != NULL)
         {
           g_free (build_msg->text);
           build_msg->text = g_strdup_printf (_("%s doesn't seem to be installed."), command_name);
 
-          latexila_build_view_append_single_message (build_job->priv->build_view,
-                                                     &build_job->priv->job_title,
+          latexila_build_view_append_single_message (data->build_view,
+                                                     &data->job_title,
                                                      build_msg);
 
           g_free (command_name);
@@ -355,34 +368,37 @@ display_error (LatexilaBuildJob *build_job,
 
   g_error_free (error);
   latexila_build_msg_free (build_msg);
-  g_task_return_boolean (build_job->priv->task, FALSE);
+  g_task_return_boolean (task, FALSE);
+  g_object_unref (task);
 }
 
 /* Returns TRUE on success. */
 static gboolean
-display_command_line (LatexilaBuildJob *build_job)
+display_command_line (GTask *task)
 {
+  LatexilaBuildJob *build_job = g_task_get_source_object (task);
+  TaskData *data = g_task_get_task_data (task);
   gchar **argv;
   gchar *command_line;
   GError *error = NULL;
 
-  argv = get_command_argv (build_job, TRUE, &error);
+  argv = get_command_argv (task, TRUE, &error);
 
   if (error != NULL)
     {
-      build_job->priv->job_title = latexila_build_view_add_job_title (build_job->priv->build_view,
-                                                                      build_job->priv->command,
-                                                                      LATEXILA_BUILD_STATE_FAILED);
+      data->job_title = latexila_build_view_add_job_title (data->build_view,
+                                                           build_job->priv->command,
+                                                           LATEXILA_BUILD_STATE_FAILED);
 
-      display_error (build_job, "Failed to parse command line:", error);
+      display_error (task, "Failed to parse command line:", error);
       return FALSE;
     }
 
   command_line = g_strjoinv (" ", argv);
 
-  build_job->priv->job_title = latexila_build_view_add_job_title (build_job->priv->build_view,
-                                                                  command_line,
-                                                                  LATEXILA_BUILD_STATE_RUNNING);
+  data->job_title = latexila_build_view_add_job_title (data->build_view,
+                                                       command_line,
+                                                       LATEXILA_BUILD_STATE_RUNNING);
 
   g_strfreev (argv);
   g_free (command_line);
@@ -392,97 +408,102 @@ display_command_line (LatexilaBuildJob *build_job)
 static void
 show_details_notify_cb (LatexilaBuildView *build_view,
                         GParamSpec        *pspec,
-                        LatexilaBuildJob  *build_job)
+                        GTask             *task)
 {
+  TaskData *data = g_task_get_task_data (task);
   const GList *messages;
   gboolean show_details;
 
-  latexila_build_view_remove_children (build_view,
-                                       &build_job->priv->job_title);
+  latexila_build_view_remove_children (build_view, &data->job_title);
 
   g_object_get (build_view, "show-details", &show_details, NULL);
 
-  messages = latexila_post_processor_get_messages (build_job->priv->post_processor,
+  messages = latexila_post_processor_get_messages (data->post_processor,
                                                    show_details);
 
   latexila_build_view_append_messages (build_view,
-                                       &build_job->priv->job_title,
+                                       &data->job_title,
                                        messages,
                                        TRUE);
 }
 
 static void
-finish_post_processor (LatexilaBuildJob *build_job)
+finish_post_processor (GTask *task)
 {
+  TaskData *data = g_task_get_task_data (task);
   gboolean has_details;
 
-  g_assert (build_job->priv->succeeded_set);
-  g_assert (build_job->priv->post_processor_result != NULL);
+  g_assert (data->succeeded_set);
+  g_assert (data->post_processor_result != NULL);
 
-  latexila_post_processor_process_finish (build_job->priv->post_processor,
-                                          build_job->priv->post_processor_result,
-                                          build_job->priv->succeeded);
+  latexila_post_processor_process_finish (data->post_processor,
+                                          data->post_processor_result,
+                                          data->succeeded);
 
-  g_clear_object (&build_job->priv->post_processor_result);
+  g_clear_object (&data->post_processor_result);
 
-  g_object_get (build_job->priv->post_processor,
+  g_object_get (data->post_processor,
                 "has-details", &has_details,
                 NULL);
 
   if (has_details)
-    g_object_set (build_job->priv->build_view,
+    g_object_set (data->build_view,
                   "has-details", TRUE,
                   NULL);
 
-  g_signal_connect (build_job->priv->build_view,
-                    "notify::show-details",
-                    G_CALLBACK (show_details_notify_cb),
-                    build_job);
+  g_signal_connect_object (data->build_view,
+                           "notify::show-details",
+                           G_CALLBACK (show_details_notify_cb),
+                           task,
+                           0);
 
-  show_details_notify_cb (build_job->priv->build_view,
-                          NULL,
-                          build_job);
+  show_details_notify_cb (data->build_view, NULL, task);
 }
 
 static void
 post_processor_cb (LatexilaPostProcessor *pp,
                    GAsyncResult          *result,
-                   LatexilaBuildJob      *build_job)
+                   GTask                 *task)
 {
-  if (build_job->priv->post_processor_result != NULL)
+  TaskData *data = g_task_get_task_data (task);
+
+  if (data->post_processor_result != NULL)
     {
       g_warning ("BuildJob: got two post-processor results.");
-      g_object_unref (build_job->priv->post_processor_result);
+      g_object_unref (data->post_processor_result);
     }
 
-  build_job->priv->post_processor_result = g_object_ref (result);
+  data->post_processor_result = g_object_ref (result);
 
-  if (build_job->priv->succeeded_set)
-    finish_post_processor (build_job);
+  if (data->succeeded_set)
+    finish_post_processor (task);
+
+  g_object_unref (task);
 }
 
 static void
-subprocess_wait_cb (GSubprocess      *subprocess,
-                    GAsyncResult     *result,
-                    LatexilaBuildJob *build_job)
+subprocess_wait_cb (GSubprocess  *subprocess,
+                    GAsyncResult *result,
+                    GTask        *task)
 {
+  TaskData *data = g_task_get_task_data (task);
   gboolean ret;
   LatexilaBuildState state;
 
   ret = g_subprocess_wait_finish (subprocess, result, NULL);
 
-  if (build_job->priv->succeeded_set)
+  if (data->succeeded_set)
     g_warning ("BuildJob: subprocess finished two times.");
 
-  build_job->priv->succeeded = g_subprocess_get_successful (subprocess);
-  build_job->priv->succeeded_set = TRUE;
+  data->succeeded = g_subprocess_get_successful (subprocess);
+  data->succeeded_set = TRUE;
 
   if (!ret)
     {
       state = LATEXILA_BUILD_STATE_ABORTED;
       g_subprocess_force_exit (subprocess);
     }
-  else if (build_job->priv->succeeded)
+  else if (data->succeeded)
     {
       state = LATEXILA_BUILD_STATE_SUCCEEDED;
     }
@@ -492,20 +513,24 @@ subprocess_wait_cb (GSubprocess      *subprocess,
       state = LATEXILA_BUILD_STATE_FAILED;
     }
 
-  latexila_build_view_set_title_state (build_job->priv->build_view,
-                                       &build_job->priv->job_title,
+  latexila_build_view_set_title_state (data->build_view,
+                                       &data->job_title,
                                        state);
 
-  g_task_return_boolean (build_job->priv->task, ret);
-  g_object_unref (subprocess);
+  g_task_return_boolean (task, ret);
 
-  if (build_job->priv->post_processor_result != NULL)
-    finish_post_processor (build_job);
+  if (data->post_processor_result != NULL)
+    finish_post_processor (task);
+
+  g_object_unref (subprocess);
+  g_object_unref (task);
 }
 
 static void
-launch_subprocess (LatexilaBuildJob *build_job)
+launch_subprocess (GTask *task)
 {
+  LatexilaBuildJob *build_job = g_task_get_source_object (task);
+  TaskData *data = g_task_get_task_data (task);
   GSubprocessLauncher *launcher;
   GSubprocess *subprocess;
   GFile *parent_dir;
@@ -520,7 +545,7 @@ launch_subprocess (LatexilaBuildJob *build_job)
     launcher = g_subprocess_launcher_new (G_SUBPROCESS_FLAGS_STDOUT_PIPE |
                                           G_SUBPROCESS_FLAGS_STDERR_MERGE);
 
-  parent_dir = g_file_get_parent (build_job->priv->file);
+  parent_dir = g_file_get_parent (data->file);
   working_directory = g_file_get_path (parent_dir);
   g_object_unref (parent_dir);
 
@@ -528,7 +553,7 @@ launch_subprocess (LatexilaBuildJob *build_job)
   g_free (working_directory);
 
   /* The error is already catched in display_command_line(). */
-  argv = get_command_argv (build_job, FALSE, NULL);
+  argv = get_command_argv (task, FALSE, NULL);
 
   subprocess = g_subprocess_launcher_spawnv (launcher, (const gchar * const *) argv, &error);
   g_strfreev (argv);
@@ -536,11 +561,11 @@ launch_subprocess (LatexilaBuildJob *build_job)
 
   if (error != NULL)
     {
-      display_error (build_job, "Failed to launch command:", error);
+      display_error (task, "Failed to launch command:", error);
       return;
     }
 
-  g_clear_object (&build_job->priv->post_processor);
+  g_clear_object (&data->post_processor);
 
   switch (build_job->priv->post_processor_type)
     {
@@ -548,33 +573,37 @@ launch_subprocess (LatexilaBuildJob *build_job)
       break;
 
     case LATEXILA_POST_PROCESSOR_TYPE_ALL_OUTPUT:
-      build_job->priv->post_processor = latexila_post_processor_all_output_new ();
+      data->post_processor = latexila_post_processor_all_output_new ();
       break;
 
     case LATEXILA_POST_PROCESSOR_TYPE_LATEX:
-      build_job->priv->post_processor = latexila_post_processor_latex_new ();
+      data->post_processor = latexila_post_processor_latex_new ();
       break;
 
     case LATEXILA_POST_PROCESSOR_TYPE_LATEXMK:
-      build_job->priv->post_processor = latexila_post_processor_latexmk_new ();
+      data->post_processor = latexila_post_processor_latexmk_new ();
       break;
 
     default:
       g_return_if_reached ();
     }
 
-  if (build_job->priv->post_processor != NULL)
-    latexila_post_processor_process_async (build_job->priv->post_processor,
-                                           build_job->priv->file,
-                                           g_subprocess_get_stdout_pipe (subprocess),
-                                           g_task_get_cancellable (build_job->priv->task),
-                                           (GAsyncReadyCallback) post_processor_cb,
-                                           build_job);
+  if (data->post_processor != NULL)
+    {
+      g_object_ref (task);
+
+      latexila_post_processor_process_async (data->post_processor,
+                                             data->file,
+                                             g_subprocess_get_stdout_pipe (subprocess),
+                                             g_task_get_cancellable (task),
+                                             (GAsyncReadyCallback) post_processor_cb,
+                                             task);
+    }
 
   g_subprocess_wait_async (subprocess,
-                           g_task_get_cancellable (build_job->priv->task),
+                           g_task_get_cancellable (task),
                            (GAsyncReadyCallback) subprocess_wait_cb,
-                           build_job);
+                           task);
 }
 
 /**
@@ -598,25 +627,29 @@ latexila_build_job_run_async (LatexilaBuildJob    *build_job,
                               GAsyncReadyCallback  callback,
                               gpointer             user_data)
 {
+  GTask *task;
+  TaskData *data;
+
   g_return_if_fail (LATEXILA_IS_BUILD_JOB (build_job));
   g_return_if_fail (G_IS_FILE (file));
   g_return_if_fail (LATEXILA_IS_BUILD_VIEW (build_view));
-  g_return_if_fail (build_job->priv->task == NULL);
 
-  build_job->priv->task = g_task_new (build_job, cancellable, callback, user_data);
+  task = g_task_new (build_job, cancellable, callback, user_data);
+  build_job->priv->running_tasks_count++;
 
-  g_clear_object (&build_job->priv->file);
-  build_job->priv->file = g_object_ref (file);
+  data = task_data_new ();
+  g_task_set_task_data (task, data, (GDestroyNotify) task_data_free);
 
-  latexila_build_job_clear (build_job);
+  data->file = g_object_ref (file);
+  data->build_view = g_object_ref (build_view);
 
-  build_job->priv->build_view = g_object_ref (build_view);
-
-  if (!display_command_line (build_job))
+  if (!display_command_line (task))
     return;
 
-  if (!g_task_return_error_if_cancelled (build_job->priv->task))
-    launch_subprocess (build_job);
+  if (g_task_return_error_if_cancelled (task))
+    g_object_unref (task);
+  else
+    launch_subprocess (task);
 }
 
 /**
@@ -626,53 +659,38 @@ latexila_build_job_run_async (LatexilaBuildJob    *build_job,
  *
  * Finishes the operation started with latexila_build_job_run_async().
  *
+ * Before calling this function, you should keep a reference to @result as long
+ * as the build messages are displayed in the build view.
+ *
  * Returns: %TRUE if the build job has run successfully.
  */
 gboolean
 latexila_build_job_run_finish (LatexilaBuildJob *build_job,
                                GAsyncResult     *result)
 {
+  GTask *task;
+  TaskData *data;
   GCancellable *cancellable;
   gboolean succeed;
 
   g_return_if_fail (g_task_is_valid (result, build_job));
 
-  cancellable = g_task_get_cancellable (G_TASK (result));
+  task = G_TASK (result);
+  data = g_task_get_task_data (task);
+
+  cancellable = g_task_get_cancellable (task);
   if (g_cancellable_is_cancelled (cancellable))
     {
-      latexila_build_view_set_title_state (build_job->priv->build_view,
-                                           &build_job->priv->job_title,
+      latexila_build_view_set_title_state (data->build_view,
+                                           &data->job_title,
                                            LATEXILA_BUILD_STATE_ABORTED);
       succeed = FALSE;
     }
   else
     {
-      succeed = g_task_propagate_boolean (G_TASK (result), NULL);
+      succeed = g_task_propagate_boolean (task, NULL);
     }
 
-  g_clear_object (&build_job->priv->task);
-  g_clear_object (&build_job->priv->file);
-
+  build_job->priv->running_tasks_count--;
   return succeed;
-}
-
-/**
- * latexila_build_job_clear:
- * @build_job: a build job.
- *
- * Clears the last run operation. latexila_build_job_run_finish() must have been
- * called before calling this function.
- */
-void
-latexila_build_job_clear (LatexilaBuildJob *build_job)
-{
-  if (build_job->priv->build_view != NULL)
-    g_signal_handlers_disconnect_by_func (build_job->priv->build_view,
-                                          show_details_notify_cb,
-                                          build_job);
-
-  g_clear_object (&build_job->priv->build_view);
-  g_clear_object (&build_job->priv->post_processor);
-  g_clear_object (&build_job->priv->post_processor_result);
-  build_job->priv->succeeded_set = FALSE;
 }

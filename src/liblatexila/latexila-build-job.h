@@ -66,8 +66,6 @@ void                latexila_build_job_run_async                  (LatexilaBuild
 gboolean            latexila_build_job_run_finish                 (LatexilaBuildJob *build_job,
                                                                    GAsyncResult     *result);
 
-void                latexila_build_job_clear                      (LatexilaBuildJob *build_job);
-
 G_END_DECLS
 
 #endif /* __LATEXILA_BUILD_JOB_H__ */

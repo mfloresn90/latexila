@@ -59,8 +59,8 @@ public class MainWindowBuildTools
     private BottomPanel _bottom_panel;
 
     // Used for running a build tool, and clear it when running another build tool.
-    private Latexila.BuildTool? _build_tool;
     private Cancellable? _cancellable;
+    private AsyncResult? _build_tool_result;
 
     private Gtk.ActionGroup _static_action_group;
     private Gtk.ActionGroup _dynamic_action_group;
@@ -377,18 +377,15 @@ public class MainWindowBuildTools
             Utils.flush_queue ();
         }
 
-        if (_build_tool != null)
-            _build_tool.clear ();
-
-        _build_tool = tool;
-
         /* Run the build tool */
 
         File main_file = active_doc.get_main_file ();
         _cancellable = new Cancellable ();
+        _build_tool_result = null;
         update_sensitivity ();
         tool.run_async.begin (main_file, _build_view, _cancellable, (obj, result) =>
         {
+            _build_tool_result = result;
             tool.run_async.end (result);
             _cancellable = null;
             update_sensitivity ();

@@ -69,7 +69,6 @@ latexila_build_tool_get_description
 latexila_build_tool_to_xml
 latexila_build_tool_run_async
 latexila_build_tool_run_finish
-latexila_build_tool_clear
 <SUBSECTION Standard>
 LATEXILA_BUILD_TOOL
 LATEXILA_BUILD_TOOL_CLASS
@@ -91,7 +90,6 @@ latexila_build_job_clone
 latexila_build_job_to_xml
 latexila_build_job_run_async
 latexila_build_job_run_finish
-latexila_build_job_clear
 <SUBSECTION Standard>
 LATEXILA_BUILD_JOB
 LATEXILA_BUILD_JOB_CLASS
@@ -182,6 +180,7 @@ latexila_post_processor_all_output_get_type
 <TITLE>LatexilaPostProcessorLatex</TITLE>
 LatexilaPostProcessorLatex
 latexila_post_processor_latex_new
+latexila_post_processor_latex_get_errors_count
 <SUBSECTION Standard>
 LATEXILA_IS_POST_PROCESSOR_LATEX
 LATEXILA_IS_POST_PROCESSOR_LATEX_CLASS
