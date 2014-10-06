@@ -612,8 +612,11 @@ open_file (GTask *task)
   TaskData *data = g_task_get_task_data (task);
   const gchar *file_to_open;
   gchar *filename;
+  gchar *filename_for_display;
   gchar *shortname;
+  gchar *shortname_for_display;
   gchar *uri;
+  gchar *uri_for_display;
   gchar *basename;
   gchar *message;
   GFile *file;
@@ -647,18 +650,30 @@ open_file (GTask *task)
   /* Replace placeholders */
 
   filename = g_file_get_uri (data->file);
+  filename_for_display = g_file_get_parse_name (data->file);
+
   shortname = latexila_utils_get_shortname (filename);
+  shortname_for_display = latexila_utils_get_shortname (filename_for_display);
 
   if (strstr (file_to_open, "$filename") != NULL)
-    uri = latexila_utils_str_replace (file_to_open, "$filename", filename);
+    {
+      uri = latexila_utils_str_replace (file_to_open, "$filename", filename);
+      uri_for_display = latexila_utils_str_replace (file_to_open, "$filename", filename_for_display);
+    }
   else if (strstr (file_to_open, "$shortname") != NULL)
-    uri = latexila_utils_str_replace (file_to_open, "$shortname", shortname);
+    {
+      uri = latexila_utils_str_replace (file_to_open, "$shortname", shortname);
+      uri_for_display = latexila_utils_str_replace (file_to_open, "$shortname", shortname_for_display);
+    }
   else
-    uri = g_strdup_printf ("file://%s", file_to_open);
+    {
+      uri = g_strdup_printf ("file://%s", file_to_open);
+      uri_for_display = g_strdup (file_to_open);
+    }
 
   /* Add job title in the build view */
 
-  basename = g_path_get_basename (uri);
+  basename = g_path_get_basename (uri_for_display);
   message = g_strdup_printf (_("Open %s"), basename);
 
   data->open_file_job_title = latexila_build_view_add_job_title (data->build_view,
@@ -675,8 +690,11 @@ open_file (GTask *task)
                                           task);
 
   g_free (filename);
+  g_free (filename_for_display);
   g_free (shortname);
+  g_free (shortname_for_display);
   g_free (uri);
+  g_free (uri_for_display);
   g_free (basename);
   g_free (message);
 }
