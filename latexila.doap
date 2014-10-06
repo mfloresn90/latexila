@@ -32,6 +32,9 @@ and backward search to switch between the .tex and the PDF.
   <download-page rdf:resource="http://ftp.gnome.org/pub/GNOME/sources/latexila/" />
   <bug-database rdf:resource="https://bugzilla.gnome.org/browse.cgi?product=latexila" />
 
+  <programming-language>C</programming-language>
+  <programming-language>Vala</programming-language>
+
   <maintainer>
     <foaf:Person>
       <foaf:name>Sébastien Wilmet</foaf:name>
