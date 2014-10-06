@@ -34,7 +34,6 @@
 #include "config.h"
 #include "latexila-build-tools.h"
 #include <glib/gi18n.h>
-#include "latexila-build-tools-default.h"
 #include "latexila-build-tool.h"
 #include "latexila-build-job.h"
 #include "latexila-post-processor.h"
@@ -58,6 +57,20 @@ G_DEFINE_TYPE_WITH_PRIVATE (LatexilaBuildTools, latexila_build_tools, G_TYPE_OBJ
 static guint signals[LAST_SIGNAL];
 
 static void
+latexila_build_tools_handle_not_found_error_default (LatexilaBuildTools *build_tools,
+                                                     GFile              *xml_file,
+                                                     GError             *error)
+{
+  /* Do nothing. If it is an error that the XML file doesn't exist, override
+   * this vfunc to display an error message.
+   * Another way would have been to add a property xml_file_must_exist or
+   * something like that.
+   * A class should not be aware of its subclasses, so explicit case analysis on
+   * the type of the object is not a solution.
+   */
+}
+
+static void
 latexila_build_tools_dispose (GObject *object)
 {
   LatexilaBuildTools *build_tools = LATEXILA_BUILD_TOOLS (object);
@@ -77,6 +90,8 @@ latexila_build_tools_class_init (LatexilaBuildToolsClass *klass)
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
   object_class->dispose = latexila_build_tools_dispose;
+
+  klass->handle_not_found_error = latexila_build_tools_handle_not_found_error_default;
 
   /**
    * LatexilaBuildTools::loaded:
@@ -340,23 +355,12 @@ load_contents_cb (GFile              *xml_file,
     {
       if (error->domain == G_IO_ERROR &&
           error->code == G_IO_ERROR_NOT_FOUND)
-        {
-          if (LATEXILA_IS_BUILD_TOOLS_DEFAULT (build_tools))
-            {
-              gchar *path = g_file_get_parse_name (xml_file);
-              g_warning ("XML file not found for the default build tools: %s", path);
-              g_free (path);
-            }
-
-          /* For the personal build tools it means that there is simply no
-           * personal build tools, it is not an error.
-           */
-        }
+        LATEXILA_BUILD_TOOLS_GET_CLASS (build_tools)->handle_not_found_error (build_tools,
+                                                                              xml_file,
+                                                                              error);
       else
-        {
-          g_warning ("Error while loading the contents of the build tools XML file: %s",
-                     error->message);
-        }
+        g_warning ("Error while loading the contents of the build tools XML file: %s",
+                   error->message);
 
       g_error_free (error);
     }

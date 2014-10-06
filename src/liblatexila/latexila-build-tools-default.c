@@ -148,8 +148,21 @@ save_settings (LatexilaBuildToolsDefault *build_tools)
 }
 
 static void
+latexila_build_tools_default_handle_not_found_error (LatexilaBuildTools *build_tools,
+                                                     GFile              *xml_file,
+                                                     GError             *error)
+{
+  gchar *path = g_file_get_parse_name (xml_file);
+  g_warning ("XML file not found for the default build tools: %s", path);
+  g_free (path);
+}
+
+static void
 latexila_build_tools_default_class_init (LatexilaBuildToolsDefaultClass *klass)
 {
+  LatexilaBuildToolsClass *build_tools_class = LATEXILA_BUILD_TOOLS_CLASS (klass);
+
+  build_tools_class->handle_not_found_error = latexila_build_tools_default_handle_not_found_error;
 }
 
 static GFile *

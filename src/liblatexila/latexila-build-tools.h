@@ -55,6 +55,11 @@ struct _LatexilaBuildTools
 struct _LatexilaBuildToolsClass
 {
   GObjectClass parent_class;
+
+  /* When the XML file is not found. */
+  void (* handle_not_found_error) (LatexilaBuildTools *build_tools,
+                                   GFile              *xml_file,
+                                   GError             *error);
 };
 
 GType                 latexila_build_tools_get_type                 (void) G_GNUC_CONST;
