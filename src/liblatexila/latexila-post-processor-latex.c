@@ -154,9 +154,15 @@ static void
 append_to_line_buffer (LatexilaPostProcessorLatex *pp,
                        const gchar                *line)
 {
-  g_return_if_fail (pp->priv->line_buffer != NULL);
-  g_string_append (pp->priv->line_buffer, line);
-  pp->priv->lines_count++;
+  if (pp->priv->line_buffer == NULL)
+    {
+      set_line_buffer (pp, line);
+    }
+  else
+    {
+      g_string_append (pp->priv->line_buffer, line);
+      pp->priv->lines_count++;
+    }
 }
 
 static void
