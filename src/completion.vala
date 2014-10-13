@@ -117,7 +117,10 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
 
     public bool match (SourceCompletionContext context)
     {
-        TextIter iter = context.get_iter ();
+        TextIter iter;
+
+        if (!context.get_iter (out iter))
+            return false;
 
         // if text selected, NO completion
         TextBuffer buf = iter.get_buffer ();
@@ -161,7 +164,13 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
 
     public void populate (SourceCompletionContext context)
     {
-        TextIter iter = context.get_iter ();
+        TextIter iter;
+
+        if (!context.get_iter (out iter))
+        {
+            show_no_proposals (context);
+            return;
+        }
 
         // Is the cursor in a command name?
         string? cmd = get_latex_command_at_iter (iter);
