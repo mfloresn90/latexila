@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: LaTeXila\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-04-29 21:08+0000\n"
+"POT-Creation-Date: 2014-10-05 21:38+0000\n"
 "PO-Revision-Date: 2014-04-30 01:32-0300\n"
 "Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
@@ -24,59 +24,72 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.6.4\n"
 
-#: build_tools.xml:43(tool/label) ../src/build_tool_dialog.vala:166
+#. (itstool) path: tool/label
+#: build_tools.xml:43 ../src/build_tool_dialog.vala:166
 msgid "View PDF"
 msgstr "Visualizar PDF"
 
-#: build_tools.xml:44(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:44
 msgid "View the PDF file"
 msgstr "Visualizar o arquivo PDF"
 
-#: build_tools.xml:49(tool/label) ../src/build_tool_dialog.vala:165
+#. (itstool) path: tool/label
+#: build_tools.xml:49 ../src/build_tool_dialog.vala:165
 msgid "View DVI"
 msgstr "Visualizar DVI"
 
-#: build_tools.xml:50(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:50
 msgid "View the DVI file"
 msgstr "Visualizar o arquivo DVI"
 
-#: build_tools.xml:55(tool/label) ../src/build_tool_dialog.vala:167
+#. (itstool) path: tool/label
+#: build_tools.xml:55 ../src/build_tool_dialog.vala:167
 msgid "View PS"
 msgstr "Visualizar PS"
 
-#: build_tools.xml:56(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:56
 msgid "View the PostScript file"
 msgstr "Visualizar o arquivo PostScript"
 
-#: build_tools.xml:64(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:64
 msgid "Create a PDF file from LaTeX sources with the \"pdflatex\" command"
 msgstr ""
 "Criar um arquivo PDF a partir dos arquivos-fonte do LaTeX com o comando "
 "\"pdflatex\""
 
-#: build_tools.xml:70(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:70
 msgid "Create a DVI file from LaTeX sources with the \"latex\" command"
 msgstr ""
 "Criar um arquivo DVI a partir dos arquivos-fonte do LaTeX com o comando "
 "\"latex\""
 
-#: build_tools.xml:78(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:78
 msgid "Run BibTeX (bibliography)"
 msgstr "Executar BibTeX (bibliografia)"
 
-#: build_tools.xml:84(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:84
 msgid "Run MakeIndex"
 msgstr "Executar MakeIndex"
 
-#: build_tools.xml:92(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:92
 msgid "Convert the DVI document to the PDF format"
 msgstr "Converter o documento DVI para o formato PDF"
 
-#: build_tools.xml:98(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:98
 msgid "Convert the DVI document to the PostScript format"
 msgstr "Converter o documento DVI para o formato PostScript"
 
-#: build_tools.xml:104(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:104
 msgid "Convert the PostScript document to the PDF format"
 msgstr "Converter o documento PostScript para o formato PDF"
 
@@ -109,10 +122,6 @@ msgstr ""
 "projetos que possuem vários arquivos .tex são gerenciados de forma fácil."
 
 #: ../data/latexila.appdata.xml.in.h:4
-#| msgid ""
-#| "There is a side panel with three components: the document structure to "
-#| "easily navigate in it; lists of symbols to insert them in a document; and "
-#| "an integrated file browser."
 msgid ""
 "A side panel contains three components: the document structure to easily "
 "navigate in it; lists of symbols to insert them in a document; and an "
@@ -693,7 +702,7 @@ msgstr "Selecione os arquivos que deseja excluir:"
 msgid "No build file to clean up."
 msgstr "Sem arquivos de construção para limpar."
 
-#: ../src/completion.vala:315
+#: ../src/completion.vala:318
 msgid "No matching proposal"
 msgstr "Nenhuma sugestão correspondente"
 
@@ -704,7 +713,7 @@ msgstr "Nenhuma sugestão correspondente"
 msgid "Ln %d, Col %d"
 msgstr "Ln %d, Col %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:765
+#: ../src/dialogs.vala:40 ../src/main_window.vala:768
 msgid "Close without Saving"
 msgstr "Fechar sem salvar"
 
@@ -831,7 +840,7 @@ msgid "File System"
 msgstr "Sistema de arquivos"
 
 #. File browser
-#: ../src/file_browser.vala:455 ../src/main_window.vala:404
+#: ../src/file_browser.vala:455 ../src/main_window.vala:407
 msgid "File Browser"
 msgstr "Navegador de arquivos"
 
@@ -1721,11 +1730,19 @@ msgstr "_Descomentar"
 msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "Descomentar as linhas selecionadas (remover o caractere \"%\")"
 
+#: ../src/main_window_edit.vala:65
+msgid "_Completion"
+msgstr "_Completação"
+
 #: ../src/main_window_edit.vala:66
+msgid "Complete the LaTeX command"
+msgstr "Completa o comando LaTeX"
+
+#: ../src/main_window_edit.vala:69
 msgid "Configure the application"
 msgstr "Configurar a aplicação"
 
-#: ../src/main_window_edit.vala:72
+#: ../src/main_window_edit.vala:75
 msgid "Activate or disable the spell checking"
 msgstr "Ativar ou desabilitar correção ortográfica"
 
@@ -1984,7 +2001,7 @@ msgstr ""
 "Faça uma doação para demonstrar o quanto você aprecia o LaTeXila, ajudando-o "
 "em seu futuro desenvolvimento"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1244
+#: ../src/main_window.vala:71 ../src/main_window.vala:1247
 msgid "About LaTeXila"
 msgstr "Sobre LaTeXila"
 
@@ -2022,20 +2039,20 @@ msgid "Show or hide the bottom panel"
 msgstr "Mostrar ou esconder o painel inferior"
 
 #. Symbols
-#: ../src/main_window.vala:400
+#: ../src/main_window.vala:403
 msgid "Symbols"
 msgstr "Sí­mbolos"
 
-#: ../src/main_window.vala:409
+#: ../src/main_window.vala:412
 msgid "Structure"
 msgstr "Estrutura"
 
-#: ../src/main_window.vala:655
+#: ../src/main_window.vala:658
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Este arquivo (%s) já está aberto em outra janela do LaTeXila."
 
-#: ../src/main_window.vala:657
+#: ../src/main_window.vala:660
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2043,41 +2060,41 @@ msgstr ""
 "LaTeXila abriu esta instância do arquivo de uma forma não-editável. Você "
 "deseja editá-lo mesmo assim?"
 
-#: ../src/main_window.vala:660
+#: ../src/main_window.vala:663
 msgid "Edit Anyway"
 msgstr "Editar mesmo assim"
 
-#: ../src/main_window.vala:661
+#: ../src/main_window.vala:664
 msgid "Don't Edit"
 msgstr "Não editar"
 
-#: ../src/main_window.vala:762
+#: ../src/main_window.vala:765
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Salvar mudanças no documento \"%s\" antes de fechar?"
 
-#: ../src/main_window.vala:842
+#: ../src/main_window.vala:845
 msgid "Read-Only"
 msgstr "Apenas leitura"
 
-#: ../src/main_window.vala:860
+#: ../src/main_window.vala:863
 msgid "Save File"
 msgstr "Salvar arquivo"
 
-#: ../src/main_window.vala:895
+#: ../src/main_window.vala:898
 #, c-format
 msgid "A file named \"%s\" already exists. Do you want to replace it?"
 msgstr "Um arquivo chamado \"%s\" já existe. Deseja sobrescrevê-lo?"
 
-#: ../src/main_window.vala:900 ../src/search.vala:182
+#: ../src/main_window.vala:903 ../src/search.vala:182
 msgid "Replace"
 msgstr "Substituir"
 
-#: ../src/main_window.vala:1206
+#: ../src/main_window.vala:1209
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeXila é um Ambiente Integrado LaTeX para a Plataforma GNOME"
 
-#: ../src/main_window.vala:1245
+#: ../src/main_window.vala:1248
 msgid "translator-credits"
 msgstr ""
 "Átila Camurça <camurca.home@gmail.com>\n"
