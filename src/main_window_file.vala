@@ -147,7 +147,15 @@ public class MainWindowFile
             Stock.OPEN, ResponseType.ACCEPT
         );
 
-        if (_main_window.default_location != null)
+        // Open in the directory of the current document
+        if (_main_window.active_document != null &&
+            _main_window.active_document.location != null)
+        {
+            File location = _main_window.active_document.location;
+            string dirname = location.get_parent ().get_path ();
+            file_chooser.set_current_folder (dirname);
+        }
+        else if (_main_window.default_location != null)
             file_chooser.set_current_folder (_main_window.default_location);
 
         file_chooser.select_multiple = true;
