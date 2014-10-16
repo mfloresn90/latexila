@@ -504,7 +504,7 @@ init_tree_view (LatexilaBuildView *build_view)
   GtkCellRenderer *renderer;
   GtkTreeSelection *selection;
 
-  gtk_tree_view_set_model (tree_view, GTK_TREE_MODEL (build_view->priv->store));
+  gtk_tree_view_set_model (tree_view, GTK_TREE_MODEL (build_view->priv->filtered_model));
   gtk_tree_view_set_headers_visible (tree_view, FALSE);
 
   /* Columns, cell renderers */
