@@ -911,7 +911,7 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
                     pixbuf,
                     get_command_info (_current_command));
 
-                _proposals.append (item);
+                _proposals.prepend (item);
 
                 // We don't need to store commands that have no arguments,
                 // they are only in _proposals, it's sufficient.
