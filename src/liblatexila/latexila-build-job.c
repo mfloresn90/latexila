@@ -673,7 +673,7 @@ latexila_build_job_run_finish (LatexilaBuildJob *build_job,
   GCancellable *cancellable;
   gboolean succeed;
 
-  g_return_if_fail (g_task_is_valid (result, build_job));
+  g_return_val_if_fail (g_task_is_valid (result, build_job), FALSE);
 
   task = G_TASK (result);
   data = g_task_get_task_data (task);
