@@ -44,8 +44,8 @@ liblatexila_built_sources =	\
 	latexila-enum-types.c	\
 	latexila-enum-types.h
 
-liblatexila_la_SOURCES = 		\
-	$(liblatexila_headers)		\
+liblatexila_la_SOURCES = 	\
+	$(liblatexila_headers)	\
 	$(liblatexila_sources)
 
 nodist_liblatexila_la_SOURCES = $(liblatexila_built_sources)

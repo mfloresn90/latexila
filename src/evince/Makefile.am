@@ -15,7 +15,7 @@ evince-gdbus-generated.c evince-gdbus-generated.h: evince-gdbus.xml Makefile
 			--interface-prefix=org.gnome.evince. \
 			--c-namespace=Evince \
 			--generate-c-code evince-gdbus-generated \
-			evince-gdbus.xml
+			$(srcdir)/evince-gdbus.xml
 
 EXTRA_DIST = evince-gdbus.xml
 

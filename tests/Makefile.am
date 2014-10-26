@@ -1,9 +1,10 @@
 @GNOME_CODE_COVERAGE_RULES@
 
-AM_CPPFLAGS =				\
-	-I$(top_srcdir)			\
-	-I$(top_srcdir)/src/liblatexila	\
-	-DSRCDIR=\""$(ABS_SRCDIR)"\"	\
+AM_CPPFLAGS =					\
+	-I$(top_srcdir)				\
+	-I$(top_srcdir)/src/liblatexila		\
+	-I$(top_builddir)/src/liblatexila	\
+	-DSRCDIR=\""$(ABS_SRCDIR)"\"		\
 	$(WARN_CFLAGS)
 
 LDADD = $(top_builddir)/src/liblatexila/liblatexila.la

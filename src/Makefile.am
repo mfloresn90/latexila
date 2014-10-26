@@ -64,10 +64,11 @@ latexila_SOURCES = 				\
 	$(vapidir)/menu_tool_action.vapi	\
 	liblatexila/latexila.vapi
 
-latexila_CPPFLAGS =		\
-	-I$(top_srcdir)		\
-	-I$(srcdir)/gedit	\
-	-I$(srcdir)/liblatexila	\
+latexila_CPPFLAGS =			\
+	-I$(top_srcdir)			\
+	-I$(srcdir)/gedit		\
+	-I$(srcdir)/liblatexila		\
+	-I$(builddir)/liblatexila	\
 	-include config.h
 
 latexila_LDADD = 			\
@@ -80,15 +81,14 @@ MAINTAINERCLEANFILES =		\
 
 # GResource
 
-xml = latexila.gresource.xml
-res = latexila-resources.c
-$(res): $(xml) $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(xml))
-	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source $(xml)
+latexila-resources.c: latexila.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/latexila.gresource.xml)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source $(srcdir)/latexila.gresource.xml
 
-latexila.$(OBJEXT): $(res)
+BUILT_SOURCES = latexila-resources.c
+nodist_latexila_SOURCES = $(BUILT_SOURCES)
 
-latexila_SOURCES += $(res)
-EXTRA_DIST = $(xml)
-MAINTAINERCLEANFILES += $(res)
+EXTRA_DIST = latexila.gresource.xml
+
+CLEANFILES = $(BUILT_SOURCES)
 
 -include $(top_srcdir)/git.mk
