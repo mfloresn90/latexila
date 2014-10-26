@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gresources>
+  <gresource prefix="/org/gnome/latexila">
+    <file>build_tools_test.xml</file>
+  </gresource>
+</gresources>
