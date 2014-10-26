@@ -101,9 +101,7 @@ check_build_tools (LatexilaBuildTool *build_tool1,
   g_assert_cmpint (g_list_length (jobs1), ==, g_list_length (jobs2));
 
   for (; jobs1 != NULL; jobs1 = jobs1->next, jobs2 = jobs2->next)
-    {
-      check_build_jobs (jobs1->data, jobs2->data);
-    }
+    check_build_jobs (jobs1->data, jobs2->data);
 
   g_free (label1);
   g_free (label2);
@@ -179,9 +177,7 @@ loaded_cb (LatexilaBuildTools *build_tools)
   for (l1 = list, l2 = build_tools->build_tools;
        l1 != NULL && l2 != NULL;
        l1 = l1->next, l2 = l2->next)
-    {
-      check_build_tools (l1->data, l2->data);
-    }
+    check_build_tools (l1->data, l2->data);
 
   g_list_free_full (list, g_object_unref);
   gtk_main_quit ();
