@@ -1,5 +1,9 @@
 LaTeXila NEWS
 
+Release 3.15.1
+--------------
+* Rewrite of the build tools and synctex code in C
+
 Release 3.14.1
 --------------
 * A few bug fixes and small improvements
