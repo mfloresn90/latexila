@@ -8,7 +8,9 @@ VALAFLAGS =			\
 	--pkg gtkspell3-3.0	\
 	--pkg gee-0.8		\
 	--pkg posix		\
-	--target-glib=2.40
+	--target-glib=2.40	\
+	--vapidir liblatexila	\
+	--pkg latexila
 
 # The valac command is always executed in the sources directory, not the build
 # directory. If $(top_srcdir) is used, it will be relative to the build directory.
@@ -61,8 +63,7 @@ latexila_SOURCES = 				\
 	$(vala_files)				\
 	$(vapidir)/config.vapi			\
 	$(vapidir)/gedit.vapi			\
-	$(vapidir)/menu_tool_action.vapi	\
-	liblatexila/latexila.vapi
+	$(vapidir)/menu_tool_action.vapi
 
 latexila_CPPFLAGS =			\
 	-I$(top_srcdir)			\

@@ -102,6 +102,8 @@ latexila_vapi_FILES = Latexila.gir
 noinst_DATA += latexila.vapi
 CLEANFILES += latexila.vapi
 
+EXTRA_DIST = latexila.vapi
+
 endif # ENABLE_VAPIGEN
 
 -include $(top_srcdir)/git.mk
