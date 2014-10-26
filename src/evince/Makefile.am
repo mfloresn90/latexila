@@ -19,4 +19,6 @@ evince-gdbus-generated.c evince-gdbus-generated.h: evince-gdbus.xml Makefile
 
 EXTRA_DIST = evince-gdbus.xml
 
+CLEANFILES = $(BUILT_SOURCES)
+
 -include $(top_srcdir)/git.mk

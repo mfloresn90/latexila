@@ -64,8 +64,9 @@ EXTRA_DIST =				\
 	latexila-enum-types.c.template	\
 	latexila-enum-types.h.template
 
+CLEANFILES = $(BUILT_SOURCES)
+
 noinst_DATA =
-CLEANFILES =
 
 if HAVE_INTROSPECTION
 -include $(INTROSPECTION_MAKEFILE)
