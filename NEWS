@@ -1,5 +1,11 @@
 LaTeXila NEWS
 
+Release 3.14.2
+--------------
+* Build: a file was missing in tarballs
+* Add keywords to latexila.desktop
+* Translation updates
+
 Release 3.14.1
 --------------
 * A few bug fixes and small improvements
