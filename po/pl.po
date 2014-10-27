@@ -611,7 +611,7 @@ msgid "The active document's filename."
 msgstr "Nazwa pliku aktywnego dokumentu."
 
 #: ../src/build_tool_dialog.vala:611 ../src/build_tool_dialog.vala:616
-msgid "If the active document belongs to a project, the main file is choosen."
+msgid "If the active document belongs to a project, the main file is chosen."
 msgstr ""
 "Jeśli aktywny dokument należy do projektu, wybrany zostaje plik główny."
 
