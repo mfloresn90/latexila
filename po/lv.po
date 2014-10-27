@@ -531,7 +531,7 @@ msgid "The active document's filename."
 msgstr "Aktīvā dokumenta datnes nosaukums."
 
 #: ../src/build_tool_dialog.vala:611 ../src/build_tool_dialog.vala:616
-msgid "If the active document belongs to a project, the main file is choosen."
+msgid "If the active document belongs to a project, the main file is chosen."
 msgstr "Ja aktīvais dokuments pieder projektam, tiks izvēlēta galvenā datne."
 
 #: ../src/build_tool_dialog.vala:615
