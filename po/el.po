@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: latexila master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-06-13 09:10+0000\n"
-"PO-Revision-Date: 2014-06-13 16:06+0200\n"
+"POT-Creation-Date: 2014-11-16 22:31+0000\n"
+"PO-Revision-Date: 2014-11-17 11:39+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@gnome.gr\n"
 "Language: el\n"
@@ -18,58 +18,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Project-Style: gnome\n"
 
-#: build_tools.xml:43(tool/label) ../src/build_tool_dialog.vala:166
+#. (itstool) path: tool/label
+#: build_tools.xml:43 ../src/build_tool_dialog.vala:166
 msgid "View PDF"
 msgstr "Προβολή PDF"
 
-#: build_tools.xml:44(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:44
 msgid "View the PDF file"
 msgstr "Προβολή του αρχείου PDF"
 
-#: build_tools.xml:49(tool/label) ../src/build_tool_dialog.vala:165
+#. (itstool) path: tool/label
+#: build_tools.xml:49 ../src/build_tool_dialog.vala:165
 msgid "View DVI"
 msgstr "Προβολή DVI"
 
-#: build_tools.xml:50(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:50
 msgid "View the DVI file"
 msgstr "Προβολή του αρχείου DVI"
 
-#: build_tools.xml:55(tool/label) ../src/build_tool_dialog.vala:167
+#. (itstool) path: tool/label
+#: build_tools.xml:55 ../src/build_tool_dialog.vala:167
 msgid "View PS"
 msgstr "Προβολή PS"
 
-#: build_tools.xml:56(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:56
 msgid "View the PostScript file"
 msgstr "Προβολή του αρχείου PostScript"
 
-#: build_tools.xml:64(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:64
 msgid "Create a PDF file from LaTeX sources with the \"pdflatex\" command"
 msgstr "Δημιουργία ενός αρχείου PDF από πηγές LaTeX με την εντολή \"pdflatex\""
 
-#: build_tools.xml:70(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:70
 msgid "Create a DVI file from LaTeX sources with the \"latex\" command"
 msgstr "Δημιουργία ενός αρχείου DVI από πηγές LaTeX με την εντολή \"latex\""
 
-#: build_tools.xml:78(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:78
 msgid "Run BibTeX (bibliography)"
 msgstr "Εκτέλεση BibTeX (βιβλιογραφία)"
 
-#: build_tools.xml:84(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:84
 msgid "Run MakeIndex"
 msgstr "Εκτέλεση MakeIndex"
 
-#: build_tools.xml:92(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:92
 msgid "Convert the DVI document to the PDF format"
 msgstr "Μετατροπή εγγράφου DVI σε μορφή PDF"
 
-#: build_tools.xml:98(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:98
 msgid "Convert the DVI document to the PostScript format"
 msgstr "Μετατροπή εγγράφου DVI σε μορφή PostScript"
 
-#: build_tools.xml:104(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:104
 msgid "Convert the PostScript document to the PDF format"
 msgstr "Μετατροπή εγγράφου PostScript σε μορφή PDF"
 
@@ -104,10 +117,6 @@ msgstr ""
 "είναι εύκολη η διαχείριση έργων που περιέχουν διάφορα αρχεία .tex."
 
 #: ../data/latexila.appdata.xml.in.h:4
-#| msgid ""
-#| "There is a side panel with three components: the document structure to "
-#| "easily navigate in it; lists of symbols to insert them in a document; and "
-#| "an integrated file browser."
 msgid ""
 "A side panel contains three components: the document structure to easily "
 "navigate in it; lists of symbols to insert them in a document; and an "
@@ -687,7 +696,7 @@ msgstr "Επιλέξτε τα αρχεία που θέλετε να διαγρά
 msgid "No build file to clean up."
 msgstr "Δεν υπάρχει αρχείο δόμησης για καθαρισμό."
 
-#: ../src/completion.vala:315
+#: ../src/completion.vala:318
 msgid "No matching proposal"
 msgstr "Δεν υπάρχει πρόταση που ταιριάζει"
 
@@ -698,7 +707,7 @@ msgstr "Δεν υπάρχει πρόταση που ταιριάζει"
 msgid "Ln %d, Col %d"
 msgstr "Γρ %d, Στ %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:765
+#: ../src/dialogs.vala:40 ../src/main_window.vala:768
 msgid "Close without Saving"
 msgstr "Κλείσιμο χωρίς αποθήκευση"
 
@@ -793,7 +802,7 @@ msgstr "Σφάλμα στην προσπάθεια μετατροπής του �
 
 #: ../src/document.vala:296
 msgid "Unsaved Document"
-msgstr "Αναποθήκευτο έγγραφο"
+msgstr "Μη αποθηκευμένο έγγραφο"
 
 #: ../src/document.vala:575
 msgid ""
@@ -824,7 +833,7 @@ msgid "File System"
 msgstr "Σύστημα αρχείων"
 
 #. File browser
-#: ../src/file_browser.vala:455 ../src/main_window.vala:404
+#: ../src/file_browser.vala:455 ../src/main_window.vala:407
 msgid "File Browser"
 msgstr "Περιηγητής αρχείων"
 
@@ -1546,7 +1555,7 @@ msgstr ""
 
 #: ../src/main.vala:66
 msgid "- Integrated LaTeX Environment for GNOME"
-msgstr "- Ολοκληρωμένο περιβάλλον LaTeX για GNOME"
+msgstr "- Ολοκληρωμένο περιβάλλον LaTeX για το GNOME"
 
 #: ../src/main.vala:78
 #, c-format
@@ -1711,11 +1720,19 @@ msgstr "_Αποσχολιασμός"
 msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "Αποσχολιασμός των επιλεγμένων γραμμών (αφαίρεση του χαρακτήρα \"%\")"
 
+#: ../src/main_window_edit.vala:65
+msgid "_Completion"
+msgstr "Σ_υμπλήρωση"
+
 #: ../src/main_window_edit.vala:66
+msgid "Complete the LaTeX command"
+msgstr "Συμπλήρωση της εντολής LaTeX"
+
+#: ../src/main_window_edit.vala:69
 msgid "Configure the application"
 msgstr "Ρύθμιση της εφαρμογής"
 
-#: ../src/main_window_edit.vala:72
+#: ../src/main_window_edit.vala:75
 msgid "Activate or disable the spell checking"
 msgstr "Ενεργοποίηση ή απενεργοποίηση του ορθογραφικού ελέγχου"
 
@@ -1974,7 +1991,7 @@ msgstr ""
 "Κάντε δωρεά για να δείξετε την εκτίμησή σας στο LaTeXila και να βοηθήσετε τη "
 "μελλοντική του ανάπτυξη"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1244
+#: ../src/main_window.vala:71 ../src/main_window.vala:1247
 msgid "About LaTeXila"
 msgstr "Περί του LaTeXila"
 
@@ -2012,21 +2029,21 @@ msgid "Show or hide the bottom panel"
 msgstr "Εμφάνιση ή απόκρυψη του κάτω παραθύρου"
 
 #. Symbols
-#: ../src/main_window.vala:400
+#: ../src/main_window.vala:403
 msgid "Symbols"
 msgstr "Σύμβολα"
 
-#: ../src/main_window.vala:409
+#: ../src/main_window.vala:412
 msgid "Structure"
 msgstr "Δομή"
 
-#: ../src/main_window.vala:655
+#: ../src/main_window.vala:658
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr ""
 "Αυτό το αρχείο (%s) είναι ήδη ανοικτό σε ένα άλλο παράθυρο του LaTeXila."
 
-#: ../src/main_window.vala:657
+#: ../src/main_window.vala:660
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2034,48 +2051,51 @@ msgstr ""
 "Το LaTeXila άνοιξε αυτό το στιγμιότυπο του αρχείου με μη επεξεργάσιμο τρόπο. "
 "Θέλετε να το επεξεργαστείτε οπωσδήποτε;"
 
-#: ../src/main_window.vala:660
+#: ../src/main_window.vala:663
 msgid "Edit Anyway"
 msgstr "Επεξεργασία οπωσδήποτε"
 
-#: ../src/main_window.vala:661
+#: ../src/main_window.vala:664
 msgid "Don't Edit"
 msgstr "Να μην επεξεργαστεί"
 
-#: ../src/main_window.vala:762
+#: ../src/main_window.vala:765
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Αποθήκευση αλλαγών στο έγγραφο \"%s\" πριν το κλείσιμο;"
 
-#: ../src/main_window.vala:842
+#: ../src/main_window.vala:845
 msgid "Read-Only"
 msgstr "Μόνο για ανάγνωση"
 
-#: ../src/main_window.vala:860
+#: ../src/main_window.vala:863
 msgid "Save File"
 msgstr "Αποθήκευση αρχείου"
 
-#: ../src/main_window.vala:895
+#: ../src/main_window.vala:898
 #, c-format
 msgid "A file named \"%s\" already exists. Do you want to replace it?"
 msgstr "Το αρχείο με όνομα \"%s\" υπάρχει ήδη. Θέλετε να το αντικαταστήσετε;"
 
-#: ../src/main_window.vala:900 ../src/search.vala:182
+#: ../src/main_window.vala:903 ../src/search.vala:182
 msgid "Replace"
 msgstr "Αντικατάσταση"
 
-#: ../src/main_window.vala:1206
+#: ../src/main_window.vala:1209
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr ""
 "Το LaTeXila είναι ένα ολοκληρωμένο περιβάλλον LaTeX για την επιφάνεια "
 "εργασίας του GNOME"
 
-#: ../src/main_window.vala:1245
+#: ../src/main_window.vala:1248
 msgid "translator-credits"
 msgstr ""
+"Ελληνική μεταφραστική ομάδα GNOME\n"
 " Δημήτρης Σπίγγος <dmtrs32@gmail.com>\n"
 " Μαρία Μαυρίδου <mavridou@gmail.com>\n"
-"Για περισσότερες πληροφορίες http://gnome.gr"
+"\n"
+"Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
+"http://gnome.gr/"
 
 #: ../src/post_processors.vala:188
 msgid "Latexmk messages"
@@ -2495,6 +2515,9 @@ msgstr "Αριθμός χαρακτήρων μετά από '\\'"
 #: ../src/ui/preferences_dialog.ui.h:24
 msgid "Other"
 msgstr "Άλλα"
+
+#~ msgid "text;tex;latex;editor;documents;"
+#~ msgstr "text;tex;latex;editor;documents;κείμενο;επεξεργαστής;έγγραφα;"
 
 #~ msgid ""
 #~ "There are menus and toolbars with the principal LaTeX commands. To help "
