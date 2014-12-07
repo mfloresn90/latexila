@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: LaTeXila 2.12\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-11 09:22+0000\n"
-"PO-Revision-Date: 2014-09-11 20:33+0200\n"
+"POT-Creation-Date: 2014-10-27 14:47+0000\n"
+"PO-Revision-Date: 2014-12-07 12:56+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
-"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu_HU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -593,9 +593,12 @@ msgid "The active document's filename."
 msgstr "Az aktív dokumentum fájlneve."
 
 #: ../src/build_tool_dialog.vala:611 ../src/build_tool_dialog.vala:616
-msgid "If the active document belongs to a project, the main file is choosen."
+#| msgid ""
+#| "If the active document belongs to a project, the main file is choosen."
+msgid "If the active document belongs to a project, the main file is chosen."
 msgstr ""
-"Ha a dokumentum egy projekthez tartozik, akkor a fő fájl kerül kiválasztásra."
+"Ha az aktív dokumentum egy projekthez tartozik, akkor a fő fájl kerül "
+"kiválasztásra."
 
 #: ../src/build_tool_dialog.vala:615
 msgid "The active document's filename without its extension."
@@ -691,7 +694,7 @@ msgstr "Nincs egyező javaslat"
 msgid "Ln %d, Col %d"
 msgstr "%d. sor, %d. oszlop"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:765
+#: ../src/dialogs.vala:40 ../src/main_window.vala:768
 msgid "Close without Saving"
 msgstr "Bezárás mentés nélkül"
 
@@ -813,7 +816,7 @@ msgid "File System"
 msgstr "Fájlrendszer"
 
 #. File browser
-#: ../src/file_browser.vala:455 ../src/main_window.vala:404
+#: ../src/file_browser.vala:455 ../src/main_window.vala:407
 msgid "File Browser"
 msgstr "Fájlböngésző"
 
@@ -1698,7 +1701,6 @@ msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "A kijelölt sorok megjegyzésének törlése (a „%” karakter eltávolítása)"
 
 #: ../src/main_window_edit.vala:65
-#| msgid "_Comment"
 msgid "_Completion"
 msgstr "_Befejezés"
 
@@ -1965,7 +1967,7 @@ msgstr ""
 "Adományozzon elismerése jeleként, és támogassa a LaTeXila további "
 "fejlesztését"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1244
+#: ../src/main_window.vala:71 ../src/main_window.vala:1247
 msgid "About LaTeXila"
 msgstr "A LaTeXila névjegye"
 
@@ -2003,20 +2005,20 @@ msgid "Show or hide the bottom panel"
 msgstr "Az alsó sáv megjelenítése vagy elrejtése"
 
 #. Symbols
-#: ../src/main_window.vala:400
+#: ../src/main_window.vala:403
 msgid "Symbols"
 msgstr "Szimbólumok"
 
-#: ../src/main_window.vala:409
+#: ../src/main_window.vala:412
 msgid "Structure"
 msgstr "Szerkezet"
 
-#: ../src/main_window.vala:655
+#: ../src/main_window.vala:658
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Ez a fájl („%s”) már meg van nyitva egy másik LaTeXila ablakban."
 
-#: ../src/main_window.vala:657
+#: ../src/main_window.vala:660
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2024,41 +2026,41 @@ msgstr ""
 "A LaTeXila ezt a fájlt nem szerkeszthető módon nyitotta meg. Mindenképp "
 "szeretné szerkeszteni?"
 
-#: ../src/main_window.vala:660
+#: ../src/main_window.vala:663
 msgid "Edit Anyway"
 msgstr "Szerkesztés mindenképp"
 
-#: ../src/main_window.vala:661
+#: ../src/main_window.vala:664
 msgid "Don't Edit"
 msgstr "Ne szerkessze"
 
-#: ../src/main_window.vala:762
+#: ../src/main_window.vala:765
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Menti a változásokat a(z) „%s” dokumentumba, mielőtt bezárja?"
 
-#: ../src/main_window.vala:842
+#: ../src/main_window.vala:845
 msgid "Read-Only"
 msgstr "Csak olvasható"
 
-#: ../src/main_window.vala:860
+#: ../src/main_window.vala:863
 msgid "Save File"
 msgstr "Fájl mentése"
 
-#: ../src/main_window.vala:895
+#: ../src/main_window.vala:898
 #, c-format
 msgid "A file named \"%s\" already exists. Do you want to replace it?"
 msgstr "Már létezik „%s” nevű fájl. Le akarja cserélni?"
 
-#: ../src/main_window.vala:900 ../src/search.vala:182
+#: ../src/main_window.vala:903 ../src/search.vala:182
 msgid "Replace"
 msgstr "Csere"
 
-#: ../src/main_window.vala:1206
+#: ../src/main_window.vala:1209
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "A LaTeXila a GNOME asztal integrált LaTeX környezete"
 
-#: ../src/main_window.vala:1245
+#: ../src/main_window.vala:1248
 msgid "translator-credits"
 msgstr ""
 "Anca Tibor Attila <anca dot tibor at posteo dot de>Kelemen Gábor <kelemeng "
