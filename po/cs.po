@@ -141,7 +141,7 @@ msgstr "Integrované prostředí LaTeX"
 
 #: ../data/latexila.desktop.in.in.h:3
 msgid "Edit LaTeX documents"
-msgstr "Upravovat dokumenty ve formátu LaTeX"
+msgstr "Upravujte dokumenty ve formátu LaTeX"
 
 #: ../data/latexila.desktop.in.in.h:4
 msgid "text;tex;latex;editor;documents;"
