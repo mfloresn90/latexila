@@ -55,7 +55,7 @@ public class SidePanel : Grid
     private void init_combo_box ()
     {
         _list_store = new ListStore (SidePanelColumn.N_COLUMNS,
-            typeof (string), // pixbuf (stock-id)
+            typeof (string), // pixbuf (icon-name)
             typeof (string)  // name
         );
 
@@ -65,7 +65,7 @@ public class SidePanel : Grid
         CellRendererPixbuf pixbuf_renderer = new CellRendererPixbuf ();
         _combo_box.pack_start (pixbuf_renderer, false);
         _combo_box.set_attributes (pixbuf_renderer,
-            "stock-id", SidePanelColumn.PIXBUF, null);
+            "icon-name", SidePanelColumn.PIXBUF, null);
 
         CellRendererText text_renderer = new CellRendererText ();
         text_renderer.ellipsize_set = true;
@@ -90,12 +90,12 @@ public class SidePanel : Grid
         return close_button;
     }
 
-    public void add_component (string name, string stock_id, Grid component)
+    public void add_component (string name, string icon_name, Grid component)
     {
         TreeIter iter;
         _list_store.append (out iter);
         _list_store.set (iter,
-            SidePanelColumn.PIXBUF, stock_id,
+            SidePanelColumn.PIXBUF, icon_name,
             SidePanelColumn.NAME, name);
 
         _components.add (component);

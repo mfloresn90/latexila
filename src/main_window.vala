@@ -404,7 +404,7 @@ public class MainWindow : Window
 
         // File browser
         FileBrowser file_browser = new FileBrowser (this);
-        side_panel.add_component (_("File Browser"), Stock.OPEN, file_browser);
+        side_panel.add_component (_("File Browser"), "document-open", file_browser);
 
         // Structure
         Structure structure = new Structure (this);
