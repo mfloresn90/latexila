@@ -159,7 +159,8 @@ public class Structure : Grid
 
     private ToolButton get_refresh_button ()
     {
-        ToolButton refresh_button = new ToolButton.from_stock (Stock.REFRESH);
+        ToolButton refresh_button = new ToolButton (null, null);
+        refresh_button.icon_name = "view-refresh";
         refresh_button.tooltip_text = _("Refresh");
         refresh_button.label = refresh_button.tooltip_text;
 
@@ -173,7 +174,8 @@ public class Structure : Grid
 
     private ToolButton get_collapse_all_button ()
     {
-        ToolButton collapse_button = new ToolButton.from_stock (Stock.ZOOM_OUT);
+        ToolButton collapse_button = new ToolButton (null, null);
+        collapse_button.icon_name = "zoom-out";
         collapse_button.tooltip_text = _("Collapse All");
         collapse_button.label = collapse_button.tooltip_text;
 
@@ -198,9 +200,8 @@ public class Structure : Grid
     // If a button is selected, the simple list contains only items specified by 'types'.
     private ToggleToolButton? create_simple_list_button (StructType type, string tooltip)
     {
-        ToggleToolButton button =
-            new ToggleToolButton.from_stock (get_icon_from_type (type));
-
+        ToggleToolButton button = new ToggleToolButton ();
+        button.icon_name = get_icon_from_type (type);
         button.tooltip_text = tooltip;
         button.label = tooltip;
 
@@ -370,7 +371,7 @@ public class Structure : Grid
         // icon
         CellRendererPixbuf pixbuf_renderer = new CellRendererPixbuf ();
         column.pack_start (pixbuf_renderer, false);
-        column.set_attributes (pixbuf_renderer, "stock-id", pixbuf_col, null);
+        column.set_attributes (pixbuf_renderer, "icon-name", pixbuf_col, null);
 
         // name
         CellRendererText text_renderer = new CellRendererText ();
@@ -759,9 +760,9 @@ public class Structure : Grid
             _icons[StructType.TODO]         = "tree_todo";
             _icons[StructType.FIXME]        = "tree_todo";
             _icons[StructType.TABLE]        = "table-size16";
-            _icons[StructType.FIGURE]       = "image";
-            _icons[StructType.IMAGE]        = "image";
-            _icons[StructType.INCLUDE]      = Stock.FILE;
+            _icons[StructType.FIGURE]       = "image-x-generic";
+            _icons[StructType.IMAGE]        = "image-x-generic";
+            _icons[StructType.INCLUDE]      = "text-x-generic";
         }
 
         return _icons[type];
