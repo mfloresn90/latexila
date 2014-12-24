@@ -462,20 +462,12 @@ public class LatexMenu : Gtk.ActionGroup
         Gtk.Action math_env = get_menu_tool_action ("MathEnvironmentsToolItem",
             _("Math Environments"), "math");
 
-        Gtk.Action math_left_del = get_menu_tool_action ("MathLeftDelimitersToolItem",
-            _("Left Delimiters"), "delimiters-left");
-
-        Gtk.Action math_right_del = get_menu_tool_action ("MathRightDelimitersToolItem",
-            _("Right Delimiters"), "delimiters-right");
-
         add_actions (latex_action_entries, this);
         add_action (sectioning);
         add_action (sizes);
         add_action (references);
         add_action (presentation_env);
         add_action (math_env);
-        add_action (math_left_del);
-        add_action (math_right_del);
     }
 
     private Gtk.Action get_menu_tool_action (string name, string? label, string? icon_name)
