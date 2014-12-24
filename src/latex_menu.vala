@@ -29,7 +29,7 @@ public class LatexMenu : Gtk.ActionGroup
 
         // LaTeX: Sectioning
 
-        { "Sectioning", "sectioning-size16", N_("_Sectioning") },
+        { "Sectioning", "sectioning", N_("_Sectioning") },
         { "SectioningPart", null, "\\_part", null,
             N_("Part"), on_sectioning_part },
         { "SectioningChapter", null, "\\_chapter", null,
@@ -72,9 +72,7 @@ public class LatexMenu : Gtk.ActionGroup
             N_("Align Right - \\begin{flushright}"), on_env_right },
         { "EnvFigure", "image-x-generic", "\\begin{_figure}", null,
             N_("Figure - \\begin{figure}"), on_env_figure },
-        { "EnvTable", "table-size16", "\\begin{_table}", null,
-            N_("Table - \\begin{table}"), on_env_table },
-        { "EnvTableToolitem", "table-size24", "\\begin{_table}", null,
+        { "EnvTable", "table", "\\begin{_table}", null,
             N_("Table - \\begin{table}"), on_env_table },
         { "EnvQuote", null, "\\begin{_quote}", null,
             N_("Quote - \\begin{quote}"), on_env_quote },
@@ -91,22 +89,16 @@ public class LatexMenu : Gtk.ActionGroup
 
         // LaTeX: list environments
 
-        { "ListEnvironments", "list-itemize-size16", N_("_List Environments") },
-        { "ListEnvItemize", "list-itemize-size16", "\\begin{_itemize}", null,
+        { "ListEnvironments", "list-itemize", N_("_List Environments") },
+        { "ListEnvItemize", "list-itemize", "\\begin{_itemize}", null,
             N_("Bulleted List - \\begin{itemize}"), on_list_env_itemize },
-        { "ListEnvItemizeToolitem", "list-itemize-size24", "\\begin{_itemize}", null,
-            N_("Bulleted List - \\begin{itemize}"), on_list_env_itemize },
-        { "ListEnvEnumerate", "list-enumerate-size16", "\\begin{_enumerate}", null,
+        { "ListEnvEnumerate", "list-enumerate", "\\begin{_enumerate}", null,
             N_("Enumeration - \\begin{enumerate}"), on_list_env_enumerate },
-        { "ListEnvEnumerateToolitem", "list-enumerate-size24", "\\begin{_enumerate}",
-            null, N_("Enumeration - \\begin{enumerate}"), on_list_env_enumerate },
-        { "ListEnvDescription", "list-description-size16", "\\begin{_description}", null,
-            N_("Description - \\begin{description}"), on_list_env_description },
-        { "ListEnvDescriptionToolitem", "list-description-size24", "\\begin{_description}", null,
+        { "ListEnvDescription", "list-description", "\\begin{_description}", null,
             N_("Description - \\begin{description}"), on_list_env_description },
         { "ListEnvList", null, "\\begin{_list}", null,
             N_("Custom list - \\begin{list}"), on_list_env_list },
-        { "ListEnvItem", "list-item-size16", "\\i_tem", "<Alt><Shift>H",
+        { "ListEnvItem", "list-item", "\\i_tem", "<Alt><Shift>H",
             N_("List item - \\item"), on_list_env_item },
 
         // LaTeX: character sizes
@@ -179,7 +171,7 @@ public class LatexMenu : Gtk.ActionGroup
 
         // LaTeX: Tabular
 
-        { "Tabular", "table-size16", N_("_Tabular") },
+        { "Tabular", "table", N_("_Tabular") },
         { "TabularTabbing", null, "\\begin{ta_bbing}", null,
             N_("Tabbing - \\begin{tabbing}"), on_tabular_tabbing },
         { "TabularTabular", null, "\\begin{_tabular}", null,
@@ -448,7 +440,7 @@ public class LatexMenu : Gtk.ActionGroup
 
         // menus under toolitems
         Gtk.Action sectioning = get_menu_tool_action ("SectioningToolItem",
-            _("Sectioning"), "sectioning-size24");
+            _("Sectioning"), "sectioning");
 
         Gtk.Action sizes = get_menu_tool_action ("CharacterSizeToolItem",
             _("Characters Sizes"), "character-size");

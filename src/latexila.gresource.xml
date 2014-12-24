@@ -5,95 +5,101 @@
     <file>ui/latexila.adwaita.css</file>
   </gresource>
 
-  <gresource prefix="/org/gnome/latexila/stock-icons">
-    <!--
-    List of icons that are registered as new stock icons, so it can be used
-    in menus for example.
-    -->
-    <file alias="accent0.png" preprocess="to-pixdata">../data/images/stock-icons/accent0.png</file>
-    <file alias="accent1.png" preprocess="to-pixdata">../data/images/stock-icons/accent1.png</file>
-    <file alias="accent2.png" preprocess="to-pixdata">../data/images/stock-icons/accent2.png</file>
-    <file alias="accent3.png" preprocess="to-pixdata">../data/images/stock-icons/accent3.png</file>
-    <file alias="accent4.png" preprocess="to-pixdata">../data/images/stock-icons/accent4.png</file>
-    <file alias="accent5.png" preprocess="to-pixdata">../data/images/stock-icons/accent5.png</file>
-    <file alias="accent6.png" preprocess="to-pixdata">../data/images/stock-icons/accent6.png</file>
-    <file alias="accent7.png" preprocess="to-pixdata">../data/images/stock-icons/accent7.png</file>
-    <file alias="accent8.png" preprocess="to-pixdata">../data/images/stock-icons/accent8.png</file>
-    <file alias="accent9.png" preprocess="to-pixdata">../data/images/stock-icons/accent9.png</file>
-    <file alias="accent10.png" preprocess="to-pixdata">../data/images/stock-icons/accent10.png</file>
-    <file alias="accent11.png" preprocess="to-pixdata">../data/images/stock-icons/accent11.png</file>
-    <file alias="accent12.png" preprocess="to-pixdata">../data/images/stock-icons/accent12.png</file>
-    <file alias="accent13.png" preprocess="to-pixdata">../data/images/stock-icons/accent13.png</file>
-    <file alias="accent14.png" preprocess="to-pixdata">../data/images/stock-icons/accent14.png</file>
-    <file alias="accent15.png" preprocess="to-pixdata">../data/images/stock-icons/accent15.png</file>
-    <file alias="badbox.png" preprocess="to-pixdata">../data/images/stock-icons/badbox.png</file>
-    <file alias="blackboard.png" preprocess="to-pixdata">../data/images/stock-icons/blackboard.png</file>
-    <file alias="bold.png" preprocess="to-pixdata">../data/images/stock-icons/bold.png</file>
-    <file alias="character-size.png" preprocess="to-pixdata">../data/images/stock-icons/character-size.png</file>
-    <file alias="compile_dvi.png" preprocess="to-pixdata">../data/images/stock-icons/compile_dvi.png</file>
-    <file alias="compile_pdf.png" preprocess="to-pixdata">../data/images/stock-icons/compile_pdf.png</file>
-    <file alias="compile_ps.png" preprocess="to-pixdata">../data/images/stock-icons/compile_ps.png</file>
-    <file alias="completion_cmd.png" preprocess="to-pixdata">../data/images/stock-icons/completion_cmd.png</file>
-    <file alias="delimiters-left.png" preprocess="to-pixdata">../data/images/stock-icons/delimiters-left.png</file>
-    <file alias="delimiters-right.png" preprocess="to-pixdata">../data/images/stock-icons/delimiters-right.png</file>
-    <file alias="gray-square.png" preprocess="to-pixdata">../data/images/stock-icons/gray-square.png</file>
-    <file alias="italic.png" preprocess="to-pixdata">../data/images/stock-icons/italic.png</file>
-    <file alias="list-description-size16.png" preprocess="to-pixdata">../data/images/stock-icons/list-description-size16.png</file>
-    <file alias="list-description-size24.png" preprocess="to-pixdata">../data/images/stock-icons/list-description-size24.png</file>
-    <file alias="list-enumerate-size16.png" preprocess="to-pixdata">../data/images/stock-icons/list-enumerate-size16.png</file>
-    <file alias="list-enumerate-size24.png" preprocess="to-pixdata">../data/images/stock-icons/list-enumerate-size24.png</file>
-    <file alias="list-item-size16.png" preprocess="to-pixdata">../data/images/stock-icons/list-item-size16.png</file>
-    <file alias="list-itemize-size16.png" preprocess="to-pixdata">../data/images/stock-icons/list-itemize-size16.png</file>
-    <file alias="list-itemize-size24.png" preprocess="to-pixdata">../data/images/stock-icons/list-itemize-size24.png</file>
-    <file alias="math-frac.png" preprocess="to-pixdata">../data/images/stock-icons/math-frac.png</file>
-    <file alias="math-nth-root.png" preprocess="to-pixdata">../data/images/stock-icons/math-nth-root.png</file>
-    <file alias="math-square-root.png" preprocess="to-pixdata">../data/images/stock-icons/math-square-root.png</file>
-    <file alias="math-subscript.png" preprocess="to-pixdata">../data/images/stock-icons/math-subscript.png</file>
-    <file alias="math-superscript.png" preprocess="to-pixdata">../data/images/stock-icons/math-superscript.png</file>
-    <file alias="math.png" preprocess="to-pixdata">../data/images/stock-icons/math.png</file>
-    <file alias="mathaccent0.png" preprocess="to-pixdata">../data/images/stock-icons/mathaccent0.png</file>
-    <file alias="mathaccent1.png" preprocess="to-pixdata">../data/images/stock-icons/mathaccent1.png</file>
-    <file alias="mathaccent2.png" preprocess="to-pixdata">../data/images/stock-icons/mathaccent2.png</file>
-    <file alias="mathaccent3.png" preprocess="to-pixdata">../data/images/stock-icons/mathaccent3.png</file>
-    <file alias="mathaccent4.png" preprocess="to-pixdata">../data/images/stock-icons/mathaccent4.png</file>
-    <file alias="mathaccent5.png" preprocess="to-pixdata">../data/images/stock-icons/mathaccent5.png</file>
-    <file alias="mathaccent6.png" preprocess="to-pixdata">../data/images/stock-icons/mathaccent6.png</file>
-    <file alias="mathaccent7.png" preprocess="to-pixdata">../data/images/stock-icons/mathaccent7.png</file>
-    <file alias="mathaccent8.png" preprocess="to-pixdata">../data/images/stock-icons/mathaccent8.png</file>
-    <file alias="mathaccent9.png" preprocess="to-pixdata">../data/images/stock-icons/mathaccent9.png</file>
-    <file alias="mathaccent10.png" preprocess="to-pixdata">../data/images/stock-icons/mathaccent10.png</file>
-    <file alias="mathcal.png" preprocess="to-pixdata">../data/images/stock-icons/mathcal.png</file>
-    <file alias="mathfrak.png" preprocess="to-pixdata">../data/images/stock-icons/mathfrak.png</file>
-    <file alias="references.png" preprocess="to-pixdata">../data/images/stock-icons/references.png</file>
-    <file alias="roman.png" preprocess="to-pixdata">../data/images/stock-icons/roman.png</file>
-    <file alias="sans_serif.png" preprocess="to-pixdata">../data/images/stock-icons/sans_serif.png</file>
-    <file alias="sectioning-size16.png" preprocess="to-pixdata">../data/images/stock-icons/sectioning-size16.png</file>
-    <file alias="sectioning-size24.png" preprocess="to-pixdata">../data/images/stock-icons/sectioning-size24.png</file>
-    <file alias="slanted.png" preprocess="to-pixdata">../data/images/stock-icons/slanted.png</file>
-    <file alias="small_caps.png" preprocess="to-pixdata">../data/images/stock-icons/small_caps.png</file>
-    <file alias="symbol_arrows.png" preprocess="to-pixdata">../data/images/stock-icons/symbol_arrows.png</file>
-    <file alias="symbol_delimiters.png" preprocess="to-pixdata">../data/images/stock-icons/symbol_delimiters.png</file>
-    <file alias="symbol_greek.png" preprocess="to-pixdata">../data/images/stock-icons/symbol_greek.png</file>
-    <file alias="symbol_misc_math.png" preprocess="to-pixdata">../data/images/stock-icons/symbol_misc_math.png</file>
-    <file alias="symbol_misc_text.png" preprocess="to-pixdata">../data/images/stock-icons/symbol_misc_text.png</file>
-    <file alias="symbol_operators.png" preprocess="to-pixdata">../data/images/stock-icons/symbol_operators.png</file>
-    <file alias="symbol_relations.png" preprocess="to-pixdata">../data/images/stock-icons/symbol_relations.png</file>
-    <file alias="table-size16.png" preprocess="to-pixdata">../data/images/stock-icons/table-size16.png</file>
-    <file alias="table-size24.png" preprocess="to-pixdata">../data/images/stock-icons/table-size24.png</file>
-    <file alias="tree_chapter.png" preprocess="to-pixdata">../data/images/stock-icons/tree_chapter.png</file>
-    <file alias="tree_label.png" preprocess="to-pixdata">../data/images/stock-icons/tree_label.png</file>
-    <file alias="tree_paragraph.png" preprocess="to-pixdata">../data/images/stock-icons/tree_paragraph.png</file>
-    <file alias="tree_part.png" preprocess="to-pixdata">../data/images/stock-icons/tree_part.png</file>
-    <file alias="tree_section.png" preprocess="to-pixdata">../data/images/stock-icons/tree_section.png</file>
-    <file alias="tree_subsection.png" preprocess="to-pixdata">../data/images/stock-icons/tree_subsection.png</file>
-    <file alias="tree_subsubsection.png" preprocess="to-pixdata">../data/images/stock-icons/tree_subsubsection.png</file>
-    <file alias="tree_todo.png" preprocess="to-pixdata">../data/images/stock-icons/tree_todo.png</file>
-    <file alias="typewriter.png" preprocess="to-pixdata">../data/images/stock-icons/typewriter.png</file>
-    <file alias="underline.png" preprocess="to-pixdata">../data/images/stock-icons/underline.png</file>
-    <file alias="view_dvi.png" preprocess="to-pixdata">../data/images/stock-icons/view_dvi.png</file>
-    <file alias="view_log.png" preprocess="to-pixdata">../data/images/stock-icons/view_log.png</file>
-    <file alias="view_pdf.png" preprocess="to-pixdata">../data/images/stock-icons/view_pdf.png</file>
-    <file alias="view_ps.png" preprocess="to-pixdata">../data/images/stock-icons/view_ps.png</file>
+  <gresource prefix="/org/gnome/latexila/icons/16x16/actions">
+    <file alias="list-description.png" preprocess="to-pixdata">../data/icons/16x16/actions/list-description.png</file>
+    <file alias="list-enumerate.png" preprocess="to-pixdata">../data/icons/16x16/actions/list-enumerate.png</file>
+    <file alias="list-itemize.png" preprocess="to-pixdata">../data/icons/16x16/actions/list-itemize.png</file>
+    <file alias="list-item.png" preprocess="to-pixdata">../data/icons/16x16/actions/list-item.png</file>
+    <file alias="sectioning.png" preprocess="to-pixdata">../data/icons/16x16/actions/sectioning.png</file>
+    <file alias="symbol_arrows.png" preprocess="to-pixdata">../data/icons/16x16/actions/symbol_arrows.png</file>
+    <file alias="symbol_delimiters.png" preprocess="to-pixdata">../data/icons/16x16/actions/symbol_delimiters.png</file>
+    <file alias="symbol_greek.png" preprocess="to-pixdata">../data/icons/16x16/actions/symbol_greek.png</file>
+    <file alias="symbol_misc_math.png" preprocess="to-pixdata">../data/icons/16x16/actions/symbol_misc_math.png</file>
+    <file alias="symbol_misc_text.png" preprocess="to-pixdata">../data/icons/16x16/actions/symbol_misc_text.png</file>
+    <file alias="symbol_operators.png" preprocess="to-pixdata">../data/icons/16x16/actions/symbol_operators.png</file>
+    <file alias="symbol_relations.png" preprocess="to-pixdata">../data/icons/16x16/actions/symbol_relations.png</file>
+    <file alias="table.png" preprocess="to-pixdata">../data/icons/16x16/actions/table.png</file>
+    <file alias="tree_chapter.png" preprocess="to-pixdata">../data/icons/16x16/actions/tree_chapter.png</file>
+    <file alias="tree_label.png" preprocess="to-pixdata">../data/icons/16x16/actions/tree_label.png</file>
+    <file alias="tree_paragraph.png" preprocess="to-pixdata">../data/icons/16x16/actions/tree_paragraph.png</file>
+    <file alias="tree_part.png" preprocess="to-pixdata">../data/icons/16x16/actions/tree_part.png</file>
+    <file alias="tree_section.png" preprocess="to-pixdata">../data/icons/16x16/actions/tree_section.png</file>
+    <file alias="tree_subsection.png" preprocess="to-pixdata">../data/icons/16x16/actions/tree_subsection.png</file>
+    <file alias="tree_subsubsection.png" preprocess="to-pixdata">../data/icons/16x16/actions/tree_subsubsection.png</file>
+    <file alias="tree_todo.png" preprocess="to-pixdata">../data/icons/16x16/actions/tree_todo.png</file>
+    <file alias="view_log.png" preprocess="to-pixdata">../data/icons/16x16/actions/view_log.png</file>
+  </gresource>
+
+  <gresource prefix="/org/gnome/latexila/icons/24x24/actions">
+    <file alias="accent0.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent0.png</file>
+    <file alias="accent10.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent10.png</file>
+    <file alias="accent11.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent11.png</file>
+    <file alias="accent12.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent12.png</file>
+    <file alias="accent13.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent13.png</file>
+    <file alias="accent14.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent14.png</file>
+    <file alias="accent15.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent15.png</file>
+    <file alias="accent1.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent1.png</file>
+    <file alias="accent2.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent2.png</file>
+    <file alias="accent3.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent3.png</file>
+    <file alias="accent4.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent4.png</file>
+    <file alias="accent5.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent5.png</file>
+    <file alias="accent6.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent6.png</file>
+    <file alias="accent7.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent7.png</file>
+    <file alias="accent8.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent8.png</file>
+    <file alias="accent9.png" preprocess="to-pixdata">../data/icons/24x24/actions/accent9.png</file>
+    <file alias="bold.png" preprocess="to-pixdata">../data/icons/24x24/actions/bold.png</file>
+    <file alias="character-size.png" preprocess="to-pixdata">../data/icons/24x24/actions/character-size.png</file>
+    <file alias="compile_dvi.png" preprocess="to-pixdata">../data/icons/24x24/actions/compile_dvi.png</file>
+    <file alias="compile_pdf.png" preprocess="to-pixdata">../data/icons/24x24/actions/compile_pdf.png</file>
+    <file alias="compile_ps.png" preprocess="to-pixdata">../data/icons/24x24/actions/compile_ps.png</file>
+    <file alias="completion_cmd.png" preprocess="to-pixdata">../data/icons/24x24/actions/completion_cmd.png</file>
+    <file alias="delimiters-left.png" preprocess="to-pixdata">../data/icons/24x24/actions/delimiters-left.png</file>
+    <file alias="delimiters-right.png" preprocess="to-pixdata">../data/icons/24x24/actions/delimiters-right.png</file>
+    <file alias="gray-square.png" preprocess="to-pixdata">../data/icons/24x24/actions/gray-square.png</file>
+    <file alias="italic.png" preprocess="to-pixdata">../data/icons/24x24/actions/italic.png</file>
+    <file alias="list-description.png" preprocess="to-pixdata">../data/icons/24x24/actions/list-description.png</file>
+    <file alias="list-enumerate.png" preprocess="to-pixdata">../data/icons/24x24/actions/list-enumerate.png</file>
+    <file alias="list-itemize.png" preprocess="to-pixdata">../data/icons/24x24/actions/list-itemize.png</file>
+    <file alias="list-item.png" preprocess="to-pixdata">../data/icons/24x24/actions/list-item.png</file>
+    <file alias="mathaccent0.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathaccent0.png</file>
+    <file alias="mathaccent10.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathaccent10.png</file>
+    <file alias="mathaccent1.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathaccent1.png</file>
+    <file alias="mathaccent2.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathaccent2.png</file>
+    <file alias="mathaccent3.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathaccent3.png</file>
+    <file alias="mathaccent4.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathaccent4.png</file>
+    <file alias="mathaccent5.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathaccent5.png</file>
+    <file alias="mathaccent6.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathaccent6.png</file>
+    <file alias="mathaccent7.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathaccent7.png</file>
+    <file alias="mathaccent8.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathaccent8.png</file>
+    <file alias="mathaccent9.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathaccent9.png</file>
+    <file alias="mathcal.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathcal.png</file>
+    <file alias="math-frac.png" preprocess="to-pixdata">../data/icons/24x24/actions/math-frac.png</file>
+    <file alias="mathfrak.png" preprocess="to-pixdata">../data/icons/24x24/actions/mathfrak.png</file>
+    <file alias="math-nth-root.png" preprocess="to-pixdata">../data/icons/24x24/actions/math-nth-root.png</file>
+    <file alias="math.png" preprocess="to-pixdata">../data/icons/24x24/actions/math.png</file>
+    <file alias="math-square-root.png" preprocess="to-pixdata">../data/icons/24x24/actions/math-square-root.png</file>
+    <file alias="math-subscript.png" preprocess="to-pixdata">../data/icons/24x24/actions/math-subscript.png</file>
+    <file alias="math-superscript.png" preprocess="to-pixdata">../data/icons/24x24/actions/math-superscript.png</file>
+    <file alias="references.png" preprocess="to-pixdata">../data/icons/24x24/actions/references.png</file>
+    <file alias="roman.png" preprocess="to-pixdata">../data/icons/24x24/actions/roman.png</file>
+    <file alias="sans_serif.png" preprocess="to-pixdata">../data/icons/24x24/actions/sans_serif.png</file>
+    <file alias="sectioning.png" preprocess="to-pixdata">../data/icons/24x24/actions/sectioning.png</file>
+    <file alias="slanted.png" preprocess="to-pixdata">../data/icons/24x24/actions/slanted.png</file>
+    <file alias="small_caps.png" preprocess="to-pixdata">../data/icons/24x24/actions/small_caps.png</file>
+    <file alias="table.png" preprocess="to-pixdata">../data/icons/24x24/actions/table.png</file>
+    <file alias="typewriter.png" preprocess="to-pixdata">../data/icons/24x24/actions/typewriter.png</file>
+    <file alias="underline.png" preprocess="to-pixdata">../data/icons/24x24/actions/underline.png</file>
+  </gresource>
+
+  <gresource prefix="/org/gnome/latexila/icons/24x24/mimetypes">
+    <file alias="view_dvi.png" preprocess="to-pixdata">../data/icons/24x24/mimetypes/view_dvi.png</file>
+    <file alias="view_pdf.png" preprocess="to-pixdata">../data/icons/24x24/mimetypes/view_pdf.png</file>
+    <file alias="view_ps.png" preprocess="to-pixdata">../data/icons/24x24/mimetypes/view_ps.png</file>
+  </gresource>
+
+  <gresource prefix="/org/gnome/latexila/icons">
+    <file alias="badbox.png" preprocess="to-pixdata">../data/icons/others/badbox.png</file>
+    <file alias="blackboard.png" preprocess="to-pixdata">../data/icons/others/blackboard.png</file>
   </gresource>
 
   <gresource prefix="/org/gnome/latexila/symbols/arrows">

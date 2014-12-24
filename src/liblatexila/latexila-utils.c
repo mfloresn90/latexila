@@ -147,9 +147,7 @@ latexila_utils_replace_home_dir_with_tilde (const gchar *filename)
  * when stock icons are no longer used in LaTeXila.
  *
  * TODO: prefix icon names with "latexila-", so the badbox.png would be
- * "latexila-badbox". Also, put icons in subdirectories for each size, so it is
- * better for icons available in several sizes. As an example there is currently
- * table-size16.png and table-size24.png.
+ * "latexila-badbox".
  */
 void
 latexila_utils_register_icons (void)

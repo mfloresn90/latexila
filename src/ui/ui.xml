@@ -463,14 +463,14 @@ along with LaTeXila.  If not, see <http://www.gnu.org/licenses/>.
 
     <separator />
 
-    <toolitem action="ListEnvItemizeToolitem" />
-    <toolitem action="ListEnvEnumerateToolitem" />
-    <toolitem action="ListEnvDescriptionToolitem" />
+    <toolitem action="ListEnvItemize" />
+    <toolitem action="ListEnvEnumerate" />
+    <toolitem action="ListEnvDescription" />
 
     <separator />
 
     <toolitem action="EnvFigure" />
-    <toolitem action="EnvTableToolitem" />
+    <toolitem action="EnvTable" />
 
     <separator />
 

@@ -59,13 +59,10 @@ namespace StockIcons
         add_theme_icon_to_stock ("delimiters-right");
         add_theme_icon_to_stock ("gray-square");
         add_theme_icon_to_stock ("italic");
-        add_theme_icon_to_stock ("list-description-size16");
-        add_theme_icon_to_stock ("list-description-size24");
-        add_theme_icon_to_stock ("list-enumerate-size16");
-        add_theme_icon_to_stock ("list-enumerate-size24");
-        add_theme_icon_to_stock ("list-item-size16");
-        add_theme_icon_to_stock ("list-itemize-size16");
-        add_theme_icon_to_stock ("list-itemize-size24");
+        add_theme_icon_to_stock ("list-description");
+        add_theme_icon_to_stock ("list-enumerate");
+        add_theme_icon_to_stock ("list-item");
+        add_theme_icon_to_stock ("list-itemize");
         add_theme_icon_to_stock ("math-frac");
         add_theme_icon_to_stock ("math-nth-root");
         add_theme_icon_to_stock ("math-square-root");
@@ -88,8 +85,7 @@ namespace StockIcons
         add_theme_icon_to_stock ("references");
         add_theme_icon_to_stock ("roman");
         add_theme_icon_to_stock ("sans_serif");
-        add_theme_icon_to_stock ("sectioning-size16");
-        add_theme_icon_to_stock ("sectioning-size24");
+        add_theme_icon_to_stock ("sectioning");
         add_theme_icon_to_stock ("slanted");
         add_theme_icon_to_stock ("small_caps");
         add_theme_icon_to_stock ("symbol_arrows");
@@ -99,8 +95,7 @@ namespace StockIcons
         add_theme_icon_to_stock ("symbol_misc_text");
         add_theme_icon_to_stock ("symbol_operators");
         add_theme_icon_to_stock ("symbol_relations");
-        add_theme_icon_to_stock ("table-size16");
-        add_theme_icon_to_stock ("table-size24");
+        add_theme_icon_to_stock ("table");
         add_theme_icon_to_stock ("tree_chapter");
         add_theme_icon_to_stock ("tree_label");
         add_theme_icon_to_stock ("tree_paragraph");

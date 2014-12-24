@@ -7,7 +7,6 @@ EXTRA_DIST =		\
 	misc-math	\
 	misc-text	\
 	operators	\
-	relations	\
-	stock-icons
+	relations
 
 -include $(top_srcdir)/git.mk
