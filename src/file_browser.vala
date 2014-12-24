@@ -85,7 +85,7 @@ public class FileBrowser : Grid
     private void init_combo_box ()
     {
         _parent_dir_store = new ListStore (ParentDirColumn.N_COLUMNS,
-            typeof (string),    // pixbuf (stock-id)
+            typeof (string),    // pixbuf (icon-name)
             typeof (string),    // directory name
             typeof (File)
         );
@@ -97,7 +97,7 @@ public class FileBrowser : Grid
         CellRendererPixbuf pixbuf_renderer = new CellRendererPixbuf ();
         _combo_box.pack_start (pixbuf_renderer, false);
         _combo_box.set_attributes (pixbuf_renderer,
-            "stock-id", ParentDirColumn.PIXBUF);
+            "icon-name", ParentDirColumn.PIXBUF);
 
         // directory name
         CellRendererText text_renderer = new CellRendererText ();
@@ -124,7 +124,7 @@ public class FileBrowser : Grid
     private void init_list ()
     {
         _list_store = new ListStore (FileColumn.N_COLUMNS,
-            typeof (string),    // pixbuf (stock-id)
+            typeof (string),    // pixbuf (icon-name)
             typeof (string),    // filename
             typeof (bool)       // is directory
         );
@@ -146,7 +146,7 @@ public class FileBrowser : Grid
         // icon
         CellRendererPixbuf pixbuf_renderer = new CellRendererPixbuf ();
         column.pack_start (pixbuf_renderer, false);
-        column.set_attributes (pixbuf_renderer, "stock-id", FileColumn.PIXBUF);
+        column.set_attributes (pixbuf_renderer, "icon-name", FileColumn.PIXBUF);
 
         // filename
         CellRendererText text_renderer = new CellRendererText ();
@@ -340,11 +340,11 @@ public class FileBrowser : Grid
             // pixbuf
             string pixbuf;
             if (depth == 0)
-                pixbuf = Stock.HARDDISK;
+                pixbuf = "drive-harddisk";
             else if (Environment.get_home_dir () == parent_dir.get_path ())
-                pixbuf = Stock.HOME;
+                pixbuf = "go-home";
             else
-                pixbuf = Stock.DIRECTORY;
+                pixbuf = "folder";
 
             // insert
             TreeIter iter;
@@ -414,7 +414,7 @@ public class FileBrowser : Grid
             FileType type = info.get_file_type ();
             if (type == FileType.DIRECTORY)
             {
-                insert_file (true, Stock.DIRECTORY, basename);
+                insert_file (true, "folder", basename);
                 continue;
             }
 
@@ -436,8 +436,8 @@ public class FileBrowser : Grid
             }
 
             string extension = Latexila.utils_get_extension (basename);
-            string stock_id = get_extension_stock_id (extension);
-            insert_file (false, stock_id, basename);
+            string icon_name = get_extension_icon_name (extension);
+            insert_file (false, icon_name, basename);
         }
 
         _list_store.sort_column_changed ();
@@ -459,13 +459,13 @@ public class FileBrowser : Grid
         dialog.destroy ();
     }
 
-    private void insert_file (bool is_dir, string pixbuf, string basename)
+    private void insert_file (bool is_dir, string icon_name, string basename)
     {
         TreeIter iter;
         _list_store.append (out iter);
         _list_store.set (iter,
             FileColumn.IS_DIR, is_dir,
-            FileColumn.PIXBUF, pixbuf,
+            FileColumn.PIXBUF, icon_name,
             FileColumn.NAME, basename
         );
     }
@@ -569,11 +569,12 @@ public class FileBrowser : Grid
         return a_is_dir ? -1 : +1;
     }
 
-    private string get_extension_stock_id (string file_extension)
+    private string get_extension_icon_name (string file_extension)
     {
         switch (file_extension)
         {
             case ".tex":
+                // TODO find a replacement
                 return Stock.EDIT;
 
             case ".pdf":
@@ -593,10 +594,10 @@ public class FileBrowser : Grid
             case ".bmp":
             case ".tif":
             case ".tiff":
-                return "image";
+                return "image-x-generic";
 
             default:
-                return Stock.FILE;
+                return "text-x-generic";
         }
     }
 }
