@@ -71,9 +71,9 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
     private CompletionArgument _current_arg;
     private CompletionChoice _current_choice;
 
-    private Gdk.Pixbuf _icon_cmd;
-    private Gdk.Pixbuf _icon_choice;
-    private Gdk.Pixbuf _icon_package_required;
+    private Gdk.Pixbuf? _icon_cmd;
+    private Gdk.Pixbuf? _icon_choice;
+    private Gdk.Pixbuf? _icon_package_required;
 
     private SourceCompletionInfo _calltip_window = null;
     private Label _calltip_window_label = null;
@@ -84,9 +84,11 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
         _settings = new GLib.Settings ("org.gnome.latexila.preferences.latex");
 
         // icons
-        _icon_cmd = Utils.get_pixbuf_from_stock ("completion_cmd", IconSize.MENU);
-        _icon_choice = Utils.get_pixbuf_from_stock ("gray-square", IconSize.MENU);
-        _icon_package_required = Utils.get_pixbuf_from_stock (Stock.DIALOG_WARNING,
+        _icon_cmd = Latexila.utils_get_pixbuf_from_icon_name ("completion_cmd",
+            IconSize.MENU);
+        _icon_choice = Latexila.utils_get_pixbuf_from_icon_name ("gray-square",
+            IconSize.MENU);
+        _icon_package_required = Latexila.utils_get_pixbuf_from_icon_name ("dialog-warning",
             IconSize.MENU);
 
         load_data ();

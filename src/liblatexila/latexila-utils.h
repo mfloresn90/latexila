@@ -32,6 +32,9 @@ gchar *         latexila_utils_replace_home_dir_with_tilde      (const gchar *fi
 
 void            latexila_utils_register_icons                   (void);
 
+GdkPixbuf *     latexila_utils_get_pixbuf_from_icon_name        (const gchar *icon_name,
+                                                                 GtkIconSize  icon_size);
+
 gchar *         latexila_utils_str_replace                      (const gchar *string,
                                                                  const gchar *search,
                                                                  const gchar *replacement);

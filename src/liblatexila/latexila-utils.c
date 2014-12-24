@@ -159,6 +159,38 @@ latexila_utils_register_icons (void)
 }
 
 /**
+ * latexila_utils_get_pixbuf_from_icon_name:
+ * @icon_name: an icon name.
+ * @icon_size: an icon size.
+ *
+ * Returns: (nullable) (transfer full): the corresponding #GdkPixbuf.
+ */
+GdkPixbuf *
+latexila_utils_get_pixbuf_from_icon_name (const gchar *icon_name,
+                                          GtkIconSize  icon_size)
+{
+  gint size;
+  GdkPixbuf *pixbuf;
+  GError *error = NULL;
+
+  gtk_icon_size_lookup (icon_size, &size, NULL);
+
+  pixbuf = gtk_icon_theme_load_icon (gtk_icon_theme_get_default (),
+                                     icon_name,
+                                     size,
+                                     0,
+                                     &error);
+
+  if (error != NULL)
+    {
+      g_warning ("Error when loading icon \"%s\": %s", icon_name, error->message);
+      g_error_free (error);
+    }
+
+  return pixbuf;
+}
+
+/**
  * latexila_utils_str_replace:
  * @string: a string
  * @search: the search string

@@ -283,12 +283,6 @@ namespace Utils
         return -1;
     }
 
-    public Gdk.Pixbuf get_pixbuf_from_stock (string stock_id, Gtk.IconSize size)
-    {
-        Gtk.Invisible widget = new Gtk.Invisible ();
-        return widget.render_icon_pixbuf (stock_id, size);
-    }
-
     public Grid get_dialog_component (string title, Widget widget)
     {
         Grid grid = new Grid ();
