@@ -29,21 +29,6 @@ public class StockIcons
     public StockIcons ()
     {
         register_new_stock_icons ();
-
-        add_theme_icon_to_stock ("image-x-generic", "image");
-    }
-
-    private void add_theme_icon_to_stock (string icon_name, string stock_id)
-    {
-        Gtk.IconSource icon_source = new Gtk.IconSource ();
-        icon_source.set_icon_name (icon_name);
-
-        Gtk.IconSet icon_set = new Gtk.IconSet ();
-        icon_set.add_source (icon_source);
-
-        Gtk.IconFactory icon_factory = new Gtk.IconFactory ();
-        icon_factory.add (stock_id, icon_set);
-        icon_factory.add_default ();
     }
 
     private void register_new_stock_icons ()

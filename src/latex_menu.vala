@@ -70,7 +70,7 @@ public class LatexMenu : Gtk.ActionGroup
             N_("Align Left - \\begin{flushleft}"), on_env_left },
         { "EnvRight", Stock.JUSTIFY_RIGHT, "\\begin{flush_right}", null,
             N_("Align Right - \\begin{flushright}"), on_env_right },
-        { "EnvFigure", "image", "\\begin{_figure}", null,
+        { "EnvFigure", "image-x-generic", "\\begin{_figure}", null,
             N_("Figure - \\begin{figure}"), on_env_figure },
         { "EnvTable", "table-size16", "\\begin{_table}", null,
             N_("Table - \\begin{table}"), on_env_table },
