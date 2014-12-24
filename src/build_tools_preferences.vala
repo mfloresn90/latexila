@@ -160,7 +160,7 @@ public class BuildToolsPreferences : GLib.Object
     {
         return new ListStore (BuildToolColumn.N_COLUMNS,
             typeof (bool),   // enabled
-            typeof (string), // pixbuf (stock-id)
+            typeof (string), // pixbuf (icon-name)
             typeof (string), // label
             typeof (string)  // description
         );
@@ -187,7 +187,7 @@ public class BuildToolsPreferences : GLib.Object
         CellRendererPixbuf pixbuf_renderer = new CellRendererPixbuf ();
         label_column.pack_start (pixbuf_renderer, false);
         label_column.set_attributes (pixbuf_renderer,
-            "stock-id", BuildToolColumn.PIXBUF);
+            "icon-name", BuildToolColumn.PIXBUF);
 
         CellRendererText text_renderer = new CellRendererText ();
         label_column.pack_start (text_renderer, true);

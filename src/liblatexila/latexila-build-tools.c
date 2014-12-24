@@ -170,7 +170,13 @@ parser_start_element (GMarkupParseContext  *context,
             }
           else if (g_str_equal (attribute_names[i], "icon"))
             {
-              g_object_set (cur_tool, "icon", attribute_values[i], NULL);
+              /* Migrate from GtkStock to icon-names. */
+              if (g_str_equal (attribute_values[i], "gtk-execute"))
+                g_object_set (cur_tool, "icon", "system-run", NULL);
+              else if (g_str_equal (attribute_values[i], "gtk-file"))
+                g_object_set (cur_tool, "icon", "text-x-generic", NULL);
+              else
+                g_object_set (cur_tool, "icon", attribute_values[i], NULL);
             }
           else if (error != NULL)
             {

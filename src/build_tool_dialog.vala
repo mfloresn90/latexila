@@ -27,7 +27,7 @@ public class BuildToolDialog : GLib.Object
 {
     private enum IconColumn
     {
-        STOCK_ID,
+        ICON_NAME,
         LABEL,
         N_COLUMNS
     }
@@ -154,27 +154,27 @@ public class BuildToolDialog : GLib.Object
     private void init_icons_store ()
     {
         _icons_store = new ListStore (IconColumn.N_COLUMNS,
-            typeof (string), // icon stock-id
+            typeof (string), // icon-name
             typeof (string)  // label
         );
 
-        add_icon (Stock.EXECUTE, _("Execute"));
+        add_icon ("system-run", _("Execute"));
         add_icon ("compile_dvi", "LaTeX → DVI");
         add_icon ("compile_pdf", "LaTeX → PDF");
         add_icon ("compile_ps", "LaTeX → PS");
         add_icon (Stock.CONVERT, _("Convert"));
-        add_icon (Stock.FILE, _("View File"));
+        add_icon ("text-x-generic", _("View File"));
         add_icon ("view_dvi", _("View DVI"));
         add_icon ("view_pdf", _("View PDF"));
         add_icon ("view_ps", _("View PS"));
     }
 
-    private void add_icon (string stock_id, string label)
+    private void add_icon (string icon_name, string label)
     {
         TreeIter iter;
         _icons_store.append (out iter);
         _icons_store.set (iter,
-            IconColumn.STOCK_ID, stock_id,
+            IconColumn.ICON_NAME, icon_name,
             IconColumn.LABEL, label
         );
     }
@@ -186,7 +186,7 @@ public class BuildToolDialog : GLib.Object
         CellRendererPixbuf pixbuf_renderer = new CellRendererPixbuf ();
         _icons_combobox.pack_start (pixbuf_renderer, false);
         _icons_combobox.set_attributes (pixbuf_renderer,
-            "stock-id", IconColumn.STOCK_ID);
+            "icon-name", IconColumn.ICON_NAME);
 
         CellRendererText text_renderer = new CellRendererText ();
         _icons_combobox.pack_start (text_renderer, true);
@@ -449,10 +449,10 @@ public class BuildToolDialog : GLib.Object
 
         do
         {
-            string stock_id;
-            model.get (iter, IconColumn.STOCK_ID, out stock_id);
+            string icon_name;
+            model.get (iter, IconColumn.ICON_NAME, out icon_name);
 
-            if (stock_id == build_tool.icon)
+            if (icon_name == build_tool.icon)
             {
                 _icons_combobox.set_active_iter (iter);
                 break;
@@ -486,9 +486,9 @@ public class BuildToolDialog : GLib.Object
         TreeIter iter;
         _icons_combobox.get_active_iter (out iter);
         TreeModel model = _icons_store as TreeModel;
-        string icon;
-        model.get (iter, IconColumn.STOCK_ID, out icon);
-        tool.icon = icon;
+        string icon_name;
+        model.get (iter, IconColumn.ICON_NAME, out icon_name);
+        tool.icon = icon_name;
 
         /* Jobs */
 

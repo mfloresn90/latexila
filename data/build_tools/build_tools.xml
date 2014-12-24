@@ -73,13 +73,13 @@
 
   <!-- BibTeX, MakeIndex -->
 
-  <tool id="14" enabled="false" extensions=".tex" icon="gtk-execute">
+  <tool id="14" enabled="false" extensions=".tex" icon="system-run">
     <label its:translate="no">BibTeX</label>
     <description>Run BibTeX (bibliography)</description>
     <job postProcessor="all-output">bibtex $shortname.aux</job>
   </tool>
 
-  <tool id="15" enabled="false" extensions=".tex" icon="gtk-execute">
+  <tool id="15" enabled="false" extensions=".tex" icon="system-run">
     <label its:translate="no">MakeIndex</label>
     <description>Run MakeIndex</description>
     <job postProcessor="all-output">makeindex $shortname.idx</job>
