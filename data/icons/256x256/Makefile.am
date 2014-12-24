@@ -1,4 +1,3 @@
-icondir = $(datadir)/icons/hicolor/256x256/apps
-dist_icon_DATA = latexila.png
+SUBDIRS = apps
 
 -include $(top_srcdir)/git.mk

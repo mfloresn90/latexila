@@ -1,4 +1,3 @@
-icondir = $(datadir)/icons/hicolor/scalable/apps
-dist_icon_DATA = latexila.svg
+SUBDIRS = apps
 
 -include $(top_srcdir)/git.mk
