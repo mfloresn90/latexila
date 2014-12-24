@@ -66,7 +66,7 @@ public class SymbolsView : Grid
         CellRendererPixbuf pixbuf_renderer = new CellRendererPixbuf ();
         _combo_box.pack_start (pixbuf_renderer, false);
         _combo_box.set_attributes (pixbuf_renderer,
-            "stock-id", SymbolsCategoryColumn.ICON, null);
+            "icon-name", SymbolsCategoryColumn.ICON, null);
 
         CellRendererText text_renderer = new CellRendererText ();
         text_renderer.ellipsize_set = true;

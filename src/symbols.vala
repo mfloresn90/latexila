@@ -30,7 +30,7 @@ public enum SymbolsCategoryType
 public enum SymbolsCategoryColumn
 {
     TYPE,
-    ICON, // stock-id, as a string
+    ICON, // icon-name, as a string
     NAME,
     SYMBOLS_STORE,
     N_COLUMNS
@@ -155,7 +155,7 @@ public class Symbols : GLib.Object
         _categories_store.append (out iter);
         _categories_store.set (iter,
             SymbolsCategoryColumn.TYPE, SymbolsCategoryType.MOST_USED,
-            SymbolsCategoryColumn.ICON, Stock.ABOUT,
+            SymbolsCategoryColumn.ICON, "help-about",
             SymbolsCategoryColumn.NAME, _("Most Used"),
             SymbolsCategoryColumn.SYMBOLS_STORE, model
         );
