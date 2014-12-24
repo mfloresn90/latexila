@@ -241,7 +241,7 @@ namespace ProjectDialogs
         Button delete_button = new Button.from_stock (Stock.DELETE);
 
         Button clear_all_button = new Button.with_label (_("Clear All"));
-        Image image = new Image.from_stock (Stock.CLEAR, IconSize.MENU);
+        Image image = new Image.from_icon_name ("edit-clear", IconSize.MENU);
         clear_all_button.set_image (image);
 
         grid.add (edit_button);
@@ -298,7 +298,7 @@ namespace ProjectDialogs
             clear_dialog.add_button (Stock.CANCEL, ResponseType.CANCEL);
 
             Button button = new Button.with_label (_("Clear All"));
-            Image img = new Image.from_stock (Stock.CLEAR, IconSize.BUTTON);
+            Image img = new Image.from_icon_name ("edit-clear", IconSize.BUTTON);
             button.set_image (img);
             button.show_all ();
             clear_dialog.add_action_widget (button, ResponseType.YES);

@@ -26,25 +26,25 @@ public class TabInfoBar : InfoBar
         Box content_area = get_content_area () as Box;
 
         // icon
-        string stock_id;
+        string icon_name;
         switch (msg_type)
         {
             case MessageType.ERROR:
-                stock_id = Stock.DIALOG_ERROR;
+                icon_name = "dialog-error";
                 break;
             case MessageType.QUESTION:
-                stock_id = Stock.DIALOG_QUESTION;
+                icon_name = "dialog-question";
                 break;
             case MessageType.WARNING:
-                stock_id = Stock.DIALOG_WARNING;
+                icon_name = "dialog-warning";
                 break;
             case MessageType.INFO:
             default:
-                stock_id = Stock.DIALOG_INFO;
+                icon_name = "dialog-information";
                 break;
         }
 
-        Image image = new Image.from_stock (stock_id, IconSize.DIALOG);
+        Image image = new Image.from_icon_name (icon_name, IconSize.DIALOG);
         image.set_valign (Align.START);
         content_area.pack_start (image, false, false, 0);
 
@@ -82,10 +82,10 @@ public class TabInfoBar : InfoBar
         });
     }
 
-    public void add_stock_button_with_text (string text, string stock_id, int response_id)
+    public void add_button_with_text (string text, string icon_name, int response_id)
     {
         Button button = add_button (text, response_id) as Button;
-        Image image = new Image.from_stock (stock_id, IconSize.BUTTON);
+        Image image = new Image.from_icon_name (icon_name, IconSize.BUTTON);
         button.set_image (image);
     }
 }

@@ -51,7 +51,7 @@ namespace Dialogs
         content_area.pack_start (grid);
 
         /* image */
-        Image image = new Image.from_stock (Stock.DIALOG_WARNING, IconSize.DIALOG);
+        Image image = new Image.from_icon_name ("dialog-warning", IconSize.DIALOG);
         image.set_valign (Align.START);
         grid.attach (image, 0, 0, 1, 4);
 

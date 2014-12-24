@@ -200,7 +200,7 @@ public class Document : Gtk.SourceBuffer
                     _("If you save it, all the external changes could be lost. Save it anyway?");
                 TabInfoBar infobar = tab.add_message (primary_msg, secondary_msg,
                     MessageType.WARNING);
-                infobar.add_stock_button_with_text (_("Save Anyway"), Stock.SAVE,
+                infobar.add_button_with_text (_("Save Anyway"), "document-save",
                     ResponseType.YES);
                 infobar.add_button (_("Don't Save"), ResponseType.CANCEL);
                 infobar.response.connect ((response_id) =>

@@ -327,7 +327,7 @@ namespace Utils
         dialog.add_button (Stock.CANCEL, ResponseType.CANCEL);
 
         Button button = new Button.with_label (_("Reset All"));
-        Image image = new Image.from_stock (Stock.CLEAR, IconSize.BUTTON);
+        Image image = new Image.from_icon_name ("edit-clear", IconSize.BUTTON);
         button.set_image (image);
         button.show_all ();
         dialog.add_action_widget (button, ResponseType.YES);

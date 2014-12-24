@@ -33,7 +33,7 @@ public class GotoLine : Grid
         Button close_button = new Button ();
         add (close_button);
         close_button.set_relief (ReliefStyle.NONE);
-        Image img = new Image.from_stock (Stock.CLOSE, IconSize.MENU);
+        Image img = new Image.from_icon_name ("window-close", IconSize.MENU);
         close_button.add (img);
         close_button.clicked.connect (() => hide ());
 
@@ -148,9 +148,9 @@ public class SearchAndReplace : GLib.Object
         find_grid.add (_entry_find);
 
         /* Buttons at the right of the find entry */
-        Button button_previous = get_button (Stock.GO_UP);
-        Button button_next = get_button (Stock.GO_DOWN);
-        Button button_close = get_button (Stock.CLOSE);
+        Button button_previous = get_button ("go-up");
+        Button button_next = get_button ("go-down");
+        Button button_close = get_button ("window-close");
 
         find_grid.add (button_previous);
         find_grid.add (button_next);
@@ -178,7 +178,7 @@ public class SearchAndReplace : GLib.Object
         _replace_grid.add (_entry_replace);
 
         /* Buttons at the right of the replace entry */
-        Button button_replace = get_button (Stock.FIND_AND_REPLACE);
+        Button button_replace = get_button ("edit-find-replace");
         button_replace.set_tooltip_text (_("Replace"));
 
         // replace all: image + label
@@ -189,7 +189,7 @@ public class SearchAndReplace : GLib.Object
         replace_all_grid.set_orientation (Orientation.HORIZONTAL);
         replace_all_grid.set_column_spacing (8);
 
-        Image image = new Image.from_stock (Stock.FIND_AND_REPLACE, IconSize.MENU);
+        Image image = new Image.from_icon_name ("edit-find-replace", IconSize.MENU);
         replace_all_grid.add (image);
 
         Label label = new Label (_("All"));
@@ -341,10 +341,10 @@ public class SearchAndReplace : GLib.Object
         });
     }
 
-    private Button get_button (string stock_id)
+    private Button get_button (string icon_name)
     {
         Button button = new Button ();
-        Image image = new Image.from_stock (stock_id, IconSize.MENU);
+        Image image = new Image.from_icon_name (icon_name, IconSize.MENU);
         button.add (image);
         button.set_relief (ReliefStyle.NONE);
         return button;

@@ -34,7 +34,7 @@ public class PreferencesDialog : Dialog
 
         // reset all button
         Button reset_button = new Button.with_label (_("Reset All"));
-        Image image = new Image.from_stock (Stock.CLEAR, IconSize.MENU);
+        Image image = new Image.from_icon_name ("edit-clear", IconSize.MENU);
         reset_button.set_image (image);
         reset_button.set_tooltip_text (_("Reset all preferences"));
         reset_button.show_all ();

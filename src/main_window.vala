@@ -901,7 +901,7 @@ public class MainWindow : Window
                 confirmation.add_button (Stock.CANCEL, ResponseType.CANCEL);
 
                 Button button_replace = new Button.with_label (_("Replace"));
-                Image icon = new Image.from_stock (Stock.SAVE_AS, IconSize.BUTTON);
+                Image icon = new Image.from_icon_name ("document-save-as", IconSize.BUTTON);
                 button_replace.set_image (icon);
                 confirmation.add_action_widget (button_replace, ResponseType.YES);
                 button_replace.show ();
