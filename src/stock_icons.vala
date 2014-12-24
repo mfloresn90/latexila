@@ -31,7 +31,6 @@ public class StockIcons
         register_new_stock_icons ();
 
         add_theme_icon_to_stock ("image-x-generic", "image");
-        add_theme_icon_to_stock ("x-office-presentation", "presentation");
     }
 
     private void add_theme_icon_to_stock (string icon_name, string stock_id)

@@ -195,7 +195,7 @@ public class LatexMenu : Gtk.ActionGroup
 
         // LaTeX: Presentation
 
-        { "Presentation", "presentation", "_Presentation" },
+        { "Presentation", "x-office-presentation", "_Presentation" },
         { "PresentationFrame", null, "\\begin{frame}", null,
             N_("Frame - \\begin{frame}"), on_present_frame },
         { "PresentationBlock", null, "\\begin{block}", null,
@@ -457,7 +457,7 @@ public class LatexMenu : Gtk.ActionGroup
             _("References"), "references");
 
         Gtk.Action presentation_env = get_menu_tool_action ("PresentationToolItem",
-            _("Presentation Environments"), "presentation");
+            _("Presentation Environments"), "x-office-presentation");
 
         Gtk.Action math_env = get_menu_tool_action ("MathEnvironmentsToolItem",
             _("Math Environments"), "math");
@@ -478,9 +478,9 @@ public class LatexMenu : Gtk.ActionGroup
         add_action (math_right_del);
     }
 
-    private Gtk.Action get_menu_tool_action (string name, string? label, string? stock_id)
+    private Gtk.Action get_menu_tool_action (string name, string? label, string? icon_name)
     {
-        Gtk.Action action = new MenuToolAction (name, label, label, stock_id);
+        Gtk.Action action = new MenuToolAction (name, label, label, icon_name);
         Activatable menu_tool_button = (Activatable) new MenuToolButton (null, null);
         menu_tool_button.set_related_action (action);
         return action;

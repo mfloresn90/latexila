@@ -21,9 +21,9 @@ using Gtk;
 
 public class MenuToolAction : Gtk.Action
 {
-    public MenuToolAction (string name, string? label, string? tooltip, string? stock_id)
+    public MenuToolAction (string name, string? label, string? tooltip, string? icon_name)
     {
-        GLib.Object (name: name, label: label, tooltip: tooltip, stock_id: stock_id);
+        GLib.Object (name: name, label: label, tooltip: tooltip, icon_name: icon_name);
         unowned GtkActionClass ac = (GtkActionClass) get_class ();
         ac.toolbar_item_type = typeof (MenuToolButton);
     }
