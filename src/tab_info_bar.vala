@@ -81,11 +81,4 @@ public class TabInfoBar : InfoBar
                 destroy ();
         });
     }
-
-    public void add_button_with_text (string text, string icon_name, int response_id)
-    {
-        Button button = add_button (text, response_id) as Button;
-        Image image = new Image.from_icon_name (icon_name, IconSize.BUTTON);
-        button.set_image (image);
-    }
 }

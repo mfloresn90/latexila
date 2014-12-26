@@ -286,7 +286,7 @@ public class DocumentTab : Grid
 
             TabInfoBar infobar = add_message (primary_msg, secondary_msg,
                 MessageType.WARNING);
-            infobar.add_button_with_text (_("_Reload"), "view-refresh", ResponseType.OK);
+            infobar.add_button (_("_Reload"), ResponseType.OK);
             infobar.add_button (_("_Cancel"), ResponseType.CANCEL);
 
             infobar.response.connect ((response_id) =>
