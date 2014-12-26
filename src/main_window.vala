@@ -22,52 +22,52 @@ using Gtk;
 public class MainWindow : Window
 {
     // for the menu and the toolbar
-    // name, stock_id, label, accelerator, tooltip, callback
+    // name, icon-name, label, accelerator, tooltip, callback
     private const Gtk.ActionEntry[] _action_entries =
     {
-        { "FileQuit", Stock.QUIT, null, null,
+        { "FileQuit", "application-exit", N_("_Quit"), "<Control>Q",
             N_("Quit the program"), on_quit },
 
         // View
         { "View", null, N_("_View") },
-        { "ViewZoomIn", Stock.ZOOM_IN, N_("Zoom _In"), "<Control>plus",
+        { "ViewZoomIn", "zoom-in", N_("Zoom _In"), "<Control>plus",
             N_("Enlarge the font"), on_view_zoom_in },
-        { "ViewZoomOut", Stock.ZOOM_OUT, N_("Zoom _Out"), "<Control>minus",
+        { "ViewZoomOut", "zoom-out", N_("Zoom _Out"), "<Control>minus",
             N_("Shrink the font"), on_view_zoom_out },
-        { "ViewZoomReset", Stock.ZOOM_100, N_("_Reset Zoom"), "<Control>0",
+        { "ViewZoomReset", "zoom-original", N_("_Reset Zoom"), "<Control>0",
             N_("Reset the size of the font"), on_view_zoom_reset },
 
         // Search
         { "Search", null, N_("_Search") },
-        { "SearchFind", Stock.FIND, null, null,
+        { "SearchFind", "edit-find", N_("_Find"), "<Control>F",
             N_("Search for text"), on_search_find },
-        { "SearchReplace", Stock.FIND_AND_REPLACE, null, null,
+        { "SearchReplace", "edit-find-replace", N_("Find and _Replace"), "<Control>R",
             N_("Search for and replace text"), on_search_replace },
-        { "SearchGoToLine", Stock.JUMP_TO, N_("_Go to Line..."), "<Control>G",
+        { "SearchGoToLine", "go-jump", N_("_Go to Line..."), "<Control>G",
             N_("Go to a specific line"), on_search_goto_line },
         { "SearchForward", null, N_("_Search Forward"), "<Control><Alt>F",
             N_("Jump to the associated position in the PDF file"), on_search_forward },
 
         // Projects
         { "Projects", null, N_("_Projects") },
-        { "ProjectsNew", Stock.NEW, N_("_New Project"), null,
+        { "ProjectsNew", "document-new", N_("_New Project"), "",
             N_("Create a new project"), on_projects_new },
-        { "ProjectsConfigCurrent", Stock.PROPERTIES, N_("_Configure Current Project"),
+        { "ProjectsConfigCurrent", "document-properties", N_("_Configure Current Project"),
             null, N_("Change the main file of the current project"),
             on_projects_config_current },
-        { "ProjectsManage", Stock.PREFERENCES, N_("_Manage Projects"), null,
+        { "ProjectsManage", "preferences-system", N_("_Manage Projects"), null,
             N_("Manage Projects"), on_projects_manage },
 
         // Help
         { "Help", null, N_("_Help") },
-        { "HelpContents", Stock.HELP, N_("_Contents"), "<Release>F1",
+        { "HelpContents", "help-browser", N_("_Contents"), "<Release>F1",
             N_("Open the LaTeXila documentation"), on_help_contents },
         { "HelpLatexReference", null, N_("_LaTeX Reference"), null,
             N_("The Kile LaTeX Reference"), on_help_latex_reference },
         { "HelpDonate", null, N_("_Donate"), null,
             N_("Donate to demonstrate your appreciation of LaTeXila and help its future development"),
             on_help_donate },
-        { "HelpAbout", Stock.ABOUT, null, null,
+        { "HelpAbout", "help-about", N_("_About"), null,
             N_("About LaTeXila"), on_about_dialog }
     };
 

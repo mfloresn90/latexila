@@ -63,12 +63,12 @@ public class LatexMenu : Gtk.ActionGroup
 
         // LaTeX: Environments
 
-        { "Environments", Stock.JUSTIFY_CENTER, "_Environments" },
-        { "EnvCenter", Stock.JUSTIFY_CENTER, "\\begin{_center}", null,
+        { "Environments", "format-justify-center", "_Environments" },
+        { "EnvCenter", "format-justify-center", "\\begin{_center}", null,
             N_("Center - \\begin{center}"), on_env_center },
-        { "EnvLeft", Stock.JUSTIFY_LEFT, "\\begin{flush_left}", null,
+        { "EnvLeft", "format-justify-left", "\\begin{flush_left}", null,
             N_("Align Left - \\begin{flushleft}"), on_env_left },
-        { "EnvRight", Stock.JUSTIFY_RIGHT, "\\begin{flush_right}", null,
+        { "EnvRight", "format-justify-right", "\\begin{flush_right}", null,
             N_("Align Right - \\begin{flushright}"), on_env_right },
         { "EnvFigure", "image-x-generic", "\\begin{_figure}", null,
             N_("Figure - \\begin{figure}"), on_env_figure },
