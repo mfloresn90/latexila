@@ -409,7 +409,7 @@ public class MainWindow : Window
         // Structure
         Structure structure = new Structure (this);
         _main_window_structure.set_structure (structure);
-        side_panel.add_component (_("Structure"), Stock.INDEX, structure);
+        side_panel.add_component (_("Structure"), Stock.INDEX, structure); // FIXME don't use Stock
 
         side_panel.restore_state ();
 
@@ -765,13 +765,13 @@ public class MainWindow : Window
                 _("Save changes to document \"%s\" before closing?"),
                 tab.label_text);
 
-            dialog.add_buttons (_("Close without Saving"), ResponseType.CLOSE,
-                Stock.CANCEL, ResponseType.CANCEL);
+            dialog.add_buttons (_("Close _without Saving"), ResponseType.CLOSE,
+                _("_Cancel"), ResponseType.CANCEL);
 
             if (tab.document.location == null)
-                dialog.add_button (Stock.SAVE_AS, ResponseType.ACCEPT);
+                dialog.add_button (_("Save _As"), ResponseType.ACCEPT);
             else
-                dialog.add_button (Stock.SAVE, ResponseType.ACCEPT);
+                dialog.add_button (_("_Save"), ResponseType.ACCEPT);
 
             while (true)
             {
@@ -862,8 +862,8 @@ public class MainWindow : Window
 
         FileChooserDialog file_chooser = new FileChooserDialog (_("Save File"), this,
             FileChooserAction.SAVE,
-            Stock.CANCEL, ResponseType.CANCEL,
-            Stock.SAVE, ResponseType.ACCEPT
+            _("_Cancel"), ResponseType.CANCEL,
+            _("_Save"), ResponseType.ACCEPT
         );
 
         if (doc.location == null)
@@ -898,13 +898,8 @@ public class MainWindow : Window
                     _("A file named \"%s\" already exists. Do you want to replace it?"),
                     file.get_basename ());
 
-                confirmation.add_button (Stock.CANCEL, ResponseType.CANCEL);
-
-                Button button_replace = new Button.with_label (_("Replace"));
-                Image icon = new Image.from_icon_name ("document-save-as", IconSize.BUTTON);
-                button_replace.set_image (icon);
-                confirmation.add_action_widget (button_replace, ResponseType.YES);
-                button_replace.show ();
+                confirmation.add_button (_("_Cancel"), ResponseType.CANCEL);
+                confirmation.add_button (_("_Replace"), ResponseType.YES);
 
                 int response = confirmation.run ();
                 confirmation.destroy ();
