@@ -212,9 +212,9 @@ public class FileBrowser : Grid
 
     private ToolButton get_home_button ()
     {
-        ToolButton home_button = new ToolButton.from_stock (Stock.HOME);
+        ToolButton home_button = new ToolButton (null, null);
+        home_button.icon_name = "go-home";
         home_button.tooltip_text = _("Go to the home directory");
-        home_button.label = home_button.tooltip_text;
 
         home_button.clicked.connect (() =>
         {
@@ -227,9 +227,9 @@ public class FileBrowser : Grid
 
     private ToolButton get_parent_button ()
     {
-        _parent_button = new ToolButton.from_stock (Stock.GO_UP);
+        _parent_button = new ToolButton (null, null);
+        _parent_button.icon_name = "go-up";
         _parent_button.tooltip_text = _("Go to the parent directory");
-        _parent_button.label = _parent_button.tooltip_text;
 
         _parent_button.clicked.connect (() =>
         {
@@ -243,9 +243,9 @@ public class FileBrowser : Grid
 
     private ToolButton get_jump_button ()
     {
-        ToolButton jump_button = new ToolButton.from_stock (Stock.JUMP_TO);
+        ToolButton jump_button = new ToolButton (null, null);
+        jump_button.icon_name = "go-jump";
         jump_button.tooltip_text = _("Go to the active document directory");
-        jump_button.label = jump_button.tooltip_text;
 
         jump_button.clicked.connect (() =>
         {
@@ -300,7 +300,8 @@ public class FileBrowser : Grid
 
         /* Tool button */
 
-        ToolButton button = new ToolButton.from_stock (Stock.PROPERTIES);
+        ToolButton button = new ToolButton (null, null);
+        button.icon_name = "document-properties";
 
         button.clicked.connect (() =>
         {
@@ -574,8 +575,7 @@ public class FileBrowser : Grid
         switch (file_extension)
         {
             case ".tex":
-                // TODO find a replacement
-                return Stock.EDIT;
+                return Stock.EDIT; // TODO find a replacement
 
             case ".pdf":
                 return "view_pdf";
