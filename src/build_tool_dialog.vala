@@ -77,14 +77,14 @@ public class BuildToolDialog : GLib.Object
 
     private void set_read_only ()
     {
-        _dialog.add_button (Stock.CLOSE, ResponseType.CANCEL);
+        _dialog.add_button (_("_Close"), ResponseType.CANCEL);
         _dialog.title = _("Build Tool (read-only)");
     }
 
     private void set_editable ()
     {
-        _dialog.add_button (Stock.CANCEL, ResponseType.CANCEL);
-        _dialog.add_button (Stock.OK, ResponseType.OK);
+        _dialog.add_button (_("_Cancel"), ResponseType.CANCEL);
+        _dialog.add_button (_("_OK"), ResponseType.OK);
         _dialog.title = _("Build Tool");
     }
 
@@ -162,7 +162,7 @@ public class BuildToolDialog : GLib.Object
         add_icon ("compile_dvi", "LaTeX → DVI");
         add_icon ("compile_pdf", "LaTeX → PDF");
         add_icon ("compile_ps", "LaTeX → PS");
-        add_icon (Stock.CONVERT, _("Convert"));
+        add_icon (Stock.CONVERT, _("Convert")); // FIXME don't use Stock
         add_icon ("text-x-generic", _("View File"));
         add_icon ("view_dvi", _("View DVI"));
         add_icon ("view_pdf", _("View PDF"));

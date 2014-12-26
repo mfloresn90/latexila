@@ -239,8 +239,8 @@ public class CleanBuildFiles : GLib.Object
         Dialog dialog = new Dialog.with_buttons (null,
             _main_window,
             DialogFlags.DESTROY_WITH_PARENT,
-            Stock.CANCEL, ResponseType.CANCEL,
-            Stock.DELETE, ResponseType.ACCEPT
+            _("_Cancel"), ResponseType.CANCEL,
+            _("_Delete"), ResponseType.ACCEPT
         );
 
         Grid grid = new Grid ();

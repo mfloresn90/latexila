@@ -576,8 +576,8 @@ public class Document : Gtk.SourceBuffer
             _("Do you want to save the file in a safer place?"),
             MessageType.WARNING);
 
-        infobar.add_button (Stock.SAVE_AS, ResponseType.YES);
-        infobar.add_button (Stock.CANCEL, ResponseType.NO);
+        infobar.add_button (_("Save _As"), ResponseType.YES);
+        infobar.add_button (_("Cancel"), ResponseType.NO);
 
         infobar.response.connect ((response_id) =>
         {

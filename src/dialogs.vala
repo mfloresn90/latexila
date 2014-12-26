@@ -37,9 +37,9 @@ namespace Dialogs
         Dialog dialog = new Dialog.with_buttons (null,
             window,
             DialogFlags.DESTROY_WITH_PARENT,
-            _("Close without Saving"), ResponseType.CLOSE,
-            Stock.CANCEL, ResponseType.CANCEL,
-            Stock.SAVE, ResponseType.ACCEPT,
+            _("Close _without Saving"), ResponseType.CLOSE,
+            _("_Cancel"), ResponseType.CANCEL,
+            _("_Save"), ResponseType.ACCEPT,
             null);
 
         Grid grid = new Grid ();

@@ -52,7 +52,7 @@ public class BuildToolsPreferences : GLib.Object
 
         _dialog = new Dialog.with_buttons (_("Build Tools"), main_window,
             DialogFlags.DESTROY_WITH_PARENT,
-            Stock.CLOSE, ResponseType.ACCEPT);
+            _("_Close"), ResponseType.ACCEPT);
 
         Grid hgrid = new Grid ();
         hgrid.set_orientation (Orientation.HORIZONTAL);
@@ -330,8 +330,8 @@ public class BuildToolsPreferences : GLib.Object
                 _("Do you really want to delete the build tool \"%s\"?"),
                 label);
 
-            dialog.add_buttons (Stock.CANCEL, ResponseType.CANCEL,
-                Stock.DELETE, ResponseType.YES);
+            dialog.add_buttons (_("_Cancel"), ResponseType.CANCEL,
+                _("_Delete"), ResponseType.YES);
 
             if (dialog.run () == ResponseType.YES)
             {
