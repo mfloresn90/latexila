@@ -33,13 +33,13 @@ public class PreferencesDialog : Dialog
         border_width = 5;
 
         // reset all button
-        Button reset_button = new Button.with_label (_("Reset All"));
+        Button reset_button = new Button.with_mnemonic (_("_Reset All"));
         reset_button.set_tooltip_text (_("Reset all preferences"));
         reset_button.show_all ();
         add_action_widget (reset_button, ResponseType.APPLY);
 
         // close button
-        add_button (Stock.CLOSE, ResponseType.CLOSE);
+        add_button (_("_Close"), ResponseType.CLOSE);
 
         response.connect ((response_id) =>
         {
@@ -114,8 +114,8 @@ public class PreferencesDialog : Dialog
             MessageType.QUESTION, ButtonsType.NONE,
             "%s", _("Do you really want to reset all preferences?"));
 
-        dialog.add_button (Stock.CANCEL, ResponseType.CANCEL);
-        dialog.add_button (_("Reset All"), ResponseType.YES);
+        dialog.add_button (_("_Cancel"), ResponseType.CANCEL);
+        dialog.add_button (_("_Reset All"), ResponseType.YES);
 
         int resp = dialog.run ();
         dialog.destroy ();

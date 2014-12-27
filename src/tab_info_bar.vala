@@ -74,7 +74,7 @@ public class TabInfoBar : InfoBar
 
     public void add_ok_button ()
     {
-        add_button (Stock.OK, ResponseType.OK);
+        add_button (_("_OK"), ResponseType.OK);
         response.connect ((response_id) =>
         {
             if (response_id == ResponseType.OK)

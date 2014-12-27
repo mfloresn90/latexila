@@ -33,8 +33,8 @@ public class OpenTemplateDialog
 
         _dialog = new Dialog.with_buttons (_("New File..."), main_window,
             DialogFlags.DESTROY_WITH_PARENT,
-            Stock.CANCEL, ResponseType.REJECT,
-            Stock.OK, ResponseType.ACCEPT
+            _("_Cancel"), ResponseType.REJECT,
+            _("_OK"), ResponseType.ACCEPT
         );
 
         Box content_area = _dialog.get_content_area () as Box;
@@ -173,8 +173,8 @@ public class CreateTemplateDialog : Dialog
         title = _("New Template...");
         set_transient_for (parent);
         destroy_with_parent = true;
-        add_button (Stock.CANCEL, ResponseType.REJECT);
-        add_button (Stock.OK, ResponseType.ACCEPT);
+        add_button (_("_Cancel"), ResponseType.REJECT);
+        add_button (_("_OK"), ResponseType.ACCEPT);
 
         Box content_area = get_content_area () as Box;
         content_area.homogeneous = false;
@@ -240,8 +240,8 @@ public class DeleteTemplateDialog : Dialog
     public DeleteTemplateDialog (MainWindow parent)
     {
         title = _("Delete Template(s)...");
-        add_button (Stock.DELETE, ResponseType.ACCEPT);
-        add_button (Stock.CLOSE, ResponseType.REJECT);
+        add_button (_("_Delete"), ResponseType.ACCEPT);
+        add_button (_("_Close"), ResponseType.REJECT);
         set_transient_for (parent);
         destroy_with_parent = true;
 

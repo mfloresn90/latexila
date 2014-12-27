@@ -153,7 +153,7 @@ public class SymbolsView : Grid
 
     private void create_clear_button ()
     {
-        _clear_button = new Button.from_stock (Stock.CLEAR);
+        _clear_button = new Button.with_mnemonic (_("_Clear"));
 
         _clear_button.clicked.connect (() =>
         {

@@ -341,7 +341,6 @@ public class Templates : GLib.Object
                 return "text-x-preview";
 
             case "article":
-                // Same as Stock.FILE (but it's the theme icon name)
                 return "text-x-generic";
 
             case "report":
