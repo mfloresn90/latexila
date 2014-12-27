@@ -313,22 +313,6 @@ namespace Utils
         return null;
     }
 
-    private Dialog get_reset_all_confirm_dialog (Gtk.Window window, string msg)
-    {
-        Dialog dialog = new MessageDialog (window, DialogFlags.DESTROY_WITH_PARENT,
-            MessageType.QUESTION, ButtonsType.NONE, "%s", msg);
-
-        dialog.add_button (Stock.CANCEL, ResponseType.CANCEL);
-
-        Button button = new Button.with_label (_("Reset All"));
-        Image image = new Image.from_icon_name ("edit-clear", IconSize.BUTTON);
-        button.set_image (image);
-        button.show_all ();
-        dialog.add_action_widget (button, ResponseType.YES);
-
-        return dialog;
-    }
-
 
     /*************************************************************************/
     // Misc

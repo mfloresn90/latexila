@@ -34,8 +34,6 @@ public class PreferencesDialog : Dialog
 
         // reset all button
         Button reset_button = new Button.with_label (_("Reset All"));
-        Image image = new Image.from_icon_name ("edit-clear", IconSize.MENU);
-        reset_button.set_image (image);
         reset_button.set_tooltip_text (_("Reset all preferences"));
         reset_button.show_all ();
         add_action_widget (reset_button, ResponseType.APPLY);
@@ -112,10 +110,13 @@ public class PreferencesDialog : Dialog
 
     private void reset_all ()
     {
-        // build tools are not reset, since there is another button for that
+        Dialog dialog = new MessageDialog (this, DialogFlags.DESTROY_WITH_PARENT,
+            MessageType.QUESTION, ButtonsType.NONE,
+            "%s", _("Do you really want to reset all preferences?"));
 
-        Dialog dialog = Utils.get_reset_all_confirm_dialog (this,
-            _("Do you really want to reset all preferences?"));
+        dialog.add_button (Stock.CANCEL, ResponseType.CANCEL);
+        dialog.add_button (_("Reset All"), ResponseType.YES);
+
         int resp = dialog.run ();
         dialog.destroy ();
         if (resp != ResponseType.YES)
