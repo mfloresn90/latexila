@@ -314,6 +314,7 @@ public class MainWindowBuildTools
         Gtk.Action action = new Gtk.Action (action_name, build_tool.label,
             build_tool.get_description (), null);
         action.icon_name = build_tool.icon;
+        action.set_always_show_image (true);
 
         // F2 -> F11
         // (F1 = help, F12 = show/hide side panel)
