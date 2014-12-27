@@ -6,6 +6,9 @@
   </gresource>
 
   <gresource prefix="/org/gnome/latexila/icons/16x16/actions">
+    <file alias="compile_dvi.png" preprocess="to-pixdata">../data/icons/16x16/actions/compile_dvi.png</file>
+    <file alias="compile_pdf.png" preprocess="to-pixdata">../data/icons/16x16/actions/compile_pdf.png</file>
+    <file alias="compile_ps.png" preprocess="to-pixdata">../data/icons/16x16/actions/compile_ps.png</file>
     <file alias="list-description.png" preprocess="to-pixdata">../data/icons/16x16/actions/list-description.png</file>
     <file alias="list-enumerate.png" preprocess="to-pixdata">../data/icons/16x16/actions/list-enumerate.png</file>
     <file alias="list-itemize.png" preprocess="to-pixdata">../data/icons/16x16/actions/list-itemize.png</file>
@@ -28,6 +31,12 @@
     <file alias="tree_subsubsection.png" preprocess="to-pixdata">../data/icons/16x16/actions/tree_subsubsection.png</file>
     <file alias="tree_todo.png" preprocess="to-pixdata">../data/icons/16x16/actions/tree_todo.png</file>
     <file alias="view_log.png" preprocess="to-pixdata">../data/icons/16x16/actions/view_log.png</file>
+  </gresource>
+
+  <gresource prefix="/org/gnome/latexila/icons/16x16/mimetypes">
+    <file alias="view_dvi.png" preprocess="to-pixdata">../data/icons/16x16/mimetypes/view_dvi.png</file>
+    <file alias="view_pdf.png" preprocess="to-pixdata">../data/icons/16x16/mimetypes/view_pdf.png</file>
+    <file alias="view_ps.png" preprocess="to-pixdata">../data/icons/16x16/mimetypes/view_ps.png</file>
   </gresource>
 
   <gresource prefix="/org/gnome/latexila/icons/24x24/actions">
