@@ -9,6 +9,8 @@
     <file alias="compile_dvi.png" preprocess="to-pixdata">../data/icons/16x16/actions/compile_dvi.png</file>
     <file alias="compile_pdf.png" preprocess="to-pixdata">../data/icons/16x16/actions/compile_pdf.png</file>
     <file alias="compile_ps.png" preprocess="to-pixdata">../data/icons/16x16/actions/compile_ps.png</file>
+    <file alias="completion_cmd.png" preprocess="to-pixdata">../data/icons/16x16/actions/completion_cmd.png</file>
+    <file alias="gray-square.png" preprocess="to-pixdata">../data/icons/16x16/actions/gray-square.png</file>
     <file alias="list-description.png" preprocess="to-pixdata">../data/icons/16x16/actions/list-description.png</file>
     <file alias="list-enumerate.png" preprocess="to-pixdata">../data/icons/16x16/actions/list-enumerate.png</file>
     <file alias="list-itemize.png" preprocess="to-pixdata">../data/icons/16x16/actions/list-itemize.png</file>
@@ -61,10 +63,8 @@
     <file alias="compile_dvi.png" preprocess="to-pixdata">../data/icons/24x24/actions/compile_dvi.png</file>
     <file alias="compile_pdf.png" preprocess="to-pixdata">../data/icons/24x24/actions/compile_pdf.png</file>
     <file alias="compile_ps.png" preprocess="to-pixdata">../data/icons/24x24/actions/compile_ps.png</file>
-    <file alias="completion_cmd.png" preprocess="to-pixdata">../data/icons/24x24/actions/completion_cmd.png</file>
     <file alias="delimiters-left.png" preprocess="to-pixdata">../data/icons/24x24/actions/delimiters-left.png</file>
     <file alias="delimiters-right.png" preprocess="to-pixdata">../data/icons/24x24/actions/delimiters-right.png</file>
-    <file alias="gray-square.png" preprocess="to-pixdata">../data/icons/24x24/actions/gray-square.png</file>
     <file alias="italic.png" preprocess="to-pixdata">../data/icons/24x24/actions/italic.png</file>
     <file alias="list-description.png" preprocess="to-pixdata">../data/icons/24x24/actions/list-description.png</file>
     <file alias="list-enumerate.png" preprocess="to-pixdata">../data/icons/24x24/actions/list-enumerate.png</file>
