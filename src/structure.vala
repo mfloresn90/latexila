@@ -308,7 +308,7 @@ public class Structure : Grid
         _list_view_sw = Utils.add_scrollbar (_list_view);
         _list_view_sw.set_shadow_type (ShadowType.IN);
 
-        _vpaned.add1 (_list_view_sw);
+        _vpaned.pack1 (_list_view_sw, false, false);
     }
 
     private void init_tree_view ()
