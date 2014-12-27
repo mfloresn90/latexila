@@ -34,9 +34,9 @@
   </gresource>
 
   <gresource prefix="/org/gnome/latexila/icons/16x16/mimetypes">
-    <file alias="view_dvi.png" preprocess="to-pixdata">../data/icons/16x16/mimetypes/view_dvi.png</file>
-    <file alias="view_pdf.png" preprocess="to-pixdata">../data/icons/16x16/mimetypes/view_pdf.png</file>
-    <file alias="view_ps.png" preprocess="to-pixdata">../data/icons/16x16/mimetypes/view_ps.png</file>
+    <file alias="latexila-dvi.png" preprocess="to-pixdata">../data/icons/16x16/mimetypes/latexila-dvi.png</file>
+    <file alias="latexila-pdf.png" preprocess="to-pixdata">../data/icons/16x16/mimetypes/latexila-pdf.png</file>
+    <file alias="latexila-ps.png" preprocess="to-pixdata">../data/icons/16x16/mimetypes/latexila-ps.png</file>
   </gresource>
 
   <gresource prefix="/org/gnome/latexila/icons/24x24/actions">
@@ -101,9 +101,9 @@
   </gresource>
 
   <gresource prefix="/org/gnome/latexila/icons/24x24/mimetypes">
-    <file alias="view_dvi.png" preprocess="to-pixdata">../data/icons/24x24/mimetypes/view_dvi.png</file>
-    <file alias="view_pdf.png" preprocess="to-pixdata">../data/icons/24x24/mimetypes/view_pdf.png</file>
-    <file alias="view_ps.png" preprocess="to-pixdata">../data/icons/24x24/mimetypes/view_ps.png</file>
+    <file alias="latexila-dvi.png" preprocess="to-pixdata">../data/icons/24x24/mimetypes/latexila-dvi.png</file>
+    <file alias="latexila-pdf.png" preprocess="to-pixdata">../data/icons/24x24/mimetypes/latexila-pdf.png</file>
+    <file alias="latexila-ps.png" preprocess="to-pixdata">../data/icons/24x24/mimetypes/latexila-ps.png</file>
   </gresource>
 
   <gresource prefix="/org/gnome/latexila/icons">

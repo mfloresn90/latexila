@@ -578,14 +578,14 @@ public class FileBrowser : Grid
                 return Stock.EDIT; // TODO find a replacement
 
             case ".pdf":
-                return "view_pdf";
+                return "latexila-pdf";
 
             case ".dvi":
-                return "view_dvi";
+                return "latexila-dvi";
 
             case ".ps":
             case ".eps":
-                return "view_ps";
+                return "latexila-ps";
 
             case ".png":
             case ".jpg":

@@ -164,9 +164,9 @@ public class BuildToolDialog : GLib.Object
         add_icon ("compile_ps", "LaTeX → PS");
         add_icon (Stock.CONVERT, _("Convert")); // FIXME don't use Stock
         add_icon ("text-x-generic", _("View File"));
-        add_icon ("view_dvi", _("View DVI"));
-        add_icon ("view_pdf", _("View PDF"));
-        add_icon ("view_ps", _("View PS"));
+        add_icon ("latexila-dvi", _("View DVI"));
+        add_icon ("latexila-pdf", _("View PDF"));
+        add_icon ("latexila-ps", _("View PS"));
     }
 
     private void add_icon (string icon_name, string label)

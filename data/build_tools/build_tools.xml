@@ -39,19 +39,19 @@
 
   <!-- View DVI/PDF/PS -->
 
-  <tool id="6" enabled="true" extensions=".tex .pdf" icon="view_pdf">
+  <tool id="6" enabled="true" extensions=".tex .pdf" icon="latexila-pdf">
     <label>View PDF</label>
     <description>View the PDF file</description>
     <open>$shortname.pdf</open>
   </tool>
 
-  <tool id="7" enabled="true" extensions=".tex .dvi" icon="view_dvi">
+  <tool id="7" enabled="true" extensions=".tex .dvi" icon="latexila-dvi">
     <label>View DVI</label>
     <description>View the DVI file</description>
     <open>$shortname.dvi</open>
   </tool>
 
-  <tool id="8" enabled="true" extensions=".tex .ps" icon="view_ps">
+  <tool id="8" enabled="true" extensions=".tex .ps" icon="latexila-ps">
     <label>View PS</label>
     <description>View the PostScript file</description>
     <open>$shortname.ps</open>

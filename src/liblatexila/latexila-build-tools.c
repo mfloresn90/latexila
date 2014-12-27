@@ -175,6 +175,15 @@ parser_start_element (GMarkupParseContext  *context,
                 g_object_set (cur_tool, "icon", "system-run", NULL);
               else if (g_str_equal (attribute_values[i], "gtk-file"))
                 g_object_set (cur_tool, "icon", "text-x-generic", NULL);
+
+              /* Migrate from old icon names specific to latexila. */
+              else if (g_str_equal (attribute_values[i], "view_dvi"))
+                g_object_set (cur_tool, "icon", "latexila-dvi", NULL);
+              else if (g_str_equal (attribute_values[i], "view_pdf"))
+                g_object_set (cur_tool, "icon", "latexila-pdf", NULL);
+              else if (g_str_equal (attribute_values[i], "view_ps"))
+                g_object_set (cur_tool, "icon", "latexila-ps", NULL);
+
               else
                 g_object_set (cur_tool, "icon", attribute_values[i], NULL);
             }

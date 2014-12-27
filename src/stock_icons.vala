@@ -106,10 +106,10 @@ namespace StockIcons
         add_theme_icon_to_stock ("tree_todo");
         add_theme_icon_to_stock ("typewriter");
         add_theme_icon_to_stock ("underline");
-        add_theme_icon_to_stock ("view_dvi");
+        add_theme_icon_to_stock ("latexila-dvi");
         add_theme_icon_to_stock ("view_log");
-        add_theme_icon_to_stock ("view_pdf");
-        add_theme_icon_to_stock ("view_ps");
+        add_theme_icon_to_stock ("latexila-pdf");
+        add_theme_icon_to_stock ("latexila-ps");
     }
 
     private void add_theme_icon_to_stock (string icon_name)
