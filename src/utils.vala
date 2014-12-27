@@ -297,7 +297,7 @@ namespace Utils
         grid.add (label);
 
         // left margin for the widget
-        widget.set_margin_left (12);
+        widget.set_margin_start (12);
         grid.add (widget);
 
         return grid;

@@ -39,7 +39,7 @@ public class SidePanel : Grid
         _settings = new GLib.Settings ("org.gnome.latexila.preferences.ui");
         _components = new Gee.ArrayList<Grid?> ();
 
-        margin_left = 6;
+        margin_start = 6;
         margin_top = 3;
         column_spacing = 3;
         row_spacing = 3;

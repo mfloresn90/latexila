@@ -169,7 +169,7 @@ public class DocumentTab : Grid
         update_label_text ();
 
         Gedit.CloseButton close_button = new Gedit.CloseButton ();
-        close_button.set_margin_left (2);
+        close_button.set_margin_start (2);
         close_button.tooltip_text = _("Close document");
         close_button.clicked.connect (() => this.close_document ());
 

@@ -38,8 +38,8 @@ public class GotoLine : Grid
         close_button.clicked.connect (() => hide ());
 
         Label label = new Label (_("Go to Line:"));
-        label.margin_left = 2;
-        label.margin_right = 2;
+        label.margin_start = 2;
+        label.margin_end = 2;
         add (label);
 
         entry = new Entry ();
@@ -161,7 +161,7 @@ public class SearchAndReplace : GLib.Object
 
         /* Information label at the right of the close button */
         _info_label = new Label (null);
-        _info_label.set_margin_left (12);
+        _info_label.set_margin_start (12);
         find_grid.add (_info_label);
 
         /* Replace entry */

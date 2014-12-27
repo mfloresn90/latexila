@@ -578,7 +578,7 @@ public class BuildToolDialog : GLib.Object
         grid.attach (arrow, 1, 0, 1, 1);
         grid.set_hexpand (false);
 
-        _entry_label.set_margin_left (12);
+        _entry_label.set_margin_start (12);
         grid.attach (_entry_label, 0, 1, 2, 1);
 
         return grid;
