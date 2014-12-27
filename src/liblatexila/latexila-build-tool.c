@@ -558,10 +558,9 @@ query_exists_cb (GFile        *file,
 
   /* Show URI */
 
-  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (data->build_view)),
-                uri,
-                GDK_CURRENT_TIME,
-                &error);
+  latexila_utils_show_uri (gtk_widget_get_screen (GTK_WIDGET (data->build_view)),
+                           uri,
+                           &error);
 
   if (error != NULL)
     {
