@@ -24,53 +24,109 @@
 // See also:
 // data/images/stock-icons/stock-icons.gresource.xml
 
-public class StockIcons
+namespace StockIcons
 {
-    public StockIcons ()
+    // It seems that GtkActionEntry doesn't support custom icons from the icon theme
+    // (added with latexila_utils_register_icons()).
+    // So add the latexila-specific icons to the stock-ids.
+    public void register_stock_icons ()
     {
-        register_new_stock_icons ();
+        add_theme_icon_to_stock ("accent0");
+        add_theme_icon_to_stock ("accent1");
+        add_theme_icon_to_stock ("accent2");
+        add_theme_icon_to_stock ("accent3");
+        add_theme_icon_to_stock ("accent4");
+        add_theme_icon_to_stock ("accent5");
+        add_theme_icon_to_stock ("accent6");
+        add_theme_icon_to_stock ("accent7");
+        add_theme_icon_to_stock ("accent8");
+        add_theme_icon_to_stock ("accent9");
+        add_theme_icon_to_stock ("accent10");
+        add_theme_icon_to_stock ("accent11");
+        add_theme_icon_to_stock ("accent12");
+        add_theme_icon_to_stock ("accent13");
+        add_theme_icon_to_stock ("accent14");
+        add_theme_icon_to_stock ("accent15");
+        add_theme_icon_to_stock ("badbox");
+        add_theme_icon_to_stock ("blackboard");
+        add_theme_icon_to_stock ("bold");
+        add_theme_icon_to_stock ("character-size");
+        add_theme_icon_to_stock ("compile_dvi");
+        add_theme_icon_to_stock ("compile_pdf");
+        add_theme_icon_to_stock ("compile_ps");
+        add_theme_icon_to_stock ("completion_cmd");
+        add_theme_icon_to_stock ("delimiters-left");
+        add_theme_icon_to_stock ("delimiters-right");
+        add_theme_icon_to_stock ("gray-square");
+        add_theme_icon_to_stock ("italic");
+        add_theme_icon_to_stock ("list-description-size16");
+        add_theme_icon_to_stock ("list-description-size24");
+        add_theme_icon_to_stock ("list-enumerate-size16");
+        add_theme_icon_to_stock ("list-enumerate-size24");
+        add_theme_icon_to_stock ("list-item-size16");
+        add_theme_icon_to_stock ("list-itemize-size16");
+        add_theme_icon_to_stock ("list-itemize-size24");
+        add_theme_icon_to_stock ("math-frac");
+        add_theme_icon_to_stock ("math-nth-root");
+        add_theme_icon_to_stock ("math-square-root");
+        add_theme_icon_to_stock ("math-subscript");
+        add_theme_icon_to_stock ("math-superscript");
+        add_theme_icon_to_stock ("math");
+        add_theme_icon_to_stock ("mathaccent0");
+        add_theme_icon_to_stock ("mathaccent1");
+        add_theme_icon_to_stock ("mathaccent2");
+        add_theme_icon_to_stock ("mathaccent3");
+        add_theme_icon_to_stock ("mathaccent4");
+        add_theme_icon_to_stock ("mathaccent5");
+        add_theme_icon_to_stock ("mathaccent6");
+        add_theme_icon_to_stock ("mathaccent7");
+        add_theme_icon_to_stock ("mathaccent8");
+        add_theme_icon_to_stock ("mathaccent9");
+        add_theme_icon_to_stock ("mathaccent10");
+        add_theme_icon_to_stock ("mathcal");
+        add_theme_icon_to_stock ("mathfrak");
+        add_theme_icon_to_stock ("references");
+        add_theme_icon_to_stock ("roman");
+        add_theme_icon_to_stock ("sans_serif");
+        add_theme_icon_to_stock ("sectioning-size16");
+        add_theme_icon_to_stock ("sectioning-size24");
+        add_theme_icon_to_stock ("slanted");
+        add_theme_icon_to_stock ("small_caps");
+        add_theme_icon_to_stock ("symbol_arrows");
+        add_theme_icon_to_stock ("symbol_delimiters");
+        add_theme_icon_to_stock ("symbol_greek");
+        add_theme_icon_to_stock ("symbol_misc_math");
+        add_theme_icon_to_stock ("symbol_misc_text");
+        add_theme_icon_to_stock ("symbol_operators");
+        add_theme_icon_to_stock ("symbol_relations");
+        add_theme_icon_to_stock ("table-size16");
+        add_theme_icon_to_stock ("table-size24");
+        add_theme_icon_to_stock ("tree_chapter");
+        add_theme_icon_to_stock ("tree_label");
+        add_theme_icon_to_stock ("tree_paragraph");
+        add_theme_icon_to_stock ("tree_part");
+        add_theme_icon_to_stock ("tree_section");
+        add_theme_icon_to_stock ("tree_subsection");
+        add_theme_icon_to_stock ("tree_subsubsection");
+        add_theme_icon_to_stock ("tree_todo");
+        add_theme_icon_to_stock ("typewriter");
+        add_theme_icon_to_stock ("underline");
+        add_theme_icon_to_stock ("view_dvi");
+        add_theme_icon_to_stock ("view_log");
+        add_theme_icon_to_stock ("view_pdf");
+        add_theme_icon_to_stock ("view_ps");
     }
 
-    private void register_new_stock_icons ()
+    private void add_theme_icon_to_stock (string icon_name)
     {
-        string resource_path = "/org/gnome/latexila/stock-icons/";
-        string[] icon_files;
+        Gtk.IconSource icon_source = new Gtk.IconSource ();
+        icon_source.set_icon_name (icon_name);
 
-        try
-        {
-            icon_files = resources_enumerate_children (resource_path, 0);
-        }
-        catch (Error e)
-        {
-            warning ("Failed to register new stock icons: %s", e.message);
-            return;
-        }
+        Gtk.IconSet icon_set = new Gtk.IconSet ();
+        icon_set.add_source (icon_source);
 
         Gtk.IconFactory icon_factory = new Gtk.IconFactory ();
-
-        foreach (string icon_file in icon_files)
-        {
-            Gtk.IconSet icon_set = new Gtk.IconSet ();
-            Gtk.IconSource icon_source = new Gtk.IconSource ();
-            Gdk.Pixbuf pixbuf;
-
-            try
-            {
-                pixbuf = new Gdk.Pixbuf.from_resource (resource_path + icon_file);
-            }
-            catch (Error e)
-            {
-                warning ("Failed to register stock icon: %s", e.message);
-                continue;
-            }
-
-            icon_source.set_pixbuf (pixbuf);
-            icon_set.add_source (icon_source);
-
-            string icon_name = Latexila.utils_get_shortname (icon_file);
-            icon_factory.add (icon_name, icon_set);
-        }
-
+        icon_factory.add (icon_name, icon_set);
         icon_factory.add_default ();
     }
 }
