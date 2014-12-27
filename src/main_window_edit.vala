@@ -29,29 +29,29 @@ public class MainWindowEdit
     {
         { "Edit", null, N_("_Edit") },
 
-        { "EditUndo", Stock.UNDO, null, "<Control>Z",
+        { "EditUndo", "edit-undo", N_("_Undo"), "<Control>Z",
             N_("Undo the last action"), on_undo },
 
-        { "EditRedo", Stock.REDO, null, "<Shift><Control>Z",
+        { "EditRedo", "edit-redo", N_("_Redo"), "<Shift><Control>Z",
             N_("Redo the last undone action"), on_redo },
 
-        { "EditCut", Stock.CUT, null, null,
+        { "EditCut", "edit-cut", N_("Cu_t"), "<Control>X",
             N_("Cut the selection"), on_cut },
 
-        { "EditCopy", Stock.COPY, null, null,
+        { "EditCopy", "edit-copy", N_("_Copy"), "<Control>C",
             N_("Copy the selection"), on_copy },
 
-        // No shortcut here because if the shortcut is null, Ctrl+V is used for the _all_
+        // No shortcut here because if the shortcut is null, Ctrl+V is used for _all_
         // the window. In this case Ctrl+V in the search text entry would be broken (the
         // text is pasted in the document instead of the entry).
         // Anyway if we press Ctrl+V when the cursor is in the document, no problem.
-        { "EditPaste", Stock.PASTE, null, "",
+        { "EditPaste", "edit-paste", N_("_Paste"), "",
             N_("Paste the clipboard"), on_paste },
 
-        { "EditDelete", Stock.DELETE, null, null,
+        { "EditDelete", "edit-delete", N_("_Delete"), null,
             N_("Delete the selected text"), on_delete },
 
-        { "EditSelectAll", Stock.SELECT_ALL, null, "<Control>A",
+        { "EditSelectAll", "edit-select-all", N_("Select _All"), "<Control>A",
             N_("Select the entire document"), on_select_all },
 
         { "EditComment", null, N_("_Comment"), "<Control>M",
@@ -65,13 +65,13 @@ public class MainWindowEdit
         { "EditCompletion", null, N_("_Completion"), "<Control>space",
             N_("Complete the LaTeX command"), on_completion },
 
-        { "EditPreferences", Stock.PREFERENCES, null, null,
+        { "EditPreferences", "preferences-system", N_("_Preferences"), null,
             N_("Configure the application"), on_open_preferences }
     };
 
     private const ToggleActionEntry[] _toggle_action_entries =
     {
-        { "EditSpellChecking", Stock.SPELL_CHECK, null, "",
+        { "EditSpellChecking", "tools-check-spelling", N_("_Spell Check"), null,
             N_("Activate or disable the spell checking"), on_spell_checking }
     };
 

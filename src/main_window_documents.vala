@@ -29,16 +29,16 @@ public class MainWindowDocuments
     {
         { "Documents", null, N_("_Documents") },
 
-        { "DocumentsSaveAll", Stock.SAVE, N_("_Save All"), "<Shift><Control>L",
+        { "DocumentsSaveAll", "document-save", N_("_Save All"), "<Shift><Control>L",
             N_("Save all open files"), on_save_all },
 
-        { "DocumentsCloseAll", Stock.CLOSE, N_("_Close All"), "<Shift><Control>W",
+        { "DocumentsCloseAll", "window-close", N_("_Close All"), "<Shift><Control>W",
             N_("Close all open files"), on_close_all },
 
-        { "DocumentsPrevious", Stock.GO_BACK, N_("_Previous Document"),
+        { "DocumentsPrevious", "go-previous", N_("_Previous Document"),
             "<Control><Alt>Page_Up", N_("Activate previous document"), on_previous },
 
-        { "DocumentsNext", Stock.GO_FORWARD, N_("_Next Document"),
+        { "DocumentsNext", "go-next", N_("_Next Document"),
             "<Control><Alt>Page_Down", N_("Activate next document"), on_next },
 
         { "DocumentsMoveToNewWindow", null, N_("_Move to New Window"), null,

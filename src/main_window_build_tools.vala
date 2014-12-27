@@ -31,22 +31,22 @@ public class MainWindowBuildTools
             N_("Clean-up build files (*.aux, *.log, *.out, *.toc, etc)"),
             on_clean },
 
-        { "BuildStopExecution", Stock.STOP, N_("_Stop Execution"), null,
+        { "BuildStopExecution", "process-stop", N_("_Stop Execution"), null,
             N_("Stop Execution"), on_stop_execution },
 
         { "BuildViewLog", "view_log", N_("View _Log"), null,
             N_("View Log"), on_view_log },
 
-        { "BuildToolsPreferences", Stock.PREFERENCES, N_("_Manage Build Tools"), null,
+        { "BuildToolsPreferences", "preferences-system", N_("_Manage Build Tools"), null,
             N_("Manage Build Tools"), on_preferences }
     };
 
     private const ToggleActionEntry[] _toggle_action_entries =
     {
-        { "BuildShowDetails", Stock.ZOOM_IN, N_("Show _Details"), null,
+        { "BuildShowDetails", "zoom-in", N_("Show _Details"), null,
             N_("Show Details"), null },
 
-        { "BuildShowWarnings", Stock.DIALOG_WARNING, N_("Show _Warnings"), null,
+        { "BuildShowWarnings", "dialog-warning", N_("Show _Warnings"), null,
             N_("Show Warnings"), null },
 
         { "BuildShowBadBoxes", "badbox", N_("Show _Bad Boxes"), null,

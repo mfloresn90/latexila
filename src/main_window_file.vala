@@ -29,19 +29,19 @@ public class MainWindowFile
     {
         { "File", null, N_("_File") },
 
-        { "FileNew", Stock.NEW, null, null,
+        { "FileNew", "document-new", N_("_New"), "<Control>N",
             N_("New file"), on_file_new },
 
         { "FileNewWindow", null, N_("New _Window"), null,
             N_("Create a new window"), on_new_window },
 
-        { "FileOpen", Stock.OPEN, null, null,
+        { "FileOpen", "document-open", N_("_Open"), "<Control>O",
             N_("Open a file"), on_file_open },
 
-        { "FileSave", Stock.SAVE, null, null,
+        { "FileSave", "document-save", N_("_Save"), "<Control>S",
             N_("Save the current file"), on_file_save },
 
-        { "FileSaveAs", Stock.SAVE_AS, null, "<Shift><Control>S",
+        { "FileSaveAs", "document-save-as", N_("Save _As"), "<Shift><Control>S",
             N_("Save the current file with a different name"), on_file_save_as },
 
         { "FileCreateTemplate", null, N_("Create _Template From Document..."), null,
@@ -50,7 +50,7 @@ public class MainWindowFile
         { "FileDeleteTemplate", null, N_("_Delete Template..."), null,
             N_("Delete personal template(s)"), on_delete_template },
 
-        { "FileClose", Stock.CLOSE, null, null,
+        { "FileClose", "window-close", N_("_Close"), "<Control>W",
             N_("Close the current file"), on_file_close }
     };
 
@@ -80,7 +80,8 @@ public class MainWindowFile
         Widget recent_menu = new RecentChooserMenu.for_manager (recent_manager);
         configure_recent_chooser (recent_menu as RecentChooser);
 
-        MenuToolButton open_button = new MenuToolButton.from_stock (Stock.OPEN);
+        MenuToolButton open_button = new MenuToolButton (null, null);
+        open_button.icon_name = "document-open";
         open_button.set_menu (recent_menu);
         open_button.set_tooltip_text (_("Open a file"));
         open_button.set_arrow_tooltip_text (_("Open a recently used file"));
@@ -143,8 +144,8 @@ public class MainWindowFile
         FileChooserDialog file_chooser = new FileChooserDialog (_("Open Files"),
             _main_window,
             FileChooserAction.OPEN,
-            Stock.CANCEL, ResponseType.CANCEL,
-            Stock.OPEN, ResponseType.ACCEPT
+            _("_Cancel"), ResponseType.CANCEL,
+            _("_Open"), ResponseType.ACCEPT
         );
 
         // Open in the directory of the current document

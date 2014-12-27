@@ -29,30 +29,30 @@ public class MainWindowStructure
     {
         { "Structure", null, N_("S_tructure") },
 
-        { "StructureCut", Stock.CUT, null, "",
+        { "StructureCut", "edit-cut", N_("Cu_t"), "",
             N_("Cut the selected structure item"), on_cut },
 
-        { "StructureCopy", Stock.COPY, null, "",
+        { "StructureCopy", "edit-copy", N_("_Copy"), "",
             N_("Copy the selected structure item"), on_copy },
 
-        { "StructureDelete", Stock.DELETE, null, "",
+        { "StructureDelete", "edit-delete", N_("_Delete"), "",
             N_("Delete the selected structure item"), on_delete },
 
-        { "StructureSelect", Stock.SELECT_ALL, N_("_Select"), "",
+        { "StructureSelect", "edit-select-all", N_("_Select"), "",
             N_("Select the contents of the selected structure item"), on_select },
 
         { "StructureComment", null, N_("_Comment"), null,
             N_("Comment the selected structure item"), on_comment },
 
-        { "StructureShiftLeft", Stock.GO_BACK, N_("Shift _Left"), "",
+        { "StructureShiftLeft", "go-previous", N_("Shift _Left"), "",
             N_("Shift the selected structure item to the left (e.g. section → chapter)"),
             on_shift_left },
 
-        { "StructureShiftRight", Stock.GO_FORWARD, N_("Shift _Right"), "",
+        { "StructureShiftRight", "go-next", N_("Shift _Right"), "",
             N_("Shift the selected structure item to the right (e.g. chapter → section)"),
             on_shift_right },
 
-        { "StructureOpenFile", Stock.OPEN, N_("_Open File"), "",
+        { "StructureOpenFile", "document-open", N_("_Open File"), "",
             N_("Open the file referenced by the selected structure item"),
             on_open_file }
     };
