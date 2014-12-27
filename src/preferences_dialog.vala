@@ -352,7 +352,8 @@ public class PreferencesDialog : Dialog
     private void set_spin_button_range (SpinButton spin_button, GLib.Settings settings,
         string key)
     {
-        Variant range = settings.get_range (key);
+        GLib.SettingsSchema schema = settings.settings_schema;
+        Variant range = schema.get_key (key).get_range ();
 
         string range_type;
         Variant range_contents;
