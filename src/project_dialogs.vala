@@ -195,7 +195,6 @@ namespace ProjectDialogs
         update_model (store);
 
         TreeView treeview = new TreeView.with_model (store);
-        treeview.rules_hint = true;
 
         // column directory
         TreeViewColumn column = new TreeViewColumn ();

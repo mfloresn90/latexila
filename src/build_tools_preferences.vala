@@ -169,7 +169,6 @@ public class BuildToolsPreferences : GLib.Object
     private TreeView get_new_view (ListStore store, Latexila.BuildTools build_tools)
     {
         TreeView view = new TreeView.with_model (store);
-        view.set_rules_hint (true);
 
         TreeViewColumn enabled_column = new TreeViewColumn ();
         enabled_column.set_title (_("Enabled"));
