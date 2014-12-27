@@ -382,7 +382,12 @@ public class Document : Gtk.SourceBuffer
 
         for (int line_num = start_line ; line_num <= end_line ; line_num++)
         {
-            insert (ref cur_iter, "% ", -1);
+            if (cur_iter.ends_line ())
+                // Don't insert a trailing space.
+                insert (ref cur_iter, "%", -1);
+            else
+                insert (ref cur_iter, "% ", -1);
+
             cur_iter.forward_line ();
         }
 
