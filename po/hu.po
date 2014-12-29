@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: LaTeXila 2.12\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-10-27 14:54+0000\n"
-"PO-Revision-Date: 2014-12-07 12:55+0100\n"
+"POT-Creation-Date: 2014-12-29 10:30+0000\n"
+"PO-Revision-Date: 2014-12-29 22:00+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu_HU\n"
@@ -509,15 +509,40 @@ msgstr ""
 msgid "Hide panel"
 msgstr "Panel elrejtése"
 
+#. close button
+#: ../src/build_tool_dialog.vala:80 ../src/build_tools_preferences.vala:55
+#: ../src/main_window_file.vala:53 ../src/preferences_dialog.vala:42
+#: ../src/project_dialogs.vala:186 ../src/templates_dialogs.vala:244
+#| msgid "_Close All"
+msgid "_Close"
+msgstr "_Bezárás"
+
 #: ../src/build_tool_dialog.vala:81
 msgid "Build Tool (read-only)"
 msgstr "Összeállítási eszköz (csak olvasható)"
+
+#: ../src/build_tool_dialog.vala:86 ../src/build_tools_preferences.vala:332
+#: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
+#: ../src/document_tab.vala:290 ../src/main_window_file.vala:147
+#: ../src/main_window.vala:769 ../src/main_window.vala:865
+#: ../src/main_window.vala:901 ../src/preferences_dialog.vala:117
+#: ../src/project_dialogs.vala:28 ../src/project_dialogs.vala:119
+#: ../src/project_dialogs.vala:274 ../src/project_dialogs.vala:294
+#: ../src/templates_dialogs.vala:36 ../src/templates_dialogs.vala:176
+msgid "_Cancel"
+msgstr "_Mégse"
+
+#: ../src/build_tool_dialog.vala:87 ../src/project_dialogs.vala:120
+#: ../src/tab_info_bar.vala:77 ../src/templates_dialogs.vala:37
+#: ../src/templates_dialogs.vala:177
+msgid "_OK"
+msgstr "_OK"
 
 #: ../src/build_tool_dialog.vala:88
 msgid "Build Tool"
 msgstr "Összeállítási eszköz"
 
-#. icon stock-id
+#. icon-name
 #. label
 #: ../src/build_tool_dialog.vala:161
 msgid "Execute"
@@ -527,6 +552,7 @@ msgstr "Végrehajtás"
 msgid "Convert"
 msgstr "Átalakítás"
 
+#. FIXME don't use Stock
 #: ../src/build_tool_dialog.vala:166
 msgid "View File"
 msgstr "Fájl megtekintése"
@@ -539,24 +565,24 @@ msgstr "Parancsok"
 msgid "Post Processor"
 msgstr "Utófeldolgozó"
 
-#: ../src/build_tool_dialog.vala:267 ../src/build_tools_preferences.vala:295
+#: ../src/build_tool_dialog.vala:267 ../src/build_tools_preferences.vala:294
 msgid "Add..."
 msgstr "Hozzáadás…"
 
-#: ../src/build_tool_dialog.vala:284 ../src/build_tools_preferences.vala:312
+#: ../src/build_tool_dialog.vala:284 ../src/build_tools_preferences.vala:311
 msgid "Remove"
 msgstr "Eltávolítás"
 
-#: ../src/build_tool_dialog.vala:314 ../src/build_tools_preferences.vala:352
+#: ../src/build_tool_dialog.vala:314 ../src/build_tools_preferences.vala:351
 msgid "Move up"
 msgstr "Mozgatás fel"
 
-#: ../src/build_tool_dialog.vala:365 ../src/build_tools_preferences.vala:404
+#: ../src/build_tool_dialog.vala:365 ../src/build_tools_preferences.vala:403
 msgid "Move down"
 msgstr "Mozgatás le"
 
-#: ../src/build_tool_dialog.vala:569 ../src/build_tools_preferences.vala:184
-#: ../src/latex_menu.vala:52 ../src/structure.vala:782
+#: ../src/build_tool_dialog.vala:569 ../src/build_tools_preferences.vala:183
+#: ../src/latex_menu.vala:52 ../src/structure.vala:783
 msgid "Label"
 msgstr "Címke"
 
@@ -598,8 +624,6 @@ msgid "The active document's filename."
 msgstr "Az aktív dokumentum fájlneve."
 
 #: ../src/build_tool_dialog.vala:617 ../src/build_tool_dialog.vala:622
-#| msgid ""
-#| "If the active document belongs to a project, the main file is choosen."
 msgid "If the active document belongs to a project, the main file is chosen."
 msgstr ""
 "Ha az aktív dokumentum egy projekthez tartozik, akkor a fő fájl kerül "
@@ -641,19 +665,27 @@ msgstr "Alapértelmezett összeállítási eszközök"
 msgid "Personal build tools"
 msgstr "Személyes összeállítási eszközök"
 
-#: ../src/build_tools_preferences.vala:175
+#: ../src/build_tools_preferences.vala:174
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: ../src/build_tools_preferences.vala:279
+#: ../src/build_tools_preferences.vala:278
 #, c-format
 msgid "%s [copy]"
 msgstr "%s [másolás]"
 
-#: ../src/build_tools_preferences.vala:330
+#: ../src/build_tools_preferences.vala:329
 #, c-format
 msgid "Do you really want to delete the build tool \"%s\"?"
 msgstr "Biztosan törölni szeretné a(z) „%s” összeállítási eszközt?"
+
+#: ../src/build_tools_preferences.vala:333 ../src/clean_build_files.vala:243
+#: ../src/main_window_edit.vala:51 ../src/main_window_structure.vala:38
+#: ../src/project_dialogs.vala:240 ../src/project_dialogs.vala:275
+#: ../src/templates_dialogs.vala:243
+#| msgid "delete"
+msgid "_Delete"
+msgstr "_Törlés"
 
 #: ../src/clean_build_files.vala:267
 msgid "Do you really want to delete these files?"
@@ -668,7 +700,7 @@ msgstr "Válassza ki a törölni kívánt fájlokat:"
 msgid "No build file to clean up."
 msgstr "Nincs tisztítandó összeállítási fájl."
 
-#: ../src/completion.vala:327
+#: ../src/completion.vala:329
 msgid "No matching proposal"
 msgstr "Nincs egyező javaslat"
 
@@ -680,8 +712,15 @@ msgid "Ln %d, Col %d"
 msgstr "%d. sor, %d. oszlop"
 
 #: ../src/dialogs.vala:40 ../src/main_window.vala:768
-msgid "Close without Saving"
-msgstr "Bezárás mentés nélkül"
+#| msgid "Close without Saving"
+msgid "Close _without Saving"
+msgstr "Bezárás mentés _nélkül"
+
+#: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
+#: ../src/main_window.vala:774 ../src/main_window.vala:866
+#| msgid "_Save All"
+msgid "_Save"
+msgstr "_Mentés"
 
 #: ../src/dialogs.vala:66
 #, c-format
@@ -708,7 +747,7 @@ msgstr "Dokumentum bezárása"
 #. main file
 #: ../src/document_tab.vala:233 ../src/project_dialogs.vala:44
 #: ../src/project_dialogs.vala:47 ../src/project_dialogs.vala:139
-#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:216
+#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:215
 msgid "Main File"
 msgstr "Fő fájl"
 
@@ -735,8 +774,9 @@ msgid "Do you want to reload the file?"
 msgstr "Újra szeretné tölteni a fájlt?"
 
 #: ../src/document_tab.vala:289
-msgid "Reload"
-msgstr "Újratöltés"
+#| msgid "Reload"
+msgid "_Reload"
+msgstr "Új_ratöltés"
 
 #: ../src/document.vala:121
 #, c-format
@@ -753,26 +793,28 @@ msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr "Ha most elmenti, minden külső módosítás elveszhet. Mindenképp menti?"
 
 #: ../src/document.vala:203
-msgid "Save Anyway"
-msgstr "Mentés mindenképp"
+#| msgid "Save Anyway"
+msgid "_Save Anyway"
+msgstr "_Mentés mindenképp"
 
-#: ../src/document.vala:205
-msgid "Don't Save"
-msgstr "Ne mentse"
+#: ../src/document.vala:204
+#| msgid "Don't Save"
+msgid "_Don't Save"
+msgstr "_Ne mentse"
 
-#: ../src/document.vala:217
+#: ../src/document.vala:216
 msgid "Impossible to save the file."
 msgstr "Nem lehet elmenteni a fájlt."
 
-#: ../src/document.vala:242
+#: ../src/document.vala:241
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Hiba a dokumentum UTF-8 formátumra való átalakításának kísérletekor"
 
-#: ../src/document.vala:296
+#: ../src/document.vala:295
 msgid "Unsaved Document"
 msgstr "Mentetlen dokumentum"
 
-#: ../src/document.vala:575
+#: ../src/document.vala:579
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
@@ -780,28 +822,38 @@ msgstr ""
 "A fájl ideiglenes helyen van. A számítógép újraindításakor az adatok "
 "elveszhetnek."
 
-#: ../src/document.vala:576
+#: ../src/document.vala:580
 msgid "Do you want to save the file in a safer place?"
 msgstr "El szeretné menteni a fájlt egy biztonságosabb helyre?"
 
-#: ../src/file_browser.vala:216
+#: ../src/document.vala:583 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:772
+#| msgid "_Save All"
+msgid "Save _As"
+msgstr "Men_tés másként"
+
+#: ../src/document.vala:584
+msgid "Cancel"
+msgstr "Mégse"
+
+#: ../src/file_browser.vala:217
 msgid "Go to the home directory"
 msgstr "Ugrás a saját könyvtárba"
 
-#: ../src/file_browser.vala:231
+#: ../src/file_browser.vala:232
 msgid "Go to the parent directory"
 msgstr "Ugrás a szülő könyvtárba"
 
-#: ../src/file_browser.vala:247
+#: ../src/file_browser.vala:248
 msgid "Go to the active document directory"
 msgstr "Ugrás az aktív dokumentum könyvtárába"
 
-#: ../src/file_browser.vala:336
+#: ../src/file_browser.vala:337
 msgid "File System"
 msgstr "Fájlrendszer"
 
 #. File browser
-#: ../src/file_browser.vala:455 ../src/main_window.vala:407
+#: ../src/file_browser.vala:456 ../src/main_window.vala:407
 msgid "File Browser"
 msgstr "Fájlböngésző"
 
@@ -810,31 +862,31 @@ msgstr "Fájlböngésző"
 msgid "_Sectioning"
 msgstr "_Szakaszolás"
 
-#: ../src/latex_menu.vala:34 ../src/structure.vala:775
+#: ../src/latex_menu.vala:34 ../src/structure.vala:776
 msgid "Part"
 msgstr "Rész"
 
-#: ../src/latex_menu.vala:36 ../src/structure.vala:776
+#: ../src/latex_menu.vala:36 ../src/structure.vala:777
 msgid "Chapter"
 msgstr "Fejezet"
 
-#: ../src/latex_menu.vala:38 ../src/structure.vala:777
+#: ../src/latex_menu.vala:38 ../src/structure.vala:778
 msgid "Section"
 msgstr "Szakasz"
 
-#: ../src/latex_menu.vala:40 ../src/structure.vala:778
+#: ../src/latex_menu.vala:40 ../src/structure.vala:779
 msgid "Sub-section"
 msgstr "Alszakasz"
 
-#: ../src/latex_menu.vala:42 ../src/structure.vala:779
+#: ../src/latex_menu.vala:42 ../src/structure.vala:780
 msgid "Sub-sub-section"
 msgstr "Al-alszakasz"
 
-#: ../src/latex_menu.vala:44 ../src/structure.vala:780
+#: ../src/latex_menu.vala:44 ../src/structure.vala:781
 msgid "Paragraph"
 msgstr "Bekezdés"
 
-#: ../src/latex_menu.vala:46 ../src/structure.vala:781
+#: ../src/latex_menu.vala:46 ../src/structure.vala:782
 msgid "Sub-paragraph"
 msgstr "Al-bekezdés"
 
@@ -879,633 +931,625 @@ msgstr "Igazítás jobbra - \\begin{flushright}"
 msgid "Figure - \\begin{figure}"
 msgstr "Ábra - \\begin{figure}"
 
-#: ../src/latex_menu.vala:76 ../src/latex_menu.vala:78
+#: ../src/latex_menu.vala:76
 msgid "Table - \\begin{table}"
 msgstr "Táblázat - \\begin{table}"
 
-#: ../src/latex_menu.vala:80
+#: ../src/latex_menu.vala:78
 msgid "Quote - \\begin{quote}"
 msgstr "Idézés - \\begin{quote}"
 
-#: ../src/latex_menu.vala:82
+#: ../src/latex_menu.vala:80
 msgid "Quotation - \\begin{quotation}"
 msgstr "Idézet - \\begin{quotation}"
 
-#: ../src/latex_menu.vala:84
+#: ../src/latex_menu.vala:82
 msgid "Verse - \\begin{verse}"
 msgstr "Versszak - \\begin{verse}"
 
-#: ../src/latex_menu.vala:86
+#: ../src/latex_menu.vala:84
 msgid "Verbatim - \\begin{verbatim}"
 msgstr "Verbatim - \\begin{verbatim}"
 
-#: ../src/latex_menu.vala:88
+#: ../src/latex_menu.vala:86
 msgid "Minipage - \\begin{minipage}"
 msgstr "Minioldal - \\begin{minipage}"
 
-#: ../src/latex_menu.vala:90
+#: ../src/latex_menu.vala:88
 msgid "Title page - \\begin{titlepage}"
 msgstr "Címlap - \\begin{titlepage}"
 
 #. LaTeX: list environments
-#: ../src/latex_menu.vala:94
+#: ../src/latex_menu.vala:92
 msgid "_List Environments"
 msgstr "_Listakörnyezetek"
 
-#: ../src/latex_menu.vala:96 ../src/latex_menu.vala:98
+#: ../src/latex_menu.vala:94
 msgid "Bulleted List - \\begin{itemize}"
 msgstr "Felsorolás - \\begin{itemize}"
 
-#: ../src/latex_menu.vala:100 ../src/latex_menu.vala:102
+#: ../src/latex_menu.vala:96
 msgid "Enumeration - \\begin{enumerate}"
 msgstr "Számozás - \\begin{enumerate}"
 
-#: ../src/latex_menu.vala:104 ../src/latex_menu.vala:106
+#: ../src/latex_menu.vala:98
 msgid "Description - \\begin{description}"
 msgstr "Leírás - \\begin{description}"
 
-#: ../src/latex_menu.vala:108
+#: ../src/latex_menu.vala:100
 msgid "Custom list - \\begin{list}"
 msgstr "Egyéni lista - \\begin{list}"
 
-#: ../src/latex_menu.vala:110
+#: ../src/latex_menu.vala:102
 msgid "List item - \\item"
 msgstr "Listaelem - \\item"
 
 #. LaTeX: character sizes
-#: ../src/latex_menu.vala:114
+#: ../src/latex_menu.vala:106
 msgid "_Characters Sizes"
 msgstr "Karakter_méretek"
 
 #. LaTeX: font styles
-#: ../src/latex_menu.vala:138
+#: ../src/latex_menu.vala:130
 msgid "_Font Styles"
 msgstr "Betű_készlet stílusok"
 
-#: ../src/latex_menu.vala:140
+#: ../src/latex_menu.vala:132
 msgid "Bold - \\textbf"
 msgstr "Félkövér - \\textbf"
 
-#: ../src/latex_menu.vala:142
+#: ../src/latex_menu.vala:134
 msgid "Italic - \\textit"
 msgstr "Dőlt - \\textit"
 
-#: ../src/latex_menu.vala:144
+#: ../src/latex_menu.vala:136
 msgid "Typewriter - \\texttt"
 msgstr "Írógépbetű - \\texttt"
 
-#: ../src/latex_menu.vala:146
+#: ../src/latex_menu.vala:138
 msgid "Slanted - \\textsl"
 msgstr "Döntött - \\textsl"
 
-#: ../src/latex_menu.vala:148
+#: ../src/latex_menu.vala:140
 msgid "Small Capitals - \\textsc"
 msgstr "Kiskapitális - \\textsc"
 
-#: ../src/latex_menu.vala:150
+#: ../src/latex_menu.vala:142
 msgid "Sans Serif - \\textsf"
 msgstr "Talpatlan betűkészlet - \\textsf"
 
-#: ../src/latex_menu.vala:152
+#: ../src/latex_menu.vala:144
 msgid "Emphasized - \\emph"
 msgstr "Hangsúlyozott - \\emph"
 
-#: ../src/latex_menu.vala:154
+#: ../src/latex_menu.vala:146
 msgid "Underline - \\underline"
 msgstr "Aláhúzott - \\underline"
 
-#: ../src/latex_menu.vala:156
+#: ../src/latex_menu.vala:148
 msgid "_Font Family"
 msgstr "_Betűcsalád"
 
-#: ../src/latex_menu.vala:158
+#: ../src/latex_menu.vala:150
 msgid "Roman - \\rmfamily"
 msgstr "Római - \\rmfamily"
 
-#: ../src/latex_menu.vala:160
+#: ../src/latex_menu.vala:152
 msgid "Sans Serif - \\sffamily"
 msgstr "Talpatlan betűkészlet - \\sffamily"
 
-#: ../src/latex_menu.vala:162
+#: ../src/latex_menu.vala:154
 msgid "Monospace - \\ttfamily"
 msgstr "Rögzített szélességű - \\ttfamily"
 
-#: ../src/latex_menu.vala:164
+#: ../src/latex_menu.vala:156
 msgid "F_ont Series"
 msgstr "Betűkés_zlet sorozat"
 
-#: ../src/latex_menu.vala:166
+#: ../src/latex_menu.vala:158
 msgid "Medium - \\mdseries"
 msgstr "Közepes - \\mdseries"
 
-#: ../src/latex_menu.vala:168
+#: ../src/latex_menu.vala:160
 msgid "Bold - \\bfseries"
 msgstr "Félkövér - \\bfseries"
 
-#: ../src/latex_menu.vala:170
+#: ../src/latex_menu.vala:162
 msgid "Fo_nt Shape"
 msgstr "Betűké_szlet alakja"
 
-#: ../src/latex_menu.vala:172
+#: ../src/latex_menu.vala:164
 msgid "Upright - \\upshape"
 msgstr "Függőleges - \\upshape"
 
-#: ../src/latex_menu.vala:174
+#: ../src/latex_menu.vala:166
 msgid "Italic - \\itshape"
 msgstr "Dőlt - \\itshape"
 
-#: ../src/latex_menu.vala:176
+#: ../src/latex_menu.vala:168
 msgid "Slanted - \\slshape"
 msgstr "Döntött - \\slshape"
 
-#: ../src/latex_menu.vala:178
+#: ../src/latex_menu.vala:170
 msgid "Small Capitals - \\scshape"
 msgstr "Kiskapitális - \\scshape"
 
 #. LaTeX: Tabular
-#: ../src/latex_menu.vala:182
+#: ../src/latex_menu.vala:174
 msgid "_Tabular"
 msgstr "_Tabulátor"
 
-#: ../src/latex_menu.vala:184
+#: ../src/latex_menu.vala:176
 msgid "Tabbing - \\begin{tabbing}"
 msgstr "Tabulátorozás - \\begin{tabbing}"
 
-#: ../src/latex_menu.vala:186
+#: ../src/latex_menu.vala:178
 msgid "Tabular - \\begin{tabular}"
 msgstr "Tabulátor - \\begin{tabular}"
 
-#: ../src/latex_menu.vala:188
+#: ../src/latex_menu.vala:180
 msgid "Multicolumn - \\multicolumn"
 msgstr "Több oszlop - \\multicolumn"
 
-#: ../src/latex_menu.vala:190
+#: ../src/latex_menu.vala:182
 msgid "Horizontal line - \\hline"
 msgstr "Vízszintes vonal - \\hline"
 
-#: ../src/latex_menu.vala:192
+#: ../src/latex_menu.vala:184
 msgid "Vertical line - \\vline"
 msgstr "Függőleges vonal - \\vline"
 
-#: ../src/latex_menu.vala:194
+#: ../src/latex_menu.vala:186
 msgid "Horizontal line (columns specified) - \\cline"
 msgstr "Vízszintes vonal (meghatározott oszlopok) - \\cline)"
 
-#: ../src/latex_menu.vala:200
+#: ../src/latex_menu.vala:192
 msgid "Frame - \\begin{frame}"
 msgstr "Keret - \\begin{frame}"
 
-#: ../src/latex_menu.vala:202
+#: ../src/latex_menu.vala:194
 msgid "Block - \\begin{block}"
 msgstr "Tömb - \\begin{block}"
 
-#: ../src/latex_menu.vala:204
+#: ../src/latex_menu.vala:196
 msgid "Two columns - \\begin{columns}"
 msgstr "Két oszlop - \\begin{columns}"
 
 #. LaTeX: Spacing
-#: ../src/latex_menu.vala:208
+#: ../src/latex_menu.vala:200
 msgid "_Spacing"
 msgstr "_Távolság"
 
-#: ../src/latex_menu.vala:209
+#: ../src/latex_menu.vala:201
 msgid "New _Line"
 msgstr "Ú_j sor"
 
-#: ../src/latex_menu.vala:210
+#: ../src/latex_menu.vala:202
 msgid "New Line - \\\\"
 msgstr "Új sor - \\\\"
 
-#: ../src/latex_menu.vala:212
+#: ../src/latex_menu.vala:204
 msgid "New page - \\newpage"
 msgstr "Új oldal - \\newpage"
 
-#: ../src/latex_menu.vala:214
+#: ../src/latex_menu.vala:206
 msgid "Line break - \\linebreak"
 msgstr "Sortörés - \\linebreak"
 
-#: ../src/latex_menu.vala:216
+#: ../src/latex_menu.vala:208
 msgid "Page break - \\pagebreak"
 msgstr "Oldaltörés - \\pagebreak"
 
-#: ../src/latex_menu.vala:218
+#: ../src/latex_menu.vala:210
 msgid "Big skip - \\bigskip"
 msgstr "Nagy térköz - \\bigskip"
 
-#: ../src/latex_menu.vala:220
+#: ../src/latex_menu.vala:212
 msgid "Medium skip - \\medskip"
 msgstr "Közepes térköz - \\medskip"
 
-#: ../src/latex_menu.vala:222
+#: ../src/latex_menu.vala:214
 msgid "Horizontal space - \\hspace"
 msgstr "Vízszintes térköz - \\hspace"
 
-#: ../src/latex_menu.vala:224
+#: ../src/latex_menu.vala:216
 msgid "Vertical space - \\vspace"
 msgstr "Függőleges térköz - \\vspace"
 
-#: ../src/latex_menu.vala:226
+#: ../src/latex_menu.vala:218
 msgid "No paragraph indentation - \\noindent"
 msgstr "Nincs bekezdés behúzás - \\noindent"
 
 #. LaTeX: International accents
-#: ../src/latex_menu.vala:230
+#: ../src/latex_menu.vala:222
 msgid "International _Accents"
 msgstr "Nemzetközi é_kezetek"
 
-#: ../src/latex_menu.vala:231
+#: ../src/latex_menu.vala:223
 msgid "Acute accent - \\'"
 msgstr "Éles ékezet - \\'"
 
-#: ../src/latex_menu.vala:232
+#: ../src/latex_menu.vala:224
 msgid "Grave accent - \\`"
 msgstr "Tompa ékezet - \\`"
 
-#: ../src/latex_menu.vala:233
+#: ../src/latex_menu.vala:225
 msgid "Circumflex accent - \\^"
 msgstr "Kúpos ékezet - \\^"
 
-#: ../src/latex_menu.vala:234
+#: ../src/latex_menu.vala:226
 msgid "Trema - \\\""
 msgstr "Trema - \\\""
 
-#: ../src/latex_menu.vala:235
+#: ../src/latex_menu.vala:227
 msgid "Tilde - \\~"
 msgstr "Hullámjel - \\~"
 
-#: ../src/latex_menu.vala:236
+#: ../src/latex_menu.vala:228
 msgid "Macron - \\="
 msgstr "Felülvonás - \\="
 
-#: ../src/latex_menu.vala:237
+#: ../src/latex_menu.vala:229
 msgid "Dot above - \\."
 msgstr "Pont fölötte - \\."
 
-#: ../src/latex_menu.vala:238
+#: ../src/latex_menu.vala:230
 msgid "Caron - \\v"
 msgstr "Caron - \\v"
 
-#: ../src/latex_menu.vala:239
+#: ../src/latex_menu.vala:231
 msgid "Breve - \\u"
 msgstr "Breve - \\u"
 
-#: ../src/latex_menu.vala:241
+#: ../src/latex_menu.vala:233
 msgid "Double acute accent - \\H"
 msgstr "Dupla éles ékezet - \\H"
 
-#: ../src/latex_menu.vala:242
+#: ../src/latex_menu.vala:234
 msgid "Cedilla - \\c"
 msgstr "Cedilla - \\c"
 
-#: ../src/latex_menu.vala:243
+#: ../src/latex_menu.vala:235
 msgid "Ogonek - \\k"
 msgstr "Ogonek - \\k"
 
-#: ../src/latex_menu.vala:244
+#: ../src/latex_menu.vala:236
 msgid "Dot below - \\d"
 msgstr "Pont alatta - \\d"
 
-#: ../src/latex_menu.vala:245
+#: ../src/latex_menu.vala:237
 msgid "Macron below - \\b"
 msgstr "Alulvonás - \\b"
 
-#: ../src/latex_menu.vala:246
+#: ../src/latex_menu.vala:238
 msgid "Ring - \\r"
 msgstr "Kör - \\r"
 
-#: ../src/latex_menu.vala:247
+#: ../src/latex_menu.vala:239
 msgid "Tie - \\t"
 msgstr "Kötelék - \\t"
 
 #. LaTeX: Others
-#: ../src/latex_menu.vala:251
+#: ../src/latex_menu.vala:243
 msgid "_Misc"
 msgstr "_Egyéb"
 
-#: ../src/latex_menu.vala:253
+#: ../src/latex_menu.vala:245
 msgid "Document class - \\documentclass"
 msgstr "Dokumentumosztály - \\documentclass"
 
-#: ../src/latex_menu.vala:255
+#: ../src/latex_menu.vala:247
 msgid "Use package - \\usepackage"
 msgstr "Csomag használata - \\usepackage"
 
-#: ../src/latex_menu.vala:256
+#: ../src/latex_menu.vala:248
 msgid "_AMS packages"
 msgstr "_AMS csomagok"
 
-#: ../src/latex_menu.vala:257
+#: ../src/latex_menu.vala:249
 msgid "AMS packages"
 msgstr "AMS csomagok"
 
-#: ../src/latex_menu.vala:258
+#: ../src/latex_menu.vala:250
 msgid "Author - \\author"
 msgstr "Szerző - \\author"
 
-#: ../src/latex_menu.vala:259
+#: ../src/latex_menu.vala:251
 msgid "Title - \\title"
 msgstr "Cím - \\title"
 
-#: ../src/latex_menu.vala:261
+#: ../src/latex_menu.vala:253
 msgid "Content of the document - \\begin{document}"
 msgstr "A dokumentum tartalma - \\begin{document}"
 
-#: ../src/latex_menu.vala:263
+#: ../src/latex_menu.vala:255
 msgid "Make title - \\maketitle"
 msgstr "Cím készítése - \\maketitle"
 
-#: ../src/latex_menu.vala:265
+#: ../src/latex_menu.vala:257
 msgid "Table of contents - \\tableofcontents"
 msgstr "Tartalomjegyzék - \\tableofcontents"
 
-#: ../src/latex_menu.vala:267
+#: ../src/latex_menu.vala:259
 msgid "Abstract - \\begin{abstract}"
 msgstr "Kivonat - \\begin{abstract}"
 
-#: ../src/latex_menu.vala:269
+#: ../src/latex_menu.vala:261
 msgid "Include an image (graphicx package) - \\includegraphics"
 msgstr "Kép beillesztése (graphicx csomag) - \\includegraphics"
 
-#: ../src/latex_menu.vala:272
+#: ../src/latex_menu.vala:264
 msgid "Include a file - \\input"
 msgstr "Fájl beillesztése - \\input"
 
 #. Math
-#: ../src/latex_menu.vala:276
+#: ../src/latex_menu.vala:268
 msgid "_Math"
 msgstr "_Math"
 
 #. Math Environments
-#: ../src/latex_menu.vala:280
+#: ../src/latex_menu.vala:272
 msgid "_Math Environments"
 msgstr "_Matematikai környezetek"
 
-#: ../src/latex_menu.vala:281
+#: ../src/latex_menu.vala:273
 msgid "_Mathematical Environment - $...$"
 msgstr "_Matematikai környezet - $…$"
 
-#: ../src/latex_menu.vala:282
+#: ../src/latex_menu.vala:274
 msgid "Mathematical Environment - $...$"
 msgstr "Matematikai környezet - $…$"
 
-#: ../src/latex_menu.vala:283
+#: ../src/latex_menu.vala:275
 msgid "_Centered Formula - \\[...\\]"
 msgstr "_Középre igazított képlet - \\[…\\]"
 
-#: ../src/latex_menu.vala:284
+#: ../src/latex_menu.vala:276
 msgid "Centered Formula - \\[...\\]"
 msgstr "Középre igazított képlet - \\[…\\]"
 
-#: ../src/latex_menu.vala:286
+#: ../src/latex_menu.vala:278
 msgid "_Numbered Equation - \\begin{equation}"
 msgstr "_Számozott egyenlet - \\begin{equation}"
 
-#: ../src/latex_menu.vala:287
+#: ../src/latex_menu.vala:279
 msgid "Numbered Equation - \\begin{equation}"
 msgstr "Számozott egyenlet - \\begin{equation}"
 
-#: ../src/latex_menu.vala:288
+#: ../src/latex_menu.vala:280
 msgid "_Array of Equations - \\begin{align*}"
 msgstr "Egyenletek tö_mbje - \\begin{align*}"
 
-#: ../src/latex_menu.vala:289
+#: ../src/latex_menu.vala:281
 msgid "Array of Equations - \\begin{align*}"
 msgstr "Egyenletek tömbje - \\begin{align*}"
 
-#: ../src/latex_menu.vala:291
+#: ../src/latex_menu.vala:283
 msgid "Numbered Array of _Equations - \\begin{align}"
 msgstr "Egyenletek _számozott tömbje - \\begin{align}"
 
-#: ../src/latex_menu.vala:292
+#: ../src/latex_menu.vala:284
 msgid "Numbered Array of Equations - \\begin{align}"
 msgstr "Egyenletek számozott tömbje - \\begin{align}"
 
-#: ../src/latex_menu.vala:295
+#: ../src/latex_menu.vala:287
 msgid "_Superscript - ^{}"
 msgstr "_Felső index - ^{}"
 
-#: ../src/latex_menu.vala:296
+#: ../src/latex_menu.vala:288
 msgid "Superscript - ^{}"
 msgstr "Felső index - ^{}"
 
-#: ../src/latex_menu.vala:297
+#: ../src/latex_menu.vala:289
 msgid "Su_bscript - __{}"
 msgstr "Al_só index - _{}"
 
-#: ../src/latex_menu.vala:298
+#: ../src/latex_menu.vala:290
 msgid "Subscript - _{}"
 msgstr "Alsó index - _{}"
 
-#: ../src/latex_menu.vala:299
+#: ../src/latex_menu.vala:291
 msgid "_Fraction - \\frac{}{}"
 msgstr "_Tört - \\frac{}{}"
 
-#: ../src/latex_menu.vala:300
+#: ../src/latex_menu.vala:292
 msgid "Fraction - \\frac{}{}"
 msgstr "Tört - \\frac{}{}"
 
-#: ../src/latex_menu.vala:301
+#: ../src/latex_menu.vala:293
 msgid "Square _Root - \\sqrt{}"
 msgstr "Négyzet_gyök - \\sqrt{}"
 
-#: ../src/latex_menu.vala:302
+#: ../src/latex_menu.vala:294
 msgid "Square Root - \\sqrt{}"
 msgstr "Négyzetgyök - \\sqrt{}"
 
-#: ../src/latex_menu.vala:303
+#: ../src/latex_menu.vala:295
 msgid "_N-th Root - \\sqrt[]{}"
 msgstr "_N-edik gyök - \\sqrt[]{}"
 
-#: ../src/latex_menu.vala:304
+#: ../src/latex_menu.vala:296
 msgid "N-th Root - \\sqrt[]{}"
 msgstr "N-edik gyök - \\sqrt[]{}"
 
 #. Math functions
-#: ../src/latex_menu.vala:308
+#: ../src/latex_menu.vala:300
 msgid "Math _Functions"
 msgstr "Matematikai _függvények"
 
 #. Math Font Styles
-#: ../src/latex_menu.vala:342
+#: ../src/latex_menu.vala:334
 msgid "Math Font _Styles"
 msgstr "Matematikai betűkészlet _stílusok"
 
-#: ../src/latex_menu.vala:344
+#: ../src/latex_menu.vala:336
 msgid "Roman - \\mathrm"
 msgstr "Római - \\mthrm"
 
-#: ../src/latex_menu.vala:346
+#: ../src/latex_menu.vala:338
 msgid "Italic - \\mathit"
 msgstr "Dőlt - \\mathit"
 
-#: ../src/latex_menu.vala:348
+#: ../src/latex_menu.vala:340
 msgid "Bold - \\mathbf"
 msgstr "Félkövér - \\mathbf"
 
-#: ../src/latex_menu.vala:350
+#: ../src/latex_menu.vala:342
 msgid "Sans Serif - \\mathsf"
 msgstr "Talpatlan betűkészlet - \\mathsf"
 
-#: ../src/latex_menu.vala:352
+#: ../src/latex_menu.vala:344
 msgid "Typewriter - \\mathtt"
 msgstr "Írógépbetű - \\mathtt"
 
-#: ../src/latex_menu.vala:354
+#: ../src/latex_menu.vala:346
 msgid "Calligraphic - \\mathcal"
 msgstr "Művészi toll - \\mathcal"
 
-#: ../src/latex_menu.vala:356
+#: ../src/latex_menu.vala:348
 msgid "Blackboard (uppercase only)  - \\mathbb (amsfonts package)"
 msgstr "Iskolatábla (csak nagybetűk) - \\mathbb (amsfonts csomag)"
 
-#: ../src/latex_menu.vala:359
+#: ../src/latex_menu.vala:351
 msgid "Euler Fraktur - \\mathfrak (amsfonts package)"
 msgstr "Euler Fraktur - \\mathfrak (amsfonts csomag)"
 
 #. Math Accents
-#: ../src/latex_menu.vala:364
+#: ../src/latex_menu.vala:356
 msgid "Math _Accents"
 msgstr "Matematikai é_kezetek"
 
 #. Math Spaces
-#: ../src/latex_menu.vala:385
+#: ../src/latex_menu.vala:377
 msgid "Math _Spaces"
 msgstr "Matematikai _szóközök"
 
-#: ../src/latex_menu.vala:386
+#: ../src/latex_menu.vala:378
 msgid "_Small"
 msgstr "_Kicsi"
 
-#: ../src/latex_menu.vala:387
+#: ../src/latex_menu.vala:379
 msgid "Small - \\,"
 msgstr "Kicsi - \\,"
 
-#: ../src/latex_menu.vala:388
+#: ../src/latex_menu.vala:380
 msgid "_Medium"
 msgstr "Kö_zepes"
 
-#: ../src/latex_menu.vala:389
+#: ../src/latex_menu.vala:381
 msgid "Medium - \\:"
 msgstr "Közepes - \\:"
 
-#: ../src/latex_menu.vala:390
+#: ../src/latex_menu.vala:382
 msgid "_Large"
 msgstr "_Nagy"
 
-#: ../src/latex_menu.vala:391
+#: ../src/latex_menu.vala:383
 msgid "Large - \\;"
 msgstr "Nagy - \\;"
 
 #. Math: Left Delimiters
-#: ../src/latex_menu.vala:397
+#: ../src/latex_menu.vala:389
 msgid "_Left Delimiters"
 msgstr "_Bal oldali elválasztók"
 
-#: ../src/latex_menu.vala:398
+#: ../src/latex_menu.vala:390
 msgid "left ("
 msgstr "bal ("
 
-#: ../src/latex_menu.vala:400
+#: ../src/latex_menu.vala:392
 msgid "left ["
 msgstr "bal ["
 
-#: ../src/latex_menu.vala:402
+#: ../src/latex_menu.vala:394
 msgid "left { "
 msgstr "bal {"
 
-#: ../src/latex_menu.vala:404
+#: ../src/latex_menu.vala:396
 msgid "left <"
 msgstr "bal <"
 
-#: ../src/latex_menu.vala:406
+#: ../src/latex_menu.vala:398
 msgid "left )"
 msgstr "bal )"
 
-#: ../src/latex_menu.vala:408
+#: ../src/latex_menu.vala:400
 msgid "left ]"
 msgstr "bal ]"
 
-#: ../src/latex_menu.vala:410
+#: ../src/latex_menu.vala:402
 msgid "left  }"
 msgstr "bal }"
 
-#: ../src/latex_menu.vala:412
+#: ../src/latex_menu.vala:404
 msgid "left >"
 msgstr "bal >"
 
-#: ../src/latex_menu.vala:414
+#: ../src/latex_menu.vala:406
 msgid "left ."
 msgstr "bal ."
 
 #. Math: Right Delimiters
-#: ../src/latex_menu.vala:419
+#: ../src/latex_menu.vala:411
 msgid "Right _Delimiters"
 msgstr "_Jobb oldali elválasztók"
 
-#: ../src/latex_menu.vala:420
+#: ../src/latex_menu.vala:412
 msgid "right )"
 msgstr "jobb )"
 
-#: ../src/latex_menu.vala:422
+#: ../src/latex_menu.vala:414
 msgid "right ]"
 msgstr "jobb ]"
 
-#: ../src/latex_menu.vala:424
+#: ../src/latex_menu.vala:416
 msgid "right  }"
 msgstr "Jobb }"
 
-#: ../src/latex_menu.vala:426
+#: ../src/latex_menu.vala:418
 msgid "right >"
 msgstr "jobb >"
 
-#: ../src/latex_menu.vala:428
+#: ../src/latex_menu.vala:420
 msgid "right ("
 msgstr "jobb ("
 
-#: ../src/latex_menu.vala:430
+#: ../src/latex_menu.vala:422
 msgid "right ["
 msgstr "jobb ["
 
-#: ../src/latex_menu.vala:432
+#: ../src/latex_menu.vala:424
 msgid "right { "
 msgstr "jobb { "
 
-#: ../src/latex_menu.vala:434
+#: ../src/latex_menu.vala:426
 msgid "right <"
 msgstr "jobb <"
 
-#: ../src/latex_menu.vala:436
+#: ../src/latex_menu.vala:428
 msgid "right ."
 msgstr "jobb ."
 
 #. menus under toolitems
-#: ../src/latex_menu.vala:451
+#: ../src/latex_menu.vala:443
 msgid "Sectioning"
 msgstr "Szakaszolás"
 
-#: ../src/latex_menu.vala:454
+#: ../src/latex_menu.vala:446
 msgid "Characters Sizes"
 msgstr "Karakterméretek"
 
-#: ../src/latex_menu.vala:457
+#: ../src/latex_menu.vala:449
 msgid "References"
 msgstr "Hivatkozások"
 
-#: ../src/latex_menu.vala:460
+#: ../src/latex_menu.vala:452
 msgid "Presentation Environments"
 msgstr "Bemutató környezetek"
 
-#: ../src/latex_menu.vala:463
+#: ../src/latex_menu.vala:455
 msgid "Math Environments"
 msgstr "Matematikai környezetek"
-
-#: ../src/latex_menu.vala:466
-msgid "Left Delimiters"
-msgstr "Bal oldali elválasztók"
-
-#: ../src/latex_menu.vala:469
-msgid "Right Delimiters"
-msgstr "Jobb oldali elválasztók"
 
 #: ../src/liblatexila/latexila-build-job.c:359
 #, c-format
@@ -1517,12 +1561,12 @@ msgstr "Úgy tűnik, hogy a(z) „%s” nincs telepítve."
 msgid "The file '%s' doesn't exist."
 msgstr "A(z) „%s” fájl nem létezik."
 
-#: ../src/liblatexila/latexila-build-tool.c:575
+#: ../src/liblatexila/latexila-build-tool.c:574
 #, c-format
 msgid "Failed to open '%s':"
 msgstr "A(z) „%s” megnyitása sikertelen:"
 
-#: ../src/liblatexila/latexila-build-tool.c:677
+#: ../src/liblatexila/latexila-build-tool.c:676
 #, c-format
 msgid "Open %s"
 msgstr "%s megnyitása"
@@ -1678,26 +1722,46 @@ msgstr "A jelenlegi dokumentum áthelyezése egy új ablakba"
 msgid "_Edit"
 msgstr "S_zerkesztés"
 
+#: ../src/main_window_edit.vala:32
+msgid "_Undo"
+msgstr "_Visszavonás"
+
 #: ../src/main_window_edit.vala:33
 msgid "Undo the last action"
 msgstr "Az utolsó művelet visszavonása"
+
+#: ../src/main_window_edit.vala:35
+msgid "_Redo"
+msgstr "Új_ra"
 
 #: ../src/main_window_edit.vala:36
 msgid "Redo the last undone action"
 msgstr "Az előzőleg visszavont művelet ismételt végrehajtása"
 
+#: ../src/main_window_edit.vala:38 ../src/main_window_structure.vala:32
+msgid "Cu_t"
+msgstr "_Kivágás"
+
 #: ../src/main_window_edit.vala:39
 msgid "Cut the selection"
 msgstr "A kijelölés kivágása"
+
+#: ../src/main_window_edit.vala:41 ../src/main_window_structure.vala:35
+msgid "_Copy"
+msgstr "_Másolás"
 
 #: ../src/main_window_edit.vala:42
 msgid "Copy the selection"
 msgstr "A kijelölés másolása"
 
-#. No shortcut here because if the shortcut is null, Ctrl+V is used for the _all_
+#. No shortcut here because if the shortcut is null, Ctrl+V is used for _all_
 #. the window. In this case Ctrl+V in the search text entry would be broken (the
 #. text is pasted in the document instead of the entry).
 #. Anyway if we press Ctrl+V when the cursor is in the document, no problem.
+#: ../src/main_window_edit.vala:48
+msgid "_Paste"
+msgstr "_Beillesztés"
+
 #: ../src/main_window_edit.vala:49
 msgid "Paste the clipboard"
 msgstr "A vágólap tartalmának beillesztése"
@@ -1705,6 +1769,11 @@ msgstr "A vágólap tartalmának beillesztése"
 #: ../src/main_window_edit.vala:52
 msgid "Delete the selected text"
 msgstr "A kijelölt szöveg törlése"
+
+#: ../src/main_window_edit.vala:54
+#| msgid "_Select"
+msgid "Select _All"
+msgstr "Ö_sszes kijelölése"
 
 #: ../src/main_window_edit.vala:55
 msgid "Select the entire document"
@@ -1734,9 +1803,19 @@ msgstr "_Befejezés"
 msgid "Complete the LaTeX command"
 msgstr "A LaTeX parancs befejezése"
 
+#: ../src/main_window_edit.vala:68
+#| msgid "Preferences"
+msgid "_Preferences"
+msgstr "B_eállítások"
+
 #: ../src/main_window_edit.vala:69
 msgid "Configure the application"
 msgstr "Az alkalmazás beállítása"
+
+#: ../src/main_window_edit.vala:74
+#| msgid "Spell checking"
+msgid "_Spell Check"
+msgstr "_Helyesírás-ellenőrzés"
 
 #: ../src/main_window_edit.vala:75
 msgid "Activate or disable the spell checking"
@@ -1745,6 +1824,10 @@ msgstr "A helyesírás-ellenőrzés aktiválása vagy letiltása"
 #: ../src/main_window_file.vala:30
 msgid "_File"
 msgstr "_Fájl"
+
+#: ../src/main_window_file.vala:32 ../src/project_dialogs.vala:29
+msgid "_New"
+msgstr "Ú_j"
 
 #: ../src/main_window_file.vala:33
 msgid "New file"
@@ -1758,7 +1841,12 @@ msgstr "Új _ablak"
 msgid "Create a new window"
 msgstr "Új ablak létrehozása"
 
-#: ../src/main_window_file.vala:39 ../src/main_window_file.vala:85
+#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:148
+#| msgid "_Open File"
+msgid "_Open"
+msgstr "_Megnyitás"
+
+#: ../src/main_window_file.vala:39 ../src/main_window_file.vala:86
 msgid "Open a file"
 msgstr "Fájl megnyitása"
 
@@ -1799,21 +1887,21 @@ msgstr "Leg_utóbbi megnyitása"
 msgid "Open recently used files"
 msgstr "Legutóbb használt fájlok megnyitása"
 
-#: ../src/main_window_file.vala:86
+#: ../src/main_window_file.vala:87
 msgid "Open a recently used file"
 msgstr "Egy nemrég használt fájl megnyitása"
 
-#: ../src/main_window_file.vala:143
+#: ../src/main_window_file.vala:144
 msgid "Open Files"
 msgstr "Fájlok megnyitása"
 
 #. Filter: by default show only .tex and .bib files
-#: ../src/main_window_file.vala:165
+#: ../src/main_window_file.vala:166
 msgid "All LaTeX Files"
 msgstr "Minden LaTeX fájl"
 
 #. All files filter
-#: ../src/main_window_file.vala:172
+#: ../src/main_window_file.vala:173
 msgid "All Files"
 msgstr "Minden fájl"
 
@@ -1869,6 +1957,10 @@ msgstr "Fájl _megnyitása"
 msgid "Open the file referenced by the selected structure item"
 msgstr "A kijelölt szerkezeti elem által hivatkozott fájl megnyitása"
 
+#: ../src/main_window.vala:28
+msgid "_Quit"
+msgstr "_Kilépés"
+
 #: ../src/main_window.vala:29
 msgid "Quit the program"
 msgstr "Kilépés a programból"
@@ -1907,9 +1999,17 @@ msgstr "A betűméret visszaállítása"
 msgid "_Search"
 msgstr "_Keresés"
 
+#: ../src/main_window.vala:42
+msgid "_Find"
+msgstr "_Keresés"
+
 #: ../src/main_window.vala:43
 msgid "Search for text"
 msgstr "Szöveg keresése"
+
+#: ../src/main_window.vala:44
+msgid "Find and _Replace"
+msgstr "Keresés és _csere"
 
 #: ../src/main_window.vala:45
 msgid "Search for and replace text"
@@ -1993,7 +2093,11 @@ msgstr ""
 "Adományozzon elismerése jeleként, és támogassa a LaTeXila további "
 "fejlesztését"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1248
+#: ../src/main_window.vala:70
+msgid "_About"
+msgstr "_Névjegy"
+
+#: ../src/main_window.vala:71 ../src/main_window.vala:1243
 msgid "About LaTeXila"
 msgstr "A LaTeXila névjegye"
 
@@ -2078,50 +2182,53 @@ msgstr "Fájl mentése"
 msgid "A file named \"%s\" already exists. Do you want to replace it?"
 msgstr "Már létezik „%s” nevű fájl. Le akarja cserélni?"
 
-#: ../src/main_window.vala:903 ../src/search.vala:182
-msgid "Replace"
-msgstr "Csere"
+#: ../src/main_window.vala:902
+#| msgid "Replace"
+msgid "_Replace"
+msgstr "_Csere"
 
-#: ../src/main_window.vala:1210
+#: ../src/main_window.vala:1205
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "A LaTeXila a GNOME asztal integrált LaTeX környezete"
 
-#: ../src/main_window.vala:1249
+#: ../src/main_window.vala:1244
 msgid "translator-credits"
 msgstr ""
-"Anca Tibor Attila <anca dot tibor at posteo dot de>Kelemen Gábor <kelemeng "
-"at gnome dot hu> Úr Balázs <urbalazs at gmail dot com>"
+"Anca Tibor Attila <anca dot tibor at posteo dot de>\n"
+"Kelemen Gábor <kelemeng at gnome dot hu>\n"
+"Úr Balázs <urbalazs at gmail dot com>"
 
 #: ../src/preferences_dialog.vala:31
 msgid "Preferences"
 msgstr "Beállítások"
 
 #. reset all button
-#: ../src/preferences_dialog.vala:36 ../src/utils.vala:329
-msgid "Reset All"
-msgstr "Összes visszaállítása"
+#: ../src/preferences_dialog.vala:36 ../src/preferences_dialog.vala:118
+#| msgid "Reset All"
+msgid "_Reset All"
+msgstr "Összes _visszaállítása"
 
-#: ../src/preferences_dialog.vala:39
+#: ../src/preferences_dialog.vala:37
 msgid "Reset all preferences"
 msgstr "Összes beállítás visszaállítása"
 
-#: ../src/preferences_dialog.vala:118
+#: ../src/preferences_dialog.vala:115
 msgid "Do you really want to reset all preferences?"
 msgstr "Valóban vissza kívánja állítani az összes beállítást?"
 
-#: ../src/preferences_dialog.vala:191
+#: ../src/preferences_dialog.vala:192
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "perc"
 msgstr[1] "perc"
 
-#: ../src/preferences_dialog.vala:291
+#: ../src/preferences_dialog.vala:292
 msgid "character"
 msgid_plural "characters"
 msgstr[0] "karakter"
 msgstr[1] "karakter"
 
-#: ../src/preferences_dialog.vala:331
+#: ../src/preferences_dialog.vala:332
 #, c-format
 msgid "Use the system fixed width font (%s)"
 msgstr "A rendszer rögzített szélességű betűkészletének használata (%s)"
@@ -2132,7 +2239,7 @@ msgstr "Új projekt"
 
 #. directory
 #: ../src/project_dialogs.vala:36 ../src/project_dialogs.vala:40
-#: ../src/project_dialogs.vala:203
+#: ../src/project_dialogs.vala:202
 msgid "Directory"
 msgstr "Könyvtár"
 
@@ -2149,20 +2256,31 @@ msgstr "Projekt beállítása"
 msgid "Location of the project"
 msgstr "A projekt helye"
 
-#: ../src/project_dialogs.vala:243 ../src/project_dialogs.vala:300
-msgid "Clear All"
-msgstr "Összes törlése"
+#: ../src/project_dialogs.vala:239
+#| msgid "_Projects"
+msgid "_Properties"
+msgstr "_Tulajdonságok"
 
-#: ../src/project_dialogs.vala:275
+#: ../src/project_dialogs.vala:241
+#| msgid "Clear All"
+msgid "_Clear All"
+msgstr "Ö_sszes törlése"
+
+#: ../src/project_dialogs.vala:271
 #, c-format
 msgid "Do you really want to delete the project \"%s\"?"
 msgstr "Biztosan törölni szeretné a(z) „%s” projektet?"
 
-#: ../src/project_dialogs.vala:296
+#: ../src/project_dialogs.vala:292
 msgid "Do you really want to clear all projects?"
 msgstr "Biztosan törölni szeretné az összes projektet?"
 
-#: ../src/project_dialogs.vala:328
+#: ../src/project_dialogs.vala:295
+#| msgid "Clear All"
+msgid "Clear _All"
+msgstr "Összes _törlése"
+
+#: ../src/project_dialogs.vala:319
 msgid "The Main File is not in the directory."
 msgstr "A fő fájl nem található a könyvtárban."
 
@@ -2177,6 +2295,10 @@ msgstr "A sor, amelyre a kurzort szeretné vinni"
 #: ../src/search.vala:174
 msgid "Replace with"
 msgstr "Csere ezzel"
+
+#: ../src/search.vala:182
+msgid "Replace"
+msgstr "Csere"
 
 #. replace all: image + label
 #: ../src/search.vala:186
@@ -2219,96 +2341,96 @@ msgid_plural "%d matches"
 msgstr[0] "%d találat"
 msgstr[1] "%d találat"
 
-#: ../src/structure.vala:163
+#: ../src/structure.vala:164
 msgid "Refresh"
 msgstr "Frissítés"
 
-#: ../src/structure.vala:177
+#: ../src/structure.vala:179
 msgid "Collapse All"
 msgstr "Összes összecsukása"
 
-#: ../src/structure.vala:187
+#: ../src/structure.vala:189
 msgid "Show labels"
 msgstr "Címkék megjelenítése"
 
-#: ../src/structure.vala:188
+#: ../src/structure.vala:190
 msgid "Show included files"
 msgstr "Beillesztett fájlok megjelenítése"
 
-#: ../src/structure.vala:189
+#: ../src/structure.vala:191
 msgid "Show tables"
 msgstr "Táblázatok megjelenítése"
 
-#: ../src/structure.vala:190
+#: ../src/structure.vala:192
 msgid "Show figures and images"
 msgstr "Ábrák és képek megjelenítése"
 
 #. Translators: do not translate the words TODO and FIXME. They are special
 #. comments that can be inserted in LaTeX documents.
-#: ../src/structure.vala:193
+#: ../src/structure.vala:195
 msgid "Show TODOs and FIXMEs"
 msgstr "A TODO és FIXME megjegyzések megjelenítése"
 
-#: ../src/structure.vala:633
+#: ../src/structure.vala:634
 #, c-format
 msgid "Structure action error: %s"
 msgstr "Szerkezeti művelet hiba: %s"
 
-#: ../src/structure.vala:638
+#: ../src/structure.vala:639
 msgid "The structure data seems outdated. Please refresh the structure."
 msgstr "A szerkezeti adatok nem naprakészek. Frissítse a szerkezetet."
 
 #. Translators: it's a verb
-#: ../src/structure.vala:729
+#: ../src/structure.vala:730
 msgid "cut"
 msgstr "kivágás"
 
 #. Translators: it's a verb
-#: ../src/structure.vala:731
+#: ../src/structure.vala:732
 msgid "copy"
 msgstr "másolás"
 
-#: ../src/structure.vala:732
+#: ../src/structure.vala:733
 msgid "delete"
 msgstr "törlés"
 
-#: ../src/structure.vala:733
+#: ../src/structure.vala:734
 msgid "select"
 msgstr "kijelölés"
 
 #. Translators: it's a verb
-#: ../src/structure.vala:735
+#: ../src/structure.vala:736
 msgid "comment"
 msgstr "megjegyzés"
 
 #. Translators: it's a verb
-#: ../src/structure.vala:737
+#: ../src/structure.vala:738
 msgid "shift left"
 msgstr "eltolás balra"
 
 #. Translators: it's a verb
-#: ../src/structure.vala:739
+#: ../src/structure.vala:740
 msgid "shift right"
 msgstr "eltolás jobbra"
 
-#: ../src/structure.vala:740
+#: ../src/structure.vala:741
 msgid "open file"
 msgstr "fájl megnyitása"
 
-#: ../src/structure.vala:785
+#: ../src/structure.vala:786
 msgid "Table"
 msgstr "Táblázat"
 
 #. Translators: "Figure" here means a diagram (\begin{figure}...\end{figure})
-#: ../src/structure.vala:787
+#: ../src/structure.vala:788
 msgid "Figure"
 msgstr "Ábra"
 
-#: ../src/structure.vala:788
+#: ../src/structure.vala:789
 msgid "Image"
 msgstr "Kép"
 
-#: ../src/structure.vala:789
+#: ../src/structure.vala:790
 msgid "File included"
 msgstr "Beillesztett fájl"
 
@@ -2343,6 +2465,11 @@ msgstr "Egyéb szöveg"
 #: ../src/symbols.vala:159
 msgid "Most Used"
 msgstr "Legtöbbet használt"
+
+#: ../src/symbols_view.vala:156
+#| msgid "Clear All"
+msgid "_Clear"
+msgstr "_Törlés"
 
 #: ../src/templates_dialogs.vala:34
 msgid "New File..."
@@ -2484,6 +2611,12 @@ msgstr "Karakterek száma a „\\” után"
 #: ../src/ui/preferences_dialog.ui.h:24
 msgid "Other"
 msgstr "Egyéb"
+
+#~ msgid "Left Delimiters"
+#~ msgstr "Bal oldali elválasztók"
+
+#~ msgid "Right Delimiters"
+#~ msgstr "Jobb oldali elválasztók"
 
 #~ msgid "Latexmk messages"
 #~ msgstr "Latexmk üzenetek"
