@@ -108,7 +108,7 @@ public class BuildToolsPreferences : GLib.Object
 
         Widget join = join_view_and_toolbar (_default_view, toolbar);
 
-        return Utils.get_dialog_component (_("Default build tools"), join);
+        return Utils.get_dialog_component (_("Default Build Tools"), join);
     }
 
     private Grid get_personal_grid ()
@@ -129,7 +129,7 @@ public class BuildToolsPreferences : GLib.Object
 
         Widget join = join_view_and_toolbar (_personal_view, toolbar);
 
-        return Utils.get_dialog_component (_("Personal build tools"), join);
+        return Utils.get_dialog_component (_("Personal Build Tools"), join);
     }
 
     private Widget join_view_and_toolbar (TreeView view, Toolbar toolbar)
