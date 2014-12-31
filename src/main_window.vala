@@ -255,7 +255,6 @@ public class MainWindow : Window
         /* Other misc stuff */
 
         support_drag_and_drop ();
-        shrink_window_when_unmaximized ();
 
         delete_event.connect (() =>
         {
@@ -540,30 +539,6 @@ public class MainWindow : Window
 
             app.open_documents (files);
             Gtk.drag_finish (dc, true, true, time);
-        });
-    }
-
-    private void shrink_window_when_unmaximized ()
-    {
-        window_state_event.connect ((e) =>
-        {
-            Gdk.EventWindowState event = e;
-
-            // The window has been unmaximized.
-            if (Gdk.WindowState.MAXIMIZED in event.changed_mask &&
-                ! (Gdk.WindowState.MAXIMIZED in event.new_window_state))
-            {
-                int width = screen.get_width ();
-                int height = screen.get_height ();
-
-                resize (width - 100, height - 100);
-
-                // Signal handled.
-                return true;
-            }
-
-            // Propagate the event further.
-            return false;
         });
     }
 
