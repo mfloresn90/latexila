@@ -186,7 +186,7 @@ public class FileBrowser : Grid
 
             try
             {
-                Latexila.utils_show_uri (this.get_screen (), file.get_uri ());
+                Latexila.utils_show_uri (this.get_screen (), file.get_uri (), Gdk.CURRENT_TIME);
             }
             catch (Error e)
             {

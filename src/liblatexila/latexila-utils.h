@@ -49,6 +49,7 @@ gboolean        latexila_utils_file_query_exists_finish         (GFile        *f
 
 void            latexila_utils_show_uri                         (GdkScreen    *screen,
                                                                  const gchar  *uri,
+                                                                 guint32       timestamp,
                                                                  GError      **error);
 
 G_END_DECLS

@@ -305,7 +305,8 @@ default_document_viewer_is_evince (const gchar *uri)
 /**
  * latexila_utils_show_uri:
  * @screen: (nullable): a #GdkScreen, or %NULL.
- * @uri: the URI to show
+ * @uri: the URI to show.
+ * @timestamp: a timestamp.
  * @error: (out) (optional): a %NULL #GError, or %NULL.
  *
  * Shows the @uri. If the URI is a PDF file and if Evince is the default
@@ -315,12 +316,13 @@ default_document_viewer_is_evince (const gchar *uri)
 void
 latexila_utils_show_uri (GdkScreen    *screen,
                          const gchar  *uri,
+                         guint32       timestamp,
                          GError      **error)
 {
   g_return_if_fail (uri != NULL);
   g_return_if_fail (error == NULL || *error == NULL);
 
-  if (gtk_show_uri (screen, uri, GDK_CURRENT_TIME, error))
+  if (gtk_show_uri (screen, uri, timestamp, error))
     {
       gchar *extension = latexila_utils_get_extension (uri);
 
