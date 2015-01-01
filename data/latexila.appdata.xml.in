@@ -30,9 +30,9 @@
     </_p>
   </description>
   <screenshots>
-    <screenshot type="default">https://git.gnome.org/browse/latexila/plain/data/images/app/screenshot-completion.png</screenshot>
-    <screenshot>https://git.gnome.org/browse/latexila/plain/data/images/app/screenshot-build-tools.png</screenshot>
-    <screenshot>https://git.gnome.org/browse/latexila/plain/data/images/app/screenshot-structure.png</screenshot>
+    <screenshot type="default">https://people.gnome.org/~swilmet/latexila/screenshot-completion.png</screenshot>
+    <screenshot>https://people.gnome.org/~swilmet/latexila/screenshot-build-tools.png</screenshot>
+    <screenshot>https://people.gnome.org/~swilmet/latexila/screenshot-structure.png</screenshot>
   </screenshots>
   <url type="homepage">https://wiki.gnome.org/Apps/LaTeXila</url>
   <updatecontact>swilmet@gnome.org</updatecontact>
