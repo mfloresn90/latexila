@@ -205,7 +205,8 @@ public class DocumentView : Gtk.SourceView
         {
             Latexila.Synctex synctex = Latexila.Synctex.get_instance ();
             Document doc = this.buffer as Document;
-            synctex.forward_search (this.buffer, doc.location, doc.get_main_file ());
+            synctex.forward_search (this.buffer, doc.location, doc.get_main_file (),
+                event.time);
         }
 
         // propagate the event further

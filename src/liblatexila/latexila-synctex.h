@@ -57,7 +57,8 @@ void              latexila_synctex_connect_evince_window          (LatexilaSynct
 void              latexila_synctex_forward_search                 (LatexilaSynctex *synctex,
                                                                    GtkTextBuffer   *buffer,
                                                                    GFile           *buffer_location,
-                                                                   GFile           *main_tex_file);
+                                                                   GFile           *main_tex_file,
+                                                                   guint            timestamp);
 
 G_END_DECLS
 

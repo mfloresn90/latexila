@@ -51,6 +51,7 @@ typedef struct
   GtkTextBuffer *buffer;
   GFile *buffer_location;
   gchar *pdf_uri;
+  guint timestamp;
 } ForwardSearchData;
 
 typedef struct
@@ -532,7 +533,7 @@ connect_evince_window_cb (LatexilaSynctex   *synctex,
   evince_window_call_sync_view (evince_window,
                                 buffer_path,
                                 get_buffer_position (data->buffer),
-                                GDK_CURRENT_TIME,
+                                data->timestamp,
                                 NULL,
                                 (GAsyncReadyCallback) sync_view_cb,
                                 data);
@@ -609,15 +610,23 @@ pdf_file_query_exists_cb (GFile             *pdf_file,
  * @buffer: a #GtkTextBuffer.
  * @buffer_location: the *.tex file of @buffer.
  * @main_tex_file: the main *.tex file of @buffer.
+ * @timestamp: the timestamp of the event.
  *
  * Does a forward search, i.e. switch from the *.tex file to the PDF file at the
  * same position as the cursor position in @buffer.
+ *
+ * A correct @timestamp of the event is important. If %GDK_CURRENT_TIME is used
+ * instead, Evince is sometimes not shown directly, a notification appears
+ * instead saying that the "Document Viewer [...] is ready". It's more
+ * convenient if the Evince window is presented directly, which should work if
+ * the correct @timestamp is provided.
  */
 void
 latexila_synctex_forward_search (LatexilaSynctex *synctex,
                                  GtkTextBuffer   *buffer,
                                  GFile           *buffer_location,
-                                 GFile           *main_tex_file)
+                                 GFile           *main_tex_file,
+                                 guint            timestamp)
 {
   ForwardSearchData *data;
   GFile *pdf_file;
@@ -639,6 +648,7 @@ latexila_synctex_forward_search (LatexilaSynctex *synctex,
   data->buffer = g_object_ref (buffer);
   data->buffer_location = g_object_ref (buffer_location);
   data->pdf_uri = get_pdf_uri (main_tex_file);
+  data->timestamp = timestamp;
 
   pdf_file = g_file_new_for_uri (data->pdf_uri);
 

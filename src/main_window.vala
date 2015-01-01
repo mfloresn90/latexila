@@ -1111,7 +1111,7 @@ public class MainWindow : Window
 
         Latexila.Synctex synctex = Latexila.Synctex.get_instance ();
         synctex.forward_search (active_document, active_document.location,
-            active_document.get_main_file ());
+            active_document.get_main_file (), Gdk.CURRENT_TIME);
     }
 
     /* Projects */
