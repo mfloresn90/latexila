@@ -5,14 +5,14 @@
 # gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Paweł Żołnowski <pawel@zolnowski.name>, 2014.
-# Piotr Drąg <piotrdrag@gmail.com>, 2014.
-# Aviary.pl <gnomepl@aviary.pl>, 2014.
+# Piotr Drąg <piotrdrag@gmail.com>, 2014-2015.
+# Aviary.pl <gnomepl@aviary.pl>, 2014-2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-28 20:56+0100\n"
-"PO-Revision-Date: 2014-12-28 20:57+0100\n"
+"POT-Creation-Date: 2015-01-05 09:21+0100\n"
+"PO-Revision-Date: 2015-01-05 09:22+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -540,8 +540,8 @@ msgstr "Narzędzie budowania (tylko do odczytu)"
 #: ../src/build_tool_dialog.vala:86 ../src/build_tools_preferences.vala:332
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
 #: ../src/document_tab.vala:290 ../src/main_window_file.vala:147
-#: ../src/main_window.vala:769 ../src/main_window.vala:865
-#: ../src/main_window.vala:901 ../src/preferences_dialog.vala:117
+#: ../src/main_window.vala:744 ../src/main_window.vala:840
+#: ../src/main_window.vala:876 ../src/preferences_dialog.vala:117
 #: ../src/project_dialogs.vala:28 ../src/project_dialogs.vala:119
 #: ../src/project_dialogs.vala:274 ../src/project_dialogs.vala:294
 #: ../src/templates_dialogs.vala:36 ../src/templates_dialogs.vala:176
@@ -674,11 +674,11 @@ msgid "Build Tools"
 msgstr "Narzędzia budowania"
 
 #: ../src/build_tools_preferences.vala:111
-msgid "Default build tools"
+msgid "Default Build Tools"
 msgstr "Domyślne narzędzia budowania"
 
 #: ../src/build_tools_preferences.vala:132
-msgid "Personal build tools"
+msgid "Personal Build Tools"
 msgstr "Własne narzędzia budowania"
 
 #: ../src/build_tools_preferences.vala:174
@@ -726,12 +726,12 @@ msgstr "Brak propozycji uzupełnienia"
 msgid "Ln %d, Col %d"
 msgstr "Wrsz %d, kol %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:768
+#: ../src/dialogs.vala:40 ../src/main_window.vala:743
 msgid "Close _without Saving"
 msgstr "Zamknij _bez zapisywania"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:774 ../src/main_window.vala:866
+#: ../src/main_window.vala:749 ../src/main_window.vala:841
 msgid "_Save"
 msgstr "_Zapisz"
 
@@ -842,7 +842,7 @@ msgid "Do you want to save the file in a safer place?"
 msgstr "Zapisać plik w bezpiecznym miejscu?"
 
 #: ../src/document.vala:583 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:772
+#: ../src/main_window.vala:747
 msgid "Save _As"
 msgstr "Z_apisz jako"
 
@@ -867,7 +867,7 @@ msgid "File System"
 msgstr "System plików"
 
 #. File browser
-#: ../src/file_browser.vala:456 ../src/main_window.vala:407
+#: ../src/file_browser.vala:456 ../src/main_window.vala:406
 msgid "File Browser"
 msgstr "Przeglądarka plików"
 
@@ -1576,34 +1576,34 @@ msgstr "Polecenie %s nie jest zainstalowane."
 msgid "The file '%s' doesn't exist."
 msgstr "Plik \"%s\" nie istnieje."
 
-#: ../src/liblatexila/latexila-build-tool.c:574
+#: ../src/liblatexila/latexila-build-tool.c:575
 #, c-format
 msgid "Failed to open '%s':"
 msgstr "Otwarcie \"%s\" się nie powiodło:"
 
-#: ../src/liblatexila/latexila-build-tool.c:676
+#: ../src/liblatexila/latexila-build-tool.c:677
 #, c-format
 msgid "Open %s"
 msgstr "Otwieranie pliku %s"
 
-#: ../src/liblatexila/latexila-synctex.c:188
+#: ../src/liblatexila/latexila-synctex.c:189
 msgid "Impossible to do the forward search."
 msgstr "Wyszukiwanie do przodu jest niemożliwe."
 
-#: ../src/liblatexila/latexila-synctex.c:525
+#: ../src/liblatexila/latexila-synctex.c:526
 msgid "Can not communicate with evince."
 msgstr "Nie można się połączyć z programem evince."
 
-#: ../src/liblatexila/latexila-synctex.c:555
+#: ../src/liblatexila/latexila-synctex.c:556
 #, c-format
 msgid "The file \"%s\" doesn't exist."
 msgstr "Plik \"%s\" nie istnieje."
 
-#: ../src/liblatexila/latexila-synctex.c:589
+#: ../src/liblatexila/latexila-synctex.c:590
 msgid "The PDF file doesn't exist."
 msgstr "Plik PDF nie istnieje."
 
-#: ../src/liblatexila/latexila-synctex.c:632
+#: ../src/liblatexila/latexila-synctex.c:641
 msgid "The document is not saved."
 msgstr "Dokument nie został zapisany."
 
@@ -2110,7 +2110,7 @@ msgstr ""
 msgid "_About"
 msgstr "_O programie"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1243
+#: ../src/main_window.vala:71 ../src/main_window.vala:1218
 msgid "About LaTeXila"
 msgstr "O programie"
 
@@ -2148,20 +2148,20 @@ msgid "Show or hide the bottom panel"
 msgstr "Wyświetla lub ukrywa panel dolny"
 
 #. Symbols
-#: ../src/main_window.vala:403
+#: ../src/main_window.vala:402
 msgid "Symbols"
 msgstr "Symbole"
 
-#: ../src/main_window.vala:412
+#: ../src/main_window.vala:411
 msgid "Structure"
 msgstr "Struktura"
 
-#: ../src/main_window.vala:658
+#: ../src/main_window.vala:633
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Ten plik (%s) jest już otwarty w innym oknie programu."
 
-#: ../src/main_window.vala:660
+#: ../src/main_window.vala:635
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2169,46 +2169,46 @@ msgstr ""
 "Program LaTeXila otworzył tę instancję pliku w formie niemożliwej do "
 "modyfikowania. Modyfikować go mimo to?"
 
-#: ../src/main_window.vala:663
+#: ../src/main_window.vala:638
 msgid "Edit Anyway"
 msgstr "Modyfikuj mimo to"
 
-#: ../src/main_window.vala:664
+#: ../src/main_window.vala:639
 msgid "Don't Edit"
 msgstr "Nie modyfikuj"
 
-#: ../src/main_window.vala:765
+#: ../src/main_window.vala:740
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Zapisać zmiany w dokumencie \"%s\" przed zamknięciem?"
 
-#: ../src/main_window.vala:845
+#: ../src/main_window.vala:820
 msgid "Read-Only"
 msgstr "Tylko do odczytu"
 
-#: ../src/main_window.vala:863
+#: ../src/main_window.vala:838
 msgid "Save File"
 msgstr "Zapisywanie pliku"
 
-#: ../src/main_window.vala:898
+#: ../src/main_window.vala:873
 #, c-format
 msgid "A file named \"%s\" already exists. Do you want to replace it?"
 msgstr "Plik o nazwie \"%s\" już istnieje. Zastąpić go?"
 
-#: ../src/main_window.vala:902
+#: ../src/main_window.vala:877
 msgid "_Replace"
 msgstr "_Zastąp"
 
-#: ../src/main_window.vala:1205
+#: ../src/main_window.vala:1180
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "Program LaTeXila to zintegrowane środowisko LaTeX-a dla GNOME"
 
-#: ../src/main_window.vala:1244
+#: ../src/main_window.vala:1219
 msgid "translator-credits"
 msgstr ""
 "Paweł Żołnowski <pawel@zolnowski.name>, 2014\n"
-"Piotr Drąg <piotrdrag@gmail.com>, 2014\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2014"
+"Piotr Drąg <piotrdrag@gmail.com>, 2014-2015\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2014-2015"
 
 #: ../src/preferences_dialog.vala:31
 msgid "Preferences"
