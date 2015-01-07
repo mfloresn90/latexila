@@ -133,8 +133,9 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
     }
 
     public bool get_start_iter (SourceCompletionContext context,
-        SourceCompletionProposal proposal, TextIter iter)
+        SourceCompletionProposal proposal, out TextIter iter)
     {
+        iter = {};
         string? cmd = get_latex_command_at_iter (context.iter);
 
         // In a LaTeX command argument, use the default implementation.
