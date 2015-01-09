@@ -1192,6 +1192,7 @@ public class MainWindow : Window
         {
             "Eric Forgeot <e.forgeot@laposte.net>",
             "Sébastien Wilmet <swilmet@gnome.org>",
+            "Alexander Wilms <f.alexander.wilms@gmail.com>",
             "The Kile Team http://kile.sourceforge.net/",
             "Gedit LaTeX Plugin https://wiki.gnome.org/Apps/Gedit/LaTeXPlugin",
             null
