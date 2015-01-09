@@ -1,5 +1,13 @@
 LaTeXila NEWS
 
+Release 3.15.2
+--------------
+* Add keywords to latexila.desktop (Tanguy Ortolo)
+* Build tools icons in size 16x16 (Alexander Wilms)
+* A good bunch of source code maintenance (use less deprecated GTK+ APIs)
+* A few bug fixes and small improvements
+* Translation updates
+
 Release 3.15.1
 --------------
 * Rewrite of the build tools and synctex code in C
