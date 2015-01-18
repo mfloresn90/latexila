@@ -84,6 +84,7 @@ public class SidePanel : Grid
         close_button.focus_on_click = false;
         close_button.tooltip_text = _("Hide panel");
         close_button.add (new Image.from_icon_name ("window-close", IconSize.MENU));
+        close_button.margin_end = 3;
 
         close_button.clicked.connect (() => this.hide ());
 
