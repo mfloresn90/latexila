@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: latexila\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-05 09:21+0100\n"
-"PO-Revision-Date: 2015-01-05 09:22+0100\n"
+"POT-Creation-Date: 2015-01-18 21:34+0100\n"
+"PO-Revision-Date: 2015-01-18 21:35+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -435,7 +435,7 @@ msgstr "Bieżący katalog"
 msgid "URI of the file browser current directory"
 msgstr "Adres URI bieżącego katalogu przeglądarki plików"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:281
+#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:282
 msgid "Show build files"
 msgstr "Wyświetlanie plików budowania"
 
@@ -446,7 +446,7 @@ msgstr ""
 "Wyświetlanie plików z rozszerzeniem obecnym w preferences.latex.clean-"
 "extensions."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:289
+#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:290
 msgid "Show hidden files"
 msgstr "Wyświetlanie ukrytych plików"
 
@@ -715,7 +715,7 @@ msgstr "Proszę zaznaczyć pliki do usunięcia:"
 msgid "No build file to clean up."
 msgstr "Brak plików budowania do wyczyszczenia."
 
-#: ../src/completion.vala:329
+#: ../src/completion.vala:330
 msgid "No matching proposal"
 msgstr "Brak propozycji uzupełnienia"
 
@@ -850,24 +850,24 @@ msgstr "Z_apisz jako"
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: ../src/file_browser.vala:217
+#: ../src/file_browser.vala:218
 msgid "Go to the home directory"
 msgstr "Przenosi do katalogu domowego"
 
-#: ../src/file_browser.vala:232
+#: ../src/file_browser.vala:233
 msgid "Go to the parent directory"
 msgstr "Przenosi do katalogu nadrzędnego"
 
-#: ../src/file_browser.vala:248
+#: ../src/file_browser.vala:249
 msgid "Go to the active document directory"
 msgstr "Przenosi do katalogu aktywnego dokumentu"
 
-#: ../src/file_browser.vala:337
+#: ../src/file_browser.vala:338
 msgid "File System"
 msgstr "System plików"
 
 #. File browser
-#: ../src/file_browser.vala:456 ../src/main_window.vala:406
+#: ../src/file_browser.vala:457 ../src/main_window.vala:406
 msgid "File Browser"
 msgstr "Przeglądarka plików"
 
@@ -2110,7 +2110,7 @@ msgstr ""
 msgid "_About"
 msgstr "_O programie"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1218
+#: ../src/main_window.vala:71 ../src/main_window.vala:1219
 msgid "About LaTeXila"
 msgstr "O programie"
 
@@ -2203,7 +2203,7 @@ msgstr "_Zastąp"
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "Program LaTeXila to zintegrowane środowisko LaTeX-a dla GNOME"
 
-#: ../src/main_window.vala:1219
+#: ../src/main_window.vala:1220
 msgid "translator-credits"
 msgstr ""
 "Paweł Żołnowski <pawel@zolnowski.name>, 2014\n"
@@ -2477,9 +2477,13 @@ msgstr "Różne tekstowe"
 msgid "Most Used"
 msgstr "Najczęściej używane"
 
-#: ../src/symbols_view.vala:156
+#: ../src/symbols_view.vala:157
 msgid "_Clear"
 msgstr "Wy_czyść"
+
+#: ../src/symbols_view.vala:159
+msgid "Clear most used symbols"
+msgstr "Czyści najczęściej używane symbole"
 
 #: ../src/templates_dialogs.vala:34
 msgid "New File..."
