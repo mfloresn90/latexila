@@ -62,6 +62,7 @@ public class SymbolsView : Grid
 
         _combo_box = new ComboBox.with_model (categories_model);
         _combo_box.hexpand = true;
+        _combo_box.margin_end = 3;
 
         CellRendererPixbuf pixbuf_renderer = new CellRendererPixbuf ();
         _combo_box.pack_start (pixbuf_renderer, false);
@@ -154,6 +155,7 @@ public class SymbolsView : Grid
     private void create_clear_button ()
     {
         _clear_button = new Button.from_stock (Stock.CLEAR);
+        _clear_button.margin_end = 3;
 
         _clear_button.clicked.connect (() =>
         {

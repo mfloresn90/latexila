@@ -91,6 +91,7 @@ public class FileBrowser : Grid
         );
 
         _combo_box = new ComboBox.with_model (_parent_dir_store);
+        _combo_box.margin_end = 3;
         add (_combo_box);
 
         // pixbuf
