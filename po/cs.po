@@ -1,15 +1,15 @@
 # Czech translation for latexila.
 # Copyright (C) 2011 latexila's COPYRIGHT HOLDER
 # This file is distributed under the same license as the latexila package.
-# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013, 2014.
+# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-01-04 10:28+0000\n"
-"PO-Revision-Date: 2014-12-27 17:23+0100\n"
+"POT-Creation-Date: 2015-01-18 20:36+0000\n"
+"PO-Revision-Date: 2015-01-18 22:57+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -414,7 +414,7 @@ msgstr "Aktuální složka"
 msgid "URI of the file browser current directory"
 msgstr "Adresa URI aktuální složky v prohlížeči souborů"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:281
+#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:282
 msgid "Show build files"
 msgstr "Zobrazovat soubory ze sestavování"
 
@@ -425,7 +425,7 @@ msgstr ""
 "Zobrazovat soubory s příponami uvedenými v preferences.latex.clean-"
 "extensions."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:289
+#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:290
 msgid "Show hidden files"
 msgstr "Zobrazovat skryté soubory"
 
@@ -697,7 +697,7 @@ msgstr ""
 "Nenalezeny žádné nepotřebné soubory použité při sestavení, které by bylo "
 "možno smazat."
 
-#: ../src/completion.vala:329
+#: ../src/completion.vala:330
 msgid "No matching proposal"
 msgstr "Žádný odpovídající návrh"
 
@@ -827,24 +827,24 @@ msgstr "Uložit j_ako"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: ../src/file_browser.vala:217
+#: ../src/file_browser.vala:218
 msgid "Go to the home directory"
 msgstr "Přejít do domovské složky"
 
-#: ../src/file_browser.vala:232
+#: ../src/file_browser.vala:233
 msgid "Go to the parent directory"
 msgstr "Přejít do rodičovské složky"
 
-#: ../src/file_browser.vala:248
+#: ../src/file_browser.vala:249
 msgid "Go to the active document directory"
 msgstr "Přejít do složky aktivního dokumentu"
 
-#: ../src/file_browser.vala:337
+#: ../src/file_browser.vala:338
 msgid "File System"
 msgstr "Souborový systém"
 
 #. File browser
-#: ../src/file_browser.vala:456 ../src/main_window.vala:406
+#: ../src/file_browser.vala:457 ../src/main_window.vala:406
 msgid "File Browser"
 msgstr "Procházení souborů"
 
@@ -2083,7 +2083,7 @@ msgstr ""
 msgid "_About"
 msgstr "O _aplikaci"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1218
+#: ../src/main_window.vala:71 ../src/main_window.vala:1219
 msgid "About LaTeXila"
 msgstr "O aplikaci LaTeXila"
 
@@ -2176,7 +2176,7 @@ msgstr "Nah_radit"
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeXila je integrované prostředí LaTeX pro GNOME"
 
-#: ../src/main_window.vala:1219
+#: ../src/main_window.vala:1220
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
 
@@ -2447,9 +2447,13 @@ msgstr "Různé textové"
 msgid "Most Used"
 msgstr "Nejpoužívanější"
 
-#: ../src/symbols_view.vala:156
+#: ../src/symbols_view.vala:157
 msgid "_Clear"
 msgstr "Vy_mazat"
+
+#: ../src/symbols_view.vala:159
+msgid "Clear most used symbols"
+msgstr "Vymazat nejpoužívanější symboly"
 
 #: ../src/templates_dialogs.vala:34
 msgid "New File..."
