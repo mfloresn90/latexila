@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: LaTeXila 2.12\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-01-05 10:29+0000\n"
-"PO-Revision-Date: 2015-01-05 13:32+0100\n"
+"POT-Creation-Date: 2015-01-18 17:41+0000\n"
+"PO-Revision-Date: 2015-01-18 19:16+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu_HU\n"
@@ -417,7 +417,7 @@ msgstr "Jelenlegi könyvtár"
 msgid "URI of the file browser current directory"
 msgstr "A fájlböngésző jelenlegi könyvtárának URI-ja"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:281
+#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:282
 msgid "Show build files"
 msgstr "Összeállítási fájlok megjelenítése"
 
@@ -428,7 +428,7 @@ msgstr ""
 "A preferences.latex.clean-extensions értékében szereplő kiterjesztéssel "
 "rendelkező fájlok megjelenítése."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:289
+#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:290
 msgid "Show hidden files"
 msgstr "Rejtett fájlok megjelenítése"
 
@@ -657,12 +657,10 @@ msgid "Build Tools"
 msgstr "Összeállítási eszközök"
 
 #: ../src/build_tools_preferences.vala:111
-#| msgid "Default build tools"
 msgid "Default Build Tools"
 msgstr "Alapértelmezett összeállítási eszközök"
 
 #: ../src/build_tools_preferences.vala:132
-#| msgid "Personal build tools"
 msgid "Personal Build Tools"
 msgstr "Személyes összeállítási eszközök"
 
@@ -700,7 +698,7 @@ msgstr "Válassza ki a törölni kívánt fájlokat:"
 msgid "No build file to clean up."
 msgstr "Nincs tisztítandó összeállítási fájl."
 
-#: ../src/completion.vala:329
+#: ../src/completion.vala:330
 msgid "No matching proposal"
 msgstr "Nincs egyező javaslat"
 
@@ -830,24 +828,24 @@ msgstr "Men_tés másként"
 msgid "Cancel"
 msgstr "Mégse"
 
-#: ../src/file_browser.vala:217
+#: ../src/file_browser.vala:218
 msgid "Go to the home directory"
 msgstr "Ugrás a saját könyvtárba"
 
-#: ../src/file_browser.vala:232
+#: ../src/file_browser.vala:233
 msgid "Go to the parent directory"
 msgstr "Ugrás a szülő könyvtárba"
 
-#: ../src/file_browser.vala:248
+#: ../src/file_browser.vala:249
 msgid "Go to the active document directory"
 msgstr "Ugrás az aktív dokumentum könyvtárába"
 
-#: ../src/file_browser.vala:337
+#: ../src/file_browser.vala:338
 msgid "File System"
 msgstr "Fájlrendszer"
 
 #. File browser
-#: ../src/file_browser.vala:456 ../src/main_window.vala:406
+#: ../src/file_browser.vala:457 ../src/main_window.vala:406
 msgid "File Browser"
 msgstr "Fájlböngésző"
 
@@ -2087,7 +2085,7 @@ msgstr ""
 msgid "_About"
 msgstr "_Névjegy"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1218
+#: ../src/main_window.vala:71 ../src/main_window.vala:1219
 msgid "About LaTeXila"
 msgstr "A LaTeXila névjegye"
 
@@ -2180,7 +2178,7 @@ msgstr "_Csere"
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "A LaTeXila a GNOME asztal integrált LaTeX környezete"
 
-#: ../src/main_window.vala:1219
+#: ../src/main_window.vala:1220
 msgid "translator-credits"
 msgstr ""
 "Anca Tibor Attila <anca dot tibor at posteo dot de>\n"
@@ -2451,9 +2449,13 @@ msgstr "Egyéb szöveg"
 msgid "Most Used"
 msgstr "Legtöbbet használt"
 
-#: ../src/symbols_view.vala:156
+#: ../src/symbols_view.vala:157
 msgid "_Clear"
 msgstr "_Törlés"
+
+#: ../src/symbols_view.vala:159
+msgid "Clear most used symbols"
+msgstr "Legtöbbet használt szimbólumok törlése"
 
 #: ../src/templates_dialogs.vala:34
 msgid "New File..."
