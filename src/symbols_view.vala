@@ -156,6 +156,7 @@ public class SymbolsView : Grid
     {
         _clear_button = new Button.with_mnemonic (_("_Clear"));
         _clear_button.margin_end = 3;
+        _clear_button.tooltip_text = _("Clear most used symbols");
 
         _clear_button.clicked.connect (() =>
         {
