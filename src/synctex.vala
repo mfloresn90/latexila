@@ -75,7 +75,7 @@ public class Synctex : Object
         return _instance;
     }
 
-    public void forward_search (Document doc)
+    public void forward_search (Document doc, uint32 timestamp)
     {
         string? pdf_uri = get_pdf_uri (doc);
 
@@ -111,7 +111,7 @@ public class Synctex : Object
         string tex_path = doc.location.get_path ();
         DocPosition pos = get_doc_position (doc);
 
-        sync_view (ev_window, tex_path, pos);
+        sync_view (ev_window, tex_path, pos, timestamp);
     }
 
     private void show_warning (string message)
@@ -267,11 +267,12 @@ public class Synctex : Object
         });
     }
 
-    private void sync_view (EvinceWindow window, string tex_path, DocPosition pos)
+    private void sync_view (EvinceWindow window, string tex_path, DocPosition pos,
+        uint32 timestamp)
     {
         try
         {
-            window.sync_view (tex_path, pos, Gdk.CURRENT_TIME);
+            window.sync_view (tex_path, pos, timestamp);
         }
         catch (IOError e)
         {

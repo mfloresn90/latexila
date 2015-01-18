@@ -1115,7 +1115,7 @@ public class MainWindow : Window
         return_if_fail (active_tab != null);
 
         Synctex synctex = Synctex.get_default ();
-        synctex.forward_search (active_document);
+        synctex.forward_search (active_document, Gdk.CURRENT_TIME);
     }
 
     /* Projects */

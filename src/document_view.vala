@@ -204,7 +204,7 @@ public class DocumentView : Gtk.SourceView
             Gdk.ModifierType.CONTROL_MASK in event.state)
         {
             Synctex synctex = Synctex.get_default ();
-            synctex.forward_search (this.buffer as Document);
+            synctex.forward_search (this.buffer as Document, event.time);
         }
 
         // propagate the event further
