@@ -1,13 +1,17 @@
+# Basque translation for latexila
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014.
+# Edurne Labaka <elabaka@uzei.com>, 2015.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-23 10:54+0200\n"
-"PO-Revision-Date: 2014-07-23 10:55+0200\n"
+"Project-Id-Version: latexila latexila-2-12\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=latexila&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-02-07 17:31+0100\n"
+"PO-Revision-Date: 2014-11-19 14:59+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
 "Language: eu\n"
@@ -15,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Poedit 1.6.10\n"
 
 #: build_tools.xml:43(tool/label) ../src/build_tool_dialog.vala:166
 msgid "View PDF"
@@ -226,7 +230,7 @@ msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr ""
-"Tabuladore-karaktereen ordez bistaratu behar diren zuriune-kopurua zehazten "
+"Tabuladore-karaktereen ordez bistaratu behar diren zuriune kopurua zehazten "
 "du."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.in.h:17
@@ -333,11 +337,11 @@ msgstr "Erakutsi eraikitzearen irteerako abisuak"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.in.h:39
 msgid "Show build output badboxes"
-msgstr "Erakutsi erakinaren irteerako akatsen koadroa"
+msgstr "Erakutsi eraikinaren irteerako akatsen koadroa"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.in.h:40
 msgid "Interactive completion"
-msgstr "Osaketa elkarreragilea"
+msgstr "Osaketa interaktiboa"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.in.h:41
 msgid "Automatically show LaTeX commands proposals"
@@ -345,7 +349,7 @@ msgstr "Erakutsi automatikoki LaTeX komandoen proposamenak"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.in.h:42
 msgid "Minimum number of characters for interactive completion"
-msgstr "Gutxieneko karaktere kopurua osaketa elkarreragilearentzako"
+msgstr "Gutxieneko karaktere kopurua osaketa interaktiboarentzako"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.in.h:43
 msgid ""
@@ -353,7 +357,7 @@ msgid ""
 "LaTeX commands"
 msgstr ""
 "Gutxieneko karaktere kopurua \"\\\" ondoren LaTeX komandoen osaketa "
-"elkarreragilearentzako"
+"interaktiboarentzako"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.in.h:44
 #: ../src/ui/preferences_dialog.ui.h:19
@@ -377,7 +381,7 @@ msgstr "Fitxategien luzapenak garbiketarako"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.in.h:48
 msgid "The list of file extensions for the clean-up, separated by spaces"
-msgstr "Fitxategien luzapenen zerrenda garbiketarako, zuriunez bereiztuta"
+msgstr "Fitxategien luzapenen zerrenda garbiketarako, zuriunez bereizita"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.in.h:49
 msgid "Enabled default build tools"
@@ -450,8 +454,7 @@ msgid ""
 "\n"
 "\\begin{document}\n"
 "\n"
-"\\begin{letter}{Destination\\\\Address of the destination\\\\Phone number of "
-"the destination}\n"
+"\\begin{letter}{Destination\\\\Address of the destination\\\\Phone number of the destination}\n"
 "\n"
 "\\opening{Dear Sir,}\n"
 "\n"
@@ -478,8 +481,7 @@ msgstr ""
 "\n"
 "\\begin{document}\n"
 "\n"
-"\\begin{letter}{Helburua\\\\Helburuaren helbidea\\\\Helburuaren telefono "
-"zenbakia}\n"
+"\\begin{letter}{Helburua\\\\Helburuaren helbidea\\\\Helburuaren telefono zenbakia}\n"
 "\n"
 "\\opening{Jaun/Andre agurgarria,}\n"
 "\n"
@@ -701,7 +703,7 @@ msgstr "Hautatu dokumentuak gordetzeko:"
 
 #: ../src/dialogs.vala:129
 msgid "If you don't save, all your changes will be permanently lost."
-msgstr "Ez baduzu gordetzen, aldaketak betirako galduko dira."
+msgstr "Ez baduzu gordetzen, aldaketak betiko galduko dira."
 
 #: ../src/document_structure.vala:720
 msgid "The structure item already contains a sub-paragraph."
@@ -1180,7 +1182,7 @@ msgstr "Eraztuna - \\r"
 
 #: ../src/latex_menu.vala:239
 msgid "Tie - \\t"
-msgstr ""
+msgstr "Tie - \\t"
 
 #. LaTeX: Others
 #: ../src/latex_menu.vala:243
@@ -2449,7 +2451,7 @@ msgstr "Garbitu fitxategiak automatikoki itxi ondoren"
 
 #: ../src/ui/preferences_dialog.ui.h:21
 msgid "Interactive completion after"
-msgstr "Osaketa elkarreragilea honen ondoren"
+msgstr "Osaketa interaktiboa honen ondoren"
 
 #: ../src/ui/preferences_dialog.ui.h:22
 msgid "Number of characters after &apos;\\&apos;"
@@ -2462,4 +2464,3 @@ msgstr "Karaktere kopurua honen ondoren: '\\'"
 #: ../src/ui/preferences_dialog.ui.h:24
 msgid "Other"
 msgstr "Bestelakoa"
-
