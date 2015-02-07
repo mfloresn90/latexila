@@ -1,13 +1,16 @@
+# Basque translation for latexila
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014.
+# Edurne Labaka <elabaka@uzei.com>, 2015.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: latexila master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-23 10:35+0200\n"
-"PO-Revision-Date: 2014-07-23 10:53+0200\n"
+"POT-Creation-Date: 2015-02-07 17:35+0100\n"
+"PO-Revision-Date: 2014-11-19 14:59+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
 "Language: eu\n"
@@ -15,57 +18,70 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Poedit 1.6.10\n"
 
-#: build_tools.xml:43(tool/label) ../src/build_tool_dialog.vala:166
+#. (itstool) path: tool/label
+#: build_tools.xml:43 ../src/build_tool_dialog.vala:168
 msgid "View PDF"
 msgstr "Ikusi PDF"
 
-#: build_tools.xml:44(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:44
 msgid "View the PDF file"
 msgstr "Ikusi PDF fitxategia"
 
-#: build_tools.xml:49(tool/label) ../src/build_tool_dialog.vala:165
+#. (itstool) path: tool/label
+#: build_tools.xml:49 ../src/build_tool_dialog.vala:167
 msgid "View DVI"
 msgstr "Ikusi DVI"
 
-#: build_tools.xml:50(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:50
 msgid "View the DVI file"
 msgstr "Ikusi DVI fitxategia"
 
-#: build_tools.xml:55(tool/label) ../src/build_tool_dialog.vala:167
+#. (itstool) path: tool/label
+#: build_tools.xml:55 ../src/build_tool_dialog.vala:169
 msgid "View PS"
 msgstr "Ikusi PS"
 
-#: build_tools.xml:56(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:56
 msgid "View the PostScript file"
 msgstr "Ikusi PostScript fitxategia"
 
-#: build_tools.xml:64(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:64
 msgid "Create a PDF file from LaTeX sources with the \"pdflatex\" command"
 msgstr "Sortu PDF fitxategia LaTeX iturburuetatik 'pdflatex' komandoarekin"
 
-#: build_tools.xml:70(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:70
 msgid "Create a DVI file from LaTeX sources with the \"latex\" command"
 msgstr "Sortu DVI fitxategia LaTeX iturburuetatik 'latex' komandoarekin"
 
-#: build_tools.xml:78(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:78
 msgid "Run BibTeX (bibliography)"
 msgstr "Exekutatu BibTeX (bibliografia)"
 
-#: build_tools.xml:84(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:84
 msgid "Run MakeIndex"
 msgstr "Exekutatu MakeIndex"
 
-#: build_tools.xml:92(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:92
 msgid "Convert the DVI document to the PDF format"
 msgstr "Bihurtu DVI dokumentua PDF formatura"
 
-#: build_tools.xml:98(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:98
 msgid "Convert the DVI document to the PostScript format"
 msgstr "Bihurtu DVI dokumentua PostScript formatura"
 
-#: build_tools.xml:104(tool/description)
+#. (itstool) path: tool/description
+#: build_tools.xml:104
 msgid "Convert the PostScript document to the PDF format"
 msgstr "Bihurtu PostScript dokumentua PDF formatura"
 
@@ -96,13 +112,14 @@ msgstr ""
 "tex fitxategi dituzten proiektuan oso erraz kudeatzen dira."
 
 #: ../data/latexila.appdata.xml.in.h:4
+#, fuzzy
 msgid ""
 "A side panel contains three components: the document structure to easily "
 "navigate in it; lists of symbols to insert them in a document; and an "
 "integrated file browser."
 msgstr ""
 "Hiru osagaiko albo-panela dago: dokumentuaren egitura bertan errazago "
-"nabigatzeko; ikurren zerrenda, haiek dokumentuan txertatzeko; eta "
+"nabigatzeko; ikurren zerrenda haiek dokumentuan txertatzeko; eta "
 "barneratutako fitxategi-arakatzailea."
 
 #: ../data/latexila.appdata.xml.in.h:5
@@ -126,10 +143,14 @@ msgid "Edit LaTeX documents"
 msgstr "Editatu LaTeX dokumentuak"
 
 #: ../data/latexila.desktop.in.in.h:4
+msgid "text;tex;latex;editor;documents;"
+msgstr ""
+
+#: ../data/latexila.desktop.in.in.h:5
 msgid "Open a New Window"
 msgstr "Ireki Leiho berria"
 
-#: ../data/latexila.desktop.in.in.h:5
+#: ../data/latexila.desktop.in.in.h:6
 msgid "Open a New Document"
 msgstr "Ireki dokumentu berria"
 
@@ -224,7 +245,7 @@ msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr ""
-"Tabuladore-karaktereen ordez bistaratu behar diren zuriune-kopurua zehazten "
+"Tabuladore-karaktereen ordez bistaratu behar diren zuriune kopurua zehazten "
 "du."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:17
@@ -331,11 +352,11 @@ msgstr "Erakutsi eraikitzearen irteerako abisuak"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:39
 msgid "Show build output badboxes"
-msgstr "Erakutsi erakinaren irteerako akatsen koadroa"
+msgstr "Erakutsi eraikinaren irteerako akatsen koadroa"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:40
 msgid "Interactive completion"
-msgstr "Osaketa elkarreragilea"
+msgstr "Osaketa interaktiboa"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:41
 msgid "Automatically show LaTeX commands proposals"
@@ -343,7 +364,7 @@ msgstr "Erakutsi automatikoki LaTeX komandoen proposamenak"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:42
 msgid "Minimum number of characters for interactive completion"
-msgstr "Gutxieneko karaktere kopurua osaketa elkarreragilearentzako"
+msgstr "Gutxieneko karaktere kopurua osaketa interaktiboarentzako"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:43
 msgid ""
@@ -351,7 +372,7 @@ msgid ""
 "LaTeX commands"
 msgstr ""
 "Gutxieneko karaktere kopurua \"\\\" ondoren LaTeX komandoen osaketa "
-"elkarreragilearentzako"
+"interaktiboarentzako"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:44
 #: ../src/ui/preferences_dialog.ui.h:19
@@ -375,7 +396,7 @@ msgstr "Fitxategien luzapenak garbiketarako"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:48
 msgid "The list of file extensions for the clean-up, separated by spaces"
-msgstr "Fitxategien luzapenen zerrenda garbiketarako, zuriunez bereiztuta"
+msgstr "Fitxategien luzapenen zerrenda garbiketarako, zuriunez bereizita"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:49
 msgid "Enabled default build tools"
@@ -401,7 +422,7 @@ msgstr "Uneko direktorioa"
 msgid "URI of the file browser current directory"
 msgstr "Uneko direktorioaren URIa fitxategi-arakatzailean"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:281
+#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:282
 msgid "Show build files"
 msgstr "Erakutsi eraikinen fitxategiak"
 
@@ -412,7 +433,7 @@ msgstr ""
 "Erakutsi 'preferences.latex.clean-extensions' agertzen diren luzapeneko "
 "fitxategiak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:289
+#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:290
 msgid "Show hidden files"
 msgstr "Erakutsi ezkutuko fitxategiak"
 
@@ -420,9 +441,9 @@ msgstr "Erakutsi ezkutuko fitxategiak"
 msgid "Show files beginning with a dot."
 msgstr "Erakutsi puntu batekin hasten diren fitxategiak."
 
+#. (itstool) path: template/babel
 #. This must be translated by a usepackage LaTeX command.
-#: article.xml:8(template/babel) beamer.xml:8(template/babel)
-#: book.xml:8(template/babel) report.xml:8(template/babel)
+#: article.xml:8 beamer.xml:8 book.xml:8 report.xml:8
 #, no-wrap
 msgid ""
 "\n"
@@ -431,8 +452,9 @@ msgstr ""
 "\n"
 "% babel paketea edo baliokidea\n"
 
+#. (itstool) path: template/translatableChunk
 #. There is a helper script in data/templates/tex2po.sh
-#: letter.xml:2(template/translatableChunk)
+#: letter.xml:2
 #, no-wrap
 msgid ""
 "\n"
@@ -446,8 +468,7 @@ msgid ""
 "\n"
 "\\begin{document}\n"
 "\n"
-"\\begin{letter}{Destination\\\\Address of the destination\\\\Phone number of "
-"the destination}\n"
+"\\begin{letter}{Destination\\\\Address of the destination\\\\Phone number of the destination}\n"
 "\n"
 "\\opening{Dear Sir,}\n"
 "\n"
@@ -474,8 +495,7 @@ msgstr ""
 "\n"
 "\\begin{document}\n"
 "\n"
-"\\begin{letter}{Helburua\\\\Helburuaren helbidea\\\\Helburuaren telefono "
-"zenbakia}\n"
+"\\begin{letter}{Helburua\\\\Helburuaren helbidea\\\\Helburuaren telefono zenbakia}\n"
 "\n"
 "\\opening{Jaun/Andre agurgarria,}\n"
 "\n"
@@ -494,167 +514,184 @@ msgstr ""
 msgid "Hide panel"
 msgstr "Ezkutatu panela"
 
+#. close button
+#: ../src/build_tool_dialog.vala:80 ../src/build_tools_preferences.vala:55
+#: ../src/main_window_file.vala:53 ../src/preferences_dialog.vala:42
+#: ../src/project_dialogs.vala:186 ../src/templates_dialogs.vala:244
+#, fuzzy
+msgid "_Close"
+msgstr "It_xi denak"
+
 #: ../src/build_tool_dialog.vala:81
 msgid "Build Tool (read-only)"
 msgstr "Eraikitzeko tresna (irakurtzeko soilik)"
+
+#: ../src/build_tool_dialog.vala:86 ../src/build_tools_preferences.vala:332
+#: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
+#: ../src/document_tab.vala:290 ../src/main_window_file.vala:147
+#: ../src/main_window.vala:744 ../src/main_window.vala:840
+#: ../src/main_window.vala:876 ../src/preferences_dialog.vala:117
+#: ../src/project_dialogs.vala:28 ../src/project_dialogs.vala:119
+#: ../src/project_dialogs.vala:274 ../src/project_dialogs.vala:294
+#: ../src/templates_dialogs.vala:36 ../src/templates_dialogs.vala:176
+msgid "_Cancel"
+msgstr ""
+
+#: ../src/build_tool_dialog.vala:87 ../src/project_dialogs.vala:120
+#: ../src/tab_info_bar.vala:77 ../src/templates_dialogs.vala:37
+#: ../src/templates_dialogs.vala:177
+msgid "_OK"
+msgstr ""
 
 #: ../src/build_tool_dialog.vala:88
 msgid "Build Tool"
 msgstr "Eraikitzeko tresna"
 
-#: ../src/build_tool_dialog.vala:159
+#: ../src/build_tool_dialog.vala:161
 msgid "Execute"
 msgstr "Exekutatu"
 
-#: ../src/build_tool_dialog.vala:163
+#: ../src/build_tool_dialog.vala:165
 msgid "Convert"
 msgstr "Bihurtu"
 
-#: ../src/build_tool_dialog.vala:164
+#. FIXME don't use Stock
+#: ../src/build_tool_dialog.vala:166
 msgid "View File"
 msgstr "Ikusi fitxategia"
 
-#: ../src/build_tool_dialog.vala:228
+#: ../src/build_tool_dialog.vala:230
 msgid "Commands"
 msgstr "Komandoak"
 
-#: ../src/build_tool_dialog.vala:238
+#: ../src/build_tool_dialog.vala:240
 msgid "Post Processor"
 msgstr "Postprozesadorea"
 
-#: ../src/build_tool_dialog.vala:265 ../src/build_tools_preferences.vala:289
+#: ../src/build_tool_dialog.vala:267 ../src/build_tools_preferences.vala:294
 msgid "Add..."
 msgstr "Gehitu..."
 
-#: ../src/build_tool_dialog.vala:282 ../src/build_tools_preferences.vala:306
+#: ../src/build_tool_dialog.vala:284 ../src/build_tools_preferences.vala:311
 msgid "Remove"
 msgstr "Kendu"
 
-#: ../src/build_tool_dialog.vala:312 ../src/build_tools_preferences.vala:346
+#: ../src/build_tool_dialog.vala:314 ../src/build_tools_preferences.vala:351
 msgid "Move up"
 msgstr "Eraman gora"
 
-#: ../src/build_tool_dialog.vala:363 ../src/build_tools_preferences.vala:398
+#: ../src/build_tool_dialog.vala:365 ../src/build_tools_preferences.vala:403
 msgid "Move down"
 msgstr "Eraman behera"
 
-#: ../src/build_tool_dialog.vala:563 ../src/build_tools_preferences.vala:181
-#: ../src/latex_menu.vala:52 ../src/structure.vala:782
+#: ../src/build_tool_dialog.vala:569 ../src/build_tools_preferences.vala:183
+#: ../src/latex_menu.vala:52 ../src/structure.vala:783
 msgid "Label"
 msgstr "Etiketa"
 
-#: ../src/build_tool_dialog.vala:568
+#: ../src/build_tool_dialog.vala:574
 msgid "You can select this arrow and copy/paste it!"
 msgstr "Gezi hau hautatu eta kopia/itsatsi dezakezu."
 
-#: ../src/build_tool_dialog.vala:584
+#: ../src/build_tool_dialog.vala:590
 msgid "Description"
 msgstr "Azalpena"
 
-#: ../src/build_tool_dialog.vala:590
+#: ../src/build_tool_dialog.vala:596
 msgid "File extensions for which the build tool can be executed."
 msgstr ""
 "Fitxategien luzapena (hauentzako eraikitzeko tresna exekuta daitekeena)."
 
-#: ../src/build_tool_dialog.vala:591
+#: ../src/build_tool_dialog.vala:597
 msgid "The extensions are separated by spaces."
 msgstr "Luzapenak zuriunez bereizten dira."
 
-#: ../src/build_tool_dialog.vala:592
+#: ../src/build_tool_dialog.vala:598
 msgid "If it is empty, all extensions are allowed."
 msgstr "Hutsik egonez gero, luzapen guztiak baimentzen dira."
 
-#: ../src/build_tool_dialog.vala:594
+#: ../src/build_tool_dialog.vala:600
 msgid "Extensions"
 msgstr "Luzapenak"
 
-#: ../src/build_tool_dialog.vala:599
+#: ../src/build_tool_dialog.vala:605
 msgid "Icon"
 msgstr "Ikonoa"
 
 #. Placeholders
-#: ../src/build_tool_dialog.vala:606
+#: ../src/build_tool_dialog.vala:612
 msgid "Placeholders:"
 msgstr "Leku-markak:"
 
-#: ../src/build_tool_dialog.vala:610
+#: ../src/build_tool_dialog.vala:616
 msgid "The active document's filename."
 msgstr "Dokumentu aktiboaren fitxategi-izena."
 
-#: ../src/build_tool_dialog.vala:611 ../src/build_tool_dialog.vala:616
-msgid "If the active document belongs to a project, the main file is choosen."
+#: ../src/build_tool_dialog.vala:617 ../src/build_tool_dialog.vala:622
+#, fuzzy
+msgid "If the active document belongs to a project, the main file is chosen."
 msgstr ""
 "Dokumentu aktiboa proiektu bati badagokio, fitxategi nagusia aukeratuko da."
 
-#: ../src/build_tool_dialog.vala:615
+#: ../src/build_tool_dialog.vala:621
 msgid "The active document's filename without its extension."
 msgstr "Dokumentu aktiboaren fitxategi-izena luzapenik gabe."
 
-#: ../src/build_tool_dialog.vala:659
+#: ../src/build_tool_dialog.vala:665
 msgid "Jobs"
 msgstr "Lanak"
 
-#: ../src/build_tool_dialog.vala:665
+#: ../src/build_tool_dialog.vala:671
 msgid "List of files to open after executing the build jobs."
 msgstr "Fitxategien zerrenda eraikitze-lanak exekutatu ondoren irekitzeko."
 
-#: ../src/build_tool_dialog.vala:666
+#: ../src/build_tool_dialog.vala:672
 msgid "The files are separated by spaces."
 msgstr "Fitxategiak zuriunez bereizten dira."
 
-#: ../src/build_tool_dialog.vala:667
+#: ../src/build_tool_dialog.vala:673
 msgid "You should use the placeholders to specify the files."
 msgstr "Leku-markak erabili beharko zenituzke fitxategiak zehazteko."
 
-#: ../src/build_tool_dialog.vala:670
+#: ../src/build_tool_dialog.vala:676
 msgid "Files to open"
 msgstr "Fitxategiak irekitzeko"
-
-#: ../src/build_tool_runner.vala:191
-#, c-format
-msgid "%s doesn't seem to be installed."
-msgstr "'%s' ez dirudi instalatuta dagoenik."
-
-#: ../src/build_tool_runner.vala:263
-#, c-format
-msgid "Open %s"
-msgstr "Ireki %s"
-
-#: ../src/build_tool_runner.vala:272
-#, c-format
-msgid "The file '%s' doesn't exist."
-msgstr "'%s' fitxategia ez da existitzen."
-
-#: ../src/build_tool_runner.vala:289
-#, c-format
-msgid "Failed to open '%s':"
-msgstr "Huts egin du '%s' irekitzean:"
 
 #: ../src/build_tools_preferences.vala:53
 msgid "Build Tools"
 msgstr "Eraikitzeko tresnak"
 
-#: ../src/build_tools_preferences.vala:109
-msgid "Default build tools"
+#: ../src/build_tools_preferences.vala:111
+#, fuzzy
+msgid "Default Build Tools"
 msgstr "Eraikitzeko tresna lehenetsiak"
 
-#: ../src/build_tools_preferences.vala:129
-msgid "Personal build tools"
+#: ../src/build_tools_preferences.vala:132
+#, fuzzy
+msgid "Personal Build Tools"
 msgstr "Eraikitzeko tresna pertsonalizatuak"
 
-#: ../src/build_tools_preferences.vala:172
+#: ../src/build_tools_preferences.vala:174
 msgid "Enabled"
 msgstr "Gaituta"
 
-#: ../src/build_tools_preferences.vala:274
+#: ../src/build_tools_preferences.vala:278
 #, c-format
 msgid "%s [copy]"
 msgstr "%s [kopia]"
 
-#: ../src/build_tools_preferences.vala:324
+#: ../src/build_tools_preferences.vala:329
 #, c-format
 msgid "Do you really want to delete the build tool \"%s\"?"
 msgstr "Ziur zaude eraikitzeko '%s' tresna ezabatzea nahi duzula?"
+
+#: ../src/build_tools_preferences.vala:333 ../src/clean_build_files.vala:243
+#: ../src/main_window_edit.vala:51 ../src/main_window_structure.vala:38
+#: ../src/project_dialogs.vala:240 ../src/project_dialogs.vala:275
+#: ../src/templates_dialogs.vala:243
+#, fuzzy
+msgid "_Delete"
+msgstr "ezabatu"
 
 #: ../src/clean_build_files.vala:267
 msgid "Do you really want to delete these files?"
@@ -669,7 +706,7 @@ msgstr "Hautatu ezabatzea nahi dituzun fitxategiak:"
 msgid "No build file to clean up."
 msgstr "Ez dago eraikitzearen fitxategirik garbitzeko."
 
-#: ../src/completion.vala:315
+#: ../src/completion.vala:330
 msgid "No matching proposal"
 msgstr "Ez da bat datorrenik proposatu"
 
@@ -680,9 +717,16 @@ msgstr "Ez da bat datorrenik proposatu"
 msgid "Ln %d, Col %d"
 msgstr "%d ler., %d zut."
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:765
-msgid "Close without Saving"
+#: ../src/dialogs.vala:40 ../src/main_window.vala:743
+#, fuzzy
+msgid "Close _without Saving"
 msgstr "Itxi gorde gabe"
+
+#: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
+#: ../src/main_window.vala:749 ../src/main_window.vala:841
+#, fuzzy
+msgid "_Save"
+msgstr "_Gorde denak"
 
 #: ../src/dialogs.vala:66
 #, c-format
@@ -697,7 +741,7 @@ msgstr "Hautatu dokumentuak gordetzeko:"
 
 #: ../src/dialogs.vala:129
 msgid "If you don't save, all your changes will be permanently lost."
-msgstr "Ez baduzu gordetzen, aldaketak betirako galduko dira."
+msgstr "Ez baduzu gordetzen, aldaketak betiko galduko dira."
 
 #: ../src/document_structure.vala:720
 msgid "The structure item already contains a sub-paragraph."
@@ -710,7 +754,7 @@ msgstr "Itxi dokumentua"
 #. main file
 #: ../src/document_tab.vala:233 ../src/project_dialogs.vala:44
 #: ../src/project_dialogs.vala:47 ../src/project_dialogs.vala:139
-#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:216
+#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:215
 msgid "Main File"
 msgstr "Fitxategi nagusia"
 
@@ -737,7 +781,8 @@ msgid "Do you want to reload the file?"
 msgstr "Nahi duzu fitxategia berriro kargatzea?"
 
 #: ../src/document_tab.vala:289
-msgid "Reload"
+#, fuzzy
+msgid "_Reload"
 msgstr "Birkargatu"
 
 #: ../src/document.vala:121
@@ -755,26 +800,28 @@ msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr "Gordetzen baduzu kanpoko aldaketak galdu egingo dira. Gorde dena den?"
 
 #: ../src/document.vala:203
-msgid "Save Anyway"
+#, fuzzy
+msgid "_Save Anyway"
 msgstr "Gorde dena den"
 
-#: ../src/document.vala:205
-msgid "Don't Save"
+#: ../src/document.vala:204
+#, fuzzy
+msgid "_Don't Save"
 msgstr "Ez gorde"
 
-#: ../src/document.vala:217
+#: ../src/document.vala:216
 msgid "Impossible to save the file."
 msgstr "Ezin da fitxategia gorde."
 
-#: ../src/document.vala:242
+#: ../src/document.vala:241
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Errorea dokumentua UTF-8 kodeketara bihurtzean"
 
-#: ../src/document.vala:296
+#: ../src/document.vala:295
 msgid "Unsaved Document"
 msgstr "Gorde gabeko dokumentua"
 
-#: ../src/document.vala:575
+#: ../src/document.vala:579
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
@@ -782,27 +829,37 @@ msgstr ""
 "Fitxategiak aldi baterako kokalekua du. Datuak gal daitezke ordenagailua "
 "berrabiarazi ondoren."
 
-#: ../src/document.vala:576
+#: ../src/document.vala:580
 msgid "Do you want to save the file in a safer place?"
 msgstr "Fitxategia kokaleku seguru batean gordetzea nahi duzu?"
 
-#: ../src/file_browser.vala:216
+#: ../src/document.vala:583 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:747
+#, fuzzy
+msgid "Save _As"
+msgstr "_Gorde denak"
+
+#: ../src/document.vala:584
+msgid "Cancel"
+msgstr ""
+
+#: ../src/file_browser.vala:218
 msgid "Go to the home directory"
 msgstr "Joan karpeta nagusira"
 
-#: ../src/file_browser.vala:231
+#: ../src/file_browser.vala:233
 msgid "Go to the parent directory"
 msgstr "Joan karpeta gurasora"
 
-#: ../src/file_browser.vala:247
+#: ../src/file_browser.vala:249
 msgid "Go to the active document directory"
 msgstr "Joan dokumentu aktiboaren direktoriora"
 
-#: ../src/file_browser.vala:336
+#: ../src/file_browser.vala:338
 msgid "File System"
 msgstr "Fitxategi-sistema"
 
-#: ../src/file_browser.vala:455 ../src/main_window.vala:404
+#: ../src/file_browser.vala:457 ../src/main_window.vala:406
 msgid "File Browser"
 msgstr "Fitxategi-arakatzailea"
 
@@ -811,31 +868,31 @@ msgstr "Fitxategi-arakatzailea"
 msgid "_Sectioning"
 msgstr "_Zatitzea"
 
-#: ../src/latex_menu.vala:34 ../src/structure.vala:775
+#: ../src/latex_menu.vala:34 ../src/structure.vala:776
 msgid "Part"
 msgstr "Zatia"
 
-#: ../src/latex_menu.vala:36 ../src/structure.vala:776
+#: ../src/latex_menu.vala:36 ../src/structure.vala:777
 msgid "Chapter"
 msgstr "Kapitulua"
 
-#: ../src/latex_menu.vala:38 ../src/structure.vala:777
+#: ../src/latex_menu.vala:38 ../src/structure.vala:778
 msgid "Section"
 msgstr "Atala"
 
-#: ../src/latex_menu.vala:40 ../src/structure.vala:778
+#: ../src/latex_menu.vala:40 ../src/structure.vala:779
 msgid "Sub-section"
 msgstr "Azpiatala"
 
-#: ../src/latex_menu.vala:42 ../src/structure.vala:779
+#: ../src/latex_menu.vala:42 ../src/structure.vala:780
 msgid "Sub-sub-section"
 msgstr "Azpiazpiatala"
 
-#: ../src/latex_menu.vala:44 ../src/structure.vala:780
+#: ../src/latex_menu.vala:44 ../src/structure.vala:781
 msgid "Paragraph"
 msgstr "Paragrafoa"
 
-#: ../src/latex_menu.vala:46 ../src/structure.vala:781
+#: ../src/latex_menu.vala:46 ../src/structure.vala:782
 msgid "Sub-paragraph"
 msgstr "Azpiparagrafoa"
 
@@ -880,632 +937,665 @@ msgstr "Lerrokatu eskuinean - \\begin{flushright}"
 msgid "Figure - \\begin{figure}"
 msgstr "Irudia - \\begin{figure}"
 
-#: ../src/latex_menu.vala:76 ../src/latex_menu.vala:78
+#: ../src/latex_menu.vala:76
 msgid "Table - \\begin{table}"
 msgstr "Taula - \\begin{table}"
 
-#: ../src/latex_menu.vala:80
+#: ../src/latex_menu.vala:78
 msgid "Quote - \\begin{quote}"
 msgstr "Aipua - \\begin{quote}"
 
-#: ../src/latex_menu.vala:82
+#: ../src/latex_menu.vala:80
 msgid "Quotation - \\begin{quotation}"
 msgstr "Aipamena - \\begin{quotation}"
 
-#: ../src/latex_menu.vala:84
+#: ../src/latex_menu.vala:82
 msgid "Verse - \\begin{verse}"
 msgstr "Bertsoa - \\begin{verse}"
 
-#: ../src/latex_menu.vala:86
+#: ../src/latex_menu.vala:84
 msgid "Verbatim - \\begin{verbatim}"
 msgstr "Hitzez hitz - \\begin{verbatim}"
 
-#: ../src/latex_menu.vala:88
+#: ../src/latex_menu.vala:86
 msgid "Minipage - \\begin{minipage}"
 msgstr "Orritxoa - \\begin{minipage}"
 
-#: ../src/latex_menu.vala:90
+#: ../src/latex_menu.vala:88
 msgid "Title page - \\begin{titlepage}"
 msgstr "Tituluaren orria - \\begin{titlepage}"
 
 #. LaTeX: list environments
-#: ../src/latex_menu.vala:94
+#: ../src/latex_menu.vala:92
 msgid "_List Environments"
 msgstr "_Inguruneen zerrenda"
 
-#: ../src/latex_menu.vala:96 ../src/latex_menu.vala:98
+#: ../src/latex_menu.vala:94
 msgid "Bulleted List - \\begin{itemize}"
 msgstr "Buletdun zerrenda - \\begin{itemize}"
 
-#: ../src/latex_menu.vala:100 ../src/latex_menu.vala:102
+#: ../src/latex_menu.vala:96
 msgid "Enumeration - \\begin{enumerate}"
 msgstr "Zenbatua - \\begin{enumerate}"
 
-#: ../src/latex_menu.vala:104 ../src/latex_menu.vala:106
+#: ../src/latex_menu.vala:98
 msgid "Description - \\begin{description}"
 msgstr "Azalpena - \\begin{description}"
 
-#: ../src/latex_menu.vala:108
+#: ../src/latex_menu.vala:100
 msgid "Custom list - \\begin{list}"
 msgstr "Zerrenda pertsonalizatua - \\begin{list}"
 
-#: ../src/latex_menu.vala:110
+#: ../src/latex_menu.vala:102
 msgid "List item - \\item"
 msgstr "Elementuen zerrenda - \\item"
 
 #. LaTeX: character sizes
-#: ../src/latex_menu.vala:114
+#: ../src/latex_menu.vala:106
 msgid "_Characters Sizes"
 msgstr "_Karaktereen tamainak"
 
 #. LaTeX: font styles
-#: ../src/latex_menu.vala:138
+#: ../src/latex_menu.vala:130
 msgid "_Font Styles"
 msgstr "Letra-_estiloak"
 
-#: ../src/latex_menu.vala:140
+#: ../src/latex_menu.vala:132
 msgid "Bold - \\textbf"
 msgstr "Lodia - \\textbf"
 
-#: ../src/latex_menu.vala:142
+#: ../src/latex_menu.vala:134
 msgid "Italic - \\textit"
 msgstr "Etzana - \\textit"
 
-#: ../src/latex_menu.vala:144
+#: ../src/latex_menu.vala:136
 msgid "Typewriter - \\texttt"
 msgstr "Idazmakina - \\texttt"
 
-#: ../src/latex_menu.vala:146
+#: ../src/latex_menu.vala:138
 msgid "Slanted - \\textsl"
 msgstr "Okertua - \\textsl"
 
-#: ../src/latex_menu.vala:148
+#: ../src/latex_menu.vala:140
 msgid "Small Capitals - \\textsc"
 msgstr "Maiuskula txikiak - \\textsc"
 
-#: ../src/latex_menu.vala:150
+#: ../src/latex_menu.vala:142
 msgid "Sans Serif - \\textsf"
 msgstr "Sans Serif - \\textsf"
 
-#: ../src/latex_menu.vala:152
+#: ../src/latex_menu.vala:144
 msgid "Emphasized - \\emph"
 msgstr "Enfasia- \\emph"
 
-#: ../src/latex_menu.vala:154
+#: ../src/latex_menu.vala:146
 msgid "Underline - \\underline"
 msgstr "Azpimarratua - \\underline"
 
-#: ../src/latex_menu.vala:156
+#: ../src/latex_menu.vala:148
 msgid "_Font Family"
 msgstr "Letra-_familia"
 
-#: ../src/latex_menu.vala:158
+#: ../src/latex_menu.vala:150
 msgid "Roman - \\rmfamily"
 msgstr "Erromatarra - \\rmfamily"
 
-#: ../src/latex_menu.vala:160
+#: ../src/latex_menu.vala:152
 msgid "Sans Serif - \\sffamily"
 msgstr "Sans Serif - \\sffamily"
 
-#: ../src/latex_menu.vala:162
+#: ../src/latex_menu.vala:154
 msgid "Monospace - \\ttfamily"
 msgstr "Tarte bakarrekoa - \\ttfamily"
 
-#: ../src/latex_menu.vala:164
+#: ../src/latex_menu.vala:156
 msgid "F_ont Series"
 msgstr "Letra-_serieak"
 
-#: ../src/latex_menu.vala:166
+#: ../src/latex_menu.vala:158
 msgid "Medium - \\mdseries"
 msgstr "Tartekoa - \\mdseries"
 
-#: ../src/latex_menu.vala:168
+#: ../src/latex_menu.vala:160
 msgid "Bold - \\bfseries"
 msgstr "Lodia - \\bfseries"
 
-#: ../src/latex_menu.vala:170
+#: ../src/latex_menu.vala:162
 msgid "Fo_nt Shape"
 msgstr "Letra-_forma"
 
-#: ../src/latex_menu.vala:172
+#: ../src/latex_menu.vala:164
 msgid "Upright - \\upshape"
 msgstr "Zutik - \\upshape"
 
-#: ../src/latex_menu.vala:174
+#: ../src/latex_menu.vala:166
 msgid "Italic - \\itshape"
 msgstr "Etzana - \\itshape"
 
-#: ../src/latex_menu.vala:176
+#: ../src/latex_menu.vala:168
 msgid "Slanted - \\slshape"
 msgstr "Okertua - \\slshape"
 
-#: ../src/latex_menu.vala:178
+#: ../src/latex_menu.vala:170
 msgid "Small Capitals - \\scshape"
 msgstr "Maiuskula txikiak - \\scshape"
 
 #. LaTeX: Tabular
-#: ../src/latex_menu.vala:182
+#: ../src/latex_menu.vala:174
 msgid "_Tabular"
 msgstr "_Taula"
 
-#: ../src/latex_menu.vala:184
+#: ../src/latex_menu.vala:176
 msgid "Tabbing - \\begin{tabbing}"
 msgstr "Tabulazioa - \\begin{tabbing}"
 
-#: ../src/latex_menu.vala:186
+#: ../src/latex_menu.vala:178
 msgid "Tabular - \\begin{tabular}"
 msgstr "Taula - \\begin{tabular}"
 
-#: ../src/latex_menu.vala:188
+#: ../src/latex_menu.vala:180
 msgid "Multicolumn - \\multicolumn"
 msgstr "Zutabe anitza - \\multicolumn"
 
-#: ../src/latex_menu.vala:190
+#: ../src/latex_menu.vala:182
 msgid "Horizontal line - \\hline"
 msgstr "Marra horizontala - \\hline"
 
-#: ../src/latex_menu.vala:192
+#: ../src/latex_menu.vala:184
 msgid "Vertical line - \\vline"
 msgstr "Marra bertikala - \\vline"
 
-#: ../src/latex_menu.vala:194
+#: ../src/latex_menu.vala:186
 msgid "Horizontal line (columns specified) - \\cline"
 msgstr "Marra horizontala (zutabeak zehaztuta) - \\cline"
 
-#: ../src/latex_menu.vala:200
+#: ../src/latex_menu.vala:192
 msgid "Frame - \\begin{frame}"
 msgstr "Markoa - \\begin{frame}"
 
-#: ../src/latex_menu.vala:202
+#: ../src/latex_menu.vala:194
 msgid "Block - \\begin{block}"
 msgstr "Blokea - \\begin{block}"
 
-#: ../src/latex_menu.vala:204
+#: ../src/latex_menu.vala:196
 msgid "Two columns - \\begin{columns}"
 msgstr "Bi zutabe - \\begin{columns}"
 
 #. LaTeX: Spacing
-#: ../src/latex_menu.vala:208
+#: ../src/latex_menu.vala:200
 msgid "_Spacing"
 msgstr "_Tartea"
 
-#: ../src/latex_menu.vala:209
+#: ../src/latex_menu.vala:201
 msgid "New _Line"
 msgstr "_Lerro berria"
 
-#: ../src/latex_menu.vala:210
+#: ../src/latex_menu.vala:202
 msgid "New Line - \\\\"
 msgstr "Lerro berria - \\\\"
 
-#: ../src/latex_menu.vala:212
+#: ../src/latex_menu.vala:204
 msgid "New page - \\newpage"
 msgstr "Orri berria - \\newpage"
 
-#: ../src/latex_menu.vala:214
+#: ../src/latex_menu.vala:206
 msgid "Line break - \\linebreak"
 msgstr "Lerro-jauzia - \\linebreak"
 
-#: ../src/latex_menu.vala:216
+#: ../src/latex_menu.vala:208
 msgid "Page break - \\pagebreak"
 msgstr "Orri-jauzia - \\pagebreak"
 
-#: ../src/latex_menu.vala:218
+#: ../src/latex_menu.vala:210
 msgid "Big skip - \\bigskip"
 msgstr "Jauzi handia - \\bigskip"
 
-#: ../src/latex_menu.vala:220
+#: ../src/latex_menu.vala:212
 msgid "Medium skip - \\medskip"
 msgstr "Jauzi ertaina - \\medskip"
 
-#: ../src/latex_menu.vala:222
+#: ../src/latex_menu.vala:214
 msgid "Horizontal space - \\hspace"
 msgstr "Tarte horizontala - \\hspace"
 
-#: ../src/latex_menu.vala:224
+#: ../src/latex_menu.vala:216
 msgid "Vertical space - \\vspace"
 msgstr "Tarte bertikala - \\vspace"
 
-#: ../src/latex_menu.vala:226
+#: ../src/latex_menu.vala:218
 msgid "No paragraph indentation - \\noindent"
 msgstr "Paragrafoa koskarik gabe - \\noindent"
 
 #. LaTeX: International accents
-#: ../src/latex_menu.vala:230
+#: ../src/latex_menu.vala:222
 msgid "International _Accents"
 msgstr "Nazioarteko _azentuak"
 
-#: ../src/latex_menu.vala:231
+#: ../src/latex_menu.vala:223
 msgid "Acute accent - \\'"
 msgstr "Azentu zorrotza - \\'"
 
-#: ../src/latex_menu.vala:232
+#: ../src/latex_menu.vala:224
 msgid "Grave accent - \\`"
 msgstr "Azentu kamutsa - \\`"
 
-#: ../src/latex_menu.vala:233
+#: ../src/latex_menu.vala:225
 msgid "Circumflex accent - \\^"
 msgstr "Azentu zirkunflexua - \\^"
 
-#: ../src/latex_menu.vala:234
+#: ../src/latex_menu.vala:226
 msgid "Trema - \\\""
 msgstr "Dieresia - \\\""
 
-#: ../src/latex_menu.vala:235
+#: ../src/latex_menu.vala:227
 msgid "Tilde - \\~"
 msgstr "Tileta - \\~"
 
-#: ../src/latex_menu.vala:236
+#: ../src/latex_menu.vala:228
 msgid "Macron - \\="
 msgstr "Goi-marra - \\="
 
-#: ../src/latex_menu.vala:237
+#: ../src/latex_menu.vala:229
 msgid "Dot above - \\."
 msgstr "Goiko puntua - \\."
 
-#: ../src/latex_menu.vala:238
+#: ../src/latex_menu.vala:230
 msgid "Caron - \\v"
 msgstr "Caron - \\v"
 
-#: ../src/latex_menu.vala:239
+#: ../src/latex_menu.vala:231
 msgid "Breve - \\u"
 msgstr "Breve - \\u"
 
-#: ../src/latex_menu.vala:241
+#: ../src/latex_menu.vala:233
 msgid "Double acute accent - \\H"
 msgstr "Azentu zorrotz bikoitza - \\H"
 
-#: ../src/latex_menu.vala:242
+#: ../src/latex_menu.vala:234
 msgid "Cedilla - \\c"
 msgstr "Ze hautsia - \\c"
 
-#: ../src/latex_menu.vala:243
+#: ../src/latex_menu.vala:235
 msgid "Ogonek - \\k"
 msgstr "Ogonek - \\k"
 
-#: ../src/latex_menu.vala:244
+#: ../src/latex_menu.vala:236
 msgid "Dot below - \\d"
 msgstr "Beheko puntua - \\d"
 
-#: ../src/latex_menu.vala:245
+#: ../src/latex_menu.vala:237
 msgid "Macron below - \\b"
 msgstr "Azpiko goi-marra - \\b"
 
-#: ../src/latex_menu.vala:246
+#: ../src/latex_menu.vala:238
 msgid "Ring - \\r"
 msgstr "Eraztuna - \\r"
 
-#: ../src/latex_menu.vala:247
+#: ../src/latex_menu.vala:239
 msgid "Tie - \\t"
-msgstr ""
+msgstr "Tie - \\t"
 
 #. LaTeX: Others
-#: ../src/latex_menu.vala:251
+#: ../src/latex_menu.vala:243
 msgid "_Misc"
 msgstr "_Hainbat"
 
-#: ../src/latex_menu.vala:253
+#: ../src/latex_menu.vala:245
 msgid "Document class - \\documentclass"
 msgstr "Dokumentu-klasea - \\documentclass"
 
-#: ../src/latex_menu.vala:255
+#: ../src/latex_menu.vala:247
 msgid "Use package - \\usepackage"
 msgstr "Erabili paketea - \\usepackage"
 
-#: ../src/latex_menu.vala:256
+#: ../src/latex_menu.vala:248
 msgid "_AMS packages"
 msgstr "_AMS paketeak"
 
-#: ../src/latex_menu.vala:257
+#: ../src/latex_menu.vala:249
 msgid "AMS packages"
 msgstr "AMS paketeak"
 
-#: ../src/latex_menu.vala:258
+#: ../src/latex_menu.vala:250
 msgid "Author - \\author"
 msgstr "Egilea - \\author"
 
-#: ../src/latex_menu.vala:259
+#: ../src/latex_menu.vala:251
 msgid "Title - \\title"
 msgstr "Titulua - \\title"
 
-#: ../src/latex_menu.vala:261
+#: ../src/latex_menu.vala:253
 msgid "Content of the document - \\begin{document}"
 msgstr "Dokumentuaren edukia - \\begin{document}"
 
-#: ../src/latex_menu.vala:263
+#: ../src/latex_menu.vala:255
 msgid "Make title - \\maketitle"
 msgstr "Egin titulua - \\maketitle"
 
-#: ../src/latex_menu.vala:265
+#: ../src/latex_menu.vala:257
 msgid "Table of contents - \\tableofcontents"
 msgstr "Aurkibidea - \\tableofcontents"
 
-#: ../src/latex_menu.vala:267
+#: ../src/latex_menu.vala:259
 msgid "Abstract - \\begin{abstract}"
 msgstr "Laburpena - \\begin{abstract}"
 
-#: ../src/latex_menu.vala:269
+#: ../src/latex_menu.vala:261
 msgid "Include an image (graphicx package) - \\includegraphics"
 msgstr "Sartu irudia (graphicx paketea) - \\includegraphics"
 
-#: ../src/latex_menu.vala:272
+#: ../src/latex_menu.vala:264
 msgid "Include a file - \\input"
 msgstr "Sartu fitxategia - \\input"
 
 #. Math
-#: ../src/latex_menu.vala:276
+#: ../src/latex_menu.vala:268
 msgid "_Math"
 msgstr "_Matematika"
 
 #. Math Environments
-#: ../src/latex_menu.vala:280
+#: ../src/latex_menu.vala:272
 msgid "_Math Environments"
 msgstr "_Mat. inguruneak"
 
-#: ../src/latex_menu.vala:281
+#: ../src/latex_menu.vala:273
 msgid "_Mathematical Environment - $...$"
 msgstr "Matematikako _ingurunea - $...$"
 
-#: ../src/latex_menu.vala:282
+#: ../src/latex_menu.vala:274
 msgid "Mathematical Environment - $...$"
 msgstr "Matematikako ingurunea - $...$"
 
-#: ../src/latex_menu.vala:283
+#: ../src/latex_menu.vala:275
 msgid "_Centered Formula - \\[...\\]"
 msgstr "Zentratutako _formula - \\[...\\]"
 
-#: ../src/latex_menu.vala:284
+#: ../src/latex_menu.vala:276
 msgid "Centered Formula - \\[...\\]"
 msgstr "Zentratutako formula - \\[...\\]"
 
-#: ../src/latex_menu.vala:286
+#: ../src/latex_menu.vala:278
 msgid "_Numbered Equation - \\begin{equation}"
 msgstr "_Zenbatutako ekuazioa - \\begin{equation}"
 
-#: ../src/latex_menu.vala:287
+#: ../src/latex_menu.vala:279
 msgid "Numbered Equation - \\begin{equation}"
 msgstr "Zenbatutako ekuazioa - \\begin{equation}"
 
-#: ../src/latex_menu.vala:288
+#: ../src/latex_menu.vala:280
 msgid "_Array of Equations - \\begin{align*}"
 msgstr "Ekuazioen _matrizea - \\begin{align*}"
 
-#: ../src/latex_menu.vala:289
+#: ../src/latex_menu.vala:281
 msgid "Array of Equations - \\begin{align*}"
 msgstr "Ekuazioen matrizea - \\begin{align*}"
 
-#: ../src/latex_menu.vala:291
+#: ../src/latex_menu.vala:283
 msgid "Numbered Array of _Equations - \\begin{align}"
 msgstr "Zenbatutako _ekuazioen matrizea - \\begin{align}"
 
-#: ../src/latex_menu.vala:292
+#: ../src/latex_menu.vala:284
 msgid "Numbered Array of Equations - \\begin{align}"
 msgstr "Zenbatutako ekuazioen matrizea - \\begin{align}"
 
-#: ../src/latex_menu.vala:295
+#: ../src/latex_menu.vala:287
 msgid "_Superscript - ^{}"
 msgstr "_Goi-indizea - ^{}"
 
-#: ../src/latex_menu.vala:296
+#: ../src/latex_menu.vala:288
 msgid "Superscript - ^{}"
 msgstr "Goi-indizea - ^{}"
 
-#: ../src/latex_menu.vala:297
+#: ../src/latex_menu.vala:289
 msgid "Su_bscript - __{}"
 msgstr "A_zpiindizea - __{}"
 
-#: ../src/latex_menu.vala:298
+#: ../src/latex_menu.vala:290
 msgid "Subscript - _{}"
 msgstr "Azpiindizea - _{}"
 
-#: ../src/latex_menu.vala:299
+#: ../src/latex_menu.vala:291
 msgid "_Fraction - \\frac{}{}"
 msgstr "_Zatikia - \\frac{}{}"
 
-#: ../src/latex_menu.vala:300
+#: ../src/latex_menu.vala:292
 msgid "Fraction - \\frac{}{}"
 msgstr "Zatikia - \\frac{}{}"
 
-#: ../src/latex_menu.vala:301
+#: ../src/latex_menu.vala:293
 msgid "Square _Root - \\sqrt{}"
 msgstr "E_rro karratua- \\sqrt{}"
 
-#: ../src/latex_menu.vala:302
+#: ../src/latex_menu.vala:294
 msgid "Square Root - \\sqrt{}"
 msgstr "Erro karratua- \\sqrt{}"
 
-#: ../src/latex_menu.vala:303
+#: ../src/latex_menu.vala:295
 msgid "_N-th Root - \\sqrt[]{}"
 msgstr "_N-ren erroa - \\sqrt[]{}"
 
-#: ../src/latex_menu.vala:304
+#: ../src/latex_menu.vala:296
 msgid "N-th Root - \\sqrt[]{}"
 msgstr "N-ren erroa - \\sqrt[]{}"
 
 #. Math functions
-#: ../src/latex_menu.vala:308
+#: ../src/latex_menu.vala:300
 msgid "Math _Functions"
 msgstr "_Funtzio matematikoak"
 
 #. Math Font Styles
-#: ../src/latex_menu.vala:342
+#: ../src/latex_menu.vala:334
 msgid "Math Font _Styles"
 msgstr "Mat. letra-e_stiloak"
 
-#: ../src/latex_menu.vala:344
+#: ../src/latex_menu.vala:336
 msgid "Roman - \\mathrm"
 msgstr "Erromatarra - \\mathrm"
 
-#: ../src/latex_menu.vala:346
+#: ../src/latex_menu.vala:338
 msgid "Italic - \\mathit"
 msgstr "Etzana - \\mathit"
 
-#: ../src/latex_menu.vala:348
+#: ../src/latex_menu.vala:340
 msgid "Bold - \\mathbf"
 msgstr "Lodia - \\mathbf"
 
-#: ../src/latex_menu.vala:350
+#: ../src/latex_menu.vala:342
 msgid "Sans Serif - \\mathsf"
 msgstr "Sans Serif - \\mathsf"
 
-#: ../src/latex_menu.vala:352
+#: ../src/latex_menu.vala:344
 msgid "Typewriter - \\mathtt"
 msgstr "Idazmakina - \\mathtt"
 
-#: ../src/latex_menu.vala:354
+#: ../src/latex_menu.vala:346
 msgid "Calligraphic - \\mathcal"
 msgstr "Kaligrafia - \\mathcal"
 
-#: ../src/latex_menu.vala:356
+#: ../src/latex_menu.vala:348
 msgid "Blackboard (uppercase only)  - \\mathbb (amsfonts package)"
 msgstr "Blackboard (maiuskulak soilik)  - \\mathbb (amsfonts paketea)"
 
-#: ../src/latex_menu.vala:359
+#: ../src/latex_menu.vala:351
 msgid "Euler Fraktur - \\mathfrak (amsfonts package)"
 msgstr "Euler Fraktur - \\mathfrak (amsfonts paketea)"
 
 #. Math Accents
-#: ../src/latex_menu.vala:364
+#: ../src/latex_menu.vala:356
 msgid "Math _Accents"
 msgstr "Mat. _azentuak"
 
 #. Math Spaces
-#: ../src/latex_menu.vala:385
+#: ../src/latex_menu.vala:377
 msgid "Math _Spaces"
 msgstr "Mat. _tarteak"
 
-#: ../src/latex_menu.vala:386
+#: ../src/latex_menu.vala:378
 msgid "_Small"
 msgstr "_Txikia"
 
-#: ../src/latex_menu.vala:387
+#: ../src/latex_menu.vala:379
 msgid "Small - \\,"
 msgstr "Txikia - \\,"
 
-#: ../src/latex_menu.vala:388
+#: ../src/latex_menu.vala:380
 msgid "_Medium"
 msgstr "_Tartekoa"
 
-#: ../src/latex_menu.vala:389
+#: ../src/latex_menu.vala:381
 msgid "Medium - \\:"
 msgstr "Tartekoa - \\:"
 
-#: ../src/latex_menu.vala:390
+#: ../src/latex_menu.vala:382
 msgid "_Large"
 msgstr "_Handia"
 
-#: ../src/latex_menu.vala:391
+#: ../src/latex_menu.vala:383
 msgid "Large - \\;"
 msgstr "Handia - \\;"
 
 #. Math: Left Delimiters
-#: ../src/latex_menu.vala:397
+#: ../src/latex_menu.vala:389
 msgid "_Left Delimiters"
 msgstr "E_zkerreko mugatzaileak"
 
-#: ../src/latex_menu.vala:398
+#: ../src/latex_menu.vala:390
 msgid "left ("
 msgstr "ezkerreko ("
 
-#: ../src/latex_menu.vala:400
+#: ../src/latex_menu.vala:392
 msgid "left ["
 msgstr "ezkerreko ["
 
-#: ../src/latex_menu.vala:402
+#: ../src/latex_menu.vala:394
 msgid "left { "
 msgstr "ezkerreko {"
 
-#: ../src/latex_menu.vala:404
+#: ../src/latex_menu.vala:396
 msgid "left <"
 msgstr "ezkerreko <"
 
-#: ../src/latex_menu.vala:406
+#: ../src/latex_menu.vala:398
 msgid "left )"
 msgstr "ezkerreko )"
 
-#: ../src/latex_menu.vala:408
+#: ../src/latex_menu.vala:400
 msgid "left ]"
 msgstr "ezkerreko ]"
 
-#: ../src/latex_menu.vala:410
+#: ../src/latex_menu.vala:402
 msgid "left  }"
 msgstr "ezkerreko }"
 
-#: ../src/latex_menu.vala:412
+#: ../src/latex_menu.vala:404
 msgid "left >"
 msgstr "ezkerreko >"
 
-#: ../src/latex_menu.vala:414
+#: ../src/latex_menu.vala:406
 msgid "left ."
 msgstr "ezkerreko ."
 
 #. Math: Right Delimiters
-#: ../src/latex_menu.vala:419
+#: ../src/latex_menu.vala:411
 msgid "Right _Delimiters"
 msgstr "E_skuineko mugatzaileak"
 
-#: ../src/latex_menu.vala:420
+#: ../src/latex_menu.vala:412
 msgid "right )"
 msgstr "eskuineko )"
 
-#: ../src/latex_menu.vala:422
+#: ../src/latex_menu.vala:414
 msgid "right ]"
 msgstr "eskuineko ]"
 
-#: ../src/latex_menu.vala:424
+#: ../src/latex_menu.vala:416
 msgid "right  }"
 msgstr "eskuineko }"
 
-#: ../src/latex_menu.vala:426
+#: ../src/latex_menu.vala:418
 msgid "right >"
 msgstr "eskuineko >"
 
-#: ../src/latex_menu.vala:428
+#: ../src/latex_menu.vala:420
 msgid "right ("
 msgstr "eskuineko ("
 
-#: ../src/latex_menu.vala:430
+#: ../src/latex_menu.vala:422
 msgid "right ["
 msgstr "eskuineko ["
 
-#: ../src/latex_menu.vala:432
+#: ../src/latex_menu.vala:424
 msgid "right { "
 msgstr "eskuineko {"
 
-#: ../src/latex_menu.vala:434
+#: ../src/latex_menu.vala:426
 msgid "right <"
 msgstr "eskuineko <"
 
-#: ../src/latex_menu.vala:436
+#: ../src/latex_menu.vala:428
 msgid "right ."
 msgstr "eskuineko ."
 
-#: ../src/latex_menu.vala:451
+#: ../src/latex_menu.vala:443
 msgid "Sectioning"
 msgstr "Zatitzea"
 
-#: ../src/latex_menu.vala:454
+#: ../src/latex_menu.vala:446
 msgid "Characters Sizes"
 msgstr "Karaktereen tamainak"
 
-#: ../src/latex_menu.vala:457
+#: ../src/latex_menu.vala:449
 msgid "References"
 msgstr "Erreferentziak"
 
-#: ../src/latex_menu.vala:460
+#: ../src/latex_menu.vala:452
 msgid "Presentation Environments"
 msgstr "Aurkezpenaren inguruneak"
 
-#: ../src/latex_menu.vala:463
+#: ../src/latex_menu.vala:455
 msgid "Math Environments"
 msgstr "Matematikaren inguruneak"
 
-#: ../src/latex_menu.vala:466
-msgid "Left Delimiters"
-msgstr "Ezkerreko mugatzaileak"
+#: ../src/liblatexila/latexila-build-job.c:359
+#, c-format
+msgid "%s doesn't seem to be installed."
+msgstr "'%s' ez dirudi instalatuta dagoenik."
 
-#: ../src/latex_menu.vala:469
-msgid "Right Delimiters"
-msgstr "Eskuineko mugatzaileak"
+#: ../src/liblatexila/latexila-build-tool.c:547
+#, c-format
+msgid "The file '%s' doesn't exist."
+msgstr "'%s' fitxategia ez da existitzen."
+
+#: ../src/liblatexila/latexila-build-tool.c:575
+#, c-format
+msgid "Failed to open '%s':"
+msgstr "Huts egin du '%s' irekitzean:"
+
+#: ../src/liblatexila/latexila-build-tool.c:677
+#, c-format
+msgid "Open %s"
+msgstr "Ireki %s"
+
+#: ../src/liblatexila/latexila-synctex.c:189
+msgid "Impossible to do the forward search."
+msgstr "Ezin da aurrerantz bilatu."
+
+#: ../src/liblatexila/latexila-synctex.c:526
+msgid "Can not communicate with evince."
+msgstr "Ezin da 'evince'-rekin komunikatu"
+
+#: ../src/liblatexila/latexila-synctex.c:556
+#, c-format
+msgid "The file \"%s\" doesn't exist."
+msgstr "'%s' fitxategia ez da existitzen."
+
+#: ../src/liblatexila/latexila-synctex.c:590
+msgid "The PDF file doesn't exist."
+msgstr "PDF fitxategia ez da existitzen."
+
+#: ../src/liblatexila/latexila-synctex.c:641
+msgid "The document is not saved."
+msgstr "Dokumentua ez da gorde."
 
 #: ../src/main.vala:51
 msgid "Show the application's version"
@@ -1640,21 +1730,45 @@ msgstr "Eraman uneko dokumentua leiho berri batera"
 msgid "_Edit"
 msgstr "_Editatu"
 
+#: ../src/main_window_edit.vala:32
+msgid "_Undo"
+msgstr ""
+
 #: ../src/main_window_edit.vala:33
 msgid "Undo the last action"
 msgstr "Azken ekintza desegiten du"
+
+#: ../src/main_window_edit.vala:35
+msgid "_Redo"
+msgstr ""
 
 #: ../src/main_window_edit.vala:36
 msgid "Redo the last undone action"
 msgstr "Desegindako azken urratsa berregiten du"
 
+#: ../src/main_window_edit.vala:38 ../src/main_window_structure.vala:32
+msgid "Cu_t"
+msgstr ""
+
 #: ../src/main_window_edit.vala:39
 msgid "Cut the selection"
 msgstr "Ebaki hautapena"
 
+#: ../src/main_window_edit.vala:41 ../src/main_window_structure.vala:35
+msgid "_Copy"
+msgstr ""
+
 #: ../src/main_window_edit.vala:42
 msgid "Copy the selection"
 msgstr "Kopiatu hautapena"
+
+#. No shortcut here because if the shortcut is null, Ctrl+V is used for _all_
+#. the window. In this case Ctrl+V in the search text entry would be broken (the
+#. text is pasted in the document instead of the entry).
+#. Anyway if we press Ctrl+V when the cursor is in the document, no problem.
+#: ../src/main_window_edit.vala:48
+msgid "_Paste"
+msgstr ""
 
 #: ../src/main_window_edit.vala:49
 msgid "Paste the clipboard"
@@ -1663,6 +1777,11 @@ msgstr "Itsatsi arbeletik"
 #: ../src/main_window_edit.vala:52
 msgid "Delete the selected text"
 msgstr "Ezabatu hautatutako testua"
+
+#: ../src/main_window_edit.vala:54
+#, fuzzy
+msgid "Select _All"
+msgstr "_Hautatu"
 
 #: ../src/main_window_edit.vala:55
 msgid "Select the entire document"
@@ -1684,17 +1803,40 @@ msgstr "_Kendu iruzkina"
 msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "Kendu iruzkina hautatutako lerroetatik (kendu '%' karakterea)"
 
+#: ../src/main_window_edit.vala:65
+#, fuzzy
+msgid "_Completion"
+msgstr "I_ruzkina"
+
 #: ../src/main_window_edit.vala:66
+msgid "Complete the LaTeX command"
+msgstr ""
+
+#: ../src/main_window_edit.vala:68
+#, fuzzy
+msgid "_Preferences"
+msgstr "Hobespenak"
+
+#: ../src/main_window_edit.vala:69
 msgid "Configure the application"
 msgstr "Konfiguratu aplikazioa"
 
-#: ../src/main_window_edit.vala:72
+#: ../src/main_window_edit.vala:74
+#, fuzzy
+msgid "_Spell Check"
+msgstr "Zuzentzaile ortografikoa"
+
+#: ../src/main_window_edit.vala:75
 msgid "Activate or disable the spell checking"
 msgstr "Gaitu edo desgaitu zuzentzaile ortografikoa"
 
 #: ../src/main_window_file.vala:30
 msgid "_File"
 msgstr "_Fitxategia"
+
+#: ../src/main_window_file.vala:32 ../src/project_dialogs.vala:29
+msgid "_New"
+msgstr ""
 
 #: ../src/main_window_file.vala:33
 msgid "New file"
@@ -1708,7 +1850,12 @@ msgstr "Leiho _berria"
 msgid "Create a new window"
 msgstr "Sortu leiho berria"
 
-#: ../src/main_window_file.vala:39 ../src/main_window_file.vala:85
+#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:148
+#, fuzzy
+msgid "_Open"
+msgstr "_Ireki fitxategia"
+
+#: ../src/main_window_file.vala:39 ../src/main_window_file.vala:86
 msgid "Open a file"
 msgstr "Ireki fitxategia"
 
@@ -1749,19 +1896,19 @@ msgstr "A_zken fitxategiak"
 msgid "Open recently used files"
 msgstr "Ireki erabilitako azken fitxategiak"
 
-#: ../src/main_window_file.vala:86
+#: ../src/main_window_file.vala:87
 msgid "Open a recently used file"
 msgstr "Ireki erabili berri duzun fitxategia"
 
-#: ../src/main_window_file.vala:143
+#: ../src/main_window_file.vala:144
 msgid "Open Files"
 msgstr "Ireki fitxategiak"
 
-#: ../src/main_window_file.vala:157
+#: ../src/main_window_file.vala:166
 msgid "All LaTeX Files"
 msgstr "LaTeX fitxategi guztiak"
 
-#: ../src/main_window_file.vala:164
+#: ../src/main_window_file.vala:173
 msgid "All Files"
 msgstr "Fitxategi guztiak"
 
@@ -1821,6 +1968,10 @@ msgstr "_Ireki fitxategia"
 msgid "Open the file referenced by the selected structure item"
 msgstr "Ireki hautatutako egituraren elementuak erreferentziatutako fitxategia"
 
+#: ../src/main_window.vala:28
+msgid "_Quit"
+msgstr ""
+
 #: ../src/main_window.vala:29
 msgid "Quit the program"
 msgstr "Irten programatik"
@@ -1859,9 +2010,17 @@ msgstr "Berrezarri letra-tipoaren tamaina"
 msgid "_Search"
 msgstr "_Bilatu"
 
+#: ../src/main_window.vala:42
+msgid "_Find"
+msgstr ""
+
 #: ../src/main_window.vala:43
 msgid "Search for text"
 msgstr "Bilatu testua"
+
+#: ../src/main_window.vala:44
+msgid "Find and _Replace"
+msgstr ""
 
 #: ../src/main_window.vala:45
 msgid "Search for and replace text"
@@ -1945,7 +2104,11 @@ msgstr ""
 "Eman dirua LaTeXila-rekin esker onekoa izateko eta bere etorkizuna garatzen "
 "laguntzeko"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1244
+#: ../src/main_window.vala:70
+msgid "_About"
+msgstr ""
+
+#: ../src/main_window.vala:71 ../src/main_window.vala:1219
 msgid "About LaTeXila"
 msgstr "LaTeXila-ri buruz"
 
@@ -1982,21 +2145,21 @@ msgstr "_Beheko panela"
 msgid "Show or hide the bottom panel"
 msgstr "Erakutsi edo ezkutatu beheko panela"
 
-#: ../src/main_window.vala:400
+#: ../src/main_window.vala:402
 msgid "Symbols"
 msgstr "Ikurrak"
 
-#: ../src/main_window.vala:409
+#: ../src/main_window.vala:411
 msgid "Structure"
 msgstr "Egitura"
 
-#: ../src/main_window.vala:655
+#: ../src/main_window.vala:633
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr ""
 "Fitxategi hau (%s) jadanik irekita dago LaTeXila-ren beste leiho batean."
 
-#: ../src/main_window.vala:657
+#: ../src/main_window.vala:635
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2004,78 +2167,76 @@ msgstr ""
 "LaTeXila-k fitxategiaren instantzia irakurtzeko soilik moduan ireki du. Dena "
 "den editatzea nahi duzu?"
 
-#: ../src/main_window.vala:660
+#: ../src/main_window.vala:638
 msgid "Edit Anyway"
 msgstr "Editatu dena den"
 
-#: ../src/main_window.vala:661
+#: ../src/main_window.vala:639
 msgid "Don't Edit"
 msgstr "Ez editatu"
 
-#: ../src/main_window.vala:762
+#: ../src/main_window.vala:740
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Aldaketak '%s' dokumentuan gorde itxi aurretik?"
 
-#: ../src/main_window.vala:842
+#: ../src/main_window.vala:820
 msgid "Read-Only"
 msgstr "Irakurtzeko soilik"
 
-#: ../src/main_window.vala:860
+#: ../src/main_window.vala:838
 msgid "Save File"
 msgstr "Gorde fitxategia"
 
-#: ../src/main_window.vala:895
+#: ../src/main_window.vala:873
 #, c-format
 msgid "A file named \"%s\" already exists. Do you want to replace it?"
 msgstr "'%s' izeneko fitxategia badago lehendik. Ordeztu nahi duzu?"
 
-#: ../src/main_window.vala:900 ../src/search.vala:182
-msgid "Replace"
+#: ../src/main_window.vala:877
+#, fuzzy
+msgid "_Replace"
 msgstr "Ordeztu"
 
-#: ../src/main_window.vala:1206
+#: ../src/main_window.vala:1180
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "GNOME mahaigainerako LaTeX ingurune barneratua da LaTeXila"
 
-#: ../src/main_window.vala:1245
+#: ../src/main_window.vala:1220
 msgid "translator-credits"
 msgstr "Iñaki Larrañaga Murgoitio <dooteo@zundan.com>"
-
-#: ../src/post_processors.vala:188
-msgid "Latexmk messages"
-msgstr "Latexmk mezuak"
 
 #: ../src/preferences_dialog.vala:31
 msgid "Preferences"
 msgstr "Hobespenak"
 
 #. reset all button
-#: ../src/preferences_dialog.vala:36 ../src/utils.vala:400
-msgid "Reset All"
+#: ../src/preferences_dialog.vala:36 ../src/preferences_dialog.vala:118
+#, fuzzy
+msgid "_Reset All"
 msgstr "Leheneratu denak"
 
-#: ../src/preferences_dialog.vala:39
+#: ../src/preferences_dialog.vala:37
 msgid "Reset all preferences"
 msgstr "Leheneratu hobespen guztiak"
 
-#: ../src/preferences_dialog.vala:118
+#: ../src/preferences_dialog.vala:115
 msgid "Do you really want to reset all preferences?"
 msgstr "Nahi duzu hobespen guztiak balio lehenetsiekin berrezartzea?"
 
-#: ../src/preferences_dialog.vala:191
+#: ../src/preferences_dialog.vala:192
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "minutu"
 msgstr[1] "minutu"
 
-#: ../src/preferences_dialog.vala:291
+#: ../src/preferences_dialog.vala:292
 msgid "character"
 msgid_plural "characters"
 msgstr[0] "karaktere"
 msgstr[1] "karaktere"
 
-#: ../src/preferences_dialog.vala:331
+#: ../src/preferences_dialog.vala:332
 #, c-format
 msgid "Use the system fixed width font (%s)"
 msgstr "Erabili sistemako letra-zabalera (%s)"
@@ -2086,7 +2247,7 @@ msgstr "Proiektu berria"
 
 #. directory
 #: ../src/project_dialogs.vala:36 ../src/project_dialogs.vala:40
-#: ../src/project_dialogs.vala:203
+#: ../src/project_dialogs.vala:202
 msgid "Directory"
 msgstr "Direktorioa"
 
@@ -2103,20 +2264,31 @@ msgstr "Konfiguratu proiektua"
 msgid "Location of the project"
 msgstr "Proiektuaren kokalekua"
 
-#: ../src/project_dialogs.vala:243 ../src/project_dialogs.vala:300
-msgid "Clear All"
+#: ../src/project_dialogs.vala:239
+#, fuzzy
+msgid "_Properties"
+msgstr "_Proiektuak"
+
+#: ../src/project_dialogs.vala:241
+#, fuzzy
+msgid "_Clear All"
 msgstr "Garbitu denak"
 
-#: ../src/project_dialogs.vala:275
+#: ../src/project_dialogs.vala:271
 #, c-format
 msgid "Do you really want to delete the project \"%s\"?"
 msgstr "Ziur zaude '%s' proiektua ezabatzea nahi duzula?"
 
-#: ../src/project_dialogs.vala:296
+#: ../src/project_dialogs.vala:292
 msgid "Do you really want to clear all projects?"
 msgstr "Ziur zaude proiektu guztiak garbitu nahi dituzula?"
 
-#: ../src/project_dialogs.vala:328
+#: ../src/project_dialogs.vala:295
+#, fuzzy
+msgid "Clear _All"
+msgstr "Garbitu denak"
+
+#: ../src/project_dialogs.vala:319
 msgid "The Main File is not in the directory."
 msgstr "Fitxategi nagusia ez dago direktorioan."
 
@@ -2131,6 +2303,10 @@ msgstr "Lerroa kurtsorea kokatzeko"
 #: ../src/search.vala:174
 msgid "Replace with"
 msgstr "Ordeztu honekin:"
+
+#: ../src/search.vala:182
+msgid "Replace"
+msgstr "Ordeztu"
 
 #: ../src/search.vala:186
 msgid "Replace All"
@@ -2172,96 +2348,96 @@ msgid_plural "%d matches"
 msgstr[0] "bat etortze %d"
 msgstr[1] "%d bat etortze"
 
-#: ../src/structure.vala:163
+#: ../src/structure.vala:164
 msgid "Refresh"
 msgstr "Freskatu"
 
-#: ../src/structure.vala:177
+#: ../src/structure.vala:179
 msgid "Collapse All"
 msgstr "Tolestu denak"
 
-#: ../src/structure.vala:187
+#: ../src/structure.vala:189
 msgid "Show labels"
 msgstr "Erakutsi etiketak"
 
-#: ../src/structure.vala:188
+#: ../src/structure.vala:190
 msgid "Show included files"
 msgstr "Erakutsi sartutako fitxategiak"
 
-#: ../src/structure.vala:189
+#: ../src/structure.vala:191
 msgid "Show tables"
 msgstr "Erakutsi taulak"
 
-#: ../src/structure.vala:190
+#: ../src/structure.vala:192
 msgid "Show figures and images"
 msgstr "Erakutsi irudiak"
 
 #. Translators: do not translate the words TODO and FIXME. They are special
 #. comments that can be inserted in LaTeX documents.
-#: ../src/structure.vala:193
+#: ../src/structure.vala:195
 msgid "Show TODOs and FIXMEs"
 msgstr "Erakutsi TODO-ak eta FIXME-ak"
 
-#: ../src/structure.vala:633
+#: ../src/structure.vala:634
 #, c-format
 msgid "Structure action error: %s"
 msgstr "Errorea egituraren ekintzan: %s"
 
-#: ../src/structure.vala:638
+#: ../src/structure.vala:639
 msgid "The structure data seems outdated. Please refresh the structure."
 msgstr "Egituraren datuak zaharrak dirudite. Freskatu egitura."
 
 #. Translators: it's a verb
-#: ../src/structure.vala:729
+#: ../src/structure.vala:730
 msgid "cut"
 msgstr "ebaki"
 
 #. Translators: it's a verb
-#: ../src/structure.vala:731
+#: ../src/structure.vala:732
 msgid "copy"
 msgstr "kopiatu"
 
-#: ../src/structure.vala:732
+#: ../src/structure.vala:733
 msgid "delete"
 msgstr "ezabatu"
 
-#: ../src/structure.vala:733
+#: ../src/structure.vala:734
 msgid "select"
 msgstr "hautatu"
 
 #. Translators: it's a verb
-#: ../src/structure.vala:735
+#: ../src/structure.vala:736
 msgid "comment"
 msgstr "iruzkina"
 
 #. Translators: it's a verb
-#: ../src/structure.vala:737
+#: ../src/structure.vala:738
 msgid "shift left"
 msgstr "desplazatu ezkerrera"
 
 #. Translators: it's a verb
-#: ../src/structure.vala:739
+#: ../src/structure.vala:740
 msgid "shift right"
 msgstr "desplazatu eskuinera"
 
-#: ../src/structure.vala:740
+#: ../src/structure.vala:741
 msgid "open file"
 msgstr "ireki fitxategia"
 
-#: ../src/structure.vala:785
+#: ../src/structure.vala:786
 msgid "Table"
 msgstr "Taula"
 
 #. Translators: "Figure" here means a diagram (\begin{figure}...\end{figure})
-#: ../src/structure.vala:787
+#: ../src/structure.vala:788
 msgid "Figure"
 msgstr "Diagrama"
 
-#: ../src/structure.vala:788
+#: ../src/structure.vala:789
 msgid "Image"
 msgstr "Irudia"
 
-#: ../src/structure.vala:789
+#: ../src/structure.vala:790
 msgid "File included"
 msgstr "Fitxategia sartuta"
 
@@ -2297,26 +2473,14 @@ msgstr "Hainbat testu"
 msgid "Most Used"
 msgstr "Erabiliena"
 
-#: ../src/synctex.vala:84
-msgid "The document is not saved."
-msgstr "Dokumentua ez da gorde."
+#: ../src/symbols_view.vala:157
+#, fuzzy
+msgid "_Clear"
+msgstr "Garbitu denak"
 
-#: ../src/synctex.vala:91
-msgid "The PDF file doesn't exist."
-msgstr "PDF fitxategia ez da existitzen."
-
-#: ../src/synctex.vala:100
-#, c-format
-msgid "The file \"%s\" doesn't exist."
-msgstr "'%s' fitxategia ez da existitzen."
-
-#: ../src/synctex.vala:107
-msgid "Can not communicate with evince."
-msgstr "Ezin da 'evince'-rekin komunikatu"
-
-#: ../src/synctex.vala:125
-msgid "Impossible to do the forward search."
-msgstr "Ezin da aurrerantz bilatu."
+#: ../src/symbols_view.vala:159
+msgid "Clear most used symbols"
+msgstr ""
 
 #: ../src/templates_dialogs.vala:34
 msgid "New File..."
@@ -2445,7 +2609,7 @@ msgstr "Garbitu fitxategiak automatikoki itxi ondoren"
 
 #: ../src/ui/preferences_dialog.ui.h:21
 msgid "Interactive completion after"
-msgstr "Osaketa elkarreragilea honen ondoren"
+msgstr "Osaketa interaktiboa honen ondoren"
 
 #: ../src/ui/preferences_dialog.ui.h:22
 msgid "Number of characters after &apos;\\&apos;"
@@ -2465,3 +2629,12 @@ msgstr "Bestelakoa"
 #~ msgstr ""
 #~ "Menuak eta tresna-barrak daude LaTeX-en komando nagusiekin batera. LaTeX "
 #~ "markaketa idazten laguntzeko, LaTeX-en komandoen osaketa ere badago."
+
+#~ msgid "Left Delimiters"
+#~ msgstr "Ezkerreko mugatzaileak"
+
+#~ msgid "Right Delimiters"
+#~ msgstr "Eskuineko mugatzaileak"
+
+#~ msgid "Latexmk messages"
+#~ msgstr "Latexmk mezuak"
