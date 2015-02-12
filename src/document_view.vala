@@ -25,6 +25,7 @@ public class DocumentView : Gtk.SourceView
 
     private GLib.Settings _editor_settings;
     private Pango.FontDescription _font_desc;
+    private GtkSpell.Checker? _spell_checker = null;
 
     public DocumentView (Document doc)
     {
@@ -172,29 +173,85 @@ public class DocumentView : Gtk.SourceView
 
     public void activate_spell_checking ()
     {
-        disable_spell_checking ();
+        if (_spell_checker == null)
+        {
+            _spell_checker = new GtkSpell.Checker ();
+            _spell_checker.decode_language_codes = true;
+        }
 
-        GtkSpell.Checker checker = new GtkSpell.Checker ();
-        checker.attach (this);
-        checker.decode_language_codes = true;
+        if (_spell_checker.get_language () != null)
+        {
+            attach_spell_checker ();
+            return;
+        }
 
         try
         {
             // Will try the best language depending on the LANG environment variable.
-            checker.set_language (null);
+            _spell_checker.set_language (null);
+            attach_spell_checker ();
         }
         catch (Error e)
         {
-            warning ("GtkSpell error: %s", e.message);
+            GLib.List<string> language_list = GtkSpell.Checker.get_language_list ();
+
+            if (language_list == null || language_list.data == null)
+            {
+                MessageDialog dialog = new MessageDialog (this.get_toplevel () as Window,
+                    DialogFlags.DESTROY_WITH_PARENT,
+                    MessageType.ERROR,
+                    ButtonsType.NONE,
+                    "No dictionaries available for the spell checking.");
+
+                dialog.add_buttons ("_Help", ResponseType.HELP,
+                    "_OK", ResponseType.OK,
+                    null);
+
+                int response = dialog.run ();
+
+                if (response == ResponseType.HELP)
+                {
+                    try
+                    {
+                        show_uri (this.get_screen (), "help:latexila/spell_checking",
+                            Gdk.CURRENT_TIME);
+                    }
+                    catch (Error e)
+                    {
+                        warning ("Impossible to open the documentation: %s", e.message);
+                    }
+                }
+
+                dialog.destroy ();
+
+                _editor_settings.set_boolean ("spell-checking", false);
+                return;
+            }
+
+            try
+            {
+                _spell_checker.set_language (language_list.data);
+                attach_spell_checker ();
+            }
+            catch (Error e)
+            {
+                // Should not happen.
+                warning ("GtkSpell error: %s", e.message);
+                _editor_settings.set_boolean ("spell-checking", false);
+            }
         }
+    }
+
+    private void attach_spell_checker ()
+    {
+        if (! _spell_checker.attach (this))
+            warning ("Impossible to attach the spell checker.");
     }
 
     public void disable_spell_checking ()
     {
-        unowned GtkSpell.Checker checker = GtkSpell.Checker.get_from_text_view (this);
-
-        if (checker != null)
-            checker.detach ();
+        if (_spell_checker != null)
+            _spell_checker.detach ();
     }
 
     private bool on_button_release_event (Gdk.EventButton event)
