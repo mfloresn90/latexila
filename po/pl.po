@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: latexila\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-18 21:34+0100\n"
-"PO-Revision-Date: 2015-01-18 21:35+0100\n"
+"POT-Creation-Date: 2015-02-22 20:48+0100\n"
+"PO-Revision-Date: 2015-02-22 20:49+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -548,9 +548,9 @@ msgstr "Narzędzie budowania (tylko do odczytu)"
 msgid "_Cancel"
 msgstr "_Anuluj"
 
-#: ../src/build_tool_dialog.vala:87 ../src/project_dialogs.vala:120
-#: ../src/tab_info_bar.vala:77 ../src/templates_dialogs.vala:37
-#: ../src/templates_dialogs.vala:177
+#: ../src/build_tool_dialog.vala:87 ../src/document_view.vala:207
+#: ../src/project_dialogs.vala:120 ../src/tab_info_bar.vala:77
+#: ../src/templates_dialogs.vala:37 ../src/templates_dialogs.vala:177
 msgid "_OK"
 msgstr "_OK"
 
@@ -849,6 +849,15 @@ msgstr "Z_apisz jako"
 #: ../src/document.vala:584
 msgid "Cancel"
 msgstr "Anuluj"
+
+#: ../src/document_view.vala:204
+msgid "No dictionaries available for the spell checking."
+msgstr "Brak dostępnych słowników do sprawdzania pisowni."
+
+#. Help
+#: ../src/document_view.vala:206 ../src/main_window.vala:62
+msgid "_Help"
+msgstr "Pomo_c"
 
 #: ../src/file_browser.vala:218
 msgid "Go to the home directory"
@@ -2072,11 +2081,6 @@ msgstr "_Zarządzaj projektami"
 #: ../src/main_window.vala:59 ../src/project_dialogs.vala:183
 msgid "Manage Projects"
 msgstr "Zarządzanie projektami"
-
-#. Help
-#: ../src/main_window.vala:62
-msgid "_Help"
-msgstr "Pomo_c"
 
 #: ../src/main_window.vala:63
 msgid "_Contents"
