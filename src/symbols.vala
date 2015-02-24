@@ -66,7 +66,7 @@ public class Symbols : GLib.Object
     };
 
     private static Symbols _instance = null;
-    private ListStore _categories_store;
+    private Gtk.ListStore _categories_store;
 
     // category id -> NormalSymbols
     private Gee.Map<string, NormalSymbols?> _normal_symbols_map;
@@ -74,7 +74,7 @@ public class Symbols : GLib.Object
     // singleton
     private Symbols ()
     {
-        _categories_store = new ListStore (SymbolsCategoryColumn.N_COLUMNS,
+        _categories_store = new Gtk.ListStore (SymbolsCategoryColumn.N_COLUMNS,
             typeof (SymbolsCategoryType),
             typeof (string), // the icon
             typeof (string), // the name
@@ -133,7 +133,7 @@ public class Symbols : GLib.Object
 
     private void add_normal_category (CategoryInfo info)
     {
-        ListStore store = new NormalSymbols (info.id);
+        Gtk.ListStore store = new NormalSymbols (info.id);
 
         _normal_symbols_map[info.id] = store as NormalSymbols;
 
@@ -188,7 +188,7 @@ public class Symbols : GLib.Object
     }
 }
 
-private class NormalSymbols : ListStore
+private class NormalSymbols : Gtk.ListStore
 {
     private struct SymbolInfo
     {

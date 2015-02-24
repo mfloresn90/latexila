@@ -102,7 +102,7 @@ public class Structure : Grid
 
     private TreeView _list_view;
     private ScrolledWindow _list_view_sw;
-    private ListStore _list_store;
+    private Gtk.ListStore _list_store;
     // A simple list can contain several types (e.g. TODOs and FIXMEs), but it's easier
     // to store only one type. See get_simple_list_types().
     private StructType _current_list_type;
@@ -283,7 +283,7 @@ public class Structure : Grid
         _list_view = get_new_tree_view (StructListColumn.PIXBUF, StructListColumn.TEXT,
             StructListColumn.TOOLTIP);
 
-        _list_store = new ListStore (StructListColumn.N_COLUMNS,
+        _list_store = new Gtk.ListStore (StructListColumn.N_COLUMNS,
             typeof (string),    // pixbuf
             typeof (string),    // text
             typeof (string)     // tooltip

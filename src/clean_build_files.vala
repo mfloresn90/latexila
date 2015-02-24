@@ -188,7 +188,7 @@ public class CleanBuildFiles : GLib.Object
         treeview.headers_visible = false;
         treeview.enable_search = false;
 
-        ListStore store = new ListStore (CleanFileColumn.N_COLUMNS,
+        Gtk.ListStore store = new Gtk.ListStore (CleanFileColumn.N_COLUMNS,
             typeof (bool), typeof (string), typeof (File));
 
         store.set_sort_func (0, on_sort_list_files);

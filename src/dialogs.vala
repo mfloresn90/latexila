@@ -80,7 +80,7 @@ namespace Dialogs
         treeview.headers_visible = false;
         treeview.enable_search = false;
 
-        ListStore store = new ListStore (UnsavedDocColumn.N_COLUMNS, typeof (bool),
+        Gtk.ListStore store = new Gtk.ListStore (UnsavedDocColumn.N_COLUMNS, typeof (bool),
             typeof (string), typeof (Document));
 
         // fill the list

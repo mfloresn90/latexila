@@ -36,8 +36,8 @@ public class BuildToolsPreferences : GLib.Object
     }
 
     private Dialog _dialog;
-    private ListStore _default_store;
-    private ListStore _personal_store;
+    private Gtk.ListStore _default_store;
+    private Gtk.ListStore _personal_store;
     private TreeView _default_view;
     private TreeView _personal_view;
 
@@ -156,9 +156,9 @@ public class BuildToolsPreferences : GLib.Object
         return box;
     }
 
-    private ListStore get_new_store ()
+    private Gtk.ListStore get_new_store ()
     {
-        return new ListStore (BuildToolColumn.N_COLUMNS,
+        return new Gtk.ListStore (BuildToolColumn.N_COLUMNS,
             typeof (bool),   // enabled
             typeof (string), // pixbuf (icon-name)
             typeof (string), // label
@@ -166,7 +166,7 @@ public class BuildToolsPreferences : GLib.Object
         );
     }
 
-    private TreeView get_new_view (ListStore store, Latexila.BuildTools build_tools)
+    private TreeView get_new_view (Gtk.ListStore store, Latexila.BuildTools build_tools)
     {
         TreeView view = new TreeView.with_model (store);
 
@@ -461,7 +461,7 @@ public class BuildToolsPreferences : GLib.Object
         update_store (_personal_store, Latexila.BuildToolsPersonal.get_instance ());
     }
 
-    private void update_store (ListStore store, Latexila.BuildTools build_tools)
+    private void update_store (Gtk.ListStore store, Latexila.BuildTools build_tools)
     {
         store.clear ();
 

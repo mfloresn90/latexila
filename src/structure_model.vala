@@ -742,7 +742,7 @@ public class StructureModel : TreeModel, GLib.Object
     /*************************************************************************/
     // Simple lists
 
-    public void populate_list (ListStore store, StructType type)
+    public void populate_list (Gtk.ListStore store, StructType type)
     {
         var list = get_list (type);
         return_if_fail (list != null);

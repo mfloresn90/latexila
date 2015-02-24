@@ -31,7 +31,7 @@ public class SidePanel : Grid
     private GLib.Settings _settings;
     private Gee.ArrayList<Grid?> _components;
     private ComboBox _combo_box;
-    private ListStore _list_store;
+    private Gtk.ListStore _list_store;
     private int _current_component = -1;
 
     public SidePanel ()
@@ -54,7 +54,7 @@ public class SidePanel : Grid
 
     private void init_combo_box ()
     {
-        _list_store = new ListStore (SidePanelColumn.N_COLUMNS,
+        _list_store = new Gtk.ListStore (SidePanelColumn.N_COLUMNS,
             typeof (string), // pixbuf (icon-name)
             typeof (string)  // name
         );

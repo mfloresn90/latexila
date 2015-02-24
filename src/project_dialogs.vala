@@ -190,7 +190,7 @@ namespace ProjectDialogs
         content_area.set_size_request (400, 250);
 
         /* treeview */
-        ListStore store = new ListStore (ProjectColumn.N_COLUMNS, typeof (string),
+        Gtk.ListStore store = new Gtk.ListStore (ProjectColumn.N_COLUMNS, typeof (string),
             typeof (string));
         update_model (store);
 
@@ -323,7 +323,7 @@ namespace ProjectDialogs
         return false;
     }
 
-    private void update_model (ListStore model)
+    private void update_model (Gtk.ListStore model)
     {
         model.clear ();
 

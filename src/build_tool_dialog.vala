@@ -52,10 +52,10 @@ public class BuildToolDialog : GLib.Object
     private Entry _entry_extensions;
     private Entry _entry_files_to_open;
 
-    private ListStore _icons_store;
+    private Gtk.ListStore _icons_store;
     private ComboBox _icons_combobox;
 
-    private ListStore _jobs_store;
+    private Gtk.ListStore _jobs_store;
     private TreeView _jobs_view;
 
     public BuildToolDialog (Gtk.Window parent)
@@ -153,7 +153,7 @@ public class BuildToolDialog : GLib.Object
 
     private void init_icons_store ()
     {
-        _icons_store = new ListStore (IconColumn.N_COLUMNS,
+        _icons_store = new Gtk.ListStore (IconColumn.N_COLUMNS,
             typeof (string), // icon-name
             typeof (string)  // label
         );
@@ -196,7 +196,7 @@ public class BuildToolDialog : GLib.Object
 
     private void init_jobs ()
     {
-        _jobs_store = new ListStore (JobColumn.N_COLUMNS,
+        _jobs_store = new Gtk.ListStore (JobColumn.N_COLUMNS,
             typeof (string), // command
             typeof (string)  // post processor
         );
@@ -205,7 +205,7 @@ public class BuildToolDialog : GLib.Object
 
         /* Post processors list store */
 
-        ListStore post_processor_store = new ListStore (PostProcessorColumn.N_COLUMNS,
+        Gtk.ListStore post_processor_store = new Gtk.ListStore (PostProcessorColumn.N_COLUMNS,
             typeof (string) // the name of the post processor
         );
 

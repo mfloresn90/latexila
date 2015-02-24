@@ -39,10 +39,10 @@ public class FileBrowser : Grid
 
     private unowned MainWindow _main_window;
 
-    private ListStore _parent_dir_store;
+    private Gtk.ListStore _parent_dir_store;
     private ComboBox _combo_box;
 
-    private ListStore _list_store;
+    private Gtk.ListStore _list_store;
     private TreeView _list_view;
 
     private File _current_directory;
@@ -84,7 +84,7 @@ public class FileBrowser : Grid
     // list of parent directories
     private void init_combo_box ()
     {
-        _parent_dir_store = new ListStore (ParentDirColumn.N_COLUMNS,
+        _parent_dir_store = new Gtk.ListStore (ParentDirColumn.N_COLUMNS,
             typeof (string),    // pixbuf (icon-name)
             typeof (string),    // directory name
             typeof (File)
@@ -124,7 +124,7 @@ public class FileBrowser : Grid
     // list of files and directories
     private void init_list ()
     {
-        _list_store = new ListStore (FileColumn.N_COLUMNS,
+        _list_store = new Gtk.ListStore (FileColumn.N_COLUMNS,
             typeof (string),    // pixbuf (icon-name)
             typeof (string),    // filename
             typeof (bool)       // is directory

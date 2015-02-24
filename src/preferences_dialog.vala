@@ -382,7 +382,7 @@ public class PreferencesDialog : Dialog
 
     private void init_schemes_treeview (TreeView treeview, string current_id)
     {
-        ListStore list_store = new ListStore (StyleSchemes.N_COLUMNS, typeof (string),
+        Gtk.ListStore list_store = new Gtk.ListStore (StyleSchemes.N_COLUMNS, typeof (string),
             typeof (string));
         list_store.set_sort_column_id (StyleSchemes.ID, SortType.ASCENDING);
         treeview.set_model (list_store);

@@ -25,7 +25,7 @@ public class MostUsedSymbols : GLib.Object
 {
     private static MostUsedSymbols _instance = null;
     private bool _modified = false;
-    private ListStore _store;
+    private Gtk.ListStore _store;
 
     // The column containing the number of times a symbol has been used.
     private static const int SYMBOL_COLUMN_NUM = SymbolColumn.N_COLUMNS;
@@ -47,7 +47,7 @@ public class MostUsedSymbols : GLib.Object
 
     private void init_models ()
     {
-        _store = new ListStore (SymbolColumn.N_COLUMNS + 1,
+        _store = new Gtk.ListStore (SymbolColumn.N_COLUMNS + 1,
             typeof (Gdk.Pixbuf),
             typeof (string), // command
             typeof (string), // tooltip

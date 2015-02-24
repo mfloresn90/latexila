@@ -83,7 +83,7 @@ public class SymbolsView : Grid
             if (! _combo_box.get_active_iter (out iter))
                 return;
 
-            ListStore store;
+            Gtk.ListStore store;
             SymbolsCategoryType type;
 
             categories_model.get (iter,

@@ -24,10 +24,10 @@ public class Templates : GLib.Object
     private static Templates _instance = null;
 
     // Contains the default templates (empty, article, report, ...)
-    private ListStore _default_store;
+    private Gtk.ListStore _default_store;
 
     // Contains the personal templates (created by the user)
-    private ListStore _personal_store;
+    private Gtk.ListStore _personal_store;
 
     private int _nb_personal_templates;
 
@@ -127,9 +127,9 @@ public class Templates : GLib.Object
         }
     }
 
-    private ListStore create_new_store ()
+    private Gtk.ListStore create_new_store ()
     {
-        return new ListStore (TemplateColumn.N_COLUMNS,
+        return new Gtk.ListStore (TemplateColumn.N_COLUMNS,
             typeof (string), // pixbuf
             typeof (string), // icon id
             typeof (string), // name
@@ -223,7 +223,7 @@ public class Templates : GLib.Object
     /*************************************************************************/
     // Add and delete templates, save rc file.
 
-    private void add_template_from_string (ListStore store, string name,
+    private void add_template_from_string (Gtk.ListStore store, string name,
         string icon_id, string contents)
     {
         TreeIter iter;
@@ -236,7 +236,7 @@ public class Templates : GLib.Object
     }
 
     // Returns true on success.
-    private bool add_template_from_file (ListStore store, string name,
+    private bool add_template_from_file (Gtk.ListStore store, string name,
         string icon_id, File file)
     {
         string? contents = Utils.load_file (file);
@@ -390,7 +390,7 @@ public class Templates : GLib.Object
         return get_template_contents (_personal_store, path);
     }
 
-    private string get_template_contents (ListStore store, TreePath path)
+    private string get_template_contents (Gtk.ListStore store, TreePath path)
     {
         TreeIter iter;
         TreeModel model = store as TreeModel;
@@ -420,7 +420,7 @@ public class Templates : GLib.Object
         return get_templates_list (_personal_store);
     }
 
-    private TreeView get_templates_list (ListStore store)
+    private TreeView get_templates_list (Gtk.ListStore store)
     {
         TreeView view = new TreeView.with_model (store);
         view.headers_visible = false;
