@@ -64,7 +64,7 @@ public class MainWindow : Window
             N_("Open the LaTeXila documentation"), on_help_contents },
         { "HelpLatexReference", null, N_("_LaTeX Reference"), null,
             N_("The Kile LaTeX Reference"), on_help_latex_reference },
-        { "HelpFinance", null, "LaTeXila Finance", null,
+        { "HelpFinance", null, "LaTeXila _Fundraiser", null,
             "Donate to demonstrate your appreciation of LaTeXila and help its future development",
             on_help_finance },
         { "HelpAbout", "help-about", N_("_About"), null,
