@@ -1,5 +1,12 @@
 LaTeXila NEWS
 
+Release 3.16.0
+--------------
+* Show information about LaTeXila fundraiser
+* Various small improvements
+* Translation updates
+* Added Bosnian translation
+
 Release 3.15.2
 --------------
 * Add keywords to latexila.desktop (Tanguy Ortolo)

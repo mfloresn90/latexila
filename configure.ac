@@ -5,7 +5,7 @@
 AC_PREREQ([2.64])
 
 AC_INIT([LaTeXila],
-        [3.15.2],
+        [3.16.0],
         [https://bugzilla.gnome.org/enter_bug.cgi?product=latexila],
 	[latexila],
 	[https://wiki.gnome.org/Apps/LaTeXila])
@@ -27,9 +27,9 @@ LT_INIT
 # Update also the --target-glib option in src/Makefile.am.
 GLIB_REQUIRED_VERSION="2.40"
 GTK_REQUIRED_VERSION="3.14"
-GTKSOURCEVIEW_REQUIRED_VERSION="3.15.3"
+GTKSOURCEVIEW_REQUIRED_VERSION="3.16"
 GTKSPELL_REQUIRED_VERSION="3.0.4"
-VALA_REQUIRED_VERSION="0.25.4"
+VALA_REQUIRED_VERSION="0.26"
 GEE_REQUIRED_VERSION="0.10"
 
 AC_SUBST([GLIB_REQUIRED_VERSION])
