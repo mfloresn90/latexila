@@ -1,5 +1,12 @@
 LaTeXila NEWS
 
+Release 3.14.4
+--------------
+* Show information about LaTeXila fundraiser
+* Various bug fixes
+* Translation updates
+* Added Bosnian translation
+
 Release 3.14.3
 --------------
 * Adapt code for GtkSourceView 3.14.3
