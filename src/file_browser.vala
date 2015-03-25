@@ -277,12 +277,34 @@ public class FileBrowser : Grid
 
     private ToolButton get_open_directory_button ()
     {
-        ToolButton open_directory_button = new ToolButton (null, null);
-        open_directory_button.icon_name = "document-open";
-        open_directory_button.tooltip_text =
+        /* Menu */
+
+        Gtk.Menu menu = new Gtk.Menu ();
+        menu.append (get_open_directory_menu ());
+        menu.append (get_open_terminal_menu ());
+        menu.show_all ();
+
+        /* Tool button */
+
+        ToolButton button = new ToolButton (null, null);
+        button.icon_name = "document-open";
+
+        button.clicked.connect (() =>
+        {
+            menu.popup (null, null, null, 0, get_current_event_time ());
+        });
+
+        return button;
+    }
+
+    private Gtk.MenuItem get_open_directory_menu ()
+    {
+        Gtk.MenuItem open_directory =
+            new Gtk.MenuItem.with_label (_("Open in a file manager"));
+        open_directory.tooltip_text =
             _("Open the current directory in a file manager");
 
-        open_directory_button.clicked.connect (() =>
+        open_directory.activate.connect (() =>
         {
             return_if_fail (_current_directory != null);
 
@@ -297,7 +319,38 @@ public class FileBrowser : Grid
             }
         });
 
-        return open_directory_button;
+        return open_directory;
+    }
+
+    private Gtk.MenuItem get_open_terminal_menu ()
+    {
+        Gtk.MenuItem open_terminal = new Gtk.MenuItem.with_label (_("Open in a terminal"));
+        open_terminal.tooltip_text = _("Open the current directory in a terminal");
+
+        open_terminal.activate.connect (() =>
+        {
+            return_if_fail (_current_directory != null);
+
+            GLib.Settings terminal_settings =
+                new GLib.Settings ("org.gnome.desktop.default-applications.terminal");
+            string? name_term = terminal_settings.get_string ("exec");
+
+            return_if_fail (name_term != null);
+
+            try
+            {
+                string exec_cmd = "%s --working-directory=\"%s\""
+                    .printf (name_term, _current_directory.get_path ());
+                AppInfo app_info = AppInfo.create_from_commandline (exec_cmd, "", 0);
+                app_info.launch (null, null);
+            }
+            catch (Error error)
+            {
+                handle_error (error);
+            }
+        });
+
+        return open_terminal;
     }
 
     private ToolButton get_properties_button ()
