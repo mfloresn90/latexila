@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2012, 2014 Sébastien Wilmet
+ * Copyright © 2012-2015 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -99,7 +99,7 @@ public class BuildToolsPreferences : GLib.Object
         Latexila.BuildTools default_build_tools =
             Latexila.BuildToolsDefault.get_instance () as Latexila.BuildTools;
         ToolButton properties_button = get_properties_button (_default_view,
-            default_build_tools);
+            default_build_tools, true);
         ToolButton copy_button = get_copy_button (_default_view, default_build_tools);
 
         Toolbar toolbar = new Toolbar ();
@@ -116,7 +116,7 @@ public class BuildToolsPreferences : GLib.Object
         Latexila.BuildTools personal_build_tools =
             Latexila.BuildToolsPersonal.get_instance () as Latexila.BuildTools;
         ToolButton properties_button = get_properties_button (_personal_view,
-            personal_build_tools);
+            personal_build_tools, false);
         ToolButton copy_button = get_copy_button (_personal_view, personal_build_tools);
 
         Toolbar toolbar = new Toolbar ();
@@ -237,11 +237,20 @@ public class BuildToolsPreferences : GLib.Object
     }
 
     private ToolButton get_properties_button (TreeView view,
-        Latexila.BuildTools build_tools)
+        Latexila.BuildTools build_tools, bool read_only)
     {
         ToolButton properties_button = new ToolButton (null, null);
-        properties_button.set_icon_name ("document-properties-symbolic");
-        properties_button.set_tooltip_text ("Edit the properties");
+
+        if (read_only)
+        {
+            properties_button.set_icon_name ("edit-find-symbolic");
+            properties_button.set_tooltip_text (_("View the properties (read-only)"));
+        }
+        else
+        {
+            properties_button.set_icon_name ("document-properties-symbolic");
+            properties_button.set_tooltip_text (_("Edit the properties"));
+        }
 
         set_sensitivity_on_selection (view, properties_button);
 
