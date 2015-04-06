@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2010-2012, 2014 Sébastien Wilmet
+ * Copyright © 2010-2015 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,7 +60,8 @@ public class BuildToolDialog : GLib.Object
 
     public BuildToolDialog (Gtk.Window parent)
     {
-        _dialog = new Dialog ();
+        _dialog = GLib.Object.@new (typeof (Gtk.Dialog), "use-header-bar", true, null)
+            as Gtk.Dialog;
         _dialog.destroy_with_parent = true;
         _dialog.modal = true;
         _dialog.set_transient_for (parent);
@@ -75,17 +76,17 @@ public class BuildToolDialog : GLib.Object
         content_area.show_all ();
     }
 
-    private void set_read_only ()
+    private void set_as_default_build_tool ()
     {
-        _dialog.add_button (_("_Close"), ResponseType.CANCEL);
-        _dialog.title = _("Build Tool (read-only)");
+        _dialog.title = _("Default Build Tool (read-only)");
     }
 
-    private void set_editable ()
+    private void set_as_personal_build_tool ()
     {
         _dialog.add_button (_("_Cancel"), ResponseType.CANCEL);
-        _dialog.add_button (_("_OK"), ResponseType.OK);
-        _dialog.title = _("Build Tool");
+        _dialog.add_button (_("_Apply"), ResponseType.APPLY);
+        _dialog.set_default_response (ResponseType.APPLY);
+        _dialog.title = _("Personal Build Tool");
     }
 
     // Returns true if the build tool is edited.
@@ -95,15 +96,15 @@ public class BuildToolDialog : GLib.Object
         return_val_if_fail (build_tool != null, false);
 
         if (build_tools is Latexila.BuildToolsDefault)
-            set_read_only ();
+            set_as_default_build_tool ();
         else
-            set_editable ();
+            set_as_personal_build_tool ();
 
         set_build_tool (build_tool);
 
-        bool ok = _dialog.run () == ResponseType.OK;
+        bool apply = _dialog.run () == ResponseType.APPLY;
 
-        if (ok)
+        if (apply)
         {
             Latexila.BuildTool new_build_tool = retrieve_build_tool ();
             new_build_tool.enabled = build_tool.enabled;
@@ -114,19 +115,19 @@ public class BuildToolDialog : GLib.Object
         }
 
         _dialog.destroy ();
-        return ok;
+        return apply;
     }
 
     // Returns true if the build tool is created.
     // Returns false if the user has clicked on cancel.
     public bool create_personal_build_tool ()
     {
-        set_editable ();
+        set_as_personal_build_tool ();
         set_new_build_tool ();
 
-        bool ok = _dialog.run () == ResponseType.OK;
+        bool apply = _dialog.run () == ResponseType.APPLY;
 
-        if (ok)
+        if (apply)
         {
             Latexila.BuildTool new_build_tool = retrieve_build_tool ();
             new_build_tool.enabled = true;
@@ -137,7 +138,7 @@ public class BuildToolDialog : GLib.Object
         }
 
         _dialog.destroy ();
-        return ok;
+        return apply;
     }
 
     /*************************************************************************/
