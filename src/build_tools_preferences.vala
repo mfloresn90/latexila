@@ -50,9 +50,11 @@ public class BuildToolsPreferences : GLib.Object
 
         init_views ();
 
-        _dialog = new Dialog.with_buttons (_("Build Tools"), main_window,
-            DialogFlags.DESTROY_WITH_PARENT,
-            _("_Close"), ResponseType.ACCEPT);
+        _dialog = GLib.Object.@new (typeof (Gtk.Dialog), "use-header-bar", true, null)
+            as Gtk.Dialog;
+        _dialog.set_transient_for (main_window);
+        _dialog.destroy_with_parent = true;
+        _dialog.title = _("Build Tools");
 
         Grid hgrid = new Grid ();
         hgrid.set_orientation (Orientation.HORIZONTAL);
