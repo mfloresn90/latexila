@@ -269,7 +269,7 @@ public class BuildToolsPreferences : GLib.Object
     {
         ToolButton copy_button = new ToolButton (null, null);
         copy_button.set_icon_name ("edit-copy-symbolic");
-        copy_button.set_tooltip_text ("Create a copy");
+        copy_button.set_tooltip_text (_("Create a copy"));
 
         set_sensitivity_on_selection (view, copy_button);
 
