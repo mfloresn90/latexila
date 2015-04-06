@@ -1,7 +1,7 @@
 <!--
 This file is part of LaTeXila.
 
-Copyright © 2010-2012 Sébastien Wilmet
+Copyright © 2010-2015 Sébastien Wilmet
 
 LaTeXila is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -44,6 +44,9 @@ along with LaTeXila.  If not, see <http://www.gnu.org/licenses/>.
       <menuitem action="EditPaste" />
       <menuitem action="EditDelete" />
       <menuitem action="EditSelectAll" />
+      <separator />
+      <menuitem action="EditIndent" />
+      <menuitem action="EditUnindent" />
       <separator />
       <menuitem action="EditComment" />
       <menuitem action="EditUncomment" />

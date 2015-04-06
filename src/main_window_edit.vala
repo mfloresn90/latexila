@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2012 Sébastien Wilmet
+ * Copyright © 2012, 2015 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,6 +53,12 @@ public class MainWindowEdit
 
         { "EditSelectAll", "edit-select-all", N_("Select _All"), "<Control>A",
             N_("Select the entire document"), on_select_all },
+
+        { "EditIndent", "format-indent-more", N_("_Indent"), "Tab",
+            N_("Indent the selected lines"), on_indent },
+
+        { "EditUnindent", "format-indent-less", N_("_Unindent"), "<Shift>Tab",
+            N_("Unindent the selected lines"), on_unindent },
 
         { "EditComment", null, N_("_Comment"), "<Control>M",
             N_("Comment the selected lines (add the character \"%\")"),
@@ -128,6 +134,8 @@ public class MainWindowEdit
             "EditPaste",
             "EditDelete",
             "EditSelectAll",
+            "EditIndent",
+            "EditUnindent",
             "EditComment",
             "EditUncomment",
             "EditCompletion"
@@ -238,6 +246,30 @@ public class MainWindowEdit
     {
         return_if_fail (_main_window.active_tab != null);
         _main_window.active_view.my_select_all ();
+    }
+
+    public void on_indent ()
+    {
+        DocumentTab? tab = _main_window.active_tab;
+        return_if_fail (tab != null);
+
+        TextIter start;
+        TextIter end;
+        tab.document.get_selection_bounds (out start, out end);
+
+        tab.view.indent_lines (start, end);
+    }
+
+    public void on_unindent ()
+    {
+        DocumentTab? tab = _main_window.active_tab;
+        return_if_fail (tab != null);
+
+        TextIter start;
+        TextIter end;
+        tab.document.get_selection_bounds (out start, out end);
+
+        tab.view.unindent_lines (start, end);
     }
 
     public void on_comment ()
