@@ -637,7 +637,7 @@ public class BuildToolDialog : GLib.Object
         _jobs_view.expand = true;
 
         ScrolledWindow scrolled_window = Utils.add_scrollbar (_jobs_view);
-        scrolled_window.set_size_request (600, 80);
+        scrolled_window.set_size_request (600, 120);
         scrolled_window.set_shadow_type (ShadowType.IN);
 
         /* Pack */
