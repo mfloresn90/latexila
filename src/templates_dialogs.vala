@@ -52,7 +52,7 @@ public class OpenTemplateDialog
         ScrolledWindow scrollbar = Utils.add_scrollbar (_default_templates);
         scrollbar.set_shadow_type (ShadowType.IN);
         scrollbar.set_size_request (250, 200);
-        Widget component = Utils.get_dialog_component (_("Default templates"), scrollbar);
+        Widget component = Utils.get_dialog_component (_("Default Templates"), scrollbar);
         hgrid.add (component);
 
         // List of personal templates.
@@ -61,7 +61,7 @@ public class OpenTemplateDialog
         scrollbar = Utils.add_scrollbar (_personal_templates);
         scrollbar.set_shadow_type (ShadowType.IN);
         scrollbar.set_size_request (250, 200);
-        component = Utils.get_dialog_component (_("Your personal templates"), scrollbar);
+        component = Utils.get_dialog_component (_("Personal Templates"), scrollbar);
         hgrid.add (component);
 
         content_area.show_all ();
@@ -256,7 +256,7 @@ public class DeleteTemplateDialog : Dialog
         ScrolledWindow scrollbar = Utils.add_scrollbar (templates_list);
         scrollbar.set_shadow_type (ShadowType.IN);
         scrollbar.set_size_request (250, 150);
-        Widget component = Utils.get_dialog_component (_("Personal templates"),
+        Widget component = Utils.get_dialog_component (_("Personal Templates"),
             scrollbar);
 
         Box content_area = get_content_area () as Box;
