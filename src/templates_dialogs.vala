@@ -31,11 +31,14 @@ public class OpenTemplateDialog
     {
         _main_window = main_window;
 
-        _dialog = new Dialog.with_buttons (_("New File..."), main_window,
-            DialogFlags.DESTROY_WITH_PARENT,
-            _("_Cancel"), ResponseType.REJECT,
-            _("_OK"), ResponseType.ACCEPT
-        );
+        _dialog = GLib.Object.@new (typeof (Gtk.Dialog), "use-header-bar", true, null)
+            as Gtk.Dialog;
+        _dialog.title = _("New File...");
+        _dialog.destroy_with_parent = true;
+        _dialog.set_transient_for (main_window);
+        _dialog.add_button (_("_Cancel"), ResponseType.CANCEL);
+        _dialog.add_button (_("_New"), ResponseType.OK);
+        _dialog.set_default_response (ResponseType.OK);
 
         Box content_area = _dialog.get_content_area () as Box;
 
@@ -117,7 +120,7 @@ public class OpenTemplateDialog
 
     private void run_me ()
     {
-        if (_dialog.run () != ResponseType.ACCEPT)
+        if (_dialog.run () != ResponseType.OK)
             return;
 
         // Default template selected?
@@ -168,13 +171,15 @@ public class CreateTemplateDialog : Dialog
 {
     public CreateTemplateDialog (MainWindow parent)
     {
+        Object (use_header_bar: 1);
         return_val_if_fail (parent.active_tab != null, null);
 
         title = _("New Template...");
         set_transient_for (parent);
         destroy_with_parent = true;
-        add_button (_("_Cancel"), ResponseType.REJECT);
-        add_button (_("_OK"), ResponseType.ACCEPT);
+        add_button (_("_Cancel"), ResponseType.CANCEL);
+        add_button (_("Crea_te"), ResponseType.OK);
+        set_default_response (ResponseType.OK);
 
         Box content_area = get_content_area () as Box;
         content_area.homogeneous = false;
@@ -207,7 +212,7 @@ public class CreateTemplateDialog : Dialog
     {
         Templates templates = Templates.get_default ();
 
-        while (run () == ResponseType.ACCEPT)
+        while (run () == ResponseType.OK)
         {
             // if no name specified
             if (entry.text_length == 0)
@@ -239,11 +244,11 @@ public class DeleteTemplateDialog : Dialog
 {
     public DeleteTemplateDialog (MainWindow parent)
     {
+        Object (use_header_bar: 1);
         title = _("Delete Template(s)...");
-        add_button (_("_Delete"), ResponseType.ACCEPT);
-        add_button (_("_Close"), ResponseType.REJECT);
         set_transient_for (parent);
         destroy_with_parent = true;
+        add_button (_("_Delete"), ResponseType.APPLY);
 
         /* List of the personal templates */
 
@@ -271,12 +276,14 @@ public class DeleteTemplateDialog : Dialog
         Templates templates = Templates.get_default ();
         bool template_deleted = false;
 
-        while (run () == ResponseType.ACCEPT)
+        while (run () == ResponseType.APPLY)
         {
             TreeSelection select = templates_list.get_selection ();
             List<TreePath> selected_items = select.get_selected_rows (null);
             uint nb_selected_items = selected_items.length ();
 
+            // FIXME first convert to GtkTreeRowReferences, because if there
+            // are several templates selected, the wrong templates are deleted!
             for (int item_num = 0 ; item_num < nb_selected_items ; item_num++)
             {
                 TreePath path = selected_items.nth_data (item_num);
