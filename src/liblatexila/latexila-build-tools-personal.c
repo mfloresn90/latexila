@@ -31,8 +31,6 @@
 #include <gio/gio.h>
 #include "latexila-build-tool.h"
 
-static LatexilaBuildToolsPersonal *instance = NULL;
-
 struct _LatexilaBuildToolsPersonalPrivate
 {
   /* Used for saving */
@@ -115,6 +113,8 @@ latexila_build_tools_personal_init (LatexilaBuildToolsPersonal *build_tools)
 LatexilaBuildToolsPersonal *
 latexila_build_tools_personal_get_instance (void)
 {
+  static LatexilaBuildToolsPersonal *instance = NULL;
+
   if (instance == NULL)
     instance = g_object_new (LATEXILA_TYPE_BUILD_TOOLS_PERSONAL, NULL);
 

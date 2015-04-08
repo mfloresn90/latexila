@@ -37,8 +37,6 @@
 #include "latexila-build-tools-default.h"
 #include <gio/gio.h>
 
-static LatexilaBuildToolsDefault *instance = NULL;
-
 struct _LatexilaBuildToolsDefaultPrivate
 {
   gint something; /* not used, but the struct can not be empty */
@@ -214,6 +212,8 @@ latexila_build_tools_default_init (LatexilaBuildToolsDefault *build_tools)
 LatexilaBuildToolsDefault *
 latexila_build_tools_default_get_instance (void)
 {
+  static LatexilaBuildToolsDefault *instance = NULL;
+
   if (instance == NULL)
     instance = g_object_new (LATEXILA_TYPE_BUILD_TOOLS_DEFAULT, NULL);
 
