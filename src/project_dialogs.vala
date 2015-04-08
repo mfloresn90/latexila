@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2010-2011 Sébastien Wilmet
+ * Copyright © 2010-2011, 2015 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,11 +23,14 @@ namespace ProjectDialogs
 {
     public void new_project (MainWindow main_window)
     {
-        Dialog dialog = new Dialog.with_buttons (_("New Project"), main_window,
-            DialogFlags.DESTROY_WITH_PARENT,
-            _("_Cancel"), ResponseType.CANCEL,
-            _("_New"), ResponseType.OK,
-            null);
+        Dialog dialog = GLib.Object.@new (typeof (Dialog), "use-header-bar", true, null)
+            as Dialog;
+        dialog.title = _("New Project");
+        dialog.destroy_with_parent = true;
+        dialog.set_transient_for (main_window);
+        dialog.add_button (_("_Cancel"), ResponseType.CANCEL);
+        dialog.add_button (_("Crea_te"), ResponseType.OK);
+        dialog.set_default_response (ResponseType.OK);
 
         /* create dialog widgets */
         Box content_area = dialog.get_content_area () as Box;
@@ -113,12 +116,14 @@ namespace ProjectDialogs
         Project? project = Projects.get_default ().get (project_id);
         return_val_if_fail (project != null, false);
 
-        Dialog dialog = new Dialog.with_buttons (_("Configure Project"),
-            main_window,
-            DialogFlags.DESTROY_WITH_PARENT,
-            _("_Cancel"), ResponseType.CANCEL,
-            _("_OK"), ResponseType.OK,
-            null);
+        Dialog dialog = GLib.Object.@new (typeof (Dialog), "use-header-bar", true, null)
+            as Dialog;
+        dialog.title = _("Configure Project");
+        dialog.destroy_with_parent = true;
+        dialog.set_transient_for (main_window);
+        dialog.add_button (_("_Cancel"), ResponseType.CANCEL);
+        dialog.add_button (_("_Apply"), ResponseType.APPLY);
+        dialog.set_default_response (ResponseType.APPLY);
 
         /* create dialog widgets */
         Box content_area = dialog.get_content_area () as Box;
@@ -152,7 +157,7 @@ namespace ProjectDialogs
 
         /* run */
         bool ret = false;
-        while (dialog.run () == ResponseType.OK)
+        while (dialog.run () == ResponseType.APPLY)
         {
             File? main_file = main_file_chooser.get_file ();
 
@@ -180,11 +185,11 @@ namespace ProjectDialogs
 
     public void manage_projects (MainWindow main_window)
     {
-        Dialog dialog = new Dialog.with_buttons (_("Manage Projects"),
-            main_window,
-            DialogFlags.DESTROY_WITH_PARENT,
-            _("_Close"), ResponseType.OK,
-            null);
+        Dialog dialog = GLib.Object.@new (typeof (Dialog), "use-header-bar", true, null)
+            as Dialog;
+        dialog.title = _("Manage Projects");
+        dialog.destroy_with_parent = true;
+        dialog.set_transient_for (main_window);
 
         Box content_area = dialog.get_content_area () as Box;
         content_area.set_size_request (400, 250);
