@@ -230,6 +230,25 @@ latexila_synctex_get_type
 </SECTION>
 
 <SECTION>
+<FILE>templates</FILE>
+<TITLE>LatexilaTemplates</TITLE>
+LatexilaTemplates
+latexila_templates_get_instance
+latexila_templates_get_default_templates_view
+latexila_templates_get_personal_templates_view
+latexila_templates_get_default_template_contents
+latexila_templates_get_personal_template_contents
+<SUBSECTION Standard>
+LATEXILA_TYPE_TEMPLATES
+</SECTION>
+
+<SECTION>
+<FILE>templates-dialogs</FILE>
+<TITLE>LatexilaTemplatesDialogs</TITLE>
+latexila_templates_dialogs_open
+</SECTION>
+
+<SECTION>
 <FILE>utils</FILE>
 <TITLE>LatexilaUtils</TITLE>
 latexila_utils_get_shortname
@@ -241,4 +260,5 @@ latexila_utils_str_replace
 latexila_utils_file_query_exists_async
 latexila_utils_file_query_exists_finish
 latexila_utils_show_uri
+latexila_utils_get_dialog_component
 </SECTION>

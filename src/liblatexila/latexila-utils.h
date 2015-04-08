@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright (C) 2014 - Sébastien Wilmet <swilmet@gnome.org>
+ * Copyright (C) 2014-2015 - Sébastien Wilmet <swilmet@gnome.org>
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,6 +51,9 @@ void            latexila_utils_show_uri                         (GdkScreen    *s
                                                                  const gchar  *uri,
                                                                  guint32       timestamp,
                                                                  GError      **error);
+
+GtkWidget *     latexila_utils_get_dialog_component             (const gchar *title,
+                                                                 GtkWidget   *widget);
 
 G_END_DECLS
 

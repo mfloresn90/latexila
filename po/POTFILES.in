@@ -36,6 +36,8 @@ src/liblatexila/latexila-post-processor.c
 src/liblatexila/latexila-post-processor-latex.c
 src/liblatexila/latexila-post-processor-latexmk.c
 src/liblatexila/latexila-synctex.c
+src/liblatexila/latexila-templates-dialogs.c
+src/liblatexila/latexila-templates.c
 src/liblatexila/latexila-utils.c
 src/main.vala
 src/main_window_build_tools.vala

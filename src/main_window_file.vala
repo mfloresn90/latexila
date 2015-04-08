@@ -131,7 +131,13 @@ public class MainWindowFile
 
     public void on_file_new ()
     {
-        new OpenTemplateDialog (_main_window);
+        string contents = Latexila.Templates.dialogs_open (_main_window);
+
+        if (contents != null)
+        {
+            DocumentTab tab = _main_window.create_tab (true);
+            tab.document.set_contents (contents);
+        }
     }
 
     public void on_new_window ()

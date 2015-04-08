@@ -6,7 +6,7 @@
  * Copyright (C) 2000, 2002 - Chema Celorio, Paolo Maggi
  * Copyright (C) 2003-2005 - Paolo Maggi
  *
- * Copyright (C) 2014 - Sébastien Wilmet <swilmet@gnome.org>
+ * Copyright (C) 2014-2015 - Sébastien Wilmet <swilmet@gnome.org>
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -335,4 +335,45 @@ latexila_utils_show_uri (GdkScreen    *screen,
 
       g_free (extension);
     }
+}
+
+/**
+ * latexila_utils_get_dialog_component:
+ * @title: the title of the dialog component.
+ * @widget: the widget displayed below the title.
+ *
+ * Gets a #GtkDialog component. When a dialog contains several components, or
+ * logical groups, this function is useful to attach the @widget with a @title.
+ * The title will be in bold, left-aligned, and the widget will have a left
+ * margin.
+ *
+ * Returns: (transfer floating): the dialog component containing the @title and
+ * the @widget.
+ */
+GtkWidget *
+latexila_utils_get_dialog_component (const gchar *title,
+                                     GtkWidget   *widget)
+{
+  GtkContainer *grid;
+  GtkWidget *label;
+  gchar *markup;
+
+  grid = GTK_CONTAINER (gtk_grid_new ());
+  gtk_orientable_set_orientation (GTK_ORIENTABLE (grid), GTK_ORIENTATION_VERTICAL);
+  gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
+  gtk_container_set_border_width (grid, 6);
+
+  /* Title in bold, left-aligned. */
+  label = gtk_label_new (NULL);
+  markup = g_strdup_printf ("<b>%s</b>", title);
+  gtk_label_set_markup (GTK_LABEL (label), markup);
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
+  gtk_container_add (grid, label);
+
+  /* Left margin for the widget. */
+  gtk_widget_set_margin_start (widget, 12);
+  gtk_container_add (grid, widget);
+
+  g_free (markup);
+  return GTK_WIDGET (grid);
 }
