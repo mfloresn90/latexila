@@ -306,7 +306,7 @@ public class BuildToolsPreferences : GLib.Object
 
         add_button.clicked.connect (() =>
         {
-            BuildToolDialog dialog = new BuildToolDialog (_dialog);
+            BuildToolDialog dialog = new BuildToolDialog (_dialog, true);
 
             if (dialog.create_personal_build_tool ())
                 update_personal_store ();
@@ -493,7 +493,8 @@ public class BuildToolsPreferences : GLib.Object
 
     private void open_build_tool (Latexila.BuildTools build_tools, int build_tool_num)
     {
-        BuildToolDialog dialog = new BuildToolDialog (_dialog);
+        bool editable = build_tools is Latexila.BuildToolsPersonal;
+        BuildToolDialog dialog = new BuildToolDialog (_dialog, editable);
 
         bool edited = dialog.open_build_tool (build_tools, build_tool_num);
 

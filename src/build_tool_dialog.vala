@@ -58,7 +58,7 @@ public class BuildToolDialog : GLib.Object
     private Gtk.ListStore _jobs_store;
     private TreeView _jobs_view;
 
-    public BuildToolDialog (Gtk.Window parent)
+    public BuildToolDialog (Gtk.Window parent, bool editable)
     {
         _dialog = GLib.Object.@new (typeof (Gtk.Dialog), "use-header-bar", true, null)
             as Gtk.Dialog;
@@ -66,27 +66,24 @@ public class BuildToolDialog : GLib.Object
         _dialog.modal = true;
         _dialog.set_transient_for (parent);
 
-        init_text_entries ();
+        if (editable)
+        {
+            _dialog.title = _("Personal Build Tool");
+            _dialog.add_button (_("_Cancel"), ResponseType.CANCEL);
+            _dialog.add_button (_("_Apply"), ResponseType.APPLY);
+            _dialog.set_default_response (ResponseType.APPLY);
+        }
+        else
+            _dialog.title = _("Default Build Tool (read-only)");
+
+        init_text_entries (editable);
         init_icons_store ();
         init_icons_combobox ();
-        init_jobs ();
+        init_jobs (editable);
 
         Box content_area = _dialog.get_content_area ();
-        content_area.pack_start (get_main_grid ());
+        content_area.pack_start (get_main_grid (editable));
         content_area.show_all ();
-    }
-
-    private void set_as_default_build_tool ()
-    {
-        _dialog.title = _("Default Build Tool (read-only)");
-    }
-
-    private void set_as_personal_build_tool ()
-    {
-        _dialog.add_button (_("_Cancel"), ResponseType.CANCEL);
-        _dialog.add_button (_("_Apply"), ResponseType.APPLY);
-        _dialog.set_default_response (ResponseType.APPLY);
-        _dialog.title = _("Personal Build Tool");
     }
 
     // Returns true if the build tool is edited.
@@ -94,11 +91,6 @@ public class BuildToolDialog : GLib.Object
     {
         Latexila.BuildTool? build_tool = build_tools.nth (build_tool_num);
         return_val_if_fail (build_tool != null, false);
-
-        if (build_tools is Latexila.BuildToolsDefault)
-            set_as_default_build_tool ();
-        else
-            set_as_personal_build_tool ();
 
         set_build_tool (build_tool);
 
@@ -122,7 +114,6 @@ public class BuildToolDialog : GLib.Object
     // Returns false if the user has clicked on cancel.
     public bool create_personal_build_tool ()
     {
-        set_as_personal_build_tool ();
         set_new_build_tool ();
 
         bool apply = _dialog.run () == ResponseType.APPLY;
@@ -144,12 +135,17 @@ public class BuildToolDialog : GLib.Object
     /*************************************************************************/
     // Init main widgets
 
-    private void init_text_entries ()
+    private void init_text_entries (bool editable)
     {
         _entry_label = new Entry ();
         _entry_desc = new Entry ();
         _entry_extensions = new Entry ();
         _entry_files_to_open = new Entry ();
+
+        _entry_label.set_editable (editable);
+        _entry_desc.set_editable (editable);
+        _entry_extensions.set_editable (editable);
+        _entry_files_to_open.set_editable (editable);
     }
 
     private void init_icons_store ()
@@ -195,7 +191,7 @@ public class BuildToolDialog : GLib.Object
             "text", IconColumn.LABEL);
     }
 
-    private void init_jobs ()
+    private void init_jobs (bool editable)
     {
         _jobs_store = new Gtk.ListStore (JobColumn.N_COLUMNS,
             typeof (string), // command
@@ -226,6 +222,10 @@ public class BuildToolDialog : GLib.Object
         /* Cell renderers */
 
         CellRendererText text_renderer = new CellRendererText ();
+
+        // In all cases, the text must be selectable, but there is no property
+        // for that. So set as editable, but in read-only mode the edited text
+        // isn't changed (see below).
         text_renderer.editable = true;
 
         TreeViewColumn column = new TreeViewColumn.with_attributes (_("Commands"),
@@ -234,7 +234,7 @@ public class BuildToolDialog : GLib.Object
         _jobs_view.append_column (column);
 
         CellRendererCombo combo_renderer = new CellRendererCombo ();
-        combo_renderer.editable = true;
+        combo_renderer.editable = editable;
         combo_renderer.model = post_processor_store;
         combo_renderer.text_column = PostProcessorColumn.NAME;
         combo_renderer.has_entry = false;
@@ -243,12 +243,15 @@ public class BuildToolDialog : GLib.Object
 
         /* Behavior */
 
-        text_renderer.edited.connect ((path_string, new_text) =>
+        if (editable)
         {
-            TreeIter iter;
-            _jobs_store.get_iter_from_string (out iter, path_string);
-            _jobs_store.set (iter, JobColumn.COMMAND, new_text);
-        });
+            text_renderer.edited.connect ((path_string, new_text) =>
+            {
+                TreeIter iter;
+                _jobs_store.get_iter_from_string (out iter, path_string);
+                _jobs_store.set (iter, JobColumn.COMMAND, new_text);
+            });
+        }
 
         combo_renderer.edited.connect ((path_string, new_text) =>
         {
@@ -544,7 +547,7 @@ public class BuildToolDialog : GLib.Object
     /*************************************************************************/
     // Packing widgets, add section titles, tooltips, etc.
 
-    private Grid get_main_grid ()
+    private Grid get_main_grid (bool editable)
     {
         Grid main_grid = new Grid ();
         main_grid.set_row_spacing (5);
@@ -554,7 +557,7 @@ public class BuildToolDialog : GLib.Object
         main_grid.attach (get_desc_grid (), 1, 0, 1, 1);
         main_grid.attach (get_extensions_grid (), 0, 1, 1, 1);
         main_grid.attach (get_icons_grid (), 1, 1, 1, 1);
-        main_grid.attach (get_jobs_grid (), 0, 2, 2, 1);
+        main_grid.attach (get_jobs_grid (editable), 0, 2, 2, 1);
         main_grid.attach (get_files_to_open_grid (), 0, 3, 2, 1);
 
         return main_grid;
@@ -606,7 +609,7 @@ public class BuildToolDialog : GLib.Object
         return Utils.get_dialog_component (_("Icon"), _icons_combobox);
     }
 
-    private Grid get_jobs_grid ()
+    private Grid get_jobs_grid (bool editable)
     {
         /* Placeholders */
 
@@ -637,31 +640,37 @@ public class BuildToolDialog : GLib.Object
         scrolled_window.set_size_request (600, 80);
         scrolled_window.set_shadow_type (ShadowType.IN);
 
-        StyleContext context = scrolled_window.get_style_context ();
-        context.set_junction_sides (JunctionSides.BOTTOM);
-
-        /* Toolbar */
-
-        Toolbar toolbar = new Toolbar ();
-        toolbar.insert (get_add_button (), -1);
-        toolbar.insert (get_remove_button (), -1);
-        toolbar.insert (get_up_button (), -1);
-        toolbar.insert (get_down_button (), -1);
-
-        toolbar.set_icon_size (IconSize.MENU);
-        toolbar.set_style (ToolbarStyle.ICONS);
-
-        context = toolbar.get_style_context ();
-        context.add_class (STYLE_CLASS_INLINE_TOOLBAR);
-        context.set_junction_sides (JunctionSides.TOP);
-
         /* Pack */
 
         Box jobs_box = new Box (Orientation.VERTICAL, 0);
         placeholders_grid.set_margin_bottom (8);
         jobs_box.pack_start (placeholders_grid, false);
         jobs_box.pack_start (scrolled_window);
-        jobs_box.pack_start (toolbar, false);
+
+        if (editable)
+        {
+            /* Toolbar */
+
+            Toolbar toolbar = new Toolbar ();
+            toolbar.insert (get_add_button (), -1);
+            toolbar.insert (get_remove_button (), -1);
+            toolbar.insert (get_up_button (), -1);
+            toolbar.insert (get_down_button (), -1);
+
+            toolbar.set_icon_size (IconSize.MENU);
+            toolbar.set_style (ToolbarStyle.ICONS);
+
+            jobs_box.pack_start (toolbar, false);
+
+            /* Junction */
+
+            StyleContext context = scrolled_window.get_style_context ();
+            context.set_junction_sides (JunctionSides.BOTTOM);
+
+            context = toolbar.get_style_context ();
+            context.add_class (STYLE_CLASS_INLINE_TOOLBAR);
+            context.set_junction_sides (JunctionSides.TOP);
+        }
 
         return Utils.get_dialog_component (_("Jobs"), jobs_box);
     }
