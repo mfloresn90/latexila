@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: latexila\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-05 21:57+0200\n"
-"PO-Revision-Date: 2015-04-05 21:58+0200\n"
+"POT-Creation-Date: 2015-04-12 01:10+0200\n"
+"PO-Revision-Date: 2015-04-12 01:15+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -25,7 +25,7 @@ msgstr ""
 "X-Poedit-Country: Poland\n"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:43 ../src/build_tool_dialog.vala:168
+#: build_tools.xml:43 ../src/build_tool_dialog.vala:165
 msgid "View PDF"
 msgstr "Wyświetl plik PDF"
 
@@ -35,7 +35,7 @@ msgid "View the PDF file"
 msgstr "Wyświetla plik PDF"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:49 ../src/build_tool_dialog.vala:167
+#: build_tools.xml:49 ../src/build_tool_dialog.vala:164
 msgid "View DVI"
 msgstr "Wyświetl plik DVI"
 
@@ -45,7 +45,7 @@ msgid "View the DVI file"
 msgstr "Wyświetla plik DVI"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:55 ../src/build_tool_dialog.vala:169
+#: build_tools.xml:55 ../src/build_tool_dialog.vala:166
 msgid "View PS"
 msgstr "Wyświetl plik PS"
 
@@ -526,179 +526,185 @@ msgstr ""
 msgid "Hide panel"
 msgstr "Ukrywa panel"
 
-#. close button
-#: ../src/build_tool_dialog.vala:80 ../src/build_tools_preferences.vala:55
-#: ../src/main_window_file.vala:53 ../src/preferences_dialog.vala:42
-#: ../src/project_dialogs.vala:186 ../src/templates_dialogs.vala:244
-msgid "_Close"
-msgstr "Za_mknij"
+#: ../src/build_tool_dialog.vala:71
+msgid "Personal Build Tool"
+msgstr "Własne narzędzie budowania"
 
-#: ../src/build_tool_dialog.vala:81
-msgid "Build Tool (read-only)"
-msgstr "Narzędzie budowania (tylko do odczytu)"
-
-#: ../src/build_tool_dialog.vala:86 ../src/build_tools_preferences.vala:332
+#: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:343
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
 #: ../src/document_tab.vala:290 ../src/main_window_file.vala:147
 #: ../src/main_window.vala:746 ../src/main_window.vala:842
 #: ../src/main_window.vala:878 ../src/preferences_dialog.vala:117
-#: ../src/project_dialogs.vala:28 ../src/project_dialogs.vala:119
-#: ../src/project_dialogs.vala:274 ../src/project_dialogs.vala:294
-#: ../src/templates_dialogs.vala:36 ../src/templates_dialogs.vala:176
+#: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:124
+#: ../src/project_dialogs.vala:279 ../src/project_dialogs.vala:299
+#: ../src/templates_dialogs.vala:39 ../src/templates_dialogs.vala:180
 msgid "_Cancel"
 msgstr "_Anuluj"
 
-#: ../src/build_tool_dialog.vala:87 ../src/document_view.vala:207
-#: ../src/project_dialogs.vala:120 ../src/tab_info_bar.vala:77
-#: ../src/templates_dialogs.vala:37 ../src/templates_dialogs.vala:177
-msgid "_OK"
-msgstr "_OK"
+#: ../src/build_tool_dialog.vala:73 ../src/project_dialogs.vala:125
+msgid "_Apply"
+msgstr "_Zastosuj"
 
-#: ../src/build_tool_dialog.vala:88
-msgid "Build Tool"
-msgstr "Narzędzie budowania"
+#: ../src/build_tool_dialog.vala:77
+msgid "Default Build Tool (read-only)"
+msgstr "Domyślne narzędzie budowania (tylko do odczytu)"
 
 #. icon-name
 #. label
-#: ../src/build_tool_dialog.vala:161
+#: ../src/build_tool_dialog.vala:158
 msgid "Execute"
 msgstr "Wykonaj"
 
-#: ../src/build_tool_dialog.vala:165
+#: ../src/build_tool_dialog.vala:162
 msgid "Convert"
 msgstr "Skonwertuj"
 
 #. FIXME don't use Stock
-#: ../src/build_tool_dialog.vala:166
+#: ../src/build_tool_dialog.vala:163
 msgid "View File"
 msgstr "Wyświetl plik"
 
-#: ../src/build_tool_dialog.vala:230
+#. In all cases, the text must be selectable, but there is no property
+#. for that. So set as editable, but in read-only mode the edited text
+#. isn't changed (see below).
+#: ../src/build_tool_dialog.vala:231
 msgid "Commands"
 msgstr "Polecenia"
 
-#: ../src/build_tool_dialog.vala:240
+#: ../src/build_tool_dialog.vala:241
 msgid "Post Processor"
 msgstr "Przetwarzanie końcowe"
 
-#: ../src/build_tool_dialog.vala:267 ../src/build_tools_preferences.vala:294
+#: ../src/build_tool_dialog.vala:271 ../src/build_tools_preferences.vala:305
 msgid "Add..."
 msgstr "Dodaj..."
 
-#: ../src/build_tool_dialog.vala:284 ../src/build_tools_preferences.vala:311
+#: ../src/build_tool_dialog.vala:288 ../src/build_tools_preferences.vala:322
 msgid "Remove"
 msgstr "Usuń"
 
-#: ../src/build_tool_dialog.vala:314 ../src/build_tools_preferences.vala:351
+#: ../src/build_tool_dialog.vala:318 ../src/build_tools_preferences.vala:362
 msgid "Move up"
 msgstr "Przesuń w górę"
 
-#: ../src/build_tool_dialog.vala:365 ../src/build_tools_preferences.vala:403
+#: ../src/build_tool_dialog.vala:369 ../src/build_tools_preferences.vala:414
 msgid "Move down"
 msgstr "Przesuń w dół"
 
-#: ../src/build_tool_dialog.vala:569 ../src/build_tools_preferences.vala:183
+#: ../src/build_tool_dialog.vala:573 ../src/build_tools_preferences.vala:185
 #: ../src/latex_menu.vala:52 ../src/structure.vala:783
 msgid "Label"
 msgstr "Etykieta"
 
-#: ../src/build_tool_dialog.vala:574
+#: ../src/build_tool_dialog.vala:578
 msgid "You can select this arrow and copy/paste it!"
 msgstr "Można zaznaczyć tę strzałkę, a następnie skopiować i wkleić."
 
-#: ../src/build_tool_dialog.vala:590
+#: ../src/build_tool_dialog.vala:594
 msgid "Description"
 msgstr "Opis"
 
-#: ../src/build_tool_dialog.vala:596
+#: ../src/build_tool_dialog.vala:600
 msgid "File extensions for which the build tool can be executed."
 msgstr ""
 "Rozszerzenia plików, dla których uruchomione może być narzędzie budowania."
 
-#: ../src/build_tool_dialog.vala:597
+#: ../src/build_tool_dialog.vala:601
 msgid "The extensions are separated by spaces."
 msgstr "Rozszerzenia są oddzielane spacjami."
 
-#: ../src/build_tool_dialog.vala:598
+#: ../src/build_tool_dialog.vala:602
 msgid "If it is empty, all extensions are allowed."
 msgstr "Jeśli pole pozostanie puste, wszystkie rozszerzenia będą dopuszczone."
 
-#: ../src/build_tool_dialog.vala:600
+#: ../src/build_tool_dialog.vala:604
 msgid "Extensions"
 msgstr "Rozszerzenia"
 
-#: ../src/build_tool_dialog.vala:605
+#: ../src/build_tool_dialog.vala:609
 msgid "Icon"
 msgstr "Ikona"
 
 #. Placeholders
-#: ../src/build_tool_dialog.vala:612
+#: ../src/build_tool_dialog.vala:616
 msgid "Placeholders:"
 msgstr "Symbole zastępcze:"
 
-#: ../src/build_tool_dialog.vala:616
+#: ../src/build_tool_dialog.vala:620
 msgid "The active document's filename."
 msgstr "Nazwa pliku aktywnego dokumentu."
 
-#: ../src/build_tool_dialog.vala:617 ../src/build_tool_dialog.vala:622
+#: ../src/build_tool_dialog.vala:621 ../src/build_tool_dialog.vala:626
 msgid "If the active document belongs to a project, the main file is chosen."
 msgstr ""
 "Jeśli aktywny dokument należy do projektu, wybrany zostaje plik główny."
 
-#: ../src/build_tool_dialog.vala:621
+#: ../src/build_tool_dialog.vala:625
 msgid "The active document's filename without its extension."
 msgstr "Nazwa pliku aktywnego dokumentu bez rozszerzenia."
 
-#: ../src/build_tool_dialog.vala:665
+#: ../src/build_tool_dialog.vala:675
 msgid "Jobs"
 msgstr "Zadania"
 
-#: ../src/build_tool_dialog.vala:671
+#: ../src/build_tool_dialog.vala:681
 msgid "List of files to open after executing the build jobs."
 msgstr "Lista plików do otwarcia po dokonanych procesach budowania."
 
-#: ../src/build_tool_dialog.vala:672
+#: ../src/build_tool_dialog.vala:682
 msgid "The files are separated by spaces."
 msgstr "Pliki są oddzielane spacjami."
 
-#: ../src/build_tool_dialog.vala:673
+#: ../src/build_tool_dialog.vala:683
 msgid "You should use the placeholders to specify the files."
 msgstr "Należy użyć symboli zastępczych, aby określić pliki."
 
-#: ../src/build_tool_dialog.vala:676
+#: ../src/build_tool_dialog.vala:686
 msgid "Files to open"
 msgstr "Pliki do otwarcia"
 
-#: ../src/build_tools_preferences.vala:53
+#: ../src/build_tools_preferences.vala:57
 msgid "Build Tools"
 msgstr "Narzędzia budowania"
 
-#: ../src/build_tools_preferences.vala:111
+#: ../src/build_tools_preferences.vala:113
 msgid "Default Build Tools"
 msgstr "Domyślne narzędzia budowania"
 
-#: ../src/build_tools_preferences.vala:132
+#: ../src/build_tools_preferences.vala:134
 msgid "Personal Build Tools"
 msgstr "Własne narzędzia budowania"
 
-#: ../src/build_tools_preferences.vala:174
+#: ../src/build_tools_preferences.vala:176
 msgid "Enabled"
 msgstr "Włączone"
 
-#: ../src/build_tools_preferences.vala:278
+#: ../src/build_tools_preferences.vala:249
+msgid "View the properties (read-only)"
+msgstr "Wyświetla właściwości (tylko do odczytu)"
+
+#: ../src/build_tools_preferences.vala:254
+msgid "Edit the properties"
+msgstr "Modyfikuje właściwości"
+
+#: ../src/build_tools_preferences.vala:274
+msgid "Create a copy"
+msgstr "Tworzy kopię"
+
+#: ../src/build_tools_preferences.vala:289
 #, c-format
 msgid "%s [copy]"
 msgstr "%s [kopia]"
 
-#: ../src/build_tools_preferences.vala:329
+#: ../src/build_tools_preferences.vala:340
 #, c-format
 msgid "Do you really want to delete the build tool \"%s\"?"
 msgstr "Na pewno usunąć narzędzie budowania \"%s\"?"
 
-#: ../src/build_tools_preferences.vala:333 ../src/clean_build_files.vala:243
+#: ../src/build_tools_preferences.vala:344 ../src/clean_build_files.vala:243
 #: ../src/main_window_edit.vala:51 ../src/main_window_structure.vala:38
-#: ../src/project_dialogs.vala:240 ../src/project_dialogs.vala:275
-#: ../src/templates_dialogs.vala:243
+#: ../src/project_dialogs.vala:245 ../src/project_dialogs.vala:280
+#: ../src/templates_dialogs.vala:251
 msgid "_Delete"
 msgstr "_Usuń"
 
@@ -761,9 +767,9 @@ msgid "Close document"
 msgstr "Zamknij dokument"
 
 #. main file
-#: ../src/document_tab.vala:233 ../src/project_dialogs.vala:44
-#: ../src/project_dialogs.vala:47 ../src/project_dialogs.vala:139
-#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:215
+#: ../src/document_tab.vala:233 ../src/project_dialogs.vala:47
+#: ../src/project_dialogs.vala:50 ../src/project_dialogs.vala:144
+#: ../src/project_dialogs.vala:147 ../src/project_dialogs.vala:220
 msgid "Main File"
 msgstr "Plik główny"
 
@@ -858,6 +864,10 @@ msgstr "Brak dostępnych słowników do sprawdzania pisowni."
 #: ../src/document_view.vala:206 ../src/main_window.vala:62
 msgid "_Help"
 msgstr "Pomo_c"
+
+#: ../src/document_view.vala:207 ../src/tab_info_bar.vala:77
+msgid "_OK"
+msgstr "_OK"
 
 #: ../src/file_browser.vala:219
 msgid "Go to the home directory"
@@ -1820,43 +1830,59 @@ msgstr "Z_aznacz wszystko"
 msgid "Select the entire document"
 msgstr "Zaznacza cały dokument"
 
-#: ../src/main_window_edit.vala:57 ../src/main_window_structure.vala:44
+#: ../src/main_window_edit.vala:57
+msgid "_Indent"
+msgstr "_Dodaj wcięcie"
+
+#: ../src/main_window_edit.vala:58
+msgid "Indent the selected lines"
+msgstr "Dodaje wcięcie do zaznaczonych wierszy"
+
+#: ../src/main_window_edit.vala:60
+msgid "_Unindent"
+msgstr "_Usuń wcięcie"
+
+#: ../src/main_window_edit.vala:61
+msgid "Unindent the selected lines"
+msgstr "Usuwa wcięcie z zaznaczonych wierszy"
+
+#: ../src/main_window_edit.vala:63 ../src/main_window_structure.vala:44
 msgid "_Comment"
 msgstr "_Komentarz"
 
-#: ../src/main_window_edit.vala:58
+#: ../src/main_window_edit.vala:64
 msgid "Comment the selected lines (add the character \"%\")"
 msgstr "Komentuje zaznaczony wiersz (dodaje znak \"%\")"
 
-#: ../src/main_window_edit.vala:61
+#: ../src/main_window_edit.vala:67
 msgid "_Uncomment"
 msgstr "_Usuń komentarz"
 
-#: ../src/main_window_edit.vala:62
+#: ../src/main_window_edit.vala:68
 msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "Usuwa komentarz z zaznaczonego wiersza (usuwa znak \"%\")"
 
-#: ../src/main_window_edit.vala:65
+#: ../src/main_window_edit.vala:71
 msgid "_Completion"
 msgstr "_Uzupełnij"
 
-#: ../src/main_window_edit.vala:66
+#: ../src/main_window_edit.vala:72
 msgid "Complete the LaTeX command"
 msgstr "Uzupełnia polecenie LaTeX"
 
-#: ../src/main_window_edit.vala:68
+#: ../src/main_window_edit.vala:74
 msgid "_Preferences"
 msgstr "_Preferencje"
 
-#: ../src/main_window_edit.vala:69
+#: ../src/main_window_edit.vala:75
 msgid "Configure the application"
 msgstr "Konfiguracja programu"
 
-#: ../src/main_window_edit.vala:74
+#: ../src/main_window_edit.vala:80
 msgid "_Spell Check"
 msgstr "_Sprawdzanie pisowni"
 
-#: ../src/main_window_edit.vala:75
+#: ../src/main_window_edit.vala:81
 msgid "Activate or disable the spell checking"
 msgstr "Włączenie lub wyłączenie sprawdzania pisowni"
 
@@ -1864,7 +1890,7 @@ msgstr "Włączenie lub wyłączenie sprawdzania pisowni"
 msgid "_File"
 msgstr "_Plik"
 
-#: ../src/main_window_file.vala:32 ../src/project_dialogs.vala:29
+#: ../src/main_window_file.vala:32 ../src/templates_dialogs.vala:40
 msgid "_New"
 msgstr "_Nowy"
 
@@ -1911,6 +1937,11 @@ msgstr "_Usuń szablon..."
 #: ../src/main_window_file.vala:51
 msgid "Delete personal template(s)"
 msgstr "Usuwanie osobistych szablonów"
+
+#. close button
+#: ../src/main_window_file.vala:53 ../src/preferences_dialog.vala:42
+msgid "_Close"
+msgstr "Za_mknij"
 
 #: ../src/main_window_file.vala:54
 msgid "Close the current file"
@@ -2094,7 +2125,7 @@ msgstr "Zmiana głównego pliku bieżącego projektu"
 msgid "_Manage Projects"
 msgstr "_Zarządzaj projektami"
 
-#: ../src/main_window.vala:59 ../src/project_dialogs.vala:183
+#: ../src/main_window.vala:59 ../src/project_dialogs.vala:190
 msgid "Manage Projects"
 msgstr "Zarządzanie projektami"
 
@@ -2254,51 +2285,55 @@ msgstr[2] "znaków"
 msgid "Use the system fixed width font (%s)"
 msgstr "Użycie systemowej czcionki o stałej szerokości (%s)"
 
-#: ../src/project_dialogs.vala:26
+#: ../src/project_dialogs.vala:28
 msgid "New Project"
 msgstr "Nowy projekt"
 
+#: ../src/project_dialogs.vala:32 ../src/templates_dialogs.vala:181
+msgid "Crea_te"
+msgstr "_Utwórz"
+
 #. directory
-#: ../src/project_dialogs.vala:36 ../src/project_dialogs.vala:40
-#: ../src/project_dialogs.vala:202
+#: ../src/project_dialogs.vala:39 ../src/project_dialogs.vala:43
+#: ../src/project_dialogs.vala:207
 msgid "Directory"
 msgstr "Katalog"
 
-#: ../src/project_dialogs.vala:101
+#: ../src/project_dialogs.vala:104
 #, c-format
 msgid "There is a conflict with the project \"%s\"."
 msgstr "Wystąpił konflikt z projektem \"%s\"."
 
-#: ../src/project_dialogs.vala:116
+#: ../src/project_dialogs.vala:121
 msgid "Configure Project"
 msgstr "Konfiguracja projektu"
 
-#: ../src/project_dialogs.vala:134
+#: ../src/project_dialogs.vala:139
 msgid "Location of the project"
 msgstr "Położenie projektu"
 
-#: ../src/project_dialogs.vala:239
+#: ../src/project_dialogs.vala:244
 msgid "_Properties"
 msgstr "_Właściwości"
 
-#: ../src/project_dialogs.vala:241
+#: ../src/project_dialogs.vala:246
 msgid "_Clear All"
 msgstr "Wy_czyść wszystko"
 
-#: ../src/project_dialogs.vala:271
+#: ../src/project_dialogs.vala:276
 #, c-format
 msgid "Do you really want to delete the project \"%s\"?"
 msgstr "Na pewno usunąć projekt \"%s\"?"
 
-#: ../src/project_dialogs.vala:292
+#: ../src/project_dialogs.vala:297
 msgid "Do you really want to clear all projects?"
 msgstr "Na pewno wyczyścić wszystkie projekty?"
 
-#: ../src/project_dialogs.vala:295
+#: ../src/project_dialogs.vala:300
 msgid "Clear _All"
 msgstr "Wyczyść _wszystko"
 
-#: ../src/project_dialogs.vala:319
+#: ../src/project_dialogs.vala:324
 msgid "The Main File is not in the directory."
 msgstr "Plik główny nie znajduje się w katalogu."
 
@@ -2493,37 +2528,33 @@ msgstr "Wy_czyść"
 msgid "Clear most used symbols"
 msgstr "Czyści najczęściej używane symbole"
 
-#: ../src/templates_dialogs.vala:34
+#: ../src/templates_dialogs.vala:36
 msgid "New File..."
 msgstr "Nowy plik..."
 
-#: ../src/templates_dialogs.vala:55
-msgid "Default templates"
+#: ../src/templates_dialogs.vala:58
+msgid "Default Templates"
 msgstr "Domyślne szablony"
 
-#: ../src/templates_dialogs.vala:64
-msgid "Your personal templates"
+#: ../src/templates_dialogs.vala:67 ../src/templates_dialogs.vala:264
+msgid "Personal Templates"
 msgstr "Osobiste szablony"
 
-#: ../src/templates_dialogs.vala:173
+#: ../src/templates_dialogs.vala:177
 msgid "New Template..."
 msgstr "Nowy szablon..."
 
-#: ../src/templates_dialogs.vala:185
+#: ../src/templates_dialogs.vala:190
 msgid "Name of the new template"
 msgstr "Nazwa nowego szablonu"
 
-#: ../src/templates_dialogs.vala:198
+#: ../src/templates_dialogs.vala:203
 msgid "Choose an icon"
 msgstr "Wybór ikony"
 
-#: ../src/templates_dialogs.vala:242
+#: ../src/templates_dialogs.vala:248
 msgid "Delete Template(s)..."
 msgstr "Usuwanie szablonów..."
-
-#: ../src/templates_dialogs.vala:259
-msgid "Personal templates"
-msgstr "Osobiste szablony"
 
 #: ../src/templates.vala:75
 msgid "Empty"
