@@ -293,7 +293,7 @@ parser_text (GMarkupParseContext  *context,
 {
   LatexilaBuildTools *build_tools = user_data;
   const gchar *element_name = g_markup_parse_context_get_element (context);
-  gchar *stripped_text = g_strdup (text);
+  gchar *stripped_text = g_strndup (text, text_len);
   stripped_text = g_strstrip (stripped_text);
 
   if (g_str_equal (element_name, "job"))
