@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-05 19:04+0200\n"
+"POT-Creation-Date: 2015-04-12 15:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,6 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: template/translatableChunk
-#. There is a helper script in data/templates/tex2po.sh
 #: letter.xml:2
 #, no-wrap
 msgid ""

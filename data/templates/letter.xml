@@ -1,5 +1,5 @@
 <template xmlns:its="http://www.w3.org/2005/11/its">
-<translatableChunk its:locNote="There is a helper script in data/templates/tex2po.sh">
+<translatableChunk>
 \documentclass[a4paper,11pt]{letter}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
