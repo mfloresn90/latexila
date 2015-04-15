@@ -96,7 +96,7 @@ public class BuildToolsPreferences : GLib.Object
         });
     }
 
-    private Grid get_default_grid ()
+    private Widget get_default_grid ()
     {
         Latexila.BuildTools default_build_tools =
             Latexila.BuildToolsDefault.get_instance () as Latexila.BuildTools;
@@ -110,10 +110,10 @@ public class BuildToolsPreferences : GLib.Object
 
         Widget join = join_view_and_toolbar (_default_view, toolbar);
 
-        return Utils.get_dialog_component (_("Default Build Tools"), join);
+        return Latexila.utils_get_dialog_component (_("Default Build Tools"), join);
     }
 
-    private Grid get_personal_grid ()
+    private Widget get_personal_grid ()
     {
         Latexila.BuildTools personal_build_tools =
             Latexila.BuildToolsPersonal.get_instance () as Latexila.BuildTools;
@@ -131,7 +131,7 @@ public class BuildToolsPreferences : GLib.Object
 
         Widget join = join_view_and_toolbar (_personal_view, toolbar);
 
-        return Utils.get_dialog_component (_("Personal Build Tools"), join);
+        return Latexila.utils_get_dialog_component (_("Personal Build Tools"), join);
     }
 
     private Widget join_view_and_toolbar (TreeView view, Toolbar toolbar)

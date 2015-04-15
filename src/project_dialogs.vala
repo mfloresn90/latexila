@@ -40,14 +40,14 @@ namespace ProjectDialogs
             FileChooserAction.SELECT_FOLDER);
         directory_chooser.set_size_request (250, -1);
         directory_chooser.hexpand = true;
-        Widget component = Utils.get_dialog_component (_("Directory"), directory_chooser);
+        Widget component = Latexila.utils_get_dialog_component (_("Directory"), directory_chooser);
         content_area.pack_start (component, false);
 
         // main file
         FileChooserButton main_file_chooser = new FileChooserButton (_("Main File"),
             FileChooserAction.OPEN);
         main_file_chooser.hexpand = true;
-        component = Utils.get_dialog_component (_("Main File"), main_file_chooser);
+        component = Latexila.utils_get_dialog_component (_("Main File"), main_file_chooser);
         content_area.pack_start (component, false);
 
         content_area.show_all ();
@@ -136,7 +136,7 @@ namespace ProjectDialogs
         location.set_halign (Align.START);
         location.hexpand = true;
 
-        Widget component = Utils.get_dialog_component (_("Location of the project"),
+        Widget component = Latexila.utils_get_dialog_component (_("Location of the project"),
             location);
         content_area.pack_start (component, false);
 
@@ -144,7 +144,7 @@ namespace ProjectDialogs
         FileChooserButton main_file_chooser = new FileChooserButton (_("Main File"),
             FileChooserAction.OPEN);
         main_file_chooser.hexpand = true;
-        component = Utils.get_dialog_component (_("Main File"), main_file_chooser);
+        component = Latexila.utils_get_dialog_component (_("Main File"), main_file_chooser);
         content_area.pack_start (component, false);
 
         content_area.show_all ();

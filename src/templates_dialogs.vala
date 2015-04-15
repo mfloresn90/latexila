@@ -39,7 +39,7 @@ public class CreateTemplateDialog : Dialog
         /* name */
         Entry entry = new Entry ();
         entry.hexpand = true;
-        Widget component = Utils.get_dialog_component (_("Name of the new template"),
+        Widget component = Latexila.utils_get_dialog_component (_("Name of the new template"),
             entry);
         content_area.pack_start (component, false);
 
@@ -52,7 +52,7 @@ public class CreateTemplateDialog : Dialog
         ScrolledWindow scrollbar = Utils.add_scrollbar (templates_list);
         scrollbar.set_shadow_type (ShadowType.IN);
         scrollbar.set_size_request (250, 200);
-        component = Utils.get_dialog_component (_("Choose an icon"), scrollbar);
+        component = Latexila.utils_get_dialog_component (_("Choose an icon"), scrollbar);
         content_area.pack_start (component);
 
         content_area.show_all ();
@@ -113,7 +113,7 @@ public class DeleteTemplateDialog : Dialog
         ScrolledWindow scrollbar = Utils.add_scrollbar (templates_list);
         scrollbar.set_shadow_type (ShadowType.IN);
         scrollbar.set_size_request (250, 150);
-        Widget component = Utils.get_dialog_component (_("Personal Templates"),
+        Widget component = Latexila.utils_get_dialog_component (_("Personal Templates"),
             scrollbar);
 
         Box content_area = get_content_area () as Box;

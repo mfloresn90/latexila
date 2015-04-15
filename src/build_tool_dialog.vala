@@ -588,28 +588,28 @@ public class BuildToolDialog : GLib.Object
         return grid;
     }
 
-    private Grid get_desc_grid ()
+    private Widget get_desc_grid ()
     {
         _entry_desc.hexpand = true;
-        return Utils.get_dialog_component (_("Description"), _entry_desc);
+        return Latexila.utils_get_dialog_component (_("Description"), _entry_desc);
     }
 
-    private Grid get_extensions_grid ()
+    private Widget get_extensions_grid ()
     {
         _entry_extensions.set_tooltip_text (
             _("File extensions for which the build tool can be executed.") + "\n" +
             _("The extensions are separated by spaces.") + "\n" +
             _("If it is empty, all extensions are allowed."));
 
-        return Utils.get_dialog_component (_("Extensions"), _entry_extensions);
+        return Latexila.utils_get_dialog_component (_("Extensions"), _entry_extensions);
     }
 
-    private Grid get_icons_grid ()
+    private Widget get_icons_grid ()
     {
-        return Utils.get_dialog_component (_("Icon"), _icons_combobox);
+        return Latexila.utils_get_dialog_component (_("Icon"), _icons_combobox);
     }
 
-    private Grid get_jobs_grid (bool editable)
+    private Widget get_jobs_grid (bool editable)
     {
         /* Placeholders */
 
@@ -672,10 +672,10 @@ public class BuildToolDialog : GLib.Object
             context.set_junction_sides (JunctionSides.TOP);
         }
 
-        return Utils.get_dialog_component (_("Jobs"), jobs_box);
+        return Latexila.utils_get_dialog_component (_("Jobs"), jobs_box);
     }
 
-    private Grid get_files_to_open_grid ()
+    private Widget get_files_to_open_grid ()
     {
         _entry_files_to_open.set_tooltip_text (
             _("List of files to open after executing the build jobs.") + "\n" +
@@ -683,6 +683,6 @@ public class BuildToolDialog : GLib.Object
             _("You should use the placeholders to specify the files."));
 
         _entry_files_to_open.hexpand = true;
-        return Utils.get_dialog_component (_("Files to open"), _entry_files_to_open);
+        return Latexila.utils_get_dialog_component (_("Files to open"), _entry_files_to_open);
     }
 }

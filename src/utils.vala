@@ -283,26 +283,6 @@ namespace Utils
         return -1;
     }
 
-    public Grid get_dialog_component (string title, Widget widget)
-    {
-        Grid grid = new Grid ();
-        grid.orientation = Orientation.VERTICAL;
-        grid.set_row_spacing (6);
-        grid.border_width = 6;
-
-        // title in bold, left aligned
-        Label label = new Label (null);
-        label.set_markup ("<b>" + title + "</b>");
-        label.set_halign (Align.START);
-        grid.add (label);
-
-        // left margin for the widget
-        widget.set_margin_start (12);
-        grid.add (widget);
-
-        return grid;
-    }
-
     public unowned Gtk.Window? get_toplevel_window (Widget widget)
     {
         unowned Widget toplevel = widget.get_toplevel ();
