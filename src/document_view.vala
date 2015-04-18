@@ -201,7 +201,7 @@ public class DocumentView : Gtk.SourceView
                     DialogFlags.DESTROY_WITH_PARENT,
                     MessageType.ERROR,
                     ButtonsType.NONE,
-                    _("No dictionaries available for the spell checking."));
+                    "%s", _("No dictionaries available for the spell checking."));
 
                 dialog.add_buttons (_("_Help"), ResponseType.HELP,
                     _("_OK"), ResponseType.OK,
