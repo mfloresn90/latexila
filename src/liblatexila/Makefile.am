@@ -23,8 +23,10 @@ liblatexila_headers =				\
 	latexila-post-processor-latex.h		\
 	latexila-post-processor-latexmk.h	\
 	latexila-synctex.h			\
-	latexila-templates.h			\
+	latexila-templates-common.h		\
+	latexila-templates-default.h		\
 	latexila-templates-dialogs.h		\
+	latexila-templates-personal.h		\
 	latexila-types.h			\
 	latexila-utils.h
 
@@ -40,8 +42,10 @@ liblatexila_sources =				\
 	latexila-post-processor-latex.c		\
 	latexila-post-processor-latexmk.c	\
 	latexila-synctex.c			\
-	latexila-templates.c			\
+	latexila-templates-common.c		\
+	latexila-templates-default.c		\
 	latexila-templates-dialogs.c		\
+	latexila-templates-personal.c		\
 	latexila-utils.c
 
 liblatexila_built_sources =	\

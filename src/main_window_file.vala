@@ -131,7 +131,7 @@ public class MainWindowFile
 
     public void on_file_new ()
     {
-        string contents = Latexila.Templates.dialogs_open (_main_window);
+        string contents = Latexila.templates_dialogs_open (_main_window);
 
         if (contents != null)
         {

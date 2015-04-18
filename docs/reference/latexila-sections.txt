@@ -230,22 +230,29 @@ latexila_synctex_get_type
 </SECTION>
 
 <SECTION>
-<FILE>templates</FILE>
-<TITLE>LatexilaTemplates</TITLE>
-LatexilaTemplates
-latexila_templates_get_instance
-latexila_templates_get_default_templates_view
-latexila_templates_get_personal_templates_view
-latexila_templates_get_default_template_contents
-latexila_templates_get_personal_template_contents
-<SUBSECTION Standard>
-LATEXILA_TYPE_TEMPLATES
-</SECTION>
-
-<SECTION>
 <FILE>templates-dialogs</FILE>
 <TITLE>LatexilaTemplatesDialogs</TITLE>
 latexila_templates_dialogs_open
+</SECTION>
+
+<SECTION>
+<FILE>templates-default</FILE>
+<TITLE>LatexilaTemplatesDefault</TITLE>
+LatexilaTemplatesDefault
+latexila_templates_default_get_instance
+latexila_templates_default_get_contents
+<SUBSECTION Standard>
+LATEXILA_TYPE_TEMPLATES_DEFAULT
+</SECTION>
+
+<SECTION>
+<FILE>templates-personal</FILE>
+<TITLE>LatexilaTemplatesPersonal</TITLE>
+LatexilaTemplatesPersonal
+latexila_templates_personal_get_instance
+latexila_templates_personal_get_contents
+<SUBSECTION Standard>
+LATEXILA_TYPE_TEMPLATES_PERSONAL
 </SECTION>
 
 <SECTION>

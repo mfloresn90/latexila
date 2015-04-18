@@ -22,8 +22,9 @@
     <xi:include href="xml/post-processor-latex.xml"/>
     <xi:include href="xml/post-processor-latexmk.xml"/>
     <xi:include href="xml/synctex.xml"/>
-    <xi:include href="xml/templates.xml"/>
     <xi:include href="xml/templates-dialogs.xml"/>
+    <xi:include href="xml/templates-default.xml"/>
+    <xi:include href="xml/templates-personal.xml"/>
     <xi:include href="xml/utils.xml"/>
   </chapter>
 

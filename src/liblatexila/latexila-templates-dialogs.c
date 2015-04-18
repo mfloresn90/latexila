@@ -19,13 +19,15 @@
 
 #include "latexila-templates-dialogs.h"
 #include <glib/gi18n.h>
-#include "latexila-templates.h"
+#include "latexila-templates-common.h"
+#include "latexila-templates-default.h"
+#include "latexila-templates-personal.h"
 #include "latexila-utils.h"
 
 static void
 init_open_dialog (GtkDialog   *dialog,
-                  GtkTreeView *default_templates,
-                  GtkTreeView *personal_templates)
+                  GtkTreeView *default_view,
+                  GtkTreeView *personal_view)
 {
   GtkContainer *hgrid;
   GtkWidget *scrolled_window;
@@ -43,7 +45,7 @@ init_open_dialog (GtkDialog   *dialog,
   gtk_widget_set_size_request (scrolled_window, 250, 200);
 
   gtk_container_add (GTK_CONTAINER (scrolled_window),
-                     GTK_WIDGET (default_templates));
+                     GTK_WIDGET (default_view));
 
   component = latexila_utils_get_dialog_component (_("Default Templates"), scrolled_window);
   gtk_container_add (hgrid, component);
@@ -55,7 +57,7 @@ init_open_dialog (GtkDialog   *dialog,
   gtk_widget_set_size_request (scrolled_window, 250, 200);
 
   gtk_container_add (GTK_CONTAINER (scrolled_window),
-                     GTK_WIDGET (personal_templates));
+                     GTK_WIDGET (personal_view));
 
   component = latexila_utils_get_dialog_component (_("Personal Templates"), scrolled_window);
   gtk_container_add (hgrid, component);
@@ -104,9 +106,10 @@ gchar *
 latexila_templates_dialogs_open (GtkWindow *parent_window)
 {
   GtkDialog *dialog;
-  LatexilaTemplates *templates;
-  GtkTreeView *default_templates;
-  GtkTreeView *personal_templates;
+  LatexilaTemplatesDefault *default_store;
+  LatexilaTemplatesPersonal *personal_store;
+  GtkTreeView *default_view;
+  GtkTreeView *personal_view;
   GtkTreeSelection *default_selection;
   GtkTreeSelection *personal_selection;
   gint response;
@@ -126,15 +129,17 @@ latexila_templates_dialogs_open (GtkWindow *parent_window)
 
   gtk_dialog_set_default_response (dialog, GTK_RESPONSE_OK);
 
-  templates = latexila_templates_get_instance ();
-  default_templates = latexila_templates_get_default_templates_view (templates);
-  personal_templates = latexila_templates_get_personal_templates_view (templates);
+  default_store = latexila_templates_default_get_instance ();
+  personal_store = latexila_templates_personal_get_instance ();
 
-  init_open_dialog (dialog, default_templates, personal_templates);
+  default_view = latexila_templates_get_view (GTK_LIST_STORE (default_store));
+  personal_view = latexila_templates_get_view (GTK_LIST_STORE (personal_store));
+
+  init_open_dialog (dialog, default_view, personal_view);
 
   /* Selection: at most one selected template in both GtkTreeViews. */
-  default_selection = gtk_tree_view_get_selection (default_templates);
-  personal_selection = gtk_tree_view_get_selection (personal_templates);
+  default_selection = gtk_tree_view_get_selection (default_view);
+  personal_selection = gtk_tree_view_get_selection (personal_view);
 
   g_signal_connect_object (default_selection,
                            "changed",
@@ -149,16 +154,15 @@ latexila_templates_dialogs_open (GtkWindow *parent_window)
                            0);
 
   /* Double-click */
-  g_signal_connect (default_templates,
+  g_signal_connect (default_view,
                     "row-activated",
                     G_CALLBACK (row_activated_cb),
                     dialog);
 
-  g_signal_connect (personal_templates,
+  g_signal_connect (personal_view,
                     "row-activated",
                     G_CALLBACK (row_activated_cb),
                     dialog);
-
 
   response = gtk_dialog_run (dialog);
 
@@ -173,7 +177,7 @@ latexila_templates_dialogs_open (GtkWindow *parent_window)
           g_assert (g_list_length (selected_rows) == 1);
 
           path = selected_rows->data;
-          contents = latexila_templates_get_default_template_contents (templates, path);
+          contents = latexila_templates_default_get_contents (default_store, path);
         }
 
       else if (gtk_tree_selection_count_selected_rows (personal_selection) > 0)
@@ -182,7 +186,7 @@ latexila_templates_dialogs_open (GtkWindow *parent_window)
           g_assert (g_list_length (selected_rows) == 1);
 
           path = selected_rows->data;
-          contents = latexila_templates_get_personal_template_contents (templates, path);
+          contents = latexila_templates_personal_get_contents (personal_store, path);
         }
 
       /* No templates selected. */
