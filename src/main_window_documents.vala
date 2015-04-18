@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2012 Sébastien Wilmet
+ * Copyright © 2012, 2015 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,10 +36,10 @@ public class MainWindowDocuments
             N_("Close all open files"), on_close_all },
 
         { "DocumentsPrevious", "go-previous", N_("_Previous Document"),
-            "<Control><Alt>Page_Up", N_("Activate previous document"), on_previous },
+            "<Control>Page_Up", N_("Activate previous document"), on_previous },
 
         { "DocumentsNext", "go-next", N_("_Next Document"),
-            "<Control><Alt>Page_Down", N_("Activate next document"), on_next },
+            "<Control>Page_Down", N_("Activate next document"), on_next },
 
         { "DocumentsMoveToNewWindow", null, N_("_Move to New Window"), null,
             N_("Move the current document to a new window"), on_move_to_new_window }
