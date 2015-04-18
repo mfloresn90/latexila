@@ -33,6 +33,12 @@ LatexilaTemplatesPersonal *
 gchar *       latexila_templates_personal_get_contents          (LatexilaTemplatesPersonal *templates,
                                                                  GtkTreePath               *path);
 
+gboolean      latexila_templates_personal_create                (LatexilaTemplatesPersonal *templates,
+                                                                 const gchar               *name,
+                                                                 const gchar               *config_icon_name,
+                                                                 const gchar               *contents,
+                                                                 GError                   **error);
+
 G_END_DECLS
 
 #endif /* __LATEXILA_TEMPLATES_PERSONAL_H__ */

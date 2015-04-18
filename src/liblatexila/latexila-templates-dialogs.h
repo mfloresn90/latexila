@@ -24,7 +24,10 @@
 
 G_BEGIN_DECLS
 
-gchar *         latexila_templates_dialogs_open             (GtkWindow *parent_window);
+gchar *         latexila_templates_dialogs_open               (GtkWindow *parent_window);
+
+void            latexila_templates_dialogs_create_template    (GtkWindow   *parent_window,
+                                                               const gchar *template_contents);
 
 G_END_DECLS
 

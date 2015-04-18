@@ -233,6 +233,7 @@ latexila_synctex_get_type
 <FILE>templates-dialogs</FILE>
 <TITLE>LatexilaTemplatesDialogs</TITLE>
 latexila_templates_dialogs_open
+latexila_templates_dialogs_create_template
 </SECTION>
 
 <SECTION>
@@ -251,6 +252,7 @@ LATEXILA_TYPE_TEMPLATES_DEFAULT
 LatexilaTemplatesPersonal
 latexila_templates_personal_get_instance
 latexila_templates_personal_get_contents
+latexila_templates_personal_create
 <SUBSECTION Standard>
 LATEXILA_TYPE_TEMPLATES_PERSONAL
 </SECTION>

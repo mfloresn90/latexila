@@ -213,8 +213,14 @@ public class MainWindowFile
     {
         return_if_fail (_main_window.active_tab != null);
 
-        CreateTemplateDialog dialog = new CreateTemplateDialog (_main_window);
-        dialog.destroy ();
+        // get the template's contents
+        TextIter start;
+        TextIter end;
+        Document doc = _main_window.active_document;
+        doc.get_bounds (out start, out end);
+        string template_contents = doc.get_text (start, end, false);
+
+        Latexila.templates_dialogs_create_template (_main_window, template_contents);
     }
 
     public void on_delete_template ()

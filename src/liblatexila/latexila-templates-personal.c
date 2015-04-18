@@ -34,7 +34,9 @@
 
 #include "config.h"
 #include "latexila-templates-personal.h"
+#include <string.h>
 #include "latexila-templates-common.h"
+#include "latexila-utils.h"
 
 struct _LatexilaTemplatesPersonal
 {
@@ -216,6 +218,7 @@ latexila_templates_personal_get_contents (LatexilaTemplatesPersonal *templates,
   GError *error = NULL;
 
   g_return_val_if_fail (LATEXILA_IS_TEMPLATES_PERSONAL (templates), NULL);
+  g_return_val_if_fail (path != NULL, NULL);
 
   gtk_tree_model_get_iter (GTK_TREE_MODEL (templates),
                            &iter,
@@ -238,4 +241,170 @@ latexila_templates_personal_get_contents (LatexilaTemplatesPersonal *templates,
 
   g_object_unref (file);
   return contents;
+}
+
+static gboolean
+save_rc_file (LatexilaTemplatesPersonal  *templates,
+              GError                    **error)
+{
+  GFile *rc_file;
+  gchar *rc_path = NULL;
+  gint personal_templates_count;
+  gchar **names = NULL;
+  gchar **icons = NULL;
+  GtkTreeIter iter;
+  gint template_num;
+  GKeyFile *key_file = NULL;
+  gboolean ret = TRUE;
+
+  rc_file = get_rc_file ();
+  personal_templates_count = gtk_tree_model_iter_n_children (GTK_TREE_MODEL (templates), NULL);
+
+  if (personal_templates_count == 0)
+    {
+      GError *my_error = NULL;
+
+      g_file_delete (rc_file, NULL, &my_error);
+
+      if (g_error_matches (my_error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND))
+        {
+          g_error_free (my_error);
+          my_error = NULL;
+        }
+      else if (my_error != NULL)
+        {
+          ret = FALSE;
+          g_propagate_error (error, my_error);
+        }
+
+      goto out;
+    }
+
+  names = g_new0 (gchar *, personal_templates_count + 1);
+  icons = g_new0 (gchar *, personal_templates_count + 1);
+
+  if (!gtk_tree_model_get_iter_first (GTK_TREE_MODEL (templates), &iter))
+    g_assert_not_reached ();
+
+  template_num = 0;
+  do
+    {
+      gchar *name;
+      gchar *icon;
+
+      gtk_tree_model_get (GTK_TREE_MODEL (templates), &iter,
+                          LATEXILA_TEMPLATES_COLUMN_NAME, &name,
+                          LATEXILA_TEMPLATES_COLUMN_CONFIG_ICON_NAME, &icon,
+                          -1);
+
+      g_assert_cmpint (template_num, <, personal_templates_count);
+      names[template_num] = name;
+      icons[template_num] = icon;
+      template_num++;
+    }
+  while (gtk_tree_model_iter_next (GTK_TREE_MODEL (templates), &iter));
+
+  g_assert_cmpint (template_num, ==, personal_templates_count);
+
+  key_file = g_key_file_new ();
+
+  g_key_file_set_string_list (key_file,
+                              PACKAGE_NAME,
+                              "names",
+                              (const gchar * const *) names,
+                              personal_templates_count);
+
+  g_key_file_set_string_list (key_file,
+                              PACKAGE_NAME,
+                              "icons",
+                              (const gchar * const *) icons,
+                              personal_templates_count);
+
+  rc_path = g_file_get_path (rc_file);
+  if (!g_key_file_save_to_file (key_file, rc_path, error))
+    ret = FALSE;
+
+out:
+  g_object_unref (rc_file);
+  g_free (rc_path);
+  g_strfreev (names);
+  g_strfreev (icons);
+
+  if (key_file != NULL)
+    g_key_file_unref (key_file);
+
+  return ret;
+}
+
+/**
+ * latexila_templates_personal_create:
+ * @templates: the #LatexilaTemplatesPersonal instance.
+ * @name: the template's name.
+ * @config_icon_name: the icon name that will be stored in the config file.
+ * @contents: the template's contents.
+ * @error: (out) (optional): a location to a %NULL #GError, or %NULL.
+ *
+ * Creates a new personal template. The new template is added at the end of the
+ * list.
+ *
+ * Returns: %TRUE on success, %FALSE on error.
+ */
+gboolean
+latexila_templates_personal_create (LatexilaTemplatesPersonal  *templates,
+                                    const gchar                *name,
+                                    const gchar                *config_icon_name,
+                                    const gchar                *contents,
+                                    GError                    **error)
+{
+  gint template_num;
+  GFile *template_file = NULL;
+  GFileOutputStream *stream = NULL;
+  gboolean ret = TRUE;
+
+  g_return_val_if_fail (LATEXILA_IS_TEMPLATES_PERSONAL (templates), FALSE);
+  g_return_val_if_fail (name != NULL && name[0] != '\0', FALSE);
+  g_return_val_if_fail (config_icon_name != NULL && config_icon_name[0] != '\0', FALSE);
+  g_return_val_if_fail (contents != NULL, FALSE);
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  template_num = gtk_tree_model_iter_n_children (GTK_TREE_MODEL (templates), NULL);
+  template_file = get_personal_template_file (template_num);
+
+  if (!latexila_utils_create_parent_directories (template_file, error))
+    {
+      ret = FALSE;
+      goto out;
+    }
+
+  stream = g_file_create (template_file, G_FILE_CREATE_NONE, NULL, error);
+
+  if (stream == NULL)
+    {
+      ret = FALSE;
+      goto out;
+    }
+
+  if (!g_output_stream_write_all (G_OUTPUT_STREAM (stream),
+                                  contents,
+                                  strlen (contents),
+                                  NULL,
+                                  NULL,
+                                  error))
+    {
+      ret = FALSE;
+      goto out;
+    }
+
+  latexila_templates_add_template (GTK_LIST_STORE (templates),
+                                   name,
+                                   config_icon_name,
+                                   template_file);
+
+  if (!save_rc_file (templates, error))
+    ret = FALSE;
+
+out:
+  g_clear_object (&template_file);
+  g_clear_object (&stream);
+  return ret;
 }

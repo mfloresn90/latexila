@@ -201,3 +201,143 @@ latexila_templates_dialogs_open (GtkWindow *parent_window)
   gtk_widget_destroy (GTK_WIDGET (dialog));
   return contents;
 }
+
+/**
+ * latexila_templates_dialogs_create_template:
+ * @parent_window: transient parent window of the dialog.
+ * @template_contents: the template's contents.
+ *
+ * Runs a #GtkDialog to create a new template. The template's contents is given.
+ * The #GtkDialog asks the template's name and icon.
+ */
+void
+latexila_templates_dialogs_create_template (GtkWindow   *parent_window,
+                                            const gchar *template_contents)
+{
+  GtkDialog *dialog;
+  GtkBox *content_area;
+  GtkEntry *entry;
+  GtkWidget *component;
+  LatexilaTemplatesDefault *default_store;
+  GtkTreeView *default_view;
+  GtkWidget *scrolled_window;
+
+  dialog = g_object_new (GTK_TYPE_DIALOG,
+                         "use-header-bar", TRUE,
+                         "title", _("New Template..."),
+                         "destroy-with-parent", TRUE,
+                         "transient-for", parent_window,
+                         NULL);
+
+  gtk_dialog_add_buttons (dialog,
+                          _("_Cancel"), GTK_RESPONSE_CANCEL,
+                          _("Crea_te"), GTK_RESPONSE_OK,
+                          NULL);
+
+  gtk_dialog_set_default_response (dialog, GTK_RESPONSE_OK);
+
+  content_area = GTK_BOX (gtk_dialog_get_content_area (dialog));
+
+  /* Name */
+  entry = GTK_ENTRY (gtk_entry_new ());
+  gtk_widget_set_hexpand (GTK_WIDGET (entry), TRUE);
+  component = latexila_utils_get_dialog_component (_("Name of the new template"),
+                                                   GTK_WIDGET (entry));
+  gtk_box_pack_start (content_area, component, FALSE, TRUE, 0);
+
+  /* Icon.
+   * Take the default store because it contains all the icons.
+   */
+  default_store = latexila_templates_default_get_instance ();
+  default_view = latexila_templates_get_view (GTK_LIST_STORE (default_store));
+
+  scrolled_window = gtk_scrolled_window_new (NULL, NULL);
+  gtk_widget_set_size_request (scrolled_window, 250, 200);
+  gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolled_window),
+                                       GTK_SHADOW_IN);
+
+  gtk_container_add (GTK_CONTAINER (scrolled_window),
+                     GTK_WIDGET (default_view));
+
+  component = latexila_utils_get_dialog_component (_("Choose an icon"), scrolled_window);
+  gtk_box_pack_start (content_area, component, TRUE, TRUE, 0);
+
+  gtk_widget_show_all (GTK_WIDGET (content_area));
+
+  while (gtk_dialog_run (dialog) == GTK_RESPONSE_OK)
+    {
+      GtkTreeSelection *selection;
+      GList *selected_rows;
+      GtkTreePath *path;
+      GtkTreeIter iter;
+      gchar *config_icon_name = NULL;
+      const gchar *name = NULL;
+      LatexilaTemplatesPersonal *personal_store;
+      GError *error = NULL;
+
+      /* If no name specified. */
+      if (gtk_entry_get_text_length (entry) == 0)
+        continue;
+
+      selection = gtk_tree_view_get_selection (default_view);
+
+      /* If no icons selected. */
+      if (gtk_tree_selection_count_selected_rows (selection) == 0)
+        continue;
+
+      /* Get config icon name. */
+      selected_rows = gtk_tree_selection_get_selected_rows (selection, NULL);
+      g_assert (g_list_length (selected_rows) == 1);
+
+      path = selected_rows->data;
+
+      if (!gtk_tree_model_get_iter (GTK_TREE_MODEL (default_store), &iter, path))
+        {
+          g_warning ("Create template dialog: invalid path");
+          break;
+        }
+
+      gtk_tree_model_get (GTK_TREE_MODEL (default_store), &iter,
+                          LATEXILA_TEMPLATES_COLUMN_CONFIG_ICON_NAME, &config_icon_name,
+                          -1);
+
+      name = gtk_entry_get_text (entry);
+
+      personal_store = latexila_templates_personal_get_instance ();
+
+      latexila_templates_personal_create (personal_store,
+                                          name,
+                                          config_icon_name,
+                                          template_contents,
+                                          &error);
+
+      g_list_free_full (selected_rows, (GDestroyNotify) gtk_tree_path_free);
+      g_free (config_icon_name);
+
+      if (error != NULL)
+        {
+          GtkWidget *error_dialog;
+
+          error_dialog = gtk_message_dialog_new (GTK_WINDOW (dialog),
+                                                 GTK_DIALOG_MODAL |
+                                                 GTK_DIALOG_DESTROY_WITH_PARENT |
+                                                 GTK_DIALOG_USE_HEADER_BAR,
+                                                 GTK_MESSAGE_ERROR,
+                                                 GTK_BUTTONS_OK,
+                                                 "%s", _("Impossible to create the personal template."));
+
+          gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (error_dialog),
+                                                    "%s", error->message);
+
+          gtk_dialog_run (GTK_DIALOG (error_dialog));
+          gtk_widget_destroy (error_dialog);
+
+          g_error_free (error);
+          continue;
+        }
+
+      break;
+    }
+
+  gtk_widget_destroy (GTK_WIDGET (dialog));
+}
