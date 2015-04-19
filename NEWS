@@ -1,5 +1,10 @@
 LaTeXila NEWS
 
+Release 3.16.1
+--------------
+* Fix the build with -Werror=format-security (Kalev Lember)
+* Important bug fix when deleting several templates at once
+
 Release 3.16.0
 --------------
 * Show information about LaTeXila fundraiser
