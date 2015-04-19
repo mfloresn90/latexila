@@ -274,12 +274,18 @@ public class DeleteTemplateDialog : Dialog
         while (run () == ResponseType.ACCEPT)
         {
             TreeSelection select = templates_list.get_selection ();
-            List<TreePath> selected_items = select.get_selected_rows (null);
-            uint nb_selected_items = selected_items.length ();
+            unowned TreeModel model;
+            List<TreePath> selected_rows = select.get_selected_rows (out model);
+            List<TreeRowReference> row_refs = null;
 
-            for (int item_num = 0 ; item_num < nb_selected_items ; item_num++)
+            foreach (TreePath path in selected_rows)
             {
-                TreePath path = selected_items.nth_data (item_num);
+                row_refs.prepend (new TreeRowReference (model, path));
+            }
+
+            foreach (TreeRowReference row_ref in row_refs)
+            {
+                TreePath path = row_ref.get_path ();
                 templates.delete_personal_template (path);
                 template_deleted = true;
             }
