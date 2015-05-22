@@ -1851,6 +1851,7 @@ msgid "Description"
 msgstr "Descrizione"
 
 #: ../src/ui/build_tool.ui.h:2
+#, fuzzy
 msgid "Extensions"
 msgstr "Estenzioni"
 
