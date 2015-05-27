@@ -121,34 +121,12 @@ namespace Utils
         }
     }
 
-    public bool create_parent_directories (File file)
-    {
-        File parent = file.get_parent ();
-
-        if (parent == null || parent.query_exists ())
-            return true;
-
-        try
-        {
-            parent.make_directory_with_parents ();
-        }
-        catch (Error e)
-        {
-            warning ("Failed to create directory parents for the file '%s': %s",
-                file.get_parse_name (), e.message);
-            return false;
-        }
-
-        return true;
-    }
-
     public bool save_file (File file, string contents, bool make_backup = false)
     {
-        if (! create_parent_directories (file))
-            return false;
-
         try
         {
+            Latexila.utils_create_parent_directories (file);
+
             file.replace_contents (contents.data, null, make_backup,
                 FileCreateFlags.NONE, null);
         }

@@ -55,6 +55,9 @@ void            latexila_utils_show_uri                         (GdkScreen    *s
 GtkWidget *     latexila_utils_get_dialog_component             (const gchar *title,
                                                                  GtkWidget   *widget);
 
+gboolean        latexila_utils_create_parent_directories        (GFile   *file,
+                                                                 GError **error);
+
 G_END_DECLS
 
 #endif /* __LATEXILA_UTILS_H__ */
