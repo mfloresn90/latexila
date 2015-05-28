@@ -56,8 +56,6 @@ vala_files =				\
 	symbols.vala			\
 	symbols_view.vala		\
 	tab_info_bar.vala		\
-	templates_dialogs.vala		\
-	templates.vala			\
 	utils.vala
 
 latexila_SOURCES = 				\

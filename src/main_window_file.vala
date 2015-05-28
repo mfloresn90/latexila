@@ -47,9 +47,6 @@ public class MainWindowFile
         { "FileCreateTemplate", null, N_("Create _Template From Document..."), null,
             N_("Create a new template from the current document"), on_create_template },
 
-        { "FileDeleteTemplate", null, N_("_Delete Template..."), null,
-            N_("Delete personal template(s)"), on_delete_template },
-
         { "FileClose", "window-close", N_("_Close"), "<Control>W",
             N_("Close the current file"), on_file_close }
     };
@@ -221,12 +218,6 @@ public class MainWindowFile
         string template_contents = doc.get_text (start, end, false);
 
         Latexila.templates_dialogs_create_template (_main_window, template_contents);
-    }
-
-    public void on_delete_template ()
-    {
-        DeleteTemplateDialog dialog = new DeleteTemplateDialog (_main_window);
-        dialog.destroy ();
     }
 
     public void on_file_close ()
