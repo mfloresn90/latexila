@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright (C) 2014 - Sébastien Wilmet <swilmet@gnome.org>
+ * Copyright (C) 2014-2015 - Sébastien Wilmet <swilmet@gnome.org>
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,6 +40,8 @@ typedef struct _LatexilaPostProcessorAllOutput  LatexilaPostProcessorAllOutput;
 typedef struct _LatexilaPostProcessorLatex      LatexilaPostProcessorLatex;
 typedef struct _LatexilaPostProcessorLatexmk    LatexilaPostProcessorLatexmk;
 typedef struct _LatexilaSynctex                 LatexilaSynctex;
+typedef struct _LatexilaTemplatesDefault        LatexilaTemplatesDefault;
+typedef struct _LatexilaTemplatesPersonal       LatexilaTemplatesPersonal;
 
 G_END_DECLS
 

@@ -21,6 +21,7 @@
 #define __LATEXILA_TEMPLATES_PERSONAL_H__
 
 #include <gtk/gtk.h>
+#include "latexila-types.h"
 
 G_BEGIN_DECLS
 
