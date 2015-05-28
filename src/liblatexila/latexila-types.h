@@ -17,6 +17,11 @@
  * along with LaTeXila.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* Every type is defined here. It avoids problems with header #includes cycles.
+ * For example when type-a.h needs the TypeB declaration, and type-b.h needs the
+ * TypeA declaration.
+ */
+
 #ifndef __LATEXILA_TYPES_H__
 #define __LATEXILA_TYPES_H__
 

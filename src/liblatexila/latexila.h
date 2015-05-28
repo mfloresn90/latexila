@@ -17,6 +17,10 @@
  * along with LaTeXila.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* Main header for the LaTeXila "library". Code using the library (e.g. Vala
+ * code) should #include only this header.
+ */
+
 #ifndef __LATEXILA_H__
 #define __LATEXILA_H__
 
