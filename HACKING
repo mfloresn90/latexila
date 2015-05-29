@@ -44,7 +44,8 @@ For consistency, there are some conventions to follow when coding.
 
 For Vala and C:
     - no trailing spaces
-    - use blank lines to space out blocks of code (only one blank line is enough)
+    - use blank lines to space out blocks of code (only one blank line is enough).
+    - space out each case in a switch, i.e. have a blank line after each 'break;'.
     - as a general rule of thumb, when modifying a file use the same coding
       style of that file.
 
@@ -53,6 +54,8 @@ For Vala:
     - lines: 90 characters maximum (in some cases it can be a little more)
     - /* ... */ comments for delimiting code sections
     - // ... comments otherwise (e.g. for explaining just one line)
+    - curly braces are always on a separate line
+    - for one-line blocks (if, for, while, etc), no curly braces
     - some spaces almost everywhere:
         - function (blah);                // not function(blah);
         - int num = 5;                    // not int num=5;
@@ -60,12 +63,11 @@ For Vala:
         - for (int i = 0 ; i < max ; i++) // not for(int i=0;i<max;i++)
         - etc...
     - do not use 'var' for declaring variables, unless the type is very long.
-      The type of a variable is a form of auto-documentation.
+      The type of a variable is a form of self-documentation.
 
 For C:
-    - follow the GLib/GTK+ conventions:
-      https://wiki.gnome.org/Projects/GTK%2B/BestPractices
-    - indentation: GNU style
+    - follow the GNU coding style:
+      https://developer.gnome.org/programming-guidelines/stable/c-coding-style.html.en
     - no maximum line length (but short lines are better)
     - only /* ... */ comments (for C89 compatibility)
     - spacing differences with Vala:
