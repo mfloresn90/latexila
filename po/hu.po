@@ -3,25 +3,26 @@
 # This file is distributed under the same license as the latexila package.
 #
 # Balázs Úr <urbalazs@gmail.com>, 2014, 2015.
+# Gabor Kelemen <kelemeng at ubuntu dot com>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: LaTeXila 2.12\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-27 22:39+0000\n"
-"PO-Revision-Date: 2015-02-28 00:52+0100\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"POT-Creation-Date: 2015-05-08 22:00+0000\n"
+"PO-Revision-Date: 2015-05-31 23:12+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng at ubuntu dot com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu_HU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:43 ../src/build_tool_dialog.vala:168
+#: build_tools.xml:43 ../src/build_tool_dialog.vala:165
 msgid "View PDF"
 msgstr "PDF megtekintése"
 
@@ -31,7 +32,7 @@ msgid "View the PDF file"
 msgstr "A PDF fájl megtekintése"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:49 ../src/build_tool_dialog.vala:167
+#: build_tools.xml:49 ../src/build_tool_dialog.vala:164
 msgid "View DVI"
 msgstr "DVI megtekintése"
 
@@ -41,7 +42,7 @@ msgid "View the DVI file"
 msgstr "A DVI fájl megtekintése"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:55 ../src/build_tool_dialog.vala:169
+#: build_tools.xml:55 ../src/build_tool_dialog.vala:166
 msgid "View PS"
 msgstr "PS megtekintése"
 
@@ -417,7 +418,7 @@ msgstr "Jelenlegi könyvtár"
 msgid "URI of the file browser current directory"
 msgstr "A fájlböngésző jelenlegi könyvtárának URI-ja"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:282
+#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:361
 msgid "Show build files"
 msgstr "Összeállítási fájlok megjelenítése"
 
@@ -428,7 +429,7 @@ msgstr ""
 "A preferences.latex.clean-extensions értékében szereplő kiterjesztéssel "
 "rendelkező fájlok megjelenítése."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:290
+#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:369
 msgid "Show hidden files"
 msgstr "Rejtett fájlok megjelenítése"
 
@@ -448,7 +449,6 @@ msgstr ""
 "% babel csomag vagy azzal egyenértékű\n"
 
 #. (itstool) path: template/translatableChunk
-#. There is a helper script in data/templates/tex2po.sh
 #: letter.xml:2
 #, no-wrap
 msgid ""
@@ -509,179 +509,189 @@ msgstr ""
 msgid "Hide panel"
 msgstr "Panel elrejtése"
 
-#. close button
-#: ../src/build_tool_dialog.vala:80 ../src/build_tools_preferences.vala:55
-#: ../src/main_window_file.vala:53 ../src/preferences_dialog.vala:42
-#: ../src/project_dialogs.vala:186 ../src/templates_dialogs.vala:244
-msgid "_Close"
-msgstr "_Bezárás"
+#: ../src/build_tool_dialog.vala:71
+#| msgid "Personal Build Tools"
+msgid "Personal Build Tool"
+msgstr "Személyes összeállítási eszköz"
 
-#: ../src/build_tool_dialog.vala:81
-msgid "Build Tool (read-only)"
-msgstr "Összeállítási eszköz (csak olvasható)"
-
-#: ../src/build_tool_dialog.vala:86 ../src/build_tools_preferences.vala:332
+#: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:343
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
 #: ../src/document_tab.vala:290 ../src/main_window_file.vala:147
-#: ../src/main_window.vala:744 ../src/main_window.vala:840
-#: ../src/main_window.vala:876 ../src/preferences_dialog.vala:117
-#: ../src/project_dialogs.vala:28 ../src/project_dialogs.vala:119
-#: ../src/project_dialogs.vala:274 ../src/project_dialogs.vala:294
-#: ../src/templates_dialogs.vala:36 ../src/templates_dialogs.vala:176
+#: ../src/main_window.vala:746 ../src/main_window.vala:842
+#: ../src/main_window.vala:878 ../src/preferences_dialog.vala:117
+#: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:124
+#: ../src/project_dialogs.vala:279 ../src/project_dialogs.vala:299
+#: ../src/templates_dialogs.vala:39 ../src/templates_dialogs.vala:180
 msgid "_Cancel"
 msgstr "_Mégse"
 
-#: ../src/build_tool_dialog.vala:87 ../src/document_view.vala:207
-#: ../src/project_dialogs.vala:120 ../src/tab_info_bar.vala:77
-#: ../src/templates_dialogs.vala:37 ../src/templates_dialogs.vala:177
-msgid "_OK"
-msgstr "_OK"
+#: ../src/build_tool_dialog.vala:73 ../src/project_dialogs.vala:125
+msgid "_Apply"
+msgstr "_Alkalmaz"
 
-#: ../src/build_tool_dialog.vala:88
-msgid "Build Tool"
-msgstr "Összeállítási eszköz"
+#: ../src/build_tool_dialog.vala:77
+#| msgid "Build Tool (read-only)"
+msgid "Default Build Tool (read-only)"
+msgstr "Alap összeállítási eszköz (csak olvasható)"
 
 #. icon-name
 #. label
-#: ../src/build_tool_dialog.vala:161
+#: ../src/build_tool_dialog.vala:158
 msgid "Execute"
 msgstr "Végrehajtás"
 
-#: ../src/build_tool_dialog.vala:165
+#: ../src/build_tool_dialog.vala:162
 msgid "Convert"
 msgstr "Átalakítás"
 
 #. FIXME don't use Stock
-#: ../src/build_tool_dialog.vala:166
+#: ../src/build_tool_dialog.vala:163
 msgid "View File"
 msgstr "Fájl megtekintése"
 
-#: ../src/build_tool_dialog.vala:230
+#. In all cases, the text must be selectable, but there is no property
+#. for that. So set as editable, but in read-only mode the edited text
+#. isn't changed (see below).
+#: ../src/build_tool_dialog.vala:231
 msgid "Commands"
 msgstr "Parancsok"
 
-#: ../src/build_tool_dialog.vala:240
+#: ../src/build_tool_dialog.vala:241
 msgid "Post Processor"
 msgstr "Utófeldolgozó"
 
-#: ../src/build_tool_dialog.vala:267 ../src/build_tools_preferences.vala:294
+#: ../src/build_tool_dialog.vala:271 ../src/build_tools_preferences.vala:305
 msgid "Add..."
 msgstr "Hozzáadás…"
 
-#: ../src/build_tool_dialog.vala:284 ../src/build_tools_preferences.vala:311
+#: ../src/build_tool_dialog.vala:288 ../src/build_tools_preferences.vala:322
 msgid "Remove"
 msgstr "Eltávolítás"
 
-#: ../src/build_tool_dialog.vala:314 ../src/build_tools_preferences.vala:351
+#: ../src/build_tool_dialog.vala:318 ../src/build_tools_preferences.vala:362
 msgid "Move up"
 msgstr "Mozgatás fel"
 
-#: ../src/build_tool_dialog.vala:365 ../src/build_tools_preferences.vala:403
+#: ../src/build_tool_dialog.vala:369 ../src/build_tools_preferences.vala:414
 msgid "Move down"
 msgstr "Mozgatás le"
 
-#: ../src/build_tool_dialog.vala:569 ../src/build_tools_preferences.vala:183
+#: ../src/build_tool_dialog.vala:573 ../src/build_tools_preferences.vala:185
 #: ../src/latex_menu.vala:52 ../src/structure.vala:783
 msgid "Label"
 msgstr "Címke"
 
-#: ../src/build_tool_dialog.vala:574
+#: ../src/build_tool_dialog.vala:578
 msgid "You can select this arrow and copy/paste it!"
 msgstr "Kijelölheti ezt a nyilat, majd másolja/illessze be!"
 
-#: ../src/build_tool_dialog.vala:590
+#: ../src/build_tool_dialog.vala:594
 msgid "Description"
 msgstr "Leírás"
 
-#: ../src/build_tool_dialog.vala:596
+#: ../src/build_tool_dialog.vala:600
 msgid "File extensions for which the build tool can be executed."
 msgstr "Fájlkiterjesztések, amelyekre az összeállítási eszköz végrehajtható."
 
-#: ../src/build_tool_dialog.vala:597
+#: ../src/build_tool_dialog.vala:601
 msgid "The extensions are separated by spaces."
 msgstr "A kiterjesztések szóközzel vannak elválasztva."
 
-#: ../src/build_tool_dialog.vala:598
+#: ../src/build_tool_dialog.vala:602
 msgid "If it is empty, all extensions are allowed."
 msgstr "Ha üres, minden kiterjesztés engedélyezett."
 
-#: ../src/build_tool_dialog.vala:600
+#: ../src/build_tool_dialog.vala:604
 msgid "Extensions"
 msgstr "Kiterjesztések"
 
-#: ../src/build_tool_dialog.vala:605
+#: ../src/build_tool_dialog.vala:609
 msgid "Icon"
 msgstr "Ikon"
 
 #. Placeholders
-#: ../src/build_tool_dialog.vala:612
+#: ../src/build_tool_dialog.vala:616
 msgid "Placeholders:"
 msgstr "Helykitöltők:"
 
-#: ../src/build_tool_dialog.vala:616
+#: ../src/build_tool_dialog.vala:620
 msgid "The active document's filename."
 msgstr "Az aktív dokumentum fájlneve."
 
-#: ../src/build_tool_dialog.vala:617 ../src/build_tool_dialog.vala:622
+#: ../src/build_tool_dialog.vala:621 ../src/build_tool_dialog.vala:626
 msgid "If the active document belongs to a project, the main file is chosen."
 msgstr ""
 "Ha az aktív dokumentum egy projekthez tartozik, akkor a fő fájl kerül "
 "kiválasztásra."
 
-#: ../src/build_tool_dialog.vala:621
+#: ../src/build_tool_dialog.vala:625
 msgid "The active document's filename without its extension."
 msgstr "Az aktív dokumentum fájlneve kiterjesztés nélkül."
 
-#: ../src/build_tool_dialog.vala:665
+#: ../src/build_tool_dialog.vala:675
 msgid "Jobs"
 msgstr "Feladatok"
 
-#: ../src/build_tool_dialog.vala:671
+#: ../src/build_tool_dialog.vala:681
 msgid "List of files to open after executing the build jobs."
 msgstr "Az összeállítási feladatok elvégzése után megnyitandó fájlok listája."
 
-#: ../src/build_tool_dialog.vala:672
+#: ../src/build_tool_dialog.vala:682
 msgid "The files are separated by spaces."
 msgstr "A fájlok szóközzel vannak elválasztva."
 
-#: ../src/build_tool_dialog.vala:673
+#: ../src/build_tool_dialog.vala:683
 msgid "You should use the placeholders to specify the files."
 msgstr "Használja a helykitöltőket a fájlok megadásához."
 
-#: ../src/build_tool_dialog.vala:676
+#: ../src/build_tool_dialog.vala:686
 msgid "Files to open"
 msgstr "Megnyitandó fájlok"
 
-#: ../src/build_tools_preferences.vala:53
+#: ../src/build_tools_preferences.vala:57
 msgid "Build Tools"
 msgstr "Összeállítási eszközök"
 
-#: ../src/build_tools_preferences.vala:111
+#: ../src/build_tools_preferences.vala:113
 msgid "Default Build Tools"
 msgstr "Alapértelmezett összeállítási eszközök"
 
-#: ../src/build_tools_preferences.vala:132
+#: ../src/build_tools_preferences.vala:134
 msgid "Personal Build Tools"
 msgstr "Személyes összeállítási eszközök"
 
-#: ../src/build_tools_preferences.vala:174
+#: ../src/build_tools_preferences.vala:176
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: ../src/build_tools_preferences.vala:278
+#: ../src/build_tools_preferences.vala:249
+msgid "View the properties (read-only)"
+msgstr "A tulajdonságok megjelenítése (csak olvasható)"
+
+#: ../src/build_tools_preferences.vala:254
+#| msgid "Quit the program"
+msgid "Edit the properties"
+msgstr "Tulajdonságok szerkesztése"
+
+#: ../src/build_tools_preferences.vala:274
+#| msgid "Create Backup Copies"
+msgid "Create a copy"
+msgstr "Másolat létrehozása"
+
+#: ../src/build_tools_preferences.vala:289
 #, c-format
 msgid "%s [copy]"
 msgstr "%s [másolás]"
 
-#: ../src/build_tools_preferences.vala:329
+#: ../src/build_tools_preferences.vala:340
 #, c-format
 msgid "Do you really want to delete the build tool \"%s\"?"
 msgstr "Biztosan törölni szeretné a(z) „%s” összeállítási eszközt?"
 
-#: ../src/build_tools_preferences.vala:333 ../src/clean_build_files.vala:243
+#: ../src/build_tools_preferences.vala:344 ../src/clean_build_files.vala:243
 #: ../src/main_window_edit.vala:51 ../src/main_window_structure.vala:38
-#: ../src/project_dialogs.vala:240 ../src/project_dialogs.vala:275
-#: ../src/templates_dialogs.vala:243
+#: ../src/project_dialogs.vala:245 ../src/project_dialogs.vala:280
+#: ../src/templates_dialogs.vala:251
 msgid "_Delete"
 msgstr "_Törlés"
 
@@ -709,12 +719,12 @@ msgstr "Nincs egyező javaslat"
 msgid "Ln %d, Col %d"
 msgstr "%d. sor, %d. oszlop"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:743
+#: ../src/dialogs.vala:40 ../src/main_window.vala:745
 msgid "Close _without Saving"
 msgstr "Bezárás mentés _nélkül"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:749 ../src/main_window.vala:841
+#: ../src/main_window.vala:751 ../src/main_window.vala:843
 msgid "_Save"
 msgstr "_Mentés"
 
@@ -741,9 +751,9 @@ msgid "Close document"
 msgstr "Dokumentum bezárása"
 
 #. main file
-#: ../src/document_tab.vala:233 ../src/project_dialogs.vala:44
-#: ../src/project_dialogs.vala:47 ../src/project_dialogs.vala:139
-#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:215
+#: ../src/document_tab.vala:233 ../src/project_dialogs.vala:47
+#: ../src/project_dialogs.vala:50 ../src/project_dialogs.vala:144
+#: ../src/project_dialogs.vala:147 ../src/project_dialogs.vala:220
 msgid "Main File"
 msgstr "Fő fájl"
 
@@ -820,7 +830,7 @@ msgid "Do you want to save the file in a safer place?"
 msgstr "El szeretné menteni a fájlt egy biztonságosabb helyre?"
 
 #: ../src/document.vala:583 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:747
+#: ../src/main_window.vala:749
 msgid "Save _As"
 msgstr "Men_tés másként"
 
@@ -829,7 +839,6 @@ msgid "Cancel"
 msgstr "Mégse"
 
 #: ../src/document_view.vala:204
-#| msgid "Activate or disable the spell checking"
 msgid "No dictionaries available for the spell checking."
 msgstr "Nem érhető el szótár a helyesírás-ellenőrzéshez."
 
@@ -838,24 +847,48 @@ msgstr "Nem érhető el szótár a helyesírás-ellenőrzéshez."
 msgid "_Help"
 msgstr "_Súgó"
 
-#: ../src/file_browser.vala:218
+#: ../src/document_view.vala:207 ../src/tab_info_bar.vala:77
+msgid "_OK"
+msgstr "_OK"
+
+#: ../src/file_browser.vala:219
 msgid "Go to the home directory"
 msgstr "Ugrás a saját könyvtárba"
 
-#: ../src/file_browser.vala:233
+#: ../src/file_browser.vala:234
 msgid "Go to the parent directory"
 msgstr "Ugrás a szülő könyvtárba"
 
-#: ../src/file_browser.vala:249
+#: ../src/file_browser.vala:250
 msgid "Go to the active document directory"
 msgstr "Ugrás az aktív dokumentum könyvtárába"
 
-#: ../src/file_browser.vala:338
+#: ../src/file_browser.vala:303
+#| msgid "Open a file"
+msgid "Open in a file manager"
+msgstr "Megnyitás fájlkezelőben"
+
+#: ../src/file_browser.vala:305
+#| msgid "Save the current file with a different name"
+msgid "Open the current directory in a file manager"
+msgstr "A jelenlegi mappa megnyitása fájlkezelőben"
+
+#: ../src/file_browser.vala:327
+#| msgid "Open a file"
+msgid "Open in a terminal"
+msgstr "Megnyitás terminálban"
+
+#: ../src/file_browser.vala:328
+#| msgid "Save the current file with a different name"
+msgid "Open the current directory in a terminal"
+msgstr "A jelenlegi mappa megnyitása terminálban"
+
+#: ../src/file_browser.vala:417
 msgid "File System"
 msgstr "Fájlrendszer"
 
 #. File browser
-#: ../src/file_browser.vala:457 ../src/main_window.vala:406
+#: ../src/file_browser.vala:536 ../src/main_window.vala:408
 msgid "File Browser"
 msgstr "Fájlböngésző"
 
@@ -1780,43 +1813,61 @@ msgstr "Ö_sszes kijelölése"
 msgid "Select the entire document"
 msgstr "A teljes dokumentum kijelölése"
 
-#: ../src/main_window_edit.vala:57 ../src/main_window_structure.vala:44
+#: ../src/main_window_edit.vala:57
+msgid "_Indent"
+msgstr "Be_húzás"
+
+#: ../src/main_window_edit.vala:58
+#| msgid "Delete the selected text"
+msgid "Indent the selected lines"
+msgstr "A kiválasztott sorok behúzása"
+
+#: ../src/main_window_edit.vala:60
+msgid "_Unindent"
+msgstr "Behúzás _csökkentése"
+
+#: ../src/main_window_edit.vala:61
+#| msgid "Delete the selected text"
+msgid "Unindent the selected lines"
+msgstr "A kiválasztott sorok behúzásának csökkentése"
+
+#: ../src/main_window_edit.vala:63 ../src/main_window_structure.vala:44
 msgid "_Comment"
 msgstr "_Megjegyzés"
 
-#: ../src/main_window_edit.vala:58
+#: ../src/main_window_edit.vala:64
 msgid "Comment the selected lines (add the character \"%\")"
 msgstr "A kijelölt sorok megjegyzésbe tétele (a „%” karakter hozzáadása)"
 
-#: ../src/main_window_edit.vala:61
+#: ../src/main_window_edit.vala:67
 msgid "_Uncomment"
 msgstr "Megjegyzés _törlése"
 
-#: ../src/main_window_edit.vala:62
+#: ../src/main_window_edit.vala:68
 msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "A kijelölt sorok megjegyzésének törlése (a „%” karakter eltávolítása)"
 
-#: ../src/main_window_edit.vala:65
+#: ../src/main_window_edit.vala:71
 msgid "_Completion"
 msgstr "_Befejezés"
 
-#: ../src/main_window_edit.vala:66
+#: ../src/main_window_edit.vala:72
 msgid "Complete the LaTeX command"
 msgstr "A LaTeX parancs befejezése"
 
-#: ../src/main_window_edit.vala:68
+#: ../src/main_window_edit.vala:74
 msgid "_Preferences"
 msgstr "B_eállítások"
 
-#: ../src/main_window_edit.vala:69
+#: ../src/main_window_edit.vala:75
 msgid "Configure the application"
 msgstr "Az alkalmazás beállítása"
 
-#: ../src/main_window_edit.vala:74
+#: ../src/main_window_edit.vala:80
 msgid "_Spell Check"
 msgstr "_Helyesírás-ellenőrzés"
 
-#: ../src/main_window_edit.vala:75
+#: ../src/main_window_edit.vala:81
 msgid "Activate or disable the spell checking"
 msgstr "A helyesírás-ellenőrzés aktiválása vagy letiltása"
 
@@ -1824,7 +1875,7 @@ msgstr "A helyesírás-ellenőrzés aktiválása vagy letiltása"
 msgid "_File"
 msgstr "_Fájl"
 
-#: ../src/main_window_file.vala:32 ../src/project_dialogs.vala:29
+#: ../src/main_window_file.vala:32 ../src/templates_dialogs.vala:40
 msgid "_New"
 msgstr "Ú_j"
 
@@ -1871,6 +1922,11 @@ msgstr "Sablon _törlése…"
 #: ../src/main_window_file.vala:51
 msgid "Delete personal template(s)"
 msgstr "Személyes sablonok törlése"
+
+#. close button
+#: ../src/main_window_file.vala:53 ../src/preferences_dialog.vala:42
+msgid "_Close"
+msgstr "_Bezárás"
 
 #: ../src/main_window_file.vala:54
 msgid "Close the current file"
@@ -2054,7 +2110,7 @@ msgstr "Az aktuális projekt fő fájljának megváltoztatása"
 msgid "_Manage Projects"
 msgstr "Projektek _kezelése"
 
-#: ../src/main_window.vala:59 ../src/project_dialogs.vala:183
+#: ../src/main_window.vala:59 ../src/project_dialogs.vala:190
 msgid "Manage Projects"
 msgstr "Projektek kezelése"
 
@@ -2074,23 +2130,11 @@ msgstr "_LaTeX hivatkozás"
 msgid "The Kile LaTeX Reference"
 msgstr "A Kile LaTeX hivatkozása"
 
-#: ../src/main_window.vala:67
-msgid "_Donate"
-msgstr "_Adományozás"
-
-#: ../src/main_window.vala:68
-msgid ""
-"Donate to demonstrate your appreciation of LaTeXila and help its future "
-"development"
-msgstr ""
-"Adományozzon elismerése jeleként, és támogassa a LaTeXila további "
-"fejlesztését"
-
 #: ../src/main_window.vala:70
 msgid "_About"
 msgstr "_Névjegy"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1219
+#: ../src/main_window.vala:71 ../src/main_window.vala:1213
 msgid "About LaTeXila"
 msgstr "A LaTeXila névjegye"
 
@@ -2128,20 +2172,20 @@ msgid "Show or hide the bottom panel"
 msgstr "Az alsó sáv megjelenítése vagy elrejtése"
 
 #. Symbols
-#: ../src/main_window.vala:402
+#: ../src/main_window.vala:404
 msgid "Symbols"
 msgstr "Szimbólumok"
 
-#: ../src/main_window.vala:411
+#: ../src/main_window.vala:413
 msgid "Structure"
 msgstr "Szerkezet"
 
-#: ../src/main_window.vala:633
+#: ../src/main_window.vala:635
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Ez a fájl („%s”) már meg van nyitva egy másik LaTeXila ablakban."
 
-#: ../src/main_window.vala:635
+#: ../src/main_window.vala:637
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2149,41 +2193,41 @@ msgstr ""
 "A LaTeXila ezt a fájlt nem szerkeszthető módon nyitotta meg. Mindenképp "
 "szeretné szerkeszteni?"
 
-#: ../src/main_window.vala:638
+#: ../src/main_window.vala:640
 msgid "Edit Anyway"
 msgstr "Szerkesztés mindenképp"
 
-#: ../src/main_window.vala:639
+#: ../src/main_window.vala:641
 msgid "Don't Edit"
 msgstr "Ne szerkessze"
 
-#: ../src/main_window.vala:740
+#: ../src/main_window.vala:742
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Menti a változásokat a(z) „%s” dokumentumba, mielőtt bezárja?"
 
-#: ../src/main_window.vala:820
+#: ../src/main_window.vala:822
 msgid "Read-Only"
 msgstr "Csak olvasható"
 
-#: ../src/main_window.vala:838
+#: ../src/main_window.vala:840
 msgid "Save File"
 msgstr "Fájl mentése"
 
-#: ../src/main_window.vala:873
+#: ../src/main_window.vala:875
 #, c-format
 msgid "A file named \"%s\" already exists. Do you want to replace it?"
 msgstr "Már létezik „%s” nevű fájl. Le akarja cserélni?"
 
-#: ../src/main_window.vala:877
+#: ../src/main_window.vala:879
 msgid "_Replace"
 msgstr "_Csere"
 
-#: ../src/main_window.vala:1180
+#: ../src/main_window.vala:1174
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "A LaTeXila a GNOME asztal integrált LaTeX környezete"
 
-#: ../src/main_window.vala:1220
+#: ../src/main_window.vala:1214
 msgid "translator-credits"
 msgstr ""
 "Anca Tibor Attila <anca dot tibor at posteo dot de>\n"
@@ -2224,51 +2268,55 @@ msgstr[1] "karakter"
 msgid "Use the system fixed width font (%s)"
 msgstr "A rendszer rögzített szélességű betűkészletének használata (%s)"
 
-#: ../src/project_dialogs.vala:26
+#: ../src/project_dialogs.vala:28
 msgid "New Project"
 msgstr "Új projekt"
 
+#: ../src/project_dialogs.vala:32 ../src/templates_dialogs.vala:181
+msgid "Crea_te"
+msgstr "_Létrehozás"
+
 #. directory
-#: ../src/project_dialogs.vala:36 ../src/project_dialogs.vala:40
-#: ../src/project_dialogs.vala:202
+#: ../src/project_dialogs.vala:39 ../src/project_dialogs.vala:43
+#: ../src/project_dialogs.vala:207
 msgid "Directory"
 msgstr "Könyvtár"
 
-#: ../src/project_dialogs.vala:101
+#: ../src/project_dialogs.vala:104
 #, c-format
 msgid "There is a conflict with the project \"%s\"."
 msgstr "Ütközés van a(z) „%s” projekttel."
 
-#: ../src/project_dialogs.vala:116
+#: ../src/project_dialogs.vala:121
 msgid "Configure Project"
 msgstr "Projekt beállítása"
 
-#: ../src/project_dialogs.vala:134
+#: ../src/project_dialogs.vala:139
 msgid "Location of the project"
 msgstr "A projekt helye"
 
-#: ../src/project_dialogs.vala:239
+#: ../src/project_dialogs.vala:244
 msgid "_Properties"
 msgstr "_Tulajdonságok"
 
-#: ../src/project_dialogs.vala:241
+#: ../src/project_dialogs.vala:246
 msgid "_Clear All"
 msgstr "Ö_sszes törlése"
 
-#: ../src/project_dialogs.vala:271
+#: ../src/project_dialogs.vala:276
 #, c-format
 msgid "Do you really want to delete the project \"%s\"?"
 msgstr "Biztosan törölni szeretné a(z) „%s” projektet?"
 
-#: ../src/project_dialogs.vala:292
+#: ../src/project_dialogs.vala:297
 msgid "Do you really want to clear all projects?"
 msgstr "Biztosan törölni szeretné az összes projektet?"
 
-#: ../src/project_dialogs.vala:295
+#: ../src/project_dialogs.vala:300
 msgid "Clear _All"
 msgstr "Összes _törlése"
 
-#: ../src/project_dialogs.vala:319
+#: ../src/project_dialogs.vala:324
 msgid "The Main File is not in the directory."
 msgstr "A fő fájl nem található a könyvtárban."
 
@@ -2462,37 +2510,35 @@ msgstr "_Törlés"
 msgid "Clear most used symbols"
 msgstr "Legtöbbet használt szimbólumok törlése"
 
-#: ../src/templates_dialogs.vala:34
+#: ../src/templates_dialogs.vala:36
 msgid "New File..."
 msgstr "Új fájl…"
 
-#: ../src/templates_dialogs.vala:55
-msgid "Default templates"
+#: ../src/templates_dialogs.vala:58
+#| msgid "Default templates"
+msgid "Default Templates"
 msgstr "Alapértelmezett sablonok"
 
-#: ../src/templates_dialogs.vala:64
-msgid "Your personal templates"
-msgstr "A személyes sablonjai"
+#: ../src/templates_dialogs.vala:67 ../src/templates_dialogs.vala:264
+#| msgid "Personal templates"
+msgid "Personal Templates"
+msgstr "Személyes sablonok"
 
-#: ../src/templates_dialogs.vala:173
+#: ../src/templates_dialogs.vala:177
 msgid "New Template..."
 msgstr "Új sablon…"
 
-#: ../src/templates_dialogs.vala:185
+#: ../src/templates_dialogs.vala:190
 msgid "Name of the new template"
 msgstr "Az új sablon neve"
 
-#: ../src/templates_dialogs.vala:198
+#: ../src/templates_dialogs.vala:203
 msgid "Choose an icon"
 msgstr "Válasszon egy ikont"
 
-#: ../src/templates_dialogs.vala:242
+#: ../src/templates_dialogs.vala:248
 msgid "Delete Template(s)..."
 msgstr "Sablonok törlése…"
-
-#: ../src/templates_dialogs.vala:259
-msgid "Personal templates"
-msgstr "Személyes sablonok"
 
 #: ../src/templates.vala:75
 msgid "Empty"
@@ -2602,6 +2648,22 @@ msgstr "Karakterek száma a „\\” után"
 #: ../src/ui/preferences_dialog.ui.h:24
 msgid "Other"
 msgstr "Egyéb"
+
+#~ msgid "Build Tool"
+#~ msgstr "Összeállítási eszköz"
+
+#~ msgid "_Donate"
+#~ msgstr "_Adományozás"
+
+#~ msgid ""
+#~ "Donate to demonstrate your appreciation of LaTeXila and help its future "
+#~ "development"
+#~ msgstr ""
+#~ "Adományozzon elismerése jeleként, és támogassa a LaTeXila további "
+#~ "fejlesztését"
+
+#~ msgid "Your personal templates"
+#~ msgstr "A személyes sablonjai"
 
 #~ msgid "Left Delimiters"
 #~ msgstr "Bal oldali elválasztók"
