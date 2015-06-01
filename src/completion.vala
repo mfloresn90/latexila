@@ -462,7 +462,20 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
 
         // close environment: \begin{env} => \end{env}
         if (arg_cmd == "\\begin")
+        {
+            // Close the bracket if needed.
+            if (iter.get_char () == '}')
+                iter.forward_char ();
+            else
+                doc.insert (ref iter, "}", -1);
+
+            // We close the environment in a different user action. In this way
+            // a user interested only in autocompleting the "\begin" command
+            // can easily remove the "\end" by undo.
+            doc.end_user_action ();
+            doc.begin_user_action ();
             close_environment (text, iter);
+        }
 
         // TODO place cursor, go to next argument, if any
         else
@@ -476,16 +489,12 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
     {
         Document doc = iter.get_buffer () as Document;
 
-        // Close the bracket if needed.
-        if (iter.get_char () == '}')
-            iter.forward_char ();
-        else
-            doc.insert (ref iter, "}", -1);
-
         string cur_indent = doc.get_current_indentation (iter);
         string indent = doc.tab.view.get_indentation_style ();
 
         CompletionChoice? env = _environments[env_name];
+
+        doc.begin_user_action ();
 
         doc.insert (ref iter, @"\n$cur_indent$indent", -1);
 
@@ -503,6 +512,8 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
         doc.get_iter_at_mark (out iter, cursor_pos);
         doc.delete_mark (cursor_pos);
         doc.place_cursor (iter);
+
+        doc.end_user_action ();
     }
 
     /*************************************************************************/
