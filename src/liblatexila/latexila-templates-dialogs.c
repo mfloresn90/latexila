@@ -115,6 +115,8 @@ latexila_templates_dialogs_open (GtkWindow *parent_window)
   gint response;
   gchar *contents = NULL;
 
+  g_return_val_if_fail (GTK_IS_WINDOW (parent_window), NULL);
+
   dialog = g_object_new (GTK_TYPE_DIALOG,
                          "use-header-bar", TRUE,
                          "title", _("New File..."),
@@ -221,6 +223,9 @@ latexila_templates_dialogs_create_template (GtkWindow   *parent_window,
   LatexilaTemplatesDefault *default_store;
   GtkTreeView *default_view;
   GtkWidget *scrolled_window;
+
+  g_return_if_fail (GTK_IS_WINDOW (parent_window));
+  g_return_if_fail (template_contents != NULL);
 
   dialog = g_object_new (GTK_TYPE_DIALOG,
                          "use-header-bar", TRUE,
