@@ -47,6 +47,9 @@ public class MainWindowFile
         { "FileCreateTemplate", null, N_("Create _Template From Document..."), null,
             N_("Create a new template from the current document"), on_create_template },
 
+        { "FileManageTemplates", null, N_("_Manage Personal Templates..."), null,
+            N_("Manage personal templates"), on_manage_templates },
+
         { "FileClose", "window-close", N_("_Close"), "<Control>W",
             N_("Close the current file"), on_file_close }
     };
@@ -218,6 +221,11 @@ public class MainWindowFile
         string template_contents = doc.get_text (start, end, false);
 
         Latexila.templates_dialogs_create_template (_main_window, template_contents);
+    }
+
+    public void on_manage_templates ()
+    {
+        Latexila.templates_manage_dialog (_main_window);
     }
 
     public void on_file_close ()

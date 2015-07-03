@@ -40,6 +40,7 @@
 #include "latexila-templates-default.h"
 #include "latexila-templates-personal.h"
 #include "latexila-templates-dialogs.h"
+#include "latexila-templates-manage-dialog.h"
 #include "latexila-utils.h"
 
 #endif /* __LATEXILA_H__ */

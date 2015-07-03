@@ -40,6 +40,10 @@ gboolean      latexila_templates_personal_create                (LatexilaTemplat
                                                                  const gchar               *contents,
                                                                  GError                   **error);
 
+gboolean      latexila_templates_personal_delete                (LatexilaTemplatesPersonal  *templates,
+                                                                 GtkTreePath                *path,
+                                                                 GError                    **error);
+
 G_END_DECLS
 
 #endif /* __LATEXILA_TEMPLATES_PERSONAL_H__ */

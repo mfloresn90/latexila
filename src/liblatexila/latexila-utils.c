@@ -423,3 +423,36 @@ latexila_utils_create_parent_directories (GFile   *file,
 
   return TRUE;
 }
+
+/**
+ * latexila_utils_join_widgets:
+ * @widget_top: the #GtkWidget at the top.
+ * @widget_bottom: the #GtkWidget at the bottom.
+ *
+ * Joins two widgets vertically, with junction sides.
+ *
+ * Returns: (transfer floating): a #GtkContainer containing @widget_top and
+ * @widget_bottom.
+ */
+GtkWidget *
+latexila_utils_join_widgets (GtkWidget *widget_top,
+                             GtkWidget *widget_bottom)
+{
+  GtkStyleContext *context;
+  GtkBox *vbox;
+
+  g_return_val_if_fail (GTK_IS_WIDGET (widget_top), NULL);
+  g_return_val_if_fail (GTK_IS_WIDGET (widget_bottom), NULL);
+
+  context = gtk_widget_get_style_context (widget_top);
+  gtk_style_context_set_junction_sides (context, GTK_JUNCTION_BOTTOM);
+
+  context = gtk_widget_get_style_context (widget_bottom);
+  gtk_style_context_set_junction_sides (context, GTK_JUNCTION_TOP);
+
+  vbox = GTK_BOX (gtk_box_new (GTK_ORIENTATION_VERTICAL, 0));
+  gtk_box_pack_start (vbox, widget_top, TRUE, TRUE, 0);
+  gtk_box_pack_start (vbox, widget_bottom, FALSE, FALSE, 0);
+
+  return GTK_WIDGET (vbox);
+}

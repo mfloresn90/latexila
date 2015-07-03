@@ -408,3 +408,25 @@ out:
   g_clear_object (&stream);
   return ret;
 }
+
+/**
+ * latexila_templates_personal_delete:
+ * @templates: the #LatexilaTemplatesPersonal instance.
+ * @path: the #GtkTreePath of a personal template.
+ * @error: (out) (optional): a location to a %NULL #GError, or %NULL.
+ *
+ * Deletes a personal template.
+ *
+ * Returns: %TRUE on success, %FALSE on error.
+ */
+gboolean
+latexila_templates_personal_delete (LatexilaTemplatesPersonal  *templates,
+                                    GtkTreePath                *path,
+                                    GError                    **error)
+{
+  g_return_val_if_fail (LATEXILA_IS_TEMPLATES_PERSONAL (templates), FALSE);
+  g_return_val_if_fail (path != NULL, NULL);
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  return TRUE;
+}

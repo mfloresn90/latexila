@@ -58,6 +58,9 @@ GtkWidget *     latexila_utils_get_dialog_component             (const gchar *ti
 gboolean        latexila_utils_create_parent_directories        (GFile   *file,
                                                                  GError **error);
 
+GtkWidget *     latexila_utils_join_widgets                     (GtkWidget *widget_top,
+                                                                 GtkWidget *widget_bottom);
+
 G_END_DECLS
 
 #endif /* __LATEXILA_UTILS_H__ */

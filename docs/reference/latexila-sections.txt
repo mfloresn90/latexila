@@ -234,6 +234,7 @@ latexila_synctex_get_type
 <TITLE>LatexilaTemplatesDialogs</TITLE>
 latexila_templates_dialogs_open
 latexila_templates_dialogs_create_template
+latexila_templates_manage_dialog
 </SECTION>
 
 <SECTION>
@@ -253,6 +254,7 @@ LatexilaTemplatesPersonal
 latexila_templates_personal_get_instance
 latexila_templates_personal_get_contents
 latexila_templates_personal_create
+latexila_templates_personal_delete
 <SUBSECTION Standard>
 LATEXILA_TYPE_TEMPLATES_PERSONAL
 </SECTION>
@@ -271,4 +273,5 @@ latexila_utils_file_query_exists_finish
 latexila_utils_show_uri
 latexila_utils_get_dialog_component
 latexila_utils_create_parent_directories
+latexila_utils_join_widgets
 </SECTION>
