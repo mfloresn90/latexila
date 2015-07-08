@@ -27,14 +27,14 @@
  * pesonal templates.
  *
  * Personal templates are stored in the ~/.local/share/latexila/ directory.
- * There is a templatesrc file that stores the list of names and icons. And the
- * templates' contents are stored in 0.tex, 1.tex, 2.tex, etc, in the same order
- * as in the templatesrc file.
+ * There is a templatesrc file that stores the list of names, icons and
+ * files.
  */
 
 #include "config.h"
 #include "latexila-templates-personal.h"
 #include <string.h>
+#include <stdlib.h>
 #include "latexila-templates-common.h"
 #include "latexila-utils.h"
 
@@ -64,18 +64,28 @@ get_rc_file (void)
 }
 
 static GFile *
-get_personal_template_file (gint template_num)
+get_personal_template_file_by_filename (const gchar *filename)
 {
-  gchar *filename;
   gchar *path;
   GFile *template_file;
 
-  filename = g_strdup_printf ("%d.tex", template_num);
   path = g_build_filename (g_get_user_data_dir (), "latexila", filename, NULL);
   template_file = g_file_new_for_path (path);
 
-  g_free (filename);
   g_free (path);
+  return template_file;
+}
+
+static GFile *
+get_personal_template_file_by_index (gint template_num)
+{
+  gchar *filename;
+  GFile *template_file;
+
+  filename = g_strdup_printf ("%d.tex", template_num);
+  template_file = get_personal_template_file_by_filename (filename);
+
+  g_free (filename);
   return template_file;
 }
 
@@ -89,8 +99,11 @@ rc_file_contents_loaded_cb (GFile                     *rc_file,
   GKeyFile *key_file = NULL;
   gchar **names = NULL;
   gchar **icons = NULL;
+  gchar **files = NULL;
   gsize n_names;
   gsize n_icons;
+  gsize n_files;
+  gboolean has_files;
   gint i;
   GError *error = NULL;
 
@@ -128,11 +141,29 @@ rc_file_contents_loaded_cb (GFile                     *rc_file,
 
   g_return_if_fail (n_names == n_icons);
 
+  has_files = g_key_file_has_key (key_file, PACKAGE_NAME, "files", &error);
+
+  if (error != NULL)
+    goto out;
+
+  if (has_files)
+    {
+      files = g_key_file_get_string_list (key_file, PACKAGE_NAME, "files", &n_files, &error);
+
+      if (error != NULL)
+        goto out;
+
+      g_return_if_fail (n_names == n_files);
+    }
+
   for (i = 0; i < n_names; i++)
     {
       GFile *template_file;
 
-      template_file = get_personal_template_file (i);
+      if (has_files)
+        template_file = get_personal_template_file_by_filename (files[i]);
+      else
+        template_file = get_personal_template_file_by_index (i);
 
       latexila_templates_add_template (GTK_LIST_STORE (templates),
                                        names[i],
@@ -252,6 +283,7 @@ save_rc_file (LatexilaTemplatesPersonal  *templates,
   gint personal_templates_count;
   gchar **names = NULL;
   gchar **icons = NULL;
+  gchar **files = NULL;
   GtkTreeIter iter;
   gint template_num;
   GKeyFile *key_file = NULL;
@@ -282,6 +314,7 @@ save_rc_file (LatexilaTemplatesPersonal  *templates,
 
   names = g_new0 (gchar *, personal_templates_count + 1);
   icons = g_new0 (gchar *, personal_templates_count + 1);
+  files = g_new0 (gchar *, personal_templates_count + 1);
 
   if (!gtk_tree_model_get_iter_first (GTK_TREE_MODEL (templates), &iter))
     g_assert_not_reached ();
@@ -291,15 +324,20 @@ save_rc_file (LatexilaTemplatesPersonal  *templates,
     {
       gchar *name;
       gchar *icon;
+      GFile *file;
 
       gtk_tree_model_get (GTK_TREE_MODEL (templates), &iter,
                           LATEXILA_TEMPLATES_COLUMN_NAME, &name,
                           LATEXILA_TEMPLATES_COLUMN_CONFIG_ICON_NAME, &icon,
+                          LATEXILA_TEMPLATES_COLUMN_FILE, &file,
                           -1);
 
       g_assert_cmpint (template_num, <, personal_templates_count);
       names[template_num] = name;
       icons[template_num] = icon;
+      files[template_num] = g_file_get_basename (file);
+
+      g_object_unref (file);
       template_num++;
     }
   while (gtk_tree_model_iter_next (GTK_TREE_MODEL (templates), &iter));
@@ -320,6 +358,12 @@ save_rc_file (LatexilaTemplatesPersonal  *templates,
                               (const gchar * const *) icons,
                               personal_templates_count);
 
+  g_key_file_set_string_list (key_file,
+                              PACKAGE_NAME,
+                              "files",
+                              (const gchar * const *) files,
+                              personal_templates_count);
+
   rc_path = g_file_get_path (rc_file);
   if (!g_key_file_save_to_file (key_file, rc_path, error))
     ret = FALSE;
@@ -329,11 +373,62 @@ out:
   g_free (rc_path);
   g_strfreev (names);
   g_strfreev (icons);
+  g_strfreev (files);
 
   if (key_file != NULL)
     g_key_file_unref (key_file);
 
   return ret;
+}
+
+static gboolean
+is_template_index_used (LatexilaTemplatesPersonal *templates,
+                        gint                       template_num)
+{
+  GtkTreeIter iter;
+
+  if (!gtk_tree_model_get_iter_first (GTK_TREE_MODEL (templates), &iter))
+    return FALSE;
+
+  do
+    {
+      GFile *file;
+      gchar *basename;
+      gchar *endptr;
+      glong cur_template_num;
+      gboolean numeric_basename;
+
+      gtk_tree_model_get (GTK_TREE_MODEL (templates), &iter,
+                          LATEXILA_TEMPLATES_COLUMN_FILE, &file,
+                          -1);
+
+      basename = g_file_get_basename (file);
+      cur_template_num = strtol (basename, &endptr, 10);
+      numeric_basename = endptr != basename;
+
+      g_object_unref (file);
+      g_free (basename);
+
+      if (numeric_basename && template_num == cur_template_num)
+        return TRUE;
+    }
+  while (gtk_tree_model_iter_next (GTK_TREE_MODEL (templates), &iter));
+
+  return FALSE;
+}
+
+static gint
+get_first_free_template_index (LatexilaTemplatesPersonal *templates)
+{
+  gint template_num;
+
+  for (template_num = 0; template_num <= G_MAXINT; template_num++)
+    {
+      if (!is_template_index_used (templates, template_num))
+        return template_num;
+    }
+
+  g_return_val_if_reached (-1);
 }
 
 /**
@@ -367,8 +462,10 @@ latexila_templates_personal_create (LatexilaTemplatesPersonal  *templates,
   g_return_val_if_fail (contents != NULL, FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
-  template_num = gtk_tree_model_iter_n_children (GTK_TREE_MODEL (templates), NULL);
-  template_file = get_personal_template_file (template_num);
+  template_num = get_first_free_template_index (templates);
+  g_return_val_if_fail (template_num >= 0, FALSE);
+
+  template_file = get_personal_template_file_by_index (template_num);
 
   if (!latexila_utils_create_parent_directories (template_file, error))
     {
