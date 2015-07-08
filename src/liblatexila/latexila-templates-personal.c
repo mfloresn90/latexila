@@ -509,7 +509,7 @@ out:
 /**
  * latexila_templates_personal_delete:
  * @templates: the #LatexilaTemplatesPersonal instance.
- * @path: the #GtkTreePath of a personal template.
+ * @iter: a valid #GtkTreeIter.
  * @error: (out) (optional): a location to a %NULL #GError, or %NULL.
  *
  * Deletes a personal template.
@@ -518,12 +518,34 @@ out:
  */
 gboolean
 latexila_templates_personal_delete (LatexilaTemplatesPersonal  *templates,
-                                    GtkTreePath                *path,
+                                    GtkTreeIter                *iter,
                                     GError                    **error)
 {
+  GFile *file = NULL;
+  gboolean success = FALSE;
+
   g_return_val_if_fail (LATEXILA_IS_TEMPLATES_PERSONAL (templates), FALSE);
-  g_return_val_if_fail (path != NULL, NULL);
+  g_return_val_if_fail (iter != NULL, FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
-  return TRUE;
+  gtk_tree_model_get (GTK_TREE_MODEL (templates),
+                      iter,
+                      LATEXILA_TEMPLATES_COLUMN_FILE, &file,
+                      -1);
+
+  g_return_val_if_fail (G_IS_FILE (file), FALSE);
+
+  gtk_list_store_remove (GTK_LIST_STORE (templates), iter);
+
+  if (!save_rc_file (templates, error))
+    goto out;
+
+  if (!g_file_delete (file, NULL, error))
+    goto out;
+
+  success = TRUE;
+
+out:
+  g_clear_object (&file);
+  return success;
 }

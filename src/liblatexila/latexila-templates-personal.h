@@ -41,7 +41,7 @@ gboolean      latexila_templates_personal_create                (LatexilaTemplat
                                                                  GError                   **error);
 
 gboolean      latexila_templates_personal_delete                (LatexilaTemplatesPersonal  *templates,
-                                                                 GtkTreePath                *path,
+                                                                 GtkTreeIter                *iter,
                                                                  GError                    **error);
 
 G_END_DECLS

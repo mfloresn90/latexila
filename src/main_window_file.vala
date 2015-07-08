@@ -225,7 +225,9 @@ public class MainWindowFile
 
     public void on_manage_templates ()
     {
-        Latexila.templates_manage_dialog (_main_window);
+        Dialog dialog = new Latexila.TemplatesManageDialog (_main_window);
+        dialog.run ();
+        dialog.destroy ();
     }
 
     public void on_file_close ()

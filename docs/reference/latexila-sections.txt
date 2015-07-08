@@ -234,7 +234,15 @@ latexila_synctex_get_type
 <TITLE>LatexilaTemplatesDialogs</TITLE>
 latexila_templates_dialogs_open
 latexila_templates_dialogs_create_template
-latexila_templates_manage_dialog
+</SECTION>
+
+<SECTION>
+<FILE>templates-manage-dialog</FILE>
+<TITLE>LatexilaTemplatesManageDialog</TITLE>
+LatexilaTemplatesManageDialog
+latexila_templates_manage_dialog_new
+<SUBSECTION Standard>
+LATEXILA_TYPE_TEMPLATES_MANAGE_DIALOG
 </SECTION>
 
 <SECTION>

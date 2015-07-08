@@ -24,7 +24,15 @@
 
 G_BEGIN_DECLS
 
-void      latexila_templates_manage_dialog        (GtkWindow *parent_window);
+#define LATEXILA_TYPE_TEMPLATES_MANAGE_DIALOG latexila_templates_manage_dialog_get_type ()
+
+G_DECLARE_FINAL_TYPE (LatexilaTemplatesManageDialog,
+                      latexila_templates_manage_dialog,
+                      LATEXILA,
+                      TEMPLATES_MANAGE_DIALOG,
+                      GtkDialog)
+
+GtkDialog *   latexila_templates_manage_dialog_new    (GtkWindow *parent_window);
 
 G_END_DECLS
 
