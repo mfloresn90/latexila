@@ -39,6 +39,7 @@ src/liblatexila/latexila-synctex.c
 src/liblatexila/latexila-templates-common.c
 src/liblatexila/latexila-templates-default.c
 src/liblatexila/latexila-templates-dialogs.c
+src/liblatexila/latexila-templates-manage-dialog.c
 src/liblatexila/latexila-templates-personal.c
 src/liblatexila/latexila-utils.c
 src/main.vala
@@ -61,7 +62,5 @@ src/structure.vala
 src/symbols.vala
 src/symbols_view.vala
 src/tab_info_bar.vala
-src/templates_dialogs.vala
-src/templates.vala
 [type: gettext/glade]src/ui/preferences_dialog.ui
 src/utils.vala
