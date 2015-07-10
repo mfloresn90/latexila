@@ -38,6 +38,8 @@ struct _LatexilaTemplatesManageDialog
   GtkDialog parent;
 
   GtkTreeView *templates_view;
+
+  GtkToolButton *delete_button;
 };
 
 G_DEFINE_TYPE (LatexilaTemplatesManageDialog, latexila_templates_manage_dialog, GTK_TYPE_DIALOG)
@@ -114,12 +116,11 @@ delete_button_clicked_cb (GtkToolButton                 *delete_button,
   g_free (name);
 }
 
-static GtkWidget *
-get_toolbar (LatexilaTemplatesManageDialog *manage_dialog)
+static GtkToolbar *
+init_toolbar (LatexilaTemplatesManageDialog *manage_dialog)
 {
   GtkToolbar *toolbar;
   GtkStyleContext *context;
-  GtkToolButton *delete_button;
 
   toolbar = GTK_TOOLBAR (gtk_toolbar_new ());
   gtk_toolbar_set_icon_size (toolbar, GTK_ICON_SIZE_SMALL_TOOLBAR);
@@ -129,18 +130,31 @@ get_toolbar (LatexilaTemplatesManageDialog *manage_dialog)
   gtk_style_context_add_class (context, GTK_STYLE_CLASS_INLINE_TOOLBAR);
 
   /* Delete */
-  delete_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
-  gtk_tool_button_set_icon_name (delete_button, "list-remove-symbolic");
-  gtk_widget_set_tooltip_text (GTK_WIDGET (delete_button), _("Delete"));
+  manage_dialog->delete_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
+  gtk_tool_button_set_icon_name (manage_dialog->delete_button, "list-remove-symbolic");
+  gtk_widget_set_tooltip_text (GTK_WIDGET (manage_dialog->delete_button), _("Delete"));
 
-  gtk_toolbar_insert (toolbar, GTK_TOOL_ITEM (delete_button), -1);
+  gtk_toolbar_insert (toolbar, GTK_TOOL_ITEM (manage_dialog->delete_button), -1);
 
-  g_signal_connect (delete_button,
+  g_signal_connect (manage_dialog->delete_button,
                     "clicked",
                     G_CALLBACK (delete_button_clicked_cb),
                     manage_dialog);
 
-  return GTK_WIDGET (toolbar);
+  return toolbar;
+}
+
+static void
+update_buttons_sensitivity (LatexilaTemplatesManageDialog *manage_dialog)
+{
+  GtkTreeSelection *selection;
+  gint n_selected_rows;
+
+  selection = gtk_tree_view_get_selection (manage_dialog->templates_view);
+  n_selected_rows = gtk_tree_selection_count_selected_rows (selection);
+
+  gtk_widget_set_sensitive (GTK_WIDGET (manage_dialog->delete_button),
+                            n_selected_rows > 0);
 }
 
 static void
@@ -153,9 +167,10 @@ latexila_templates_manage_dialog_init (LatexilaTemplatesManageDialog *manage_dia
 {
   LatexilaTemplatesPersonal *templates_store;
   GtkWidget *scrolled_window;
-  GtkWidget *toolbar;
+  GtkToolbar *toolbar;
   GtkWidget *dialog_content;
   GtkBox *content_area;
+  GtkTreeSelection *selection;
 
   templates_store = latexila_templates_personal_get_instance ();
   manage_dialog->templates_view = latexila_templates_get_view (GTK_LIST_STORE (templates_store));
@@ -168,13 +183,22 @@ latexila_templates_manage_dialog_init (LatexilaTemplatesManageDialog *manage_dia
   gtk_container_add (GTK_CONTAINER (scrolled_window),
                      GTK_WIDGET (manage_dialog->templates_view));
 
-  toolbar = get_toolbar (manage_dialog);
+  toolbar = init_toolbar (manage_dialog);
 
-  dialog_content = latexila_utils_join_widgets (scrolled_window, toolbar);
+  dialog_content = latexila_utils_join_widgets (scrolled_window, GTK_WIDGET (toolbar));
 
   content_area = GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (manage_dialog)));
   gtk_box_pack_start (content_area, dialog_content, TRUE, TRUE, 0);
   gtk_widget_show_all (GTK_WIDGET (content_area));
+
+  selection = gtk_tree_view_get_selection (manage_dialog->templates_view);
+
+  g_signal_connect_swapped (selection,
+                            "changed",
+                            G_CALLBACK (update_buttons_sensitivity),
+                            manage_dialog);
+
+  update_buttons_sensitivity (manage_dialog);
 }
 
 /**
