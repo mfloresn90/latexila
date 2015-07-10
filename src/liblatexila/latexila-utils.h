@@ -24,20 +24,13 @@
 
 G_BEGIN_DECLS
 
+/* File utilities */
+
 gchar *         latexila_utils_get_shortname                    (const gchar *filename);
 
 gchar *         latexila_utils_get_extension                    (const gchar *filename);
 
 gchar *         latexila_utils_replace_home_dir_with_tilde      (const gchar *filename);
-
-void            latexila_utils_register_icons                   (void);
-
-GdkPixbuf *     latexila_utils_get_pixbuf_from_icon_name        (const gchar *icon_name,
-                                                                 GtkIconSize  icon_size);
-
-gchar *         latexila_utils_str_replace                      (const gchar *string,
-                                                                 const gchar *search,
-                                                                 const gchar *replacement);
 
 void            latexila_utils_file_query_exists_async          (GFile               *file,
                                                                  GCancellable        *cancellable,
@@ -47,19 +40,34 @@ void            latexila_utils_file_query_exists_async          (GFile          
 gboolean        latexila_utils_file_query_exists_finish         (GFile        *file,
                                                                  GAsyncResult *result);
 
+gboolean        latexila_utils_create_parent_directories        (GFile   *file,
+                                                                 GError **error);
+
 void            latexila_utils_show_uri                         (GdkScreen    *screen,
                                                                  const gchar  *uri,
                                                                  guint32       timestamp,
                                                                  GError      **error);
 
+/* UI utilities */
+
 GtkWidget *     latexila_utils_get_dialog_component             (const gchar *title,
                                                                  GtkWidget   *widget);
 
-gboolean        latexila_utils_create_parent_directories        (GFile   *file,
-                                                                 GError **error);
-
 GtkWidget *     latexila_utils_join_widgets                     (GtkWidget *widget_top,
                                                                  GtkWidget *widget_bottom);
+
+GdkPixbuf *     latexila_utils_get_pixbuf_from_icon_name        (const gchar *icon_name,
+                                                                 GtkIconSize  icon_size);
+
+/* String utilities */
+
+gchar *         latexila_utils_str_replace                      (const gchar *string,
+                                                                 const gchar *search,
+                                                                 const gchar *replacement);
+
+/* Others */
+
+void            latexila_utils_register_icons                   (void);
 
 G_END_DECLS
 
