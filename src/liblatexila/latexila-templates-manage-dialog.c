@@ -24,7 +24,7 @@
  * @see_also: #LatexilaTemplatesPersonal
  *
  * #LatexilaTemplatesManageDialog is a #GtkDialog to manage personal templates.
- * The implemented actions: delete.
+ * The implemented actions: delete, move up and move down.
  */
 
 #include "latexila-templates-manage-dialog.h"
