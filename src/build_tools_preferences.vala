@@ -141,21 +141,13 @@ public class BuildToolsPreferences : GLib.Object
         scrolled_window.set_shadow_type (ShadowType.IN);
         scrolled_window.set_size_request (350, 200);
 
-        StyleContext context = scrolled_window.get_style_context ();
-        context.set_junction_sides (JunctionSides.BOTTOM);
-
         toolbar.set_icon_size (IconSize.MENU);
         toolbar.set_style (ToolbarStyle.ICONS);
 
-        context = toolbar.get_style_context ();
+        StyleContext context = toolbar.get_style_context ();
         context.add_class (STYLE_CLASS_INLINE_TOOLBAR);
-        context.set_junction_sides (JunctionSides.TOP);
 
-        Box box = new Box (Orientation.VERTICAL, 0);
-        box.pack_start (scrolled_window);
-        box.pack_start (toolbar, false);
-
-        return box;
+        return Latexila.utils_join_widgets (scrolled_window, toolbar);
     }
 
     private Gtk.ListStore get_new_store ()
