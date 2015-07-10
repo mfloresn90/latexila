@@ -263,6 +263,8 @@ latexila_templates_personal_get_instance
 latexila_templates_personal_get_contents
 latexila_templates_personal_create
 latexila_templates_personal_delete
+latexila_templates_personal_move_up
+latexila_templates_personal_move_down
 <SUBSECTION Standard>
 LATEXILA_TYPE_TEMPLATES_PERSONAL
 </SECTION>

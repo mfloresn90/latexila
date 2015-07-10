@@ -44,6 +44,14 @@ gboolean      latexila_templates_personal_delete                (LatexilaTemplat
                                                                  GtkTreeIter                *iter,
                                                                  GError                    **error);
 
+gboolean      latexila_templates_personal_move_up               (LatexilaTemplatesPersonal  *templates,
+                                                                 GtkTreeIter                *iter,
+                                                                 GError                    **error);
+
+gboolean      latexila_templates_personal_move_down             (LatexilaTemplatesPersonal  *templates,
+                                                                 GtkTreeIter                *iter,
+                                                                 GError                    **error);
+
 G_END_DECLS
 
 #endif /* __LATEXILA_TEMPLATES_PERSONAL_H__ */

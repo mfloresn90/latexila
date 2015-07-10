@@ -40,9 +40,74 @@ struct _LatexilaTemplatesManageDialog
   GtkTreeView *templates_view;
 
   GtkToolButton *delete_button;
+  GtkToolButton *move_up_button;
+  GtkToolButton *move_down_button;
 };
 
+typedef enum
+{
+  MOVE_UP,
+  MOVE_DOWN
+} MoveType;
+
 G_DEFINE_TYPE (LatexilaTemplatesManageDialog, latexila_templates_manage_dialog, GTK_TYPE_DIALOG)
+
+static void
+update_move_buttons_sensitivity (LatexilaTemplatesManageDialog *manage_dialog)
+{
+  GtkTreeSelection *selection;
+  gint n_selected_rows;
+  GList *selected_rows;
+  GtkTreeModel *model;
+  GtkTreePath *path;
+  gint *indices;
+  gint depth;
+  gint items_count;
+  gboolean first_item_selected;
+  gboolean last_item_selected;
+
+  selection = gtk_tree_view_get_selection (manage_dialog->templates_view);
+  n_selected_rows = gtk_tree_selection_count_selected_rows (selection);
+
+  if (n_selected_rows != 1)
+    {
+      gtk_widget_set_sensitive (GTK_WIDGET (manage_dialog->move_up_button), FALSE);
+      gtk_widget_set_sensitive (GTK_WIDGET (manage_dialog->move_down_button), FALSE);
+      return;
+    }
+
+  selected_rows = gtk_tree_selection_get_selected_rows (selection, &model);
+  g_assert (g_list_length (selected_rows) == 1);
+
+  path = selected_rows->data;
+  indices = gtk_tree_path_get_indices_with_depth (path, &depth);
+  g_assert (depth == 1);
+
+  items_count = gtk_tree_model_iter_n_children (model, NULL);
+
+  first_item_selected = indices[0] == 0;
+  last_item_selected = indices[0] == (items_count - 1);
+
+  gtk_widget_set_sensitive (GTK_WIDGET (manage_dialog->move_up_button), !first_item_selected);
+  gtk_widget_set_sensitive (GTK_WIDGET (manage_dialog->move_down_button), !last_item_selected);
+
+  g_list_free_full (selected_rows, (GDestroyNotify) gtk_tree_path_free);
+}
+
+static void
+update_buttons_sensitivity (LatexilaTemplatesManageDialog *manage_dialog)
+{
+  GtkTreeSelection *selection;
+  gint n_selected_rows;
+
+  selection = gtk_tree_view_get_selection (manage_dialog->templates_view);
+  n_selected_rows = gtk_tree_selection_count_selected_rows (selection);
+
+  gtk_widget_set_sensitive (GTK_WIDGET (manage_dialog->delete_button),
+                            n_selected_rows > 0);
+
+  update_move_buttons_sensitivity (manage_dialog);
+}
 
 static void
 delete_button_clicked_cb (GtkToolButton                 *delete_button,
@@ -116,6 +181,76 @@ delete_button_clicked_cb (GtkToolButton                 *delete_button,
   g_free (name);
 }
 
+static void
+move_template (LatexilaTemplatesManageDialog *manage_dialog,
+               MoveType                       move_type)
+{
+  GtkTreeSelection *selection;
+  GtkTreeModel *model;
+  LatexilaTemplatesPersonal *templates_store;
+  GtkTreeIter iter;
+  GError *error = NULL;
+
+  selection = gtk_tree_view_get_selection (manage_dialog->templates_view);
+
+  if (!gtk_tree_selection_get_selected (selection, &model, &iter))
+    g_return_if_reached ();
+
+  templates_store = latexila_templates_personal_get_instance ();
+  g_return_if_fail (GTK_TREE_MODEL (templates_store) == model);
+
+  switch (move_type)
+    {
+    case MOVE_UP:
+      latexila_templates_personal_move_up (templates_store, &iter, &error);
+      break;
+
+    case MOVE_DOWN:
+      latexila_templates_personal_move_down (templates_store, &iter, &error);
+      break;
+
+    default:
+      g_assert_not_reached ();
+    }
+
+  if (error != NULL)
+    {
+      GtkWidget *error_dialog;
+
+      error_dialog = gtk_message_dialog_new (GTK_WINDOW (manage_dialog),
+                                             GTK_DIALOG_MODAL |
+                                             GTK_DIALOG_DESTROY_WITH_PARENT |
+                                             GTK_DIALOG_USE_HEADER_BAR,
+                                             GTK_MESSAGE_ERROR,
+                                             GTK_BUTTONS_OK,
+                                             "%s", _("Error when moving the template."));
+
+      gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (error_dialog),
+                                                "%s", error->message);
+
+      gtk_dialog_run (GTK_DIALOG (error_dialog));
+      gtk_widget_destroy (error_dialog);
+
+      g_error_free (error);
+    }
+
+  update_buttons_sensitivity (manage_dialog);
+}
+
+static void
+move_up_button_clicked_cb (GtkToolButton                 *move_up_button,
+                           LatexilaTemplatesManageDialog *manage_dialog)
+{
+  move_template (manage_dialog, MOVE_UP);
+}
+
+static void
+move_down_button_clicked_cb (GtkToolButton                 *move_down_button,
+                             LatexilaTemplatesManageDialog *manage_dialog)
+{
+  move_template (manage_dialog, MOVE_DOWN);
+}
+
 static GtkToolbar *
 init_toolbar (LatexilaTemplatesManageDialog *manage_dialog)
 {
@@ -141,20 +276,31 @@ init_toolbar (LatexilaTemplatesManageDialog *manage_dialog)
                     G_CALLBACK (delete_button_clicked_cb),
                     manage_dialog);
 
+  /* Move up */
+  manage_dialog->move_up_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
+  gtk_tool_button_set_icon_name (manage_dialog->move_up_button, "go-up-symbolic");
+  gtk_widget_set_tooltip_text (GTK_WIDGET (manage_dialog->move_up_button), _("Move up"));
+
+  gtk_toolbar_insert (toolbar, GTK_TOOL_ITEM (manage_dialog->move_up_button), -1);
+
+  g_signal_connect (manage_dialog->move_up_button,
+                    "clicked",
+                    G_CALLBACK (move_up_button_clicked_cb),
+                    manage_dialog);
+
+  /* Move down */
+  manage_dialog->move_down_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
+  gtk_tool_button_set_icon_name (manage_dialog->move_down_button, "go-down-symbolic");
+  gtk_widget_set_tooltip_text (GTK_WIDGET (manage_dialog->move_down_button), _("Move down"));
+
+  gtk_toolbar_insert (toolbar, GTK_TOOL_ITEM (manage_dialog->move_down_button), -1);
+
+  g_signal_connect (manage_dialog->move_down_button,
+                    "clicked",
+                    G_CALLBACK (move_down_button_clicked_cb),
+                    manage_dialog);
+
   return toolbar;
-}
-
-static void
-update_buttons_sensitivity (LatexilaTemplatesManageDialog *manage_dialog)
-{
-  GtkTreeSelection *selection;
-  gint n_selected_rows;
-
-  selection = gtk_tree_view_get_selection (manage_dialog->templates_view);
-  n_selected_rows = gtk_tree_selection_count_selected_rows (selection);
-
-  gtk_widget_set_sensitive (GTK_WIDGET (manage_dialog->delete_button),
-                            n_selected_rows > 0);
 }
 
 static void

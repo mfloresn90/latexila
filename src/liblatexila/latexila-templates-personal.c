@@ -549,3 +549,67 @@ out:
   g_clear_object (&file);
   return success;
 }
+
+/**
+ * latexila_templates_personal_move_up:
+ * @templates: the #LatexilaTemplatesPersonal instance.
+ * @iter: a valid #GtkTreeIter.
+ * @error: (out) (optional): a location to a %NULL #GError, or %NULL.
+ *
+ * Moves up a personal template. There must be a previous template before @iter.
+ *
+ * Returns: %TRUE on success, %FALSE on error.
+ */
+gboolean
+latexila_templates_personal_move_up (LatexilaTemplatesPersonal  *templates,
+                                     GtkTreeIter                *iter,
+                                     GError                    **error)
+{
+  GtkTreeIter prev_iter;
+
+  g_return_val_if_fail (LATEXILA_IS_TEMPLATES_PERSONAL (templates), FALSE);
+  g_return_val_if_fail (iter != NULL, FALSE);
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  prev_iter = *iter;
+  if (!gtk_tree_model_iter_previous (GTK_TREE_MODEL (templates), &prev_iter))
+    g_return_val_if_reached (FALSE);
+
+  gtk_list_store_move_before (GTK_LIST_STORE (templates),
+                              iter,
+                              &prev_iter);
+
+  return save_rc_file (templates, error);
+}
+
+/**
+ * latexila_templates_personal_move_down:
+ * @templates: the #LatexilaTemplatesPersonal instance.
+ * @iter: a valid #GtkTreeIter.
+ * @error: (out) (optional): a location to a %NULL #GError, or %NULL.
+ *
+ * Moves down a personal template. There must be a template after @iter.
+ *
+ * Returns: %TRUE on success, %FALSE on error.
+ */
+gboolean
+latexila_templates_personal_move_down (LatexilaTemplatesPersonal  *templates,
+				       GtkTreeIter                *iter,
+				       GError                    **error)
+{
+  GtkTreeIter next_iter;
+
+  g_return_val_if_fail (LATEXILA_IS_TEMPLATES_PERSONAL (templates), FALSE);
+  g_return_val_if_fail (iter != NULL, FALSE);
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  next_iter = *iter;
+  if (!gtk_tree_model_iter_next (GTK_TREE_MODEL (templates), &next_iter))
+    g_return_val_if_reached (FALSE);
+
+  gtk_list_store_move_after (GTK_LIST_STORE (templates),
+                             iter,
+                             &next_iter);
+
+  return save_rc_file (templates, error);
+}
