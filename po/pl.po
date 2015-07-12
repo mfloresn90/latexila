@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: latexila\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-12 01:10+0200\n"
-"PO-Revision-Date: 2015-04-12 01:15+0200\n"
+"POT-Creation-Date: 2015-07-12 16:58+0200\n"
+"PO-Revision-Date: 2015-07-12 16:59+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -466,7 +466,6 @@ msgstr ""
 "% pakiet babel lub jego odpowiednik\n"
 
 #. (itstool) path: template/translatableChunk
-#. There is a helper script in data/templates/tex2po.sh
 #: letter.xml:2
 #, no-wrap
 msgid ""
@@ -530,14 +529,17 @@ msgstr "Ukrywa panel"
 msgid "Personal Build Tool"
 msgstr "Własne narzędzie budowania"
 
-#: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:343
+#: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:290 ../src/main_window_file.vala:147
-#: ../src/main_window.vala:746 ../src/main_window.vala:842
-#: ../src/main_window.vala:878 ../src/preferences_dialog.vala:117
-#: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:124
-#: ../src/project_dialogs.vala:279 ../src/project_dialogs.vala:299
-#: ../src/templates_dialogs.vala:39 ../src/templates_dialogs.vala:180
+#: ../src/document_tab.vala:290
+#: ../src/liblatexila/latexila-templates-dialogs.c:128
+#: ../src/liblatexila/latexila-templates-dialogs.c:238
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:145
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:746
+#: ../src/main_window.vala:842 ../src/main_window.vala:878
+#: ../src/preferences_dialog.vala:117 ../src/project_dialogs.vala:31
+#: ../src/project_dialogs.vala:124 ../src/project_dialogs.vala:279
+#: ../src/project_dialogs.vala:299
 msgid "_Cancel"
 msgstr "_Anuluj"
 
@@ -575,23 +577,25 @@ msgstr "Polecenia"
 msgid "Post Processor"
 msgstr "Przetwarzanie końcowe"
 
-#: ../src/build_tool_dialog.vala:271 ../src/build_tools_preferences.vala:305
+#: ../src/build_tool_dialog.vala:271 ../src/build_tools_preferences.vala:297
 msgid "Add..."
 msgstr "Dodaj..."
 
-#: ../src/build_tool_dialog.vala:288 ../src/build_tools_preferences.vala:322
+#: ../src/build_tool_dialog.vala:288 ../src/build_tools_preferences.vala:314
 msgid "Remove"
 msgstr "Usuń"
 
-#: ../src/build_tool_dialog.vala:318 ../src/build_tools_preferences.vala:362
+#: ../src/build_tool_dialog.vala:318 ../src/build_tools_preferences.vala:354
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:282
 msgid "Move up"
 msgstr "Przesuń w górę"
 
-#: ../src/build_tool_dialog.vala:369 ../src/build_tools_preferences.vala:414
+#: ../src/build_tool_dialog.vala:369 ../src/build_tools_preferences.vala:406
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:294
 msgid "Move down"
 msgstr "Przesuń w dół"
 
-#: ../src/build_tool_dialog.vala:573 ../src/build_tools_preferences.vala:185
+#: ../src/build_tool_dialog.vala:573 ../src/build_tools_preferences.vala:177
 #: ../src/latex_menu.vala:52 ../src/structure.vala:783
 msgid "Label"
 msgstr "Etykieta"
@@ -675,36 +679,36 @@ msgstr "Domyślne narzędzia budowania"
 msgid "Personal Build Tools"
 msgstr "Własne narzędzia budowania"
 
-#: ../src/build_tools_preferences.vala:176
+#: ../src/build_tools_preferences.vala:168
 msgid "Enabled"
 msgstr "Włączone"
 
-#: ../src/build_tools_preferences.vala:249
+#: ../src/build_tools_preferences.vala:241
 msgid "View the properties (read-only)"
 msgstr "Wyświetla właściwości (tylko do odczytu)"
 
-#: ../src/build_tools_preferences.vala:254
+#: ../src/build_tools_preferences.vala:246
 msgid "Edit the properties"
 msgstr "Modyfikuje właściwości"
 
-#: ../src/build_tools_preferences.vala:274
+#: ../src/build_tools_preferences.vala:266
 msgid "Create a copy"
 msgstr "Tworzy kopię"
 
-#: ../src/build_tools_preferences.vala:289
+#: ../src/build_tools_preferences.vala:281
 #, c-format
 msgid "%s [copy]"
 msgstr "%s [kopia]"
 
-#: ../src/build_tools_preferences.vala:340
+#: ../src/build_tools_preferences.vala:332
 #, c-format
 msgid "Do you really want to delete the build tool \"%s\"?"
 msgstr "Na pewno usunąć narzędzie budowania \"%s\"?"
 
-#: ../src/build_tools_preferences.vala:344 ../src/clean_build_files.vala:243
+#: ../src/build_tools_preferences.vala:336 ../src/clean_build_files.vala:243
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:146
 #: ../src/main_window_edit.vala:51 ../src/main_window_structure.vala:38
 #: ../src/project_dialogs.vala:245 ../src/project_dialogs.vala:280
-#: ../src/templates_dialogs.vala:251
 msgid "_Delete"
 msgstr "_Usuń"
 
@@ -1642,6 +1646,90 @@ msgstr "Plik PDF nie istnieje."
 msgid "The document is not saved."
 msgstr "Dokument nie został zapisany."
 
+#: ../src/liblatexila/latexila-templates-default.c:90
+msgid "Empty"
+msgstr "Pusty"
+
+#: ../src/liblatexila/latexila-templates-default.c:94
+msgid "Article"
+msgstr "Artykuł"
+
+#: ../src/liblatexila/latexila-templates-default.c:95
+msgid "Report"
+msgstr "Sprawozdanie"
+
+#: ../src/liblatexila/latexila-templates-default.c:96
+msgid "Book"
+msgstr "Książka"
+
+#: ../src/liblatexila/latexila-templates-default.c:97
+msgid "Letter"
+msgstr "List"
+
+#: ../src/liblatexila/latexila-templates-default.c:98
+msgid "Presentation"
+msgstr "Prezentacja"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:50
+msgid "Default Templates"
+msgstr "Domyślne szablony"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:62
+msgid "Personal Templates"
+msgstr "Osobiste szablony"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:122
+msgid "New File..."
+msgstr "Nowy plik..."
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:129
+#: ../src/main_window_file.vala:32
+msgid "_New"
+msgstr "_Nowy"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:232
+msgid "New Template..."
+msgstr "Nowy szablon..."
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:239
+#: ../src/project_dialogs.vala:32
+msgid "Crea_te"
+msgstr "_Utwórz"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:249
+msgid "Name of the new template"
+msgstr "Nazwa nowego szablonu"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:267
+msgid "Choose an icon"
+msgstr "Wybór ikony"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:332
+msgid "Impossible to create the personal template."
+msgstr "Utworzenie osobistego szablonu jest niemożliwe."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:141
+#, c-format
+msgid "Do you really want to delete the template “%s”?"
+msgstr "Na pewno usunąć szablon \"%s\"?"
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:168
+#, c-format
+msgid "Error when deleting the template “%s”."
+msgstr "Błąd podczas usuwania szablonu \"%s\"."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:226
+msgid "Error when moving the template."
+msgstr "Błąd podczas przenoszenia szablonu."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:270
+msgid "Delete"
+msgstr "Usuwa"
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:362
+msgid "Manage Personal Templates"
+msgstr "Zarządzanie osobistymi szablonami"
+
 #: ../src/main.vala:51
 msgid "Show the application's version"
 msgstr "Wyświetla wersję programu"
@@ -1890,10 +1978,6 @@ msgstr "Włączenie lub wyłączenie sprawdzania pisowni"
 msgid "_File"
 msgstr "_Plik"
 
-#: ../src/main_window_file.vala:32 ../src/templates_dialogs.vala:40
-msgid "_New"
-msgstr "_Nowy"
-
 #: ../src/main_window_file.vala:33
 msgid "New file"
 msgstr "Nowy plik"
@@ -1906,7 +1990,7 @@ msgstr "Nowe _okno"
 msgid "Create a new window"
 msgstr "Tworzy nowe okno"
 
-#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:148
+#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:154
 msgid "_Open"
 msgstr "_Otwórz"
 
@@ -1928,15 +2012,15 @@ msgstr "U_twórz szablon z dokumentu..."
 
 #: ../src/main_window_file.vala:48
 msgid "Create a new template from the current document"
-msgstr "Tworzenie nowego szablonu z bieżącego dokumentu"
+msgstr "Tworzy nowy szablon z bieżącego dokumentu"
 
 #: ../src/main_window_file.vala:50
-msgid "_Delete Template..."
-msgstr "_Usuń szablon..."
+msgid "_Manage Personal Templates..."
+msgstr "_Zarządzaj osobistymi szablonami..."
 
 #: ../src/main_window_file.vala:51
-msgid "Delete personal template(s)"
-msgstr "Usuwanie osobistych szablonów"
+msgid "Manage personal templates"
+msgstr "Zarządza osobistymi szablonami"
 
 #. close button
 #: ../src/main_window_file.vala:53 ../src/preferences_dialog.vala:42
@@ -1960,17 +2044,17 @@ msgstr "Otwiera ostatnio używane pliki"
 msgid "Open a recently used file"
 msgstr "Otwiera ostatnio używany plik"
 
-#: ../src/main_window_file.vala:144
+#: ../src/main_window_file.vala:150
 msgid "Open Files"
 msgstr "Otwieranie plików"
 
 #. Filter: by default show only .tex and .bib files
-#: ../src/main_window_file.vala:166
+#: ../src/main_window_file.vala:172
 msgid "All LaTeX Files"
 msgstr "Wszystkie pliki LaTeX-a"
 
 #. All files filter
-#: ../src/main_window_file.vala:173
+#: ../src/main_window_file.vala:179
 msgid "All Files"
 msgstr "Wszystkie pliki"
 
@@ -2289,10 +2373,6 @@ msgstr "Użycie systemowej czcionki o stałej szerokości (%s)"
 msgid "New Project"
 msgstr "Nowy projekt"
 
-#: ../src/project_dialogs.vala:32 ../src/templates_dialogs.vala:181
-msgid "Crea_te"
-msgstr "_Utwórz"
-
 #. directory
 #: ../src/project_dialogs.vala:39 ../src/project_dialogs.vala:43
 #: ../src/project_dialogs.vala:207
@@ -2527,58 +2607,6 @@ msgstr "Wy_czyść"
 #: ../src/symbols_view.vala:159
 msgid "Clear most used symbols"
 msgstr "Czyści najczęściej używane symbole"
-
-#: ../src/templates_dialogs.vala:36
-msgid "New File..."
-msgstr "Nowy plik..."
-
-#: ../src/templates_dialogs.vala:58
-msgid "Default Templates"
-msgstr "Domyślne szablony"
-
-#: ../src/templates_dialogs.vala:67 ../src/templates_dialogs.vala:264
-msgid "Personal Templates"
-msgstr "Osobiste szablony"
-
-#: ../src/templates_dialogs.vala:177
-msgid "New Template..."
-msgstr "Nowy szablon..."
-
-#: ../src/templates_dialogs.vala:190
-msgid "Name of the new template"
-msgstr "Nazwa nowego szablonu"
-
-#: ../src/templates_dialogs.vala:203
-msgid "Choose an icon"
-msgstr "Wybór ikony"
-
-#: ../src/templates_dialogs.vala:248
-msgid "Delete Template(s)..."
-msgstr "Usuwanie szablonów..."
-
-#: ../src/templates.vala:75
-msgid "Empty"
-msgstr "Pusty"
-
-#: ../src/templates.vala:77
-msgid "Article"
-msgstr "Artykuł"
-
-#: ../src/templates.vala:78
-msgid "Report"
-msgstr "Sprawozdanie"
-
-#: ../src/templates.vala:79
-msgid "Book"
-msgstr "Książka"
-
-#: ../src/templates.vala:80
-msgid "Letter"
-msgstr "List"
-
-#: ../src/templates.vala:81
-msgid "Presentation"
-msgstr "Prezentacja"
 
 #: ../src/ui/preferences_dialog.ui.h:1
 msgid "Display line numbers"
