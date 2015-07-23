@@ -1,5 +1,18 @@
 LaTeXila NEWS
 
+Release 3.17.0
+--------------
+* Integrated file browser: new buttons to open the current directory in a file
+  manager (e.g. Nautilus) or in the terminal (Arnaud Blouin)
+* Completion: close environment in a different user action, to have two undo
+  actions (Stefano Facchini)
+* Add indent/unindent to the edit menu (the feature was already available with
+  Tab and Shift Tab).
+* Ctrl+PgUp/PgDown for tab switching
+* Better read-only mode for default build tools.
+* Use an headerbar for the dialog windows
+* Rewrite of the templates feature
+
 Release 3.16.0
 --------------
 * Show information about LaTeXila fundraiser
