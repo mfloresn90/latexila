@@ -31,6 +31,7 @@ namespace ProjectDialogs
         dialog.add_button (_("_Cancel"), ResponseType.CANCEL);
         dialog.add_button (_("Crea_te"), ResponseType.OK);
         dialog.set_default_response (ResponseType.OK);
+        dialog.set_size_request (450, -1);
 
         /* create dialog widgets */
         Box content_area = dialog.get_content_area () as Box;
@@ -38,15 +39,12 @@ namespace ProjectDialogs
         // directory
         FileChooserButton directory_chooser = new FileChooserButton (_("Directory"),
             FileChooserAction.SELECT_FOLDER);
-        directory_chooser.set_size_request (250, -1);
-        directory_chooser.hexpand = true;
         Widget component = Latexila.utils_get_dialog_component (_("Directory"), directory_chooser);
         content_area.pack_start (component, false);
 
         // main file
         FileChooserButton main_file_chooser = new FileChooserButton (_("Main File"),
             FileChooserAction.OPEN);
-        main_file_chooser.hexpand = true;
         component = Latexila.utils_get_dialog_component (_("Main File"), main_file_chooser);
         content_area.pack_start (component, false);
 
@@ -124,6 +122,7 @@ namespace ProjectDialogs
         dialog.add_button (_("_Cancel"), ResponseType.CANCEL);
         dialog.add_button (_("_Apply"), ResponseType.APPLY);
         dialog.set_default_response (ResponseType.APPLY);
+        dialog.set_size_request (450, -1);
 
         /* create dialog widgets */
         Box content_area = dialog.get_content_area () as Box;
@@ -134,7 +133,6 @@ namespace ProjectDialogs
         Label location = new Label (project_dir);
         location.set_line_wrap (true);
         location.set_halign (Align.START);
-        location.hexpand = true;
 
         Widget component = Latexila.utils_get_dialog_component (_("Location of the project"),
             location);
@@ -143,7 +141,6 @@ namespace ProjectDialogs
         // main file
         FileChooserButton main_file_chooser = new FileChooserButton (_("Main File"),
             FileChooserAction.OPEN);
-        main_file_chooser.hexpand = true;
         component = Latexila.utils_get_dialog_component (_("Main File"), main_file_chooser);
         content_area.pack_start (component, false);
 
@@ -192,7 +189,7 @@ namespace ProjectDialogs
         dialog.set_transient_for (main_window);
 
         Box content_area = dialog.get_content_area () as Box;
-        content_area.set_size_request (400, 250);
+        content_area.set_size_request (450, 250);
 
         /* treeview */
         Gtk.ListStore store = new Gtk.ListStore (ProjectColumn.N_COLUMNS, typeof (string),
