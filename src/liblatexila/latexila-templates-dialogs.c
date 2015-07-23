@@ -257,7 +257,7 @@ latexila_templates_dialogs_create_template (GtkWindow   *parent_window,
   default_view = latexila_templates_get_view (GTK_LIST_STORE (default_store));
 
   scrolled_window = gtk_scrolled_window_new (NULL, NULL);
-  gtk_widget_set_size_request (scrolled_window, 250, 200);
+  gtk_widget_set_size_request (scrolled_window, 400, 200);
   gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolled_window),
                                        GTK_SHADOW_IN);
 
