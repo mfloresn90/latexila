@@ -29,3 +29,4 @@ src/tab_info_bar.c
 src/templates.c
 src/templates_dialogs.c
 src/utils.c
+sub/data/latexila.desktop.in
