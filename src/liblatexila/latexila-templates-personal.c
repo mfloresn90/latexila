@@ -90,10 +90,9 @@ get_personal_template_file_by_index (gint template_num)
 }
 
 static void
-rc_file_contents_loaded_cb (GFile                     *rc_file,
-                            GAsyncResult              *result,
-                            LatexilaTemplatesPersonal *templates)
+load_rc_file (LatexilaTemplatesPersonal *templates)
 {
+  GFile *rc_file;
   gchar *contents = NULL;
   gsize length;
   GKeyFile *key_file = NULL;
@@ -107,7 +106,9 @@ rc_file_contents_loaded_cb (GFile                     *rc_file,
   gint i;
   GError *error = NULL;
 
-  g_file_load_contents_finish (rc_file, result, &contents, &length, NULL, &error);
+  rc_file = get_rc_file ();
+
+  g_file_load_contents (rc_file, NULL, &contents, &length, NULL, &error);
 
   if (error != NULL)
     {
@@ -181,33 +182,20 @@ out:
       g_error_free (error);
     }
 
+  g_object_unref (rc_file);
   g_free (contents);
   g_strfreev (names);
   g_strfreev (icons);
 
   if (key_file != NULL)
     g_key_file_unref (key_file);
-
-  /* Async operation finished. */
-  g_object_unref (templates);
 }
 
 static void
 latexila_templates_personal_init (LatexilaTemplatesPersonal *templates)
 {
-  GFile *rc_file;
-
   latexila_templates_init_store (GTK_LIST_STORE (templates));
-
-  rc_file = get_rc_file ();
-
-  /* Prevent @templates from being destroyed during the async operation. */
-  g_object_ref (templates);
-
-  g_file_load_contents_async (rc_file,
-                              NULL,
-                              (GAsyncReadyCallback) rc_file_contents_loaded_cb,
-                              templates);
+  load_rc_file (templates);
 }
 
 /**
