@@ -43,6 +43,9 @@ public class DocumentView : Gtk.SourceView
         /* settings */
         _editor_settings = new GLib.Settings ("org.gnome.latexila.preferences.editor");
 
+        _editor_settings.bind ("forget-no-tabs", this, "smart-backspace",
+            SettingsBindFlags.GET);
+
         set_font_from_settings ();
 
         // tab width
@@ -74,9 +77,6 @@ public class DocumentView : Gtk.SourceView
         {
             warning ("Completion: %s", e.message);
         }
-
-        // smart backspace (if indent with spaces)
-        key_press_event.connect (on_backspace);
 
         // spell checking
         if (_editor_settings.get_boolean ("spell-checking"))
@@ -277,70 +277,5 @@ public class DocumentView : Gtk.SourceView
             CompletionProvider provider = CompletionProvider.get_default ();
             provider.hide_calltip_window ();
         });
-    }
-
-    private bool on_backspace (Gdk.EventKey event)
-    {
-        // See GDK_KEY_BackSpace in gdk/gdkkeysyms.h (not available in Vala)
-
-        // TODO~ connect/disconnect the signal when settings in gsettings change
-        if (! _editor_settings.get_boolean ("insert-spaces")
-            || ! _editor_settings.get_boolean ("forget-no-tabs")
-            || event.keyval != 0xff08
-            || buffer.has_selection
-            || tab_width == 1)
-
-            // propagate the event further
-            return false;
-
-        /* forget that we are not using tabulations */
-        TextIter iter_start, iter_insert;
-        buffer.get_iter_at_mark (out iter_insert, buffer.get_insert ());
-        buffer.get_iter_at_line (out iter_start, iter_insert.get_line ());
-
-        string text = buffer.get_text (iter_start, iter_insert, false);
-
-        if (text == "")
-            return false;
-
-        int nb_chars_to_delete = 0;
-        bool between = true; // between two indent
-
-        for (long i = 0 ; i < text.length ; i++)
-        {
-            if (text[i] == '\t')
-            {
-                nb_chars_to_delete = 1;
-                between = true;
-                continue;
-            }
-
-            // smart backspace only at the beginnig of a line, not inside it
-            if (text[i] != ' ')
-                return false;
-
-            // it's a space
-
-            if (between)
-            {
-                nb_chars_to_delete = 1;
-                between = false;
-                continue;
-            }
-
-            nb_chars_to_delete++;
-            if (nb_chars_to_delete == tab_width)
-                between = true;
-        }
-
-        iter_start = iter_insert;
-        if (! iter_start.backward_chars (nb_chars_to_delete))
-            return false;
-
-        buffer.begin_user_action ();
-        buffer.delete_range (iter_start, iter_insert);
-        buffer.end_user_action ();
-
-        return true;
     }
 }
