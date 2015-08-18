@@ -15,6 +15,10 @@
 
 \begin{document}
 
+\begin{frame}
+  \titlepage
+\end{frame}
+
 \end{document}
 </chunk>
 </template>
