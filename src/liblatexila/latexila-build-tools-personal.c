@@ -30,6 +30,7 @@
 #include "latexila-build-tools-personal.h"
 #include <gio/gio.h>
 #include "latexila-build-tool.h"
+#include "latexila-utils.h"
 
 struct _LatexilaBuildToolsPersonalPrivate
 {
@@ -161,6 +162,7 @@ latexila_build_tools_personal_save (LatexilaBuildToolsPersonal *build_tools)
   GString *contents;
   GList *cur_build_tool;
   GFile *xml_file;
+  GError *error = NULL;
 
   g_return_if_fail (LATEXILA_IS_BUILD_TOOLS_PERSONAL (build_tools));
 
@@ -184,23 +186,34 @@ latexila_build_tools_personal_save (LatexilaBuildToolsPersonal *build_tools)
 
   g_string_append (contents, "</tools>\n");
 
-  /* Avoid finalization of build_tools during the async operation. And keep the
-   * application running.
-   */
-  g_object_ref (build_tools);
-  g_application_hold (g_application_get_default ());
-
   xml_file = get_xml_file ();
 
-  g_file_replace_contents_async (xml_file,
-                                 contents->str,
-                                 contents->len,
-                                 NULL,
-                                 TRUE, /* make a backup */
-                                 G_FILE_CREATE_NONE,
-                                 NULL,
-                                 (GAsyncReadyCallback) save_cb,
-                                 build_tools);
+  latexila_utils_create_parent_directories (xml_file, &error);
+
+  if (error == NULL)
+    {
+      /* Avoid finalization of build_tools during the async operation. And keep the
+       * application running.
+       */
+      g_object_ref (build_tools);
+      g_application_hold (g_application_get_default ());
+
+      g_file_replace_contents_async (xml_file,
+                                     contents->str,
+                                     contents->len,
+                                     NULL,
+                                     TRUE, /* make a backup */
+                                     G_FILE_CREATE_NONE,
+                                     NULL,
+                                     (GAsyncReadyCallback) save_cb,
+                                     build_tools);
+    }
+  else
+    {
+      g_warning ("Error while saving the personal build tools: %s",
+                 error->message);
+      g_error_free (error);
+    }
 
   g_object_unref (xml_file);
 }
