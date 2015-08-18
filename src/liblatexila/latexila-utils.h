@@ -52,6 +52,9 @@ void            latexila_utils_show_uri                         (GdkScreen    *s
                                                                  guint32       timestamp,
                                                                  GError      **error);
 
+gboolean        latexila_utils_create_parent_directories        (GFile   *file,
+                                                                 GError **error);
+
 G_END_DECLS
 
 #endif /* __LATEXILA_UTILS_H__ */

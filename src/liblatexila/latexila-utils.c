@@ -336,3 +336,49 @@ latexila_utils_show_uri (GdkScreen    *screen,
       g_free (extension);
     }
 }
+
+/**
+ * latexila_utils_create_parent_directories:
+ * @file: a file
+ * @error: (out) (optional): a location to a %NULL #GError, or %NULL.
+ *
+ * Synchronously creates parent directories of @file, so that @file can be
+ * saved.
+ *
+ * Returns: whether the directories are correctly created. %FALSE is returned on
+ * error.
+ */
+gboolean
+latexila_utils_create_parent_directories (GFile   *file,
+                                          GError **error)
+{
+  GFile *parent;
+  GError *my_error = NULL;
+
+  g_return_val_if_fail (G_IS_FILE (file), FALSE);
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  parent = g_file_get_parent (file);
+
+  if (parent == NULL)
+    return TRUE;
+
+  g_file_make_directory_with_parents (parent, NULL, &my_error);
+  g_object_unref (parent);
+
+  if (my_error != NULL)
+    {
+      if (g_error_matches (my_error, G_IO_ERROR, G_IO_ERROR_EXISTS))
+        {
+          g_error_free (my_error);
+          return TRUE;
+        }
+      else
+        {
+          g_propagate_error (error, my_error);
+          return FALSE;
+        }
+    }
+
+  return TRUE;
+}

@@ -241,4 +241,5 @@ latexila_utils_str_replace
 latexila_utils_file_query_exists_async
 latexila_utils_file_query_exists_finish
 latexila_utils_show_uri
+latexila_utils_create_parent_directories
 </SECTION>
