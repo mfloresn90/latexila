@@ -352,6 +352,12 @@ save_rc_file (LatexilaTemplatesPersonal  *templates,
                               (const gchar * const *) files,
                               personal_templates_count);
 
+  if (!latexila_utils_create_parent_directories (rc_file, error))
+    {
+      ret = FALSE;
+      goto out;
+    }
+
   rc_path = g_file_get_path (rc_file);
   if (!g_key_file_save_to_file (key_file, rc_path, error))
     ret = FALSE;
