@@ -46,9 +46,23 @@ public class LatexilaApp : Gtk.Application
         shutdown.connect (() =>
         {
             hold ();
+
             Projects.get_default ().save ();
             MostUsedSymbols.get_default ().save ();
-            Gtk.AccelMap.save (get_accel_filename ());
+
+            /* Save accel file */
+            string accel_filename = get_accel_filename ();
+            File accel_file = File.new_for_path (accel_filename);
+            try
+            {
+                Latexila.utils_create_parent_directories (accel_file);
+                Gtk.AccelMap.save (accel_filename);
+            }
+            catch (Error error)
+            {
+                warning ("Error when saving accel file: %s", error.message);
+            }
+
             release ();
         });
     }
