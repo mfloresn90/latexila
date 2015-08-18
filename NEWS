@@ -1,5 +1,11 @@
 LaTeXila NEWS
 
+Release 3.16.2
+--------------
+* Ensure that the personal build tools are correctly saved
+* A few other small bug fixes
+* Translation update
+
 Release 3.16.1
 --------------
 * Fix the build with -Werror=format-security (Kalev Lember)
