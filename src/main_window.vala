@@ -563,6 +563,14 @@ public class MainWindow : Window
     }
 
     /*************************************************************************/
+    // Misc public functions
+
+    public MainWindowStructure get_main_window_structure ()
+    {
+        return _main_window_structure;
+    }
+
+    /*************************************************************************/
     // Manage documents: get list of documents, open or save a document, etc.
 
     public Gee.List<Document> get_documents ()
