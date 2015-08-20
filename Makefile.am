@@ -32,10 +32,14 @@ MAINTAINERCLEANFILES =		\
 	gtk-doc.make		\
 	install-sh		\
 	ltmain.sh		\
+	m4/ax_code_coverage.m4	\
 	m4/codeset.m4		\
 	m4/gettext.m4		\
 	m4/glibc21.m4		\
 	m4/glibc2.m4		\
+	m4/gnome-code-coverage.m4 \
+	m4/gnome-compiler-flags.m4 \
+	m4/gsettings.m4		\
 	m4/gtk-doc.m4		\
 	m4/iconv.m4		\
 	m4/intdiv0.m4		\
@@ -44,6 +48,7 @@ MAINTAINERCLEANFILES =		\
 	m4/intlmacosx.m4	\
 	m4/intltool.m4		\
 	m4/intmax.m4		\
+	m4/introspection.m4	\
 	m4/inttypes_h.m4	\
 	m4/inttypes-pri.m4	\
 	m4/lcmessage.m4		\
@@ -58,6 +63,7 @@ MAINTAINERCLEANFILES =		\
 	m4/ltsugar.m4		\
 	m4/ltversion.m4		\
 	m4/nls.m4		\
+	m4/pkg.m4		\
 	m4/po.m4		\
 	m4/printf-posix.m4	\
 	m4/progtest.m4		\
@@ -68,6 +74,7 @@ MAINTAINERCLEANFILES =		\
 	m4/wchar_t.m4		\
 	m4/wint_t.m4		\
 	m4/xsize.m4		\
+	m4/yelp.m4		\
 	missing			\
 	mkinstalldirs		\
 	po/Makevars.template	\
