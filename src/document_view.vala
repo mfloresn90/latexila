@@ -25,7 +25,8 @@ public class DocumentView : Gtk.SourceView
 
     private GLib.Settings _editor_settings;
     private Pango.FontDescription _font_desc;
-    private GtkSpell.Checker? _spell_checker = null;
+    private Gspell.Checker? _spell_checker = null;
+    private Gspell.InlineCheckerGtv? _inline_spell_checker = null;
 
     public DocumentView (Document doc)
     {
@@ -175,8 +176,7 @@ public class DocumentView : Gtk.SourceView
     {
         if (_spell_checker == null)
         {
-            _spell_checker = new GtkSpell.Checker ();
-            _spell_checker.decode_language_codes = true;
+            _spell_checker = new Gspell.Checker (null);
         }
 
         if (_spell_checker.get_language () != null)
@@ -185,73 +185,57 @@ public class DocumentView : Gtk.SourceView
             return;
         }
 
-        try
+        MessageDialog dialog = new MessageDialog (this.get_toplevel () as Window,
+            DialogFlags.DESTROY_WITH_PARENT,
+            MessageType.ERROR,
+            ButtonsType.NONE,
+            "%s", _("No dictionaries available for the spell checking."));
+
+        dialog.add_buttons (_("_Help"), ResponseType.HELP,
+            _("_OK"), ResponseType.OK,
+            null);
+
+        int response = dialog.run ();
+
+        if (response == ResponseType.HELP)
         {
-            // Will try the best language depending on the LANG environment variable.
-            _spell_checker.set_language (null);
-            attach_spell_checker ();
-        }
-        catch (Error e)
-        {
-            GLib.List<string> language_list = GtkSpell.Checker.get_language_list ();
-
-            if (language_list == null || language_list.data == null)
-            {
-                MessageDialog dialog = new MessageDialog (this.get_toplevel () as Window,
-                    DialogFlags.DESTROY_WITH_PARENT,
-                    MessageType.ERROR,
-                    ButtonsType.NONE,
-                    "%s", _("No dictionaries available for the spell checking."));
-
-                dialog.add_buttons (_("_Help"), ResponseType.HELP,
-                    _("_OK"), ResponseType.OK,
-                    null);
-
-                int response = dialog.run ();
-
-                if (response == ResponseType.HELP)
-                {
-                    try
-                    {
-                        show_uri (this.get_screen (), "help:latexila/spell_checking",
-                            Gdk.CURRENT_TIME);
-                    }
-                    catch (Error e)
-                    {
-                        warning ("Impossible to open the documentation: %s", e.message);
-                    }
-                }
-
-                dialog.destroy ();
-
-                _editor_settings.set_boolean ("spell-checking", false);
-                return;
-            }
-
             try
             {
-                _spell_checker.set_language (language_list.data);
-                attach_spell_checker ();
+                show_uri (this.get_screen (), "help:latexila/spell_checking",
+                    Gdk.CURRENT_TIME);
             }
             catch (Error e)
             {
-                // Should not happen.
-                warning ("GtkSpell error: %s", e.message);
-                _editor_settings.set_boolean ("spell-checking", false);
+                warning ("Impossible to open the documentation: %s", e.message);
             }
         }
+
+        dialog.destroy ();
+
+        _editor_settings.set_boolean ("spell-checking", false);
     }
 
     private void attach_spell_checker ()
     {
-        if (! _spell_checker.attach (this))
-            warning ("Impossible to attach the spell checker.");
+        return_if_fail (_spell_checker != null);
+
+        if (_inline_spell_checker == null)
+        {
+            _inline_spell_checker =
+                new Gspell.InlineCheckerGtv (this.buffer as Gtk.SourceBuffer,
+                    _spell_checker);
+        }
+
+        _inline_spell_checker.attach_view (this);
     }
 
     public void disable_spell_checking ()
     {
-        if (_spell_checker != null)
-            _spell_checker.detach ();
+        if (_inline_spell_checker != null)
+        {
+            _inline_spell_checker.detach_view (this);
+            _inline_spell_checker = null;
+        }
     }
 
     private bool on_button_release_event (Gdk.EventButton event)
