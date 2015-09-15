@@ -96,7 +96,12 @@ public class DocumentView : Gtk.SourceView
         }
 
         // spell checking
-        _spell_checker = new Gspell.Checker (null);
+        unowned Gspell.Language? lang = null;
+        string lang_key = _editor_settings.get_string ("spell-checking-language");
+        if (lang_key[0] != '\0')
+            lang = Gspell.Language.from_key (lang_key);
+
+        _spell_checker = new Gspell.Checker (lang);
 
         if (_editor_settings.get_boolean ("highlight-misspelled-words"))
             activate_inline_spell_checker ();
