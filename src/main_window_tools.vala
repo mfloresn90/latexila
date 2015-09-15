@@ -25,7 +25,9 @@ public class MainWindowTools
 {
     private const Gtk.ActionEntry[] _action_entries =
     {
-        { "Tools", null, N_("_Tools") }
+        { "Tools", null, N_("_Tools") },
+        { "ToolsSetSpellLanguage", null, N_("_Set Language…"), null,
+            N_("Set the language used for the spell checking"), on_set_language }
     };
 
     private const ToggleActionEntry[] _toggle_action_entries =
@@ -60,7 +62,32 @@ public class MainWindowTools
             SettingsBindFlags.DEFAULT);
     }
 
+    /* Sensitivity */
+
+    public void update_sensitivity ()
+    {
+        bool sensitive = _main_window.active_tab != null;
+
+        string[] action_names =
+        {
+            "ToolsSetSpellLanguage"
+        };
+
+        foreach (string action_name in action_names)
+        {
+            Gtk.Action action = _action_group.get_action (action_name);
+            action.sensitive = sensitive;
+        }
+    }
+
     /* Gtk.Action callbacks */
+
+    public void on_set_language (Gtk.Action action)
+    {
+        return_if_fail (_main_window.active_view != null);
+
+        _main_window.active_view.set_spell_language ();
+    }
 
     public void on_inline_spell_checker (Gtk.Action action)
     {
@@ -69,9 +96,9 @@ public class MainWindowTools
         foreach (DocumentView view in _main_window.get_views ())
         {
             if (activate)
-                view.activate_spell_checking ();
+                view.activate_inline_spell_checker ();
             else
-                view.disable_spell_checking ();
+                view.deactivate_inline_spell_checker ();
         }
     }
 }

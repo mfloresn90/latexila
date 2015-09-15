@@ -80,8 +80,10 @@ public class DocumentView : Gtk.SourceView
         }
 
         // spell checking
+        _spell_checker = new Gspell.Checker (null);
+
         if (_editor_settings.get_boolean ("spell-checking"))
-            activate_spell_checking ();
+            activate_inline_spell_checker ();
 
         // forward search
         button_release_event.connect (on_button_release_event);
@@ -172,16 +174,37 @@ public class DocumentView : Gtk.SourceView
         return "\t";
     }
 
-    public void activate_spell_checking ()
+    public void set_spell_language ()
     {
-        if (_spell_checker == null)
-        {
-            _spell_checker = new Gspell.Checker (null);
-        }
+        return_if_fail (_spell_checker != null);
+
+        Gspell.LanguageDialog dialog =
+            new Gspell.LanguageDialog (this.get_toplevel () as Window,
+                _spell_checker.get_language ());
+
+        int response = dialog.run ();
+
+        if (response == ResponseType.OK)
+            _spell_checker.set_language (dialog.get_selected_language ());
+
+        dialog.destroy ();
+    }
+
+    public void activate_inline_spell_checker ()
+    {
+        return_if_fail (_spell_checker != null);
 
         if (_spell_checker.get_language () != null)
         {
-            attach_spell_checker ();
+            if (_inline_spell_checker == null)
+            {
+                _inline_spell_checker =
+                    new Gspell.InlineCheckerGtv (this.buffer as Gtk.SourceBuffer,
+                        _spell_checker);
+
+                _inline_spell_checker.attach_view (this);
+            }
+
             return;
         }
 
@@ -215,21 +238,7 @@ public class DocumentView : Gtk.SourceView
         _editor_settings.set_boolean ("spell-checking", false);
     }
 
-    private void attach_spell_checker ()
-    {
-        return_if_fail (_spell_checker != null);
-
-        if (_inline_spell_checker == null)
-        {
-            _inline_spell_checker =
-                new Gspell.InlineCheckerGtv (this.buffer as Gtk.SourceBuffer,
-                    _spell_checker);
-        }
-
-        _inline_spell_checker.attach_view (this);
-    }
-
-    public void disable_spell_checking ()
+    public void deactivate_inline_spell_checker ()
     {
         if (_inline_spell_checker != null)
         {

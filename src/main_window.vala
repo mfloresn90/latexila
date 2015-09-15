@@ -464,6 +464,7 @@ public class MainWindow : Window
         {
             _main_window_edit.update_sensitivity ();
             _main_window_build_tools.update_sensitivity ();
+            _main_window_tools.update_sensitivity ();
             update_config_project_sensitivity ();
             my_set_title ();
             update_cursor_position_statusbar ();
@@ -730,6 +731,7 @@ public class MainWindow : Window
         _documents_panel.add_tab (tab, -1, jump_to);
 
         _main_window_edit.update_sensitivity ();
+        _main_window_tools.update_sensitivity ();
 
         if (! this.get_visible ())
             this.present ();
@@ -1046,6 +1048,7 @@ public class MainWindow : Window
         _main_window_file.update_sensitivity (sensitive);
         _main_window_edit.update_sensitivity ();
         _main_window_build_tools.update_sensitivity ();
+        _main_window_tools.update_sensitivity ();
     }
 
     public void update_config_project_sensitivity ()
