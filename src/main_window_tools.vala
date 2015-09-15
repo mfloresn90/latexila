@@ -26,6 +26,8 @@ public class MainWindowTools
     private const Gtk.ActionEntry[] _action_entries =
     {
         { "Tools", null, N_("_Tools") },
+        { "ToolsSpellCheckerDialog", null, N_("_Check Spelling…"), null,
+            N_("Check the spelling of the current document"), on_spell_checker_dialog },
         { "ToolsSetSpellLanguage", null, N_("_Set Language…"), null,
             N_("Set the language used for the spell checking"), on_set_language }
     };
@@ -70,6 +72,7 @@ public class MainWindowTools
 
         string[] action_names =
         {
+            "ToolsSpellCheckerDialog",
             "ToolsSetSpellLanguage"
         };
 
@@ -81,6 +84,13 @@ public class MainWindowTools
     }
 
     /* Gtk.Action callbacks */
+
+    public void on_spell_checker_dialog (Gtk.Action action)
+    {
+        return_if_fail (_main_window.active_view != null);
+
+        _main_window.active_view.launch_spell_checker_dialog ();
+    }
 
     public void on_set_language (Gtk.Action action)
     {

@@ -371,6 +371,7 @@ along with LaTeXila.  If not, see <http://www.gnu.org/licenses/>.
     </menu>
 
     <menu action="Tools">
+      <menuitem action="ToolsSpellCheckerDialog" />
       <menuitem action="ToolsSetSpellLanguage" />
       <menuitem action="ToolsInlineSpellChecker" />
     </menu>

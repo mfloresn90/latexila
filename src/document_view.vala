@@ -174,6 +174,20 @@ public class DocumentView : Gtk.SourceView
         return "\t";
     }
 
+    public void launch_spell_checker_dialog ()
+    {
+        return_if_fail (_spell_checker != null);
+
+        Gspell.Navigator navigator = Gspell.NavigatorGtv.new (this as TextView,
+            _spell_checker);
+
+        Gspell.CheckerDialog dialog =
+            new Gspell.CheckerDialog (this.get_toplevel () as Window, navigator);
+
+        dialog.run ();
+        dialog.destroy ();
+    }
+
     public void set_spell_language ()
     {
         return_if_fail (_spell_checker != null);
