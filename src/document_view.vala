@@ -82,7 +82,7 @@ public class DocumentView : Gtk.SourceView
         // spell checking
         _spell_checker = new Gspell.Checker (null);
 
-        if (_editor_settings.get_boolean ("spell-checking"))
+        if (_editor_settings.get_boolean ("highlight-misspelled-words"))
             activate_inline_spell_checker ();
 
         // forward search
@@ -249,7 +249,7 @@ public class DocumentView : Gtk.SourceView
 
         dialog.destroy ();
 
-        _editor_settings.set_boolean ("spell-checking", false);
+        _editor_settings.set_boolean ("highlight-misspelled-words", false);
     }
 
     public void deactivate_inline_spell_checker ()

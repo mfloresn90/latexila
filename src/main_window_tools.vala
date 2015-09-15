@@ -60,8 +60,8 @@ public class MainWindowTools
         GLib.Settings editor_settings =
             new GLib.Settings ("org.gnome.latexila.preferences.editor");
 
-        editor_settings.bind ("spell-checking", spell_checking_action, "active",
-            SettingsBindFlags.DEFAULT);
+        editor_settings.bind ("highlight-misspelled-words", spell_checking_action,
+            "active", SettingsBindFlags.DEFAULT);
     }
 
     /* Sensitivity */
