@@ -53,8 +53,6 @@ along with LaTeXila.  If not, see <http://www.gnu.org/licenses/>.
       <separator />
       <menuitem action="EditCompletion" />
       <separator />
-      <menuitem action="EditSpellChecking" />
-      <separator />
       <menuitem action="EditPreferences" />
     </menu>
 
@@ -370,6 +368,10 @@ along with LaTeXila.  If not, see <http://www.gnu.org/licenses/>.
       <menuitem action="ProjectsNew" />
       <menuitem action="ProjectsConfigCurrent" />
       <menuitem action="ProjectsManage" />
+    </menu>
+
+    <menu action="Tools">
+      <menuitem action="ToolsInlineSpellChecker" />
     </menu>
 
     <menu action="Structure">

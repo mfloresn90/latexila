@@ -42,6 +42,7 @@ vala_files =				\
 	main_window_edit.vala		\
 	main_window_file.vala		\
 	main_window_structure.vala	\
+	main_window_tools.vala		\
 	main_window.vala		\
 	menu_in_toolbar.vala		\
 	most_used_symbols.vala		\

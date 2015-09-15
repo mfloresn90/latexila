@@ -101,6 +101,7 @@ public class MainWindow : Window
     private MainWindowBuildTools _main_window_build_tools;
     private MainWindowStructure _main_window_structure;
     private MainWindowDocuments _main_window_documents;
+    private MainWindowTools _main_window_tools;
 
     // context id for the statusbar
     private uint _tip_message_cid;
@@ -159,6 +160,7 @@ public class MainWindow : Window
         _main_window_build_tools = new MainWindowBuildTools (this, _ui_manager);
         _main_window_documents = new MainWindowDocuments (this, _ui_manager);
         _main_window_structure = new MainWindowStructure (_ui_manager);
+        _main_window_tools = new MainWindowTools (this, _ui_manager);
 
         show_images_in_menu ();
         set_file_actions_sensitivity (false);

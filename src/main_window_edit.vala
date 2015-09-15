@@ -75,12 +75,6 @@ public class MainWindowEdit
             N_("Configure the application"), on_open_preferences }
     };
 
-    private const ToggleActionEntry[] _toggle_action_entries =
-    {
-        { "EditSpellChecking", "tools-check-spelling", N_("_Spell Check"), null,
-            N_("Activate or disable the spell checking"), on_spell_checking }
-    };
-
     private unowned MainWindow _main_window;
     private Gtk.ActionGroup _action_group;
 
@@ -91,20 +85,8 @@ public class MainWindowEdit
         _action_group = new Gtk.ActionGroup ("EditMenuActionGroup");
         _action_group.set_translation_domain (Config.GETTEXT_PACKAGE);
         _action_group.add_actions (_action_entries, this);
-        _action_group.add_toggle_actions (_toggle_action_entries, this);
 
         ui_manager.insert_action_group (_action_group, 0);
-
-        /* Bind spell checking setting */
-
-        ToggleAction spell_checking_action =
-            _action_group.get_action ("EditSpellChecking") as ToggleAction;
-
-        GLib.Settings editor_settings =
-            new GLib.Settings ("org.gnome.latexila.preferences.editor");
-
-        editor_settings.bind ("spell-checking", spell_checking_action, "active",
-            SettingsBindFlags.DEFAULT);
     }
 
     /* Sensitivity */
@@ -288,19 +270,6 @@ public class MainWindowEdit
     {
         return_if_fail (_main_window.active_tab != null);
         _main_window.active_view.show_completion ();
-    }
-
-    public void on_spell_checking (Gtk.Action action)
-    {
-        bool activate = (action as ToggleAction).active;
-
-        foreach (DocumentView view in _main_window.get_views ())
-        {
-            if (activate)
-                view.activate_spell_checking ();
-            else
-                view.disable_spell_checking ();
-        }
     }
 
     public void on_open_preferences ()
