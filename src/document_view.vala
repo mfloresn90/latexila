@@ -28,6 +28,22 @@ public class DocumentView : Gtk.SourceView
     private Gspell.Checker? _spell_checker = null;
     private Gspell.InlineCheckerGtv? _inline_spell_checker = null;
 
+    public bool highlight_misspelled_words
+    {
+        get
+        {
+            return _inline_spell_checker != null;
+        }
+
+        set
+        {
+            if (value)
+                this.activate_inline_spell_checker ();
+            else
+                this.deactivate_inline_spell_checker ();
+        }
+    }
+
     public DocumentView (Document doc)
     {
         this.buffer = doc;
@@ -204,7 +220,7 @@ public class DocumentView : Gtk.SourceView
         dialog.destroy ();
     }
 
-    public void activate_inline_spell_checker ()
+    private void activate_inline_spell_checker ()
     {
         return_if_fail (_spell_checker != null);
 
@@ -217,6 +233,8 @@ public class DocumentView : Gtk.SourceView
                         _spell_checker);
 
                 _inline_spell_checker.attach_view (this);
+
+                notify_property ("highlight-misspelled-words");
             }
 
             return;
@@ -248,16 +266,15 @@ public class DocumentView : Gtk.SourceView
         }
 
         dialog.destroy ();
-
-        _editor_settings.set_boolean ("highlight-misspelled-words", false);
     }
 
-    public void deactivate_inline_spell_checker ()
+    private void deactivate_inline_spell_checker ()
     {
         if (_inline_spell_checker != null)
         {
             _inline_spell_checker.detach_view (this);
             _inline_spell_checker = null;
+            notify_property ("highlight-misspelled-words");
         }
     }
 

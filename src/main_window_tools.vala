@@ -52,16 +52,23 @@ public class MainWindowTools
 
         ui_manager.insert_action_group (_action_group, 0);
 
-        /* Bind spell checking setting */
+        update_inline_spell_checker_action_state ();
+        _main_window.notify["active-tab"].connect (() =>
+        {
+            update_inline_spell_checker_action_state ();
+        });
+    }
+
+    private void update_inline_spell_checker_action_state ()
+    {
+        if (_main_window.active_tab == null)
+            return;
 
         ToggleAction spell_checking_action =
             _action_group.get_action ("ToolsInlineSpellChecker") as ToggleAction;
 
-        GLib.Settings editor_settings =
-            new GLib.Settings ("org.gnome.latexila.preferences.editor");
-
-        editor_settings.bind ("highlight-misspelled-words", spell_checking_action,
-            "active", SettingsBindFlags.DEFAULT);
+        spell_checking_action.active =
+            _main_window.active_view.highlight_misspelled_words;
     }
 
     /* Sensitivity */
@@ -73,7 +80,8 @@ public class MainWindowTools
         string[] action_names =
         {
             "ToolsSpellCheckerDialog",
-            "ToolsSetSpellLanguage"
+            "ToolsSetSpellLanguage",
+            "ToolsInlineSpellChecker"
         };
 
         foreach (string action_name in action_names)
@@ -101,14 +109,12 @@ public class MainWindowTools
 
     public void on_inline_spell_checker (Gtk.Action action)
     {
+        return_if_fail (_main_window.active_view != null);
+
         bool activate = (action as ToggleAction).active;
 
-        foreach (DocumentView view in _main_window.get_views ())
-        {
-            if (activate)
-                view.activate_inline_spell_checker ();
-            else
-                view.deactivate_inline_spell_checker ();
-        }
+        _main_window.active_view.highlight_misspelled_words = activate;
+
+        update_inline_spell_checker_action_state ();
     }
 }
