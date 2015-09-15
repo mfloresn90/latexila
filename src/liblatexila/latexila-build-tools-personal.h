@@ -48,7 +48,7 @@ struct _LatexilaBuildToolsPersonalClass
   LatexilaBuildToolsClass parent_class;
 };
 
-GType               latexila_build_tools_personal_get_type            (void) G_GNUC_CONST;
+GType               latexila_build_tools_personal_get_type            (void);
 
 LatexilaBuildToolsPersonal *
                     latexila_build_tools_personal_get_instance        (void);

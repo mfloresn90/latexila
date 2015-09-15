@@ -48,7 +48,7 @@ struct _LatexilaBuildToolsDefaultClass
   LatexilaBuildToolsClass parent_class;
 };
 
-GType               latexila_build_tools_default_get_type           (void) G_GNUC_CONST;
+GType               latexila_build_tools_default_get_type           (void);
 
 LatexilaBuildToolsDefault *
                     latexila_build_tools_default_get_instance       (void);

@@ -47,7 +47,7 @@ struct _LatexilaSynctexClass
   GObjectClass parent_class;
 };
 
-GType             latexila_synctex_get_type                       (void) G_GNUC_CONST;
+GType             latexila_synctex_get_type                       (void);
 
 LatexilaSynctex * latexila_synctex_get_instance                   (void);
 

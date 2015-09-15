@@ -62,7 +62,7 @@ struct _LatexilaBuildToolsClass
                                    GError             *error);
 };
 
-GType                 latexila_build_tools_get_type                 (void) G_GNUC_CONST;
+GType                 latexila_build_tools_get_type                 (void);
 
 void                  latexila_build_tools_load                     (LatexilaBuildTools *build_tools,
                                                                      GFile              *xml_file);

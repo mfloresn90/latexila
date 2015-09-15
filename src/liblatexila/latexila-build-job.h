@@ -48,7 +48,7 @@ struct _LatexilaBuildJobClass
   GObjectClass parent_class;
 };
 
-GType               latexila_build_job_get_type                   (void) G_GNUC_CONST;
+GType               latexila_build_job_get_type                   (void);
 
 LatexilaBuildJob *  latexila_build_job_new                        (void);
 

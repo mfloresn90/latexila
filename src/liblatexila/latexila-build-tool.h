@@ -47,7 +47,7 @@ struct _LatexilaBuildToolClass
   GObjectClass parent_class;
 };
 
-GType                 latexila_build_tool_get_type                  (void) G_GNUC_CONST;
+GType                 latexila_build_tool_get_type                  (void);
 
 LatexilaBuildTool *   latexila_build_tool_new                       (void);
 

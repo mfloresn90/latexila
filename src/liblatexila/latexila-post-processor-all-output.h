@@ -49,7 +49,7 @@ struct _LatexilaPostProcessorAllOutputClass
   LatexilaPostProcessorClass parent_class;
 };
 
-GType                   latexila_post_processor_all_output_get_type (void) G_GNUC_CONST;
+GType                   latexila_post_processor_all_output_get_type (void);
 
 LatexilaPostProcessor * latexila_post_processor_all_output_new      (void);
 

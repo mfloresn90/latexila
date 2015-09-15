@@ -80,7 +80,7 @@ struct _LatexilaPostProcessorClass
   GQueue * (* take_messages) (LatexilaPostProcessor *pp);
 };
 
-GType                   latexila_post_processor_get_type              (void) G_GNUC_CONST;
+GType                   latexila_post_processor_get_type              (void);
 
 gboolean                latexila_post_processor_get_type_from_name    (const gchar               *name,
                                                                        LatexilaPostProcessorType *type);

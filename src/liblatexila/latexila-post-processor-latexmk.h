@@ -48,7 +48,7 @@ struct _LatexilaPostProcessorLatexmkClass
   LatexilaPostProcessorClass parent_class;
 };
 
-GType                   latexila_post_processor_latexmk_get_type  (void) G_GNUC_CONST;
+GType                   latexila_post_processor_latexmk_get_type  (void);
 
 LatexilaPostProcessor * latexila_post_processor_latexmk_new       (void);
 
