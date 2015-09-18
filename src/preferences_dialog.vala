@@ -80,6 +80,7 @@ public class PreferencesDialog : Dialog
         init_editor_tab (builder);
         init_font_and_colors_tab (builder);
         init_interactive_completion_setting (builder);
+        init_spell_checking_settings (builder);
         init_other_tab (builder);
 
         // pack notebook
@@ -290,6 +291,45 @@ public class PreferencesDialog : Dialog
             builder.get_object ("interactive_comp_label") as Label;
         set_plural (interactive_comp_label, settings, "interactive-completion-num",
             (n) => ngettext ("character", "characters", n));
+    }
+
+    private void init_spell_checking_settings (Builder builder)
+    {
+        GLib.Settings editor_settings =
+            new GLib.Settings ("org.gnome.latexila.preferences.editor");
+
+        /* Language */
+
+        Gspell.LanguageChooserButton spell_language_button =
+            builder.get_object ("spell_language_button") as Gspell.LanguageChooserButton;
+
+        unowned Gspell.Language? lang = null;
+        string lang_key = editor_settings.get_string ("spell-checking-language");
+        if (lang_key[0] != '\0')
+            lang = Gspell.Language.from_key (lang_key);
+
+        Gspell.Checker checker = new Gspell.Checker (lang);
+        spell_language_button.set_language (checker.get_language ());
+
+        spell_language_button.notify["language"].connect (() =>
+        {
+            unowned Gspell.Language? selected_lang =
+                spell_language_button.get_language ();
+
+            if (selected_lang != null)
+            {
+                editor_settings.set_string ("spell-checking-language",
+                    selected_lang.to_key ());
+            }
+            else
+                editor_settings.set_string ("spell-checking-language", "");
+        });
+
+        /* Inline checker */
+
+        var inline_spell_checkbutton = builder.get_object ("inline_spell_checkbutton");
+        editor_settings.bind ("highlight-misspelled-words", inline_spell_checkbutton,
+            "active", SettingsBindFlags.DEFAULT);
     }
 
     private void init_other_tab (Builder builder)
