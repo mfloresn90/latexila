@@ -213,14 +213,13 @@ public class DocumentView : Gtk.SourceView
     {
         return_if_fail (_spell_checker != null);
 
-        Gspell.LanguageDialog dialog =
-            new Gspell.LanguageDialog (this.get_toplevel () as Window,
+        Gspell.LanguageChooserDialog dialog =
+            new Gspell.LanguageChooserDialog (this.get_toplevel () as Window,
                 _spell_checker.get_language ());
 
-        int response = dialog.run ();
+        dialog.run ();
 
-        if (response == ResponseType.OK)
-            _spell_checker.set_language (dialog.get_selected_language ());
+        _spell_checker.set_language (dialog.get_language ());
 
         dialog.destroy ();
     }
