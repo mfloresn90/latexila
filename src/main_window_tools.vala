@@ -95,26 +95,44 @@ public class MainWindowTools
 
     public void on_spell_checker_dialog (Gtk.Action action)
     {
-        return_if_fail (_main_window.active_view != null);
+        DocumentView? view = _main_window.active_view;
+        return_if_fail (view != null);
 
-        _main_window.active_view.launch_spell_checker_dialog ();
+        view.launch_spell_checker_dialog ();
+
+        // If the spell checker is used, save the language since it's probably
+        // correct. If it isn't correct, the language will be changed and the
+        // metadata will also be saved.
+        view.set_spell_language_metadata ();
     }
 
     public void on_set_language (Gtk.Action action)
     {
-        return_if_fail (_main_window.active_view != null);
+        DocumentView? view = _main_window.active_view;
+        return_if_fail (view != null);
 
-        _main_window.active_view.set_spell_language ();
+        view.launch_spell_language_chooser_dialog ();
+        view.set_spell_language_metadata ();
     }
 
     public void on_inline_spell_checker (Gtk.Action action)
     {
-        return_if_fail (_main_window.active_view != null);
+        DocumentView? view = _main_window.active_view;
+        return_if_fail (view != null);
 
         bool activate = (action as ToggleAction).active;
 
-        _main_window.active_view.highlight_misspelled_words = activate;
+        // Save metadata only if property changes, because this function is
+        // also called when update_inline_spell_checker_action_state() is
+        // called.
+        if (view.highlight_misspelled_words != activate)
+        {
+            view.highlight_misspelled_words = activate;
 
-        update_inline_spell_checker_action_state ();
+            update_inline_spell_checker_action_state ();
+
+            view.set_inline_spell_metadata ();
+            view.set_spell_language_metadata ();
+        }
     }
 }

@@ -23,6 +23,13 @@ public class DocumentView : Gtk.SourceView
 {
     public const double SCROLL_MARGIN = 0.02;
 
+    private static const string METADATA_ATTRIBUTE_SPELL_LANGUAGE =
+        "metadata::latexila-spell-language";
+    private static const string METADATA_ATTRIBUTE_INLINE_SPELL =
+        "metadata::latexila-inline-spell";
+    private static const string INLINE_SPELL_ACTIVATED_STR = "1";
+    private static const string INLINE_SPELL_DEACTIVATED_STR = "0";
+
     private GLib.Settings _editor_settings;
     private Pango.FontDescription _font_desc;
     private Gspell.Checker? _spell_checker = null;
@@ -96,15 +103,7 @@ public class DocumentView : Gtk.SourceView
         }
 
         // spell checking
-        unowned Gspell.Language? lang = null;
-        string lang_key = _editor_settings.get_string ("spell-checking-language");
-        if (lang_key[0] != '\0')
-            lang = Gspell.Language.from_key (lang_key);
-
-        _spell_checker = new Gspell.Checker (lang);
-
-        if (_editor_settings.get_boolean ("highlight-misspelled-words"))
-            activate_inline_spell_checker ();
+        init_spell_checking ();
 
         // forward search
         button_release_event.connect (on_button_release_event);
@@ -195,6 +194,79 @@ public class DocumentView : Gtk.SourceView
         return "\t";
     }
 
+    private bool on_button_release_event (Gdk.EventButton event)
+    {
+        // Forward search on Ctrl + left click
+        if (event.button == 1 &&
+            Gdk.ModifierType.CONTROL_MASK in event.state)
+        {
+            Latexila.Synctex synctex = Latexila.Synctex.get_instance ();
+            Document doc = this.buffer as Document;
+            synctex.forward_search (this.buffer, doc.location, doc.get_main_file (),
+                event.time);
+        }
+
+        // propagate the event further
+        return false;
+    }
+
+    private void hide_completion_calltip_when_needed ()
+    {
+        buffer.notify["cursor-position"].connect (() =>
+        {
+            CompletionProvider provider = CompletionProvider.get_default ();
+            provider.hide_calltip_window ();
+        });
+    }
+
+    /* Spell checking */
+
+    private void init_spell_checking ()
+    {
+        _spell_checker = new Gspell.Checker (get_spell_language ());
+        setup_inline_spell_checker ();
+
+        Document doc = get_buffer () as Document;
+
+        doc.notify["location"].connect (() =>
+        {
+            _spell_checker.set_language (get_spell_language ());
+            setup_inline_spell_checker ();
+        });
+    }
+
+    private unowned Gspell.Language? get_spell_language ()
+    {
+        Document doc = get_buffer () as Document;
+
+        string? lang_key = doc.get_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE);
+        if (lang_key == null)
+            lang_key = _editor_settings.get_string ("spell-checking-language");
+
+        if (lang_key[0] == '\0')
+            return null;
+
+        return Gspell.Language.from_key (lang_key);
+    }
+
+    private void setup_inline_spell_checker ()
+    {
+        Document doc = get_buffer () as Document;
+
+        bool activate;
+
+        string? metadata = doc.get_metadata (METADATA_ATTRIBUTE_INLINE_SPELL);
+        if (metadata != null)
+            activate = metadata == INLINE_SPELL_ACTIVATED_STR;
+        else
+            activate = _editor_settings.get_boolean ("highlight-misspelled-words");
+
+        if (activate)
+            activate_inline_spell_checker ();
+        else
+            deactivate_inline_spell_checker ();
+    }
+
     public void launch_spell_checker_dialog ()
     {
         return_if_fail (_spell_checker != null);
@@ -209,7 +281,7 @@ public class DocumentView : Gtk.SourceView
         dialog.destroy ();
     }
 
-    public void set_spell_language ()
+    public void launch_spell_language_chooser_dialog ()
     {
         return_if_fail (_spell_checker != null);
 
@@ -219,9 +291,39 @@ public class DocumentView : Gtk.SourceView
 
         dialog.run ();
 
-        _spell_checker.set_language (dialog.get_language ());
+        unowned Gspell.Language? lang = dialog.get_language ();
+        _spell_checker.set_language (lang);
 
         dialog.destroy ();
+    }
+
+    public void set_spell_language_metadata ()
+    {
+        return_if_fail (_spell_checker != null);
+
+        Document doc = get_buffer () as Document;
+
+        unowned Gspell.Language? lang = _spell_checker.get_language ();
+        if (lang != null)
+            doc.set_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE, lang.to_key ());
+        else
+            doc.set_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE, null);
+    }
+
+    public void set_inline_spell_metadata ()
+    {
+        Document doc = get_buffer () as Document;
+
+        if (this.highlight_misspelled_words)
+        {
+            doc.set_metadata (METADATA_ATTRIBUTE_INLINE_SPELL,
+                INLINE_SPELL_ACTIVATED_STR);
+        }
+        else
+        {
+            doc.set_metadata (METADATA_ATTRIBUTE_INLINE_SPELL,
+                INLINE_SPELL_DEACTIVATED_STR);
+        }
     }
 
     private void activate_inline_spell_checker ()
@@ -280,30 +382,5 @@ public class DocumentView : Gtk.SourceView
             _inline_spell_checker = null;
             notify_property ("highlight-misspelled-words");
         }
-    }
-
-    private bool on_button_release_event (Gdk.EventButton event)
-    {
-        // Forward search on Ctrl + left click
-        if (event.button == 1 &&
-            Gdk.ModifierType.CONTROL_MASK in event.state)
-        {
-            Latexila.Synctex synctex = Latexila.Synctex.get_instance ();
-            Document doc = this.buffer as Document;
-            synctex.forward_search (this.buffer, doc.location, doc.get_main_file (),
-                event.time);
-        }
-
-        // propagate the event further
-        return false;
-    }
-
-    private void hide_completion_calltip_when_needed ()
-    {
-        buffer.notify["cursor-position"].connect (() =>
-        {
-            CompletionProvider provider = CompletionProvider.get_default ();
-            provider.hide_calltip_window ();
-        });
     }
 }

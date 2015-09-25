@@ -38,6 +38,7 @@ public class Document : Gtk.SourceBuffer
     private string? encoding = null;
     private bool new_file = true;
     private DocumentStructure _structure = null;
+    private FileInfo _metadata_info = new FileInfo ();
 
     public signal void cursor_moved ();
 
@@ -92,6 +93,18 @@ public class Document : Gtk.SourceBuffer
 
     public void load (File location)
     {
+        // First load metadata so when the notify::location signal is emitted,
+        // get_metadata() works.
+        try
+        {
+            _metadata_info = location.query_info ("metadata::*", FileQueryInfoFlags.NONE);
+        }
+        catch (Error e)
+        {
+            warning ("Get document metadata failed: %s", e.message);
+            _metadata_info = new FileInfo ();
+        }
+
         this.location = location;
 
         try
@@ -189,6 +202,8 @@ public class Document : Gtk.SourceBuffer
 
             RecentManager.get_default ().add_item (location.get_uri ());
             backup_made = true;
+
+            save_metadata ();
         }
         catch (Error e)
         {
@@ -598,5 +613,47 @@ public class Document : Gtk.SourceBuffer
         });
 
         return true;
+    }
+
+    private void save_metadata ()
+    {
+        return_if_fail (_metadata_info != null);
+
+        if (this.location == null)
+            return;
+
+        try
+        {
+            this.location.set_attributes_from_info (_metadata_info,
+                FileQueryInfoFlags.NONE);
+        }
+        catch (Error error)
+        {
+            warning ("Set document metadata failed: %s", error.message);
+        }
+    }
+
+    public void set_metadata (string key, string? val)
+    {
+        return_if_fail (_metadata_info != null);
+
+        if (val != null)
+            _metadata_info.set_attribute_string (key, val);
+        else
+            // Unset the key
+            _metadata_info.set_attribute (key, FileAttributeType.INVALID, null);
+
+        save_metadata ();
+    }
+
+    public string? get_metadata (string key)
+    {
+        return_val_if_fail (_metadata_info != null, null);
+
+        if (_metadata_info.has_attribute (key) &&
+            _metadata_info.get_attribute_type (key) == FileAttributeType.STRING)
+            return _metadata_info.get_attribute_string (key);
+
+        return null;
     }
 }
