@@ -233,6 +233,16 @@ public class DocumentView : Gtk.SourceView
             _spell_checker.set_language (get_spell_language ());
             setup_inline_spell_checker ();
         });
+
+        _editor_settings.changed["spell-checking-language"].connect (() =>
+        {
+            _spell_checker.set_language (get_spell_language ());
+        });
+
+        _editor_settings.changed["highlight-misspelled-words"].connect (() =>
+        {
+            setup_inline_spell_checker ();
+        });
     }
 
     private unowned Gspell.Language? get_spell_language ()
@@ -249,7 +259,7 @@ public class DocumentView : Gtk.SourceView
         return Gspell.Language.from_key (lang_key);
     }
 
-    private void setup_inline_spell_checker ()
+    public void setup_inline_spell_checker ()
     {
         Document doc = get_buffer () as Document;
 

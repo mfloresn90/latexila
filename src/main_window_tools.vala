@@ -40,6 +40,7 @@ public class MainWindowTools
 
     private unowned MainWindow _main_window;
     private Gtk.ActionGroup _action_group;
+    private GLib.Settings _editor_settings;
 
     public MainWindowTools (MainWindow main_window, UIManager ui_manager)
     {
@@ -55,6 +56,17 @@ public class MainWindowTools
         update_inline_spell_checker_action_state ();
         _main_window.notify["active-tab"].connect (() =>
         {
+            update_inline_spell_checker_action_state ();
+        });
+
+        _editor_settings = new GLib.Settings ("org.gnome.latexila.preferences.editor");
+
+        _editor_settings.changed["highlight-misspelled-words"].connect (() =>
+        {
+            // Ensure that the active_view is updated first.
+            if (_main_window.active_view != null)
+                _main_window.active_view.setup_inline_spell_checker ();
+
             update_inline_spell_checker_action_state ();
         });
     }
