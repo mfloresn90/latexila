@@ -31,6 +31,9 @@ yelp-tools
 If you are installing LaTeXila from a tarball, you don't have to install Vala
 because the C code is already generated.
 
+Link to gspell:
+https://github.com/swilmet/gspell
+
 
 Installation
 ============
