@@ -16,19 +16,24 @@
 <section>
   <title>Use the spell checking</title>
   <p>
-    The spell checking can be activated or disabled via the menu:
+    The default spell checking settings can be changed in the preferences dialog:
     <guiseq>
       <gui style="menu">Edit</gui>
-      <gui style="menu">Spell Check</gui>
+      <gui style="menu">Preferences</gui>
+      <gui style="tab">Other</gui>
     </guiseq>
   </p>
 
   <p>
-    Once the spell checking is activated, the misspelled words will be underlined in red.
-    A right click on a misspelled word will show proposals.
+    The settings can also be changed on a file-by-file basis via the
+    <gui style="menu">Tools</gui> menu.
   </p>
 
-  <p>To change the language, do a right click on the document.</p>
+  <p>
+    If you activate the <gui style="menu">Highlight Misspelled Words</gui>
+    option, the misspelled words will be underlined in red in the document. A
+    right click on a misspelled word will show proposals.
+  </p>
 </section>
 
 <section>
@@ -40,8 +45,8 @@
   </p>
 
   <p>
-    If your language is not listed when doing a right click, install a
-    dictionary for one of the supported backends.
+    If your language is not listed, install a dictionary for one of the
+    supported backends.
   </p>
 </section>
 </page>
