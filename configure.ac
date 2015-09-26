@@ -98,8 +98,8 @@ if ! pkg-config --atleast-version=${GTKSOURCEVIEW_REQUIRED_VERSION} gtksourcevie
 	AC_MSG_ERROR([gtksourceview-3.0 >= ${GTKSOURCEVIEW_REQUIRED_VERSION} required.])
 fi
 
-if ! pkg-config --atleast-version=${GSPELL_REQUIRED_VERSION} gspell-3.0; then
-	AC_MSG_ERROR([gspell-3.0 >= ${GSPELL_REQUIRED_VERSION} required.])
+if ! pkg-config --atleast-version=${GSPELL_REQUIRED_VERSION} gspell-1; then
+	AC_MSG_ERROR([gspell-1 >= ${GSPELL_REQUIRED_VERSION} required.])
 fi
 
 if ! pkg-config gsettings-desktop-schemas; then
@@ -115,7 +115,7 @@ dependencies="
 	gio-2.0
 	gtk+-3.0
 	gtksourceview-3.0
-	gspell-3.0
+	gspell-1
 	gsettings-desktop-schemas
 	gee-0.8"
 
