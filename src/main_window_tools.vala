@@ -29,13 +29,14 @@ public class MainWindowTools
         { "ToolsSpellCheckerDialog", null, N_("_Check Spelling…"), null,
             N_("Check the spelling of the current document"), on_spell_checker_dialog },
         { "ToolsSetSpellLanguage", null, N_("_Set Language…"), null,
-            N_("Set the language used for the spell checking"), on_set_language }
+            N_("Set the language used for the spell checking for the current document"),
+            on_set_language }
     };
 
     private const ToggleActionEntry[] _toggle_action_entries =
     {
         { "ToolsInlineSpellChecker", "tools-check-spelling", N_("_Highlight Misspelled Words"), null,
-            N_("Highlight misspelled words in the document"), on_inline_spell_checker }
+            N_("Highlight misspelled words in the current document"), on_inline_spell_checker }
     };
 
     private unowned MainWindow _main_window;
