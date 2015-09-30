@@ -32,8 +32,10 @@ public class DocumentView : Gtk.SourceView
 
     private GLib.Settings _editor_settings;
     private Pango.FontDescription _font_desc;
+
     private Gspell.Checker? _spell_checker = null;
     private Gspell.InlineCheckerGtv? _inline_spell_checker = null;
+    private static bool _no_spell_language_dialog_shown = false;
 
     public bool highlight_misspelled_words
     {
@@ -355,6 +357,11 @@ public class DocumentView : Gtk.SourceView
 
             return;
         }
+
+        if (_no_spell_language_dialog_shown)
+            return;
+
+        _no_spell_language_dialog_shown = true;
 
         MessageDialog dialog = new MessageDialog (this.get_toplevel () as Window,
             DialogFlags.DESTROY_WITH_PARENT,
