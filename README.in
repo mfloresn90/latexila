@@ -18,7 +18,7 @@ Requirements
 GLib >= @GLIB_REQUIRED_VERSION@
 GTK+ >= @GTK_REQUIRED_VERSION@
 GtkSourceView >= @GTKSOURCEVIEW_REQUIRED_VERSION@
-gspell >= @GSPELL_REQUIRED_VERSION@
+gspell @GSPELL_REQUIRED_VERSION@
 gee-0.8 >= @GEE_REQUIRED_VERSION@
 gettext
 gsettings-desktop-schemas
