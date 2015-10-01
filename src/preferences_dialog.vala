@@ -299,13 +299,7 @@ public class PreferencesDialog : Dialog
         Gspell.LanguageChooserButton spell_language_button =
             builder.get_object ("spell_language_button") as Gspell.LanguageChooserButton;
 
-        unowned Gspell.Language? lang = null;
-        string lang_key = editor_settings.get_string ("spell-checking-language");
-        if (lang_key[0] != '\0')
-            lang = Gspell.Language.from_key (lang_key);
-
-        Gspell.Checker checker = new Gspell.Checker (lang);
-        spell_language_button.set_language (checker.get_language ());
+        update_spell_language_button (editor_settings, spell_language_button);
 
         spell_language_button.notify["language"].connect (() =>
         {
@@ -321,11 +315,28 @@ public class PreferencesDialog : Dialog
                 editor_settings.set_string ("spell-checking-language", "");
         });
 
+        editor_settings.changed["spell-checking-language"].connect (() =>
+        {
+            update_spell_language_button (editor_settings, spell_language_button);
+        });
+
         /* Inline checker */
 
         var inline_spell_checkbutton = builder.get_object ("inline_spell_checkbutton");
         editor_settings.bind ("highlight-misspelled-words", inline_spell_checkbutton,
             "active", SettingsBindFlags.DEFAULT);
+    }
+
+    private void update_spell_language_button (GLib.Settings editor_settings,
+        Gspell.LanguageChooserButton spell_language_button)
+    {
+        unowned Gspell.Language? lang = null;
+        string lang_key = editor_settings.get_string ("spell-checking-language");
+        if (lang_key[0] != '\0')
+            lang = Gspell.Language.from_key (lang_key);
+
+        Gspell.Checker checker = new Gspell.Checker (lang);
+        spell_language_button.set_language (checker.get_language ());
     }
 
     private void init_other_tab (Builder builder)
