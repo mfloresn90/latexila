@@ -1,5 +1,19 @@
 LaTeXila NEWS
 
+Release 3.17.90
+---------------
+* Use gspell instead of GtkSpell. WARNING: gspell = 0.1.x is required, the 0.2
+  or 1.0 version of gspell will most probably be incompatible with gspell 0.1.
+* Add default spell checking settings in the preferences dialog.
+* Via the Tools menu, the spell checking settings can be changed and are stored
+  on a file-by-file basis.
+* There is now a spell checker dialog window, to spell check an entire file
+  word-by-word. (the “inline” spell checker is still present, where misspelled
+  words are highlighted with a red wavy underline).
+* Ensure that the personal build tools and the templates are correctly saved.
+* Other various small improvements and bug fixes
+* Translation updates
+
 Release 3.17.0
 --------------
 * Integrated file browser: new buttons to open the current directory in a file
