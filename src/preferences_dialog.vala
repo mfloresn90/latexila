@@ -28,31 +28,22 @@ public class PreferencesDialog : Dialog
 
     private PreferencesDialog ()
     {
+        Object (use_header_bar : 1);
+
         title = _("Preferences");
         destroy_with_parent = true;
         border_width = 5;
+
+        HeaderBar headerbar = get_header_bar () as HeaderBar;
+
+        headerbar.set_show_close_button (true);
 
         // reset all button
         Button reset_button = new Button.with_mnemonic (_("_Reset All"));
         reset_button.set_tooltip_text (_("Reset all preferences"));
         reset_button.show_all ();
-        add_action_widget (reset_button, ResponseType.APPLY);
-
-        // close button
-        add_button (_("_Close"), ResponseType.CLOSE);
-
-        response.connect ((response_id) =>
-        {
-            switch (response_id)
-            {
-                case ResponseType.CLOSE:
-                    hide ();
-                    return;
-                case ResponseType.APPLY:
-                    reset_all ();
-                    return;
-            }
-        });
+        reset_button.clicked.connect (() => reset_all ());
+        headerbar.pack_start (reset_button);
 
         /* load the UI */
 
@@ -96,10 +87,15 @@ public class PreferencesDialog : Dialog
         {
             _instance = new PreferencesDialog ();
 
+            _instance.delete_event.connect (() =>
+            {
+                _instance.hide ();
+                return true;
+            });
+
             _instance.destroy.connect (() =>
             {
-                if (_instance != null)
-                    _instance = null;
+                _instance = null;
             });
         }
 
