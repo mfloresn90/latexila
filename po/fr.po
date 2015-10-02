@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: latexila 2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-15 19:29+0000\n"
-"PO-Revision-Date: 2015-03-05 16:54+0100\n"
+"POT-Creation-Date: 2015-10-02 10:54+0000\n"
+"PO-Revision-Date: 2015-10-02 15:31+0200\n"
 "Last-Translator: Sébastien Wilmet <swilmet@gnome.org>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
@@ -18,10 +18,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Poedit 1.8.4\n"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:43 ../src/build_tool_dialog.vala:168
+#: build_tools.xml:43 ../src/build_tool_dialog.vala:165
 msgid "View PDF"
 msgstr "Afficher le PDF"
 
@@ -31,7 +31,7 @@ msgid "View the PDF file"
 msgstr "Affiche le fichier PDF"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:49 ../src/build_tool_dialog.vala:167
+#: build_tools.xml:49 ../src/build_tool_dialog.vala:164
 msgid "View DVI"
 msgstr "Afficher le DVI"
 
@@ -41,7 +41,7 @@ msgid "View the DVI file"
 msgstr "Affiche le fichier DVI"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:55 ../src/build_tool_dialog.vala:169
+#: build_tools.xml:55 ../src/build_tool_dialog.vala:166
 msgid "View PS"
 msgstr "Afficher le PS"
 
@@ -137,26 +137,22 @@ msgstr ""
 "entre le .tex et le PDF."
 
 #: ../data/latexila.desktop.in.in.h:1
-msgid "LaTeXila"
-msgstr "LaTeXila"
-
-#: ../data/latexila.desktop.in.in.h:2
 msgid "Integrated LaTeX Environment"
 msgstr "Environnement LaTeX intégré"
 
-#: ../data/latexila.desktop.in.in.h:3
+#: ../data/latexila.desktop.in.in.h:2
 msgid "Edit LaTeX documents"
 msgstr "Éditer des documents LaTeX"
 
-#: ../data/latexila.desktop.in.in.h:4
+#: ../data/latexila.desktop.in.in.h:3
 msgid "text;tex;latex;editor;documents;"
 msgstr "texte;tex;latex;éditeur;documents;"
 
-#: ../data/latexila.desktop.in.in.h:5
+#: ../data/latexila.desktop.in.in.h:4
 msgid "Open a New Window"
 msgstr "Ouvrir une nouvelle fenêtre"
 
-#: ../data/latexila.desktop.in.in.h:6
+#: ../data/latexila.desktop.in.in.h:5
 msgid "Open a New Document"
 msgstr "Ouvrir un nouveau document"
 
@@ -302,25 +298,42 @@ msgid "Whether LaTeXila should highlight matching brackets."
 msgstr "Indique si LaTeXila doit surligner les parenthèses correspondantes."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:27
-msgid "Spell checking"
-msgstr "Correction orthographique"
+msgid "Highlight Misspelled Words"
+msgstr "Mettre en évidence les mots mal orthographiés"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:28
+msgid "Whether misspelled words are highlighted by default."
+msgstr "Indique si les mots mal orthographiés sont mis en évidence par défaut."
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:29
+msgid "Spell Checking Language"
+msgstr "Langue pour la correction orthographique"
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:30
+msgid ""
+"The default language used for the spell checking. Set to the empty string to "
+"take the best language available based on the environment."
+msgstr ""
+"La langue utilisée par défaut pour la correction orthographique. Mettez une "
+"chaine de caractères vide pour prendre la meilleure langue disponible selon "
+"l'environnement."
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:31
 msgid "Main toolbar is visible"
 msgstr "La barre d'outils principale est visible"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:29
+#: ../data/org.gnome.latexila.gschema.xml.in.h:32
 msgid ""
 "Whether the main toolbar (file open, close, build, ...) should be visible."
 msgstr ""
 "Indique si la barre d'outils principale (ouverture de fichiers, fermeture, "
 "construction, ...) doit être visible."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:30
+#: ../data/org.gnome.latexila.gschema.xml.in.h:33
 msgid "Edit toolbar is visible"
 msgstr "La barre d'outils d'édition est visible"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:31
+#: ../data/org.gnome.latexila.gschema.xml.in.h:34
 msgid ""
 "Whether the edit toolbar (bold, italic, character sizes, ...) should be "
 "visible."
@@ -328,59 +341,59 @@ msgstr ""
 "Indique si la barre d'outils d'édition (gras, italique, tailles des "
 "caractères, ...) doit être visible."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:32
+#: ../data/org.gnome.latexila.gschema.xml.in.h:35
 msgid "Side panel is Visible"
 msgstr "Le panneau latéral est visible"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:33
+#: ../data/org.gnome.latexila.gschema.xml.in.h:36
 msgid ""
 "Whether the side panel at the left of editing windows should be visible."
 msgstr ""
 "Indique si le panneau latéral situé à gauche des fenêtres d'édition doit "
 "être visible."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:34
+#: ../data/org.gnome.latexila.gschema.xml.in.h:37
 msgid "Bottom panel is Visible"
 msgstr "Le panneau inférieur est visible"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:35
+#: ../data/org.gnome.latexila.gschema.xml.in.h:38
 msgid "Whether the bottom panel containing the build view should be visible."
 msgstr ""
 "Indique si le panneau inférieur, contenant l'affichage de construction, doit "
 "être visible."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:36
+#: ../data/org.gnome.latexila.gschema.xml.in.h:39
 msgid "Side panel component"
 msgstr "Le composant du panneau latéral"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:37
+#: ../data/org.gnome.latexila.gschema.xml.in.h:40
 msgid ""
 "Side panel's active component. 0: Symbols. 1: File browser. 2: Structure."
 msgstr ""
 "Le composant actif du panneau latéral. 0 : Symboles. 1 : Navigateur de "
 "fichiers. 2 : Structure."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:38
+#: ../data/org.gnome.latexila.gschema.xml.in.h:41
 msgid "Show build output warnings"
 msgstr "Afficher les avertissements de la sortie de construction"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:39
+#: ../data/org.gnome.latexila.gschema.xml.in.h:42
 msgid "Show build output badboxes"
 msgstr "Afficher les « bad box » de la sortie de construction"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:40
+#: ../data/org.gnome.latexila.gschema.xml.in.h:43
 msgid "Interactive completion"
 msgstr "Complétion interactive"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:41
+#: ../data/org.gnome.latexila.gschema.xml.in.h:44
 msgid "Automatically show LaTeX commands proposals"
 msgstr "Afficher automatiquement les propositions de commandes LaTeX"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:42
+#: ../data/org.gnome.latexila.gschema.xml.in.h:45
 msgid "Minimum number of characters for interactive completion"
 msgstr "Nombre minimum de caractères pour la complétion interactive"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:43
+#: ../data/org.gnome.latexila.gschema.xml.in.h:46
 msgid ""
 "Minimum number of characters after \"\\\" for the interactive completion of "
 "LaTeX commands"
@@ -388,72 +401,72 @@ msgstr ""
 "Nombre minimum de caractères après « \\ » pour la complétion interactive de "
 "commandes LaTeX"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:44
-#: ../src/ui/preferences_dialog.ui.h:19
+#: ../data/org.gnome.latexila.gschema.xml.in.h:47
+#: ../src/ui/preferences_dialog.ui.h:22
 msgid "No confirmation when cleaning-up"
 msgstr "Pas de confirmation lors du nettoyage"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:45
+#: ../data/org.gnome.latexila.gschema.xml.in.h:48
 msgid "Automatic clean-up"
 msgstr "Nettoyage automatique"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:46
+#: ../data/org.gnome.latexila.gschema.xml.in.h:49
 msgid ""
 "Automatically clean-up files after close. no-confirm-clean must be true."
 msgstr ""
 "Nettoyer automatiquement les fichiers après fermeture. « no-confirm-clean » "
 "doit être vrai."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:47
+#: ../data/org.gnome.latexila.gschema.xml.in.h:50
 msgid "File extensions for the clean-up"
 msgstr "Extensions de fichier pour le nettoyage"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:48
+#: ../data/org.gnome.latexila.gschema.xml.in.h:51
 msgid "The list of file extensions for the clean-up, separated by spaces"
 msgstr ""
 "La liste des extensions de fichier pour le nettoyage, séparées par des "
 "espaces"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:49
+#: ../data/org.gnome.latexila.gschema.xml.in.h:52
 msgid "Enabled default build tools"
 msgstr "Outils de construction par défaut activés"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:50
+#: ../data/org.gnome.latexila.gschema.xml.in.h:53
 msgid "The list of the default build tools that are enabled"
 msgstr "La liste des outils de construction par défaut qui sont activés"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:51
+#: ../data/org.gnome.latexila.gschema.xml.in.h:54
 msgid "Disabled default build tools"
 msgstr "Outils de construction par défaut désactivés"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:52
+#: ../data/org.gnome.latexila.gschema.xml.in.h:55
 msgid "The list of the default build tools that are disabled"
 msgstr "La liste des outils de construction par défaut qui sont désactivés"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:53
+#: ../data/org.gnome.latexila.gschema.xml.in.h:56
 msgid "Current directory"
 msgstr "Répertoire actuel"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:54
+#: ../data/org.gnome.latexila.gschema.xml.in.h:57
 msgid "URI of the file browser current directory"
 msgstr "L'URI du répertoire actuel du navigateur de fichiers"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:282
+#: ../data/org.gnome.latexila.gschema.xml.in.h:58 ../src/file_browser.vala:361
 msgid "Show build files"
 msgstr "Afficher les fichiers de construction"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:56
+#: ../data/org.gnome.latexila.gschema.xml.in.h:59
 msgid ""
 "Show files with an extension present in preferences.latex.clean-extensions."
 msgstr ""
 "Afficher les fichiers ayant une extension présente dans « preferences.latex."
 "clean-extensions »."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:290
+#: ../data/org.gnome.latexila.gschema.xml.in.h:60 ../src/file_browser.vala:369
 msgid "Show hidden files"
 msgstr "Afficher les fichiers cachés"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:58
+#: ../data/org.gnome.latexila.gschema.xml.in.h:61
 msgid "Show files beginning with a dot."
 msgstr "Afficher les fichiers commençant par un point."
 
@@ -469,7 +482,6 @@ msgstr ""
 "\\usepackage[francais]{babel}\n"
 
 #. (itstool) path: template/translatableChunk
-#. There is a helper script in data/templates/tex2po.sh
 #: letter.xml:2
 #, no-wrap
 msgid ""
@@ -551,187 +563,194 @@ msgstr ""
 msgid "Hide panel"
 msgstr "Cacher le panneau"
 
-#. close button
-#: ../src/build_tool_dialog.vala:80 ../src/build_tools_preferences.vala:55
-#: ../src/main_window_file.vala:53 ../src/preferences_dialog.vala:42
-#: ../src/project_dialogs.vala:186 ../src/templates_dialogs.vala:244
-#| msgid "_Close All"
-msgid "_Close"
-msgstr "_Fermer"
+#: ../src/build_tool_dialog.vala:71
+msgid "Personal Build Tool"
+msgstr "Outils de construction personnels"
 
-#: ../src/build_tool_dialog.vala:81
-msgid "Build Tool (read-only)"
-msgstr "Outil de construction (lecture seule)"
-
-#: ../src/build_tool_dialog.vala:86 ../src/build_tools_preferences.vala:332
+#: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:290 ../src/main_window_file.vala:147
-#: ../src/main_window.vala:744 ../src/main_window.vala:840
-#: ../src/main_window.vala:876 ../src/preferences_dialog.vala:117
-#: ../src/project_dialogs.vala:28 ../src/project_dialogs.vala:119
-#: ../src/project_dialogs.vala:274 ../src/project_dialogs.vala:294
-#: ../src/templates_dialogs.vala:36 ../src/templates_dialogs.vala:176
+#: ../src/document_tab.vala:290
+#: ../src/liblatexila/latexila-templates-dialogs.c:128
+#: ../src/liblatexila/latexila-templates-dialogs.c:238
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:145
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:758
+#: ../src/main_window.vala:854 ../src/main_window.vala:890
+#: ../src/preferences_dialog.vala:114 ../src/project_dialogs.vala:31
+#: ../src/project_dialogs.vala:122 ../src/project_dialogs.vala:276
+#: ../src/project_dialogs.vala:296
 msgid "_Cancel"
 msgstr "A_nnuler"
 
-#: ../src/build_tool_dialog.vala:87 ../src/document_view.vala:207
-#: ../src/project_dialogs.vala:120 ../src/tab_info_bar.vala:77
-#: ../src/templates_dialogs.vala:37 ../src/templates_dialogs.vala:177
-msgid "_OK"
-msgstr "_Valider"
+#: ../src/build_tool_dialog.vala:73 ../src/project_dialogs.vala:123
+msgid "_Apply"
+msgstr "_Appliquer"
 
-#: ../src/build_tool_dialog.vala:88
-msgid "Build Tool"
-msgstr "Outil de construction"
+#: ../src/build_tool_dialog.vala:77
+msgid "Default Build Tool (read-only)"
+msgstr "Outil de construction par défaut (lecture seule)"
 
 #. icon-name
 #. label
-#: ../src/build_tool_dialog.vala:161
+#: ../src/build_tool_dialog.vala:158
 msgid "Execute"
 msgstr "Exécuter"
 
-#: ../src/build_tool_dialog.vala:165
+#: ../src/build_tool_dialog.vala:162
 msgid "Convert"
 msgstr "Convertir"
 
 #. FIXME don't use Stock
-#: ../src/build_tool_dialog.vala:166
+#: ../src/build_tool_dialog.vala:163
 msgid "View File"
 msgstr "Afficher le fichier"
 
-#: ../src/build_tool_dialog.vala:230
+#. In all cases, the text must be selectable, but there is no property
+#. for that. So set as editable, but in read-only mode the edited text
+#. isn't changed (see below).
+#: ../src/build_tool_dialog.vala:231
 msgid "Commands"
 msgstr "Commandes"
 
-#: ../src/build_tool_dialog.vala:240
+#: ../src/build_tool_dialog.vala:241
 msgid "Post Processor"
 msgstr "Post processeur"
 
-#: ../src/build_tool_dialog.vala:267 ../src/build_tools_preferences.vala:294
+#: ../src/build_tool_dialog.vala:271 ../src/build_tools_preferences.vala:297
 msgid "Add..."
 msgstr "Ajouter..."
 
-#: ../src/build_tool_dialog.vala:284 ../src/build_tools_preferences.vala:311
+#: ../src/build_tool_dialog.vala:288 ../src/build_tools_preferences.vala:314
 msgid "Remove"
 msgstr "Enlever"
 
-#: ../src/build_tool_dialog.vala:314 ../src/build_tools_preferences.vala:351
+#: ../src/build_tool_dialog.vala:318 ../src/build_tools_preferences.vala:354
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:282
 msgid "Move up"
 msgstr "Déplacer vers le haut"
 
-#: ../src/build_tool_dialog.vala:365 ../src/build_tools_preferences.vala:403
+#: ../src/build_tool_dialog.vala:369 ../src/build_tools_preferences.vala:406
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:294
 msgid "Move down"
 msgstr "Déplacer vers le bas"
 
-#: ../src/build_tool_dialog.vala:569 ../src/build_tools_preferences.vala:183
+#: ../src/build_tool_dialog.vala:573 ../src/build_tools_preferences.vala:177
 #: ../src/latex_menu.vala:52 ../src/structure.vala:783
 msgid "Label"
 msgstr "Label"
 
-#: ../src/build_tool_dialog.vala:574
+#: ../src/build_tool_dialog.vala:578
 msgid "You can select this arrow and copy/paste it!"
 msgstr "Vous pouvez sélectionner cette flèche et la copier/coller !"
 
-#: ../src/build_tool_dialog.vala:590
+#: ../src/build_tool_dialog.vala:594
 msgid "Description"
 msgstr "Description"
 
-#: ../src/build_tool_dialog.vala:596
+#: ../src/build_tool_dialog.vala:600
 msgid "File extensions for which the build tool can be executed."
 msgstr ""
 "Les extensions de fichiers sur lesquelles l'outil de construction peut être "
 "exécuté."
 
-#: ../src/build_tool_dialog.vala:597
+#: ../src/build_tool_dialog.vala:601
 msgid "The extensions are separated by spaces."
 msgstr "Les extensions sont séparées par des espaces."
 
-#: ../src/build_tool_dialog.vala:598
+#: ../src/build_tool_dialog.vala:602
 msgid "If it is empty, all extensions are allowed."
 msgstr "Si c'est vide, toutes les extensions sont acceptées."
 
-#: ../src/build_tool_dialog.vala:600
+#: ../src/build_tool_dialog.vala:604
 msgid "Extensions"
 msgstr "Extensions"
 
-#: ../src/build_tool_dialog.vala:605
+#: ../src/build_tool_dialog.vala:609
 msgid "Icon"
 msgstr "Icône"
 
 #. Placeholders
-#: ../src/build_tool_dialog.vala:612
+#: ../src/build_tool_dialog.vala:616
 msgid "Placeholders:"
 msgstr "Marques substitutives :"
 
-#: ../src/build_tool_dialog.vala:616
+#: ../src/build_tool_dialog.vala:620
 msgid "The active document's filename."
 msgstr "Le nom du fichier du document actif"
 
-#: ../src/build_tool_dialog.vala:617 ../src/build_tool_dialog.vala:622
+#: ../src/build_tool_dialog.vala:621 ../src/build_tool_dialog.vala:626
 msgid "If the active document belongs to a project, the main file is chosen."
 msgstr ""
 "Si le document actif fait partie d'un projet, le fichier principal est "
 "choisi."
 
-#: ../src/build_tool_dialog.vala:621
+#: ../src/build_tool_dialog.vala:625
 msgid "The active document's filename without its extension."
 msgstr "Le nom du fichier du document actif sans son extension."
 
-#: ../src/build_tool_dialog.vala:665
+#: ../src/build_tool_dialog.vala:675
 msgid "Jobs"
 msgstr "Tâches"
 
-#: ../src/build_tool_dialog.vala:671
+#: ../src/build_tool_dialog.vala:681
 msgid "List of files to open after executing the build jobs."
 msgstr ""
 "Liste des fichiers à ouvrir après l'exécution des tâches de construction."
 
-#: ../src/build_tool_dialog.vala:672
+#: ../src/build_tool_dialog.vala:682
 msgid "The files are separated by spaces."
 msgstr "Les fichiers sont séparés par des espaces."
 
-#: ../src/build_tool_dialog.vala:673
+#: ../src/build_tool_dialog.vala:683
 msgid "You should use the placeholders to specify the files."
 msgstr ""
 "Vous devriez utiliser les marques substitutives pour indiquer les fichiers."
 
-#: ../src/build_tool_dialog.vala:676
+#: ../src/build_tool_dialog.vala:686
 msgid "Files to open"
 msgstr "Fichiers à ouvrir"
 
-#: ../src/build_tools_preferences.vala:53
+#: ../src/build_tools_preferences.vala:57
 msgid "Build Tools"
 msgstr "Outils de construction"
 
-#: ../src/build_tools_preferences.vala:111
-#| msgid "Default build tools"
+#: ../src/build_tools_preferences.vala:113
 msgid "Default Build Tools"
 msgstr "Outils de construction par défaut"
 
-#: ../src/build_tools_preferences.vala:132
-#| msgid "Personal build tools"
+#: ../src/build_tools_preferences.vala:134
 msgid "Personal Build Tools"
 msgstr "Outils de construction personnels"
 
-#: ../src/build_tools_preferences.vala:174
+#: ../src/build_tools_preferences.vala:168
 msgid "Enabled"
 msgstr "Activé"
 
-#: ../src/build_tools_preferences.vala:278
+#: ../src/build_tools_preferences.vala:241
+msgid "View the properties (read-only)"
+msgstr "Voir les propriétés (lecture seule)"
+
+#: ../src/build_tools_preferences.vala:246
+msgid "Edit the properties"
+msgstr "Éditer les propriétés"
+
+#: ../src/build_tools_preferences.vala:266
+msgid "Create a copy"
+msgstr "Créer une copie"
+
+#: ../src/build_tools_preferences.vala:281
 #, c-format
 msgid "%s [copy]"
 msgstr "%s [copie]"
 
-#: ../src/build_tools_preferences.vala:329
+#: ../src/build_tools_preferences.vala:332
 #, c-format
 msgid "Do you really want to delete the build tool \"%s\"?"
 msgstr "Êtes-vous sûr de vouloir supprimer l'outil de construction « %s » ?"
 
-#: ../src/build_tools_preferences.vala:333 ../src/clean_build_files.vala:243
+#: ../src/build_tools_preferences.vala:336 ../src/clean_build_files.vala:243
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:146
 #: ../src/main_window_edit.vala:51 ../src/main_window_structure.vala:38
-#: ../src/project_dialogs.vala:240 ../src/project_dialogs.vala:275
-#: ../src/templates_dialogs.vala:243
-#| msgid "delete"
+#: ../src/project_dialogs.vala:242 ../src/project_dialogs.vala:277
 msgid "_Delete"
 msgstr "_Supprimer"
 
@@ -759,14 +778,12 @@ msgstr "Pas de proposition correspondante"
 msgid "Ln %d, Col %d"
 msgstr "Lig. %d, Col. %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:743
-#| msgid "Close without Saving"
+#: ../src/dialogs.vala:40 ../src/main_window.vala:757
 msgid "Close _without Saving"
 msgstr "Fermer _sans enregistrer"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:749 ../src/main_window.vala:841
-#| msgid "_Save All"
+#: ../src/main_window.vala:763 ../src/main_window.vala:855
 msgid "_Save"
 msgstr "_Enregistrer"
 
@@ -796,9 +813,9 @@ msgid "Close document"
 msgstr "Fermer le document"
 
 #. main file
-#: ../src/document_tab.vala:233 ../src/project_dialogs.vala:44
-#: ../src/project_dialogs.vala:47 ../src/project_dialogs.vala:139
-#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:215
+#: ../src/document_tab.vala:233 ../src/project_dialogs.vala:46
+#: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
+#: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
 msgid "Main File"
 msgstr "Fichier principal"
 
@@ -825,49 +842,46 @@ msgid "Do you want to reload the file?"
 msgstr "Voulez-vous recharger le fichier ?"
 
 #: ../src/document_tab.vala:289
-#| msgid "Reload"
 msgid "_Reload"
 msgstr "_Recharger"
 
-#: ../src/document.vala:121
+#: ../src/document.vala:134
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Impossible de charger le fichier « %s »."
 
-#: ../src/document.vala:197
+#: ../src/document.vala:212
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Le fichier %s a été modifié depuis sa dernière lecture."
 
-#: ../src/document.vala:200
+#: ../src/document.vala:215
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Si vous l'enregistrez, il se peut que toutes vos modifications externes "
 "soient perdues. Enregistrez malgré tout ?"
 
-#: ../src/document.vala:203
-#| msgid "Save Anyway"
+#: ../src/document.vala:218
 msgid "_Save Anyway"
 msgstr "_Enregistrer malgré tout"
 
-#: ../src/document.vala:204
-#| msgid "Don't Save"
+#: ../src/document.vala:219
 msgid "_Don't Save"
 msgstr "_Ne pas enregistrer"
 
-#: ../src/document.vala:216
+#: ../src/document.vala:231
 msgid "Impossible to save the file."
 msgstr "Impossible d'enregistrer le fichier."
 
-#: ../src/document.vala:241
+#: ../src/document.vala:256
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Erreur lors de la tentative de conversion du document en UTF-8"
 
-#: ../src/document.vala:295
+#: ../src/document.vala:310
 msgid "Unsaved Document"
 msgstr "Document non enregistré"
 
-#: ../src/document.vala:579
+#: ../src/document.vala:594
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
@@ -875,48 +889,66 @@ msgstr ""
 "Le fichier a un emplacement temporaire. Les données peuvent être perdues "
 "après avoir redémarré votre ordinateur."
 
-#: ../src/document.vala:580
+#: ../src/document.vala:595
 msgid "Do you want to save the file in a safer place?"
 msgstr "Voulez-vous enregistrer le fichier dans un endroit plus sûr ?"
 
-#: ../src/document.vala:583 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:747
-#| msgid "_Save All"
+#: ../src/document.vala:598 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:761
 msgid "Save _As"
 msgstr "Enregistrer _sous"
 
-#: ../src/document.vala:584
+#: ../src/document.vala:599
 msgid "Cancel"
 msgstr "Annuler"
 
-#: ../src/document_view.vala:204
-#| msgid "Activate or disable the spell checking"
+#: ../src/document_view.vala:370
 msgid "No dictionaries available for the spell checking."
 msgstr "Aucun dictionnaire disponible pour le correcteur orthographique."
 
 #. Help
-#: ../src/document_view.vala:206 ../src/main_window.vala:62
+#: ../src/document_view.vala:372 ../src/main_window.vala:62
 msgid "_Help"
 msgstr "Aid_e"
 
-#: ../src/file_browser.vala:218
+#: ../src/document_view.vala:373 ../src/tab_info_bar.vala:77
+msgid "_OK"
+msgstr "_Valider"
+
+#: ../src/file_browser.vala:219
 msgid "Go to the home directory"
 msgstr "Aller au dossier personnel"
 
-#: ../src/file_browser.vala:233
+#: ../src/file_browser.vala:234
 msgid "Go to the parent directory"
 msgstr "Aller au dossier parent"
 
-#: ../src/file_browser.vala:249
+#: ../src/file_browser.vala:250
 msgid "Go to the active document directory"
 msgstr "Aller au répertoire du document actif"
 
-#: ../src/file_browser.vala:338
+#: ../src/file_browser.vala:303
+msgid "Open in a file manager"
+msgstr "Ouvrir dans un navigateur de fichiers"
+
+#: ../src/file_browser.vala:305
+msgid "Open the current directory in a file manager"
+msgstr "Ouvrir le répertoire actuel dans un navigateur de fichiers"
+
+#: ../src/file_browser.vala:327
+msgid "Open in a terminal"
+msgstr "Ouvrir dans un terminal"
+
+#: ../src/file_browser.vala:328
+msgid "Open the current directory in a terminal"
+msgstr "Ouvrir le répertoire actuel dans un terminal"
+
+#: ../src/file_browser.vala:417
 msgid "File System"
 msgstr "Système de fichiers"
 
 #. File browser
-#: ../src/file_browser.vala:457 ../src/main_window.vala:406
+#: ../src/file_browser.vala:536 ../src/main_window.vala:410
 msgid "File Browser"
 msgstr "Navigateur de fichiers"
 
@@ -1656,6 +1688,90 @@ msgstr "Le fichier PDF n'existe pas."
 msgid "The document is not saved."
 msgstr "Le document n'est pas enregistré."
 
+#: ../src/liblatexila/latexila-templates-default.c:90
+msgid "Empty"
+msgstr "Vide"
+
+#: ../src/liblatexila/latexila-templates-default.c:94
+msgid "Article"
+msgstr "Article"
+
+#: ../src/liblatexila/latexila-templates-default.c:95
+msgid "Report"
+msgstr "Rapport"
+
+#: ../src/liblatexila/latexila-templates-default.c:96
+msgid "Book"
+msgstr "Livre"
+
+#: ../src/liblatexila/latexila-templates-default.c:97
+msgid "Letter"
+msgstr "Lettre"
+
+#: ../src/liblatexila/latexila-templates-default.c:98
+msgid "Presentation"
+msgstr "Présentation"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:50
+msgid "Default Templates"
+msgstr "Modèles par défaut"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:62
+msgid "Personal Templates"
+msgstr "Modèles personnels"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:122
+msgid "New File..."
+msgstr "Nouveau fichier..."
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:129
+#: ../src/main_window_file.vala:32
+msgid "_New"
+msgstr "_Nouveau"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:232
+msgid "New Template..."
+msgstr "Nouveau modèle..."
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:239
+#: ../src/project_dialogs.vala:32
+msgid "Crea_te"
+msgstr "C_réer"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:249
+msgid "Name of the new template"
+msgstr "Nom du nouveau modèle"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:267
+msgid "Choose an icon"
+msgstr "Choisissez une icône"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:332
+msgid "Impossible to create the personal template."
+msgstr "Impossible de créer le modèle personnel."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:141
+#, c-format
+msgid "Do you really want to delete the template “%s”?"
+msgstr "Êtes-vous sûr de vouloir supprimer le modèle « %s » ?"
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:168
+#, c-format
+msgid "Error when deleting the template “%s”."
+msgstr "Erreur lors de la suppression du modèle « %s »."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:226
+msgid "Error when moving the template."
+msgstr "Erreur lors du déplacement du modèle."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:270
+msgid "Delete"
+msgstr "Supprimer"
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:362
+msgid "Manage Personal Templates"
+msgstr "Gérer les modèles personnels"
+
 #: ../src/main.vala:51
 msgid "Show the application's version"
 msgstr "Afficher la version de l'application"
@@ -1837,7 +1953,6 @@ msgid "Delete the selected text"
 msgstr "Supprime le texte sélectionné"
 
 #: ../src/main_window_edit.vala:54
-#| msgid "_Select"
 msgid "Select _All"
 msgstr "_Tout sélectionner"
 
@@ -1845,56 +1960,58 @@ msgstr "_Tout sélectionner"
 msgid "Select the entire document"
 msgstr "Sélectionne le document entier"
 
-#: ../src/main_window_edit.vala:57 ../src/main_window_structure.vala:44
+#: ../src/main_window_edit.vala:57
+msgid "_Indent"
+msgstr "_Indenter"
+
+#: ../src/main_window_edit.vala:58
+msgid "Indent the selected lines"
+msgstr "Indenter les lignes sélectionnées"
+
+#: ../src/main_window_edit.vala:60
+msgid "_Unindent"
+msgstr "_Désindenter"
+
+#: ../src/main_window_edit.vala:61
+msgid "Unindent the selected lines"
+msgstr "Désindenter les lignes sélectionnées"
+
+#: ../src/main_window_edit.vala:63 ../src/main_window_structure.vala:44
 msgid "_Comment"
 msgstr "_Commenter"
 
-#: ../src/main_window_edit.vala:58
+#: ../src/main_window_edit.vala:64
 msgid "Comment the selected lines (add the character \"%\")"
 msgstr ""
 "Met en commentaire les lignes sélectionnées (ajoute le caractère « % »)"
 
-#: ../src/main_window_edit.vala:61
+#: ../src/main_window_edit.vala:67
 msgid "_Uncomment"
 msgstr "_Décommenter"
 
-#: ../src/main_window_edit.vala:62
+#: ../src/main_window_edit.vala:68
 msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "Décommente les lignes sélectionnées (enlève le caractère « % »)"
 
-#: ../src/main_window_edit.vala:65
+#: ../src/main_window_edit.vala:71
 msgid "_Completion"
 msgstr "_Complétion"
 
-#: ../src/main_window_edit.vala:66
+#: ../src/main_window_edit.vala:72
 msgid "Complete the LaTeX command"
 msgstr "Compléter la commande LaTeX"
 
-#: ../src/main_window_edit.vala:68
-#| msgid "Preferences"
+#: ../src/main_window_edit.vala:74
 msgid "_Preferences"
 msgstr "_Préférences"
 
-#: ../src/main_window_edit.vala:69
+#: ../src/main_window_edit.vala:75
 msgid "Configure the application"
 msgstr "Configure l'application"
-
-#: ../src/main_window_edit.vala:74
-#| msgid "Spell checking"
-msgid "_Spell Check"
-msgstr "_Correction orthographique"
-
-#: ../src/main_window_edit.vala:75
-msgid "Activate or disable the spell checking"
-msgstr "Active ou désactive le correcteur orthographique"
 
 #: ../src/main_window_file.vala:30
 msgid "_File"
 msgstr "_Fichier"
-
-#: ../src/main_window_file.vala:32 ../src/project_dialogs.vala:29
-msgid "_New"
-msgstr "_Nouveau"
 
 #: ../src/main_window_file.vala:33
 msgid "New file"
@@ -1908,8 +2025,7 @@ msgstr "Nouvelle _Fenêtre"
 msgid "Create a new window"
 msgstr "Crée une nouvelle fenêtre"
 
-#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:148
-#| msgid "_Open File"
+#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:154
 msgid "_Open"
 msgstr "_Ouvrir"
 
@@ -1934,12 +2050,16 @@ msgid "Create a new template from the current document"
 msgstr "Crée un nouveau modèle à partir du document actuel"
 
 #: ../src/main_window_file.vala:50
-msgid "_Delete Template..."
-msgstr "S_upprimer des modèles..."
+msgid "_Manage Personal Templates..."
+msgstr "_Gérer les modèles personnels…"
 
 #: ../src/main_window_file.vala:51
-msgid "Delete personal template(s)"
-msgstr "Supprime des modèles personnels"
+msgid "Manage personal templates"
+msgstr "Gérer les modèles personnels"
+
+#: ../src/main_window_file.vala:53
+msgid "_Close"
+msgstr "_Fermer"
 
 #: ../src/main_window_file.vala:54
 msgid "Close the current file"
@@ -1958,17 +2078,17 @@ msgstr "Ouvre un fichier récemment utilisé"
 msgid "Open a recently used file"
 msgstr "Ouvrir un fichier récemment utilisé"
 
-#: ../src/main_window_file.vala:144
+#: ../src/main_window_file.vala:150
 msgid "Open Files"
 msgstr "Ouvrir des fichiers"
 
 #. Filter: by default show only .tex and .bib files
-#: ../src/main_window_file.vala:166
+#: ../src/main_window_file.vala:172
 msgid "All LaTeX Files"
 msgstr "Tous les fichiers LaTeX"
 
 #. All files filter
-#: ../src/main_window_file.vala:173
+#: ../src/main_window_file.vala:179
 msgid "All Files"
 msgstr "Tous les fichiers"
 
@@ -2127,7 +2247,7 @@ msgstr "Changer le fichier principal du projet actuel"
 msgid "_Manage Projects"
 msgstr "_Gestion des projets"
 
-#: ../src/main_window.vala:59 ../src/project_dialogs.vala:183
+#: ../src/main_window.vala:59 ../src/project_dialogs.vala:187
 msgid "Manage Projects"
 msgstr "Gère les projets"
 
@@ -2147,23 +2267,11 @@ msgstr "_Référence LaTeX"
 msgid "The Kile LaTeX Reference"
 msgstr "La référence LaTeX de Kile"
 
-#: ../src/main_window.vala:67
-msgid "_Donate"
-msgstr "_Faire un don"
-
-#: ../src/main_window.vala:68
-msgid ""
-"Donate to demonstrate your appreciation of LaTeXila and help its future "
-"development"
-msgstr ""
-"Faites un don pour démontrer votre appréciation de LaTeXila et aider son "
-"futur développement"
-
 #: ../src/main_window.vala:70
 msgid "_About"
 msgstr "À _propos"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1219
+#: ../src/main_window.vala:71 ../src/main_window.vala:1226
 msgid "About LaTeXila"
 msgstr "À propos de LaTeXila"
 
@@ -2201,20 +2309,20 @@ msgid "Show or hide the bottom panel"
 msgstr "Affiche ou cache le panneau inférieur"
 
 #. Symbols
-#: ../src/main_window.vala:402
+#: ../src/main_window.vala:406
 msgid "Symbols"
 msgstr "Symboles"
 
-#: ../src/main_window.vala:411
+#: ../src/main_window.vala:415
 msgid "Structure"
 msgstr "Structure"
 
-#: ../src/main_window.vala:633
+#: ../src/main_window.vala:646
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Ce fichier (%s) est déjà ouvert dans une autre fenêtre de LaTeXila."
 
-#: ../src/main_window.vala:635
+#: ../src/main_window.vala:648
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2222,131 +2330,126 @@ msgstr ""
 "LaTeXila a ouvert cette instance du fichier en lecture seule. Voulez-vous le "
 "modifier malgré tout ?"
 
-#: ../src/main_window.vala:638
+#: ../src/main_window.vala:651
 msgid "Edit Anyway"
 msgstr "Modifier malgré tout"
 
-#: ../src/main_window.vala:639
+#: ../src/main_window.vala:652
 msgid "Don't Edit"
 msgstr "Ne pas modifier"
 
-#: ../src/main_window.vala:740
+#: ../src/main_window.vala:754
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr ""
 "Voulez-vous enregistrez les modifications de « %s » avant de le fermer ?"
 
-#: ../src/main_window.vala:820
+#: ../src/main_window.vala:834
 msgid "Read-Only"
 msgstr "Lecture seule"
 
-#: ../src/main_window.vala:838
+#: ../src/main_window.vala:852
 msgid "Save File"
 msgstr "Enregistrer le fichier"
 
-#: ../src/main_window.vala:873
+#: ../src/main_window.vala:887
 #, c-format
 msgid "A file named \"%s\" already exists. Do you want to replace it?"
 msgstr "Un fichier nommé « %s » existe déjà. Voulez-vous le remplacer ?"
 
-#: ../src/main_window.vala:877
-#| msgid "Replace"
+#: ../src/main_window.vala:891
 msgid "_Replace"
 msgstr "_Remplacer"
 
-#: ../src/main_window.vala:1180
+#: ../src/main_window.vala:1187
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeXila est un environnement LaTeX intégré pour le bureau GNOME."
 
-#: ../src/main_window.vala:1220
+#: ../src/main_window.vala:1227
 msgid "translator-credits"
 msgstr ""
 "Sébastien Wilmet <sebastien.wilmet@gmail.com>\n"
 "Bruno Brouard <annoa.b@gmail.com>"
 
-#: ../src/preferences_dialog.vala:31
+#: ../src/preferences_dialog.vala:33
 msgid "Preferences"
 msgstr "Préférences"
 
 #. reset all button
-#: ../src/preferences_dialog.vala:36 ../src/preferences_dialog.vala:118
-#| msgid "Reset All"
+#: ../src/preferences_dialog.vala:42 ../src/preferences_dialog.vala:115
 msgid "_Reset All"
 msgstr "_Tout réinitialiser"
 
-#: ../src/preferences_dialog.vala:37
+#: ../src/preferences_dialog.vala:43
 msgid "Reset all preferences"
 msgstr "Réinitialise toutes les préférences"
 
-#: ../src/preferences_dialog.vala:115
+#: ../src/preferences_dialog.vala:112
 msgid "Do you really want to reset all preferences?"
 msgstr "Êtes-vous sûr de vouloir réinitialiser toutes les préférences ?"
 
-#: ../src/preferences_dialog.vala:192
+#: ../src/preferences_dialog.vala:189
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "minute"
 msgstr[1] "minutes"
 
-#: ../src/preferences_dialog.vala:292
+#: ../src/preferences_dialog.vala:289
 msgid "character"
 msgid_plural "characters"
 msgstr[0] "caractère"
 msgstr[1] "caractères"
 
-#: ../src/preferences_dialog.vala:332
+#: ../src/preferences_dialog.vala:379
 #, c-format
 msgid "Use the system fixed width font (%s)"
 msgstr "Utiliser la police système à chasse fixe (%s)"
 
-#: ../src/project_dialogs.vala:26
+#: ../src/project_dialogs.vala:28
 msgid "New Project"
 msgstr "Nouveau projet"
 
 #. directory
-#: ../src/project_dialogs.vala:36 ../src/project_dialogs.vala:40
-#: ../src/project_dialogs.vala:202
+#: ../src/project_dialogs.vala:40 ../src/project_dialogs.vala:42
+#: ../src/project_dialogs.vala:204
 msgid "Directory"
 msgstr "Répertoire"
 
-#: ../src/project_dialogs.vala:101
+#: ../src/project_dialogs.vala:102
 #, c-format
 msgid "There is a conflict with the project \"%s\"."
 msgstr "Il y a un conflit avec le projet « %s »."
 
-#: ../src/project_dialogs.vala:116
+#: ../src/project_dialogs.vala:119
 msgid "Configure Project"
 msgstr "Configurer le projet"
 
-#: ../src/project_dialogs.vala:134
+#: ../src/project_dialogs.vala:137
 msgid "Location of the project"
 msgstr "Emplacement du projet"
 
-#: ../src/project_dialogs.vala:239
-#| msgid "_Projects"
+#: ../src/project_dialogs.vala:241
 msgid "_Properties"
 msgstr "_Propriétés"
 
-#: ../src/project_dialogs.vala:241
-#| msgid "Clear All"
+#: ../src/project_dialogs.vala:243
 msgid "_Clear All"
 msgstr "_Tout effacer"
 
-#: ../src/project_dialogs.vala:271
+#: ../src/project_dialogs.vala:273
 #, c-format
 msgid "Do you really want to delete the project \"%s\"?"
 msgstr "Êtes-vous sûr de vouloir supprimer le projet « %s » ?"
 
-#: ../src/project_dialogs.vala:292
+#: ../src/project_dialogs.vala:294
 msgid "Do you really want to clear all projects?"
 msgstr "Êtes-vous sûr de vouloir effacer tous les projets ?"
 
-#: ../src/project_dialogs.vala:295
-#| msgid "Clear All"
+#: ../src/project_dialogs.vala:297
 msgid "Clear _All"
 msgstr "Tout _effacer"
 
-#: ../src/project_dialogs.vala:319
+#: ../src/project_dialogs.vala:321
 msgid "The Main File is not in the directory."
 msgstr "Le fichier principal n'est pas dans le répertoire."
 
@@ -2535,69 +2638,12 @@ msgid "Most Used"
 msgstr "Les plus utilisés"
 
 #: ../src/symbols_view.vala:157
-#| msgid "Clear All"
 msgid "_Clear"
 msgstr "_Effacer"
 
 #: ../src/symbols_view.vala:159
 msgid "Clear most used symbols"
 msgstr "Effacer les symboles les plus utilisés"
-
-#: ../src/templates_dialogs.vala:34
-msgid "New File..."
-msgstr "Nouveau fichier..."
-
-#: ../src/templates_dialogs.vala:55
-msgid "Default templates"
-msgstr "Modèles par défaut"
-
-#: ../src/templates_dialogs.vala:64
-msgid "Your personal templates"
-msgstr "Vos modèles personnels"
-
-#: ../src/templates_dialogs.vala:173
-msgid "New Template..."
-msgstr "Nouveau modèle..."
-
-#: ../src/templates_dialogs.vala:185
-msgid "Name of the new template"
-msgstr "Nom du nouveau modèle"
-
-#: ../src/templates_dialogs.vala:198
-msgid "Choose an icon"
-msgstr "Choisissez une icône"
-
-#: ../src/templates_dialogs.vala:242
-msgid "Delete Template(s)..."
-msgstr "Supprimer des modèles..."
-
-#: ../src/templates_dialogs.vala:259
-msgid "Personal templates"
-msgstr "Modèles personnels"
-
-#: ../src/templates.vala:75
-msgid "Empty"
-msgstr "Vide"
-
-#: ../src/templates.vala:77
-msgid "Article"
-msgstr "Article"
-
-#: ../src/templates.vala:78
-msgid "Report"
-msgstr "Rapport"
-
-#: ../src/templates.vala:79
-msgid "Book"
-msgstr "Livre"
-
-#: ../src/templates.vala:80
-msgid "Letter"
-msgstr "Lettre"
-
-#: ../src/templates.vala:81
-msgid "Presentation"
-msgstr "Présentation"
 
 #: ../src/ui/preferences_dialog.ui.h:1
 msgid "Display line numbers"
@@ -2661,28 +2707,80 @@ msgid "Font & Colors"
 msgstr "Police et couleurs"
 
 #: ../src/ui/preferences_dialog.ui.h:18
-msgid "File Clean-Up"
-msgstr "Nettoyage des fichiers"
-
-#: ../src/ui/preferences_dialog.ui.h:20
-msgid "Automatically clean-up files after close"
-msgstr "Nettoyer automatiquement les fichiers après fermeture"
-
-#: ../src/ui/preferences_dialog.ui.h:21
 msgid "Interactive completion after"
 msgstr "Complétion interactive après"
 
-#: ../src/ui/preferences_dialog.ui.h:22
+#: ../src/ui/preferences_dialog.ui.h:19
 msgid "Number of characters after &apos;\\&apos;"
 msgstr "Nombre de caractères après &apos;\\&apos;"
 
-#: ../src/ui/preferences_dialog.ui.h:23
+#: ../src/ui/preferences_dialog.ui.h:20
 msgid "Number of characters after '\\'"
 msgstr "Nombre de caractères après '\\'"
 
+#: ../src/ui/preferences_dialog.ui.h:21
+msgid "File Clean-Up"
+msgstr "Nettoyage des fichiers"
+
+#: ../src/ui/preferences_dialog.ui.h:23
+msgid "Automatically clean-up files after close"
+msgstr "Nettoyer automatiquement les fichiers après fermeture"
+
 #: ../src/ui/preferences_dialog.ui.h:24
+msgid ""
+"The spell checking settings can also be changed on a file-by-file basis via "
+"the Tools menu."
+msgstr ""
+"Les paramètres de correction orthographique peuvent aussi être changés "
+"individuellement pour chaque fichier via le menu Outils."
+
+#: ../src/ui/preferences_dialog.ui.h:25
+msgid "Default Spell Checking Settings"
+msgstr "Paramètres par défaut de la correction orthographique"
+
+#: ../src/ui/preferences_dialog.ui.h:26
+msgid "Language:"
+msgstr "Langue :"
+
+#: ../src/ui/preferences_dialog.ui.h:27
+msgid "Highlight misspelled words"
+msgstr "Mettre en évidence les mots mal orthographiés"
+
+#: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Autre"
+
+#~ msgid "LaTeXila"
+#~ msgstr "LaTeXila"
+
+#~ msgid "Build Tool"
+#~ msgstr "Outil de construction"
+
+#~| msgid "Spell checking"
+#~ msgid "_Spell Check"
+#~ msgstr "_Correction orthographique"
+
+#~ msgid "Activate or disable the spell checking"
+#~ msgstr "Active ou désactive le correcteur orthographique"
+
+#~ msgid "_Delete Template..."
+#~ msgstr "S_upprimer des modèles..."
+
+#~ msgid "Delete personal template(s)"
+#~ msgstr "Supprime des modèles personnels"
+
+#~ msgid "_Donate"
+#~ msgstr "_Faire un don"
+
+#~ msgid ""
+#~ "Donate to demonstrate your appreciation of LaTeXila and help its future "
+#~ "development"
+#~ msgstr ""
+#~ "Faites un don pour démontrer votre appréciation de LaTeXila et aider son "
+#~ "futur développement"
+
+#~ msgid "Delete Template(s)..."
+#~ msgstr "Supprimer des modèles..."
 
 #~ msgid "Left Delimiters"
 #~ msgstr "Délimiteurs gauches"
@@ -2712,6 +2810,3 @@ msgstr "Autre"
 
 #~ msgid "Ignore All"
 #~ msgstr "Ignorer tout"
-
-#~ msgid "Languages"
-#~ msgstr "Langues"
