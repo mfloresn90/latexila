@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: latexila 2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-10-07 11:04+0000\n"
-"PO-Revision-Date: 2015-10-07 16:18+0200\n"
+"POT-Creation-Date: 2015-10-08 11:10+0000\n"
+"PO-Revision-Date: 2015-10-08 15:36+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -298,7 +298,6 @@ msgstr ""
 "Indica si las palabras mal escritas se resaltan de manera predeterminada."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:29
-#| msgid "Spell checking"
 msgid "Spell Checking Language"
 msgstr "Idioma de la revisión ortográfica"
 
@@ -2696,7 +2695,7 @@ msgid ""
 "The spell checking settings can also be changed on a file-by-file basis via "
 "the Tools menu."
 msgstr ""
-"La configuración del a revisión ortográfica también se puede cambiar archivo "
+"La configuración de la revisión ortográfica también se puede cambiar archivo "
 "por archivo mediante en menú de Herramientas."
 
 #: ../src/ui/preferences_dialog.ui.h:25
@@ -2704,7 +2703,6 @@ msgid "Default Spell Checking Settings"
 msgstr "Configuración predeterminada de la revisión ortográfica"
 
 #: ../src/ui/preferences_dialog.ui.h:26
-#| msgid "Languages"
 msgid "Language:"
 msgstr "Idioma:"
 
