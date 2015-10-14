@@ -1,5 +1,9 @@
 LaTeXila NEWS
 
+Release 3.18.0
+--------------
+* Translation updates
+
 Release 3.17.90
 ---------------
 * Use gspell instead of GtkSpell. WARNING: gspell = 0.1.x is required, the 0.2
