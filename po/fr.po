@@ -565,7 +565,7 @@ msgstr "Cacher le panneau"
 
 #: ../src/build_tool_dialog.vala:71
 msgid "Personal Build Tool"
-msgstr "Outils de construction personnels"
+msgstr "Outil de construction personnel"
 
 #: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
