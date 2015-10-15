@@ -154,6 +154,7 @@ public class DocumentTab : Grid
 
         // with a scrollbar
         ScrolledWindow sw = new ScrolledWindow (null, null);
+        sw.overlay_scrolling = false;
 
         if (reparent)
             view.reparent (sw);
