@@ -1,0 +1,671 @@
+# Ukrainian translation for latexila.
+# Copyright (C) 2015 latexila's COPYRIGHT HOLDER
+# This file is distributed under the same license as the latexila package.
+#
+# yurchor <yurchor@ukr.net>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: latexila master\n"
+"POT-Creation-Date: 2015-10-08 13:37+0000\n"
+"PO-Revision-Date: 2015-10-09 17:21+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n%"
+"10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2015"
+
+#. (itstool) path: page/title
+#: C/build_tools.page:10
+msgid "Build Tools"
+msgstr "Засоби збирання"
+
+#. (itstool) path: synopsis/p
+#: C/build_tools.page:13
+msgid ""
+"The purpose of the build tools is to generate a document in the PDF, DVI or "
+"PS format."
+msgstr ""
+"Засоби збирання призначено для створення документів у форматах PDF, DVI та PS."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:20
+msgid "Introduction"
+msgstr "Вступ"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:22
+msgid ""
+"Several different tools can be used for a document compilation. There are "
+"some low-level commands, and one higher-level tool: Latexmk."
+msgstr ""
+"Для збирання документа може бути використано декілька різних засобів. "
+"Передбачено декілька низькорівневих команд, а також один високорівневий "
+"засіб: Latexmk."
+
+#. (itstool) path: table/title
+#: C/build_tools.page:26
+msgid "Low-level commands"
+msgstr "Команди низького рівня"
+
+#. (itstool) path: td/p
+#: C/build_tools.page:29
+msgid "Label"
+msgstr "Мітка"
+
+#. (itstool) path: td/p
+#: C/build_tools.page:30
+msgid "Command"
+msgstr "Команда"
+
+#. (itstool) path: td/p
+#: C/build_tools.page:59
+msgid "Bibliography"
+msgstr "Список літератури"
+
+#. (itstool) path: td/p
+#: C/build_tools.page:63
+msgid "Index"
+msgstr "Покажчик"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:69
+msgid ""
+"Compiling a LaTeX document can involve to execute several low-level "
+"commands, in a certain order and a certain number of times. Here is an "
+"example:"
+msgstr ""
+"Процедура компіляції документа LaTeX може включати виконання декількох "
+"низькорівневих команд у певному порядку або певну кількість разів. Ось "
+"приклад:"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:78
+msgid ""
+"Using a higher-level tool such as Latexmk simplify a lot all this process, "
+"since only one command is required. Indeed, Latexmk can detect how many "
+"times the <cmd>latex</cmd> or <cmd>pdflatex</cmd> command must be called, "
+"and whether <cmd>bibtex</cmd> or <cmd>makeindex</cmd> is required. By "
+"default, LaTeXila uses Latexmk."
+msgstr ""
+"Використання високорівневого засобу, зокрема Latexmk, значно спрощує увесь "
+"процес, оскільки для його виконання потрібна лише одна команда. Зокрема, "
+"Latexmk може визначити кількість потрібних для обробки даних запусків команд "
+"<cmd>latex</cmd> та <cmd>pdflatex</cmd>, а також те, чи слід запускати <cmd>"
+"bibtex</cmd> і <cmd>makeindex</cmd>. У LaTeXila типово використовується саме "
+"Latexmk."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:86
+msgid "Execute a Build Tool"
+msgstr "Запуск засобу збирання"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:88
+msgid "There are several means to execute a build tool:"
+msgstr "Передбачено декілька способів запуску засобу збирання:"
+
+#. (itstool) path: item/p
+#: C/build_tools.page:90
+msgid "Open the <gui style=\"menu\">Build</gui> menu."
+msgstr "За допомогою меню <gui style=\"menu\">Збирання</gui>."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:91
+msgid "Use the buttons in the main toolbar."
+msgstr "За допомогою кнопок на основній панелі інструментів."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:92
+msgid "Use the shortcut: <key>F2</key> → <key>F11</key>."
+msgstr "За допомогою клавіатурного скорочення: <key>F2</key> → <key>F11</key>."
+
+#. (itstool) path: section/p
+#: C/build_tools.page:95
+msgid ""
+"The build tool is executed on the currently opened file. If the file belongs "
+"to a <link xref=\"projects\">project</link>, it is executed on the project's "
+"main file."
+msgstr ""
+"Засіб збирання працює із поточним відкритим файлом. The build tool is "
+"executed on the currently opened file. If the file belongs "
+"to a <link xref=\"projects\">project</link>, it is executed on the project's "
+"main file."
+
+#. (itstool) path: note/title
+#: C/build_tools.page:99
+msgid "Hidden Build Tools"
+msgstr "Приховані засоби збирання"
+
+#. (itstool) path: note/p
+#: C/build_tools.page:100
+msgid ""
+"By default, a lot of build tools are hidden, so they can't be executed. To "
+"view the full list of build tools, activate or configure them, read the "
+"<link xref=\"#general_configuration\"/> section."
+msgstr ""
+"Типово, багато із засобів збирання приховано, отже напряму скористатися ними "
+"неможливо. Щоб ознайомитися із повним списком засобів збирання та способами "
+"активації та налаштовування цих засобів, ознайомтеся із розділом <link "
+"xref=\"#general_configuration\"/>."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:107
+msgid "General Configuration"
+msgstr "Загальне налаштовування"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:109
+msgid ""
+"To configure the build tools, go to: <guiseq> <gui style=\"menu\">Build</"
+"gui> <gui style=\"menu\">Manage Build Tools</gui> </guiseq>"
+msgstr ""
+"Щоб налаштувати засоби збирання, скористайтеся пунктом меню <guiseq> <gui "
+"style=\"menu\">Збирання</"
+"gui> <gui style=\"menu\">Керування засобами збирання</gui> </guiseq>"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:117
+msgid ""
+"You will see the list of all the default build tools, and a second list with "
+"your personal build tools. There are check buttons to enable or disable "
+"them. When a build tool is disabled, it's not possible to execute it. You "
+"can perform some actions, like moving a tool up or down, open its "
+"properties, delete or copy it, create a new one, etc."
+msgstr ""
+"Вам буде показано список усіх типових засобів збирання та другий список із "
+"вашими особистими засобами збирання. Для вмикання або вимикання засобів "
+"передбачено кнопки з позначками. Якщо засіб збирання вимкнено, його не можна "
+"буде запустити. Ви також можете виконати певні дії із пунктами засобів "
+"збирання, зокрема пересунути пункт вище або нижче списком, відкрити вікно "
+"властивостей пункту, вилучити або скопіювати пункт, створити пункт."
+
+#. (itstool) path: note/p
+#: C/build_tools.page:124
+msgid "Double-click on a build tool will open its properties."
+msgstr ""
+"Подвійне клацання лівою кнопкою миші на пункті засобу збирання відкриває "
+"вікно властивостей цього засобу."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:129
+msgid "Jobs of a Build Tool"
+msgstr "Завдання засобу збирання"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:131
+msgid ""
+"In the properties of a build tool, the tricky part is to configure the jobs. "
+"A build tool can execute several jobs. Each job contains two pieces of "
+"information:"
+msgstr ""
+"Найскладнішим у вікні властивостей засобу збирання є налаштовування завдань. "
+"Засіб збирання може виконувати декілька завдань одночасно. Запис кожного із "
+"завдань складається з двох елементів:"
+
+#. (itstool) path: item/p
+#: C/build_tools.page:135
+msgid "The command, which can use placeholders."
+msgstr "Команди, у якій може бути використано слова-замінники."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:136
+msgid "The post processor (see <link xref=\"#post-processors\"/>)."
+msgstr "Засобу остаточної обробки (див. <link xref=\"#post-processors\"/>)."
+
+#. (itstool) path: section/p
+#: C/build_tools.page:139
+msgid ""
+"When an error occurs during a job's execution, the execution of the build "
+"tool is aborted, so the next jobs are not launched."
+msgstr ""
+"Якщо під час виконання завдання трапляється помилка, виконання засобу "
+"збирання переривається, отже наступні завдання у черзі завдань не "
+"виконуватимуться."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:144
+msgid "Post Processors"
+msgstr "Засоби остаточної обробки"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:145
+msgid ""
+"The purpose of a post processor is to filter the command output and extract "
+"the useful information. Four post processors are available:"
+msgstr ""
+"Метою остаточної обробки є фільтрування виведених командою даних і "
+"видобування корисної інформації. Передбачено чотири засоби остаточної обробки:"
+
+#. (itstool) path: item/p
+#: C/build_tools.page:151
+msgid "The output is simply not displayed."
+msgstr "Виведені дані просто не буде показано."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:155
+msgid "All the output is displayed, without filter."
+msgstr "Виведені дані буде показано без фільтрування."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:159
+msgid ""
+"Filter the output of the <cmd>latex</cmd> or <cmd>pdflatex</cmd> commands. "
+"There can be three types of errors: critical errors, warnings, or bad boxes. "
+"There are also some other useful information: the size of the document, the "
+"number of pages, and the number of errors."
+msgstr ""
+"Фільтрування даних, виведених командами <cmd>latex</cmd> і <cmd>pdflatex</cmd>"
+". Передбачено три типи помилок: критичні помилки, попередження та вади "
+"компонування. Також може бути виведено корисні дані: розмір документа, "
+"кількість сторінок та кількість помилок."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:166
+msgid ""
+"Used for the <cmd>latexmk</cmd> command. Internally, this post processor "
+"uses other ones: <em>latex</em> and <em>all-output</em>."
+msgstr ""
+"Використовується для команди <cmd>latexmk</cmd>. На внутрішньому рівні цей "
+"засіб остаточної обробки використовує інші: <em>latex</em> та <em>all-output<"
+"/em>."
+
+#. (itstool) path: page/title
+#: C/completion.page:10
+msgid "Completion of LaTeX commands"
+msgstr "Доповнення команд LaTeX"
+
+#. (itstool) path: synopsis/p
+#: C/completion.page:13
+msgid ""
+"The purpose is to facilitate the writing of LaTeX commands, by showing "
+"proposals."
+msgstr ""
+"Метою цього інструмента програми є полегшення написання команд LaTeX шляхом "
+"використання списку пропозицій."
+
+#. (itstool) path: section/title
+#: C/completion.page:17
+msgid "Interactive completion"
+msgstr "Інтерактивне доповнення"
+
+#. (itstool) path: section/p
+#: C/completion.page:18
+msgid ""
+"By default, when a LaTeX command is typed, proposals will be shown after two "
+"characters. This can be configured in the preferences dialog: <guiseq> <gui "
+"style=\"menu\">Edit</gui> <gui style=\"menu\">Preferences</gui> <gui style="
+"\"tab\">Other</gui> </guiseq>"
+msgstr ""
+"Типово, під час уведення команди LaTeX пропозиції буде показано після "
+"введення перших двох символів. Налаштувати поведінку редактора можна за "
+"допомогою діалогового вікна налаштувань: <guiseq> <gui style=\"menu\">Зміни<"
+"/gui> <gui style=\"menu\">Налаштування</gui> <gui style="
+"\"tab\">Інше</gui> </guiseq>"
+
+#. (itstool) path: section/title
+#: C/completion.page:30
+msgid "Manual completion"
+msgstr "Доповнення вручну"
+
+#. (itstool) path: section/p
+#: C/completion.page:31
+msgid ""
+"At any time, press <keyseq> <key>Ctrl</key> <key>Space</key> </keyseq> to "
+"show proposals."
+msgstr ""
+"Для перегляду поточного списку пропозицій ви можете будь-коли скористатися "
+"натисканням комбінації клавіш <keyseq> <key>Ctrl</key> <key>Пробіл</key> <"
+"/keyseq>."
+
+#. (itstool) path: page/title
+#: C/index.page:4
+msgid "LaTeXila Help"
+msgstr "Довідка з LaTeXila"
+
+#. (itstool) path: page/title
+#: C/projects.page:10
+msgid "Projects"
+msgstr "Проекти"
+
+#. (itstool) path: synopsis/p
+#: C/projects.page:13
+msgid ""
+"When a LaTeX document is split into several *.tex files, creating a project "
+"is useful."
+msgstr ""
+"Якщо документ LaTeX складається з декількох файлів *.tex, варто створити "
+"відповідний проект."
+
+#. (itstool) path: section/title
+#: C/projects.page:18
+msgid "Manage projects"
+msgstr "Керування проектами"
+
+#. (itstool) path: section/p
+#: C/projects.page:20
+msgid ""
+"All actions related to projects are located in the <gui style=\"menu"
+"\">Projects</gui> menu. A project contains only two pieces of information:"
+msgstr ""
+"Усі пункти дій, пов’язані із проектами, розташовано у меню <gui "
+"style=\"menu\">Проекти</gui>. Запис проекту складається з двох записів даних:"
+
+#. (itstool) path: item/p
+#: C/projects.page:25
+msgid "The directory where the project is located."
+msgstr "Каталог, у якому зберігаються файли проекту."
+
+#. (itstool) path: item/p
+#: C/projects.page:26
+msgid "The main *.tex file."
+msgstr "Основний файл *.tex."
+
+#. (itstool) path: section/p
+#: C/projects.page:29
+msgid ""
+"As a consequence, a directory can contain only one project, which is quite "
+"logical."
+msgstr ""
+"Відповідно, у кожному каталозі може зберігатися лише один проект, що є доволі "
+"логічним."
+
+#. (itstool) path: section/title
+#: C/projects.page:35
+msgid "Usefulness of projects"
+msgstr "Користь від проектів"
+
+#. (itstool) path: item/p
+#: C/projects.page:37
+msgid ""
+"A <link xref=\"build_tools\">build tool</link> is executed on the project's "
+"main file."
+msgstr ""
+"<link xref=\"build_tools\">Засоби збирання</link> запускаються для основного "
+"файла проекту."
+
+#. (itstool) path: item/p
+#: C/projects.page:39
+msgid ""
+"The <link xref=\"synctex#forward_search\">forward search</link> works for a "
+"secondary file of a project."
+msgstr ""
+"<link xref=\"synctex#forward_search\">Прямий пошук</link> працює і для "
+"підлеглих файлів проекту."
+
+#. (itstool) path: page/title
+#: C/spell_checking.page:10
+msgid "Spell Checking"
+msgstr "Перевірка правопису"
+
+#. (itstool) path: synopsis/p
+#: C/spell_checking.page:13
+msgid "The purpose is to correct spelling mistakes easily."
+msgstr "Метою є полегшення виправлення помилок правопису."
+
+#. (itstool) path: section/title
+#: C/spell_checking.page:17
+msgid "Use the spell checking"
+msgstr "Використання перевірки правопису"
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:18
+msgid ""
+"The default spell checking settings can be changed in the preferences "
+"dialog: <guiseq> <gui style=\"menu\">Edit</gui> <gui style=\"menu"
+"\">Preferences</gui> <gui style=\"tab\">Other</gui> </guiseq>"
+msgstr ""
+"Параметри типового засобу перевірки правопису можна змінити за допомогою "
+"діалогового вікна налаштувань програми: <guiseq> <gui style=\"menu\">Зміни<"
+"/gui> <gui style=\"menu"
+"\">Налаштування</gui> <gui style=\"tab\">Інше</gui> </guiseq>"
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:27
+msgid ""
+"The settings can also be changed on a file-by-file basis via the <gui style="
+"\"menu\">Tools</gui> menu."
+msgstr ""
+"Параметри для окремих файлів можна також змінити за допомогою меню <gui "
+"style=\"menu\">Інструменти</gui>."
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:32
+msgid ""
+"If you activate the <gui style=\"menu\">Highlight Misspelled Words</gui> "
+"option, the misspelled words will be underlined in red in the document. A "
+"right click on a misspelled word will show proposals."
+msgstr ""
+"Якщо вами буде позначено пункт <gui style=\"menu\">Позначати слова з "
+"помилками у правописі</gui>, програма підкреслить у документі слова, у яких, "
+"на думку засобу перевірки правопису, ви припустилися помилок. Якщо навести "
+"вказівник миші на слово із помилкою і клацнути правою кнопкою миші, програма "
+"покаже список варіантів виправлення."
+
+#. (itstool) path: section/title
+#: C/spell_checking.page:40
+msgid "Dictionaries"
+msgstr "Словники"
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:41
+msgid ""
+"<link href=\"http://www.abisource.com/projects/enchant/\">Enchant</link> is "
+"used for the spell checking in LaTeXila. Enchant uses one or several "
+"backends such as Hunspell or Aspell for the dictionaries."
+msgstr ""
+"Для перевірки правопису у LaTeXila використовується <link "
+"href=\"http://www.abisource.com/projects/enchant/\">Enchant</link>. У Enchant "
+"використовуються словники одного із модулів перевірки правопису, зокрема "
+"Hunspell або Aspell."
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:47
+msgid ""
+"If your language is not listed, install a dictionary for one of the "
+"supported backends."
+msgstr ""
+"Якщо потрібної вам мови немає у списку, встановіть відповідний словник для "
+"одного з підтримуваних модулів перевірки правопису."
+
+#. (itstool) path: page/title
+#: C/structure.page:10
+msgid "Document's Structure"
+msgstr "Структура документа"
+
+#. (itstool) path: synopsis/p
+#: C/structure.page:13
+msgid ""
+"The list of chapters, sections, sub-sections and other things like tables, "
+"figures, … of a document, to easily navigate in it."
+msgstr ""
+"Список глав, розділів, підрозділів та інших елементів документа, зокрема "
+"таблиць і рисунків, для спрощення навігації у документі."
+
+#. (itstool) path: section/title
+#: C/structure.page:18
+msgid "Display the structure"
+msgstr "Показ структури"
+
+#. (itstool) path: section/p
+#: C/structure.page:20
+msgid ""
+"The structure can be displayed in the side panel. If the side panel is "
+"hidden, go to <guiseq> <gui style=\"menu\">View</gui> <gui style=\"menu"
+"\">Side panel</gui> </guiseq>."
+msgstr ""
+"На бічній панелі вікна програми може бути показано структуру документа. Якщо "
+"бічну панель приховано, ви можете наказати програмі показувати цю панель за "
+"допомогою пункту меню <guiseq> <gui style=\"menu\">Перегляд</gui> <gui "
+"style=\"menu\">Бічна панель</gui> </guiseq>."
+
+#. (itstool) path: section/p
+#: C/structure.page:29
+msgid ""
+"The structure's content is not automatically updated. That's why there is a "
+"refresh button. If text is inserted in the document, the position of an item "
+"(e.g. a section) remains correct, as far as the item is still there, and is "
+"not modified."
+msgstr ""
+"Програма не оновлює вміст структури автоматично. Для оновлення передбачено "
+"спеціальну кнопку. Якщо до документа додано текстовий фрагмент, розташування "
+"пункту структури (наприклад розділу) відповідним чином коригується, якщо цей "
+"пункт не було вилучено або змінено."
+
+#. (itstool) path: section/title
+#: C/structure.page:37
+msgid "Actions"
+msgstr "Дії"
+
+#. (itstool) path: section/p
+#: C/structure.page:39
+msgid ""
+"Some actions such as \"cut\", \"copy\" or \"comment\" can be performed on a "
+"structure's item. Either by a right click, or via the <gui style=\"menu"
+"\">Structure</gui> menu."
+msgstr ""
+"Із пунктами структури документа можна виконувати деякі дії, зокрема "
+"«вирізати», «копіювати», «закоментувати». Для доступу до меню дій "
+"скористайтеся клацанням правою кнопкою миші на відповідному пункті або меню <"
+"gui style=\"menu\">Структура</gui>."
+
+#. (itstool) path: section/title
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:48
+msgid "TODOs and FIXMEs"
+msgstr "TODO та FIXME"
+
+#. (itstool) path: section/p
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:50
+msgid ""
+"It can be useful to add TODOs and FIXMEs comments in the document. They will "
+"be displayed in the structure. Example:"
+msgstr ""
+"Іноді корисно додати у коментарі із завданнями (TODO) та ще не виправленими "
+"помилками (FIXME). Відповідні записи буде показано у структурі документа. "
+"Приклад:"
+
+#. (itstool) path: section/code
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:55
+#, no-wrap
+msgid ""
+"\n"
+"%TODO a remaining task\n"
+"%FIXME something is broken"
+msgstr ""
+"\n"
+"%TODO завдання, яке ще не виконано\n"
+"%FIXME щось не так"
+
+#. (itstool) path: page/title
+#: C/synctex.page:10
+msgid "Forward and Backward Search"
+msgstr "Прямий і зворотний пошук"
+
+#. (itstool) path: synopsis/p
+#: C/synctex.page:13
+msgid ""
+"Synchronization between the document's *.tex files and the resulting PDF "
+"output, opened with the <app>Evince</app> document viewer."
+msgstr ""
+"Синхронізація між файлами *.tex документа і отриманим на основі цих файлів "
+"файлом PDF, відкритим у програмі для перегляду документів <app>Evince</app>."
+
+#. (itstool) path: note/p
+#: C/synctex.page:18
+msgid ""
+"For more information, read the <link href=\"help:evince#synctex"
+"\"><app>Evince</app> documentation</link>."
+msgstr ""
+"Щоб дізнатися більше, ознайомтеся із <link href=\"help:evince#synctex"
+"\">документацією до <app>Evince</app></link>."
+
+#. (itstool) path: section/title
+#: C/synctex.page:23
+msgid "Forward Search: from .tex to PDF"
+msgstr "Прямий пошук: з .tex у PDF"
+
+#. (itstool) path: section/p
+#: C/synctex.page:25
+msgid ""
+"From a certain position in the .tex source file, jump to the corresponding "
+"position in the PDF file."
+msgstr ""
+"Перехід від певного місця у файлі .tex із початковим кодом до відповідного "
+"місця у файлі PDF."
+
+#. (itstool) path: section/p
+#: C/synctex.page:28
+msgid "There are different ways to do a forward search:"
+msgstr "Існує декілька способів виконання прямого пошуку:"
+
+#. (itstool) path: item/p
+#: C/synctex.page:30
+msgid ""
+"In the menu: <guiseq> <gui style=\"menu\">Search</gui> <gui style=\"menu"
+"\">Search Forward</gui> </guiseq>"
+msgstr ""
+"За допомогою меню: <guiseq> <gui style=\"menu\">Пошук</gui> <gui style=\"menu"
+"\">Прямий пошук</gui> </guiseq>"
+
+#. (itstool) path: item/p
+#: C/synctex.page:36
+msgid "By pressing <keyseq> <key>Ctrl</key> <key>left click</key> </keyseq>"
+msgstr ""
+"За допомогою комбінації <keyseq> <key>Ctrl</key> <key>клацання лівою</key> <"
+"/keyseq>"
+
+#. (itstool) path: section/p
+#: C/synctex.page:44
+msgid ""
+"If a document is split into several .tex files, create a <link xref="
+"\"projects\">project</link>. There is no need to mention the main file with "
+"a LaTeX comment in each secondary .tex file, like it is explained in the "
+"<link href=\"help:evince/synctex-search#forward-search\"> <app>Evince</app> "
+"documentation. </link>"
+msgstr ""
+"Якщо документ поділено на декілька файлів .tex, створіть <link "
+"xref=\"projects\">проект</link>. Вам не треба вказувати основний файл LaTeX у "
+"коментарі у кожному з підлеглих файлів .tex, як це рекомендовано у <link "
+"href=\"help:evince/synctex-search#forward-search\">документації до <app>"
+"Evince</app></link>."
+
+#. (itstool) path: section/title
+#: C/synctex.page:53
+msgid "Backward Search"
+msgstr "Зворотний пошук"
+
+#. (itstool) path: section/p
+#: C/synctex.page:55
+msgid ""
+"In <app>Evince</app>, press <keyseq> <key>Ctrl</key> <key>left click</key> </"
+"keyseq>, and the corresponding position in the .tex file will be opened in "
+"<app>LaTeXila</app>."
+msgstr ""
+"У вікні <app>Evince</app> натисніть комбінацію <keyseq> <key>Ctrl</key> <key>"
+"ліва кнопка миші</key> </"
+"keyseq>, і відповідне місце у файлі .tex буде відкрито у <app>LaTeXila</app>."
+
+#. (itstool) path: section/p
+#: C/synctex.page:63
+msgid ""
+"<app>Evince</app> have to be launched by <app>LaTeXila</app>. Else, the "
+"backward search will not work."
+msgstr ""
+"<app>Evince</app> має бути запущено <app>LaTeXila</app>. Якщо програму "
+"запущено у якийсь інший спосіб, зворотний пошук не працюватиме."
+
+
