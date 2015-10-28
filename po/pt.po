@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: latexila gnome-3-16\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-10-24 23:33+0000\n"
-"PO-Revision-Date: 2015-10-28 07:18+0000\n"
+"POT-Creation-Date: 2015-10-28 07:19+0000\n"
+"PO-Revision-Date: 2015-10-28 07:21+0000\n"
 "Last-Translator: Pedro Albuquerque <palbuquerque73@gmail.com>\n"
 "Language-Team: Português <palbuquerque73@gmail.com>\n"
 "Language: pt\n"
@@ -1940,10 +1940,11 @@ msgid "Shift _Left"
 msgstr "Deslocar à _Esquerda"
 
 #: ../src/main_window_structure.vala:48
-msgid ""
-"Shift the selected structure item to the left (e.g. section â†’ chapter)"
+#| msgid ""
+#| "Shift the selected structure item to the left (e.g. section â†’ chapter)"
+msgid "Shift the selected structure item to the left (e.g. section → chapter)"
 msgstr ""
-"Deslocar o item de estrutura selecionado à esquerda (por ex. secção â†’ "
+"Deslocar o item de estrutura selecionado à esquerda (por ex. secção → "
 "capítulo)"
 
 #: ../src/main_window_structure.vala:51
@@ -1951,10 +1952,11 @@ msgid "Shift _Right"
 msgstr "Deslocar à _Direita"
 
 #: ../src/main_window_structure.vala:52
-msgid ""
-"Shift the selected structure item to the right (e.g. chapter â†’ section)"
+#| msgid ""
+#| "Shift the selected structure item to the right (e.g. chapter â†’ section)"
+msgid "Shift the selected structure item to the right (e.g. chapter → section)"
 msgstr ""
-"Deslocar o item de estrutura selecionado à direita (por ex. capítulo â†’ "
+"Deslocar o item de estrutura selecionado à direita (por ex. capítulo → "
 "secção)"
 
 #: ../src/main_window_structure.vala:55
