@@ -5,6 +5,10 @@
     <file>ui/latexila.adwaita.css</file>
   </gresource>
 
+  <gresource prefix="/org/gnome/latexila/gtk">
+    <file alias="menus.ui" preprocess="xml-stripblanks">ui/menus.ui</file>
+  </gresource>
+
   <gresource prefix="/org/gnome/latexila/icons/16x16/actions">
     <file alias="compile_dvi.png" preprocess="to-pixdata">../data/icons/16x16/actions/compile_dvi.png</file>
     <file alias="compile_pdf.png" preprocess="to-pixdata">../data/icons/16x16/actions/compile_pdf.png</file>
