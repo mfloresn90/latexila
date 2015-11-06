@@ -142,7 +142,7 @@ public class MainWindowFile
 
     public void on_new_window ()
     {
-        LatexilaApp.get_instance ().create_window ();
+        LatexilaApp.get_instance ().activate_action ("new-window", null);
     }
 
     public void on_file_open ()
