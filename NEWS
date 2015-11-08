@@ -1,5 +1,21 @@
 LaTeXila NEWS
 
+Release 3.18.1
+--------------
+* After some GTK+ changes during the last few releases, there were some
+  regressions in LaTeXila. Because of the overlay scrollbars, it was not
+  possible to select some characters with the mouse. And when (1) line numbers
+  are not displayed and (2) the side panel is visible, it is not possible to
+  move the cursor before the first character of a line (with the mouse),
+  because at that region of the screen the mouse permits to change the size of
+  the side panel…
+  So to avoid those regressions:
+	* Overlay scrolling is disabled at some places
+	* Line numbers are now displayed by default
+
+* Added Portuguese translation
+* Added Ukrainian help translation
+
 Release 3.18.0
 --------------
 * Translation updates
