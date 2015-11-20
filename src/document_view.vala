@@ -299,7 +299,10 @@ public class DocumentView : Gtk.SourceView
 
         Gspell.LanguageChooserDialog dialog =
             new Gspell.LanguageChooserDialog (this.get_toplevel () as Window,
-                _spell_checker.get_language ());
+                _spell_checker.get_language (),
+                DialogFlags.DESTROY_WITH_PARENT |
+                DialogFlags.MODAL |
+                DialogFlags.USE_HEADER_BAR);
 
         dialog.run ();
 

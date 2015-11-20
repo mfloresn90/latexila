@@ -28,7 +28,7 @@ LT_INIT
 GLIB_REQUIRED_VERSION="2.40"
 GTK_REQUIRED_VERSION="3.14"
 GTKSOURCEVIEW_REQUIRED_VERSION="3.18"
-GSPELL_REQUIRED_VERSION="0.1"
+GSPELL_REQUIRED_VERSION="0.2"
 VALA_REQUIRED_VERSION="0.26"
 GEE_REQUIRED_VERSION="0.10"
 
@@ -102,7 +102,7 @@ if ! pkg-config --atleast-version=${GSPELL_REQUIRED_VERSION} gspell-1; then
 	AC_MSG_ERROR([gspell-1 ${GSPELL_REQUIRED_VERSION} required.])
 fi
 
-if ! pkg-config --max-version=0.1.99 gspell-1; then
+if ! pkg-config --max-version=0.2.99 gspell-1; then
 	AC_MSG_ERROR([gspell-1 ${GSPELL_REQUIRED_VERSION} required.])
 fi
 
