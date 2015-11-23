@@ -1,5 +1,9 @@
 LaTeXila NEWS
 
+Release 3.19.1
+--------------
+* Adapt code for GspellLanguageChooserDialog change
+
 Release 3.18.1
 --------------
 * After some GTK+ changes during the last few releases, there were some
