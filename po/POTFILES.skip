@@ -1,4 +1,4 @@
-data/latexila.desktop.in
+data/org.gnome.latexila.desktop.in
 src/bottom_panel.c
 src/build_tool_dialog.c
 src/build_tool_runner.c
@@ -29,4 +29,4 @@ src/tab_info_bar.c
 src/templates.c
 src/templates_dialogs.c
 src/utils.c
-sub/data/latexila.desktop.in
+sub/data/org.gnome.latexila.desktop.in

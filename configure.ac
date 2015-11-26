@@ -152,8 +152,9 @@ GNOME_CODE_COVERAGE
 # Generate files
 AC_CONFIG_FILES([Makefile
 		 data/Makefile
+		 data/org.gnome.latexila.desktop.in
+		 data/org.gnome.latexila.gschema.xml
 		 data/build_tools/Makefile
-		 data/latexila.desktop.in
 		 data/icons/Makefile
 		 data/icons/16x16/Makefile
 		 data/icons/16x16/apps/Makefile
@@ -173,7 +174,6 @@ AC_CONFIG_FILES([Makefile
 		 data/icons/scalable/apps/Makefile
 		 data/images/Makefile
 		 data/images/app/Makefile
-		 data/org.gnome.latexila.gschema.xml
 		 data/templates/Makefile
 		 docs/Makefile
 		 docs/reference/Makefile

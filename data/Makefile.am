@@ -5,7 +5,7 @@ dist_pkgdata_DATA =	\
 	latexhelp.html
 
 desktopdir = $(datadir)/applications
-desktop_DATA = latexila.desktop
+desktop_DATA = org.gnome.latexila.desktop
 @INTLTOOL_DESKTOP_RULE@
 
 @INTLTOOL_XML_RULE@
@@ -17,12 +17,12 @@ gsettings_SCHEMAS = org.gnome.latexila.gschema.xml
 @GSETTINGS_RULES@
 
 EXTRA_DIST =					\
-	latexila.desktop.in			\
+	org.gnome.latexila.desktop.in		\
 	org.gnome.latexila.gschema.xml.in	\
 	$(appdata_in_files)
 
 CLEANFILES =				\
-	latexila.desktop		\
+	org.gnome.latexila.desktop	\
 	org.gnome.latexila.gschema.xml	\
 	$(appdata_DATA)
 
