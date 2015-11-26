@@ -35,5 +35,10 @@
     <screenshot>https://people.gnome.org/~swilmet/latexila/screenshot-structure.png</screenshot>
   </screenshots>
   <url type="homepage">https://wiki.gnome.org/Apps/LaTeXila</url>
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+    <kudo>UserDocs</kudo>
+  </kudos>
   <updatecontact>swilmet@gnome.org</updatecontact>
 </application>
