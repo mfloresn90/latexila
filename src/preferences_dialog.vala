@@ -309,7 +309,7 @@ public class PreferencesDialog : Dialog
             if (selected_lang != null)
             {
                 editor_settings.set_string ("spell-checking-language",
-                    selected_lang.to_key ());
+                    selected_lang.get_code ());
             }
             else
                 editor_settings.set_string ("spell-checking-language", "");
@@ -331,9 +331,9 @@ public class PreferencesDialog : Dialog
         Gspell.LanguageChooserButton spell_language_button)
     {
         unowned Gspell.Language? lang = null;
-        string lang_key = editor_settings.get_string ("spell-checking-language");
-        if (lang_key[0] != '\0')
-            lang = Gspell.Language.from_key (lang_key);
+        string lang_code = editor_settings.get_string ("spell-checking-language");
+        if (lang_code[0] != '\0')
+            lang = Gspell.Language.lookup (lang_code);
 
         Gspell.Checker checker = new Gspell.Checker (lang);
         spell_language_button.set_language (checker.get_language ());

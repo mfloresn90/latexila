@@ -251,14 +251,14 @@ public class DocumentView : Gtk.SourceView
     {
         Document doc = get_buffer () as Document;
 
-        string? lang_key = doc.get_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE);
-        if (lang_key == null)
-            lang_key = _editor_settings.get_string ("spell-checking-language");
+        string? lang_code = doc.get_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE);
+        if (lang_code == null)
+            lang_code = _editor_settings.get_string ("spell-checking-language");
 
-        if (lang_key[0] == '\0')
+        if (lang_code[0] == '\0')
             return null;
 
-        return Gspell.Language.from_key (lang_key);
+        return Gspell.Language.lookup (lang_code);
     }
 
     public void setup_inline_spell_checker ()
@@ -320,7 +320,7 @@ public class DocumentView : Gtk.SourceView
 
         unowned Gspell.Language? lang = _spell_checker.get_language ();
         if (lang != null)
-            doc.set_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE, lang.to_key ());
+            doc.set_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE, lang.get_code ());
         else
             doc.set_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE, null);
     }
