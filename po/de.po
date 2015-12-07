@@ -145,7 +145,7 @@ msgstr "LaTeX-Dokumente bearbeiten"
 
 #: ../data/latexila.desktop.in.in.h:3
 msgid "text;tex;latex;editor;documents;"
-msgstr "text;tex;latex;editor;dokumente"
+msgstr "text;tex;latex;editor;dokumente;"
 
 #: ../data/latexila.desktop.in.in.h:4
 msgid "Open a New Window"
