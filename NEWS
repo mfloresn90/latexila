@@ -1,5 +1,13 @@
 LaTeXila NEWS
 
+Release 3.19.2
+--------------
+* Adapt code for GspellLanguage API changes
+* Adapt CSS to track GTK+ changes
+* Rename latexila.deskop to org.gnome.latexila.desktop
+* Rename AppData to org.gnome.latexila.appdata.xml
+* Other various small improvements and bug fixes
+
 Release 3.19.1
 --------------
 * Adapt code for GspellLanguageChooserDialog change
