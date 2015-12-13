@@ -350,8 +350,7 @@ public class DocumentView : Gtk.SourceView
             if (_inline_spell_checker == null)
             {
                 _inline_spell_checker =
-                    new Gspell.InlineCheckerGtv (this.buffer as Gtk.SourceBuffer,
-                        _spell_checker);
+                    new Gspell.InlineCheckerGtv (this.buffer, _spell_checker);
 
                 _inline_spell_checker.attach_view (this);
 
