@@ -251,11 +251,7 @@ public class LatexilaApp : Gtk.Application
             window.save_state ();
         }
 
-        MainWindow new_window = new MainWindow ();
-        add_window (new_window);
-        new_window.show ();
-
-        return new_window;
+        return new MainWindow (this);
     }
 
     public void open_documents (File[] files)

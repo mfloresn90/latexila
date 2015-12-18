@@ -19,7 +19,7 @@
 
 using Gtk;
 
-public class MainWindow : Window
+public class MainWindow : ApplicationWindow
 {
     // for the menu and the toolbar
     // name, icon-name, label, accelerator, tooltip, callback
@@ -149,8 +149,9 @@ public class MainWindow : Window
     /*************************************************************************/
     // Construction
 
-    public MainWindow ()
+    public MainWindow (LatexilaApp app)
     {
+        Object (application: app);
         this.title = "LaTeXila";
 
         initialize_ui_manager ();
