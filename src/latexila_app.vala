@@ -121,6 +121,17 @@ public class LatexilaApp : Gtk.Application
             PreferencesDialog.show_me (this.active_window);
             release ();
         });
+
+        /* Manage build tools */
+        SimpleAction build_tools_action = new SimpleAction ("manage-build-tools", null);
+        add_action (build_tools_action);
+
+        build_tools_action.activate.connect (() =>
+        {
+            hold ();
+            new BuildToolsPreferences (this.active_window);
+            release ();
+        });
     }
 
     public static LatexilaApp get_instance ()

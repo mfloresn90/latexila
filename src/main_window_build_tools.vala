@@ -480,6 +480,6 @@ public class MainWindowBuildTools
 
     public void on_preferences ()
     {
-        new BuildToolsPreferences (_main_window);
+        LatexilaApp.get_instance ().activate_action ("manage-build-tools", null);
     }
 }

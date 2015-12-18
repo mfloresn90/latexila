@@ -41,7 +41,7 @@ public class BuildToolsPreferences : GLib.Object
     private TreeView _default_view;
     private TreeView _personal_view;
 
-    public BuildToolsPreferences (MainWindow main_window)
+    public BuildToolsPreferences (Window parent_window)
     {
         _default_store = get_new_store ();
         _personal_store = get_new_store ();
@@ -52,7 +52,7 @@ public class BuildToolsPreferences : GLib.Object
 
         _dialog = GLib.Object.@new (typeof (Gtk.Dialog), "use-header-bar", true, null)
             as Gtk.Dialog;
-        _dialog.set_transient_for (main_window);
+        _dialog.set_transient_for (parent_window);
         _dialog.destroy_with_parent = true;
         _dialog.title = _("Build Tools");
 
