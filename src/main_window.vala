@@ -855,6 +855,8 @@ public class MainWindow : Window
             _("_Save"), ResponseType.ACCEPT
         );
 
+        file_chooser.set_local_only (false);
+
         if (doc.location == null)
             file_chooser.set_current_name (doc.tab.label_text + ".tex");
         else
