@@ -855,6 +855,7 @@ public class MainWindow : Window
             _("_Save"), ResponseType.ACCEPT
         );
 
+        file_chooser.set_do_overwrite_confirmation (true);
         file_chooser.set_local_only (false);
 
         if (doc.location == null)
@@ -875,33 +876,9 @@ public class MainWindow : Window
             catch (Error e) {}
         }
 
-        while (file_chooser.run () == ResponseType.ACCEPT)
-        {
-            File file = file_chooser.get_file ();
-
-            /* if the file exists, ask the user if the file can be replaced */
-            if (file.query_exists ())
-            {
-                MessageDialog confirmation = new MessageDialog (this,
-                    DialogFlags.DESTROY_WITH_PARENT,
-                    MessageType.QUESTION,
-                    ButtonsType.NONE,
-                    _("A file named \"%s\" already exists. Do you want to replace it?"),
-                    file.get_basename ());
-
-                confirmation.add_button (_("_Cancel"), ResponseType.CANCEL);
-                confirmation.add_button (_("_Replace"), ResponseType.YES);
-
-                int response = confirmation.run ();
-                confirmation.destroy ();
-
-                if (response != ResponseType.YES)
-                    continue;
-            }
-
-            doc.location = file;
-            break;
-        }
+        int response = file_chooser.run ();
+        if (response == ResponseType.ACCEPT)
+            doc.location = file_chooser.get_file ();
 
         this.default_location = file_chooser.get_current_folder ();
         file_chooser.destroy ();
