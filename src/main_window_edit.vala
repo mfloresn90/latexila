@@ -274,6 +274,6 @@ public class MainWindowEdit
 
     public void on_open_preferences ()
     {
-        PreferencesDialog.show_me (_main_window);
+        LatexilaApp.get_instance ().activate_action ("preferences", null);
     }
 }

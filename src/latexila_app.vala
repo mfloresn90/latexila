@@ -110,6 +110,17 @@ public class LatexilaApp : Gtk.Application
 
             open_documents (files);
         });
+
+        /* Preferences */
+        SimpleAction preferences_action = new SimpleAction ("preferences", null);
+        add_action (preferences_action);
+
+        preferences_action.activate.connect (() =>
+        {
+            hold ();
+            PreferencesDialog.show_me (this.active_window);
+            release ();
+        });
     }
 
     public static LatexilaApp get_instance ()

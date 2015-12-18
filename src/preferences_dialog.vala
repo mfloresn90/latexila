@@ -81,7 +81,7 @@ public class PreferencesDialog : Dialog
         content_area.pack_start (notebook);
     }
 
-    public static void show_me (MainWindow parent)
+    public static void show_me (Window parent)
     {
         if (_instance == null)
         {
