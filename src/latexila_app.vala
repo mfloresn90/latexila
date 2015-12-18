@@ -153,6 +153,17 @@ public class LatexilaApp : Gtk.Application
 
             release ();
         });
+
+        /* Fundraiser */
+        SimpleAction fundraiser_action = new SimpleAction ("fundraiser", null);
+        add_action (fundraiser_action);
+
+        fundraiser_action.activate.connect (() =>
+        {
+            hold ();
+            Finance.show_dialog (this.active_window, false);
+            release ();
+        });
     }
 
     public static LatexilaApp get_instance ()

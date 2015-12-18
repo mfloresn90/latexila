@@ -21,13 +21,13 @@ using Gtk;
 
 namespace Finance
 {
-    public void show_dialog (MainWindow window, bool startup)
+    public void show_dialog (Window parent_window, bool startup)
     {
         if (startup && ! should_show_dialog_on_startup ())
             return;
 
         Dialog dialog = new Dialog.with_buttons ("LaTeXila Finance",
-            window,
+            parent_window,
             DialogFlags.DESTROY_WITH_PARENT,
             "_Close", ResponseType.CLOSE,
             "LaTeXila _Fundraiser", ResponseType.ACCEPT,
@@ -89,7 +89,7 @@ namespace Finance
 
             if (response == ResponseType.ACCEPT)
             {
-                open_donate_page (window);
+                open_donate_page (parent_window);
                 continue;
             }
 
@@ -149,12 +149,12 @@ namespace Finance
         settings.set_string ("last-shown-date", date);
     }
 
-    private void open_donate_page (MainWindow window)
+    private void open_donate_page (Window parent_window)
     {
         try
         {
             string uri = "https://wiki.gnome.org/Apps/LaTeXila/donate";
-            show_uri (window.get_screen (), uri, Gdk.CURRENT_TIME);
+            show_uri (parent_window.get_screen (), uri, Gdk.CURRENT_TIME);
         }
         catch (Error e)
         {

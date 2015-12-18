@@ -1151,7 +1151,7 @@ public class MainWindow : ApplicationWindow
 
     public void on_help_finance ()
     {
-        Finance.show_dialog (this, false);
+        LatexilaApp.get_instance ().activate_action ("fundraiser", null);
     }
 
     public void on_about_dialog ()
