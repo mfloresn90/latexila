@@ -221,6 +221,37 @@ public class LatexilaApp : Gtk.Application
 
             release ();
         });
+
+        /* Quit */
+        SimpleAction quit_action = new SimpleAction ("quit", null);
+        add_action (quit_action);
+
+        quit_action.activate.connect (() =>
+        {
+            hold ();
+
+            bool stop = false;
+            while (this.active_window != null && ! stop)
+            {
+                foreach (Gtk.Window window in get_windows ())
+                {
+                    if (window is MainWindow)
+                    {
+                        MainWindow main_window = window as MainWindow;
+                        main_window.present ();
+                        stop = ! main_window.quit ();
+                        break;
+                    }
+                }
+            }
+
+            while (this.active_window != null && ! stop)
+            {
+                this.active_window.destroy ();
+            }
+
+            release ();
+        });
     }
 
     public static LatexilaApp get_instance ()

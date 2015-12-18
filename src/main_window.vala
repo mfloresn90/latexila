@@ -261,7 +261,7 @@ public class MainWindow : ApplicationWindow
 
         delete_event.connect (() =>
         {
-            on_quit ();
+            quit ();
 
             // the destroy signal is not emitted
             return true;
@@ -1037,10 +1037,9 @@ public class MainWindow : ApplicationWindow
         action.set_sensitive (active_tab != null && active_document.project_id != -1);
     }
 
-    /*************************************************************************/
-    // Gtk.Action callbacks
-
-    public void on_quit ()
+    // Returns true if all the documents are closed.
+    // Quits only this window, not the whole app.
+    public bool quit ()
     {
         // save documents list
         string[] list_uris = {};
@@ -1057,7 +1056,18 @@ public class MainWindow : ApplicationWindow
         {
             save_state ();
             destroy ();
+            return true;
         }
+
+        return false;
+    }
+
+    /*************************************************************************/
+    // Gtk.Action callbacks
+
+    public void on_quit ()
+    {
+        LatexilaApp.get_instance ().activate_action ("quit", null);
     }
 
     /* View */
