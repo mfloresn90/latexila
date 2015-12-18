@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2010-2012 Sébastien Wilmet
+ * Copyright © 2010-2015 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1156,50 +1156,6 @@ public class MainWindow : ApplicationWindow
 
     public void on_about_dialog ()
     {
-        string comments =
-            _("LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop");
-        string copyright = "Copyright © 2009-2015 – Sébastien Wilmet";
-
-        string website = "https://wiki.gnome.org/Apps/LaTeXila";
-
-        string[] authors =
-        {
-            "Sébastien Wilmet <swilmet@gnome.org>",
-            null
-        };
-
-        string[] artists =
-        {
-            "Eric Forgeot <e.forgeot@laposte.net>",
-            "Sébastien Wilmet <swilmet@gnome.org>",
-            "Alexander Wilms <f.alexander.wilms@gmail.com>",
-            "The Kile Team http://kile.sourceforge.net/",
-            "Gedit LaTeX Plugin https://wiki.gnome.org/Apps/Gedit/LaTeXPlugin",
-            null
-        };
-
-        Gdk.Pixbuf logo = null;
-        try
-        {
-            logo = new Gdk.Pixbuf.from_file (Config.DATA_DIR + "/images/app/logo.png");
-        }
-        catch (Error e)
-        {
-            warning ("Logo: %s", e.message);
-        }
-
-        show_about_dialog (this,
-            "program-name", "LaTeXila",
-            "version", Config.PACKAGE_VERSION,
-            "authors", authors,
-            "artists", artists,
-            "comments", comments,
-            "copyright", copyright,
-            "license-type", License.GPL_3_0,
-            "title", _("About LaTeXila"),
-            "translator-credits", _("translator-credits"),
-            "website", website,
-            "logo", logo
-        );
+        LatexilaApp.get_instance ().activate_action ("about", null);
     }
 }
