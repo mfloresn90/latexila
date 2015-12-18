@@ -29,7 +29,6 @@ public class LatexilaApp : Gtk.Application
         Environment.set_application_name (Config.PACKAGE_NAME);
 
         connect_signals ();
-        add_actions ();
     }
 
     private void connect_signals ()
@@ -262,6 +261,7 @@ public class LatexilaApp : Gtk.Application
     private void init_primary_instance ()
     {
         hold ();
+        add_actions ();
         set_application_icons ();
         Latexila.utils_register_icons ();
         StockIcons.register_stock_icons ();
