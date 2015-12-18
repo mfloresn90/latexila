@@ -132,6 +132,27 @@ public class LatexilaApp : Gtk.Application
             new BuildToolsPreferences (this.active_window);
             release ();
         });
+
+        /* Help */
+        SimpleAction help_action = new SimpleAction ("help", null);
+        add_action (help_action);
+
+        help_action.activate.connect (() =>
+        {
+            hold ();
+
+            try
+            {
+                Gtk.show_uri (this.active_window.get_screen (), "help:latexila",
+                    Gdk.CURRENT_TIME);
+            }
+            catch (Error e)
+            {
+                warning ("Impossible to open the documentation: %s", e.message);
+            }
+
+            release ();
+        });
     }
 
     public static LatexilaApp get_instance ()

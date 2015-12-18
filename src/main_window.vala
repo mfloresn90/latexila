@@ -1132,14 +1132,7 @@ public class MainWindow : ApplicationWindow
 
     public void on_help_contents ()
     {
-        try
-        {
-            show_uri (this.get_screen (), "help:latexila", Gdk.CURRENT_TIME);
-        }
-        catch (Error e)
-        {
-            warning ("Impossible to open the documentation: %s", e.message);
-        }
+        LatexilaApp.get_instance ().activate_action ("help", null);
     }
 
     public void on_help_latex_reference ()
