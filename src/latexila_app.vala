@@ -23,6 +23,18 @@ public class LatexilaApp : Gtk.Application
 {
     static Gtk.CssProvider? _provider = null;
 
+    private const GLib.ActionEntry[] _app_actions =
+    {
+        { "new-document", new_document_cb },
+        { "new-window", new_window_cb },
+        { "preferences", preferences_cb },
+        { "manage-build-tools", manage_build_tools_cb },
+        { "help", help_cb },
+        { "fundraiser", fundraiser_cb },
+        { "about", about_cb },
+        { "quit", quit_cb }
+    };
+
     public LatexilaApp ()
     {
         Object (application_id: "org.gnome.latexila");
@@ -40,10 +52,16 @@ public class LatexilaApp : Gtk.Application
         shutdown.connect (shutdown_cb);
     }
 
+    public static LatexilaApp get_instance ()
+    {
+        return GLib.Application.get_default () as LatexilaApp;
+    }
+
     private void startup_cb ()
     {
         hold ();
-        add_actions ();
+        add_action_entries (_app_actions, this);
+        add_open_files_action ();
         set_application_icons ();
         Latexila.utils_register_icons ();
         StockIcons.register_stock_icons ();
@@ -80,32 +98,8 @@ public class LatexilaApp : Gtk.Application
         release ();
     }
 
-    private void add_actions ()
+    private void add_open_files_action ()
     {
-        /* New document */
-        SimpleAction new_document_action = new SimpleAction ("new-document", null);
-        add_action (new_document_action);
-
-        new_document_action.activate.connect (() =>
-        {
-            hold ();
-            MainWindow window = active_window as MainWindow;
-            window.create_tab (true);
-            release ();
-        });
-
-        /* New window */
-        SimpleAction new_window_action = new SimpleAction ("new-window", null);
-        add_action (new_window_action);
-
-        new_window_action.activate.connect (() =>
-        {
-            hold ();
-            create_window ();
-            release ();
-        });
-
-        /* Open files */
         VariantType strings_array = new VariantType ("as");
         SimpleAction open_files_action = new SimpleAction ("open-files", strings_array);
         add_action (open_files_action);
@@ -123,153 +117,121 @@ public class LatexilaApp : Gtk.Application
 
             open_documents (files);
         });
-
-        /* Preferences */
-        SimpleAction preferences_action = new SimpleAction ("preferences", null);
-        add_action (preferences_action);
-
-        preferences_action.activate.connect (() =>
-        {
-            hold ();
-            PreferencesDialog.show_me (this.active_window);
-            release ();
-        });
-
-        /* Manage build tools */
-        SimpleAction build_tools_action = new SimpleAction ("manage-build-tools", null);
-        add_action (build_tools_action);
-
-        build_tools_action.activate.connect (() =>
-        {
-            hold ();
-            new BuildToolsPreferences (this.active_window);
-            release ();
-        });
-
-        /* Help */
-        SimpleAction help_action = new SimpleAction ("help", null);
-        add_action (help_action);
-
-        help_action.activate.connect (() =>
-        {
-            hold ();
-
-            try
-            {
-                Gtk.show_uri (this.active_window.get_screen (), "help:latexila",
-                    Gdk.CURRENT_TIME);
-            }
-            catch (Error e)
-            {
-                warning ("Impossible to open the documentation: %s", e.message);
-            }
-
-            release ();
-        });
-
-        /* Fundraiser */
-        SimpleAction fundraiser_action = new SimpleAction ("fundraiser", null);
-        add_action (fundraiser_action);
-
-        fundraiser_action.activate.connect (() =>
-        {
-            hold ();
-            Finance.show_dialog (this.active_window, false);
-            release ();
-        });
-
-        /* About */
-        SimpleAction about_action = new SimpleAction ("about", null);
-        add_action (about_action);
-
-        about_action.activate.connect (() =>
-        {
-            hold ();
-
-            string comments =
-                _("LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop");
-            string copyright = "Copyright © 2009-2015 – Sébastien Wilmet";
-
-            string website = "https://wiki.gnome.org/Apps/LaTeXila";
-
-            string[] authors =
-            {
-                "Sébastien Wilmet <swilmet@gnome.org>",
-                null
-            };
-
-            string[] artists =
-            {
-                "Eric Forgeot <e.forgeot@laposte.net>",
-                "Sébastien Wilmet <swilmet@gnome.org>",
-                "Alexander Wilms <f.alexander.wilms@gmail.com>",
-                "The Kile Team http://kile.sourceforge.net/",
-                "Gedit LaTeX Plugin https://wiki.gnome.org/Apps/Gedit/LaTeXPlugin",
-                null
-            };
-
-            Gdk.Pixbuf logo = null;
-            try
-            {
-                logo = new Gdk.Pixbuf.from_file (Config.DATA_DIR + "/images/app/logo.png");
-            }
-            catch (Error e)
-            {
-                warning ("Logo: %s", e.message);
-            }
-
-            Gtk.show_about_dialog (this.active_window,
-                "program-name", "LaTeXila",
-                "version", Config.PACKAGE_VERSION,
-                "authors", authors,
-                "artists", artists,
-                "comments", comments,
-                "copyright", copyright,
-                "license-type", Gtk.License.GPL_3_0,
-                "title", _("About LaTeXila"),
-                "translator-credits", _("translator-credits"),
-                "website", website,
-                "logo", logo
-            );
-
-            release ();
-        });
-
-        /* Quit */
-        SimpleAction quit_action = new SimpleAction ("quit", null);
-        add_action (quit_action);
-
-        quit_action.activate.connect (() =>
-        {
-            hold ();
-
-            bool stop = false;
-            while (this.active_window != null && ! stop)
-            {
-                foreach (Gtk.Window window in get_windows ())
-                {
-                    if (window is MainWindow)
-                    {
-                        MainWindow main_window = window as MainWindow;
-                        main_window.present ();
-                        stop = ! main_window.quit ();
-                        break;
-                    }
-                }
-            }
-
-            while (this.active_window != null && ! stop)
-            {
-                this.active_window.destroy ();
-            }
-
-            release ();
-        });
     }
 
-    public static LatexilaApp get_instance ()
+    private void new_document_cb ()
     {
-        return GLib.Application.get_default () as LatexilaApp;
+        MainWindow window = active_window as MainWindow;
+        window.create_tab (true);
+    }
+
+    private void new_window_cb ()
+    {
+        create_window ();
+    }
+
+    private void preferences_cb ()
+    {
+        PreferencesDialog.show_me (this.active_window);
+    }
+
+    private void manage_build_tools_cb ()
+    {
+        new BuildToolsPreferences (this.active_window);
+    }
+
+    private void help_cb ()
+    {
+        try
+        {
+            Gtk.show_uri (this.active_window.get_screen (), "help:latexila",
+                Gdk.CURRENT_TIME);
+        }
+        catch (Error e)
+        {
+            warning ("Impossible to open the documentation: %s", e.message);
+        }
+    }
+
+    private void fundraiser_cb ()
+    {
+        Finance.show_dialog (this.active_window, false);
+    }
+
+    private void about_cb ()
+    {
+        string comments =
+            _("LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop");
+        string copyright = "Copyright © 2009-2015 – Sébastien Wilmet";
+
+        string website = "https://wiki.gnome.org/Apps/LaTeXila";
+
+        string[] authors =
+        {
+            "Sébastien Wilmet <swilmet@gnome.org>",
+            null
+        };
+
+        string[] artists =
+        {
+            "Eric Forgeot <e.forgeot@laposte.net>",
+            "Sébastien Wilmet <swilmet@gnome.org>",
+            "Alexander Wilms <f.alexander.wilms@gmail.com>",
+            "The Kile Team http://kile.sourceforge.net/",
+            "Gedit LaTeX Plugin https://wiki.gnome.org/Apps/Gedit/LaTeXPlugin",
+            null
+        };
+
+        Gdk.Pixbuf logo = null;
+        try
+        {
+            logo = new Gdk.Pixbuf.from_file (Config.DATA_DIR + "/images/app/logo.png");
+        }
+        catch (Error e)
+        {
+            warning ("Logo: %s", e.message);
+        }
+
+        Gtk.show_about_dialog (this.active_window,
+            "program-name", "LaTeXila",
+            "version", Config.PACKAGE_VERSION,
+            "authors", authors,
+            "artists", artists,
+            "comments", comments,
+            "copyright", copyright,
+            "license-type", Gtk.License.GPL_3_0,
+            "title", _("About LaTeXila"),
+            "translator-credits", _("translator-credits"),
+            "website", website,
+            "logo", logo
+        );
+    }
+
+    private void quit_cb ()
+    {
+        hold ();
+
+        bool stop = false;
+        while (this.active_window != null && ! stop)
+        {
+            foreach (Gtk.Window window in get_windows ())
+            {
+                if (window is MainWindow)
+                {
+                    MainWindow main_window = window as MainWindow;
+                    main_window.present ();
+                    stop = ! main_window.quit ();
+                    break;
+                }
+            }
+        }
+
+        while (this.active_window != null && ! stop)
+        {
+            this.active_window.destroy ();
+        }
+
+        release ();
     }
 
     private void set_application_icons ()
