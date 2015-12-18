@@ -28,12 +28,7 @@ public class LatexilaApp : Gtk.Application
         Object (application_id: "org.gnome.latexila");
         Environment.set_application_name (Config.PACKAGE_NAME);
 
-        connect_signals ();
-    }
-
-    private void connect_signals ()
-    {
-        startup.connect (init_primary_instance);
+        startup.connect (startup_cb);
 
         activate.connect (() =>
         {
@@ -42,28 +37,47 @@ public class LatexilaApp : Gtk.Application
             release ();
         });
 
-        shutdown.connect (() =>
+        shutdown.connect (shutdown_cb);
+    }
+
+    private void startup_cb ()
+    {
+        hold ();
+        add_actions ();
+        set_application_icons ();
+        Latexila.utils_register_icons ();
+        StockIcons.register_stock_icons ();
+        setup_theme_extensions ();
+
+        AppSettings.get_default ();
+        create_window ();
+        reopen_files ();
+        Gtk.AccelMap.load (get_accel_filename ());
+        support_backward_search ();
+        release ();
+    }
+
+    private void shutdown_cb ()
+    {
+        hold ();
+
+        Projects.get_default ().save ();
+        MostUsedSymbols.get_default ().save ();
+
+        /* Save accel file */
+        string accel_filename = get_accel_filename ();
+        File accel_file = File.new_for_path (accel_filename);
+        try
         {
-            hold ();
+            Latexila.utils_create_parent_directories (accel_file);
+            Gtk.AccelMap.save (accel_filename);
+        }
+        catch (Error error)
+        {
+            warning ("Error when saving accel file: %s", error.message);
+        }
 
-            Projects.get_default ().save ();
-            MostUsedSymbols.get_default ().save ();
-
-            /* Save accel file */
-            string accel_filename = get_accel_filename ();
-            File accel_file = File.new_for_path (accel_filename);
-            try
-            {
-                Latexila.utils_create_parent_directories (accel_file);
-                Gtk.AccelMap.save (accel_filename);
-            }
-            catch (Error error)
-            {
-                warning ("Error when saving accel file: %s", error.message);
-            }
-
-            release ();
-        });
+        release ();
     }
 
     private void add_actions ()
@@ -256,23 +270,6 @@ public class LatexilaApp : Gtk.Application
     public static LatexilaApp get_instance ()
     {
         return GLib.Application.get_default () as LatexilaApp;
-    }
-
-    private void init_primary_instance ()
-    {
-        hold ();
-        add_actions ();
-        set_application_icons ();
-        Latexila.utils_register_icons ();
-        StockIcons.register_stock_icons ();
-        setup_theme_extensions ();
-
-        AppSettings.get_default ();
-        create_window ();
-        reopen_files ();
-        Gtk.AccelMap.load (get_accel_filename ());
-        support_backward_search ();
-        release ();
     }
 
     private void set_application_icons ()
