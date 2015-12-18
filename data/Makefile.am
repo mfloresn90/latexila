@@ -15,6 +15,15 @@ appdata_DATA = org.gnome.latexila.appdata.xml
 gsettings_SCHEMAS = org.gnome.latexila.gschema.xml
 @GSETTINGS_RULES@
 
+dbusservicedir = $(datadir)/dbus-1/services
+dbusservice_DATA = org.gnome.latexila.service
+
+org.gnome.latexila.service: Makefile
+	$(AM_V_GEN) (echo '[D-BUS Service]'; \
+		     echo 'Name=org.gnome.latexila'; \
+		     echo 'Exec=${bindir}/latexila --gapplication-service') > $@.tmp && \
+		     mv $@.tmp $@
+
 EXTRA_DIST =					\
 	org.gnome.latexila.appdata.xml.in	\
 	org.gnome.latexila.desktop.in		\
@@ -23,6 +32,7 @@ EXTRA_DIST =					\
 CLEANFILES =				\
 	org.gnome.latexila.appdata.xml	\
 	org.gnome.latexila.desktop	\
-	org.gnome.latexila.gschema.xml
+	org.gnome.latexila.gschema.xml	\
+	org.gnome.latexila.service
 
 -include $(top_srcdir)/git.mk

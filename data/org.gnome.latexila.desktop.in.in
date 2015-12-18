@@ -7,19 +7,21 @@ Exec=latexila %U
 Icon=latexila
 Terminal=false
 Type=Application
+StartupNotify=true
 Categories=GNOME;GTK;Office;WordProcessor;Publishing;
 MimeType=text/x-tex;
-Actions=Window;Document;
+DBusActivatable=true
+Actions=new-window;new-document;
 
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=latexila
 X-GNOME-Bugzilla-Component=other
 X-GNOME-Bugzilla-Version=@VERSION@
 
-[Desktop Action Window]
+[Desktop Action new-window]
 _Name=Open a New Window
 Exec=latexila --new-window
 
-[Desktop Action Document]
+[Desktop Action new-document]
 _Name=Open a New Document
 Exec=latexila --new-document
