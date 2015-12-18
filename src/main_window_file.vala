@@ -165,6 +165,7 @@ public class MainWindowFile
         else if (_main_window.default_location != null)
             file_chooser.set_current_folder (_main_window.default_location);
 
+        file_chooser.set_local_only (false);
         file_chooser.select_multiple = true;
 
         // Filter: by default show only .tex and .bib files
