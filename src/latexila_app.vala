@@ -38,7 +38,10 @@ public class LatexilaApp : Gtk.Application
     public LatexilaApp ()
     {
         Object (application_id: "org.gnome.latexila");
+        set_flags (ApplicationFlags.HANDLES_OPEN);
         Environment.set_application_name (Config.PACKAGE_NAME);
+
+        setup_main_option_entries ();
 
         startup.connect (startup_cb);
 
@@ -49,6 +52,8 @@ public class LatexilaApp : Gtk.Application
             release ();
         });
 
+        open.connect (open_documents);
+
         shutdown.connect (shutdown_cb);
     }
 
@@ -57,11 +62,58 @@ public class LatexilaApp : Gtk.Application
         return GLib.Application.get_default () as LatexilaApp;
     }
 
+    private void setup_main_option_entries ()
+    {
+        bool show_version = false;
+        bool new_document = false;
+        bool new_window = false;
+
+        OptionEntry[] options = new OptionEntry[4];
+
+        options[0] = { "version", 'V', 0, OptionArg.NONE, ref show_version,
+            N_("Show the application's version"), null };
+
+        options[1] = { "new-document", 'n', 0, OptionArg.NONE, ref new_document,
+            N_("Create new document"), null };
+
+        options[2] = { "new-window", 0, 0, OptionArg.NONE, ref new_window,
+            N_("Create a new top-level window in an existing instance of LaTeXila"), null };
+
+        options[3] = { null };
+
+        add_main_option_entries (options);
+
+        handle_local_options.connect (() =>
+        {
+            if (show_version)
+            {
+                stdout.printf ("%s %s\n", Config.PACKAGE_NAME, Config.PACKAGE_VERSION);
+                return 0;
+            }
+
+            try
+            {
+                register ();
+            }
+            catch (Error e)
+            {
+                error ("Failed to register the application: %s", e.message);
+            }
+
+            if (new_window)
+                activate_action ("new-window", null);
+
+            if (new_document)
+                activate_action ("new-document", null);
+
+            return -1;
+        });
+    }
+
     private void startup_cb ()
     {
         hold ();
         add_action_entries (_app_actions, this);
-        add_open_files_action ();
         set_application_icons ();
         Latexila.utils_register_icons ();
         StockIcons.register_stock_icons ();
@@ -96,27 +148,6 @@ public class LatexilaApp : Gtk.Application
         }
 
         release ();
-    }
-
-    private void add_open_files_action ()
-    {
-        VariantType strings_array = new VariantType ("as");
-        SimpleAction open_files_action = new SimpleAction ("open-files", strings_array);
-        add_action (open_files_action);
-
-        open_files_action.activate.connect ((param) =>
-        {
-            string[] uris = param.dup_strv ();
-            File[] files = {};
-
-            foreach (string uri in uris)
-            {
-                if (0 < uri.length)
-                    files += File.new_for_uri (uri);
-            }
-
-            open_documents (files);
-        });
     }
 
     private void new_document_cb ()
@@ -364,6 +395,8 @@ public class LatexilaApp : Gtk.Application
             window.open_document (file, jump_to);
             jump_to = false;
         }
+
+        active_window.present ();
     }
 
     private string get_accel_filename ()
