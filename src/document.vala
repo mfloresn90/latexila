@@ -307,7 +307,7 @@ public class Document : Gtk.SourceBuffer
     private string get_unsaved_document_name ()
     {
         uint num = get_unsaved_document_num ();
-        return _("Unsaved Document") + @" $num";
+        return _("Untitled Document") + @" $num";
     }
 
     private uint get_unsaved_document_num ()
