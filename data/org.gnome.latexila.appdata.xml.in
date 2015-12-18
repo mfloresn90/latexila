@@ -36,6 +36,7 @@
   </screenshots>
   <url type="homepage">https://wiki.gnome.org/Apps/LaTeXila</url>
   <kudos>
+    <kudo>AppMenu</kudo>
     <kudo>HiDpiIcon</kudo>
     <kudo>ModernToolkit</kudo>
     <kudo>UserDocs</kudo>
