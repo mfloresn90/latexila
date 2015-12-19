@@ -62,6 +62,17 @@ public class LatexilaApp : Gtk.Application
         return GLib.Application.get_default () as LatexilaApp;
     }
 
+    public MainWindow? get_active_main_window ()
+    {
+        foreach (Gtk.Window window in get_windows ())
+        {
+            if (window is MainWindow)
+                return window as MainWindow;
+        }
+
+        return null;
+    }
+
     private void setup_main_option_entries ()
     {
         bool show_version = false;
@@ -152,8 +163,9 @@ public class LatexilaApp : Gtk.Application
 
     private void new_document_cb ()
     {
-        MainWindow window = active_window as MainWindow;
-        window.create_tab (true);
+        MainWindow? window = get_active_main_window ();
+        if (window != null)
+            window.create_tab (true);
     }
 
     private void new_window_cb ()
@@ -163,20 +175,24 @@ public class LatexilaApp : Gtk.Application
 
     private void preferences_cb ()
     {
-        PreferencesDialog.show_me (this.active_window);
+        PreferencesDialog.show_me (get_active_main_window ());
     }
 
     private void manage_build_tools_cb ()
     {
-        new BuildToolsPreferences (this.active_window);
+        new BuildToolsPreferences (get_active_main_window ());
     }
 
     private void help_cb ()
     {
+        Gdk.Screen? screen = null;
+        MainWindow? window = get_active_main_window ();
+        if (window != null)
+            screen = window.get_screen ();
+
         try
         {
-            Gtk.show_uri (this.active_window.get_screen (), "help:latexila",
-                Gdk.CURRENT_TIME);
+            Gtk.show_uri (screen, "help:latexila", Gdk.CURRENT_TIME);
         }
         catch (Error e)
         {
@@ -186,7 +202,7 @@ public class LatexilaApp : Gtk.Application
 
     private void fundraiser_cb ()
     {
-        Finance.show_dialog (this.active_window, false);
+        Finance.show_dialog (get_active_main_window (), false);
     }
 
     private void about_cb ()
@@ -223,7 +239,7 @@ public class LatexilaApp : Gtk.Application
             warning ("Logo: %s", e.message);
         }
 
-        Gtk.show_about_dialog (this.active_window,
+        Gtk.show_about_dialog (get_active_main_window (),
             "program-name", "LaTeXila",
             "version", Config.PACKAGE_VERSION,
             "authors", authors,
@@ -242,24 +258,21 @@ public class LatexilaApp : Gtk.Application
     {
         hold ();
 
-        bool stop = false;
-        while (this.active_window != null && ! stop)
+        bool cont = true;
+        while (cont)
         {
-            foreach (Gtk.Window window in get_windows ())
-            {
-                if (window is MainWindow)
-                {
-                    MainWindow main_window = window as MainWindow;
-                    main_window.present ();
-                    stop = ! main_window.quit ();
-                    break;
-                }
-            }
+            MainWindow? main_window = get_active_main_window ();
+            if (main_window == null)
+                break;
+
+            main_window.present ();
+            cont = main_window.quit ();
         }
 
-        while (this.active_window != null && ! stop)
+        if (cont)
         {
-            this.active_window.destroy ();
+            while (this.active_window != null)
+                this.active_window.destroy ();
         }
 
         release ();
@@ -355,8 +368,11 @@ public class LatexilaApp : Gtk.Application
         Gee.List<Document> all_documents = new Gee.LinkedList<Document> ();
         foreach (Gtk.Window window in get_windows ())
         {
-            MainWindow main_window = window as MainWindow;
-            all_documents.add_all (main_window.get_documents ());
+            if (window is MainWindow)
+            {
+                MainWindow main_window = window as MainWindow;
+                all_documents.add_all (main_window.get_documents ());
+            }
         }
 
         return all_documents;
@@ -368,8 +384,11 @@ public class LatexilaApp : Gtk.Application
         Gee.List<DocumentView> all_views = new Gee.LinkedList<DocumentView> ();
         foreach (Gtk.Window window in get_windows ())
         {
-            MainWindow main_window = window as MainWindow;
-            all_views.add_all (main_window.get_views ());
+            if (window is MainWindow)
+            {
+                MainWindow main_window = window as MainWindow;
+                all_views.add_all (main_window.get_views ());
+            }
         }
 
         return all_views;
@@ -377,26 +396,26 @@ public class LatexilaApp : Gtk.Application
 
     public MainWindow create_window ()
     {
-        if (active_window != null)
-        {
-            MainWindow window = active_window as MainWindow;
-            window.save_state ();
-        }
+        MainWindow? main_window = get_active_main_window ();
+        if (main_window != null)
+            main_window.save_state ();
 
         return new MainWindow (this);
     }
 
     public void open_documents (File[] files)
     {
+        MainWindow? main_window = get_active_main_window ();
+        return_if_fail (main_window != null);
+
         bool jump_to = true;
         foreach (File file in files)
         {
-            MainWindow window = active_window as MainWindow;
-            window.open_document (file, jump_to);
+            main_window.open_document (file, jump_to);
             jump_to = false;
         }
 
-        active_window.present ();
+        main_window.present ();
     }
 
     private string get_accel_filename ()
@@ -418,9 +437,14 @@ public class LatexilaApp : Gtk.Application
                 return;
             }
 
-            MainWindow main_window = active_window as MainWindow;
-            main_window.jump_to_file_position (tex_file, line, line + 1);
-            main_window.present_with_time (timestamp);
+            // TODO choose the right MainWindow, if tex_file is already opened
+            // in another window.
+            MainWindow? main_window = get_active_main_window ();
+            if (main_window != null)
+            {
+                main_window.jump_to_file_position (tex_file, line, line + 1);
+                main_window.present_with_time (timestamp);
+            }
         });
     }
 }

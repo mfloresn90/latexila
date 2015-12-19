@@ -625,6 +625,9 @@ public class MainWindow : ApplicationWindow
         /* check if the document is already opened */
         foreach (Window window in LatexilaApp.get_instance ().get_windows ())
         {
+            if (! (window is MainWindow))
+                continue;
+
             MainWindow w = window as MainWindow;
 
             foreach (Document doc in w.get_documents ())

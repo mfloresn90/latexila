@@ -82,8 +82,11 @@ public class Projects
     {
         foreach (Gtk.Window window in LatexilaApp.get_instance ().get_windows ())
         {
-            MainWindow main_window = window as MainWindow;
-            main_window.update_config_project_sensitivity ();
+            if (window is MainWindow)
+            {
+                MainWindow main_window = window as MainWindow;
+                main_window.update_config_project_sensitivity ();
+            }
         }
     }
 
