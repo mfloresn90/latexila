@@ -22,6 +22,7 @@
 public class LatexilaApp : Gtk.Application
 {
     static Gtk.CssProvider? _provider = null;
+    private bool _activate_called = false;
 
     private const GLib.ActionEntry[] _app_actions =
     {
@@ -44,16 +45,8 @@ public class LatexilaApp : Gtk.Application
         setup_main_option_entries ();
 
         startup.connect (startup_cb);
-
-        activate.connect (() =>
-        {
-            hold ();
-            active_window.present ();
-            release ();
-        });
-
+        activate.connect (activate_cb);
         open.connect (open_documents);
-
         shutdown.connect (shutdown_cb);
     }
 
@@ -129,12 +122,25 @@ public class LatexilaApp : Gtk.Application
         Latexila.utils_register_icons ();
         StockIcons.register_stock_icons ();
         setup_theme_extensions ();
-
         AppSettings.get_default ();
-        create_window ();
-        reopen_files ();
-        Gtk.AccelMap.load (get_accel_filename ());
         support_backward_search ();
+        Gtk.AccelMap.load (get_accel_filename ());
+        release ();
+    }
+
+    private void activate_cb ()
+    {
+        hold ();
+
+        if (! _activate_called)
+        {
+            _activate_called = true;
+            create_window ();
+            reopen_files ();
+        }
+        else
+            active_window.present ();
+
         release ();
     }
 
@@ -163,14 +169,20 @@ public class LatexilaApp : Gtk.Application
 
     private void new_document_cb ()
     {
+        if (! _activate_called)
+            activate ();
+
         MainWindow? window = get_active_main_window ();
-        if (window != null)
-            window.create_tab (true);
+        return_if_fail (window != null);
+        window.create_tab (true);
     }
 
     private void new_window_cb ()
     {
-        create_window ();
+        if (_activate_called)
+            create_window ();
+        else
+            activate ();
     }
 
     private void preferences_cb ()
@@ -405,6 +417,9 @@ public class LatexilaApp : Gtk.Application
 
     public void open_documents (File[] files)
     {
+        if (! _activate_called)
+            activate ();
+
         MainWindow? main_window = get_active_main_window ();
         return_if_fail (main_window != null);
 
