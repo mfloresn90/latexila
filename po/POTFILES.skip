@@ -12,6 +12,7 @@ src/document_structure.c
 src/document_tab.c
 src/document_view.c
 src/file_browser.c
+src/latexila_app.c
 src/latex_menu.c
 src/main.c
 src/main_window.c
