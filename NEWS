@@ -1,5 +1,11 @@
 LaTeXila NEWS
 
+Release 3.18.2
+--------------
+* AppData: add kudos
+* Fix a syntax error in desktop file keywords German translation (Kalev Lember)
+* Adapt code to support again remote files
+
 Release 3.18.1
 --------------
 * After some GTK+ changes during the last few releases, there were some
