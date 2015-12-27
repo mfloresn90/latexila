@@ -4,188 +4,130 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila master\n"
-"POT-Creation-Date: 2012-02-05 20:27+0000\n"
-"PO-Revision-Date: 2012-03-03 21:54+0100\n"
+"POT-Creation-Date: 2015-12-26 12:46+0000\n"
+"PO-Revision-Date: 2015-12-26 18:56+0100\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
-
-#: C/index.page:4(page/title)
-msgid "LaTeXila Help"
-msgstr "Hilfe zu LaTeXila"
+"X-Generator: Poedit 1.8.5\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Mario Blättermann <mario.blaettermann@gmail.com>, 2011, 2012"
+msgstr ""
+"Mario Blättermann <mario.blaettermann@gmail.com>, 2011, 2012, 2015\n"
+"Benjamin Steinwender <b@stbe.at>, 2015"
 
-#: C/build_tools.page:10(page/title)
+#. (itstool) path: page/title
+#: C/build_tools.page:10
 msgid "Build Tools"
 msgstr "Erstellungswerkzeuge"
 
-#: C/build_tools.page:13(synopsis/p)
+#. (itstool) path: synopsis/p
+#: C/build_tools.page:13
 msgid ""
 "The purpose of the build tools is to generate a document in the PDF, DVI or "
 "PS format."
 msgstr ""
-"Der Zweck der Erstellungswerkzeuge ist die Erzeugung eines Dokuments im PDF-, "
-"DVI- oder PS-Format."
+"Der Zweck der Erstellungswerkzeuge ist die Erzeugung eines Dokuments im "
+"PDF-, DVI- oder PS-Format."
 
-#: C/build_tools.page:20(section/title)
+#. (itstool) path: section/title
+#: C/build_tools.page:20
 msgid "Introduction"
 msgstr "Einführung"
 
-#: C/build_tools.page:22(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:22
 msgid ""
 "Several different tools can be used for a document compilation. There are "
-"some low-level commands, and two higher-level tools: Latexmk and Rubber."
+"some low-level commands, and one higher-level tool: Latexmk."
 msgstr ""
 "Verschiedene Werkzeuge können zur Kompilierung eines Dokuments verwendet "
-"werden. Es gibt einige einfache Befehle und zwei fortgeschrittenere "
-"Werkzeuge, Latexmk und Rubber."
+"werden. Es gibt einige einfache Befehle und ein fortgeschrittenes Werkzeug: "
+"Latexmk."
 
-#: C/build_tools.page:26(table/title)
+#. (itstool) path: table/title
+#: C/build_tools.page:26
 msgid "Low-level commands"
 msgstr "Einfache Befehle"
 
-#: C/build_tools.page:29(td/p)
+#. (itstool) path: td/p
+#: C/build_tools.page:29
 msgid "Label"
 msgstr "Bezeichnung"
 
-#: C/build_tools.page:30(td/p)
+#. (itstool) path: td/p
+#: C/build_tools.page:30
 msgid "Command"
 msgstr "Befehl"
 
-#: C/build_tools.page:59(td/p)
+#. (itstool) path: td/p
+#: C/build_tools.page:59
 msgid "Bibliography"
 msgstr "Bibliografie"
 
-#: C/build_tools.page:63(td/p)
+#. (itstool) path: td/p
+#: C/build_tools.page:63
 msgid "Index"
 msgstr "Index"
 
-#: C/build_tools.page:69(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:69
 msgid ""
-"Compiling a LaTeX document can involve to execute several low-level commands, "
-"in a certain order and a certain number of times. Here is an example:"
+"Compiling a LaTeX document can involve to execute several low-level "
+"commands, in a certain order and a certain number of times. Here is an "
+"example:"
 msgstr ""
 "In die Kompilierung eines LaTeX-Dokuments werden einige einfache Befehle "
 "einbezogen, in einer bestimmten Reihenfolge und einer bestimmten Anzahl der "
 "Aufrufe. Hier ein Beispiel:"
 
-#: C/build_tools.page:78(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:78
 msgid ""
-"Using a higher-level tool such as Latexmk or Rubber simplify a lot all this "
-"process, since only one command is required. Indeed, these tools can detect "
-"how many times the <cmd>latex</cmd> or <cmd>pdflatex</cmd> command must be "
-"called, and whether <cmd>bibtex</cmd> or <cmd>makeindex</cmd> is required. By "
+"Using a higher-level tool such as Latexmk simplify a lot all this process, "
+"since only one command is required. Indeed, Latexmk can detect how many "
+"times the <cmd>latex</cmd> or <cmd>pdflatex</cmd> command must be called, "
+"and whether <cmd>bibtex</cmd> or <cmd>makeindex</cmd> is required. By "
 "default, LaTeXila uses Latexmk."
 msgstr ""
-"Mit einem fortgeschritteneren Werkzeug wie Latexmk oder Rubber lässt sich der "
-"Vorgang vereinfachen, da nur ein Befehl erforderlich ist. Tatsächlich können "
-"diese Werkzeuge erkennen, wie oft die Befehle <cmd>latex</cmd> oder "
-"<cmd>pdflatex</cmd> aufgerufen werden, und ob <cmd>bibtex</cmd> oder "
-"<cmd>makeindex</cmd> notwendig sind. standardmäßig verwendet LaTeXila das "
-"Werkzeug Latexmk."
+"Mit einem fortgeschritteneren Werkzeug wie Latexmk lässt sich der Vorgang "
+"vereinfachen, da nur ein Befehl erforderlich ist. Tatsächlich können diese "
+"Werkzeuge erkennen, wie oft die Befehle <cmd>latex</cmd> oder <cmd>pdflatex</"
+"cmd> aufgerufen werden müssen, und ob <cmd>bibtex</cmd> oder <cmd>makeindex</"
+"cmd> notwendig sind. Per Vorgabe verwendet LaTeXila das Werkzeug Latexmk."
 
-#: C/build_tools.page:86(section/title)
-msgid "Differences Between Latexmk and Rubber"
-msgstr "Unterschiede zwischen Latexmk und Rubber"
-
-#: C/build_tools.page:87(section/p)
-msgid ""
-"<link href=\"http://www.phys.psu.edu/~collins/software/latexmk-jcc/"
-"\">Latexmk</link> and <link href=\"https://launchpad.net/rubber/\">Rubber</"
-"link> have the same purpose: simplify the compilation process of a LaTeX "
-"document. Latexmk is written in Perl, while Rubber is written in Python."
-msgstr ""
-"<link href=\"http://www.phys.psu.edu/~collins/software/latexmk-jcc/"
-"\">Latexmk</link> und <link href=\"https://launchpad.net/rubber/\">Rubber</"
-"link> verfolgen das gleiche Ziel: die Vereinfachung des Erstellungsprozesses "
-"eines LaTeX-Dokuments. Latexmk is in Perl geschrieben, während Rubber auf "
-"Python basiert."
-
-#: C/build_tools.page:92(section/p)
-msgid ""
-"The output of Latexmk contains more information: which commands are executed, "
-"how many times, their output, and the reasons why Latexmk executes (or "
-"doesn't execute) these commands. The output of Rubber, on the other hand, "
-"doesn't contain a lot of information. When an error occurs, it can be more "
-"difficult to diagnose."
-msgstr ""
-"Die Ausgabe von Latexmk enthält mehr Informationen: die ausgeführten Befehle, "
-"und wie oft sie ausgeführt wurden, deren Ausgabe und die Ursachen, weshalb "
-"Latexmk diese Befehle ausgeführt hat (oder eben nicht ausgeführt hat). "
-"Andererseits enthält die Ausgabe von Rubber weit weniger Informationen. Wenn "
-"ein Fehler auftritt, kann es schwieriger sein, dessen Ursachen herauszufinden."
-
-#: C/build_tools.page:97(section/p)
-msgid ""
-"Also, Rubber filter the output of the <cmd>latex</cmd> or <cmd>pdflatex</cmd> "
-"command. As a consequence, when Rubber prints an error, it's more difficult "
-"to know which type of error it is. If you use Latexmk, errors are categorized "
-"into three types: critical errors, simple warnings and bad boxes (for example "
-"when a word exceed the margin). With Rubber, there is no distinction between "
-"critical errors and simple warnings. See <link xref=\"#post-processors\"/> "
-"for more information."
-msgstr ""
-"Rubber filtert außerdem die Ausgabe der Befehle <cmd>latex</cmd> oder "
-"<cmd>pdflatex</cmd>. Wenn Rubber einen Fehler ausgibt, ist es schwieriger, "
-"den Fehlertyp herauszufinden. Wenn Sie Latexmk verwenden, werden Fehler in "
-"drei Typen unterteilt: kritische Fehler, einfache Warnungen und »Bad "
-"Boxes« (wenn beispielsweise ein Wort den Rand überschreitet). Mit Rubber gibt "
-"es keinen Unterschied zwischen kritischen Fehlern und einfachen Warnungen. "
-"Weitere Informationen finden Sie in <link xref=\"#post-processors\"/>."
-
-#: C/build_tools.page:104(section/p)
-msgid ""
-"Latexmk is more flexible. Each low-level command can be customized, for "
-"example for adding a parameter, or use a completely other tool. This can be "
-"done both from the command line and in configuration files (see the <cmd>-e</"
-"cmd> and <cmd>-r</cmd> options). Rubber is also configurable, but less than "
-"Latexmk."
-msgstr ""
-"Latexmk ist flexibler. Jeder einfache Befehl kann an Ihre Bedürfnisse "
-"angepasst werden, zum Beispiel durch Hinzufügen von Parametern, oder indem "
-"Sie ihn durch einen völlig anderen Befehl ersetzen. Dies können Sie sowohl "
-"direkt in der Befehlszeile als auch in den Konfigurationsdateien tun, siehe "
-"Parameter <cmd>-e</cmd> und <cmd>-r</cmd>). Rubber ist ebenfalls "
-"konfigurierbar, aber in deutlich engeren Grenzen."
-
-#: C/build_tools.page:109(section/p)
-msgid ""
-"Last, but not least: Rubber seems to have more bugs and is less actively "
-"maintained than Latexmk."
-msgstr ""
-"Erwähnenswert wäre noch, dass Rubber mehr bekannte Fehler enthält und weniger "
-"aktiv weiterentwickelt wird als Latexmk."
-
-#: C/build_tools.page:114(section/title)
+#. (itstool) path: section/title
+#: C/build_tools.page:86
 msgid "Execute a Build Tool"
 msgstr "Ein Erstellungswerkzeug ausführen"
 
-#: C/build_tools.page:116(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:88
 msgid "There are several means to execute a build tool:"
 msgstr "Es gibt verschiedene Wege, ein Erstellungswerkzeug auszuführen:"
 
-#: C/build_tools.page:118(item/p)
-msgid "Open the <gui style=\"menu\">Build</gui> menu (first part)."
-msgstr "Öffnen Sie das <gui style=\"menu\">Erstellen</gui>-Menü (erster Teil)."
+#. (itstool) path: item/p
+#: C/build_tools.page:90
+msgid "Open the <gui style=\"menu\">Build</gui> menu."
+msgstr "Öffnen Sie das <gui style=\"menu\">Erstellen</gui>-Menü."
 
-#: C/build_tools.page:119(item/p)
-msgid "Use the buttons in the main toolbar (last part)."
-msgstr "Verwenden Sie die Knöpfe in der Hauptwerkzeugleiste (letzter Teil)."
+#. (itstool) path: item/p
+#: C/build_tools.page:91
+msgid "Use the buttons in the main toolbar."
+msgstr "Verwenden Sie die Knöpfe in der Hauptwerkzeugleiste."
 
-#: C/build_tools.page:120(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:92
 msgid "Use the shortcut: <key>F2</key> → <key>F11</key>."
 msgstr "Verwenden Sie die Tastenkürzel: <key>F2</key> → <key>F11</key>."
 
-#: C/build_tools.page:123(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:95
 msgid ""
 "The build tool is executed on the currently opened file. If the file belongs "
 "to a <link xref=\"projects\">project</link>, it is executed on the project's "
@@ -195,116 +137,124 @@ msgstr ""
 "Falls die Datei zu einem <link xref=\"projects\">Projekt</link> gehört, wird "
 "die Hauptdatei des Projekts verwendet."
 
-#: C/build_tools.page:127(note/title)
+#. (itstool) path: note/title
+#: C/build_tools.page:99
 msgid "Hidden Build Tools"
 msgstr "Verborgene Erstellungswerkzeuge"
 
-#: C/build_tools.page:128(note/p)
+#. (itstool) path: note/p
+#: C/build_tools.page:100
 msgid ""
 "By default, a lot of build tools are hidden, so they can't be executed. To "
-"view the full list of build tools, activate or configure them, read the <link "
-"xref=\"#general_configuration\"/> section."
+"view the full list of build tools, activate or configure them, read the "
+"<link xref=\"#general_configuration\"/> section."
 msgstr ""
 "Standardmäßig sind zahlreiche Erstellungswerkzeuge verborgen, so dass sie "
 "nicht ausgeführt werden können. Um eine vollständige Liste der "
 "Erstellungswerkzeuge anzuzeigen, zu aktivieren oder zu konfigurieren, lesen "
 "Sie den Abschnitt <link xref=\"#general_configuration\"/>."
 
-#: C/build_tools.page:135(section/title)
+#. (itstool) path: section/title
+#: C/build_tools.page:107
 msgid "General Configuration"
 msgstr "Allgemeine Konfiguration"
 
-#: C/build_tools.page:137(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:109
 msgid ""
-"To configure the build tools, open the preferences dialog: <guiseq> <gui "
-"style=\"menu\">Edit</gui> <gui style=\"menu\">Preferences</gui> <gui style="
-"\"tab\">LaTeX</gui> </guiseq>"
+"To configure the build tools, go to: <guiseq> <gui style=\"menu\">Build</"
+"gui> <gui style=\"menu\">Manage Build Tools</gui> </guiseq>"
 msgstr ""
-"Um die Erstellungswerkzeuge zu konfigurieren, öffnen Sie den "
-"Einstellungsdialog: <guiseq><gui style=\"menu\">Bearbeiten</gui><gui style="
-"\"menu\">Einstellungen</gui><gui style=\"tab\">LaTeX</gui> </guiseq>"
+"Um die Erstellungswerkzeuge zu konfigurieren, öffnen Sie: <guiseq> <gui "
+"style=\"menu\">Erstellen</gui> <gui style=\"menu\">Erstellungswerkzeuge "
+"verwalten</gui> </guiseq>"
 
-#: C/build_tools.page:146(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:117
 msgid ""
-"You will see a list with all the build tools. There are check buttons to show "
-"or hide them. When a build tool is hidden, it's not possible to execute it. "
-"You can perform some actions, like moving a tool up or down, open its "
+"You will see the list of all the default build tools, and a second list with "
+"your personal build tools. There are check buttons to enable or disable "
+"them. When a build tool is disabled, it's not possible to execute it. You "
+"can perform some actions, like moving a tool up or down, open its "
 "properties, delete or copy it, create a new one, etc."
 msgstr ""
 "Eine Liste aller Erstellungswerkzeuge wird angezeigt. Über Ankreuzfelder "
 "können Sie diese anzeigen oder verbergen. Wenn ein Erstellungswerkzeug "
 "verborgen ist, ist es nicht möglich, es auszuführen. Sie können einige "
-"Aktionen ausführen, wie ein Werkzeug nach oben oder unten verschieben, dessen "
-"Eigenschaften betrachten, es löschen oder kopieren,ein neues Werkzeug "
-"erstellen usw."
+"Aktionen ausführen, wie ein Werkzeug nach oben oder unten verschieben, "
+"dessen Eigenschaften betrachten, es löschen oder kopieren, ein neues "
+"Werkzeug erstellen usw."
 
-#: C/build_tools.page:152(note/p)
+#. (itstool) path: note/p
+#: C/build_tools.page:124
 msgid "Double-click on a build tool will open its properties."
 msgstr ""
-"Doppelklicken Sie auf eines der Erstellungswerkzeuge, um dessen Eigenschaften "
-"zu öffnen."
+"Doppelklicken Sie auf eines der Erstellungswerkzeuge, um dessen "
+"Eigenschaften zu öffnen."
 
-#: C/build_tools.page:155(section/p)
-msgid ""
-"For an explanation of the option about the Latexmk post processor, see <link "
-"xref=\"#post-processors\"/>."
-msgstr ""
-"Eine Erläuterung der Optionen des Latexmk-Nachbearbeitungswerkzeugs finden "
-"Sie in <link xref=\"#post-processors\"/>."
-
-#: C/build_tools.page:160(section/title)
+#. (itstool) path: section/title
+#: C/build_tools.page:129
 msgid "Jobs of a Build Tool"
 msgstr "Aufgaben eines Erstellungswerkzeuges"
 
-#: C/build_tools.page:162(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:131
 msgid ""
 "In the properties of a build tool, the tricky part is to configure the jobs. "
-"A build tool can execute several jobs. Each job contains three pieces of "
+"A build tool can execute several jobs. Each job contains two pieces of "
 "information:"
 msgstr ""
 "Der schwierige Teil in den Eigenschaften eines Erstellungswerkzeugs ist die "
 "Einrichtung der Zuweisung von Aufgaben. Ein Erstellungswerkzeug kann "
-"verschiedene Aufgaben ausführen. Jede Aufgabe beinhaltet drei Informationen:"
+"verschiedene Aufgaben ausführen. Jede Aufgabe beinhaltet zwei Informationen:"
 
-#: C/build_tools.page:166(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:135
 msgid "The command, which can use placeholders."
 msgstr "Der Befehl, welcher Platzhalter enthalten kann."
 
-#: C/build_tools.page:167(item/p)
-msgid ""
-"Whether the job must succeed. If this option is enabled, when an error occurs "
-"during the job execution, the next job is not executed."
-msgstr ""
-"Legt fest, ob die Aufgabe ausgeführt werden muss. Falls diese Option "
-"aktiviert ist, wird die nächste Aufgabe nicht ausgeführt, falls bei der "
-"Ausführung einer Aufgabe ein Fehler auftritt."
-
-#: C/build_tools.page:169(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:136
 msgid "The post processor (see <link xref=\"#post-processors\"/>)."
 msgstr "Die Nachbearbeitung (siehe <link xref=\"#post-processors\"/>)."
 
-#: C/build_tools.page:174(section/title)
+#. (itstool) path: section/p
+#: C/build_tools.page:139
+msgid ""
+"When an error occurs during a job's execution, the execution of the build "
+"tool is aborted, so the next jobs are not launched."
+msgstr ""
+"﻿Wenn während der Ausführung eines Auftrags ein Fehler auftritt, wird die "
+"Ausführung des Build-Tools abgebrochen und die nächsten Aufträge werden "
+"nicht gestartet."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:144
 msgid "Post Processors"
 msgstr "Nachbearbeitung"
 
-#: C/build_tools.page:175(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:145
 msgid ""
 "The purpose of a post processor is to filter the command output and extract "
-"the useful information. Five post processors are available:"
+"the useful information. Four post processors are available:"
 msgstr ""
 "Der Zweck der Nachbearbeitung ist die Filterung der Befehlszeilenausgabe und "
-"das Entpacken nützlicher Informationen. Fünf Nachbearbeitungswerkzeuge sind "
+"das Erhalten nützlicher Informationen. Vier Nachbearbeitungswerkzeuge sind "
 "verfügbar:"
 
-#: C/build_tools.page:181(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:151
 msgid "The output is simply not displayed."
 msgstr "Die Ausgabe wird nicht angezeigt."
 
-#: C/build_tools.page:185(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:155
 msgid "All the output is displayed, without filter."
 msgstr "Die vollständige Ausgabe wird angezeigt, ohne Filterung."
 
-#: C/build_tools.page:189(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:159
 msgid ""
 "Filter the output of the <cmd>latex</cmd> or <cmd>pdflatex</cmd> commands. "
 "There can be three types of errors: critical errors, warnings, or bad boxes. "
@@ -313,54 +263,26 @@ msgid ""
 msgstr ""
 "Die Ausgabe der Befehle <cmd>latex</cmd> oder <cmd>pdflatex</cmd> wird "
 "gefiltert. Drei Fehlertypen sind möglich: kritische Fehler, Warnungen oder "
-"»Bad Boxes«. Es gibt außerdem weitere Informationen: die Größe des Dokuments, "
-"die Seitenanzahl und die Anzahld der Fehler."
+"»Bad Boxes«. Es gibt außerdem weitere Informationen: die Größe des "
+"Dokuments, die Seitenanzahl und die Anzahld der Fehler."
 
-#: C/build_tools.page:196(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:166
 msgid ""
-"Used for the <cmd>latexmk</cmd> command. Internally, this post processor uses "
-"other ones: <em>latex</em> and <em>all-output</em>."
+"Used for the <cmd>latexmk</cmd> command. Internally, this post processor "
+"uses other ones: <em>latex</em> and <em>all-output</em>."
 msgstr ""
 "Wird für den Befehl <cmd>latexmk</cmd> verwendet. Intern ruft dieses "
 "Nachbearbeitungswerkzeug weitere Befehle auf: <em>latex</em> und <em>all-"
 "output</em>."
 
-#: C/build_tools.page:199(item/p)
-msgid ""
-"In the <link xref=\"#general_configuration\"/>, there is an option for always "
-"showing all information of this post processor. If this option is disabled "
-"(which is the case by default), only the output of the last <cmd>latex</cmd> "
-"or <cmd>pdflatex</cmd> command is displayed, if no error occurred in another "
-"command. This allows to reduce the output showed in the bottom panel. But "
-"even if there are no errors, it can be useful to see exactly which commands "
-"are executed, with their output."
-msgstr ""
-"In <link xref=\"#general_configuration\"/> gibt es eine Option, über die alle "
-"Informationen zu diesem Nachbearbeitungswerkzeug ständig angezeigt werden. "
-"Falls diese Option deaktiviert ist, wird nur die Ausgabe des letzten "
-"<cmd>latex</cmd>- oder <cmd>pdflatex</cmd>-Befehls angezeigt, sofern kein "
-"Fehler in einem der anderen Befehle auftrat. Dadurch wird der Umfang der im "
-"unteren Panel angezeigten Ausgabe verringert. Doch selbst wenn überhaupt "
-"keine Fehler auftreten, kann es sinnvoll sein, die ausgeführten Befehle "
-"einschließlich deren Ausgaben genau anzuzeigen."
-
-#: C/build_tools.page:209(item/p)
-msgid ""
-"This is the post-processor used for the <cmd>rubber</cmd> command. The errors "
-"are categorized into two types: bad boxes, and the others. So, unlike the "
-"<em>latex</em> post processor, there is no distinction between critical "
-"errors and simple warnings."
-msgstr ""
-"Dieses Nachbearbeitungswerkzeug wird für den Befehl <cmd>rubber</cmd> "
-"verwendet. Es gibt zwei Fehlerkategorien: Bad Boxes und andere. Es gibt, im "
-"Gegensatz zum Nachbearbeitungswerkzeug <em>latex</em>, keinen Unterschied "
-"zwischen kritischen Fehlern und einfachen Warnungen."
-
-#: C/completion.page:10(page/title)
+#. (itstool) path: page/title
+#: C/completion.page:10
 msgid "Completion of LaTeX commands"
 msgstr "Vervollständigung von LaTeX-Befehlen"
 
-#: C/completion.page:13(synopsis/p)
+#. (itstool) path: synopsis/p
+#: C/completion.page:13
 msgid ""
 "The purpose is to facilitate the writing of LaTeX commands, by showing "
 "proposals."
@@ -368,27 +290,31 @@ msgstr ""
 "Ziel ist es, das Schreiben von LaTeX-Befehlen durch Anzeige von Vorschlägen "
 "zu erleichtern."
 
-#: C/completion.page:17(section/title)
+#. (itstool) path: section/title
+#: C/completion.page:17
 msgid "Interactive completion"
 msgstr "Interaktive Vervollständigung"
 
-#: C/completion.page:18(section/p)
+#. (itstool) path: section/p
+#: C/completion.page:18
 msgid ""
 "By default, when a LaTeX command is typed, proposals will be shown after two "
 "characters. This can be configured in the preferences dialog: <guiseq> <gui "
 "style=\"menu\">Edit</gui> <gui style=\"menu\">Preferences</gui> <gui style="
-"\"tab\">LaTeX</gui> </guiseq>"
+"\"tab\">Other</gui> </guiseq>"
 msgstr ""
-"Standardmäßig werden nach der Eingabe der ersten zwei Zeichen eines Befehls "
+"Per Vorgabe werden nach der Eingabe der ersten zwei Zeichen eines Befehls "
 "Vorschläge angezeigt. Im Menü <guiseq><gui style=\"menu\">Bearbeiten</"
-"gui><gui style=\"menu\">Einstellungen</gui><gui style=\"tab\">LaTeX</gui> </"
+"gui><gui style=\"menu\">Einstellungen</gui><gui style=\"tab\">Andere</gui> </"
 "guiseq> können Sie dieses Verhalten einrichten."
 
-#: C/completion.page:30(section/title)
+#. (itstool) path: section/title
+#: C/completion.page:30
 msgid "Manual completion"
 msgstr "Manuelle Vervollständigung"
 
-#: C/completion.page:31(section/p)
+#. (itstool) path: section/p
+#: C/completion.page:31
 msgid ""
 "At any time, press <keyseq> <key>Ctrl</key> <key>Space</key> </keyseq> to "
 "show proposals."
@@ -396,49 +322,63 @@ msgstr ""
 "Sie können jederzeit <keyseq> <key>Strg</key> <key>Leertaste</key> </keyseq> "
 "drücken, um Vorschläge anzeigen zu lassen."
 
-#: C/projects.page:10(page/title)
+#. (itstool) path: page/title
+#: C/index.page:4
+msgid "LaTeXila Help"
+msgstr "Hilfe zu LaTeXila"
+
+#. (itstool) path: page/title
+#: C/projects.page:10
 msgid "Projects"
 msgstr "Projekte"
 
-#: C/projects.page:13(synopsis/p)
+#. (itstool) path: synopsis/p
+#: C/projects.page:13
 msgid ""
 "When a LaTeX document is split into several *.tex files, creating a project "
 "is useful."
 msgstr ""
-"Wenn ein LaTex-Dokument in verschiedene *.tex-Dateien unterteilt wird, ist es "
-"sinnvoll, ein Projekt anzulegen."
+"Wenn ein LaTex-Dokument in verschiedene *.tex-Dateien unterteilt wird, ist "
+"es sinnvoll, ein Projekt anzulegen."
 
-#: C/projects.page:18(section/title)
+#. (itstool) path: section/title
+#: C/projects.page:18
 msgid "Manage projects"
 msgstr "Projekte verwalten"
 
-#: C/projects.page:20(section/p)
+#. (itstool) path: section/p
+#: C/projects.page:20
 msgid ""
 "All actions related to projects are located in the <gui style=\"menu"
-"\">Projects</gui> menu. A project contain only two pieces of information:"
+"\">Projects</gui> menu. A project contains only two pieces of information:"
 msgstr ""
 "Alle auf Projekte bezogenen Aktionen finden Sie im Menü <gui style=\"menu"
 "\">Projekte</gui>. Ein Projekt enthält lediglich zwei Informationen:"
 
-#: C/projects.page:25(item/p)
+#. (itstool) path: item/p
+#: C/projects.page:25
 msgid "The directory where the project is located."
 msgstr "Den Ordner, in welchem sich das Projekt befindet."
 
-#: C/projects.page:26(item/p)
+#. (itstool) path: item/p
+#: C/projects.page:26
 msgid "The main *.tex file."
 msgstr "Die *.tex-Hauptdatei."
 
-#: C/projects.page:29(section/p)
+#. (itstool) path: section/p
+#: C/projects.page:29
 msgid ""
 "As a consequence, a directory can contain only one project, which is quite "
 "logical."
 msgstr "Konsequenterweise kann ein Ordner nur ein einziges Projekt enthalten."
 
-#: C/projects.page:35(section/title)
+#. (itstool) path: section/title
+#: C/projects.page:35
 msgid "Usefulness of projects"
 msgstr "Nutzen von Projekten"
 
-#: C/projects.page:37(item/p)
+#. (itstool) path: item/p
+#: C/projects.page:37
 msgid ""
 "A <link xref=\"build_tools\">build tool</link> is executed on the project's "
 "main file."
@@ -446,87 +386,110 @@ msgstr ""
 "Ein <link xref=\"build_tools\">Erstellungswerkzeug</link> wird auf die "
 "Hauptdatei eines Projekts angewendet."
 
-#: C/spell_checking.page:10(page/title)
+#. (itstool) path: item/p
+#: C/projects.page:39
+msgid ""
+"The <link xref=\"synctex#forward_search\">forward search</link> works for a "
+"secondary file of a project."
+msgstr ""
+"Die <link xref=\"synctex#forward_search\">Vorwärtssuche</link> funktioniert "
+"auch für Sekundärdateien eines Projektes."
+
+#. (itstool) path: page/title
+#: C/spell_checking.page:10
 msgid "Spell Checking"
 msgstr "Rechtschreibprüfung"
 
-#: C/spell_checking.page:13(synopsis/p)
+#. (itstool) path: synopsis/p
+#: C/spell_checking.page:13
 msgid "The purpose is to correct spelling mistakes easily."
 msgstr "Ziel ist es, Rechtschreibfehler leicht korrigieren zu können."
 
-#: C/spell_checking.page:17(section/title)
+#. (itstool) path: section/title
+#: C/spell_checking.page:17
 msgid "Use the spell checking"
 msgstr "Die Rechtschreibprüfung verwenden"
 
-#: C/spell_checking.page:18(section/p)
+#. (itstool) path: section/p
+#: C/spell_checking.page:18
 msgid ""
-"The spell checking can be activated or disabled via the menu: <guiseq> <gui "
-"style=\"menu\">Edit</gui> <gui style=\"menu\">Spell Check</gui> </guiseq>"
+"The default spell checking settings can be changed in the preferences "
+"dialog: <guiseq> <gui style=\"menu\">Edit</gui> <gui style=\"menu"
+"\">Preferences</gui> <gui style=\"tab\">Other</gui> </guiseq>"
 msgstr ""
-"Die Rechtschreibprüfung kann im Menü aktiviert oder deaktiviert werden. "
-"Wählen Sie hierzu <guiseq> <gui style=\"menu\">Bearbeiten</gui> <gui style="
-"\"menu\">Rechtschreibprüfung</gui> </guiseq>."
+"Die Vorgabeeinstellungen der Rechtschreibprüfung können im "
+"Einstellungsdialog geändert werden: <guiseq><gui style=\"menu\">Bearbeiten</"
+"gui><gui style=\"menu\">Einstellungen</gui><gui style=\"tab\">Andere</gui> </"
+"guiseq>"
 
-#: C/spell_checking.page:26(section/p)
+#. (itstool) path: section/p
+#: C/spell_checking.page:27
 msgid ""
-"Once the spell checking is activated, the misspelled words will be underlined "
-"in red. A right click on a misspelled word will show proposals."
+"The settings can also be changed on a file-by-file basis via the <gui style="
+"\"menu\">Tools</gui> menu."
 msgstr ""
-"Sobald die Rechtschreibprüfung aktiviert ist, werden falsch geschriebene "
-"Wörter rot unterstrichen dargestellt. Klicken Sie mit der rechten Maustaste "
-"auf eines der falsch geschriebenen Wörter, um Vorschläge anzeigen zu lassen."
+"Die Einstellungen können auch im <gui style=\"menu\">Werkzeuge</gui>-Menü "
+"für jede Datei getrennt konfiguriert werden."
 
-#: C/spell_checking.page:31(section/p)
-msgid "To change the language, do a right click on the document."
+#. (itstool) path: section/p
+#: C/spell_checking.page:32
+msgid ""
+"If you activate the <gui style=\"menu\">Highlight Misspelled Words</gui> "
+"option, the misspelled words will be underlined in red in the document. A "
+"right click on a misspelled word will show proposals."
 msgstr ""
-"Um die Sprache zu ändern, klicken Sie mit der rechten Maustaste in das "
-"Dokument."
+"Wenn Sie die Option <gui style=\"menu\">Falsch geschriebene Wörter "
+"hervorheben</gui> aktivieren, werden falsch geschriebene Wörter rot "
+"unterstrichen dargestellt. Klicken Sie mit der rechten Maustaste auf eines "
+"der falsch geschriebenen Wörter, um Vorschläge anzeigen zu lassen."
 
-#: C/spell_checking.page:35(section/title)
+#. (itstool) path: section/title
+#: C/spell_checking.page:40
 msgid "Dictionaries"
 msgstr "Wörterbücher"
 
-#: C/spell_checking.page:36(section/p)
+#. (itstool) path: section/p
+#: C/spell_checking.page:41
 msgid ""
-"<link href=\"http://gtkspell.sourceforge.net/\">GtkSpell</link> is used for "
-"the spell checking in LaTeXila. GtkSpell uses <link href=\"http://www."
-"abisource.com/projects/enchant/\">Enchant</link>, which uses one or several "
+"<link href=\"http://www.abisource.com/projects/enchant/\">Enchant</link> is "
+"used for the spell checking in LaTeXila. Enchant uses one or several "
 "backends such as Hunspell or Aspell for the dictionaries."
 msgstr ""
-"<link href=\"http://gtkspell.sourceforge.net/\">GtkSpell</link> wird für die "
-"Rechtschreibprüfung in LaTeXila verwendet. GtkSpell benutzt <link href="
-"\"http://www.abisource.com/projects/enchant/\">Enchant</link>, welches eines "
-"von verschiedenen Backends wie Hunspell oder Aspell als Wörterbuch verwendet."
+"<link href=\"http://www.abisource.com/projects/enchant/\"> Enchant </link> "
+"wird für die Rechtschreibprüfung in LaTeXila verwendet. Enchant benutzt "
+"eines der Backends Hunspell oder Aspell als Wörterbuch."
 
-#: C/spell_checking.page:43(section/p)
+#. (itstool) path: section/p
+#: C/spell_checking.page:47
 msgid ""
-"So if there is no dictionary for your language, try to know which backend is "
-"used by Enchant on your system, and install the dictionary for this backend. "
-"There are most probably packages available for your Linux distribution."
+"If your language is not listed, install a dictionary for one of the "
+"supported backends."
 msgstr ""
-"Falls für Ihre Sprache kein Wörterbuch verfügbar ist, versuchen Sie "
-"herauszufinden, welches Backend auf Ihrem System von Enchant verwendet wird "
-"und installieren Sie das Wörterbuch für das Backend. In den meisten Fällen "
-"werden Sie ein  entsprechendes Paket für Ihre Linux-Distribution finden."
+"Wenn Ihre Sprache nicht angeführt ist, installieren Sie ein Wörterbuch für "
+"eines der unterstützten Programme."
 
-#: C/structure.page:10(page/title)
+#. (itstool) path: page/title
+#: C/structure.page:10
 msgid "Document's Structure"
 msgstr "Dokumentstruktur"
 
-#: C/structure.page:13(synopsis/p)
+#. (itstool) path: synopsis/p
+#: C/structure.page:13
 msgid ""
 "The list of chapters, sections, sub-sections and other things like tables, "
 "figures, … of a document, to easily navigate in it."
 msgstr ""
 "Die Liste der Kapitel, Abschnitte, Unterabschnitte und weiterer Objekte wie "
-"Tabellen, Abbildungen usw. eines Dokuments, durch die leicht navigiert werden "
-"kann."
+"Tabellen, Abbildungen usw. eines Dokuments, durch die leicht navigiert "
+"werden kann."
 
-#: C/structure.page:18(section/title)
+#. (itstool) path: section/title
+#: C/structure.page:18
 msgid "Display the structure"
 msgstr "Die Struktur anzeigen"
 
-#: C/structure.page:20(section/p)
+#. (itstool) path: section/p
+#: C/structure.page:20
 msgid ""
 "The structure can be displayed in the side panel. If the side panel is "
 "hidden, go to <guiseq> <gui style=\"menu\">View</gui> <gui style=\"menu"
@@ -536,7 +499,8 @@ msgstr ""
 "Seitenleiste verborgen ist, wählen Sie <guiseq> <gui style=\"menu\">Ansicht</"
 "gui> <gui style=\"menu\">Seitenleiste</gui> </guiseq>."
 
-#: C/structure.page:29(section/p)
+#. (itstool) path: section/p
+#: C/structure.page:29
 msgid ""
 "The structure's content is not automatically updated. That's why there is a "
 "refresh button. If text is inserted in the document, the position of an item "
@@ -549,11 +513,13 @@ msgstr ""
 "Abschnitts) korrekt, sofern sich das Objekt noch immer dort befindet und "
 "nicht verändert wurde."
 
-#: C/structure.page:37(section/title)
+#. (itstool) path: section/title
+#: C/structure.page:37
 msgid "Actions"
 msgstr "Aktionen"
 
-#: C/structure.page:39(section/p)
+#. (itstool) path: section/p
+#: C/structure.page:39
 msgid ""
 "Some actions such as \"cut\", \"copy\" or \"comment\" can be performed on a "
 "structure's item. Either by a right click, or via the <gui style=\"menu"
@@ -562,3 +528,264 @@ msgstr ""
 "Einige Aktionen, wie Ausschneiden, Kopieren oder Kommentieren können auf ein "
 "Element einer Struktur angewendet werden, entweder durch einen Klick mit der "
 "rechten Maustaste oder über das Menü <gui style=\"menu\">Struktur</gui>."
+
+#. (itstool) path: section/title
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:48
+msgid "TODOs and FIXMEs"
+msgstr "TODOs (zu erledigen) und FIXMEs (zu korrigieren)"
+
+#. (itstool) path: section/p
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:50
+msgid ""
+"It can be useful to add TODOs and FIXMEs comments in the document. They will "
+"be displayed in the structure. Example:"
+msgstr ""
+"﻿Es kann nützlich sein, TODO- und FIXME-Kommentare im Dokument hinzuzufügen. "
+"Sie werden innerhalb der Struktur angezeigt. Beispiel:"
+
+#. (itstool) path: section/code
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:55
+#, no-wrap
+msgid ""
+"\n"
+"%TODO a remaining task\n"
+"%FIXME something is broken"
+msgstr ""
+"\n"
+"%TODO noch zu erledigen\n"
+"%FIXME etwas funktioniert nicht"
+
+#. (itstool) path: page/title
+#: C/synctex.page:10
+msgid "Forward and Backward Search"
+msgstr "﻿Vorwärts und rückwärts suchen"
+
+#. (itstool) path: synopsis/p
+#: C/synctex.page:13
+msgid ""
+"Synchronization between the document's *.tex files and the resulting PDF "
+"output, opened with the <app>Evince</app> document viewer."
+msgstr ""
+"﻿Synchronisierung zwischen den *.tex-Dateien des Dokuments, und dem "
+"resultierenden PDF-Dokument, im <app>Evince</app> Dokument-Betrachter "
+"geöffnet."
+
+#. (itstool) path: note/p
+#: C/synctex.page:18
+msgid ""
+"For more information, read the <link href=\"help:evince#synctex"
+"\"><app>Evince</app> documentation</link>."
+msgstr ""
+"Für weitere Informationen lesen Sie die Dokumentation des <link href=\"help:"
+"evince#synctex\"><app>Evince</app>-Dokumentbetrachters</link>."
+
+#. (itstool) path: section/title
+#: C/synctex.page:23
+msgid "Forward Search: from .tex to PDF"
+msgstr "Vorwärtssuche: Von TeX nach PDF"
+
+#. (itstool) path: section/p
+#: C/synctex.page:25
+msgid ""
+"From a certain position in the .tex source file, jump to the corresponding "
+"position in the PDF file."
+msgstr ""
+"Springen Sie von einem gewünschten Punkt in der TeX-Quelle zur "
+"entsprechenden Position in der PDF-Datei."
+
+#. (itstool) path: section/p
+#: C/synctex.page:28
+msgid "There are different ways to do a forward search:"
+msgstr "Es gibt verschiedene Möglichkeiten, eine Vorwärtssuche durchzuführen:"
+
+#. (itstool) path: item/p
+#: C/synctex.page:30
+msgid ""
+"In the menu: <guiseq> <gui style=\"menu\">Search</gui> <gui style=\"menu"
+"\">Search Forward</gui> </guiseq>"
+msgstr ""
+"Im Menü: <guiseq> <gui style=\"menu\">Suche</gui> <gui style=\"menu"
+"\">Vorwärtssuche</gui> </guiseq>"
+
+#. (itstool) path: item/p
+#: C/synctex.page:36
+msgid "By pressing <keyseq> <key>Ctrl</key> <key>left click</key> </keyseq>"
+msgstr ""
+"Durch gedrückt halten von <key>Strg</key> und klicken mit der linken "
+"Maustaste."
+
+#. (itstool) path: section/p
+#: C/synctex.page:44
+msgid ""
+"If a document is split into several .tex files, create a <link xref="
+"\"projects\">project</link>. There is no need to mention the main file with "
+"a LaTeX comment in each secondary .tex file, like it is explained in the "
+"<link href=\"help:evince/synctex-search#forward-search\"> <app>Evince</app> "
+"documentation. </link>"
+msgstr ""
+"Wenn ein Dokument in mehrere TeX-Dateien aufgeteilt ist, erstellen Sie ein "
+"<link xref=\"projects\">Projekt</link>. Es ist nicht notwendig, die "
+"Hauptdatei in den Sekundärdateien zu erwähnen, wie es in der Dokumentation "
+"des <link href=\"help:evince/synctex-search#forward-search\"> <app>Evince</"
+"app>-Dokumentbetrachters</link> beschrieben ist."
+
+#. (itstool) path: section/title
+#: C/synctex.page:53
+msgid "Backward Search"
+msgstr "Rückwärtssuche"
+
+#. (itstool) path: section/p
+#: C/synctex.page:55
+msgid ""
+"In <app>Evince</app>, press <keyseq> <key>Ctrl</key> <key>left click</key> </"
+"keyseq>, and the corresponding position in the .tex file will be opened in "
+"<app>LaTeXila</app>."
+msgstr ""
+"Halten Sie <key>Strg</key> gedrückt und klicken Sie mit der linken Taste im "
+"<app>Evince</app>-Dokumentenbetrachter, um zur entsprechenden Position der "
+"TeX-Datei in <app>LaTeXila</app> zu springen."
+
+#. (itstool) path: section/p
+#: C/synctex.page:63
+msgid ""
+"<app>Evince</app> have to be launched by <app>LaTeXila</app>. Else, the "
+"backward search will not work."
+msgstr ""
+"<app>Evince</app> muss durch <app>LaTeXila</app> gestartet werden. Ansonsten "
+"funktioniert die Rückwärtssuche nicht."
+
+#~ msgid "Differences Between Latexmk and Rubber"
+#~ msgstr "Unterschiede zwischen Latexmk und Rubber"
+
+#~ msgid ""
+#~ "<link href=\"http://www.phys.psu.edu/~collins/software/latexmk-jcc/"
+#~ "\">Latexmk</link> and <link href=\"https://launchpad.net/rubber/"
+#~ "\">Rubber</link> have the same purpose: simplify the compilation process "
+#~ "of a LaTeX document. Latexmk is written in Perl, while Rubber is written "
+#~ "in Python."
+#~ msgstr ""
+#~ "<link href=\"http://www.phys.psu.edu/~collins/software/latexmk-jcc/"
+#~ "\">Latexmk</link> und <link href=\"https://launchpad.net/rubber/"
+#~ "\">Rubber</link> verfolgen das gleiche Ziel: die Vereinfachung des "
+#~ "Erstellungsprozesses eines LaTeX-Dokuments. Latexmk is in Perl "
+#~ "geschrieben, während Rubber auf Python basiert."
+
+#~ msgid ""
+#~ "The output of Latexmk contains more information: which commands are "
+#~ "executed, how many times, their output, and the reasons why Latexmk "
+#~ "executes (or doesn't execute) these commands. The output of Rubber, on "
+#~ "the other hand, doesn't contain a lot of information. When an error "
+#~ "occurs, it can be more difficult to diagnose."
+#~ msgstr ""
+#~ "Die Ausgabe von Latexmk enthält mehr Informationen: die ausgeführten "
+#~ "Befehle, und wie oft sie ausgeführt wurden, deren Ausgabe und die "
+#~ "Ursachen, weshalb Latexmk diese Befehle ausgeführt hat (oder eben nicht "
+#~ "ausgeführt hat). Andererseits enthält die Ausgabe von Rubber weit weniger "
+#~ "Informationen. Wenn ein Fehler auftritt, kann es schwieriger sein, dessen "
+#~ "Ursachen herauszufinden."
+
+#~ msgid ""
+#~ "Also, Rubber filter the output of the <cmd>latex</cmd> or <cmd>pdflatex</"
+#~ "cmd> command. As a consequence, when Rubber prints an error, it's more "
+#~ "difficult to know which type of error it is. If you use Latexmk, errors "
+#~ "are categorized into three types: critical errors, simple warnings and "
+#~ "bad boxes (for example when a word exceed the margin). With Rubber, there "
+#~ "is no distinction between critical errors and simple warnings. See <link "
+#~ "xref=\"#post-processors\"/> for more information."
+#~ msgstr ""
+#~ "Rubber filtert außerdem die Ausgabe der Befehle <cmd>latex</cmd> oder "
+#~ "<cmd>pdflatex</cmd>. Wenn Rubber einen Fehler ausgibt, ist es "
+#~ "schwieriger, den Fehlertyp herauszufinden. Wenn Sie Latexmk verwenden, "
+#~ "werden Fehler in drei Typen unterteilt: kritische Fehler, einfache "
+#~ "Warnungen und »Bad Boxes« (wenn beispielsweise ein Wort den Rand "
+#~ "überschreitet). Mit Rubber gibt es keinen Unterschied zwischen kritischen "
+#~ "Fehlern und einfachen Warnungen. Weitere Informationen finden Sie in "
+#~ "<link xref=\"#post-processors\"/>."
+
+#~ msgid ""
+#~ "Latexmk is more flexible. Each low-level command can be customized, for "
+#~ "example for adding a parameter, or use a completely other tool. This can "
+#~ "be done both from the command line and in configuration files (see the "
+#~ "<cmd>-e</cmd> and <cmd>-r</cmd> options). Rubber is also configurable, "
+#~ "but less than Latexmk."
+#~ msgstr ""
+#~ "Latexmk ist flexibler. Jeder einfache Befehl kann an Ihre Bedürfnisse "
+#~ "angepasst werden, zum Beispiel durch Hinzufügen von Parametern, oder "
+#~ "indem Sie ihn durch einen völlig anderen Befehl ersetzen. Dies können Sie "
+#~ "sowohl direkt in der Befehlszeile als auch in den Konfigurationsdateien "
+#~ "tun, siehe Parameter <cmd>-e</cmd> und <cmd>-r</cmd>). Rubber ist "
+#~ "ebenfalls konfigurierbar, aber in deutlich engeren Grenzen."
+
+#~ msgid ""
+#~ "Last, but not least: Rubber seems to have more bugs and is less actively "
+#~ "maintained than Latexmk."
+#~ msgstr ""
+#~ "Erwähnenswert wäre noch, dass Rubber mehr bekannte Fehler enthält und "
+#~ "weniger aktiv weiterentwickelt wird als Latexmk."
+
+#~ msgid ""
+#~ "For an explanation of the option about the Latexmk post processor, see "
+#~ "<link xref=\"#post-processors\"/>."
+#~ msgstr ""
+#~ "Eine Erläuterung der Optionen des Latexmk-Nachbearbeitungswerkzeugs "
+#~ "finden Sie in <link xref=\"#post-processors\"/>."
+
+#~ msgid ""
+#~ "Whether the job must succeed. If this option is enabled, when an error "
+#~ "occurs during the job execution, the next job is not executed."
+#~ msgstr ""
+#~ "Legt fest, ob die Aufgabe ausgeführt werden muss. Falls diese Option "
+#~ "aktiviert ist, wird die nächste Aufgabe nicht ausgeführt, falls bei der "
+#~ "Ausführung einer Aufgabe ein Fehler auftritt."
+
+#~ msgid ""
+#~ "In the <link xref=\"#general_configuration\"/>, there is an option for "
+#~ "always showing all information of this post processor. If this option is "
+#~ "disabled (which is the case by default), only the output of the last "
+#~ "<cmd>latex</cmd> or <cmd>pdflatex</cmd> command is displayed, if no error "
+#~ "occurred in another command. This allows to reduce the output showed in "
+#~ "the bottom panel. But even if there are no errors, it can be useful to "
+#~ "see exactly which commands are executed, with their output."
+#~ msgstr ""
+#~ "In <link xref=\"#general_configuration\"/> gibt es eine Option, über die "
+#~ "alle Informationen zu diesem Nachbearbeitungswerkzeug ständig angezeigt "
+#~ "werden. Falls diese Option deaktiviert ist, wird nur die Ausgabe des "
+#~ "letzten <cmd>latex</cmd>- oder <cmd>pdflatex</cmd>-Befehls angezeigt, "
+#~ "sofern kein Fehler in einem der anderen Befehle auftrat. Dadurch wird der "
+#~ "Umfang der im unteren Panel angezeigten Ausgabe verringert. Doch selbst "
+#~ "wenn überhaupt keine Fehler auftreten, kann es sinnvoll sein, die "
+#~ "ausgeführten Befehle einschließlich deren Ausgaben genau anzuzeigen."
+
+#~ msgid ""
+#~ "This is the post-processor used for the <cmd>rubber</cmd> command. The "
+#~ "errors are categorized into two types: bad boxes, and the others. So, "
+#~ "unlike the <em>latex</em> post processor, there is no distinction between "
+#~ "critical errors and simple warnings."
+#~ msgstr ""
+#~ "Dieses Nachbearbeitungswerkzeug wird für den Befehl <cmd>rubber</cmd> "
+#~ "verwendet. Es gibt zwei Fehlerkategorien: Bad Boxes und andere. Es gibt, "
+#~ "im Gegensatz zum Nachbearbeitungswerkzeug <em>latex</em>, keinen "
+#~ "Unterschied zwischen kritischen Fehlern und einfachen Warnungen."
+
+#~ msgid "To change the language, do a right click on the document."
+#~ msgstr ""
+#~ "Um die Sprache zu ändern, klicken Sie mit der rechten Maustaste in das "
+#~ "Dokument."
+
+#~ msgid ""
+#~ "So if there is no dictionary for your language, try to know which backend "
+#~ "is used by Enchant on your system, and install the dictionary for this "
+#~ "backend. There are most probably packages available for your Linux "
+#~ "distribution."
+#~ msgstr ""
+#~ "Falls für Ihre Sprache kein Wörterbuch verfügbar ist, versuchen Sie "
+#~ "herauszufinden, welches Backend auf Ihrem System von Enchant verwendet "
+#~ "wird und installieren Sie das Wörterbuch für das Backend. In den meisten "
+#~ "Fällen werden Sie ein  entsprechendes Paket für Ihre Linux-Distribution "
+#~ "finden."
