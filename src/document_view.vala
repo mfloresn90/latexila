@@ -33,7 +33,6 @@ public class DocumentView : Gtk.SourceView
     private GLib.Settings _editor_settings;
     private Pango.FontDescription _font_desc;
 
-    private Gspell.Checker? _spell_checker = null;
     private Gspell.InlineCheckerGtv? _inline_spell_checker = null;
     private static bool _no_spell_language_dialog_shown = false;
 
@@ -225,20 +224,22 @@ public class DocumentView : Gtk.SourceView
 
     private void init_spell_checking ()
     {
-        _spell_checker = new Gspell.Checker (get_spell_language ());
+        Gspell.Checker spell_checker = new Gspell.Checker (get_spell_language ());
+        Gspell.text_buffer_set_spell_checker (this.buffer, spell_checker);
+
         setup_inline_spell_checker ();
 
         Document doc = get_buffer () as Document;
 
         doc.notify["location"].connect (() =>
         {
-            _spell_checker.set_language (get_spell_language ());
+            spell_checker.set_language (get_spell_language ());
             setup_inline_spell_checker ();
         });
 
         _editor_settings.changed["spell-checking-language"].connect (() =>
         {
-            _spell_checker.set_language (get_spell_language ());
+            spell_checker.set_language (get_spell_language ());
         });
 
         _editor_settings.changed["highlight-misspelled-words"].connect (() =>
@@ -281,10 +282,7 @@ public class DocumentView : Gtk.SourceView
 
     public void launch_spell_checker_dialog ()
     {
-        return_if_fail (_spell_checker != null);
-
-        Gspell.Navigator navigator = Gspell.NavigatorGtv.new (this as TextView,
-            _spell_checker);
+        Gspell.Navigator navigator = Gspell.NavigatorGtv.new (this as TextView);
 
         Gspell.CheckerDialog dialog =
             new Gspell.CheckerDialog (this.get_toplevel () as Window, navigator);
@@ -295,11 +293,12 @@ public class DocumentView : Gtk.SourceView
 
     public void launch_spell_language_chooser_dialog ()
     {
-        return_if_fail (_spell_checker != null);
+        Gspell.Checker? spell_checker = Gspell.text_buffer_get_spell_checker (buffer);
+        return_if_fail (spell_checker != null);
 
         Gspell.LanguageChooserDialog dialog =
             new Gspell.LanguageChooserDialog (this.get_toplevel () as Window,
-                _spell_checker.get_language (),
+                spell_checker.get_language (),
                 DialogFlags.DESTROY_WITH_PARENT |
                 DialogFlags.MODAL |
                 DialogFlags.USE_HEADER_BAR);
@@ -307,18 +306,19 @@ public class DocumentView : Gtk.SourceView
         dialog.run ();
 
         unowned Gspell.Language? lang = dialog.get_language ();
-        _spell_checker.set_language (lang);
+        spell_checker.set_language (lang);
 
         dialog.destroy ();
     }
 
     public void set_spell_language_metadata ()
     {
-        return_if_fail (_spell_checker != null);
+        Gspell.Checker? spell_checker = Gspell.text_buffer_get_spell_checker (buffer);
+        return_if_fail (spell_checker != null);
 
         Document doc = get_buffer () as Document;
 
-        unowned Gspell.Language? lang = _spell_checker.get_language ();
+        unowned Gspell.Language? lang = spell_checker.get_language ();
         if (lang != null)
             doc.set_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE, lang.get_code ());
         else
@@ -343,14 +343,15 @@ public class DocumentView : Gtk.SourceView
 
     private void activate_inline_spell_checker ()
     {
-        return_if_fail (_spell_checker != null);
+        Gspell.Checker? spell_checker = Gspell.text_buffer_get_spell_checker (buffer);
+        return_if_fail (spell_checker != null);
 
-        if (_spell_checker.get_language () != null)
+        if (spell_checker.get_language () != null)
         {
             if (_inline_spell_checker == null)
             {
                 _inline_spell_checker =
-                    new Gspell.InlineCheckerGtv (this.buffer, _spell_checker);
+                    new Gspell.InlineCheckerGtv (this.buffer);
 
                 _inline_spell_checker.attach_view (this);
 
