@@ -33,14 +33,13 @@ public class DocumentView : Gtk.SourceView
     private GLib.Settings _editor_settings;
     private Pango.FontDescription _font_desc;
 
-    private Gspell.InlineCheckerGtv? _inline_spell_checker = null;
     private static bool _no_spell_language_dialog_shown = false;
 
     public bool highlight_misspelled_words
     {
         get
         {
-            return _inline_spell_checker != null;
+            return Gspell.text_view_get_inline_checking (this);
         }
 
         set
@@ -348,13 +347,9 @@ public class DocumentView : Gtk.SourceView
 
         if (spell_checker.get_language () != null)
         {
-            if (_inline_spell_checker == null)
+            if (! Gspell.text_view_get_inline_checking (this))
             {
-                _inline_spell_checker =
-                    new Gspell.InlineCheckerGtv (this.buffer);
-
-                _inline_spell_checker.attach_view (this);
-
+                Gspell.text_view_set_inline_checking (this, true);
                 notify_property ("highlight-misspelled-words");
             }
 
@@ -396,10 +391,9 @@ public class DocumentView : Gtk.SourceView
 
     private void deactivate_inline_spell_checker ()
     {
-        if (_inline_spell_checker != null)
+        if (Gspell.text_view_get_inline_checking (this))
         {
-            _inline_spell_checker.detach_view (this);
-            _inline_spell_checker = null;
+            Gspell.text_view_set_inline_checking (this, false);
             notify_property ("highlight-misspelled-words");
         }
     }
