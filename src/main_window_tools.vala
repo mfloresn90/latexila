@@ -66,7 +66,7 @@ public class MainWindowTools
         {
             // Ensure that the active_view is updated first.
             if (_main_window.active_view != null)
-                _main_window.active_view.setup_inline_spell_checker ();
+                _main_window.active_view.setup_inline_spell_checking ();
 
             update_inline_spell_checker_action_state ();
         });
