@@ -4,15 +4,15 @@
 # Jorge González <jorgegonz@svn.gnome.org>, 2011.
 # miguel <bokerones.fritos@gmail.com>, 2012.
 # 
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014, 2015., 2015.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014, 2015., 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila 2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-10-08 11:10+0000\n"
-"PO-Revision-Date: 2015-10-08 15:36+0200\n"
+"POT-Creation-Date: 2016-01-07 00:46+0000\n"
+"PO-Revision-Date: 2016-01-07 10:40+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -87,7 +87,7 @@ msgstr "Convertir el documento DVI a formato PostScript"
 msgid "Convert the PostScript document to the PDF format"
 msgstr "Mover el documento PostScript a una formato PDF"
 
-#: ../data/latexila.appdata.xml.in.h:1
+#: ../data/org.gnome.latexila.appdata.xml.in.h:1
 msgid ""
 "LaTeXila is an integrated LaTeX environment for the GNOME desktop. The idea "
 "of LaTeXila is to always deal directly with the LaTeX code, while "
@@ -97,7 +97,7 @@ msgstr ""
 "de LaTeXila es tratar directamente con el código LaTeX, simplificando en "
 "todo lo posible su escritura."
 
-#: ../data/latexila.appdata.xml.in.h:2
+#: ../data/org.gnome.latexila.appdata.xml.in.h:2
 msgid ""
 "To help the writing of the LaTeX markup, auto-completion is available as "
 "well as menus and toolbars with the principal commands."
@@ -106,7 +106,7 @@ msgstr ""
 "autocompletado, así como los menús y barras de herramientas con los "
 "principales comandos."
 
-#: ../data/latexila.appdata.xml.in.h:3
+#: ../data/org.gnome.latexila.appdata.xml.in.h:3
 msgid ""
 "New documents are created from templates. There are buttons to compile, "
 "convert and view a document in one click. And projects containing several ."
@@ -116,7 +116,7 @@ msgstr ""
 "compilar, convertir y ver un documento con una sola pulsación. Y los "
 "proyectos que contengan varios archivos .tex se gestionan fácilmente."
 
-#: ../data/latexila.appdata.xml.in.h:4
+#: ../data/org.gnome.latexila.appdata.xml.in.h:4
 msgid ""
 "A side panel contains three components: the document structure to easily "
 "navigate in it; lists of symbols to insert them in a document; and an "
@@ -126,7 +126,7 @@ msgstr ""
 "navegar fácilmente por ella; una lista de símbolos para insertarlos en el "
 "documento; y un explorador de archivos integrado."
 
-#: ../data/latexila.appdata.xml.in.h:5
+#: ../data/org.gnome.latexila.appdata.xml.in.h:5
 msgid ""
 "LaTeXila has also other features like the spell checking, or the forward and "
 "backward search to switch between the .tex and the PDF."
@@ -135,23 +135,23 @@ msgstr ""
 "o la búsqueda hacia adelante o hacia atrás para cambiar entre el archivo ."
 "tex y el PDF."
 
-#: ../data/latexila.desktop.in.in.h:1
+#: ../data/org.gnome.latexila.desktop.in.in.h:1
 msgid "Integrated LaTeX Environment"
 msgstr "Entorno integrado de LaTeX"
 
-#: ../data/latexila.desktop.in.in.h:2
+#: ../data/org.gnome.latexila.desktop.in.in.h:2
 msgid "Edit LaTeX documents"
 msgstr "Editar documentos LaTeX"
 
-#: ../data/latexila.desktop.in.in.h:3
+#: ../data/org.gnome.latexila.desktop.in.in.h:3
 msgid "text;tex;latex;editor;documents;"
 msgstr "texto;tex;latex;editor;documentos;"
 
-#: ../data/latexila.desktop.in.in.h:4
+#: ../data/org.gnome.latexila.desktop.in.in.h:4
 msgid "Open a New Window"
 msgstr "Abrir una ventana nueva"
 
-#: ../data/latexila.desktop.in.in.h:5
+#: ../data/org.gnome.latexila.desktop.in.in.h:5
 msgid "Open a New Document"
 msgstr "Abrir un documento nuevo"
 
@@ -537,15 +537,14 @@ msgstr "Herramienta de construcción personal"
 
 #: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:290
+#: ../src/document_tab.vala:291
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:758
-#: ../src/main_window.vala:854 ../src/main_window.vala:890
-#: ../src/preferences_dialog.vala:114 ../src/project_dialogs.vala:31
-#: ../src/project_dialogs.vala:122 ../src/project_dialogs.vala:276
-#: ../src/project_dialogs.vala:296
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:762
+#: ../src/main_window.vala:858 ../src/preferences_dialog.vala:114
+#: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
+#: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
 msgstr "_Cancelar"
 
@@ -746,12 +745,12 @@ msgstr "No hay propuesta equivalente"
 msgid "Ln %d, Col %d"
 msgstr "Ln %d, Col %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:757
+#: ../src/dialogs.vala:40 ../src/main_window.vala:761
 msgid "Close _without Saving"
 msgstr "Cerrar _sin guardar"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:763 ../src/main_window.vala:855
+#: ../src/main_window.vala:767 ../src/main_window.vala:859
 msgid "_Save"
 msgstr "_Guardar"
 
@@ -775,40 +774,40 @@ msgstr "Si no guarda, todos sus cambios se perderán permanentemente."
 msgid "The structure item already contains a sub-paragraph."
 msgstr "El elemento de estructura ya contiene un subpárrafo."
 
-#: ../src/document_tab.vala:173
+#: ../src/document_tab.vala:174
 msgid "Close document"
 msgstr "Cerrar documento"
 
 #. main file
-#: ../src/document_tab.vala:233 ../src/project_dialogs.vala:46
+#: ../src/document_tab.vala:234 ../src/project_dialogs.vala:46
 #: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
 #: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
 msgid "Main File"
 msgstr "Archivo principal"
 
-#: ../src/document_tab.vala:235
+#: ../src/document_tab.vala:236
 msgid "Main File:"
 msgstr "Archivo principal:"
 
-#: ../src/document_tab.vala:259
+#: ../src/document_tab.vala:260
 #, c-format
 msgid "Activate '%s'"
 msgstr "Activar '%s'"
 
-#: ../src/document_tab.vala:278
+#: ../src/document_tab.vala:279
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "El archivo %s ha cambiado en el disco."
 
-#: ../src/document_tab.vala:283
+#: ../src/document_tab.vala:284
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "¿Quiere perder sus cambios y volver a cargar el archivo?"
 
-#: ../src/document_tab.vala:285
+#: ../src/document_tab.vala:286
 msgid "Do you want to reload the file?"
 msgstr "¿Quiere volver a cargar el archivo?"
 
-#: ../src/document_tab.vala:289
+#: ../src/document_tab.vala:290
 msgid "_Reload"
 msgstr "_Recargar"
 
@@ -845,8 +844,9 @@ msgid "Error trying to convert the document to UTF-8"
 msgstr "Error al tratar de convertir el documento a UTF-8"
 
 #: ../src/document.vala:310
-msgid "Unsaved Document"
-msgstr "Documento no guardado"
+#| msgid "Unsaved Document"
+msgid "Untitled Document"
+msgstr "Documento sin título"
 
 #: ../src/document.vala:594
 msgid ""
@@ -861,7 +861,7 @@ msgid "Do you want to save the file in a safer place?"
 msgstr "¿Quiere guardar el archivo en un lugar más seguro?"
 
 #: ../src/document.vala:598 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:761
+#: ../src/main_window.vala:765
 msgid "Save _As"
 msgstr "Guardar _como"
 
@@ -869,16 +869,17 @@ msgstr "Guardar _como"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../src/document_view.vala:370
+#: ../src/document_view.vala:368
 msgid "No dictionaries available for the spell checking."
 msgstr "No hay diccionarios disponibles para la corrección ortográfica."
 
 #. Help
-#: ../src/document_view.vala:372 ../src/main_window.vala:62
+#: ../src/document_view.vala:370 ../src/main_window.vala:62
+#: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: ../src/document_view.vala:373 ../src/tab_info_bar.vala:77
+#: ../src/document_view.vala:371 ../src/tab_info_bar.vala:77
 msgid "_OK"
 msgstr "_Aceptar"
 
@@ -915,9 +916,37 @@ msgid "File System"
 msgstr "Sistema de archivos"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:410
+#: ../src/file_browser.vala:536 ../src/main_window.vala:411
 msgid "File Browser"
 msgstr "Explorador de archivos"
+
+#: ../src/latexila_app.vala:78
+msgid "Show the application's version"
+msgstr "Mostrar la versión de la aplicación"
+
+#: ../src/latexila_app.vala:81
+msgid "Create new document"
+msgstr "Crear un documento nuevo"
+
+#: ../src/latexila_app.vala:84
+msgid "Create a new top-level window in an existing instance of LaTeXila"
+msgstr ""
+"Crear una ventana nueva de nivel superior en una instancia existente de "
+"LaTeXila"
+
+#: ../src/latexila_app.vala:223
+msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
+msgstr "LaTeXila es un entorno LaTeX Integrado para el escritorio GNOME"
+
+#: ../src/latexila_app.vala:262 ../src/main_window.vala:71
+msgid "About LaTeXila"
+msgstr "Acerca de LaTeXila"
+
+#: ../src/latexila_app.vala:263
+msgid "translator-credits"
+msgstr ""
+"Daniel Mustieles García <daniel.mustieles@gmail.com>, 2011\n"
+"Matías De la Puente <mfpuente.ar@gmail.com>"
 
 #. LaTeX: Sectioning
 #: ../src/latex_menu.vala:32
@@ -1738,31 +1767,6 @@ msgstr "Eliminar"
 msgid "Manage Personal Templates"
 msgstr "Gestionar plantillas personales"
 
-#: ../src/main.vala:51
-msgid "Show the application's version"
-msgstr "Mostrar la versión de la aplicación"
-
-#: ../src/main.vala:54
-msgid "Create new document"
-msgstr "Crear un documento nuevo"
-
-#: ../src/main.vala:57
-msgid "Create a new top-level window in an existing instance of LaTeXila"
-msgstr ""
-"Crear una ventana nueva de nivel superior en una instancia existente de "
-"LaTeXila"
-
-#: ../src/main.vala:66
-msgid "- Integrated LaTeX Environment for GNOME"
-msgstr "- Entorno integrado de LaTeX para GNOME"
-
-#: ../src/main.vala:78
-#, c-format
-msgid "Run '%s --help' to see a full list of available command line options.\n"
-msgstr ""
-"Ejecute «%s --help» para ver una lista completa de opciones de línea comando "
-"disponibles.\n"
-
 #: ../src/main_window_build_tools.vala:28
 msgid "_Build"
 msgstr "_Construir"
@@ -1791,7 +1795,7 @@ msgstr "Ver _registro"
 msgid "View Log"
 msgstr "Ver registro"
 
-#: ../src/main_window_build_tools.vala:40
+#: ../src/main_window_build_tools.vala:40 ../src/ui/menus.ui.h:3
 msgid "_Manage Build Tools"
 msgstr "_Gestionar herramientas de construcción"
 
@@ -1967,7 +1971,7 @@ msgstr "_Completado"
 msgid "Complete the LaTeX command"
 msgstr "Completar el comando de LaTeX"
 
-#: ../src/main_window_edit.vala:74
+#: ../src/main_window_edit.vala:74 ../src/ui/menus.ui.h:2
 msgid "_Preferences"
 msgstr "_Preferencias"
 
@@ -2049,12 +2053,12 @@ msgid "Open Files"
 msgstr "Abrir archivos"
 
 #. Filter: by default show only .tex and .bib files
-#: ../src/main_window_file.vala:172
+#: ../src/main_window_file.vala:173
 msgid "All LaTeX Files"
 msgstr "Todos los archivos de LaTeX"
 
 #. All files filter
-#: ../src/main_window_file.vala:179
+#: ../src/main_window_file.vala:180
 msgid "All Files"
 msgstr "Todos los archivos"
 
@@ -2115,7 +2119,7 @@ msgid "Open the file referenced by the selected structure item"
 msgstr ""
 "Abrir el archivo referenciado por el elemento de estructura seleccionado"
 
-#: ../src/main_window.vala:28
+#: ../src/main_window.vala:28 ../src/ui/menus.ui.h:7
 msgid "_Quit"
 msgstr "_Salir"
 
@@ -2234,13 +2238,9 @@ msgstr "Referencia de _LaTeX"
 msgid "The Kile LaTeX Reference"
 msgstr "La referencia de LaTeX de Kile"
 
-#: ../src/main_window.vala:70
+#: ../src/main_window.vala:70 ../src/ui/menus.ui.h:6
 msgid "_About"
 msgstr "Acerca _de"
-
-#: ../src/main_window.vala:71 ../src/main_window.vala:1226
-msgid "About LaTeXila"
-msgstr "Acerca de LaTeXila"
 
 #: ../src/main_window.vala:76
 msgid "_Main Toolbar"
@@ -2276,20 +2276,20 @@ msgid "Show or hide the bottom panel"
 msgstr "Mostrar u ocultar el panel inferior"
 
 #. Symbols
-#: ../src/main_window.vala:406
+#: ../src/main_window.vala:407
 msgid "Symbols"
 msgstr "Símbolos"
 
-#: ../src/main_window.vala:415
+#: ../src/main_window.vala:416
 msgid "Structure"
 msgstr "Estructura"
 
-#: ../src/main_window.vala:646
+#: ../src/main_window.vala:650
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Este archivo (%s) ya esta abierto en otra ventana de LaTeXila."
 
-#: ../src/main_window.vala:648
+#: ../src/main_window.vala:652
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2297,45 +2297,26 @@ msgstr ""
 "LaTeXila abrió esta instancia del archivo en una forma no editable.¿Quiere "
 "editarlo de todas formas?"
 
-#: ../src/main_window.vala:651
+#: ../src/main_window.vala:655
 msgid "Edit Anyway"
 msgstr "Editar de todas formas"
 
-#: ../src/main_window.vala:652
+#: ../src/main_window.vala:656
 msgid "Don't Edit"
 msgstr "No editar"
 
-#: ../src/main_window.vala:754
+#: ../src/main_window.vala:758
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "¿Guardar los cambios del documento «%s» antes de cerrar?"
 
-#: ../src/main_window.vala:834
+#: ../src/main_window.vala:838
 msgid "Read-Only"
 msgstr "Sólo lectura"
 
-#: ../src/main_window.vala:852
+#: ../src/main_window.vala:856
 msgid "Save File"
 msgstr "Guardar Archivo"
-
-#: ../src/main_window.vala:887
-#, c-format
-msgid "A file named \"%s\" already exists. Do you want to replace it?"
-msgstr "Ya existe un archivo llamado «%s». ¿Quiere reemplazarlo?"
-
-#: ../src/main_window.vala:891
-msgid "_Replace"
-msgstr "_Reemplazar"
-
-#: ../src/main_window.vala:1187
-msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
-msgstr "LaTeXila es un entorno LaTeX Integrado para el escritorio GNOME"
-
-#: ../src/main_window.vala:1227
-msgid "translator-credits"
-msgstr ""
-"Daniel Mustieles García <daniel.mustieles@gmail.com>, 2011\n"
-"Matías De la Puente <mfpuente.ar@gmail.com>"
 
 #: ../src/preferences_dialog.vala:33
 msgid "Preferences"
@@ -2609,6 +2590,15 @@ msgstr "L_impiar"
 msgid "Clear most used symbols"
 msgstr "Limpiar los símbolos más usados"
 
+#: ../src/ui/menus.ui.h:1
+#| msgid "New _Window"
+msgid "_New Window"
+msgstr "_Ventana nueva"
+
+#: ../src/ui/menus.ui.h:5
+msgid "LaTeXila _Fundraiser"
+msgstr "Recaudador de _fondos de LaTeXila"
+
 #: ../src/ui/preferences_dialog.ui.h:1
 msgid "Display line numbers"
 msgstr "Mostrar números de línea"
@@ -2713,6 +2703,21 @@ msgstr "Resaltar las palabras mal escritas"
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Otros"
+
+#~ msgid "- Integrated LaTeX Environment for GNOME"
+#~ msgstr "- Entorno integrado de LaTeX para GNOME"
+
+#~ msgid ""
+#~ "Run '%s --help' to see a full list of available command line options.\n"
+#~ msgstr ""
+#~ "Ejecute «%s --help» para ver una lista completa de opciones de línea "
+#~ "comando disponibles.\n"
+
+#~ msgid "A file named \"%s\" already exists. Do you want to replace it?"
+#~ msgstr "Ya existe un archivo llamado «%s». ¿Quiere reemplazarlo?"
+
+#~ msgid "_Replace"
+#~ msgstr "_Reemplazar"
 
 #~ msgid "LaTeXila"
 #~ msgstr "LaTeXila"
