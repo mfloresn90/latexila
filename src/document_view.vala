@@ -226,14 +226,14 @@ public class DocumentView : Gtk.SourceView
         Gspell.Checker spell_checker = new Gspell.Checker (get_spell_language ());
         Gspell.text_buffer_set_spell_checker (this.buffer, spell_checker);
 
-        setup_inline_spell_checking ();
+        setup_inline_spell_checker ();
 
         Document doc = get_buffer () as Document;
 
         doc.notify["location"].connect (() =>
         {
             spell_checker.set_language (get_spell_language ());
-            setup_inline_spell_checking ();
+            setup_inline_spell_checker ();
         });
 
         _editor_settings.changed["spell-checking-language"].connect (() =>
@@ -243,7 +243,7 @@ public class DocumentView : Gtk.SourceView
 
         _editor_settings.changed["highlight-misspelled-words"].connect (() =>
         {
-            setup_inline_spell_checking ();
+            setup_inline_spell_checker ();
         });
     }
 
@@ -261,7 +261,7 @@ public class DocumentView : Gtk.SourceView
         return Gspell.Language.lookup (lang_code);
     }
 
-    public void setup_inline_spell_checking ()
+    public void setup_inline_spell_checker ()
     {
         Document doc = get_buffer () as Document;
 
