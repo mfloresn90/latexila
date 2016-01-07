@@ -116,7 +116,7 @@ public class MainWindowTools
         // If the spell checker is used, save the language since it's probably
         // correct. If it isn't correct, the language will be changed and the
         // metadata will also be saved.
-        view.set_spell_language_metadata ();
+        view.save_spell_language_metadata ();
     }
 
     public void on_set_language (Gtk.Action action)
@@ -125,7 +125,7 @@ public class MainWindowTools
         return_if_fail (view != null);
 
         view.launch_spell_language_chooser_dialog ();
-        view.set_spell_language_metadata ();
+        view.save_spell_language_metadata ();
     }
 
     public void on_inline_spell_checker (Gtk.Action action)
@@ -147,8 +147,8 @@ public class MainWindowTools
 
             update_inline_spell_checker_action_state ();
 
-            view.set_inline_spell_metadata ();
-            view.set_spell_language_metadata ();
+            view.save_inline_spell_metadata ();
+            view.save_spell_language_metadata ();
         }
     }
 }

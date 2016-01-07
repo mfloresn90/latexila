@@ -297,7 +297,7 @@ public class DocumentView : Gtk.SourceView
         dialog.destroy ();
     }
 
-    public void set_spell_language_metadata ()
+    public void save_spell_language_metadata ()
     {
         Gspell.Checker? spell_checker = Gspell.text_buffer_get_spell_checker (buffer);
         return_if_fail (spell_checker != null);
@@ -311,7 +311,7 @@ public class DocumentView : Gtk.SourceView
             doc.set_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE, null);
     }
 
-    public void set_inline_spell_metadata ()
+    public void save_inline_spell_metadata ()
     {
         Document doc = get_buffer () as Document;
 
