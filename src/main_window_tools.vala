@@ -64,7 +64,6 @@ public class MainWindowTools
 
         _editor_settings.changed["highlight-misspelled-words"].connect (() =>
         {
-            // Ensure that the active_view is updated first.
             if (_main_window.active_view != null)
                 _main_window.active_view.setup_inline_spell_checker ();
 
@@ -80,8 +79,9 @@ public class MainWindowTools
         ToggleAction spell_checking_action =
             _action_group.get_action ("ToolsInlineSpellChecker") as ToggleAction;
 
-        spell_checking_action.active =
-            _main_window.active_view.highlight_misspelled_words;
+        Gspell.InlineCheckerText inline_checker =
+            Gspell.text_view_get_inline_checker (_main_window.active_view as TextView);
+        spell_checking_action.active = inline_checker.enabled;
     }
 
     /* Sensitivity */
@@ -135,12 +135,15 @@ public class MainWindowTools
 
         bool activate = (action as ToggleAction).active;
 
+        Gspell.InlineCheckerText inline_checker =
+            Gspell.text_view_get_inline_checker (view as TextView);
+
         // Save metadata only if property changes, because this function is
         // also called when update_inline_spell_checker_action_state() is
         // called.
-        if (view.highlight_misspelled_words != activate)
+        if (inline_checker.enabled != activate)
         {
-            view.highlight_misspelled_words = activate;
+            inline_checker.enabled = activate;
 
             update_inline_spell_checker_action_state ();
 

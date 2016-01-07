@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2010-2011 Sébastien Wilmet
+ * Copyright © 2010-2016 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,29 +27,13 @@ public class DocumentView : Gtk.SourceView
         "metadata::latexila-spell-language";
     private static const string METADATA_ATTRIBUTE_INLINE_SPELL =
         "metadata::latexila-inline-spell";
-    private static const string INLINE_SPELL_ACTIVATED_STR = "1";
-    private static const string INLINE_SPELL_DEACTIVATED_STR = "0";
+    private static const string INLINE_SPELL_ENABLED_STR = "1";
+    private static const string INLINE_SPELL_DISABLED_STR = "0";
 
     private GLib.Settings _editor_settings;
     private Pango.FontDescription _font_desc;
 
     private static bool _no_spell_language_dialog_shown = false;
-
-    public bool highlight_misspelled_words
-    {
-        get
-        {
-            return Gspell.text_view_get_inline_checking (this);
-        }
-
-        set
-        {
-            if (value)
-                this.activate_inline_spell_checker ();
-            else
-                this.deactivate_inline_spell_checker ();
-        }
-    }
 
     public DocumentView (Document doc)
     {
@@ -228,6 +212,10 @@ public class DocumentView : Gtk.SourceView
 
         setup_inline_spell_checker ();
 
+        Gspell.InlineCheckerText inline_checker =
+            Gspell.text_view_get_inline_checker (this as TextView);
+        inline_checker.notify["enabled"].connect (inline_checker_enabled_notify_cb);
+
         Document doc = get_buffer () as Document;
 
         doc.notify["location"].connect (() =>
@@ -265,18 +253,17 @@ public class DocumentView : Gtk.SourceView
     {
         Document doc = get_buffer () as Document;
 
-        bool activate;
+        bool enabled;
 
         string? metadata = doc.get_metadata (METADATA_ATTRIBUTE_INLINE_SPELL);
         if (metadata != null)
-            activate = metadata == INLINE_SPELL_ACTIVATED_STR;
+            enabled = metadata == INLINE_SPELL_ENABLED_STR;
         else
-            activate = _editor_settings.get_boolean ("highlight-misspelled-words");
+            enabled = _editor_settings.get_boolean ("highlight-misspelled-words");
 
-        if (activate)
-            activate_inline_spell_checker ();
-        else
-            deactivate_inline_spell_checker ();
+        Gspell.InlineCheckerText inline_checker =
+            Gspell.text_view_get_inline_checker (this as TextView);
+        inline_checker.enabled = enabled;
     }
 
     public void launch_spell_checker_dialog ()
@@ -328,33 +315,35 @@ public class DocumentView : Gtk.SourceView
     {
         Document doc = get_buffer () as Document;
 
-        if (this.highlight_misspelled_words)
+        Gspell.InlineCheckerText inline_checker =
+            Gspell.text_view_get_inline_checker (this as TextView);
+
+        if (inline_checker.enabled)
         {
             doc.set_metadata (METADATA_ATTRIBUTE_INLINE_SPELL,
-                INLINE_SPELL_ACTIVATED_STR);
+                INLINE_SPELL_ENABLED_STR);
         }
         else
         {
             doc.set_metadata (METADATA_ATTRIBUTE_INLINE_SPELL,
-                INLINE_SPELL_DEACTIVATED_STR);
+                INLINE_SPELL_DISABLED_STR);
         }
     }
 
-    private void activate_inline_spell_checker ()
+    private void inline_checker_enabled_notify_cb ()
     {
+        Gspell.InlineCheckerText inline_checker =
+            Gspell.text_view_get_inline_checker (this as TextView);
+        if (! inline_checker.enabled)
+            return;
+
         Gspell.Checker? spell_checker = Gspell.text_buffer_get_spell_checker (buffer);
         return_if_fail (spell_checker != null);
 
         if (spell_checker.get_language () != null)
-        {
-            if (! Gspell.text_view_get_inline_checking (this))
-            {
-                Gspell.text_view_set_inline_checking (this, true);
-                notify_property ("highlight-misspelled-words");
-            }
-
             return;
-        }
+
+        inline_checker.enabled = false;
 
         if (_no_spell_language_dialog_shown)
             return;
@@ -387,14 +376,5 @@ public class DocumentView : Gtk.SourceView
         }
 
         dialog.destroy ();
-    }
-
-    private void deactivate_inline_spell_checker ()
-    {
-        if (Gspell.text_view_get_inline_checking (this))
-        {
-            Gspell.text_view_set_inline_checking (this, false);
-            notify_property ("highlight-misspelled-words");
-        }
     }
 }
