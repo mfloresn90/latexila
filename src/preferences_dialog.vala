@@ -335,8 +335,10 @@ public class PreferencesDialog : Dialog
         if (lang_code[0] != '\0')
             lang = Gspell.Language.lookup (lang_code);
 
-        Gspell.Checker checker = new Gspell.Checker (lang);
-        spell_language_button.set_language (checker.get_language ());
+        if (lang == null)
+            lang = Gspell.Language.get_default ();
+
+        spell_language_button.set_language (lang);
     }
 
     private void init_other_tab (Builder builder)
