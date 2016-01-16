@@ -294,51 +294,14 @@ public class PreferencesDialog : Dialog
         GLib.Settings editor_settings =
             new GLib.Settings ("org.gnome.latexila.preferences.editor");
 
-        /* Language */
-
         Gspell.LanguageChooserButton spell_language_button =
             builder.get_object ("spell_language_button") as Gspell.LanguageChooserButton;
-
-        update_spell_language_button (editor_settings, spell_language_button);
-
-        spell_language_button.notify["language"].connect (() =>
-        {
-            unowned Gspell.Language? selected_lang =
-                spell_language_button.get_language ();
-
-            if (selected_lang != null)
-            {
-                editor_settings.set_string ("spell-checking-language",
-                    selected_lang.get_code ());
-            }
-            else
-                editor_settings.set_string ("spell-checking-language", "");
-        });
-
-        editor_settings.changed["spell-checking-language"].connect (() =>
-        {
-            update_spell_language_button (editor_settings, spell_language_button);
-        });
-
-        /* Inline checker */
+        editor_settings.bind ("spell-checking-language", spell_language_button,
+            "language-code", SettingsBindFlags.DEFAULT);
 
         var inline_spell_checkbutton = builder.get_object ("inline_spell_checkbutton");
         editor_settings.bind ("highlight-misspelled-words", inline_spell_checkbutton,
             "active", SettingsBindFlags.DEFAULT);
-    }
-
-    private void update_spell_language_button (GLib.Settings editor_settings,
-        Gspell.LanguageChooserButton spell_language_button)
-    {
-        unowned Gspell.Language? lang = null;
-        string lang_code = editor_settings.get_string ("spell-checking-language");
-        if (lang_code[0] != '\0')
-            lang = Gspell.Language.lookup (lang_code);
-
-        if (lang == null)
-            lang = Gspell.Language.get_default ();
-
-        spell_language_button.set_language (lang);
     }
 
     private void init_other_tab (Builder builder)
