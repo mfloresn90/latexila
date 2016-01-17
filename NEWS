@@ -1,5 +1,16 @@
 LaTeXila NEWS
 
+Release 3.19.3
+--------------
+* Adapt code for gspell API changes
+* Adapt code to support again loading and saving remote files
+* Better gnome-shell integration: add an application menu and fix the
+  "Open a New Window" right-click action
+* Make LaTeXila D-Bus activatable
+* Change "Unsaved Document" to "Untitled Document"
+* Other various small code improvements
+* Translation updates
+
 Release 3.19.2
 --------------
 * Adapt code for GspellLanguage API changes
