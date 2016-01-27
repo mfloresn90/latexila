@@ -64,9 +64,6 @@ public class MainWindow : ApplicationWindow
             N_("Open the LaTeXila documentation"), on_help_contents },
         { "HelpLatexReference", null, N_("_LaTeX Reference"), null,
             N_("The Kile LaTeX Reference"), on_help_latex_reference },
-        { "HelpFinance", null, "LaTeXila _Fundraiser", null,
-            "Donate to demonstrate your appreciation of LaTeXila and help its future development",
-            on_help_finance },
         { "HelpAbout", "help-about", N_("_About"), null,
             N_("About LaTeXila"), on_about_dialog }
     };
@@ -270,8 +267,6 @@ public class MainWindow : ApplicationWindow
         restore_state ();
         show_or_hide_widgets ();
         show ();
-
-        Finance.show_dialog (this, true);
     }
 
     // Force to show icons in the menu.
@@ -1160,11 +1155,6 @@ public class MainWindow : ApplicationWindow
         {
             warning ("Impossible to open the LaTeX reference: %s", e.message);
         }
-    }
-
-    public void on_help_finance ()
-    {
-        LatexilaApp.get_instance ().activate_action ("fundraiser", null);
     }
 
     public void on_about_dialog ()

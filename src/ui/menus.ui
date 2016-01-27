@@ -23,10 +23,6 @@
         <attribute name="action">app.help</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">LaTeXila _Fundraiser</attribute>
-        <attribute name="action">app.fundraiser</attribute>
-      </item>
-      <item>
         <attribute name="label" translatable="yes">_About</attribute>
         <attribute name="action">app.about</attribute>
       </item>
