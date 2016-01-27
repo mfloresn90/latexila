@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2014-2015 - Sébastien Wilmet <swilmet@gnome.org> -->
+<!-- Copyright 2014-2016 - Sébastien Wilmet <swilmet@gnome.org> -->
 <application>
   <id type="desktop">org.gnome.latexila.desktop</id>
   <metadata_license>CC0</metadata_license>
@@ -34,12 +34,13 @@
     <screenshot>https://people.gnome.org/~swilmet/latexila/screenshot-build-tools.png</screenshot>
     <screenshot>https://people.gnome.org/~swilmet/latexila/screenshot-structure.png</screenshot>
   </screenshots>
-  <url type="homepage">https://wiki.gnome.org/Apps/LaTeXila</url>
   <kudos>
     <kudo>AppMenu</kudo>
     <kudo>HiDpiIcon</kudo>
     <kudo>ModernToolkit</kudo>
     <kudo>UserDocs</kudo>
   </kudos>
+  <url type="homepage">https://wiki.gnome.org/Apps/LaTeXila</url>
+  <translation type="gettext">latexila</translation>
   <updatecontact>swilmet@gnome.org</updatecontact>
 </application>
