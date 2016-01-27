@@ -215,7 +215,7 @@ public class LatexilaApp : Gtk.Application
     {
         string comments =
             _("LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop");
-        string copyright = "Copyright © 2009-2015 – Sébastien Wilmet";
+        string copyright = "Copyright 2009-2016 – Sébastien Wilmet";
 
         string website = "https://wiki.gnome.org/Apps/LaTeXila";
 
