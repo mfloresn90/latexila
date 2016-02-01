@@ -268,7 +268,7 @@ public class DocumentView : Gtk.SourceView
 
     public void launch_spell_checker_dialog ()
     {
-        Gspell.Navigator navigator = Gspell.NavigatorText.new (this as TextView);
+        Gspell.Navigator navigator = Gspell.NavigatorTextView.new (this as TextView);
 
         Gspell.CheckerDialog dialog =
             new Gspell.CheckerDialog (this.get_toplevel () as Window, navigator);
