@@ -212,7 +212,7 @@ public class DocumentView : Gtk.SourceView
 
         setup_inline_spell_checker ();
 
-        Gspell.InlineCheckerText inline_checker =
+        Gspell.InlineCheckerTextView inline_checker =
             Gspell.text_view_get_inline_checker (this as TextView);
         inline_checker.notify["enabled"].connect (inline_checker_enabled_notify_cb);
 
@@ -261,7 +261,7 @@ public class DocumentView : Gtk.SourceView
         else
             enabled = _editor_settings.get_boolean ("highlight-misspelled-words");
 
-        Gspell.InlineCheckerText inline_checker =
+        Gspell.InlineCheckerTextView inline_checker =
             Gspell.text_view_get_inline_checker (this as TextView);
         inline_checker.enabled = enabled;
     }
@@ -315,7 +315,7 @@ public class DocumentView : Gtk.SourceView
     {
         Document doc = get_buffer () as Document;
 
-        Gspell.InlineCheckerText inline_checker =
+        Gspell.InlineCheckerTextView inline_checker =
             Gspell.text_view_get_inline_checker (this as TextView);
 
         if (inline_checker.enabled)
@@ -332,7 +332,7 @@ public class DocumentView : Gtk.SourceView
 
     private void inline_checker_enabled_notify_cb ()
     {
-        Gspell.InlineCheckerText inline_checker =
+        Gspell.InlineCheckerTextView inline_checker =
             Gspell.text_view_get_inline_checker (this as TextView);
         if (! inline_checker.enabled)
             return;

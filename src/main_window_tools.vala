@@ -79,7 +79,7 @@ public class MainWindowTools
         ToggleAction spell_checking_action =
             _action_group.get_action ("ToolsInlineSpellChecker") as ToggleAction;
 
-        Gspell.InlineCheckerText inline_checker =
+        Gspell.InlineCheckerTextView inline_checker =
             Gspell.text_view_get_inline_checker (_main_window.active_view as TextView);
         spell_checking_action.active = inline_checker.enabled;
     }
@@ -135,7 +135,7 @@ public class MainWindowTools
 
         bool activate = (action as ToggleAction).active;
 
-        Gspell.InlineCheckerText inline_checker =
+        Gspell.InlineCheckerTextView inline_checker =
             Gspell.text_view_get_inline_checker (view as TextView);
 
         // Save metadata only if property changes, because this function is
