@@ -273,8 +273,7 @@ public class DocumentView : Gtk.SourceView
         Gspell.CheckerDialog dialog =
             new Gspell.CheckerDialog (this.get_toplevel () as Window, navigator);
 
-        dialog.run ();
-        dialog.destroy ();
+        dialog.show ();
     }
 
     public void launch_spell_language_chooser_dialog ()
