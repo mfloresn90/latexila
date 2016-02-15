@@ -1,5 +1,12 @@
 LaTeXila NEWS
 
+Release 3.19.4
+--------------
+* Close fundraiser
+* Adapt code for gspell API changes
+* AppData: add translation tag
+* Translation updates
+
 Release 3.19.3
 --------------
 * Adapt code for gspell API changes

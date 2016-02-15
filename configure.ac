@@ -5,7 +5,7 @@
 AC_PREREQ([2.64])
 
 AC_INIT([LaTeXila],
-        [3.19.3],
+        [3.19.4],
         [https://bugzilla.gnome.org/enter_bug.cgi?product=latexila],
 	[latexila],
 	[https://wiki.gnome.org/Apps/LaTeXila])
