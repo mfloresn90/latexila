@@ -1,16 +1,16 @@
 # Hungarian translation for latexila.
-# Copyright (C) 2014 Gnome Project.
+# Copyright (C) 2014-2016 Gnome Project.
 # This file is distributed under the same license as the latexila package.
 #
-# Balázs Úr <urbalazs@gmail.com>, 2014, 2015.
+# Balázs Úr <urbalazs@gmail.com>, 2014, 2015, 2016.
 # Gabor Kelemen <kelemeng at ubuntu dot com>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: LaTeXila 2.12\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-07-17 10:15+0000\n"
-"PO-Revision-Date: 2015-07-17 16:16+0200\n"
+"POT-Creation-Date: 2016-03-06 12:44+0000\n"
+"PO-Revision-Date: 2016-03-06 23:25+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu_HU\n"
@@ -134,26 +134,22 @@ msgstr ""
 "keresés."
 
 #: ../data/latexila.desktop.in.in.h:1
-msgid "LaTeXila"
-msgstr "LaTeXila"
-
-#: ../data/latexila.desktop.in.in.h:2
 msgid "Integrated LaTeX Environment"
 msgstr "Integrált LaTeX környezet"
 
-#: ../data/latexila.desktop.in.in.h:3
+#: ../data/latexila.desktop.in.in.h:2
 msgid "Edit LaTeX documents"
 msgstr "LaTeX dokumentumok szerkesztése"
 
-#: ../data/latexila.desktop.in.in.h:4
+#: ../data/latexila.desktop.in.in.h:3
 msgid "text;tex;latex;editor;documents;"
 msgstr "szöveg;tex;latex;szerkesztő;dokumentumok;"
 
-#: ../data/latexila.desktop.in.in.h:5
+#: ../data/latexila.desktop.in.in.h:4
 msgid "Open a New Window"
 msgstr "Új ablak megnyitása"
 
-#: ../data/latexila.desktop.in.in.h:6
+#: ../data/latexila.desktop.in.in.h:5
 msgid "Open a New Document"
 msgstr "Új dokumentum megnyitása"
 
@@ -290,79 +286,96 @@ msgid "Whether LaTeXila should highlight matching brackets."
 msgstr "Emelje-e ki a LaTeXila a zárójelpárokat."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:27
-msgid "Spell checking"
-msgstr "Helyesírás-ellenőrzés"
+msgid "Highlight Misspelled Words"
+msgstr "Helyesírási hibás szavak kiemelése"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:28
+msgid "Whether misspelled words are highlighted by default."
+msgstr "Emelje-e ki a helyesírási hibás szavakat alapértelmezetten."
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:29
+#| msgid "Spell checking"
+msgid "Spell Checking Language"
+msgstr "Helyesírás-ellenőrzés nyelve"
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:30
+msgid ""
+"The default language used for the spell checking. Set to the empty string to "
+"take the best language available based on the environment."
+msgstr ""
+"A helyesírás-ellenőrzéshez használt alapértelmezett nyelv. Állítsa üres "
+"szövegre a környezeten alapuló legjobb elérhető nyelv kiválasztásához."
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:31
 msgid "Main toolbar is visible"
 msgstr "A fő eszköztár látható"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:29
+#: ../data/org.gnome.latexila.gschema.xml.in.h:32
 msgid ""
 "Whether the main toolbar (file open, close, build, ...) should be visible."
 msgstr ""
 "Legyen-e látható a fő eszköztár (fájl megnyitása, bezárás, összeállítás, …)."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:30
+#: ../data/org.gnome.latexila.gschema.xml.in.h:33
 msgid "Edit toolbar is visible"
 msgstr "A szerkesztő eszköztár látható"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:31
+#: ../data/org.gnome.latexila.gschema.xml.in.h:34
 msgid ""
 "Whether the edit toolbar (bold, italic, character sizes, ...) should be "
 "visible."
 msgstr ""
 "Legyen-e látható a szerkesztő eszköztár (félkövér, dőlt, betűméretek, …)."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:32
+#: ../data/org.gnome.latexila.gschema.xml.in.h:35
 msgid "Side panel is Visible"
 msgstr "Az oldalpanel látható"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:33
+#: ../data/org.gnome.latexila.gschema.xml.in.h:36
 msgid ""
 "Whether the side panel at the left of editing windows should be visible."
 msgstr "Legyen-e látható a szerkesztőablakok bal oldalán az oldalpanel."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:34
+#: ../data/org.gnome.latexila.gschema.xml.in.h:37
 msgid "Bottom panel is Visible"
 msgstr "Az alsó panel látható"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:35
+#: ../data/org.gnome.latexila.gschema.xml.in.h:38
 msgid "Whether the bottom panel containing the build view should be visible."
 msgstr "Legyen-e látható a összeállítási nézetet tartalmazó alsó panel."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:36
+#: ../data/org.gnome.latexila.gschema.xml.in.h:39
 msgid "Side panel component"
 msgstr "Oldalpanel összetevő"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:37
+#: ../data/org.gnome.latexila.gschema.xml.in.h:40
 msgid ""
 "Side panel's active component. 0: Symbols. 1: File browser. 2: Structure."
 msgstr ""
 "Az oldalpanel aktív összetevője. 0: Szimbólumok. 1: Fájlböngésző. 2: "
 "Szerkezet."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:38
+#: ../data/org.gnome.latexila.gschema.xml.in.h:41
 msgid "Show build output warnings"
 msgstr "Az összeállítási kimenet figyelmeztetéseinek megjelenítése"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:39
+#: ../data/org.gnome.latexila.gschema.xml.in.h:42
 msgid "Show build output badboxes"
 msgstr "Az összeállítási kimenet rossz szövegdobozainak megjelenítése"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:40
+#: ../data/org.gnome.latexila.gschema.xml.in.h:43
 msgid "Interactive completion"
 msgstr "Interaktív kiegészítés"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:41
+#: ../data/org.gnome.latexila.gschema.xml.in.h:44
 msgid "Automatically show LaTeX commands proposals"
 msgstr "LaTeX-parancs javaslatok automatikus megjelenítése"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:42
+#: ../data/org.gnome.latexila.gschema.xml.in.h:45
 msgid "Minimum number of characters for interactive completion"
 msgstr "Minimális karakterszám az interaktív kiegészítéshez"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:43
+#: ../data/org.gnome.latexila.gschema.xml.in.h:46
 msgid ""
 "Minimum number of characters after \"\\\" for the interactive completion of "
 "LaTeX commands"
@@ -370,70 +383,70 @@ msgstr ""
 "A „\\” utáni minimális karakterszám a LaTeX parancsok interaktív "
 "kiegészítéséhez"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:44
-#: ../src/ui/preferences_dialog.ui.h:19
+#: ../data/org.gnome.latexila.gschema.xml.in.h:47
+#: ../src/ui/preferences_dialog.ui.h:22
 msgid "No confirmation when cleaning-up"
 msgstr "Nincs megerősítés tisztításkor"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:45
+#: ../data/org.gnome.latexila.gschema.xml.in.h:48
 msgid "Automatic clean-up"
 msgstr "Automatikus tisztítás"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:46
+#: ../data/org.gnome.latexila.gschema.xml.in.h:49
 msgid ""
 "Automatically clean-up files after close. no-confirm-clean must be true."
 msgstr ""
 "Fájlok automatikus tisztítása bezáráskor. A „Nincs megerősítés tisztításkor"
 "\" értékének igaznak kell lennie."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:47
+#: ../data/org.gnome.latexila.gschema.xml.in.h:50
 msgid "File extensions for the clean-up"
 msgstr "Fájlkiterjesztések a tisztításhoz"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:48
+#: ../data/org.gnome.latexila.gschema.xml.in.h:51
 msgid "The list of file extensions for the clean-up, separated by spaces"
 msgstr "Fájlkiterjesztések szóközzel elválasztott listája a tisztításhoz"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:49
+#: ../data/org.gnome.latexila.gschema.xml.in.h:52
 msgid "Enabled default build tools"
 msgstr "Engedélyezett alapértelmezett összeállítási eszközök"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:50
+#: ../data/org.gnome.latexila.gschema.xml.in.h:53
 msgid "The list of the default build tools that are enabled"
 msgstr "Az engedélyezett alapértelmezett összeállítási eszközök listája"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:51
+#: ../data/org.gnome.latexila.gschema.xml.in.h:54
 msgid "Disabled default build tools"
 msgstr "Letiltott alapértelmezett összeállítási eszközök"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:52
+#: ../data/org.gnome.latexila.gschema.xml.in.h:55
 msgid "The list of the default build tools that are disabled"
 msgstr "A letiltott alapértelmezett összeállítási eszközök listája"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:53
+#: ../data/org.gnome.latexila.gschema.xml.in.h:56
 msgid "Current directory"
 msgstr "Jelenlegi könyvtár"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:54
+#: ../data/org.gnome.latexila.gschema.xml.in.h:57
 msgid "URI of the file browser current directory"
 msgstr "A fájlböngésző jelenlegi könyvtárának URI-ja"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:361
+#: ../data/org.gnome.latexila.gschema.xml.in.h:58 ../src/file_browser.vala:361
 msgid "Show build files"
 msgstr "Összeállítási fájlok megjelenítése"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:56
+#: ../data/org.gnome.latexila.gschema.xml.in.h:59
 msgid ""
 "Show files with an extension present in preferences.latex.clean-extensions."
 msgstr ""
 "A preferences.latex.clean-extensions értékében szereplő kiterjesztéssel "
 "rendelkező fájlok megjelenítése."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:369
+#: ../data/org.gnome.latexila.gschema.xml.in.h:60 ../src/file_browser.vala:369
 msgid "Show hidden files"
 msgstr "Rejtett fájlok megjelenítése"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:58
+#: ../data/org.gnome.latexila.gschema.xml.in.h:61
 msgid "Show files beginning with a dot."
 msgstr "A ponttal kezdődő fájlok megjelenítése."
 
@@ -515,19 +528,19 @@ msgstr "Személyes összeállítási eszköz"
 
 #: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:290
+#: ../src/document_tab.vala:291
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:746
-#: ../src/main_window.vala:842 ../src/main_window.vala:878
-#: ../src/preferences_dialog.vala:117 ../src/project_dialogs.vala:31
-#: ../src/project_dialogs.vala:124 ../src/project_dialogs.vala:279
-#: ../src/project_dialogs.vala:299
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:758
+#: ../src/main_window.vala:854 ../src/main_window.vala:892
+#: ../src/preferences_dialog.vala:114 ../src/project_dialogs.vala:31
+#: ../src/project_dialogs.vala:122 ../src/project_dialogs.vala:276
+#: ../src/project_dialogs.vala:296
 msgid "_Cancel"
 msgstr "_Mégse"
 
-#: ../src/build_tool_dialog.vala:73 ../src/project_dialogs.vala:125
+#: ../src/build_tool_dialog.vala:73 ../src/project_dialogs.vala:123
 msgid "_Apply"
 msgstr "_Alkalmaz"
 
@@ -692,7 +705,7 @@ msgstr "Biztosan törölni szeretné a(z) „%s” összeállítási eszközt?"
 #: ../src/build_tools_preferences.vala:336 ../src/clean_build_files.vala:243
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:146
 #: ../src/main_window_edit.vala:51 ../src/main_window_structure.vala:38
-#: ../src/project_dialogs.vala:245 ../src/project_dialogs.vala:280
+#: ../src/project_dialogs.vala:242 ../src/project_dialogs.vala:277
 msgid "_Delete"
 msgstr "_Törlés"
 
@@ -720,12 +733,12 @@ msgstr "Nincs egyező javaslat"
 msgid "Ln %d, Col %d"
 msgstr "%d. sor, %d. oszlop"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:745
+#: ../src/dialogs.vala:40 ../src/main_window.vala:757
 msgid "Close _without Saving"
 msgstr "Bezárás mentés _nélkül"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:751 ../src/main_window.vala:843
+#: ../src/main_window.vala:763 ../src/main_window.vala:855
 msgid "_Save"
 msgstr "_Mentés"
 
@@ -747,78 +760,78 @@ msgstr "Ha nem menti, akkor minden változtatás véglegesen elvész."
 msgid "The structure item already contains a sub-paragraph."
 msgstr "A szerkezeti elem már tartalmaz egy al-bekezdést."
 
-#: ../src/document_tab.vala:173
+#: ../src/document_tab.vala:174
 msgid "Close document"
 msgstr "Dokumentum bezárása"
 
 #. main file
-#: ../src/document_tab.vala:233 ../src/project_dialogs.vala:47
-#: ../src/project_dialogs.vala:50 ../src/project_dialogs.vala:144
-#: ../src/project_dialogs.vala:147 ../src/project_dialogs.vala:220
+#: ../src/document_tab.vala:234 ../src/project_dialogs.vala:46
+#: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
+#: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
 msgid "Main File"
 msgstr "Fő fájl"
 
-#: ../src/document_tab.vala:235
+#: ../src/document_tab.vala:236
 msgid "Main File:"
 msgstr "Fő fájl:"
 
-#: ../src/document_tab.vala:259
+#: ../src/document_tab.vala:260
 #, c-format
 msgid "Activate '%s'"
 msgstr "„%s” aktiválása"
 
-#: ../src/document_tab.vala:278
+#: ../src/document_tab.vala:279
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "A(z) %s fájl megváltozott a lemezen."
 
-#: ../src/document_tab.vala:283
+#: ../src/document_tab.vala:284
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "El szeretné vetni a módosításait és újratölti a fájlt?"
 
-#: ../src/document_tab.vala:285
+#: ../src/document_tab.vala:286
 msgid "Do you want to reload the file?"
 msgstr "Újra szeretné tölteni a fájlt?"
 
-#: ../src/document_tab.vala:289
+#: ../src/document_tab.vala:290
 msgid "_Reload"
 msgstr "Új_ratöltés"
 
-#: ../src/document.vala:121
+#: ../src/document.vala:134
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Nem lehet betölteni a(z) „%s” fájlt."
 
-#: ../src/document.vala:197
+#: ../src/document.vala:212
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "A(z) %s fájl változott az utolsó beolvasása óta."
 
-#: ../src/document.vala:200
+#: ../src/document.vala:215
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr "Ha most elmenti, minden külső módosítás elveszhet. Mindenképp menti?"
 
-#: ../src/document.vala:203
+#: ../src/document.vala:218
 msgid "_Save Anyway"
 msgstr "_Mentés mindenképp"
 
-#: ../src/document.vala:204
+#: ../src/document.vala:219
 msgid "_Don't Save"
 msgstr "_Ne mentse"
 
-#: ../src/document.vala:216
+#: ../src/document.vala:231
 msgid "Impossible to save the file."
 msgstr "Nem lehet elmenteni a fájlt."
 
-#: ../src/document.vala:241
+#: ../src/document.vala:256
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Hiba a dokumentum UTF-8 formátumra való átalakításának kísérletekor"
 
-#: ../src/document.vala:295
+#: ../src/document.vala:310
 msgid "Unsaved Document"
 msgstr "Mentetlen dokumentum"
 
-#: ../src/document.vala:579
+#: ../src/document.vala:594
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
@@ -826,29 +839,29 @@ msgstr ""
 "A fájl ideiglenes helyen van. A számítógép újraindításakor az adatok "
 "elveszhetnek."
 
-#: ../src/document.vala:580
+#: ../src/document.vala:595
 msgid "Do you want to save the file in a safer place?"
 msgstr "El szeretné menteni a fájlt egy biztonságosabb helyre?"
 
-#: ../src/document.vala:583 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:749
+#: ../src/document.vala:598 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:761
 msgid "Save _As"
 msgstr "Men_tés másként"
 
-#: ../src/document.vala:584
+#: ../src/document.vala:599
 msgid "Cancel"
 msgstr "Mégse"
 
-#: ../src/document_view.vala:204
+#: ../src/document_view.vala:370
 msgid "No dictionaries available for the spell checking."
 msgstr "Nem érhető el szótár a helyesírás-ellenőrzéshez."
 
 #. Help
-#: ../src/document_view.vala:206 ../src/main_window.vala:62
+#: ../src/document_view.vala:372 ../src/main_window.vala:62
 msgid "_Help"
 msgstr "_Súgó"
 
-#: ../src/document_view.vala:207 ../src/tab_info_bar.vala:77
+#: ../src/document_view.vala:373 ../src/tab_info_bar.vala:77
 msgid "_OK"
 msgstr "_OK"
 
@@ -885,7 +898,7 @@ msgid "File System"
 msgstr "Fájlrendszer"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:408
+#: ../src/file_browser.vala:536 ../src/main_window.vala:410
 msgid "File Browser"
 msgstr "Fájlböngésző"
 
@@ -1683,13 +1696,11 @@ msgid "Choose an icon"
 msgstr "Válasszon egy ikont"
 
 #: ../src/liblatexila/latexila-templates-dialogs.c:332
-#| msgid "Impossible to save the file."
 msgid "Impossible to create the personal template."
 msgstr "Lehetetlen a személyes sablon létrehozása."
 
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:141
 #, c-format
-#| msgid "Do you really want to delete these files?"
 msgid "Do you really want to delete the template “%s”?"
 msgstr "Valóban törölni szeretné ezt a sablont: „%s”?"
 
@@ -1703,12 +1714,10 @@ msgid "Error when moving the template."
 msgstr "Hiba a sablon áthelyezése közben."
 
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:270
-#| msgid "_Delete"
 msgid "Delete"
 msgstr "Törlés"
 
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:362
-#| msgid "Personal Templates"
 msgid "Manage Personal Templates"
 msgstr "Személyes sablonok kezelése"
 
@@ -1946,14 +1955,6 @@ msgstr "B_eállítások"
 msgid "Configure the application"
 msgstr "Az alkalmazás beállítása"
 
-#: ../src/main_window_edit.vala:80
-msgid "_Spell Check"
-msgstr "_Helyesírás-ellenőrzés"
-
-#: ../src/main_window_edit.vala:81
-msgid "Activate or disable the spell checking"
-msgstr "A helyesírás-ellenőrzés aktiválása vagy letiltása"
-
 #: ../src/main_window_file.vala:30
 msgid "_File"
 msgstr "_Fájl"
@@ -1995,17 +1996,14 @@ msgid "Create a new template from the current document"
 msgstr "Új sablon létrehozása a jelenlegi dokumentumból"
 
 #: ../src/main_window_file.vala:50
-#| msgid "Personal Templates"
 msgid "_Manage Personal Templates..."
 msgstr "_Személyes sablonok kezelése…"
 
 #: ../src/main_window_file.vala:51
-#| msgid "Your personal templates"
 msgid "Manage personal templates"
 msgstr "Személyes sablonok kezelése"
 
-#. close button
-#: ../src/main_window_file.vala:53 ../src/preferences_dialog.vala:42
+#: ../src/main_window_file.vala:53
 msgid "_Close"
 msgstr "_Bezárás"
 
@@ -2031,12 +2029,12 @@ msgid "Open Files"
 msgstr "Fájlok megnyitása"
 
 #. Filter: by default show only .tex and .bib files
-#: ../src/main_window_file.vala:172
+#: ../src/main_window_file.vala:173
 msgid "All LaTeX Files"
 msgstr "Minden LaTeX fájl"
 
 #. All files filter
-#: ../src/main_window_file.vala:179
+#: ../src/main_window_file.vala:180
 msgid "All Files"
 msgstr "Minden fájl"
 
@@ -2191,7 +2189,7 @@ msgstr "Az aktuális projekt fő fájljának megváltoztatása"
 msgid "_Manage Projects"
 msgstr "Projektek _kezelése"
 
-#: ../src/main_window.vala:59 ../src/project_dialogs.vala:190
+#: ../src/main_window.vala:59 ../src/project_dialogs.vala:187
 msgid "Manage Projects"
 msgstr "Projektek kezelése"
 
@@ -2215,7 +2213,7 @@ msgstr "A Kile LaTeX hivatkozása"
 msgid "_About"
 msgstr "_Névjegy"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1213
+#: ../src/main_window.vala:71 ../src/main_window.vala:1228
 msgid "About LaTeXila"
 msgstr "A LaTeXila névjegye"
 
@@ -2253,20 +2251,20 @@ msgid "Show or hide the bottom panel"
 msgstr "Az alsó sáv megjelenítése vagy elrejtése"
 
 #. Symbols
-#: ../src/main_window.vala:404
+#: ../src/main_window.vala:406
 msgid "Symbols"
 msgstr "Szimbólumok"
 
-#: ../src/main_window.vala:413
+#: ../src/main_window.vala:415
 msgid "Structure"
 msgstr "Szerkezet"
 
-#: ../src/main_window.vala:635
+#: ../src/main_window.vala:646
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Ez a fájl („%s”) már meg van nyitva egy másik LaTeXila ablakban."
 
-#: ../src/main_window.vala:637
+#: ../src/main_window.vala:648
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2274,77 +2272,77 @@ msgstr ""
 "A LaTeXila ezt a fájlt nem szerkeszthető módon nyitotta meg. Mindenképp "
 "szeretné szerkeszteni?"
 
-#: ../src/main_window.vala:640
+#: ../src/main_window.vala:651
 msgid "Edit Anyway"
 msgstr "Szerkesztés mindenképp"
 
-#: ../src/main_window.vala:641
+#: ../src/main_window.vala:652
 msgid "Don't Edit"
 msgstr "Ne szerkessze"
 
-#: ../src/main_window.vala:742
+#: ../src/main_window.vala:754
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Menti a változásokat a(z) „%s” dokumentumba, mielőtt bezárja?"
 
-#: ../src/main_window.vala:822
+#: ../src/main_window.vala:834
 msgid "Read-Only"
 msgstr "Csak olvasható"
 
-#: ../src/main_window.vala:840
+#: ../src/main_window.vala:852
 msgid "Save File"
 msgstr "Fájl mentése"
 
-#: ../src/main_window.vala:875
+#: ../src/main_window.vala:889
 #, c-format
 msgid "A file named \"%s\" already exists. Do you want to replace it?"
 msgstr "Már létezik „%s” nevű fájl. Le akarja cserélni?"
 
-#: ../src/main_window.vala:879
+#: ../src/main_window.vala:893
 msgid "_Replace"
 msgstr "_Csere"
 
-#: ../src/main_window.vala:1174
+#: ../src/main_window.vala:1189
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "A LaTeXila a GNOME asztal integrált LaTeX környezete"
 
-#: ../src/main_window.vala:1214
+#: ../src/main_window.vala:1229
 msgid "translator-credits"
 msgstr ""
 "Anca Tibor Attila <anca dot tibor at posteo dot de>\n"
 "Kelemen Gábor <kelemeng at gnome dot hu>\n"
 "Úr Balázs <urbalazs at gmail dot com>"
 
-#: ../src/preferences_dialog.vala:31
+#: ../src/preferences_dialog.vala:33
 msgid "Preferences"
 msgstr "Beállítások"
 
 #. reset all button
-#: ../src/preferences_dialog.vala:36 ../src/preferences_dialog.vala:118
+#: ../src/preferences_dialog.vala:42 ../src/preferences_dialog.vala:115
 msgid "_Reset All"
 msgstr "Összes _visszaállítása"
 
-#: ../src/preferences_dialog.vala:37
+#: ../src/preferences_dialog.vala:43
 msgid "Reset all preferences"
 msgstr "Összes beállítás visszaállítása"
 
-#: ../src/preferences_dialog.vala:115
+#: ../src/preferences_dialog.vala:112
 msgid "Do you really want to reset all preferences?"
 msgstr "Valóban vissza kívánja állítani az összes beállítást?"
 
-#: ../src/preferences_dialog.vala:192
+#: ../src/preferences_dialog.vala:189
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "perc"
 msgstr[1] "perc"
 
-#: ../src/preferences_dialog.vala:292
+#: ../src/preferences_dialog.vala:289
 msgid "character"
 msgid_plural "characters"
 msgstr[0] "karakter"
 msgstr[1] "karakter"
 
-#: ../src/preferences_dialog.vala:332
+#: ../src/preferences_dialog.vala:379
 #, c-format
 msgid "Use the system fixed width font (%s)"
 msgstr "A rendszer rögzített szélességű betűkészletének használata (%s)"
@@ -2354,46 +2352,46 @@ msgid "New Project"
 msgstr "Új projekt"
 
 #. directory
-#: ../src/project_dialogs.vala:39 ../src/project_dialogs.vala:43
-#: ../src/project_dialogs.vala:207
+#: ../src/project_dialogs.vala:40 ../src/project_dialogs.vala:42
+#: ../src/project_dialogs.vala:204
 msgid "Directory"
 msgstr "Könyvtár"
 
-#: ../src/project_dialogs.vala:104
+#: ../src/project_dialogs.vala:102
 #, c-format
 msgid "There is a conflict with the project \"%s\"."
 msgstr "Ütközés van a(z) „%s” projekttel."
 
-#: ../src/project_dialogs.vala:121
+#: ../src/project_dialogs.vala:119
 msgid "Configure Project"
 msgstr "Projekt beállítása"
 
-#: ../src/project_dialogs.vala:139
+#: ../src/project_dialogs.vala:137
 msgid "Location of the project"
 msgstr "A projekt helye"
 
-#: ../src/project_dialogs.vala:244
+#: ../src/project_dialogs.vala:241
 msgid "_Properties"
 msgstr "_Tulajdonságok"
 
-#: ../src/project_dialogs.vala:246
+#: ../src/project_dialogs.vala:243
 msgid "_Clear All"
 msgstr "Ö_sszes törlése"
 
-#: ../src/project_dialogs.vala:276
+#: ../src/project_dialogs.vala:273
 #, c-format
 msgid "Do you really want to delete the project \"%s\"?"
 msgstr "Biztosan törölni szeretné a(z) „%s” projektet?"
 
-#: ../src/project_dialogs.vala:297
+#: ../src/project_dialogs.vala:294
 msgid "Do you really want to clear all projects?"
 msgstr "Biztosan törölni szeretné az összes projektet?"
 
-#: ../src/project_dialogs.vala:300
+#: ../src/project_dialogs.vala:297
 msgid "Clear _All"
 msgstr "Összes _törlése"
 
-#: ../src/project_dialogs.vala:324
+#: ../src/project_dialogs.vala:321
 msgid "The Main File is not in the directory."
 msgstr "A fő fájl nem található a könyvtárban."
 
@@ -2649,28 +2647,57 @@ msgid "Font & Colors"
 msgstr "Betűk és színek"
 
 #: ../src/ui/preferences_dialog.ui.h:18
-msgid "File Clean-Up"
-msgstr "Fájltisztítás"
-
-#: ../src/ui/preferences_dialog.ui.h:20
-msgid "Automatically clean-up files after close"
-msgstr "Fájlok automatikus tisztítása bezárás után"
-
-#: ../src/ui/preferences_dialog.ui.h:21
 msgid "Interactive completion after"
 msgstr "Interaktív kiegészítés"
 
-#: ../src/ui/preferences_dialog.ui.h:22
+#: ../src/ui/preferences_dialog.ui.h:19
 msgid "Number of characters after &apos;\\&apos;"
 msgstr "Karakterek száma a(z) &apos;\\&apos; után"
 
-#: ../src/ui/preferences_dialog.ui.h:23
+#: ../src/ui/preferences_dialog.ui.h:20
 msgid "Number of characters after '\\'"
 msgstr "Karakterek száma a „\\” után"
 
+#: ../src/ui/preferences_dialog.ui.h:21
+msgid "File Clean-Up"
+msgstr "Fájltisztítás"
+
+#: ../src/ui/preferences_dialog.ui.h:23
+msgid "Automatically clean-up files after close"
+msgstr "Fájlok automatikus tisztítása bezárás után"
+
 #: ../src/ui/preferences_dialog.ui.h:24
+msgid ""
+"The spell checking settings can also be changed on a file-by-file basis via "
+"the Tools menu."
+msgstr ""
+"A helyesírás-ellenőrzési beállítások fájlonkénti alapon is megváltoztathatók "
+"az Eszközök menün keresztül."
+
+#: ../src/ui/preferences_dialog.ui.h:25
+msgid "Default Spell Checking Settings"
+msgstr "Alapértelmezett helyesírás-ellenőrzési beállítások"
+
+#: ../src/ui/preferences_dialog.ui.h:26
+msgid "Language:"
+msgstr "Nyelv:"
+
+#: ../src/ui/preferences_dialog.ui.h:27
+msgid "Highlight misspelled words"
+msgstr "Helyesírási hibás szavak kiemelése"
+
+#: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Egyéb"
+
+#~ msgid "LaTeXila"
+#~ msgstr "LaTeXila"
+
+#~ msgid "_Spell Check"
+#~ msgstr "_Helyesírás-ellenőrzés"
+
+#~ msgid "Activate or disable the spell checking"
+#~ msgstr "A helyesírás-ellenőrzés aktiválása vagy letiltása"
 
 #~ msgid "_Delete Template..."
 #~ msgstr "Sablon _törlése…"
