@@ -6,11 +6,11 @@
 # Gabor Kelemen <kelemeng at ubuntu dot com>, 2015.
 msgid ""
 msgstr ""
-"Project-Id-Version: LaTeXila 2.12\n"
+"Project-Id-Version: LaTeXila master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-03-06 12:44+0000\n"
-"PO-Revision-Date: 2016-03-06 23:25+0100\n"
+"POT-Creation-Date: 2016-03-06 22:27+0000\n"
+"PO-Revision-Date: 2016-03-06 23:30+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu_HU\n"
@@ -86,7 +86,7 @@ msgstr "A DVI dokumentum átalakítása PostScript formátumba"
 msgid "Convert the PostScript document to the PDF format"
 msgstr "A PostScript dokumentum átalakítása PDF formátumba"
 
-#: ../data/latexila.appdata.xml.in.h:1
+#: ../data/org.gnome.latexila.appdata.xml.in.h:1
 msgid ""
 "LaTeXila is an integrated LaTeX environment for the GNOME desktop. The idea "
 "of LaTeXila is to always deal directly with the LaTeX code, while "
@@ -96,7 +96,7 @@ msgstr ""
 "mindig közvetlenül a LaTeX kódra összpontosítson, miközben a lehető "
 "legjobban megkönnyítse a LaTeX kód írását."
 
-#: ../data/latexila.appdata.xml.in.h:2
+#: ../data/org.gnome.latexila.appdata.xml.in.h:2
 msgid ""
 "To help the writing of the LaTeX markup, auto-completion is available as "
 "well as menus and toolbars with the principal commands."
@@ -104,7 +104,7 @@ msgstr ""
 "A LaTeX jelölő nyelv írásának megsegítéséhez automatikus kiegészítés érhető "
 "el, akárcsak a fontosabb parancsokkal ellátott menük és eszköztárak."
 
-#: ../data/latexila.appdata.xml.in.h:3
+#: ../data/org.gnome.latexila.appdata.xml.in.h:3
 msgid ""
 "New documents are created from templates. There are buttons to compile, "
 "convert and view a document in one click. And projects containing several ."
@@ -114,7 +114,7 @@ msgstr ""
 "átalakítása és megtekintése egyetlen gombnyomással lehetséges. A LaTeXila "
 "könnyedén kezeli a több .tex fájlt tartalmazó projekteket is."
 
-#: ../data/latexila.appdata.xml.in.h:4
+#: ../data/org.gnome.latexila.appdata.xml.in.h:4
 msgid ""
 "A side panel contains three components: the document structure to easily "
 "navigate in it; lists of symbols to insert them in a document; and an "
@@ -124,7 +124,7 @@ msgstr ""
 "megjelenítője, amely megkönnyíti a navigációt; a dokumentumba beilleszthető "
 "szimbólumok listája; és egy integrált fájlböngésző."
 
-#: ../data/latexila.appdata.xml.in.h:5
+#: ../data/org.gnome.latexila.appdata.xml.in.h:5
 msgid ""
 "LaTeXila has also other features like the spell checking, or the forward and "
 "backward search to switch between the .tex and the PDF."
@@ -133,23 +133,23 @@ msgstr ""
 "a .tex és PDF fájl közötti váltásra használható előre és hátra történő "
 "keresés."
 
-#: ../data/latexila.desktop.in.in.h:1
+#: ../data/org.gnome.latexila.desktop.in.in.h:1
 msgid "Integrated LaTeX Environment"
 msgstr "Integrált LaTeX környezet"
 
-#: ../data/latexila.desktop.in.in.h:2
+#: ../data/org.gnome.latexila.desktop.in.in.h:2
 msgid "Edit LaTeX documents"
 msgstr "LaTeX dokumentumok szerkesztése"
 
-#: ../data/latexila.desktop.in.in.h:3
+#: ../data/org.gnome.latexila.desktop.in.in.h:3
 msgid "text;tex;latex;editor;documents;"
 msgstr "szöveg;tex;latex;szerkesztő;dokumentumok;"
 
-#: ../data/latexila.desktop.in.in.h:4
+#: ../data/org.gnome.latexila.desktop.in.in.h:4
 msgid "Open a New Window"
 msgstr "Új ablak megnyitása"
 
-#: ../data/latexila.desktop.in.in.h:5
+#: ../data/org.gnome.latexila.desktop.in.in.h:5
 msgid "Open a New Document"
 msgstr "Új dokumentum megnyitása"
 
@@ -294,7 +294,6 @@ msgid "Whether misspelled words are highlighted by default."
 msgstr "Emelje-e ki a helyesírási hibás szavakat alapértelmezetten."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:29
-#| msgid "Spell checking"
 msgid "Spell Checking Language"
 msgstr "Helyesírás-ellenőrzés nyelve"
 
@@ -532,11 +531,10 @@ msgstr "Személyes összeállítási eszköz"
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:758
-#: ../src/main_window.vala:854 ../src/main_window.vala:892
-#: ../src/preferences_dialog.vala:114 ../src/project_dialogs.vala:31
-#: ../src/project_dialogs.vala:122 ../src/project_dialogs.vala:276
-#: ../src/project_dialogs.vala:296
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:757
+#: ../src/main_window.vala:853 ../src/preferences_dialog.vala:114
+#: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
+#: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
 msgstr "_Mégse"
 
@@ -733,12 +731,12 @@ msgstr "Nincs egyező javaslat"
 msgid "Ln %d, Col %d"
 msgstr "%d. sor, %d. oszlop"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:757
+#: ../src/dialogs.vala:40 ../src/main_window.vala:756
 msgid "Close _without Saving"
 msgstr "Bezárás mentés _nélkül"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:763 ../src/main_window.vala:855
+#: ../src/main_window.vala:762 ../src/main_window.vala:854
 msgid "_Save"
 msgstr "_Mentés"
 
@@ -828,8 +826,9 @@ msgid "Error trying to convert the document to UTF-8"
 msgstr "Hiba a dokumentum UTF-8 formátumra való átalakításának kísérletekor"
 
 #: ../src/document.vala:310
-msgid "Unsaved Document"
-msgstr "Mentetlen dokumentum"
+#| msgid "Unsaved Document"
+msgid "Untitled Document"
+msgstr "Névtelen dokumentum"
 
 #: ../src/document.vala:594
 msgid ""
@@ -844,7 +843,7 @@ msgid "Do you want to save the file in a safer place?"
 msgstr "El szeretné menteni a fájlt egy biztonságosabb helyre?"
 
 #: ../src/document.vala:598 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:761
+#: ../src/main_window.vala:760
 msgid "Save _As"
 msgstr "Men_tés másként"
 
@@ -852,16 +851,17 @@ msgstr "Men_tés másként"
 msgid "Cancel"
 msgstr "Mégse"
 
-#: ../src/document_view.vala:370
+#: ../src/document_view.vala:356
 msgid "No dictionaries available for the spell checking."
 msgstr "Nem érhető el szótár a helyesírás-ellenőrzéshez."
 
 #. Help
-#: ../src/document_view.vala:372 ../src/main_window.vala:62
+#: ../src/document_view.vala:358 ../src/main_window.vala:62
+#: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "_Súgó"
 
-#: ../src/document_view.vala:373 ../src/tab_info_bar.vala:77
+#: ../src/document_view.vala:359 ../src/tab_info_bar.vala:77
 msgid "_OK"
 msgstr "_OK"
 
@@ -898,9 +898,36 @@ msgid "File System"
 msgstr "Fájlrendszer"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:410
+#: ../src/file_browser.vala:536 ../src/main_window.vala:406
 msgid "File Browser"
 msgstr "Fájlböngésző"
+
+#: ../src/latexila_app.vala:77
+msgid "Show the application's version"
+msgstr "Az alkalmazás verziószámának megjelenítése"
+
+#: ../src/latexila_app.vala:80
+msgid "Create new document"
+msgstr "Új dokumentum létrehozása"
+
+#: ../src/latexila_app.vala:83
+msgid "Create a new top-level window in an existing instance of LaTeXila"
+msgstr "Új felső szintű ablak létrehozása a LaTeXila egy már futó példányában"
+
+#: ../src/latexila_app.vala:217
+msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
+msgstr "A LaTeXila a GNOME asztal integrált LaTeX környezete"
+
+#: ../src/latexila_app.vala:256 ../src/main_window.vala:68
+msgid "About LaTeXila"
+msgstr "A LaTeXila névjegye"
+
+#: ../src/latexila_app.vala:257
+msgid "translator-credits"
+msgstr ""
+"Anca Tibor Attila <anca dot tibor at posteo dot de>\n"
+"Kelemen Gábor <kelemeng at gnome dot hu>\n"
+"Úr Balázs <urbalazs at gmail dot com>"
 
 #. LaTeX: Sectioning
 #: ../src/latex_menu.vala:32
@@ -1721,28 +1748,6 @@ msgstr "Törlés"
 msgid "Manage Personal Templates"
 msgstr "Személyes sablonok kezelése"
 
-#: ../src/main.vala:51
-msgid "Show the application's version"
-msgstr "Az alkalmazás verziószámának megjelenítése"
-
-#: ../src/main.vala:54
-msgid "Create new document"
-msgstr "Új dokumentum létrehozása"
-
-#: ../src/main.vala:57
-msgid "Create a new top-level window in an existing instance of LaTeXila"
-msgstr "Új felső szintű ablak létrehozása a LaTeXila egy már futó példányában"
-
-#: ../src/main.vala:66
-msgid "- Integrated LaTeX Environment for GNOME"
-msgstr "- A GNOME integrált LaTeX környezete"
-
-#: ../src/main.vala:78
-#, c-format
-msgid "Run '%s --help' to see a full list of available command line options.\n"
-msgstr ""
-"Futtassa a(z) „%s --help” parancsot a parancssori kapcsolók listájáért.\n"
-
 #: ../src/main_window_build_tools.vala:28
 msgid "_Build"
 msgstr "Öss_zeállítás"
@@ -1771,7 +1776,7 @@ msgstr "Nap_ló megtekintése"
 msgid "View Log"
 msgstr "Napló megtekintése"
 
-#: ../src/main_window_build_tools.vala:40
+#: ../src/main_window_build_tools.vala:40 ../src/ui/menus.ui.h:3
 msgid "_Manage Build Tools"
 msgstr "Összeállítási eszközök _kezelése"
 
@@ -1947,7 +1952,7 @@ msgstr "_Befejezés"
 msgid "Complete the LaTeX command"
 msgstr "A LaTeX parancs befejezése"
 
-#: ../src/main_window_edit.vala:74
+#: ../src/main_window_edit.vala:74 ../src/ui/menus.ui.h:2
 msgid "_Preferences"
 msgstr "B_eállítások"
 
@@ -2090,7 +2095,7 @@ msgstr "Fájl _megnyitása"
 msgid "Open the file referenced by the selected structure item"
 msgstr "A kijelölt szerkezeti elem által hivatkozott fájl megnyitása"
 
-#: ../src/main_window.vala:28
+#: ../src/main_window.vala:28 ../src/ui/menus.ui.h:6
 msgid "_Quit"
 msgstr "_Kilépés"
 
@@ -2209,62 +2214,58 @@ msgstr "_LaTeX hivatkozás"
 msgid "The Kile LaTeX Reference"
 msgstr "A Kile LaTeX hivatkozása"
 
-#: ../src/main_window.vala:70
+#: ../src/main_window.vala:67 ../src/ui/menus.ui.h:5
 msgid "_About"
 msgstr "_Névjegy"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1228
-msgid "About LaTeXila"
-msgstr "A LaTeXila névjegye"
-
-#: ../src/main_window.vala:76
+#: ../src/main_window.vala:73
 msgid "_Main Toolbar"
 msgstr "_Fő eszköztár"
 
-#: ../src/main_window.vala:77
+#: ../src/main_window.vala:74
 msgid "Show or hide the main toolbar"
 msgstr "A fő eszköztár megjelenítése vagy elrejtése"
 
 #. Translators: "Edit" here is an adjective.
-#: ../src/main_window.vala:79
+#: ../src/main_window.vala:76
 msgid "_Edit Toolbar"
 msgstr "_Szerkesztő eszköztár"
 
-#: ../src/main_window.vala:80
+#: ../src/main_window.vala:77
 msgid "Show or hide the edit toolbar"
 msgstr "A szerkesztő eszköztár megjelenítése vagy rejtése"
 
-#: ../src/main_window.vala:81
+#: ../src/main_window.vala:78
 msgid "_Side panel"
 msgstr "_Oldalsáv"
 
-#: ../src/main_window.vala:82
+#: ../src/main_window.vala:79
 msgid "Show or hide the side panel"
 msgstr "Az oldalsáv megjelenítése vagy elrejtése"
 
-#: ../src/main_window.vala:83
+#: ../src/main_window.vala:80
 msgid "_Bottom panel"
 msgstr "_Alsó sáv"
 
-#: ../src/main_window.vala:84
+#: ../src/main_window.vala:81
 msgid "Show or hide the bottom panel"
 msgstr "Az alsó sáv megjelenítése vagy elrejtése"
 
 #. Symbols
-#: ../src/main_window.vala:406
+#: ../src/main_window.vala:402
 msgid "Symbols"
 msgstr "Szimbólumok"
 
-#: ../src/main_window.vala:415
+#: ../src/main_window.vala:411
 msgid "Structure"
 msgstr "Szerkezet"
 
-#: ../src/main_window.vala:646
+#: ../src/main_window.vala:645
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Ez a fájl („%s”) már meg van nyitva egy másik LaTeXila ablakban."
 
-#: ../src/main_window.vala:648
+#: ../src/main_window.vala:647
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2272,46 +2273,26 @@ msgstr ""
 "A LaTeXila ezt a fájlt nem szerkeszthető módon nyitotta meg. Mindenképp "
 "szeretné szerkeszteni?"
 
-#: ../src/main_window.vala:651
+#: ../src/main_window.vala:650
 msgid "Edit Anyway"
 msgstr "Szerkesztés mindenképp"
 
-#: ../src/main_window.vala:652
+#: ../src/main_window.vala:651
 msgid "Don't Edit"
 msgstr "Ne szerkessze"
 
-#: ../src/main_window.vala:754
+#: ../src/main_window.vala:753
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Menti a változásokat a(z) „%s” dokumentumba, mielőtt bezárja?"
 
-#: ../src/main_window.vala:834
+#: ../src/main_window.vala:833
 msgid "Read-Only"
 msgstr "Csak olvasható"
 
-#: ../src/main_window.vala:852
+#: ../src/main_window.vala:851
 msgid "Save File"
 msgstr "Fájl mentése"
-
-#: ../src/main_window.vala:889
-#, c-format
-msgid "A file named \"%s\" already exists. Do you want to replace it?"
-msgstr "Már létezik „%s” nevű fájl. Le akarja cserélni?"
-
-#: ../src/main_window.vala:893
-msgid "_Replace"
-msgstr "_Csere"
-
-#: ../src/main_window.vala:1189
-msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
-msgstr "A LaTeXila a GNOME asztal integrált LaTeX környezete"
-
-#: ../src/main_window.vala:1229
-msgid "translator-credits"
-msgstr ""
-"Anca Tibor Attila <anca dot tibor at posteo dot de>\n"
-"Kelemen Gábor <kelemeng at gnome dot hu>\n"
-"Úr Balázs <urbalazs at gmail dot com>"
 
 #: ../src/preferences_dialog.vala:33
 msgid "Preferences"
@@ -2342,7 +2323,7 @@ msgid_plural "characters"
 msgstr[0] "karakter"
 msgstr[1] "karakter"
 
-#: ../src/preferences_dialog.vala:379
+#: ../src/preferences_dialog.vala:344
 #, c-format
 msgid "Use the system fixed width font (%s)"
 msgstr "A rendszer rögzített szélességű betűkészletének használata (%s)"
@@ -2585,6 +2566,11 @@ msgstr "_Törlés"
 msgid "Clear most used symbols"
 msgstr "Legtöbbet használt szimbólumok törlése"
 
+#: ../src/ui/menus.ui.h:1
+#| msgid "New _Window"
+msgid "_New Window"
+msgstr "Új _ablak"
+
 #: ../src/ui/preferences_dialog.ui.h:1
 msgid "Display line numbers"
 msgstr "Sorszámok megjelenítése"
@@ -2689,6 +2675,20 @@ msgstr "Helyesírási hibás szavak kiemelése"
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Egyéb"
+
+#~ msgid "- Integrated LaTeX Environment for GNOME"
+#~ msgstr "- A GNOME integrált LaTeX környezete"
+
+#~ msgid ""
+#~ "Run '%s --help' to see a full list of available command line options.\n"
+#~ msgstr ""
+#~ "Futtassa a(z) „%s --help” parancsot a parancssori kapcsolók listájáért.\n"
+
+#~ msgid "A file named \"%s\" already exists. Do you want to replace it?"
+#~ msgstr "Már létezik „%s” nevű fájl. Le akarja cserélni?"
+
+#~ msgid "_Replace"
+#~ msgstr "_Csere"
 
 #~ msgid "LaTeXila"
 #~ msgstr "LaTeXila"
