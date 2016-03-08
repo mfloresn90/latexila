@@ -102,10 +102,6 @@ if ! pkg-config --atleast-version=${GSPELL_REQUIRED_VERSION} gspell-1; then
 	AC_MSG_ERROR([gspell-1 ${GSPELL_REQUIRED_VERSION} required.])
 fi
 
-if ! pkg-config --max-version=0.2.99 gspell-1; then
-	AC_MSG_ERROR([gspell-1 ${GSPELL_REQUIRED_VERSION} required.])
-fi
-
 if ! pkg-config gsettings-desktop-schemas; then
 	AC_MSG_ERROR([gsettings-desktop-schemas required.])
 fi
