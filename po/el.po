@@ -4,25 +4,27 @@
 # Dimitris Spingos <dmtrs32@gmail.com>, 2013.
 # keratea <dmtrs32@gmail.com>, 2013.
 # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013.
+# Efstathios Iosifidis <iosifidis@opensuse.org>, 2016.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-27 10:42+0000\n"
-"PO-Revision-Date: 2015-02-27 15:55+0200\n"
+"POT-Creation-Date: 2016-03-10 11:23+0000\n"
+"PO-Revision-Date: 2016-03-10 13:27+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
-"Language-Team: team@gnome.gr\n"
+"Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Project-Style: gnome\n"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:43 ../src/build_tool_dialog.vala:168
+#: build_tools.xml:43 ../src/build_tool_dialog.vala:165
 msgid "View PDF"
 msgstr "Προβολή PDF"
 
@@ -32,7 +34,7 @@ msgid "View the PDF file"
 msgstr "Προβολή του αρχείου PDF"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:49 ../src/build_tool_dialog.vala:167
+#: build_tools.xml:49 ../src/build_tool_dialog.vala:164
 msgid "View DVI"
 msgstr "Προβολή DVI"
 
@@ -42,7 +44,7 @@ msgid "View the DVI file"
 msgstr "Προβολή του αρχείου DVI"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:55 ../src/build_tool_dialog.vala:169
+#: build_tools.xml:55 ../src/build_tool_dialog.vala:166
 msgid "View PS"
 msgstr "Προβολή PS"
 
@@ -136,26 +138,22 @@ msgstr ""
 "αρχείων .tex και  PDF."
 
 #: ../data/latexila.desktop.in.in.h:1
-msgid "LaTeXila"
-msgstr "LaTeXila"
-
-#: ../data/latexila.desktop.in.in.h:2
 msgid "Integrated LaTeX Environment"
 msgstr "Ολοκληρωμένο περιβάλλον LaTeX"
 
-#: ../data/latexila.desktop.in.in.h:3
+#: ../data/latexila.desktop.in.in.h:2
 msgid "Edit LaTeX documents"
 msgstr "Επεξεργασία εγγράφων LaTeX"
 
-#: ../data/latexila.desktop.in.in.h:4
+#: ../data/latexila.desktop.in.in.h:3
 msgid "text;tex;latex;editor;documents;"
 msgstr "text;tex;latex;editor;documents;κείμενο;επεξεργαστής;έγγραφα;"
 
-#: ../data/latexila.desktop.in.in.h:5
+#: ../data/latexila.desktop.in.in.h:4
 msgid "Open a New Window"
 msgstr "Άνοιγμα νέου παραθύρου"
 
-#: ../data/latexila.desktop.in.in.h:6
+#: ../data/latexila.desktop.in.in.h:5
 msgid "Open a New Document"
 msgstr "Άνοιγμα νέου εγγράφου"
 
@@ -300,25 +298,42 @@ msgid "Whether LaTeXila should highlight matching brackets."
 msgstr "Αν το LaTeXila θα επισημαίνει τις αγκύλες που ταιριάζουν."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:27
-msgid "Spell checking"
-msgstr "Ορθογραφικός έλεγχος"
+msgid "Highlight Misspelled Words"
+msgstr "Επισήμανση λέξεων με ορθογραφικά λάθη"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:28
+msgid "Whether misspelled words are highlighted by default."
+msgstr "Αν τα ορθογραφικά λάθη των λέξεων επισημαίνονται από προεπιλογή."
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:29
+msgid "Spell Checking Language"
+msgstr "Γλώσσα ορθογραφικού ελέγχου"
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:30
+msgid ""
+"The default language used for the spell checking. Set to the empty string to "
+"take the best language available based on the environment."
+msgstr ""
+"Η προεπιλεγμένη γλώσσα που χρησιμοποιείται για τον ορθογραφικό έλεγχο. "
+"Ορίστε κενή συμβολοσειρά για να χρησιμοποιηθεί η καλύτερη διαθέσιμη γλώσσα "
+"με βάση το περιβάλλον."
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:31
 msgid "Main toolbar is visible"
 msgstr "Ορατότητα κύριας εργαλειοθήκης"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:29
+#: ../data/org.gnome.latexila.gschema.xml.in.h:32
 msgid ""
 "Whether the main toolbar (file open, close, build, ...) should be visible."
 msgstr ""
 "Αν η κύρια εργαλειοθήκη (άνοιγμα αρχείου, κλείσιμο, δόμηση, ...) θα είναι "
 "ορατή."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:30
+#: ../data/org.gnome.latexila.gschema.xml.in.h:33
 msgid "Edit toolbar is visible"
 msgstr "Ορατότητα επεξεργασίας εργαλειοθήκης"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:31
+#: ../data/org.gnome.latexila.gschema.xml.in.h:34
 msgid ""
 "Whether the edit toolbar (bold, italic, character sizes, ...) should be "
 "visible."
@@ -326,57 +341,57 @@ msgstr ""
 "Αν η εργαλειοθήκη επεξεργασίας (έντονα, πλάγια, μεγέθη χαρακτήρων, ...) θα "
 "είναι ορατή."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:32
+#: ../data/org.gnome.latexila.gschema.xml.in.h:35
 msgid "Side panel is Visible"
 msgstr "Ορατότητα πλευρικού παραθύρου"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:33
+#: ../data/org.gnome.latexila.gschema.xml.in.h:36
 msgid ""
 "Whether the side panel at the left of editing windows should be visible."
 msgstr ""
 "Αν το πλευρικό παράθυρο στα αριστερά του παραθύρων επεξεργασίας θα είναι "
 "ορατό."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:34
+#: ../data/org.gnome.latexila.gschema.xml.in.h:37
 msgid "Bottom panel is Visible"
 msgstr "Ορατότητα κάτω παραθύρου"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:35
+#: ../data/org.gnome.latexila.gschema.xml.in.h:38
 msgid "Whether the bottom panel containing the build view should be visible."
 msgstr "Αν το κάτω παράθυρο που περιέχει την προβολή δόμησης θα είναι ορατό."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:36
+#: ../data/org.gnome.latexila.gschema.xml.in.h:39
 msgid "Side panel component"
 msgstr "Στοιχείο πλευρικού παραθύρου"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:37
+#: ../data/org.gnome.latexila.gschema.xml.in.h:40
 msgid ""
 "Side panel's active component. 0: Symbols. 1: File browser. 2: Structure."
 msgstr ""
 "Το ενεργό στοιχείο του πλευρικού παραθύρου. 0: Σύμβολα. 1: Περιηγητής "
 "αρχείου. 2: Δομή."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:38
+#: ../data/org.gnome.latexila.gschema.xml.in.h:41
 msgid "Show build output warnings"
 msgstr "Εμφάνιση προειδοποιήσεων εξόδου δόμησης"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:39
+#: ../data/org.gnome.latexila.gschema.xml.in.h:42
 msgid "Show build output badboxes"
 msgstr "Εμφάνιση κακών πλαισίων εξόδου δόμησης"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:40
+#: ../data/org.gnome.latexila.gschema.xml.in.h:43
 msgid "Interactive completion"
 msgstr "Διαδραστική συμπλήρωση"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:41
+#: ../data/org.gnome.latexila.gschema.xml.in.h:44
 msgid "Automatically show LaTeX commands proposals"
 msgstr "Αυτόματη εμφάνιση των προτάσεων εντολών LaTeX"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:42
+#: ../data/org.gnome.latexila.gschema.xml.in.h:45
 msgid "Minimum number of characters for interactive completion"
 msgstr "Ελάχιστος αριθμός χαρακτήρων για διαδραστική συμπλήρωση"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:43
+#: ../data/org.gnome.latexila.gschema.xml.in.h:46
 msgid ""
 "Minimum number of characters after \"\\\" for the interactive completion of "
 "LaTeX commands"
@@ -384,70 +399,70 @@ msgstr ""
 "Ελάχιστος αριθμός χαρακτήρων μετά από \"\\\" για τη διαδραστική συμπλήρωση "
 "των εντολών LaTeX"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:44
-#: ../src/ui/preferences_dialog.ui.h:19
+#: ../data/org.gnome.latexila.gschema.xml.in.h:47
+#: ../src/ui/preferences_dialog.ui.h:22
 msgid "No confirmation when cleaning-up"
 msgstr "Χωρίς επιβεβαίωση για καθαρισμό"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:45
+#: ../data/org.gnome.latexila.gschema.xml.in.h:48
 msgid "Automatic clean-up"
 msgstr "Αυτόματος καθαρισμός"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:46
+#: ../data/org.gnome.latexila.gschema.xml.in.h:49
 msgid ""
 "Automatically clean-up files after close. no-confirm-clean must be true."
 msgstr ""
 "Αυτόματος καθαρισμός αρχείων μετά το κλείσιμο. Ο καθαρισμός χωρίς "
 "επιβεβαίωση πρέπει να είναι αληθής."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:47
+#: ../data/org.gnome.latexila.gschema.xml.in.h:50
 msgid "File extensions for the clean-up"
 msgstr "Επεκτάσεις αρχείου για καθαρισμό"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:48
+#: ../data/org.gnome.latexila.gschema.xml.in.h:51
 msgid "The list of file extensions for the clean-up, separated by spaces"
 msgstr "Η λίστα των επεκτάσεων αρχείων για καθαρισμό, διαχωριζόμενη με κενά"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:49
+#: ../data/org.gnome.latexila.gschema.xml.in.h:52
 msgid "Enabled default build tools"
 msgstr "Ενεργά προεπιλεγμένα εργαλεία δόμησης"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:50
+#: ../data/org.gnome.latexila.gschema.xml.in.h:53
 msgid "The list of the default build tools that are enabled"
 msgstr "Η λίστα των προεπιλεγμένων εργαλείων δόμησης που είναι ενεργά"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:51
+#: ../data/org.gnome.latexila.gschema.xml.in.h:54
 msgid "Disabled default build tools"
 msgstr "Ανενεργά προεπιλεγμένα εργαλεία δόμησης"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:52
+#: ../data/org.gnome.latexila.gschema.xml.in.h:55
 msgid "The list of the default build tools that are disabled"
 msgstr "Η λίστα των προεπιλεγμένων εργαλείων δόμησης που είναι ανενεργά"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:53
+#: ../data/org.gnome.latexila.gschema.xml.in.h:56
 msgid "Current directory"
 msgstr "Τρέχον κατάλογος"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:54
+#: ../data/org.gnome.latexila.gschema.xml.in.h:57
 msgid "URI of the file browser current directory"
 msgstr "Το URI του τρέχοντος καταλόγου του περιηγητή αρχείων"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:282
+#: ../data/org.gnome.latexila.gschema.xml.in.h:58 ../src/file_browser.vala:361
 msgid "Show build files"
 msgstr "Εμφάνιση αρχείων δόμησης"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:56
+#: ../data/org.gnome.latexila.gschema.xml.in.h:59
 msgid ""
 "Show files with an extension present in preferences.latex.clean-extensions."
 msgstr ""
 "Να εμφανίζονται τα αρχεία με μια παρούσα επέκταση στο preferences.latex."
 "clean-extensions."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:290
+#: ../data/org.gnome.latexila.gschema.xml.in.h:60 ../src/file_browser.vala:369
 msgid "Show hidden files"
 msgstr "Εμφάνιση κρυφών αρχείων"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:58
+#: ../data/org.gnome.latexila.gschema.xml.in.h:61
 msgid "Show files beginning with a dot."
 msgstr "Να εμφανίζονται τα αρχεία που ξεκινούν με μια κουκκίδα."
 
@@ -463,7 +478,6 @@ msgstr ""
 "\\usepackage[english,greek]{babel}\n"
 
 #. (itstool) path: template/translatableChunk
-#. There is a helper script in data/templates/tex2po.sh
 #: letter.xml:2
 #, no-wrap
 msgid ""
@@ -523,180 +537,191 @@ msgstr ""
 msgid "Hide panel"
 msgstr "Απόκρυψη παραθύρου"
 
-#. close button
-#: ../src/build_tool_dialog.vala:80 ../src/build_tools_preferences.vala:55
-#: ../src/main_window_file.vala:53 ../src/preferences_dialog.vala:42
-#: ../src/project_dialogs.vala:186 ../src/templates_dialogs.vala:244
-msgid "_Close"
-msgstr "Κ_λείσιμο"
+#: ../src/build_tool_dialog.vala:71
+msgid "Personal Build Tool"
+msgstr "Προσωπικό εργαλείο δόμησης"
 
-#: ../src/build_tool_dialog.vala:81
-msgid "Build Tool (read-only)"
-msgstr "Εργαλείο δόμησης (μόνο ανάγνωση)"
-
-#: ../src/build_tool_dialog.vala:86 ../src/build_tools_preferences.vala:332
+#: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:290 ../src/main_window_file.vala:147
-#: ../src/main_window.vala:744 ../src/main_window.vala:840
-#: ../src/main_window.vala:876 ../src/preferences_dialog.vala:117
-#: ../src/project_dialogs.vala:28 ../src/project_dialogs.vala:119
-#: ../src/project_dialogs.vala:274 ../src/project_dialogs.vala:294
-#: ../src/templates_dialogs.vala:36 ../src/templates_dialogs.vala:176
+#: ../src/document_tab.vala:291
+#: ../src/liblatexila/latexila-templates-dialogs.c:128
+#: ../src/liblatexila/latexila-templates-dialogs.c:238
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:145
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:758
+#: ../src/main_window.vala:854 ../src/main_window.vala:892
+#: ../src/preferences_dialog.vala:114 ../src/project_dialogs.vala:31
+#: ../src/project_dialogs.vala:122 ../src/project_dialogs.vala:276
+#: ../src/project_dialogs.vala:296
 msgid "_Cancel"
 msgstr "A_κύρωση"
 
-#: ../src/build_tool_dialog.vala:87 ../src/document_view.vala:207
-#: ../src/project_dialogs.vala:120 ../src/tab_info_bar.vala:77
-#: ../src/templates_dialogs.vala:37 ../src/templates_dialogs.vala:177
-msgid "_OK"
-msgstr "Εν_τάξει"
+#: ../src/build_tool_dialog.vala:73 ../src/project_dialogs.vala:123
+msgid "_Apply"
+msgstr "_Εφαρμογή"
 
-#: ../src/build_tool_dialog.vala:88
-msgid "Build Tool"
-msgstr "Εργαλείο δόμησης"
+#: ../src/build_tool_dialog.vala:77
+msgid "Default Build Tool (read-only)"
+msgstr "Προεπιλεγμένο εργαλείο δόμησης (μόνο ανάγνωση)"
 
 #. icon-name
 #. label
-#: ../src/build_tool_dialog.vala:161
+#: ../src/build_tool_dialog.vala:158
 msgid "Execute"
 msgstr "Εκτέλεση"
 
-#: ../src/build_tool_dialog.vala:165
+#: ../src/build_tool_dialog.vala:162
 msgid "Convert"
 msgstr "Μετατροπή"
 
 #. FIXME don't use Stock
-#: ../src/build_tool_dialog.vala:166
+#: ../src/build_tool_dialog.vala:163
 msgid "View File"
 msgstr "Προβολή αρχείου"
 
-#: ../src/build_tool_dialog.vala:230
+#. In all cases, the text must be selectable, but there is no property
+#. for that. So set as editable, but in read-only mode the edited text
+#. isn't changed (see below).
+#: ../src/build_tool_dialog.vala:231
 msgid "Commands"
 msgstr "Εντολές"
 
-#: ../src/build_tool_dialog.vala:240
+#: ../src/build_tool_dialog.vala:241
 msgid "Post Processor"
 msgstr "Μετεπεξεργαστής"
 
-#: ../src/build_tool_dialog.vala:267 ../src/build_tools_preferences.vala:294
+#: ../src/build_tool_dialog.vala:271 ../src/build_tools_preferences.vala:297
 msgid "Add..."
 msgstr "Προσθήκη..."
 
-#: ../src/build_tool_dialog.vala:284 ../src/build_tools_preferences.vala:311
+#: ../src/build_tool_dialog.vala:288 ../src/build_tools_preferences.vala:314
 msgid "Remove"
 msgstr "Αφαίρεση"
 
-#: ../src/build_tool_dialog.vala:314 ../src/build_tools_preferences.vala:351
+#: ../src/build_tool_dialog.vala:318 ../src/build_tools_preferences.vala:354
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:282
 msgid "Move up"
 msgstr "Μετακίνηση προς τα πάνω"
 
-#: ../src/build_tool_dialog.vala:365 ../src/build_tools_preferences.vala:403
+#: ../src/build_tool_dialog.vala:369 ../src/build_tools_preferences.vala:406
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:294
 msgid "Move down"
 msgstr "Μετακίνηση προς τα κάτω"
 
-#: ../src/build_tool_dialog.vala:569 ../src/build_tools_preferences.vala:183
+#: ../src/build_tool_dialog.vala:573 ../src/build_tools_preferences.vala:177
 #: ../src/latex_menu.vala:52 ../src/structure.vala:783
 msgid "Label"
 msgstr "Ετικέτα"
 
-#: ../src/build_tool_dialog.vala:574
+#: ../src/build_tool_dialog.vala:578
 msgid "You can select this arrow and copy/paste it!"
 msgstr ""
 "Μπορείτε να επιλέξετε αυτό το βέλος και να το αντιγράψετε/επικολλήσετε!"
 
-#: ../src/build_tool_dialog.vala:590
+#: ../src/build_tool_dialog.vala:594
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: ../src/build_tool_dialog.vala:596
+#: ../src/build_tool_dialog.vala:600
 msgid "File extensions for which the build tool can be executed."
 msgstr ""
 "Επεκτάσεις αρχείου για τις οποίες το εργαλείο δόμησης μπορεί να εκτελεστεί."
 
-#: ../src/build_tool_dialog.vala:597
+#: ../src/build_tool_dialog.vala:601
 msgid "The extensions are separated by spaces."
 msgstr "Οι επεκτάσεις διαχωρίζονται με κενά."
 
-#: ../src/build_tool_dialog.vala:598
+#: ../src/build_tool_dialog.vala:602
 msgid "If it is empty, all extensions are allowed."
 msgstr "Αν είναι κενό, όλες οι επεκτάσεις επιτρέπονται."
 
-#: ../src/build_tool_dialog.vala:600
+#: ../src/build_tool_dialog.vala:604
 msgid "Extensions"
 msgstr "Επεκτάσεις"
 
-#: ../src/build_tool_dialog.vala:605
+#: ../src/build_tool_dialog.vala:609
 msgid "Icon"
 msgstr "Εικονίδιο"
 
 #. Placeholders
-#: ../src/build_tool_dialog.vala:612
+#: ../src/build_tool_dialog.vala:616
 msgid "Placeholders:"
 msgstr "Δεσμευτικά θέσης:"
 
-#: ../src/build_tool_dialog.vala:616
+#: ../src/build_tool_dialog.vala:620
 msgid "The active document's filename."
 msgstr "Το όνομα αρχείου του ενεργού εγγράφου."
 
-#: ../src/build_tool_dialog.vala:617 ../src/build_tool_dialog.vala:622
+#: ../src/build_tool_dialog.vala:621 ../src/build_tool_dialog.vala:626
 msgid "If the active document belongs to a project, the main file is chosen."
 msgstr "Αν το ενεργό έγγραφο ανήκει σε ένα έργο, επιλέγεται το κύριο αρχείο."
 
-#: ../src/build_tool_dialog.vala:621
+#: ../src/build_tool_dialog.vala:625
 msgid "The active document's filename without its extension."
 msgstr "Το όνομα αρχείου του ενεργού εγγράφου χωρίς την επέκτασή του."
 
-#: ../src/build_tool_dialog.vala:665
+#: ../src/build_tool_dialog.vala:675
 msgid "Jobs"
 msgstr "Εργασίες"
 
-#: ../src/build_tool_dialog.vala:671
+#: ../src/build_tool_dialog.vala:681
 msgid "List of files to open after executing the build jobs."
 msgstr "Λίστα των αρχείων για άνοιγμα μετά την εκτέλεση των εργασιών δόμησης."
 
-#: ../src/build_tool_dialog.vala:672
+#: ../src/build_tool_dialog.vala:682
 msgid "The files are separated by spaces."
 msgstr "Τα αρχεία διαχωρίζονται με κενά."
 
-#: ../src/build_tool_dialog.vala:673
+#: ../src/build_tool_dialog.vala:683
 msgid "You should use the placeholders to specify the files."
 msgstr ""
 "Θα πρέπει να χρησιμοποιήσετε τα δεσμευτικά θέσεων για να ορίσετε τα αρχεία."
 
-#: ../src/build_tool_dialog.vala:676
+#: ../src/build_tool_dialog.vala:686
 msgid "Files to open"
 msgstr "Αρχεία για άνοιγμα"
 
-#: ../src/build_tools_preferences.vala:53
+#: ../src/build_tools_preferences.vala:57
 msgid "Build Tools"
 msgstr "Εργαλεία δόμησης"
 
-#: ../src/build_tools_preferences.vala:111
+#: ../src/build_tools_preferences.vala:113
 msgid "Default Build Tools"
 msgstr "Προεπιλεγμένα εργαλεία δόμησης"
 
-#: ../src/build_tools_preferences.vala:132
+#: ../src/build_tools_preferences.vala:134
 msgid "Personal Build Tools"
 msgstr "Προσωπικά εργαλεία δόμησης"
 
-#: ../src/build_tools_preferences.vala:174
+#: ../src/build_tools_preferences.vala:168
 msgid "Enabled"
 msgstr "Ενεργά"
 
-#: ../src/build_tools_preferences.vala:278
+#: ../src/build_tools_preferences.vala:241
+msgid "View the properties (read-only)"
+msgstr "Προβολή των ιδιοτήτων (μόνο για ανάγνωση)"
+
+#: ../src/build_tools_preferences.vala:246
+msgid "Edit the properties"
+msgstr "Επεξεργασία ιδιοτήτων"
+
+#: ../src/build_tools_preferences.vala:266
+msgid "Create a copy"
+msgstr "Δημιουργία ενός αντιγράφου"
+
+#: ../src/build_tools_preferences.vala:281
 #, c-format
 msgid "%s [copy]"
 msgstr "%s [αντίγραφο]"
 
-#: ../src/build_tools_preferences.vala:329
+#: ../src/build_tools_preferences.vala:332
 #, c-format
 msgid "Do you really want to delete the build tool \"%s\"?"
 msgstr "Επιθυμείτε σίγουρα την διαγραφή του εργαλείου δόμησης \"%s\";"
 
-#: ../src/build_tools_preferences.vala:333 ../src/clean_build_files.vala:243
+#: ../src/build_tools_preferences.vala:336 ../src/clean_build_files.vala:243
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:146
 #: ../src/main_window_edit.vala:51 ../src/main_window_structure.vala:38
-#: ../src/project_dialogs.vala:240 ../src/project_dialogs.vala:275
-#: ../src/templates_dialogs.vala:243
+#: ../src/project_dialogs.vala:242 ../src/project_dialogs.vala:277
 msgid "_Delete"
 msgstr "Δια_γραφή"
 
@@ -724,12 +749,12 @@ msgstr "Δεν υπάρχει πρόταση που ταιριάζει"
 msgid "Ln %d, Col %d"
 msgstr "Γρ %d, Στ %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:743
+#: ../src/dialogs.vala:40 ../src/main_window.vala:757
 msgid "Close _without Saving"
 msgstr "Κλείσιμο _χωρίς αποθήκευση"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:749 ../src/main_window.vala:841
+#: ../src/main_window.vala:763 ../src/main_window.vala:855
 msgid "_Save"
 msgstr "Απ_οθήκευση"
 
@@ -753,80 +778,80 @@ msgstr "Αν δεν αποθηκεύσετε, όλες οι αλλαγές θα 
 msgid "The structure item already contains a sub-paragraph."
 msgstr "Το στοιχείο δομής περιέχει ήδη μια υποπαράγραφο."
 
-#: ../src/document_tab.vala:173
+#: ../src/document_tab.vala:174
 msgid "Close document"
 msgstr "Κλείσιμο εγγράφου"
 
 #. main file
-#: ../src/document_tab.vala:233 ../src/project_dialogs.vala:44
-#: ../src/project_dialogs.vala:47 ../src/project_dialogs.vala:139
-#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:215
+#: ../src/document_tab.vala:234 ../src/project_dialogs.vala:46
+#: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
+#: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
 msgid "Main File"
 msgstr "Κύριο αρχείο"
 
-#: ../src/document_tab.vala:235
+#: ../src/document_tab.vala:236
 msgid "Main File:"
 msgstr "Κύριο αρχείο:"
 
-#: ../src/document_tab.vala:259
+#: ../src/document_tab.vala:260
 #, c-format
 msgid "Activate '%s'"
 msgstr "Ενεργοποίηση '%s'"
 
-#: ../src/document_tab.vala:278
+#: ../src/document_tab.vala:279
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Το αρχείο %s έχει τροποποιηθεί στον δίσκο."
 
-#: ../src/document_tab.vala:283
+#: ../src/document_tab.vala:284
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Θέλετε να απορρίψετε τις αλλαγές σας και να ξαναφορτώσετε το αρχείο;"
 
-#: ../src/document_tab.vala:285
+#: ../src/document_tab.vala:286
 msgid "Do you want to reload the file?"
 msgstr "Θέλετε να επαναφορτώσετε το αρχείο;"
 
-#: ../src/document_tab.vala:289
+#: ../src/document_tab.vala:290
 msgid "_Reload"
 msgstr "Α_νανέωση"
 
-#: ../src/document.vala:121
+#: ../src/document.vala:134
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Αδύνατη η φόρτωση του αρχείου '%s'."
 
-#: ../src/document.vala:197
+#: ../src/document.vala:212
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Το αρχείο %s έχει τροποποιηθεί από τότε που το διαβάσατε."
 
-#: ../src/document.vala:200
+#: ../src/document.vala:215
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Αν το αποθηκεύσετε όλες οι εξωτερικές αλλαγές μπορεί να χαθούν. Να "
 "αποθηκευτεί οπωσδήποτε;"
 
-#: ../src/document.vala:203
+#: ../src/document.vala:218
 msgid "_Save Anyway"
 msgstr "Απο_θήκευση οπωσδήποτε"
 
-#: ../src/document.vala:204
+#: ../src/document.vala:219
 msgid "_Don't Save"
 msgstr "_Να μην αποθηκευθεί"
 
-#: ../src/document.vala:216
+#: ../src/document.vala:231
 msgid "Impossible to save the file."
 msgstr "Αδύνατη η αποθήκευση του αρχείου."
 
-#: ../src/document.vala:241
+#: ../src/document.vala:256
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Σφάλμα στην προσπάθεια μετατροπής του εγγράφου σε UTF-8"
 
-#: ../src/document.vala:295
+#: ../src/document.vala:310
 msgid "Unsaved Document"
 msgstr "Μη αποθηκευμένο έγγραφο"
 
-#: ../src/document.vala:579
+#: ../src/document.vala:594
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
@@ -834,46 +859,66 @@ msgstr ""
 "Το αρχείο έχει μια προσωρινή θέση. Τα δεδομένα μπορούν να χαθούν μετά την "
 "επανεκκίνηση του υπολογιστή σας."
 
-#: ../src/document.vala:580
+#: ../src/document.vala:595
 msgid "Do you want to save the file in a safer place?"
 msgstr "Θέλετε να αποθηκεύσετε το αρχείο σε μια πιο ασφαλή θέση;"
 
-#: ../src/document.vala:583 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:747
+#: ../src/document.vala:598 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:761
 msgid "Save _As"
 msgstr "Αποθήκευση _ως"
 
-#: ../src/document.vala:584
+#: ../src/document.vala:599
 msgid "Cancel"
 msgstr "Aκύρωση"
 
-#: ../src/document_view.vala:204
+#: ../src/document_view.vala:370
 msgid "No dictionaries available for the spell checking."
 msgstr "Δεν υπάρχουν διαθέσιμα λεξικά για ορθογραφικό έλεγχο."
 
 #. Help
-#: ../src/document_view.vala:206 ../src/main_window.vala:62
+#: ../src/document_view.vala:372 ../src/main_window.vala:62
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../src/file_browser.vala:218
+#: ../src/document_view.vala:373 ../src/tab_info_bar.vala:77
+msgid "_OK"
+msgstr "Εν_τάξει"
+
+#: ../src/file_browser.vala:219
 msgid "Go to the home directory"
 msgstr "Μετάβαση στον αρχικό κατάλογο"
 
-#: ../src/file_browser.vala:233
+#: ../src/file_browser.vala:234
 msgid "Go to the parent directory"
 msgstr "Μετάβαση στον γονικό κατάλογο"
 
-#: ../src/file_browser.vala:249
+#: ../src/file_browser.vala:250
 msgid "Go to the active document directory"
 msgstr "Μετάβαση στον ενεργό κατάλογο εγγράφου"
 
-#: ../src/file_browser.vala:338
+#: ../src/file_browser.vala:303
+msgid "Open in a file manager"
+msgstr "Άνοιγμα στον διαχειριστή αρχείων"
+
+#: ../src/file_browser.vala:305
+msgid "Open the current directory in a file manager"
+msgstr "Άνοιγμα του τρέχοντος καταλόγου στον διαχειριστή αρχείων"
+
+#: ../src/file_browser.vala:327
+msgid "Open in a terminal"
+msgstr "Άνοιγμα σε τερματικό"
+
+#: ../src/file_browser.vala:328
+msgid "Open the current directory in a terminal"
+msgstr "Άνοιγμα του τρέχοντος  καταλόγου σε τερματικό"
+
+#: ../src/file_browser.vala:417
 msgid "File System"
 msgstr "Σύστημα αρχείων"
 
 #. File browser
-#: ../src/file_browser.vala:457 ../src/main_window.vala:406
+#: ../src/file_browser.vala:536 ../src/main_window.vala:410
 msgid "File Browser"
 msgstr "Περιηγητής αρχείων"
 
@@ -1612,6 +1657,90 @@ msgstr "Το αρχείο PDF δεν υπάρχει."
 msgid "The document is not saved."
 msgstr "Το έγγραφο δεν αποθηκεύτηκε."
 
+#: ../src/liblatexila/latexila-templates-default.c:90
+msgid "Empty"
+msgstr "Κενό"
+
+#: ../src/liblatexila/latexila-templates-default.c:94
+msgid "Article"
+msgstr "Άρθρο"
+
+#: ../src/liblatexila/latexila-templates-default.c:95
+msgid "Report"
+msgstr "Αναφορά"
+
+#: ../src/liblatexila/latexila-templates-default.c:96
+msgid "Book"
+msgstr "Βιβλίο"
+
+#: ../src/liblatexila/latexila-templates-default.c:97
+msgid "Letter"
+msgstr "Γράμμα"
+
+#: ../src/liblatexila/latexila-templates-default.c:98
+msgid "Presentation"
+msgstr "Παρουσίαση"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:50
+msgid "Default Templates"
+msgstr "Προεπιλεγμένα πρότυπα"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:62
+msgid "Personal Templates"
+msgstr "Προσωπικά πρότυπα"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:122
+msgid "New File..."
+msgstr "Νέο αρχείο..."
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:129
+#: ../src/main_window_file.vala:32
+msgid "_New"
+msgstr "Νέ_ο"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:232
+msgid "New Template..."
+msgstr "Νέο πρότυπο..."
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:239
+#: ../src/project_dialogs.vala:32
+msgid "Crea_te"
+msgstr "Δη_μιουργία"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:249
+msgid "Name of the new template"
+msgstr "Όνομα του νέου προτύπου"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:267
+msgid "Choose an icon"
+msgstr "Επιλογή εικονιδίου"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:332
+msgid "Impossible to create the personal template."
+msgstr "Αδύνατη η δημιουργία του προσωπικού προτύπου."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:141
+#, c-format
+msgid "Do you really want to delete the template “%s”?"
+msgstr "Επιθυμείτε σίγουρα την διαγραφή του προτύπου “%s”;"
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:168
+#, c-format
+msgid "Error when deleting the template “%s”."
+msgstr "Σφάλμα κατά τη διαγραφή του προτύπου “%s”."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:226
+msgid "Error when moving the template."
+msgstr "Σφάλμα κατά τη μετακίνηση του προτύπου."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:270
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:362
+msgid "Manage Personal Templates"
+msgstr "Διαχείριση προσωπικών προτύπων"
+
 #: ../src/main.vala:51
 msgid "Show the application's version"
 msgstr "Εμφάνιση της έκδοσης της εφαρμογής"
@@ -1801,53 +1930,57 @@ msgstr "Επι_λογή όλων"
 msgid "Select the entire document"
 msgstr "Επιλογή ολόκληρου του εγγράφου"
 
-#: ../src/main_window_edit.vala:57 ../src/main_window_structure.vala:44
+#: ../src/main_window_edit.vala:57
+msgid "_Indent"
+msgstr "Εσο_χή"
+
+#: ../src/main_window_edit.vala:58
+msgid "Indent the selected lines"
+msgstr "Δημιουργία εσοχών στις επιλεγμένες γραμμές"
+
+#: ../src/main_window_edit.vala:60
+msgid "_Unindent"
+msgstr "Α_φαίρεση εσοχής"
+
+#: ../src/main_window_edit.vala:61
+msgid "Unindent the selected lines"
+msgstr "Αφαίρεση εσοχών στις επιλεγμένες γραμμές"
+
+#: ../src/main_window_edit.vala:63 ../src/main_window_structure.vala:44
 msgid "_Comment"
 msgstr "_Σχόλιο"
 
-#: ../src/main_window_edit.vala:58
+#: ../src/main_window_edit.vala:64
 msgid "Comment the selected lines (add the character \"%\")"
 msgstr "Σχολιασμός των επιλεγμένων γραμμών (προσθήκη του χαρακτήρα \"%\")"
 
-#: ../src/main_window_edit.vala:61
+#: ../src/main_window_edit.vala:67
 msgid "_Uncomment"
 msgstr "_Αποσχολιασμός"
 
-#: ../src/main_window_edit.vala:62
+#: ../src/main_window_edit.vala:68
 msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "Αποσχολιασμός των επιλεγμένων γραμμών (αφαίρεση του χαρακτήρα \"%\")"
 
-#: ../src/main_window_edit.vala:65
+#: ../src/main_window_edit.vala:71
 msgid "_Completion"
 msgstr "Σ_υμπλήρωση"
 
-#: ../src/main_window_edit.vala:66
+#: ../src/main_window_edit.vala:72
 msgid "Complete the LaTeX command"
 msgstr "Συμπλήρωση της εντολής LaTeX"
 
-#: ../src/main_window_edit.vala:68
+#: ../src/main_window_edit.vala:74
 msgid "_Preferences"
 msgstr "Προ_τιμήσεις"
 
-#: ../src/main_window_edit.vala:69
+#: ../src/main_window_edit.vala:75
 msgid "Configure the application"
 msgstr "Ρύθμιση της εφαρμογής"
-
-#: ../src/main_window_edit.vala:74
-msgid "_Spell Check"
-msgstr "_Ορθογραφικός έλεγχος"
-
-#: ../src/main_window_edit.vala:75
-msgid "Activate or disable the spell checking"
-msgstr "Ενεργοποίηση ή απενεργοποίηση του ορθογραφικού ελέγχου"
 
 #: ../src/main_window_file.vala:30
 msgid "_File"
 msgstr "_Αρχείο"
-
-#: ../src/main_window_file.vala:32 ../src/project_dialogs.vala:29
-msgid "_New"
-msgstr "Νέ_ο"
 
 #: ../src/main_window_file.vala:33
 msgid "New file"
@@ -1861,7 +1994,7 @@ msgstr "Νέο _παράθυρο"
 msgid "Create a new window"
 msgstr "Δημιουργία νέου παραθύρου"
 
-#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:148
+#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:154
 msgid "_Open"
 msgstr "_Άνοιγμα"
 
@@ -1886,12 +2019,16 @@ msgid "Create a new template from the current document"
 msgstr "Δημιουργία νέου προτύπου από το τρέχον έγγραφο"
 
 #: ../src/main_window_file.vala:50
-msgid "_Delete Template..."
-msgstr "_Διαγραφή προτύπου..."
+msgid "_Manage Personal Templates..."
+msgstr "_Διαχείριση προσωπικών προτύπων..."
 
 #: ../src/main_window_file.vala:51
-msgid "Delete personal template(s)"
-msgstr "Διαγραφή προσωπικών προτύπων"
+msgid "Manage personal templates"
+msgstr "Διαχείριση προσωπικών προτύπων"
+
+#: ../src/main_window_file.vala:53
+msgid "_Close"
+msgstr "Κ_λείσιμο"
 
 #: ../src/main_window_file.vala:54
 msgid "Close the current file"
@@ -1910,17 +2047,17 @@ msgstr "Άνοιγμα πρόσφατα χρησιμοποιημένων αρχ�
 msgid "Open a recently used file"
 msgstr "Άνοιγμα ενός πρόσφατα χρησιμοποιημένου αρχείου"
 
-#: ../src/main_window_file.vala:144
+#: ../src/main_window_file.vala:150
 msgid "Open Files"
 msgstr "Άνοιγμα αρχείων"
 
 #. Filter: by default show only .tex and .bib files
-#: ../src/main_window_file.vala:166
+#: ../src/main_window_file.vala:173
 msgid "All LaTeX Files"
 msgstr "Όλα τα αρχεία LaTeX"
 
 #. All files filter
-#: ../src/main_window_file.vala:173
+#: ../src/main_window_file.vala:180
 msgid "All Files"
 msgstr "Όλα τα αρχεία"
 
@@ -2079,7 +2216,7 @@ msgstr "Αλλαγή του κύριου αρχείου του τρέχοντο�
 msgid "_Manage Projects"
 msgstr "_Διαχείριση έργων"
 
-#: ../src/main_window.vala:59 ../src/project_dialogs.vala:183
+#: ../src/main_window.vala:59 ../src/project_dialogs.vala:187
 msgid "Manage Projects"
 msgstr "Διαχείριση έργων"
 
@@ -2099,23 +2236,11 @@ msgstr "Αναφορά _LaTeX"
 msgid "The Kile LaTeX Reference"
 msgstr "Η αναφορά LaTeX του Kile"
 
-#: ../src/main_window.vala:67
-msgid "_Donate"
-msgstr "Κάντε _δωρεά"
-
-#: ../src/main_window.vala:68
-msgid ""
-"Donate to demonstrate your appreciation of LaTeXila and help its future "
-"development"
-msgstr ""
-"Κάντε δωρεά για να δείξετε την εκτίμησή σας στο LaTeXila και να βοηθήσετε τη "
-"μελλοντική του ανάπτυξη"
-
 #: ../src/main_window.vala:70
 msgid "_About"
 msgstr "Πε_ρί"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1219
+#: ../src/main_window.vala:71 ../src/main_window.vala:1228
 msgid "About LaTeXila"
 msgstr "Περί του LaTeXila"
 
@@ -2153,21 +2278,21 @@ msgid "Show or hide the bottom panel"
 msgstr "Εμφάνιση ή απόκρυψη του κάτω παραθύρου"
 
 #. Symbols
-#: ../src/main_window.vala:402
+#: ../src/main_window.vala:406
 msgid "Symbols"
 msgstr "Σύμβολα"
 
-#: ../src/main_window.vala:411
+#: ../src/main_window.vala:415
 msgid "Structure"
 msgstr "Δομή"
 
-#: ../src/main_window.vala:633
+#: ../src/main_window.vala:646
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr ""
 "Αυτό το αρχείο (%s) είναι ήδη ανοικτό σε ένα άλλο παράθυρο του LaTeXila."
 
-#: ../src/main_window.vala:635
+#: ../src/main_window.vala:648
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2175,43 +2300,43 @@ msgstr ""
 "Το LaTeXila άνοιξε αυτό το στιγμιότυπο του αρχείου με μη επεξεργάσιμο τρόπο. "
 "Θέλετε να το επεξεργαστείτε οπωσδήποτε;"
 
-#: ../src/main_window.vala:638
+#: ../src/main_window.vala:651
 msgid "Edit Anyway"
 msgstr "Επεξεργασία οπωσδήποτε"
 
-#: ../src/main_window.vala:639
+#: ../src/main_window.vala:652
 msgid "Don't Edit"
 msgstr "Να μην επεξεργαστεί"
 
-#: ../src/main_window.vala:740
+#: ../src/main_window.vala:754
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Αποθήκευση αλλαγών στο έγγραφο \"%s\" πριν το κλείσιμο;"
 
-#: ../src/main_window.vala:820
+#: ../src/main_window.vala:834
 msgid "Read-Only"
 msgstr "Μόνο για ανάγνωση"
 
-#: ../src/main_window.vala:838
+#: ../src/main_window.vala:852
 msgid "Save File"
 msgstr "Αποθήκευση αρχείου"
 
-#: ../src/main_window.vala:873
+#: ../src/main_window.vala:889
 #, c-format
 msgid "A file named \"%s\" already exists. Do you want to replace it?"
 msgstr "Το αρχείο με όνομα \"%s\" υπάρχει ήδη. Θέλετε να το αντικαταστήσετε;"
 
-#: ../src/main_window.vala:877
+#: ../src/main_window.vala:893
 msgid "_Replace"
 msgstr "_Αντικατάσταση"
 
-#: ../src/main_window.vala:1180
+#: ../src/main_window.vala:1189
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr ""
 "Το LaTeXila είναι ένα ολοκληρωμένο περιβάλλον LaTeX για την επιφάνεια "
 "εργασίας του GNOME"
 
-#: ../src/main_window.vala:1220
+#: ../src/main_window.vala:1229
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -2221,85 +2346,85 @@ msgstr ""
 "Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
 "http://gnome.gr/"
 
-#: ../src/preferences_dialog.vala:31
+#: ../src/preferences_dialog.vala:33
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
 #. reset all button
-#: ../src/preferences_dialog.vala:36 ../src/preferences_dialog.vala:118
+#: ../src/preferences_dialog.vala:42 ../src/preferences_dialog.vala:115
 msgid "_Reset All"
 msgstr "Ε_παναφορά όλων"
 
-#: ../src/preferences_dialog.vala:37
+#: ../src/preferences_dialog.vala:43
 msgid "Reset all preferences"
 msgstr "Επαναφορά όλων των προτιμήσεων"
 
-#: ../src/preferences_dialog.vala:115
+#: ../src/preferences_dialog.vala:112
 msgid "Do you really want to reset all preferences?"
 msgstr "Επιθυμείτε σίγουρα την επαναφορά όλων των προτιμήσεων;"
 
-#: ../src/preferences_dialog.vala:192
+#: ../src/preferences_dialog.vala:189
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "λεπτό"
 msgstr[1] "λεπτά"
 
-#: ../src/preferences_dialog.vala:292
+#: ../src/preferences_dialog.vala:289
 msgid "character"
 msgid_plural "characters"
 msgstr[0] "χαρακτήρας"
 msgstr[1] "χαρακτήρες"
 
-#: ../src/preferences_dialog.vala:332
+#: ../src/preferences_dialog.vala:379
 #, c-format
 msgid "Use the system fixed width font (%s)"
 msgstr "Χρήση της γραμματοσειράς σταθερού πλάτους του συστήματος (%s)"
 
-#: ../src/project_dialogs.vala:26
+#: ../src/project_dialogs.vala:28
 msgid "New Project"
 msgstr "Νέο έργο"
 
 #. directory
-#: ../src/project_dialogs.vala:36 ../src/project_dialogs.vala:40
-#: ../src/project_dialogs.vala:202
+#: ../src/project_dialogs.vala:40 ../src/project_dialogs.vala:42
+#: ../src/project_dialogs.vala:204
 msgid "Directory"
 msgstr "Κατάλογος"
 
-#: ../src/project_dialogs.vala:101
+#: ../src/project_dialogs.vala:102
 #, c-format
 msgid "There is a conflict with the project \"%s\"."
 msgstr "Υπάρχει μια σύγκρουση με το έργο \"%s\"."
 
-#: ../src/project_dialogs.vala:116
+#: ../src/project_dialogs.vala:119
 msgid "Configure Project"
 msgstr "Ρύθμιση έργου"
 
-#: ../src/project_dialogs.vala:134
+#: ../src/project_dialogs.vala:137
 msgid "Location of the project"
 msgstr "Θέση του έργου"
 
-#: ../src/project_dialogs.vala:239
+#: ../src/project_dialogs.vala:241
 msgid "_Properties"
 msgstr "Ι_διότητες"
 
-#: ../src/project_dialogs.vala:241
+#: ../src/project_dialogs.vala:243
 msgid "_Clear All"
 msgstr "_Εκκαθάριση όλων"
 
-#: ../src/project_dialogs.vala:271
+#: ../src/project_dialogs.vala:273
 #, c-format
 msgid "Do you really want to delete the project \"%s\"?"
 msgstr "Επιθυμείτε σίγουρα τη διαγραφή του έργου \"%s\";"
 
-#: ../src/project_dialogs.vala:292
+#: ../src/project_dialogs.vala:294
 msgid "Do you really want to clear all projects?"
 msgstr "Επιθυμείτε σίγουρα τη διαγραφή όλων των έργων;"
 
-#: ../src/project_dialogs.vala:295
+#: ../src/project_dialogs.vala:297
 msgid "Clear _All"
 msgstr "Εκκαθάριση ό_λων"
 
-#: ../src/project_dialogs.vala:319
+#: ../src/project_dialogs.vala:321
 msgid "The Main File is not in the directory."
 msgstr "Το κύριο αρχείο δεν είναι στον κατάλογο."
 
@@ -2494,62 +2619,6 @@ msgstr "Εκκα_θάριση"
 msgid "Clear most used symbols"
 msgstr "Εκκαθάριση πιο χρησιμοποιημένων συμβόλων"
 
-#: ../src/templates_dialogs.vala:34
-msgid "New File..."
-msgstr "Νέο αρχείο..."
-
-#: ../src/templates_dialogs.vala:55
-msgid "Default templates"
-msgstr "Προεπιλεγμένα πρότυπα"
-
-#: ../src/templates_dialogs.vala:64
-msgid "Your personal templates"
-msgstr "Τα προσωπικά σας πρότυπα"
-
-#: ../src/templates_dialogs.vala:173
-msgid "New Template..."
-msgstr "Νέο πρότυπο..."
-
-#: ../src/templates_dialogs.vala:185
-msgid "Name of the new template"
-msgstr "Όνομα του νέου προτύπου"
-
-#: ../src/templates_dialogs.vala:198
-msgid "Choose an icon"
-msgstr "Επιλογή εικονιδίου"
-
-#: ../src/templates_dialogs.vala:242
-msgid "Delete Template(s)..."
-msgstr "Διαγραφή προτύπων..."
-
-#: ../src/templates_dialogs.vala:259
-msgid "Personal templates"
-msgstr "Προσωπικά πρότυπα"
-
-#: ../src/templates.vala:75
-msgid "Empty"
-msgstr "Κενό"
-
-#: ../src/templates.vala:77
-msgid "Article"
-msgstr "Άρθρο"
-
-#: ../src/templates.vala:78
-msgid "Report"
-msgstr "Αναφορά"
-
-#: ../src/templates.vala:79
-msgid "Book"
-msgstr "Βιβλίο"
-
-#: ../src/templates.vala:80
-msgid "Letter"
-msgstr "Γράμμα"
-
-#: ../src/templates.vala:81
-msgid "Presentation"
-msgstr "Παρουσίαση"
-
 #: ../src/ui/preferences_dialog.ui.h:1
 msgid "Display line numbers"
 msgstr "Εμφάνιση αριθμών γραμμών"
@@ -2612,28 +2681,82 @@ msgid "Font & Colors"
 msgstr "Γραμματοσειρές & χρώματα"
 
 #: ../src/ui/preferences_dialog.ui.h:18
-msgid "File Clean-Up"
-msgstr "Καθαρισμός αρχείου"
-
-#: ../src/ui/preferences_dialog.ui.h:20
-msgid "Automatically clean-up files after close"
-msgstr "Αυτόματος καθαρισμός αρχείων μετά το κλείσιμο"
-
-#: ../src/ui/preferences_dialog.ui.h:21
 msgid "Interactive completion after"
 msgstr "Διαδραστική συμπλήρωση μετά από"
 
-#: ../src/ui/preferences_dialog.ui.h:22
+#: ../src/ui/preferences_dialog.ui.h:19
 msgid "Number of characters after &apos;\\&apos;"
 msgstr "Αριθμός χαρακτήρων μετά από &apos;\\&apos;"
 
-#: ../src/ui/preferences_dialog.ui.h:23
+#: ../src/ui/preferences_dialog.ui.h:20
 msgid "Number of characters after '\\'"
 msgstr "Αριθμός χαρακτήρων μετά από '\\'"
 
+#: ../src/ui/preferences_dialog.ui.h:21
+msgid "File Clean-Up"
+msgstr "Καθαρισμός αρχείου"
+
+#: ../src/ui/preferences_dialog.ui.h:23
+msgid "Automatically clean-up files after close"
+msgstr "Αυτόματος καθαρισμός αρχείων μετά το κλείσιμο"
+
 #: ../src/ui/preferences_dialog.ui.h:24
+msgid ""
+"The spell checking settings can also be changed on a file-by-file basis via "
+"the Tools menu."
+msgstr ""
+"Οι ρυθμίσεις του ορθογραφικού ελέγχου μπορούν να αλλάξουν μέσα από κάθε "
+"αρχείο από το μενού των εργαλείων."
+
+#: ../src/ui/preferences_dialog.ui.h:25
+msgid "Default Spell Checking Settings"
+msgstr "Προεπιλεγμένες ρυθμίσεις ορθογραφικού ελέγχου"
+
+#: ../src/ui/preferences_dialog.ui.h:26
+msgid "Language:"
+msgstr "Γλώσσες:"
+
+#: ../src/ui/preferences_dialog.ui.h:27
+msgid "Highlight misspelled words"
+msgstr "Επισήμανση λέξεων με ορθογραφικά λάθη"
+
+#: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Άλλα"
+
+#~ msgid "_New Window"
+#~ msgstr "Νέο _παράθυρο"
+
+#~ msgid "LaTeXila"
+#~ msgstr "LaTeXila"
+
+#~ msgid "Build Tool"
+#~ msgstr "Εργαλείο δόμησης"
+
+#~ msgid "_Spell Check"
+#~ msgstr "_Ορθογραφικός έλεγχος"
+
+#~ msgid "Activate or disable the spell checking"
+#~ msgstr "Ενεργοποίηση ή απενεργοποίηση του ορθογραφικού ελέγχου"
+
+#~ msgid "_Delete Template..."
+#~ msgstr "_Διαγραφή προτύπου..."
+
+#~ msgid "Delete personal template(s)"
+#~ msgstr "Διαγραφή προσωπικών προτύπων"
+
+#~ msgid "_Donate"
+#~ msgstr "Κάντε _δωρεά"
+
+#~ msgid ""
+#~ "Donate to demonstrate your appreciation of LaTeXila and help its future "
+#~ "development"
+#~ msgstr ""
+#~ "Κάντε δωρεά για να δείξετε την εκτίμησή σας στο LaTeXila και να βοηθήσετε "
+#~ "τη μελλοντική του ανάπτυξη"
+
+#~ msgid "Delete Template(s)..."
+#~ msgstr "Διαγραφή προτύπων..."
 
 #~ msgid "Default build tools"
 #~ msgstr "Προεπιλεγμένα εργαλεία δόμησης"
@@ -2687,9 +2810,6 @@ msgstr "Άλλα"
 
 #~ msgid "Ignore All"
 #~ msgstr "Παράβλεψη όλων"
-
-#~ msgid "Languages"
-#~ msgstr "Γλώσσες"
 
 #~ msgid "enchant error for language: %s"
 #~ msgstr "σφάλμα enchant για τη γλώσσα: %s"
