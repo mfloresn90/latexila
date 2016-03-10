@@ -6,33 +6,31 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila master\n"
-"POT-Creation-Date: 2013-04-28 17:58+0000\n"
-"PO-Revision-Date: 2013-04-29 22:18+0300\n"
-"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"POT-Creation-Date: 2016-03-09 21:47+0000\n"
+"PO-Revision-Date: 2016-03-10 00:41+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
-
-#: C/index.page:4(page/title)
-msgid "LaTeXila Help"
-msgstr "Βοήθεια του LaTeXila"
+"X-Generator: Poedit 1.8.7\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-" Δημήτρης Σπίγγος <dmtrs32@gmail.com>, 2013\n"
-"Για περισσότερες πληροφορίες http://gnome.gr"
+"Ελληνική μεταφραστική ομάδα GNOME <team@gnome.gr>, 2013-2016\n"
+"Δημήτρης Σπίγγος <dmtrs32@gmail.com>, 2013"
 
-#: C/build_tools.page:10(page/title)
+#. (itstool) path: page/title
+#: C/build_tools.page:10
 msgid "Build Tools"
 msgstr "Εργαλεία δόμησης"
 
-#: C/build_tools.page:13(synopsis/p)
+#. (itstool) path: synopsis/p
+#: C/build_tools.page:13
 msgid ""
 "The purpose of the build tools is to generate a document in the PDF, DVI or "
 "PS format."
@@ -40,11 +38,13 @@ msgstr ""
 "Ο σκοπός των εργαλείων δόμησης είναι η δημιουργία ενός εγγράφου σε μορφή "
 "PDF, DVI ή PS."
 
-#: C/build_tools.page:20(section/title)
+#. (itstool) path: section/title
+#: C/build_tools.page:20
 msgid "Introduction"
 msgstr "Εισαγωγή"
 
-#: C/build_tools.page:22(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:22
 msgid ""
 "Several different tools can be used for a document compilation. There are "
 "some low-level commands, and one higher-level tool: Latexmk."
@@ -53,27 +53,33 @@ msgstr ""
 "ενός εγγράφου. Υπάρχουν μερικές εντολές χαμηλού επιπέδου και ένα εργαλείο "
 "υψηλότερου επιπέδου: Latexmk."
 
-#: C/build_tools.page:26(table/title)
+#. (itstool) path: table/title
+#: C/build_tools.page:26
 msgid "Low-level commands"
 msgstr "Εντολές χαμηλού επιπέδου"
 
-#: C/build_tools.page:29(td/p)
+#. (itstool) path: td/p
+#: C/build_tools.page:29
 msgid "Label"
 msgstr "Ετικέτα"
 
-#: C/build_tools.page:30(td/p)
+#. (itstool) path: td/p
+#: C/build_tools.page:30
 msgid "Command"
 msgstr "Εντολή"
 
-#: C/build_tools.page:59(td/p)
+#. (itstool) path: td/p
+#: C/build_tools.page:59
 msgid "Bibliography"
 msgstr "Βιβλιογραφία"
 
-#: C/build_tools.page:63(td/p)
+#. (itstool) path: td/p
+#: C/build_tools.page:63
 msgid "Index"
 msgstr "Ευρετήριο"
 
-#: C/build_tools.page:69(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:69
 msgid ""
 "Compiling a LaTeX document can involve to execute several low-level "
 "commands, in a certain order and a certain number of times. Here is an "
@@ -83,7 +89,8 @@ msgstr ""
 "χαμηλού επιπέδου, σε μια συγκεκριμένη σειρά και έναν συγκεκριμένο αριθμό "
 "φορών. Να ένα παράδειγμα:"
 
-#: C/build_tools.page:78(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:78
 msgid ""
 "Using a higher-level tool such as Latexmk simplify a lot all this process, "
 "since only one command is required. Indeed, Latexmk can detect how many "
@@ -98,41 +105,49 @@ msgstr ""
 "<cmd>makeindex</cmd> απαιτούνται. Από προεπιλογή, το LaTeXila χρησιμοποιεί "
 "το Latexmk."
 
-#: C/build_tools.page:86(section/title)
+#. (itstool) path: section/title
+#: C/build_tools.page:86
 msgid "Execute a Build Tool"
 msgstr "Εκτέλεση ενός εργαλείου δόμησης"
 
-#: C/build_tools.page:88(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:88
 msgid "There are several means to execute a build tool:"
 msgstr "Υπάρχουν αρκετά μέσα για εκτέλεση ενός εργαλείου δόμησης:"
 
-#: C/build_tools.page:90(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:90
 msgid "Open the <gui style=\"menu\">Build</gui> menu."
 msgstr "Ανοίξτε το μενού <gui style=\"menu\">Δόμηση</gui>."
 
-#: C/build_tools.page:91(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:91
 msgid "Use the buttons in the main toolbar."
 msgstr "Χρησιμοποιήστε τα κουμπιά στην κύρια εργαλειοθήκη."
 
-#: C/build_tools.page:92(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:92
 msgid "Use the shortcut: <key>F2</key> → <key>F11</key>."
 msgstr "Χρησιμοποιήστε τη συντόμευση: <key>F2</key> → <key>F11</key>."
 
-#: C/build_tools.page:95(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:95
 msgid ""
 "The build tool is executed on the currently opened file. If the file belongs "
 "to a <link xref=\"projects\">project</link>, it is executed on the project's "
 "main file."
 msgstr ""
 "Το εργαλείο δόμησης εκτελείται στο τρέχον ανοικτό αρχείο. Αν το αρχείο "
-"ανήκει σε ένα <link xref=\"projects\">έργο</link>, εκτελείται στο κύριο αρχείο "
-"του έργου."
+"ανήκει σε ένα <link xref=\"projects\">έργο</link>, εκτελείται στο κύριο "
+"αρχείο του έργου."
 
-#: C/build_tools.page:99(note/title)
+#. (itstool) path: note/title
+#: C/build_tools.page:99
 msgid "Hidden Build Tools"
 msgstr "Κρυφά εργαλεία δόμησης"
 
-#: C/build_tools.page:100(note/p)
+#. (itstool) path: note/p
+#: C/build_tools.page:100
 msgid ""
 "By default, a lot of build tools are hidden, so they can't be executed. To "
 "view the full list of build tools, activate or configure them, read the "
@@ -140,23 +155,26 @@ msgid ""
 msgstr ""
 "Από προεπιλογή, πολλά εργαλεία δόμησης είναι κρυφά, έτσι δεν μπορούν να "
 "εκτελεστούν. Για προβολή της πλήρους λίστας των εργαλείων δόμησης, "
-"ενεργοποιήστε τα ή ρυθμίστε τα, διαβάστε την ενότητα <link "
-"xref=\"#general_configuration\"/>."
+"ενεργοποιήστε τα ή ρυθμίστε τα, διαβάστε την ενότητα <link xref="
+"\"#general_configuration\"/>."
 
-#: C/build_tools.page:107(section/title)
+#. (itstool) path: section/title
+#: C/build_tools.page:107
 msgid "General Configuration"
 msgstr "Γενική ρύθμιση"
 
-#: C/build_tools.page:109(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:109
 msgid ""
 "To configure the build tools, go to: <guiseq> <gui style=\"menu\">Build</"
 "gui> <gui style=\"menu\">Manage Build Tools</gui> </guiseq>"
 msgstr ""
-"Για τη ρύθμιση των εργαλείων δόμησης, πηγαίνετε στο: <guiseq> <gui "
-"style=\"menu\">Δόμηση</gui> <gui style=\"menu\">Διαχείριση εργαλείων "
-"δόμησης</gui> </guiseq>"
+"Για τη ρύθμιση των εργαλείων δόμησης, πηγαίνετε στο: <guiseq> <gui style="
+"\"menu\">Δόμηση</gui> <gui style=\"menu\">Διαχείριση εργαλείων δόμησης</gui> "
+"</guiseq>"
 
-#: C/build_tools.page:117(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:117
 msgid ""
 "You will see the list of all the default build tools, and a second list with "
 "your personal build tools. There are check buttons to enable or disable "
@@ -171,15 +189,19 @@ msgstr ""
 "ενέργειες, όπως μετακίνηση ενός εργαλείου πάνω ή κάτω, το άνοιγμα των "
 "ιδιοτήτων του, διαγραφή ή αντιγραφή του, δημιουργία ενός νέου, κλπ."
 
-#: C/build_tools.page:124(note/p)
+#. (itstool) path: note/p
+#: C/build_tools.page:124
 msgid "Double-click on a build tool will open its properties."
-msgstr "Διπλοπατήστε σε ένα εργαλείο δόμησης για να ανοίξει τις ιδιότητές του."
+msgstr ""
+"Κάντε διπλό κλικ σε ένα εργαλείο δόμησης για να ανοίξει τις ιδιότητές του."
 
-#: C/build_tools.page:129(section/title)
+#. (itstool) path: section/title
+#: C/build_tools.page:129
 msgid "Jobs of a Build Tool"
 msgstr "Εργασίες ενός εργαλείου δόμησης"
 
-#: C/build_tools.page:131(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:131
 msgid ""
 "In the properties of a build tool, the tricky part is to configure the jobs. "
 "A build tool can execute several jobs. Each job contains two pieces of "
@@ -189,15 +211,18 @@ msgstr ""
 "εργασιών. Ένα εργαλείο δόμησης μπορεί να εκτελέσει αρκετές εργασίες. Κάθε "
 "εργασία περιέχει δύο κομμάτια της πληροφορίας:"
 
-#: C/build_tools.page:135(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:135
 msgid "The command, which can use placeholders."
 msgstr "Την εντολή, που μπορεί να χρησιμοποιήσει δεσμευτικά θέσεων."
 
-#: C/build_tools.page:136(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:136
 msgid "The post processor (see <link xref=\"#post-processors\"/>)."
 msgstr "Τον μετεπεξεργαστή (δείτε <link xref=\"#post-processors\"/>)."
 
-#: C/build_tools.page:139(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:139
 msgid ""
 "When an error occurs during a job's execution, the execution of the build "
 "tool is aborted, so the next jobs are not launched."
@@ -206,11 +231,13 @@ msgstr ""
 "εκτέλεση του εργαλείου δόμησης εγκαταλείπεται, έτσι οι επόμενες εργασίες δεν "
 "ξεκινούν."
 
-#: C/build_tools.page:144(section/title)
+#. (itstool) path: section/title
+#: C/build_tools.page:144
 msgid "Post Processors"
 msgstr "Μετεπεξεργαστές"
 
-#: C/build_tools.page:145(section/p)
+#. (itstool) path: section/p
+#: C/build_tools.page:145
 msgid ""
 "The purpose of a post processor is to filter the command output and extract "
 "the useful information. Four post processors are available:"
@@ -218,15 +245,18 @@ msgstr ""
 "Ο σκοπός ενός μετεπεξεργαστή είναι να φιλτράρει την έξοδο της εντολής και να "
 "εξάγει τη χρήσιμη πληροφορία. Τέσσερις μετεπεξεργαστές είναι διαθέσιμοι:"
 
-#: C/build_tools.page:151(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:151
 msgid "The output is simply not displayed."
 msgstr "Η έξοδος απλά δεν εμφανίζεται."
 
-#: C/build_tools.page:155(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:155
 msgid "All the output is displayed, without filter."
 msgstr "Όλη η έξοδος εμφανίζεται, χωρίς φίλτρο."
 
-#: C/build_tools.page:159(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:159
 msgid ""
 "Filter the output of the <cmd>latex</cmd> or <cmd>pdflatex</cmd> commands. "
 "There can be three types of errors: critical errors, warnings, or bad boxes. "
@@ -239,20 +269,23 @@ msgstr ""
 "πληροφορίες: το μέγεθος του εγγράφου, ο αριθμός των σελίδων και ο αριθμός "
 "των σφαλμάτων."
 
-#: C/build_tools.page:166(item/p)
+#. (itstool) path: item/p
+#: C/build_tools.page:166
 msgid ""
 "Used for the <cmd>latexmk</cmd> command. Internally, this post processor "
 "uses other ones: <em>latex</em> and <em>all-output</em>."
 msgstr ""
 "Χρησιμοποιείται για την εντολή <cmd>latexmk</cmd>. Εσωτερικά, αυτός ο "
-"μετεπεξεργαστής χρησιμοποιεί άλλα: <em>latex</em> και <em>όλες οι "
-"έξοδοι</em>."
+"μετεπεξεργαστής χρησιμοποιεί άλλα: <em>latex</em> και <em>όλες οι έξοδοι</"
+"em>."
 
-#: C/completion.page:10(page/title)
+#. (itstool) path: page/title
+#: C/completion.page:10
 msgid "Completion of LaTeX commands"
 msgstr "Συμπλήρωση εντολών του LaTeX"
 
-#: C/completion.page:13(synopsis/p)
+#. (itstool) path: synopsis/p
+#: C/completion.page:13
 msgid ""
 "The purpose is to facilitate the writing of LaTeX commands, by showing "
 "proposals."
@@ -260,11 +293,13 @@ msgstr ""
 "Ο σκοπός είναι η διευκόλυνση της συγγραφής εντολών LaTeX, εμφανίζοντας "
 "προτάσεις."
 
-#: C/completion.page:17(section/title)
+#. (itstool) path: section/title
+#: C/completion.page:17
 msgid "Interactive completion"
 msgstr "Διαδραστική συμπλήρωση"
 
-#: C/completion.page:18(section/p)
+#. (itstool) path: section/p
+#: C/completion.page:18
 msgid ""
 "By default, when a LaTeX command is typed, proposals will be shown after two "
 "characters. This can be configured in the preferences dialog: <guiseq> <gui "
@@ -273,14 +308,16 @@ msgid ""
 msgstr ""
 "Από προεπιλογή, όταν μια εντολή LaTeX πληκτρολογείται, οι προτάσεις θα "
 "εμφανιστούν μετά από δύο χαρακτήρες. Αυτό μπορεί να ρυθμιστεί στον διάλογο "
-"προτιμήσεων: <guiseq> <gui style=\"menu\">Επεξεργασία</gui><gui "
-"style=\"menu\">Προτιμήσεις</gui> <gui style=\"tab\">Άλλα</gui> </guiseq>"
+"προτιμήσεων: <guiseq> <gui style=\"menu\">Επεξεργασία</gui><gui style=\"menu"
+"\">Προτιμήσεις</gui> <gui style=\"tab\">Άλλα</gui> </guiseq>"
 
-#: C/completion.page:30(section/title)
+#. (itstool) path: section/title
+#: C/completion.page:30
 msgid "Manual completion"
 msgstr "Χειροκίνητη συμπλήρωση"
 
-#: C/completion.page:31(section/p)
+#. (itstool) path: section/p
+#: C/completion.page:31
 msgid ""
 "At any time, press <keyseq> <key>Ctrl</key> <key>Space</key> </keyseq> to "
 "show proposals."
@@ -288,11 +325,18 @@ msgstr ""
 "Οποτεδήποτε, πατήστε <keyseq> <key>Ctrl</key> <key>κενό</key> </keyseq> για "
 "να εμφανίσετε προτάσεις."
 
-#: C/projects.page:10(page/title)
+#. (itstool) path: page/title
+#: C/index.page:4
+msgid "LaTeXila Help"
+msgstr "Βοήθεια του LaTeXila"
+
+#. (itstool) path: page/title
+#: C/projects.page:10
 msgid "Projects"
 msgstr "Έργα"
 
-#: C/projects.page:13(synopsis/p)
+#. (itstool) path: synopsis/p
+#: C/projects.page:13
 msgid ""
 "When a LaTeX document is split into several *.tex files, creating a project "
 "is useful."
@@ -300,27 +344,32 @@ msgstr ""
 "Όταν ένα έγγραφο LaTeX διαιρείται σε αρκετά αρχεία *.tex, η δημιουργία ενός "
 "έργου είναι χρήσιμη."
 
-#: C/projects.page:18(section/title)
+#. (itstool) path: section/title
+#: C/projects.page:18
 msgid "Manage projects"
 msgstr "Διαχείριση έργων"
 
-#: C/projects.page:20(section/p)
+#. (itstool) path: section/p
+#: C/projects.page:20
 msgid ""
 "All actions related to projects are located in the <gui style=\"menu"
 "\">Projects</gui> menu. A project contains only two pieces of information:"
 msgstr ""
-"Όλες οι ενέργειες οι σχετικές με τα έργα βρίσκονται στο μενού <gui "
-"style=\"menu\">Έργα</gui>. Ένα έργο περιέχει μόνο δύο κομμάτια πληροφορίας:"
+"Όλες οι ενέργειες οι σχετικές με τα έργα βρίσκονται στο μενού <gui style="
+"\"menu\">Έργα</gui>. Ένα έργο περιέχει μόνο δύο κομμάτια πληροφορίας:"
 
-#: C/projects.page:25(item/p)
+#. (itstool) path: item/p
+#: C/projects.page:25
 msgid "The directory where the project is located."
 msgstr "Τον κατάλογο όπου βρίσκεται το έργο."
 
-#: C/projects.page:26(item/p)
+#. (itstool) path: item/p
+#: C/projects.page:26
 msgid "The main *.tex file."
 msgstr "Το κύριο αρχείο *.tex."
 
-#: C/projects.page:29(section/p)
+#. (itstool) path: section/p
+#: C/projects.page:29
 msgid ""
 "As a consequence, a directory can contain only one project, which is quite "
 "logical."
@@ -328,11 +377,13 @@ msgstr ""
 "Ως μια συνέπεια, ένας κατάλογος μπορεί να περιέχει μόνο ένα έργο, που είναι "
 "αρκετά λογικό."
 
-#: C/projects.page:35(section/title)
+#. (itstool) path: section/title
+#: C/projects.page:35
 msgid "Usefulness of projects"
 msgstr "Χρησιμότητα των έργων"
 
-#: C/projects.page:37(item/p)
+#. (itstool) path: item/p
+#: C/projects.page:37
 msgid ""
 "A <link xref=\"build_tools\">build tool</link> is executed on the project's "
 "main file."
@@ -340,7 +391,8 @@ msgstr ""
 "Ένα <link xref=\"build_tools\">εργαλείο δόμησης</link> εκτελείται στο κύριο "
 "αρχείο του έργου."
 
-#: C/projects.page:39(item/p)
+#. (itstool) path: item/p
+#: C/projects.page:39
 msgid ""
 "The <link xref=\"synctex#forward_search\">forward search</link> works for a "
 "secondary file of a project."
@@ -348,45 +400,59 @@ msgstr ""
 "Η <link xref=\"synctex#forward_search\">αναζήτηση προς τα μπροστά</link> "
 "δουλεύει για ένα δευτερεύον αρχείο ενός έργου."
 
-#: C/spell_checking.page:10(page/title)
+#. (itstool) path: page/title
+#: C/spell_checking.page:10
 msgid "Spell Checking"
 msgstr "Ορθογραφικός έλεγχος"
 
-#: C/spell_checking.page:13(synopsis/p)
+#. (itstool) path: synopsis/p
+#: C/spell_checking.page:13
 msgid "The purpose is to correct spelling mistakes easily."
 msgstr "Ο σκοπός είναι η εύκολη διόρθωση ορθογραφικών λαθών."
 
-#: C/spell_checking.page:17(section/title)
+#. (itstool) path: section/title
+#: C/spell_checking.page:17
 msgid "Use the spell checking"
 msgstr "Χρήση του ορθογραφικού ελέγχου"
 
-#: C/spell_checking.page:18(section/p)
+#. (itstool) path: section/p
+#: C/spell_checking.page:18
 msgid ""
-"The spell checking can be activated or disabled via the menu: <guiseq> <gui "
-"style=\"menu\">Edit</gui> <gui style=\"menu\">Spell Check</gui> </guiseq>"
+"The default spell checking settings can be changed in the preferences "
+"dialog: <guiseq> <gui style=\"menu\">Edit</gui> <gui style=\"menu"
+"\">Preferences</gui> <gui style=\"tab\">Other</gui> </guiseq>"
 msgstr ""
-"Ο ορθογραφικός έλεγχος μπορεί να ενεργοποιηθεί ή να απενεργοποιηθεί μέσα από "
-"το μενού: <guiseq> <gui style=\"menu\">Επεξεργασία</gui> <gui "
-"style=\"menu\">Ορθογραφικός έλεγχος</gui> </guiseq>"
+"Η προεπιλεγμένες ρυθμίσεις ορθογραφικού ελέγχου μπορεί να αλλαχθούν από τον "
+"διάλογο προτιμήσεων: <guiseq> <gui style=\"menu\">Επεξεργασία</gui> <gui "
+"style=\"menu\">Προτιμήσεις</gui> <gui style=\"tab\">Άλλα</gui> </guiseq>"
 
-#: C/spell_checking.page:26(section/p)
+#. (itstool) path: section/p
+#: C/spell_checking.page:27
 msgid ""
-"Once the spell checking is activated, the misspelled words will be "
-"underlined in red. A right click on a misspelled word will show proposals."
+"The settings can also be changed on a file-by-file basis via the <gui style="
+"\"menu\">Tools</gui> menu."
 msgstr ""
-"Αφού ενεργοποιηθεί ο ορθογραφικός έλεγχος, οι ανορθόγραφες λέξεις θα "
-"υπογραμμιστούν με κόκκινο. Με δεξί πάτημα σε μια ανορθόγραφη λέξη θα "
-"εμφανιστούν προτάσεις."
+"Οι ρυθμίσεις μπορούν να αλλάξουν μέσα από κάθε αρχείο από το μενού <gui "
+"style=\"menu\">Εργαλεία</gui>"
 
-#: C/spell_checking.page:31(section/p)
-msgid "To change the language, do a right click on the document."
-msgstr "Για αλλαγή της γλώσσας, δεξιοπατήστε στο έγγραφο."
+#. (itstool) path: section/p
+#: C/spell_checking.page:32
+msgid ""
+"If you activate the <gui style=\"menu\">Highlight Misspelled Words</gui> "
+"option, the misspelled words will be underlined in red in the document. A "
+"right click on a misspelled word will show proposals."
+msgstr ""
+"Αν ενεργοποιηθεί η επιλογή <gui style=\"menu\">Επισήμανση λέξεων με "
+"ορθογραφικά λάθη</gui>, οι ανορθόγραφες λέξεις θα υπογραμμιστούν με κόκκινο. "
+"Με δεξί κλικ σε μια ανορθόγραφη λέξη θα εμφανιστούν προτάσεις."
 
-#: C/spell_checking.page:35(section/title)
+#. (itstool) path: section/title
+#: C/spell_checking.page:40
 msgid "Dictionaries"
 msgstr "Λεξικά"
 
-#: C/spell_checking.page:36(section/p)
+#. (itstool) path: section/p
+#: C/spell_checking.page:41
 msgid ""
 "<link href=\"http://www.abisource.com/projects/enchant/\">Enchant</link> is "
 "used for the spell checking in LaTeXila. Enchant uses one or several "
@@ -394,22 +460,24 @@ msgid ""
 msgstr ""
 "Το <link href=\"http://www.abisource.com/projects/enchant/\">Enchant</link> "
 "χρησιμοποιείται για τον ορθογραφικό έλεγχο του LaTeXila. Το Enchant "
-"χρησιμοποιεί μία ή αρκετές υποστηρίξεις όπως Hunspell ή Aspell για τα "
-"λεξικά."
+"χρησιμοποιεί μία ή αρκετές υποστηρίξεις όπως Hunspell ή Aspell για τα λεξικά."
 
-#: C/spell_checking.page:42(section/p)
+#. (itstool) path: section/p
+#: C/spell_checking.page:47
 msgid ""
-"If your language is not listed when doing a right click, install a "
-"dictionary for one of the supported backends."
+"If your language is not listed, install a dictionary for one of the "
+"supported backends."
 msgstr ""
-"Αν η γλώσσα σας δεν είναι καταχωρισμένη όταν δεξιοπατάτε, εγκαταστήστε ένα "
-"λεξικό για μία από τις υποστηρίξεις."
+"Αν η γλώσσα σας δεν είναι καταχωρισμένη, εγκαταστήστε ένα λεξικό για ένα από "
+"τα συστήματα υποστήριξης."
 
-#: C/structure.page:10(page/title)
+#. (itstool) path: page/title
+#: C/structure.page:10
 msgid "Document's Structure"
 msgstr "Η δομή του εγγράφου"
 
-#: C/structure.page:13(synopsis/p)
+#. (itstool) path: synopsis/p
+#: C/structure.page:13
 msgid ""
 "The list of chapters, sections, sub-sections and other things like tables, "
 "figures, … of a document, to easily navigate in it."
@@ -417,11 +485,13 @@ msgstr ""
 "Η λίστα των κεφαλαίων, ενοτήτων, υποενοτήτων και άλλων πραγμάτων όπως "
 "πίνακες, σχήματα, … ενός εγγράφου για εύκολη περιήγηση σε αυτό."
 
-#: C/structure.page:18(section/title)
+#. (itstool) path: section/title
+#: C/structure.page:18
 msgid "Display the structure"
 msgstr "Εμφάνιση της δομής"
 
-#: C/structure.page:20(section/p)
+#. (itstool) path: section/p
+#: C/structure.page:20
 msgid ""
 "The structure can be displayed in the side panel. If the side panel is "
 "hidden, go to <guiseq> <gui style=\"menu\">View</gui> <gui style=\"menu"
@@ -429,9 +499,10 @@ msgid ""
 msgstr ""
 "Η δομή μπορεί να εμφανιστεί στο πλευρικό παράθυρο. Αν το πλευρικό παράθυρο "
 "είναι κρυφό, πηγαίνετε στο <guiseq> <gui style=\"menu\">Προβολή</gui> <gui "
-"style=\"menu\">πλευρικό παράθυρο</gui> </guiseq>."
+"style=\"menu\">Πλευρικό παράθυρο</gui> </guiseq>."
 
-#: C/structure.page:29(section/p)
+#. (itstool) path: section/p
+#: C/structure.page:29
 msgid ""
 "The structure's content is not automatically updated. That's why there is a "
 "refresh button. If text is inserted in the document, the position of an item "
@@ -439,29 +510,37 @@ msgid ""
 "not modified."
 msgstr ""
 "Το περιεχόμενο της δομής δεν ενημερώνεται αυτόματα. Για αυτό υπάρχει ένα "
-"κουμπί ανανέωσης. Αν κείμενο εισάγεται στο έγγραφο, η θέση ενός στοιχείου "
-"(π.χ. μιας ενότητας) παραμένει σωστή, όσο το στοιχείο είναι ακόμα εκεί και "
-"δεν τροποποιήθηκε."
+"κουμπί ανανέωσης. Αν κείμενο εισάγεται στο έγγραφο, η θέση ενός στοιχείου (π."
+"χ. μιας ενότητας) παραμένει σωστή, όσο το στοιχείο είναι ακόμα εκεί και δεν "
+"τροποποιήθηκε."
 
-#: C/structure.page:37(section/title)
+#. (itstool) path: section/title
+#: C/structure.page:37
 msgid "Actions"
 msgstr "Ενέργειες"
 
-#: C/structure.page:39(section/p)
+#. (itstool) path: section/p
+#: C/structure.page:39
 msgid ""
 "Some actions such as \"cut\", \"copy\" or \"comment\" can be performed on a "
 "structure's item. Either by a right click, or via the <gui style=\"menu"
 "\">Structure</gui> menu."
 msgstr ""
-"Κάποιες ενέργειες όπως \"αποκοπή\", \"αντιγραφή\" ή \"σχόλιο\" μπορούν να "
-"εκτελεστούν σε στοιχείο της δομής. Είτε δεξιοπατώντας, είτε μέσα από το "
+"Κάποιες ενέργειες όπως «αποκοπή», «αντιγραφή» ή «σχόλιο» μπορούν να "
+"εκτελεστούν σε στοιχείο της δομής. Είτε κάνοντας δεξί κλικ, είτε μέσα από το "
 "μενού <gui style=\"menu\">Δομή</gui>."
 
-#: C/structure.page:48(section/title)
+#. (itstool) path: section/title
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:48
 msgid "TODOs and FIXMEs"
 msgstr "ΝΑ ΓΙΝΟΥΝ και ΔΙΟΡΘΩΣΕΙΣ"
 
-#: C/structure.page:50(section/p)
+#. (itstool) path: section/p
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:50
 msgid ""
 "It can be useful to add TODOs and FIXMEs comments in the document. They will "
 "be displayed in the structure. Example:"
@@ -469,7 +548,10 @@ msgstr ""
 "Μπορεί να είναι χρήσιμο να προσθέσετε σχόλια ΝΑ ΓΙΝΕΙ και ΔΙΟΡΘΩΣΗ στο "
 "έγγραφο. Θα εμφανιστούν στη δομή. Παράδειγμα:"
 
-#: C/structure.page:55(section/code)
+#. (itstool) path: section/code
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:55
 #, no-wrap
 msgid ""
 "\n"
@@ -480,11 +562,13 @@ msgstr ""
 "%TODO μια εργασία που απέμεινε\n"
 "%FIXME κάτι που είναι λάθος"
 
-#: C/synctex.page:10(page/title)
+#. (itstool) path: page/title
+#: C/synctex.page:10
 msgid "Forward and Backward Search"
 msgstr "Αναζήτηση προς τα μπρος και πίσω"
 
-#: C/synctex.page:13(synopsis/p)
+#. (itstool) path: synopsis/p
+#: C/synctex.page:13
 msgid ""
 "Synchronization between the document's *.tex files and the resulting PDF "
 "output, opened with the <app>Evince</app> document viewer."
@@ -492,19 +576,22 @@ msgstr ""
 "Ο συγχρονισμός μεταξύ των αρχείων του εγγράφου *.tex και της τελικής εξόδου "
 "PDF, που ανοίχτηκε με την προβολή εγγράφων του <app>Evince</app>."
 
-#: C/synctex.page:18(note/p)
+#. (itstool) path: note/p
+#: C/synctex.page:18
 msgid ""
 "For more information, read the <link href=\"help:evince#synctex"
 "\"><app>Evince</app> documentation</link>."
 msgstr ""
-"Για περισσότερες πληροφορίες, διαβάστε την τεκμηρίωση του <link "
-"href=\"help:evince#synctex\"><app>Evince</app> </link>."
+"Για περισσότερες πληροφορίες, διαβάστε την τεκμηρίωση του <link href=\"help:"
+"evince#synctex\"><app>Evince</app> </link>."
 
-#: C/synctex.page:23(section/title)
+#. (itstool) path: section/title
+#: C/synctex.page:23
 msgid "Forward Search: from .tex to PDF"
 msgstr "Αναζήτηση προς τα μπροστά: από .tex σε PDF"
 
-#: C/synctex.page:25(section/p)
+#. (itstool) path: section/p
+#: C/synctex.page:25
 msgid ""
 "From a certain position in the .tex source file, jump to the corresponding "
 "position in the PDF file."
@@ -512,23 +599,27 @@ msgstr ""
 "Από μια συγκεκριμένη θέση στο πηγαίο αρχείο .tex, μετάβαση στην αντίστοιχη "
 "θέση στο αρχείο PDF."
 
-#: C/synctex.page:28(section/p)
+#. (itstool) path: section/p
+#: C/synctex.page:28
 msgid "There are different ways to do a forward search:"
 msgstr "Υπάρχουν διαφορετικοί τρόποι για μια αναζήτηση προς τα εμπρός:"
 
-#: C/synctex.page:30(item/p)
+#. (itstool) path: item/p
+#: C/synctex.page:30
 msgid ""
 "In the menu: <guiseq> <gui style=\"menu\">Search</gui> <gui style=\"menu"
 "\">Search Forward</gui> </guiseq>"
 msgstr ""
-"Στο μενού: <guiseq> <gui style=\"menu\">Αναζήτηση</gui> <gui "
-"style=\"menu\">Αναζήτηση προς τα εμπρός</gui> </guiseq>"
+"Στο μενού: <guiseq> <gui style=\"menu\">Αναζήτηση</gui> <gui style=\"menu"
+"\">Αναζήτηση προς τα εμπρός</gui> </guiseq>"
 
-#: C/synctex.page:36(item/p)
+#. (itstool) path: item/p
+#: C/synctex.page:36
 msgid "By pressing <keyseq> <key>Ctrl</key> <key>left click</key> </keyseq>"
-msgstr "Πατώντας <keyseq> <key>Ctrl</key> <key>αριστερό πάτημα</key> </keyseq>"
+msgstr "Πατώντας <keyseq> <key>Ctrl</key> <key>αριστερό κλικ</key> </keyseq>"
 
-#: C/synctex.page:44(section/p)
+#. (itstool) path: section/p
+#: C/synctex.page:44
 msgid ""
 "If a document is split into several .tex files, create a <link xref="
 "\"projects\">project</link>. There is no need to mention the main file with "
@@ -536,30 +627,45 @@ msgid ""
 "<link href=\"help:evince/synctex-search#forward-search\"> <app>Evince</app> "
 "documentation. </link>"
 msgstr ""
-"Αν ένα έγγραφο διαιρείται σε αρκετά αρχεία .tex, δημιουργήστε ένα <link "
-"xref=\"projects\">έργο</link>. Δεν υπάρχει ανάγκη να αναφέρετε το κύριο αρχείο "
-"με ένα σχόλιο LaTeX σε κάθε δευτερεύον αρχείο .tex, όπως εξηγείται στην "
-"τεκμηρίωση του <link href=\"help:evince/synctex-search#forward-"
-"search\"><app>Evince</app>. </link>"
+"Αν ένα έγγραφο διαιρείται σε αρκετά αρχεία .tex, δημιουργήστε ένα <link xref="
+"\"projects\">έργο</link>. Δεν υπάρχει ανάγκη να αναφέρετε το κύριο αρχείο με "
+"ένα σχόλιο LaTeX σε κάθε δευτερεύον αρχείο .tex, όπως εξηγείται στην "
+"τεκμηρίωση του <link href=\"help:evince/synctex-search#forward-search"
+"\"><app>Evince</app>. </link>"
 
-#: C/synctex.page:53(section/title)
+#. (itstool) path: section/title
+#: C/synctex.page:53
 msgid "Backward Search"
 msgstr "Αναζήτηση προς τα πίσω"
 
-#: C/synctex.page:55(section/p)
+#. (itstool) path: section/p
+#: C/synctex.page:55
 msgid ""
 "In <app>Evince</app>, press <keyseq> <key>Ctrl</key> <key>left click</key> </"
 "keyseq>, and the corresponding position in the .tex file will be opened in "
 "<app>LaTeXila</app>."
 msgstr ""
-"Στο <app>Evince</app>, πατήστε <keyseq> <key>Ctrl</key> <key>αριστερό "
-"πάτημα</key> </keyseq> και η αντίστοιχη θέση στο αρχείο .tex θα ανοιχτεί στο "
+"Στο <app>Evince</app>, πατήστε <keyseq> <key>Ctrl</key> <key>αριστερό κλικ</"
+"key> </keyseq> και η αντίστοιχη θέση στο αρχείο .tex θα ανοιχτεί στο "
 "<app>LaTeXila</app>."
 
-#: C/synctex.page:63(section/p)
+#. (itstool) path: section/p
+#: C/synctex.page:63
 msgid ""
 "<app>Evince</app> have to be launched by <app>LaTeXila</app>. Else, the "
 "backward search will not work."
 msgstr ""
 "Το <app>Evince</app> πρέπει να ξεκινήσει από το <app>LaTeXila</app>. Αλλιώς, "
 "η αναζήτηση προς τα πίσω δεν θα δουλέψει."
+
+#~ msgid ""
+#~ "The spell checking can be activated or disabled via the menu: <guiseq> "
+#~ "<gui style=\"menu\">Edit</gui> <gui style=\"menu\">Spell Check</gui> </"
+#~ "guiseq>"
+#~ msgstr ""
+#~ "Ο ορθογραφικός έλεγχος μπορεί να ενεργοποιηθεί ή να απενεργοποιηθεί μέσα "
+#~ "από το μενού: <guiseq> <gui style=\"menu\">Επεξεργασία</gui> <gui style="
+#~ "\"menu\">Ορθογραφικός έλεγχος</gui> </guiseq>"
+
+#~ msgid "To change the language, do a right click on the document."
+#~ msgstr "Για αλλαγή της γλώσσας, δεξιοπατήστε στο έγγραφο."
