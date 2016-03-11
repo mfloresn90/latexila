@@ -215,9 +215,9 @@ public class DocumentView : Gtk.SourceView
 
         setup_inline_spell_checker ();
 
-        Gspell.InlineCheckerTextView inline_checker =
-            Gspell.text_view_get_inline_checker (this as TextView);
-        inline_checker.notify["enabled"].connect (inline_checker_enabled_notify_cb);
+        Gspell.TextView gspell_view =
+            Gspell.TextView.get_from_gtk_text_view (this as TextView);
+        gspell_view.notify["inline-spell-checking"].connect (inline_checker_enabled_notify_cb);
 
         Document doc = get_buffer () as Document;
 
@@ -272,9 +272,9 @@ public class DocumentView : Gtk.SourceView
         else
             enabled = _editor_settings.get_boolean ("highlight-misspelled-words");
 
-        Gspell.InlineCheckerTextView inline_checker =
-            Gspell.text_view_get_inline_checker (this as TextView);
-        inline_checker.enabled = enabled;
+        Gspell.TextView gspell_view =
+            Gspell.TextView.get_from_gtk_text_view (this as TextView);
+        gspell_view.inline_spell_checking = enabled;
     }
 
     public void launch_spell_checker_dialog ()
@@ -325,10 +325,10 @@ public class DocumentView : Gtk.SourceView
     {
         Document doc = get_buffer () as Document;
 
-        Gspell.InlineCheckerTextView inline_checker =
-            Gspell.text_view_get_inline_checker (this as TextView);
+        Gspell.TextView gspell_view =
+            Gspell.TextView.get_from_gtk_text_view (this as TextView);
 
-        if (inline_checker.enabled)
+        if (gspell_view.inline_spell_checking)
         {
             doc.set_metadata (METADATA_ATTRIBUTE_INLINE_SPELL,
                 INLINE_SPELL_ENABLED_STR);
@@ -342,9 +342,9 @@ public class DocumentView : Gtk.SourceView
 
     private void inline_checker_enabled_notify_cb ()
     {
-        Gspell.InlineCheckerTextView inline_checker =
-            Gspell.text_view_get_inline_checker (this as TextView);
-        if (! inline_checker.enabled)
+        Gspell.TextView gspell_view =
+            Gspell.TextView.get_from_gtk_text_view (this as TextView);
+        if (! gspell_view.inline_spell_checking)
             return;
 
         Gspell.Checker? spell_checker = get_spell_checker ();
@@ -353,7 +353,7 @@ public class DocumentView : Gtk.SourceView
         if (spell_checker.get_language () != null)
             return;
 
-        inline_checker.enabled = false;
+        gspell_view.inline_spell_checking = false;
 
         if (_no_spell_language_dialog_shown)
             return;

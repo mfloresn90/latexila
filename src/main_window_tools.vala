@@ -79,9 +79,9 @@ public class MainWindowTools
         ToggleAction spell_checking_action =
             _action_group.get_action ("ToolsInlineSpellChecker") as ToggleAction;
 
-        Gspell.InlineCheckerTextView inline_checker =
-            Gspell.text_view_get_inline_checker (_main_window.active_view as TextView);
-        spell_checking_action.active = inline_checker.enabled;
+        Gspell.TextView gspell_view =
+            Gspell.TextView.get_from_gtk_text_view (_main_window.active_view as TextView);
+        spell_checking_action.active = gspell_view.inline_spell_checking;
     }
 
     /* Sensitivity */
@@ -135,15 +135,15 @@ public class MainWindowTools
 
         bool activate = (action as ToggleAction).active;
 
-        Gspell.InlineCheckerTextView inline_checker =
-            Gspell.text_view_get_inline_checker (view as TextView);
+        Gspell.TextView gspell_view =
+            Gspell.TextView.get_from_gtk_text_view (view as TextView);
 
         // Save metadata only if property changes, because this function is
         // also called when update_inline_spell_checker_action_state() is
         // called.
-        if (inline_checker.enabled != activate)
+        if (gspell_view.inline_spell_checking != activate)
         {
-            inline_checker.enabled = activate;
+            gspell_view.inline_spell_checking = activate;
 
             update_inline_spell_checker_action_state ();
 
