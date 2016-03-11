@@ -208,7 +208,10 @@ public class DocumentView : Gtk.SourceView
     private void init_spell_checking ()
     {
         Gspell.Checker spell_checker = new Gspell.Checker (get_spell_language ());
-        Gspell.text_buffer_set_spell_checker (this.buffer, spell_checker);
+
+        unowned Gspell.TextBuffer gspell_buffer =
+            Gspell.TextBuffer.get_from_gtk_text_buffer (buffer);
+        gspell_buffer.set_spell_checker (spell_checker);
 
         setup_inline_spell_checker ();
 
@@ -249,6 +252,14 @@ public class DocumentView : Gtk.SourceView
         return Gspell.Language.lookup (lang_code);
     }
 
+    private unowned Gspell.Checker? get_spell_checker ()
+    {
+        unowned Gspell.TextBuffer gspell_buffer =
+            Gspell.TextBuffer.get_from_gtk_text_buffer (buffer);
+
+        return gspell_buffer.get_spell_checker ();
+    }
+
     public void setup_inline_spell_checker ()
     {
         Document doc = get_buffer () as Document;
@@ -278,7 +289,7 @@ public class DocumentView : Gtk.SourceView
 
     public void launch_spell_language_chooser_dialog ()
     {
-        Gspell.Checker? spell_checker = Gspell.text_buffer_get_spell_checker (buffer);
+        Gspell.Checker? spell_checker = get_spell_checker ();
         return_if_fail (spell_checker != null);
 
         Gspell.LanguageChooserDialog dialog =
@@ -298,7 +309,7 @@ public class DocumentView : Gtk.SourceView
 
     public void save_spell_language_metadata ()
     {
-        Gspell.Checker? spell_checker = Gspell.text_buffer_get_spell_checker (buffer);
+        Gspell.Checker? spell_checker = get_spell_checker ();
         return_if_fail (spell_checker != null);
 
         Document doc = get_buffer () as Document;
@@ -336,7 +347,7 @@ public class DocumentView : Gtk.SourceView
         if (! inline_checker.enabled)
             return;
 
-        Gspell.Checker? spell_checker = Gspell.text_buffer_get_spell_checker (buffer);
+        Gspell.Checker? spell_checker = get_spell_checker ();
         return_if_fail (spell_checker != null);
 
         if (spell_checker.get_language () != null)
