@@ -1,5 +1,10 @@
 LaTeXila NEWS
 
+Release 3.19.5
+--------------
+* Adapt code for gspell API changes
+* Translation updates
+
 Release 3.19.4
 --------------
 * Close fundraiser
