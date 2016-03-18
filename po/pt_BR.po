@@ -1,27 +1,27 @@
 # Brazilian Portuguese translation for LaTeXila package.
-# Copyright (C) 2015 COMSOLiD - Comunidade Maracanauense de Software Livre e Inclusão Digital
+# Copyright (C) 2016 COMSOLiD - Comunidade Maracanauense de Software Livre e Inclusão Digital
 # This file is distributed under the same license as the LaTeXila package.
 # Átila Camurça <camurca.home@gmail.com>, 2012.
 # Darlildo Souza <darlildo.cefetce@gmail.com>, 2012.
-# Rafael Ferreira <rafael.f.f1@gmail.com>, 2013.
 # Enrico Nicoletto <liverig@gmail.com>, 2014, 2015.
-#
+# Rafael Fontenelle <rafaelff@gnome.org>, 2013, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: LaTeXila\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-10-07 14:19+0000\n"
-"PO-Revision-Date: 2015-10-07 15:25-0300\n"
-"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=latexi"
+"la&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-03-18 00:50+0000\n"
+"PO-Revision-Date: 2016-03-18 03:57-0200\n"
+"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Project-Style: gnome\n"
 
 #. (itstool) path: tool/label
 #: build_tools.xml:43 ../src/build_tool_dialog.vala:165
@@ -56,12 +56,16 @@ msgstr "Visualizar o arquivo PostScript"
 #. (itstool) path: tool/description
 #: build_tools.xml:64
 msgid "Create a PDF file from LaTeX sources with the \"pdflatex\" command"
-msgstr "Criar um arquivo PDF a partir dos arquivos-fonte do LaTeX com o comando \"pdflatex\""
+msgstr ""
+"Criar um arquivo PDF a partir dos arquivos-fonte do LaTeX com o comando "
+"\"pdflatex\""
 
 #. (itstool) path: tool/description
 #: build_tools.xml:70
 msgid "Create a DVI file from LaTeX sources with the \"latex\" command"
-msgstr "Criar um arquivo DVI a partir dos arquivos-fonte do LaTeX com o comando \"latex\""
+msgstr ""
+"Criar um arquivo DVI a partir dos arquivos-fonte do LaTeX com o comando "
+"\"latex\""
 
 #. (itstool) path: tool/description
 #: build_tools.xml:78
@@ -88,67 +92,69 @@ msgstr "Converter o documento DVI para o formato PostScript"
 msgid "Convert the PostScript document to the PDF format"
 msgstr "Converter o documento PostScript para o formato PDF"
 
-#: ../data/latexila.appdata.xml.in.h:1
+#: ../data/org.gnome.latexila.appdata.xml.in.h:1
 msgid ""
-"LaTeXila is an integrated LaTeX environment for the GNOME desktop. The idea of LaTeXila is "
-"to always deal directly with the LaTeX code, while simplifying as most as possible the "
-"writing of this LaTeX code."
+"LaTeXila is an integrated LaTeX environment for the GNOME desktop. The idea "
+"of LaTeXila is to always deal directly with the LaTeX code, while "
+"simplifying as most as possible the writing of this LaTeX code."
 msgstr ""
-"O LaTeXila é um ambiente integrado LaTeX para a área de trabalho do GNOME. A ideia do "
-"LaTeXila é a de sempre manipular diretamente o código LaTeX, enquanto simplifica o máximo "
-"possível a escrita de tal código LaTeX."
+"O LaTeXila é um ambiente integrado LaTeX para a área de trabalho do GNOME. A "
+"ideia do LaTeXila é a de sempre manipular diretamente o código LaTeX, "
+"enquanto simplifica o máximo possível a escrita de tal código LaTeX."
 
-#: ../data/latexila.appdata.xml.in.h:2
+#: ../data/org.gnome.latexila.appdata.xml.in.h:2
 msgid ""
-"To help the writing of the LaTeX markup, auto-completion is available as well as menus and "
-"toolbars with the principal commands."
+"To help the writing of the LaTeX markup, auto-completion is available as "
+"well as menus and toolbars with the principal commands."
 msgstr ""
-"Para ajudar a escrita da marcação LaTeX, auto-completação está disponível assim como menus "
-"e barras de ferramentas com os comandos principais."
+"Para ajudar a escrita da marcação LaTeX, auto-completação está disponível "
+"assim como menus e barras de ferramentas com os comandos principais."
 
-#: ../data/latexila.appdata.xml.in.h:3
+#: ../data/org.gnome.latexila.appdata.xml.in.h:3
 msgid ""
-"New documents are created from templates. There are buttons to compile, convert and view a "
-"document in one click. And projects containing several .tex files are managed easily."
+"New documents are created from templates. There are buttons to compile, "
+"convert and view a document in one click. And projects containing several ."
+"tex files are managed easily."
 msgstr ""
-"Novos documentos são criados a partir de modelos. Há botões para efetuar compilação, "
-"conversão e visualização de um documento em um único clique. E projetos que possuem vários "
-"arquivos .tex são gerenciados de forma fácil."
+"Novos documentos são criados a partir de modelos. Há botões para efetuar "
+"compilação, conversão e visualização de um documento em um único clique. E "
+"projetos que possuem vários arquivos .tex são gerenciados de forma fácil."
 
-#: ../data/latexila.appdata.xml.in.h:4
+#: ../data/org.gnome.latexila.appdata.xml.in.h:4
 msgid ""
-"A side panel contains three components: the document structure to easily navigate in it; "
-"lists of symbols to insert them in a document; and an integrated file browser."
+"A side panel contains three components: the document structure to easily "
+"navigate in it; lists of symbols to insert them in a document; and an "
+"integrated file browser."
 msgstr ""
-"Um painel lateral contém três componentes: a estrutura do documento para fácil navegação "
-"pela mesma; listas de símbolos a serem inseridos em um documento e um navegador de "
-"arquivos integrado."
+"Um painel lateral contém três componentes: a estrutura do documento para "
+"fácil navegação pela mesma; listas de símbolos a serem inseridos em um "
+"documento e um navegador de arquivos integrado."
 
-#: ../data/latexila.appdata.xml.in.h:5
+#: ../data/org.gnome.latexila.appdata.xml.in.h:5
 msgid ""
-"LaTeXila has also other features like the spell checking, or the forward and backward "
-"search to switch between the .tex and the PDF."
+"LaTeXila has also other features like the spell checking, or the forward and "
+"backward search to switch between the .tex and the PDF."
 msgstr ""
-"O LaTeXila também possui outras funções como verificação ortográfica e pesquisa anterior e "
-"posterior para alternar entre o .tex e o PDF."
+"O LaTeXila também possui outras funções como verificação ortográfica e "
+"pesquisa anterior e posterior para alternar entre o .tex e o PDF."
 
-#: ../data/latexila.desktop.in.in.h:1
+#: ../data/org.gnome.latexila.desktop.in.in.h:1
 msgid "Integrated LaTeX Environment"
 msgstr "Ambiente LaTeX Integrado"
 
-#: ../data/latexila.desktop.in.in.h:2
+#: ../data/org.gnome.latexila.desktop.in.in.h:2
 msgid "Edit LaTeX documents"
 msgstr "Edite documentos em LaTeX"
 
-#: ../data/latexila.desktop.in.in.h:3
+#: ../data/org.gnome.latexila.desktop.in.in.h:3
 msgid "text;tex;latex;editor;documents;"
 msgstr "texto;tex;latex;editor;documentos;"
 
-#: ../data/latexila.desktop.in.in.h:4
+#: ../data/org.gnome.latexila.desktop.in.in.h:4
 msgid "Open a New Window"
 msgstr "Abrir em uma nova janela"
 
-#: ../data/latexila.desktop.in.in.h:5
+#: ../data/org.gnome.latexila.desktop.in.in.h:5
 msgid "Open a New Document"
 msgstr "Abrir um novo documento"
 
@@ -158,13 +164,15 @@ msgstr "Usar fonte padrão"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:2
 msgid ""
-"Whether to use the system's default fixed width font for editing text instead of a font "
-"specific to LaTeXila. If this option is turned off, then the font named in the \"Editor "
-"Font\" option will be used instead of the system font."
+"Whether to use the system's default fixed width font for editing text "
+"instead of a font specific to LaTeXila. If this option is turned off, then "
+"the font named in the \"Editor Font\" option will be used instead of the "
+"system font."
 msgstr ""
-"Quando utilizar o tamanho de fonte padrão do sistema para e edição de texto ao invés do "
-"fonte específica do LaTeXila. Se esta opção estiver desabilitada, então a fonte indicada "
-"em \"Fonte do editor\" será usada ao invés da fonte do sistema."
+"Quando utilizar o tamanho de fonte padrão do sistema para e edição de texto "
+"ao invés do fonte específica do LaTeXila. Se esta opção estiver "
+"desabilitada, então a fonte indicada em \"Fonte do editor\" será usada ao "
+"invés da fonte do sistema."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:3
 msgid "Editor Font"
@@ -172,11 +180,11 @@ msgstr "Fonte do editor"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:4
 msgid ""
-"A custom font that will be used for the editing area. This will only take effect if the "
-"\"Use Default Font\" option is turned off."
+"A custom font that will be used for the editing area. This will only take "
+"effect if the \"Use Default Font\" option is turned off."
 msgstr ""
-"Uma fonte customizada será utilizada para a área em edição. Isto só terá efeito se a opção "
-"\"Usar fonte padrão\" estiver desabilitada."
+"Uma fonte customizada será utilizada para a área em edição. Isto só terá "
+"efeito se a opção \"Usar fonte padrão\" estiver desabilitada."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:5
 msgid "Style Scheme"
@@ -184,7 +192,8 @@ msgstr "Esquema de estilos"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:6
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
-msgstr "O ID de um esquema de estilos GtkSourceView usado para colorir o texto."
+msgstr ""
+"O ID de um esquema de estilos GtkSourceView usado para colorir o texto."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:7
 msgid "Create Backup Copies"
@@ -192,7 +201,9 @@ msgstr "Criar copias de backup"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:8
 msgid "Whether LaTeXila should create backup copies for the files it saves."
-msgstr "Indica quando o LaTeXila deve criar copias de backup para os arquivos que salva."
+msgstr ""
+"Indica quando o LaTeXila deve criar copias de backup para os arquivos que "
+"salva."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:9
 msgid "Autosave"
@@ -200,12 +211,13 @@ msgstr "Salvar automaticamente"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:10
 msgid ""
-"Whether LaTeXila should automatically save modified files after a time interval. You can "
-"set the time interval with the \"Autosave Interval\" option."
+"Whether LaTeXila should automatically save modified files after a time "
+"interval. You can set the time interval with the \"Autosave Interval\" "
+"option."
 msgstr ""
-"Indica quando o LaTeXila deve salvar automaticamente os arquivos modificados após um "
-"intervalo de tempo. Você pode modificar o intervalo de tempo com a opção \"Intervalo para "
-"salvar automaticamente\"."
+"Indica quando o LaTeXila deve salvar automaticamente os arquivos modificados "
+"após um intervalo de tempo. Você pode modificar o intervalo de tempo com a "
+"opção \"Intervalo para salvar automaticamente\"."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:11
 msgid "Autosave Interval"
@@ -213,29 +225,35 @@ msgstr "Intervalo para salvar automaticamente"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:12
 msgid ""
-"Number of minutes after which LaTeXila will automatically save modified files. This will "
-"only take effect if the \"Autosave\" option is turned on."
+"Number of minutes after which LaTeXila will automatically save modified "
+"files. This will only take effect if the \"Autosave\" option is turned on."
 msgstr ""
-"Número de minutos após o qual o LaTeXila irá salvar automaticamente os arquivos "
-"modificados. Esta opção só terá efeito se a opção \"Salvar automaticamente\" estiver "
-"habilitada."
+"Número de minutos após o qual o LaTeXila irá salvar automaticamente os "
+"arquivos modificados. Esta opção só terá efeito se a opção \"Salvar "
+"automaticamente\" estiver habilitada."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:13 ../src/ui/preferences_dialog.ui.h:9
+#: ../data/org.gnome.latexila.gschema.xml.in.h:13
+#: ../src/ui/preferences_dialog.ui.h:9
 msgid "Reopen files on startup"
 msgstr "Reabrir arquivos na inicialização"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:14
 msgid "Whether LaTeXila should reopen the files that was opened the last time."
 msgstr ""
-"Indica quando o LaTeXila deve reabrir os arquivos que estavam abertos pela última vez."
+"Indica quando o LaTeXila deve reabrir os arquivos que estavam abertos pela "
+"última vez."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:15
 msgid "Tab Size"
 msgstr "Largura das tabulações"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:16
-msgid "Specifies the number of spaces that should be displayed instead of Tab characters."
-msgstr "Especifica o número de espaços que devem ser mostrados ao invés de tabulações."
+msgid ""
+"Specifies the number of spaces that should be displayed instead of Tab "
+"characters."
+msgstr ""
+"Especifica o número de espaços que devem ser mostrados ao invés de "
+"tabulações."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:17
 msgid "Insert spaces"
@@ -259,7 +277,8 @@ msgstr "Exibir números de linha"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:22
 msgid "Whether LaTeXila should display line numbers in the editing area."
-msgstr "Indica quando o LaTeXila deve mostrar os números de linha na área de edição."
+msgstr ""
+"Indica quando o LaTeXila deve mostrar os números de linha na área de edição."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:23
 msgid "Highlight Current Line"
@@ -283,7 +302,8 @@ msgstr "Destacar palavras com erros ortográficos"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:28
 msgid "Whether misspelled words are highlighted by default."
-msgstr "Se as palavras com erros ortográficos serão, ou não, destacadas por padrão."
+msgstr ""
+"Se as palavras com erros ortográficos serão, ou não, destacadas por padrão."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:29
 msgid "Spell Checking Language"
@@ -291,39 +311,45 @@ msgstr "Idioma do corretor ortográfico"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:30
 msgid ""
-"The default language used for the spell checking. Set to the empty string to take the best "
-"language available based on the environment."
+"The default language used for the spell checking. Set to the empty string to "
+"take the best language available based on the environment."
 msgstr ""
-"O idioma padrão usado para o corretor ortográfico. Defina como uma sequência vazia para "
-"usar o melhor idioma disponível baseando-se no ambiente."
+"O idioma padrão usado para o corretor ortográfico. Defina como uma sequência "
+"vazia para usar o melhor idioma disponível baseando-se no ambiente."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:31
 msgid "Main toolbar is visible"
 msgstr "Tornar barra de ferramentas principal visível"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:32
-msgid "Whether the main toolbar (file open, close, build, ...) should be visible."
+msgid ""
+"Whether the main toolbar (file open, close, build, ...) should be visible."
 msgstr ""
-"Indica quando a barra de ferramentas principal (abrir arquivo, fechar, construir, ...) "
-"deve estar visível."
+"Indica quando a barra de ferramentas principal (abrir arquivo, fechar, "
+"construir, ...) deve estar visível."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:33
 msgid "Edit toolbar is visible"
 msgstr "Tornar barra de edição visível"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:34
-msgid "Whether the edit toolbar (bold, italic, character sizes, ...) should be visible."
+msgid ""
+"Whether the edit toolbar (bold, italic, character sizes, ...) should be "
+"visible."
 msgstr ""
-"Indica quando a barra de edição (negrito, itálico, tamanho dos caracteres, ...) deve estar "
-"visível."
+"Indica quando a barra de edição (negrito, itálico, tamanho dos "
+"caracteres, ...) deve estar visível."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:35
 msgid "Side panel is Visible"
 msgstr "Tornar painel lateral visível"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:36
-msgid "Whether the side panel at the left of editing windows should be visible."
-msgstr "Indica quando o painel lateral a esquerda da janela de edição deve estar visível."
+msgid ""
+"Whether the side panel at the left of editing windows should be visible."
+msgstr ""
+"Indica quando o painel lateral a esquerda da janela de edição deve estar "
+"visível."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:37
 msgid "Bottom panel is Visible"
@@ -331,16 +357,20 @@ msgstr "Tornar painel inferior visível"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:38
 msgid "Whether the bottom panel containing the build view should be visible."
-msgstr "Indica quando o painel inferior que contém a visão de construção deve estar visível."
+msgstr ""
+"Indica quando o painel inferior que contém a visão de construção deve estar "
+"visível."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:39
 msgid "Side panel component"
 msgstr "Componente do painel lateral"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:40
-msgid "Side panel's active component. 0: Symbols. 1: File browser. 2: Structure."
+msgid ""
+"Side panel's active component. 0: Symbols. 1: File browser. 2: Structure."
 msgstr ""
-"Componente ativo do painel lateral. 0: Símbolos. 1: Navegador de arquivos. 2: Estrutura."
+"Componente ativo do painel lateral. 0: Símbolos. 1: Navegador de arquivos. "
+"2: Estrutura."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:41
 msgid "Show build output warnings"
@@ -365,11 +395,14 @@ msgstr "Número mínimo de caracteres para preenchimento interativo"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:46
 msgid ""
-"Minimum number of characters after \"\\\" for the interactive completion of LaTeX commands"
+"Minimum number of characters after \"\\\" for the interactive completion of "
+"LaTeX commands"
 msgstr ""
-"Número mínimo de caracteres após \"\\\" para o auto-completar interativo de comandos LaTeX"
+"Número mínimo de caracteres após \"\\\" para o auto-completar interativo de "
+"comandos LaTeX"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:47 ../src/ui/preferences_dialog.ui.h:22
+#: ../data/org.gnome.latexila.gschema.xml.in.h:47
+#: ../src/ui/preferences_dialog.ui.h:22
 msgid "No confirmation when cleaning-up"
 msgstr "Sem confirmação quando houver remoção"
 
@@ -378,9 +411,11 @@ msgid "Automatic clean-up"
 msgstr "Limpeza automática"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:49
-msgid "Automatically clean-up files after close. no-confirm-clean must be true."
+msgid ""
+"Automatically clean-up files after close. no-confirm-clean must be true."
 msgstr ""
-"Remover automaticamente arquivos após fechar. limpar-sem-confirmar deve ser verdadeiro."
+"Remover automaticamente arquivos após fechar. limpar-sem-confirmar deve ser "
+"verdadeiro."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:50
 msgid "File extensions for the clean-up"
@@ -419,8 +454,11 @@ msgid "Show build files"
 msgstr "Mostrar arquivos de construção"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:59
-msgid "Show files with an extension present in preferences.latex.clean-extensions."
-msgstr "Mostrar arquivos com as extensões presentes em preferences.latex.clean-extensions."
+msgid ""
+"Show files with an extension present in preferences.latex.clean-extensions."
+msgstr ""
+"Mostrar arquivos com as extensões presentes em preferences.latex.clean-"
+"extensions."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:60 ../src/file_browser.vala:369
 msgid "Show hidden files"
@@ -483,7 +521,8 @@ msgstr ""
 "\n"
 "\\begin{document}\n"
 "\n"
-"\\begin{letter}{Destinatário\\\\Endereço de destinatário\\\\Número de telefone de destinatário}\n"
+"\\begin{letter}{Destinatário\\\\Endereço de destinatário\\\\Número de telefone de "
+"destinatário}\n"
 "\n"
 "\\opening{Caro Sr.,}\n"
 "\n"
@@ -507,12 +546,13 @@ msgid "Personal Build Tool"
 msgstr "Ferramenta de construção pessoal"
 
 #: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
-#: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41 ../src/document_tab.vala:290
+#: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
+#: ../src/document_tab.vala:291
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:758 ../src/main_window.vala:854
-#: ../src/main_window.vala:890 ../src/preferences_dialog.vala:114
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:757
+#: ../src/main_window.vala:853 ../src/preferences_dialog.vala:114
 #: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
 #: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
@@ -585,7 +625,8 @@ msgstr "Descrição"
 
 #: ../src/build_tool_dialog.vala:600
 msgid "File extensions for which the build tool can be executed."
-msgstr "Extensões do arquivo com as quais foram construídas podem ser executadas."
+msgstr ""
+"Extensões do arquivo com as quais foram construídas podem ser executadas."
 
 #: ../src/build_tool_dialog.vala:601
 msgid "The extensions are separated by spaces."
@@ -614,7 +655,8 @@ msgstr "O nome do arquivo ativo."
 
 #: ../src/build_tool_dialog.vala:621 ../src/build_tool_dialog.vala:626
 msgid "If the active document belongs to a project, the main file is chosen."
-msgstr "Se o documento ativo pertence a um projeto, o arquivo principal é escolhido."
+msgstr ""
+"Se o documento ativo pertence a um projeto, o arquivo principal é escolhido."
 
 #: ../src/build_tool_dialog.vala:625
 msgid "The active document's filename without its extension."
@@ -626,7 +668,8 @@ msgstr "Trabalhos"
 
 #: ../src/build_tool_dialog.vala:681
 msgid "List of files to open after executing the build jobs."
-msgstr "Lista os arquivos para abrir depois de executar as tarefas de construção."
+msgstr ""
+"Lista os arquivos para abrir depois de executar as tarefas de construção."
 
 #: ../src/build_tool_dialog.vala:682
 msgid "The files are separated by spaces."
@@ -679,9 +722,9 @@ msgid "Do you really want to delete the build tool \"%s\"?"
 msgstr "Você realmente deseja excluir a ferramenta de construção \"%s\"?"
 
 #: ../src/build_tools_preferences.vala:336 ../src/clean_build_files.vala:243
-#: ../src/liblatexila/latexila-templates-manage-dialog.c:146 ../src/main_window_edit.vala:51
-#: ../src/main_window_structure.vala:38 ../src/project_dialogs.vala:242
-#: ../src/project_dialogs.vala:277
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:146
+#: ../src/main_window_edit.vala:51 ../src/main_window_structure.vala:38
+#: ../src/project_dialogs.vala:242 ../src/project_dialogs.vala:277
 msgid "_Delete"
 msgstr "E_xcluir"
 
@@ -709,20 +752,22 @@ msgstr "Nenhuma sugestão correspondente"
 msgid "Ln %d, Col %d"
 msgstr "Ln %d, Col %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:757
+#: ../src/dialogs.vala:40 ../src/main_window.vala:756
 msgid "Close _without Saving"
 msgstr "Fechar s_em salvar"
 
-#: ../src/dialogs.vala:42 ../src/main_window_file.vala:41 ../src/main_window.vala:763
-#: ../src/main_window.vala:855
+#: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
+#: ../src/main_window.vala:762 ../src/main_window.vala:854
 msgid "_Save"
 msgstr "_Salvar"
 
 #: ../src/dialogs.vala:66
 #, c-format
-msgid "There are %d documents with unsaved changes. Save changes before closing?"
+msgid ""
+"There are %d documents with unsaved changes. Save changes before closing?"
 msgstr ""
-"Há %d documentos com mudanças que não estão salvas. Salvar as mudanças antes de fechar?"
+"Há %d documentos com mudanças que não estão salvas. Salvar as mudanças antes "
+"de fechar?"
 
 #: ../src/dialogs.vala:72
 msgid "Select the documents you want to save:"
@@ -730,46 +775,47 @@ msgstr "Selecione os documentos que deseja salvar:"
 
 #: ../src/dialogs.vala:129
 msgid "If you don't save, all your changes will be permanently lost."
-msgstr "Se você não salvar, todas as suas mudanças serão perdidas definitivamente."
+msgstr ""
+"Se você não salvar, todas as suas mudanças serão perdidas definitivamente."
 
 #: ../src/document_structure.vala:720
 msgid "The structure item already contains a sub-paragraph."
 msgstr "O item da estrutura já contém um sub parágrafo."
 
-#: ../src/document_tab.vala:173
+#: ../src/document_tab.vala:174
 msgid "Close document"
 msgstr "Fechar documento"
 
 #. main file
-#: ../src/document_tab.vala:233 ../src/project_dialogs.vala:46
+#: ../src/document_tab.vala:234 ../src/project_dialogs.vala:46
 #: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
 #: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
 msgid "Main File"
 msgstr "Arquivo principal"
 
-#: ../src/document_tab.vala:235
+#: ../src/document_tab.vala:236
 msgid "Main File:"
 msgstr "Arquivo principal:"
 
-#: ../src/document_tab.vala:259
+#: ../src/document_tab.vala:260
 #, c-format
 msgid "Activate '%s'"
 msgstr "Ativar \"%s\""
 
-#: ../src/document_tab.vala:278
+#: ../src/document_tab.vala:279
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "O arquivo %s foi mudado no disco."
 
-#: ../src/document_tab.vala:283
+#: ../src/document_tab.vala:284
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Você deseja descartar suas alterações e recarregar o arquivo?"
 
-#: ../src/document_tab.vala:285
+#: ../src/document_tab.vala:286
 msgid "Do you want to reload the file?"
 msgstr "Você deseja recarregar o arquivo?"
 
-#: ../src/document_tab.vala:289
+#: ../src/document_tab.vala:290
 msgid "_Reload"
 msgstr "_Recarregar"
 
@@ -785,7 +831,9 @@ msgstr "O arquivo %s foi modificado desde a leitura."
 
 #: ../src/document.vala:215
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
-msgstr "Se você salvá-lo, todas as mudanças externas podem ser perdidos. Salvar mesmo assim?"
+msgstr ""
+"Se você salvá-lo, todas as mudanças externas podem ser perdidos. Salvar "
+"mesmo assim?"
 
 #: ../src/document.vala:218
 msgid "_Save Anyway"
@@ -804,21 +852,24 @@ msgid "Error trying to convert the document to UTF-8"
 msgstr "Erro ao tentar converter documento para UTF-8"
 
 #: ../src/document.vala:310
-msgid "Unsaved Document"
-msgstr "Documento não-salvo"
+#| msgid "Unsaved Document"
+msgid "Untitled Document"
+msgstr "Documento sem título"
 
 #: ../src/document.vala:594
 msgid ""
-"The file has a temporary location. The data can be lost after rebooting your computer."
+"The file has a temporary location. The data can be lost after rebooting your "
+"computer."
 msgstr ""
-"O arquivo tem uma localização temporária. Os dados podem ser perdidos após reinicializar o "
-"computador."
+"O arquivo tem uma localização temporária. Os dados podem ser perdidos após "
+"reinicializar o computador."
 
 #: ../src/document.vala:595
 msgid "Do you want to save the file in a safer place?"
 msgstr "Você deseja salvar o arquivo em um lugar mais seguro?"
 
-#: ../src/document.vala:598 ../src/main_window_file.vala:44 ../src/main_window.vala:761
+#: ../src/document.vala:598 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:760
 msgid "Save _As"
 msgstr "Salvar co_mo"
 
@@ -826,16 +877,17 @@ msgstr "Salvar co_mo"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../src/document_view.vala:370
+#: ../src/document_view.vala:367
 msgid "No dictionaries available for the spell checking."
 msgstr "Nenhum dicionário disponível para verificação ortográfica."
 
 #. Help
-#: ../src/document_view.vala:372 ../src/main_window.vala:62
+#: ../src/document_view.vala:369 ../src/main_window.vala:62
+#: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "Aj_uda"
 
-#: ../src/document_view.vala:373 ../src/tab_info_bar.vala:77
+#: ../src/document_view.vala:370 ../src/tab_info_bar.vala:77
 msgid "_OK"
 msgstr "_OK"
 
@@ -872,9 +924,37 @@ msgid "File System"
 msgstr "Sistema de arquivos"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:410
+#: ../src/file_browser.vala:536 ../src/main_window.vala:406
 msgid "File Browser"
 msgstr "Navegador de arquivos"
+
+#: ../src/latexila_app.vala:77
+msgid "Show the application's version"
+msgstr "Mostrar a versão da aplicação"
+
+#: ../src/latexila_app.vala:80
+msgid "Create new document"
+msgstr "Criar novo documento"
+
+#: ../src/latexila_app.vala:83
+msgid "Create a new top-level window in an existing instance of LaTeXila"
+msgstr "Criar uma nova janela em uma instância existente do LaTeXila"
+
+#: ../src/latexila_app.vala:217
+msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
+msgstr "LaTeXila é um Ambiente Integrado LaTeX para a Plataforma GNOME"
+
+#: ../src/latexila_app.vala:256 ../src/main_window.vala:68
+msgid "About LaTeXila"
+msgstr "Sobre LaTeXila"
+
+#: ../src/latexila_app.vala:257
+msgid "translator-credits"
+msgstr ""
+"Átila Camurça <camurca.home@gmail.com>\n"
+"Darlildo Lima <darlildo.cefetce@gmail.com>\n"
+"Rafael Ferreira <rafael.f.f1@gmail.com>\n"
+"Enrico Nicoletto <liverig@gmail.com>"
 
 #. LaTeX: Sectioning
 #: ../src/latex_menu.vala:32
@@ -1652,7 +1732,8 @@ msgstr "Modelos pessoais"
 msgid "New File..."
 msgstr "Novo arquivo..."
 
-#: ../src/liblatexila/latexila-templates-dialogs.c:129 ../src/main_window_file.vala:32
+#: ../src/liblatexila/latexila-templates-dialogs.c:129
+#: ../src/main_window_file.vala:32
 msgid "_New"
 msgstr "_Novo"
 
@@ -1660,7 +1741,8 @@ msgstr "_Novo"
 msgid "New Template..."
 msgstr "Novo modelo..."
 
-#: ../src/liblatexila/latexila-templates-dialogs.c:239 ../src/project_dialogs.vala:32
+#: ../src/liblatexila/latexila-templates-dialogs.c:239
+#: ../src/project_dialogs.vala:32
 msgid "Crea_te"
 msgstr "_Criar"
 
@@ -1698,29 +1780,6 @@ msgstr "Excluir"
 msgid "Manage Personal Templates"
 msgstr "Gerenciar modelos pessoais"
 
-#: ../src/main.vala:51
-msgid "Show the application's version"
-msgstr "Mostrar a versão da aplicação"
-
-#: ../src/main.vala:54
-msgid "Create new document"
-msgstr "Criar novo documento"
-
-#: ../src/main.vala:57
-msgid "Create a new top-level window in an existing instance of LaTeXila"
-msgstr "Criar uma nova janela em uma instância existente do LaTeXila"
-
-#: ../src/main.vala:66
-msgid "- Integrated LaTeX Environment for GNOME"
-msgstr "- Ambiente LaTeX Integrado para GNOME"
-
-#: ../src/main.vala:78
-#, c-format
-msgid "Run '%s --help' to see a full list of available command line options.\n"
-msgstr ""
-"Execute '%s --help' para ver uma lista completa de todas as opções disponíveis de linha de "
-"comando.\n"
-
 #: ../src/main_window_build_tools.vala:28
 msgid "_Build"
 msgstr "_Construir"
@@ -1749,7 +1808,7 @@ msgstr "Visualizar _log"
 msgid "View Log"
 msgstr "Visualizar log"
 
-#: ../src/main_window_build_tools.vala:40
+#: ../src/main_window_build_tools.vala:40 ../src/ui/menus.ui.h:3
 msgid "_Manage Build Tools"
 msgstr "_Gerenciar ferramentas de construção"
 
@@ -1925,7 +1984,7 @@ msgstr "_Completar"
 msgid "Complete the LaTeX command"
 msgstr "Complete o comando LaTeX"
 
-#: ../src/main_window_edit.vala:74
+#: ../src/main_window_edit.vala:74 ../src/ui/menus.ui.h:2
 msgid "_Preferences"
 msgstr "_Preferências"
 
@@ -1974,7 +2033,6 @@ msgid "Create a new template from the current document"
 msgstr "Criar um novo modelo a partir do documento atual"
 
 #: ../src/main_window_file.vala:50
-#| msgid "Personal Templates"
 msgid "_Manage Personal Templates..."
 msgstr "_Gerenciar modelos pessoais..."
 
@@ -2008,12 +2066,12 @@ msgid "Open Files"
 msgstr "Abrir arquivos"
 
 #. Filter: by default show only .tex and .bib files
-#: ../src/main_window_file.vala:172
+#: ../src/main_window_file.vala:173
 msgid "All LaTeX Files"
 msgstr "Todos os arquivos LaTeX"
 
 #. All files filter
-#: ../src/main_window_file.vala:179
+#: ../src/main_window_file.vala:180
 msgid "All Files"
 msgstr "Abrir arquivos"
 
@@ -2051,7 +2109,9 @@ msgstr "Deslocar para _esquerda"
 
 #: ../src/main_window_structure.vala:48
 msgid "Shift the selected structure item to the left (e.g. section → chapter)"
-msgstr "Desloca o item selecionado da estrutura para a esquerda (e.g. seção → capítulo)"
+msgstr ""
+"Desloca o item selecionado da estrutura para a esquerda (e.g. seção → "
+"capítulo)"
 
 #: ../src/main_window_structure.vala:51
 msgid "Shift _Right"
@@ -2059,7 +2119,9 @@ msgstr "Deslocar para _direita"
 
 #: ../src/main_window_structure.vala:52
 msgid "Shift the selected structure item to the right (e.g. chapter → section)"
-msgstr "Desloca o item selecionado da estrutura para a direita (e.g. capítulo → seção)"
+msgstr ""
+"Desloca o item selecionado da estrutura para a direita (e.g. capítulo → "
+"seção)"
 
 #: ../src/main_window_structure.vala:55
 msgid "_Open File"
@@ -2069,7 +2131,7 @@ msgstr "_Abrir arquivo"
 msgid "Open the file referenced by the selected structure item"
 msgstr "Abrir o arquivo referenciado pelo item selecionado da estrutura"
 
-#: ../src/main_window.vala:28
+#: ../src/main_window.vala:28 ../src/ui/menus.ui.h:6
 msgid "_Quit"
 msgstr "Sa_ir"
 
@@ -2188,110 +2250,85 @@ msgstr "Referência _LaTeX"
 msgid "The Kile LaTeX Reference"
 msgstr "Referência LaTeX do editor Kile"
 
-#: ../src/main_window.vala:70
+#: ../src/main_window.vala:67 ../src/ui/menus.ui.h:5
 msgid "_About"
 msgstr "_Sobre"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1226
-msgid "About LaTeXila"
-msgstr "Sobre LaTeXila"
-
-#: ../src/main_window.vala:76
+#: ../src/main_window.vala:73
 msgid "_Main Toolbar"
 msgstr "_Barra de ferramentas principal"
 
-#: ../src/main_window.vala:77
+#: ../src/main_window.vala:74
 msgid "Show or hide the main toolbar"
 msgstr "Mostrar ou ocultar a barra de ferramentas principal"
 
 #. Translators: "Edit" here is an adjective.
-#: ../src/main_window.vala:79
+#: ../src/main_window.vala:76
 msgid "_Edit Toolbar"
 msgstr "_Editar barra de ferramentas"
 
-#: ../src/main_window.vala:80
+#: ../src/main_window.vala:77
 msgid "Show or hide the edit toolbar"
 msgstr "Mostrar ou ocultar a barra de ferramentas de edição"
 
-#: ../src/main_window.vala:81
+#: ../src/main_window.vala:78
 msgid "_Side panel"
 msgstr "Painel _lateral"
 
-#: ../src/main_window.vala:82
+#: ../src/main_window.vala:79
 msgid "Show or hide the side panel"
 msgstr "Mostrar ou ocultar o painel lateral"
 
-#: ../src/main_window.vala:83
+#: ../src/main_window.vala:80
 msgid "_Bottom panel"
 msgstr "Painel _inferior"
 
-#: ../src/main_window.vala:84
+#: ../src/main_window.vala:81
 msgid "Show or hide the bottom panel"
 msgstr "Mostrar ou esconder o painel inferior"
 
 #. Symbols
-#: ../src/main_window.vala:406
+#: ../src/main_window.vala:402
 msgid "Symbols"
 msgstr "Sí­mbolos"
 
-#: ../src/main_window.vala:415
+#: ../src/main_window.vala:411
 msgid "Structure"
 msgstr "Estrutura"
 
-#: ../src/main_window.vala:646
+#: ../src/main_window.vala:645
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Este arquivo (%s) já está aberto em outra janela do LaTeXila."
 
-#: ../src/main_window.vala:648
+#: ../src/main_window.vala:647
 msgid ""
-"LaTeXila opened this instance of the file in a non-editable way. Do you want to edit it "
-"anyway?"
+"LaTeXila opened this instance of the file in a non-editable way. Do you want "
+"to edit it anyway?"
 msgstr ""
-"LaTeXila abriu esta instância do arquivo de uma forma não-editável. Você deseja editá-lo "
-"mesmo assim?"
+"LaTeXila abriu esta instância do arquivo de uma forma não-editável. Você "
+"deseja editá-lo mesmo assim?"
 
-#: ../src/main_window.vala:651
+#: ../src/main_window.vala:650
 msgid "Edit Anyway"
 msgstr "Editar mesmo assim"
 
-#: ../src/main_window.vala:652
+#: ../src/main_window.vala:651
 msgid "Don't Edit"
 msgstr "Não editar"
 
-#: ../src/main_window.vala:754
+#: ../src/main_window.vala:753
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Salvar mudanças no documento \"%s\" antes de fechar?"
 
-#: ../src/main_window.vala:834
+#: ../src/main_window.vala:833
 msgid "Read-Only"
 msgstr "Apenas leitura"
 
-#: ../src/main_window.vala:852
+#: ../src/main_window.vala:851
 msgid "Save File"
 msgstr "Salvar arquivo"
-
-#: ../src/main_window.vala:887
-#, c-format
-msgid "A file named \"%s\" already exists. Do you want to replace it?"
-msgstr "Um arquivo chamado \"%s\" já existe. Deseja sobrescrevê-lo?"
-
-#: ../src/main_window.vala:891
-msgid "_Replace"
-msgstr "Subs_tituir"
-
-#: ../src/main_window.vala:1187
-msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
-msgstr "LaTeXila é um Ambiente Integrado LaTeX para a Plataforma GNOME"
-
-#: ../src/main_window.vala:1227
-msgid "translator-credits"
-msgstr ""
-"Átila Camurça <camurca.home@gmail.com>\n"
-"Darlildo Lima <darlildo.cefetce@gmail.com>\n"
-"Rafael Ferreira <rafael.f.f1@gmail.com>\n"
-"Enrico Nicoletto <liverig@gmail.com>"
 
 #: ../src/preferences_dialog.vala:33
 msgid "Preferences"
@@ -2322,7 +2359,7 @@ msgid_plural "characters"
 msgstr[0] "caractere"
 msgstr[1] "caracteres"
 
-#: ../src/preferences_dialog.vala:379
+#: ../src/preferences_dialog.vala:344
 #, c-format
 msgid "Use the system fixed width font (%s)"
 msgstr "Usar a fonte de largura fixa padrão (%s)"
@@ -2469,7 +2506,9 @@ msgstr "Erro na ação da estrutura: %s"
 
 #: ../src/structure.vala:639
 msgid "The structure data seems outdated. Please refresh the structure."
-msgstr "Os dados da estrutura parecem estar desatualizados. Por favor, atualize a estrutura."
+msgstr ""
+"Os dados da estrutura parecem estar desatualizados. Por favor, atualize a "
+"estrutura."
 
 #. Translators: it's a verb
 #: ../src/structure.vala:730
@@ -2565,6 +2604,11 @@ msgstr "_Limpar"
 msgid "Clear most used symbols"
 msgstr "Limpa os símbolos mais usados"
 
+#: ../src/ui/menus.ui.h:1
+#| msgid "New _Window"
+msgid "_New Window"
+msgstr "_Nova janela"
+
 #: ../src/ui/preferences_dialog.ui.h:1
 msgid "Display line numbers"
 msgstr "Exibir número de linhas"
@@ -2649,10 +2693,11 @@ msgstr "Remover automaticamente arquivos após fechar"
 
 #: ../src/ui/preferences_dialog.ui.h:24
 msgid ""
-"The spell checking settings can also be changed on a file-by-file basis via the Tools menu."
+"The spell checking settings can also be changed on a file-by-file basis via "
+"the Tools menu."
 msgstr ""
-"As configurações de verificação ortográfica também podem ser alteradas de modo arquivo a "
-"arquivo através do menu ferramentas."
+"As configurações de verificação ortográfica também podem ser alteradas de "
+"modo arquivo a arquivo através do menu ferramentas."
 
 #: ../src/ui/preferences_dialog.ui.h:25
 msgid "Default Spell Checking Settings"
@@ -2669,6 +2714,21 @@ msgstr "Destacar palavras com erros ortográficos"
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Outro"
+
+#~ msgid "- Integrated LaTeX Environment for GNOME"
+#~ msgstr "- Ambiente LaTeX Integrado para GNOME"
+
+#~ msgid ""
+#~ "Run '%s --help' to see a full list of available command line options.\n"
+#~ msgstr ""
+#~ "Execute '%s --help' para ver uma lista completa de todas as opções "
+#~ "disponíveis de linha de comando.\n"
+
+#~ msgid "A file named \"%s\" already exists. Do you want to replace it?"
+#~ msgstr "Um arquivo chamado \"%s\" já existe. Deseja sobrescrevê-lo?"
+
+#~ msgid "_Replace"
+#~ msgstr "Subs_tituir"
 
 #~ msgid "LaTeXila"
 #~ msgstr "LaTeXila"
@@ -2695,10 +2755,11 @@ msgstr "Outro"
 #~ msgstr "_Doe"
 
 #~ msgid ""
-#~ "Donate to demonstrate your appreciation of LaTeXila and help its future development"
+#~ "Donate to demonstrate your appreciation of LaTeXila and help its future "
+#~ "development"
 #~ msgstr ""
-#~ "Faça uma doação para demonstrar o quanto você aprecia o LaTeXila, ajudando-o em seu "
-#~ "futuro desenvolvimento"
+#~ "Faça uma doação para demonstrar o quanto você aprecia o LaTeXila, "
+#~ "ajudando-o em seu futuro desenvolvimento"
 
 #~ msgid "Left Delimiters"
 #~ msgstr "Delimitadores esquerdo"
@@ -2710,11 +2771,12 @@ msgstr "Outro"
 #~ msgstr "Mensagens do latexmk"
 
 #~ msgid ""
-#~ "There are menus and toolbars with the principal LaTeX commands. To help the writing of "
-#~ "the LaTeX markup, there is also LaTeX commands completion."
+#~ "There are menus and toolbars with the principal LaTeX commands. To help "
+#~ "the writing of the LaTeX markup, there is also LaTeX commands completion."
 #~ msgstr ""
-#~ "Existem menus e barras de ferramentas com os principais comandos LaTeX. Para facilitar "
-#~ "a escrita da marcação LaTeX, também há o preenchimento interativo de comandos LaTeX."
+#~ "Existem menus e barras de ferramentas com os principais comandos LaTeX. "
+#~ "Para facilitar a escrita da marcação LaTeX, também há o preenchimento "
+#~ "interativo de comandos LaTeX."
 
 #~ msgid "(no suggestions)"
 #~ msgstr "(sem sugestões)"
