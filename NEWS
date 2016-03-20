@@ -1,5 +1,10 @@
 LaTeXila NEWS
 
+Release 3.20.0
+--------------
+* Add Turkish translation
+* Other translation update
+
 Release 3.19.5
 --------------
 * Adapt code for gspell API changes
