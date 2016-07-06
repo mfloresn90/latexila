@@ -5,11 +5,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: latexila gnome-3-18\n"
+"Project-Id-Version: latexila master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-11-20 17:49+0000\n"
-"PO-Revision-Date: 2016-07-06 11:58+0700\n"
+"POT-Creation-Date: 2016-07-06 04:59+0000\n"
+"PO-Revision-Date: 2016-07-06 12:24+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -85,7 +85,7 @@ msgstr "Konversikan dokumen DVI ke format PostScript"
 msgid "Convert the PostScript document to the PDF format"
 msgstr "Konversikan dokumen PostScript ke format PDF"
 
-#: ../data/latexila.appdata.xml.in.h:1
+#: ../data/org.gnome.latexila.appdata.xml.in.h:1
 msgid ""
 "LaTeXila is an integrated LaTeX environment for the GNOME desktop. The idea "
 "of LaTeXila is to always deal directly with the LaTeX code, while "
@@ -95,7 +95,7 @@ msgstr ""
 "LaTeXila adalah untuk selalu berurusan langsung dengan kode LaTeX, sambil "
 "menyederhanakan sebanyak mungkin penulisan kode LaTeX ini."
 
-#: ../data/latexila.appdata.xml.in.h:2
+#: ../data/org.gnome.latexila.appdata.xml.in.h:2
 msgid ""
 "To help the writing of the LaTeX markup, auto-completion is available as "
 "well as menus and toolbars with the principal commands."
@@ -103,7 +103,7 @@ msgstr ""
 "Untuk membantu menulis markup LaTeX, pelengkapan otomatis tersedia maupun "
 "menu dan bilah alat dengan perintah-perintah utama."
 
-#: ../data/latexila.appdata.xml.in.h:3
+#: ../data/org.gnome.latexila.appdata.xml.in.h:3
 msgid ""
 "New documents are created from templates. There are buttons to compile, "
 "convert and view a document in one click. And projects containing several ."
@@ -113,7 +113,7 @@ msgstr ""
 "mengkonversi, dan menilik suatu dokumen dalam satu klik. Projek yang memuat "
 "beberapa berkas .tex dikelola dengan mudah."
 
-#: ../data/latexila.appdata.xml.in.h:4
+#: ../data/org.gnome.latexila.appdata.xml.in.h:4
 msgid ""
 "A side panel contains three components: the document structure to easily "
 "navigate in it; lists of symbols to insert them in a document; and an "
@@ -123,7 +123,7 @@ msgstr ""
 "mudah; daftar simbol untuk menyisipkan mereka ke dalam dokumen; dan suatu "
 "peramban berkas terintegrasi."
 
-#: ../data/latexila.appdata.xml.in.h:5
+#: ../data/org.gnome.latexila.appdata.xml.in.h:5
 msgid ""
 "LaTeXila has also other features like the spell checking, or the forward and "
 "backward search to switch between the .tex and the PDF."
@@ -131,23 +131,23 @@ msgstr ""
 "LaTeXila juga punya fitur lain seperti pemeriksaan ejaan, atau pencarian "
 "maju dan mundur untuk bertukar antara .tex dan PDF."
 
-#: ../data/latexila.desktop.in.in.h:1
+#: ../data/org.gnome.latexila.desktop.in.in.h:1
 msgid "Integrated LaTeX Environment"
 msgstr "Lingkungan LaTeX Terpadu"
 
-#: ../data/latexila.desktop.in.in.h:2
+#: ../data/org.gnome.latexila.desktop.in.in.h:2
 msgid "Edit LaTeX documents"
 msgstr "Sunting dokumen LaTeX"
 
-#: ../data/latexila.desktop.in.in.h:3
+#: ../data/org.gnome.latexila.desktop.in.in.h:3
 msgid "text;tex;latex;editor;documents;"
 msgstr "teks;tex;latex;editor;penyunting;dokumen;"
 
-#: ../data/latexila.desktop.in.in.h:4
+#: ../data/org.gnome.latexila.desktop.in.in.h:4
 msgid "Open a New Window"
 msgstr "Buka Jendela Baru"
 
-#: ../data/latexila.desktop.in.in.h:5
+#: ../data/org.gnome.latexila.desktop.in.in.h:5
 msgid "Open a New Document"
 msgstr "Buka Dokumen Baru"
 
@@ -526,11 +526,10 @@ msgstr "Perkakas Build Pribadi"
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:758
-#: ../src/main_window.vala:854 ../src/main_window.vala:890
-#: ../src/preferences_dialog.vala:114 ../src/project_dialogs.vala:31
-#: ../src/project_dialogs.vala:122 ../src/project_dialogs.vala:276
-#: ../src/project_dialogs.vala:296
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:757
+#: ../src/main_window.vala:853 ../src/preferences_dialog.vala:114
+#: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
+#: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
 msgstr "_Batal"
 
@@ -726,12 +725,12 @@ msgstr "Tak ada proposal yang cocok"
 msgid "Ln %d, Col %d"
 msgstr "Brs %d, Kol %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:757
+#: ../src/dialogs.vala:40 ../src/main_window.vala:756
 msgid "Close _without Saving"
 msgstr "Tutup _tanpa Menyimpan"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:763 ../src/main_window.vala:855
+#: ../src/main_window.vala:762 ../src/main_window.vala:854
 msgid "_Save"
 msgstr "_Simpan"
 
@@ -824,8 +823,8 @@ msgid "Error trying to convert the document to UTF-8"
 msgstr "Galat saat mencoba mengkonversi dokumen ke UTF-8"
 
 #: ../src/document.vala:310
-msgid "Unsaved Document"
-msgstr "Dokumen Belum Disimpan"
+msgid "Untitled Document"
+msgstr "Dokumen Tanpa Judul"
 
 #: ../src/document.vala:594
 msgid ""
@@ -840,7 +839,7 @@ msgid "Do you want to save the file in a safer place?"
 msgstr "Apakah Anda ingin menyimpan berkas ke tempat yang lebih aman?"
 
 #: ../src/document.vala:598 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:761
+#: ../src/main_window.vala:760
 msgid "Save _As"
 msgstr "Simp_an Sebagai"
 
@@ -848,16 +847,17 @@ msgstr "Simp_an Sebagai"
 msgid "Cancel"
 msgstr "Batal"
 
-#: ../src/document_view.vala:370
+#: ../src/document_view.vala:367
 msgid "No dictionaries available for the spell checking."
 msgstr "Tak tersedia kamus untuk pemeriksaan ejaan."
 
 #. Help
-#: ../src/document_view.vala:372 ../src/main_window.vala:62
+#: ../src/document_view.vala:369 ../src/main_window.vala:62
+#: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "Ba_ntuan"
 
-#: ../src/document_view.vala:373 ../src/tab_info_bar.vala:77
+#: ../src/document_view.vala:370 ../src/tab_info_bar.vala:77
 msgid "_OK"
 msgstr "_OK"
 
@@ -894,9 +894,33 @@ msgid "File System"
 msgstr "Sistem Berkas"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:410
+#: ../src/file_browser.vala:536 ../src/main_window.vala:406
 msgid "File Browser"
 msgstr "Peramban Berkas"
+
+#: ../src/latexila_app.vala:77
+msgid "Show the application's version"
+msgstr "Tampilkan versi aplikasi"
+
+#: ../src/latexila_app.vala:80
+msgid "Create new document"
+msgstr "Buat dokumen baru"
+
+#: ../src/latexila_app.vala:83
+msgid "Create a new top-level window in an existing instance of LaTeXila"
+msgstr "Buat jendela tingkat tertinggi dalam instansi LaTeXila yang ada"
+
+#: ../src/latexila_app.vala:217
+msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
+msgstr "LaTeXila adalah Lingkungan LaTeX Terpadu bagi Desktop GNOME"
+
+#: ../src/latexila_app.vala:256 ../src/main_window.vala:68
+msgid "About LaTeXila"
+msgstr "Tentang LaTeXila"
+
+#: ../src/latexila_app.vala:257
+msgid "translator-credits"
+msgstr "Andika Triwidada <andika@gmail.com>, 2012-2014, 2016"
 
 #. LaTeX: Sectioning
 #: ../src/latex_menu.vala:32
@@ -1717,29 +1741,6 @@ msgstr "Hapus"
 msgid "Manage Personal Templates"
 msgstr "Kelola Templat Pribadi"
 
-#: ../src/main.vala:51
-msgid "Show the application's version"
-msgstr "Tampilkan versi aplikasi"
-
-#: ../src/main.vala:54
-msgid "Create new document"
-msgstr "Buat dokumen baru"
-
-#: ../src/main.vala:57
-msgid "Create a new top-level window in an existing instance of LaTeXila"
-msgstr "Buat jendela tingkat tertinggi dalam instansi LaTeXila yang ada"
-
-#: ../src/main.vala:66
-msgid "- Integrated LaTeX Environment for GNOME"
-msgstr "- Lingkungan LaTeX Terpadu bagi GNOME"
-
-#: ../src/main.vala:78
-#, c-format
-msgid "Run '%s --help' to see a full list of available command line options.\n"
-msgstr ""
-"Jalankan '%s --help' untuk daftar lengkap opsi baris perintah yang "
-"tersedia.\n"
-
 #: ../src/main_window_build_tools.vala:28
 msgid "_Build"
 msgstr "_Build"
@@ -1768,7 +1769,7 @@ msgstr "Tilik _Log"
 msgid "View Log"
 msgstr "Tilik Log"
 
-#: ../src/main_window_build_tools.vala:40
+#: ../src/main_window_build_tools.vala:40 ../src/ui/menus.ui.h:3
 msgid "_Manage Build Tools"
 msgstr "_Kelola Alat Build"
 
@@ -1944,7 +1945,7 @@ msgstr "_Pelengkapan"
 msgid "Complete the LaTeX command"
 msgstr "Lengkapi perintah LaTeX"
 
-#: ../src/main_window_edit.vala:74
+#: ../src/main_window_edit.vala:74 ../src/ui/menus.ui.h:2
 msgid "_Preferences"
 msgstr "_Preferensi"
 
@@ -2026,12 +2027,12 @@ msgid "Open Files"
 msgstr "Buka Berkas"
 
 #. Filter: by default show only .tex and .bib files
-#: ../src/main_window_file.vala:172
+#: ../src/main_window_file.vala:173
 msgid "All LaTeX Files"
 msgstr "Semua Berkas LaTeX"
 
 #. All files filter
-#: ../src/main_window_file.vala:179
+#: ../src/main_window_file.vala:180
 msgid "All Files"
 msgstr "Semua Berkas"
 
@@ -2087,7 +2088,7 @@ msgstr "_Buka Berkas"
 msgid "Open the file referenced by the selected structure item"
 msgstr "Buka berkas yang diacu oleh butir struktur yang dipilih"
 
-#: ../src/main_window.vala:28
+#: ../src/main_window.vala:28 ../src/ui/menus.ui.h:6
 msgid "_Quit"
 msgstr "_Keluar"
 
@@ -2206,62 +2207,58 @@ msgstr "Referensi _LaTeX"
 msgid "The Kile LaTeX Reference"
 msgstr "Referensi LaTeX Kile"
 
-#: ../src/main_window.vala:70
+#: ../src/main_window.vala:67 ../src/ui/menus.ui.h:5
 msgid "_About"
 msgstr "Tent_ang"
 
-#: ../src/main_window.vala:71 ../src/main_window.vala:1226
-msgid "About LaTeXila"
-msgstr "Tentang LaTeXila"
-
-#: ../src/main_window.vala:76
+#: ../src/main_window.vala:73
 msgid "_Main Toolbar"
 msgstr "Bilah Alat Uta_ma"
 
-#: ../src/main_window.vala:77
+#: ../src/main_window.vala:74
 msgid "Show or hide the main toolbar"
 msgstr "Tampilkan atau sembunyikan bilah alat utama"
 
 #. Translators: "Edit" here is an adjective.
-#: ../src/main_window.vala:79
+#: ../src/main_window.vala:76
 msgid "_Edit Toolbar"
 msgstr "Bilah Alat P_enyuntingan"
 
-#: ../src/main_window.vala:80
+#: ../src/main_window.vala:77
 msgid "Show or hide the edit toolbar"
 msgstr "Tampilkan atau sembunyikan bilah alat penyuntingan"
 
-#: ../src/main_window.vala:81
+#: ../src/main_window.vala:78
 msgid "_Side panel"
 msgstr "_Panel Samping"
 
-#: ../src/main_window.vala:82
+#: ../src/main_window.vala:79
 msgid "Show or hide the side panel"
 msgstr "Menampilkan atau menyembunyikan panel samping"
 
-#: ../src/main_window.vala:83
+#: ../src/main_window.vala:80
 msgid "_Bottom panel"
 msgstr "Panel _bawah"
 
-#: ../src/main_window.vala:84
+#: ../src/main_window.vala:81
 msgid "Show or hide the bottom panel"
 msgstr "Tampilkan atau sembunyikan panel bawah"
 
 #. Symbols
-#: ../src/main_window.vala:406
+#: ../src/main_window.vala:402
 msgid "Symbols"
 msgstr "Simbol"
 
-#: ../src/main_window.vala:415
+#: ../src/main_window.vala:411
 msgid "Structure"
 msgstr "Struktur"
 
-#: ../src/main_window.vala:646
+#: ../src/main_window.vala:645
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Berkas (%s) ini sedang dibuka dalam jendela LaTeXila lain."
 
-#: ../src/main_window.vala:648
+#: ../src/main_window.vala:647
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2269,43 +2266,26 @@ msgstr ""
 "LaTeXila membuka instansi berkas ini dalam cari yang tak dapat disunting. "
 "Apakah Anda ingin menyuntingnya saja?"
 
-#: ../src/main_window.vala:651
+#: ../src/main_window.vala:650
 msgid "Edit Anyway"
 msgstr "Sunting Saja"
 
-#: ../src/main_window.vala:652
+#: ../src/main_window.vala:651
 msgid "Don't Edit"
 msgstr "Jangan Sunting"
 
-#: ../src/main_window.vala:754
+#: ../src/main_window.vala:753
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Simpan perubahan ke dokumen \"%s\" sebelum menutup?"
 
-#: ../src/main_window.vala:834
+#: ../src/main_window.vala:833
 msgid "Read-Only"
 msgstr "Hanya-Baca"
 
-#: ../src/main_window.vala:852
+#: ../src/main_window.vala:851
 msgid "Save File"
 msgstr "Simpan Berkas"
-
-#: ../src/main_window.vala:887
-#, c-format
-msgid "A file named \"%s\" already exists. Do you want to replace it?"
-msgstr "Berkas \"%s\" sudah ada. Ingin menimpanya?"
-
-#: ../src/main_window.vala:891
-msgid "_Replace"
-msgstr "_Ganti"
-
-#: ../src/main_window.vala:1187
-msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
-msgstr "LaTeXila adalah Lingkungan LaTeX Terpadu bagi Desktop GNOME"
-
-#: ../src/main_window.vala:1227
-msgid "translator-credits"
-msgstr "Andika Triwidada <andika@gmail.com>, 2012-2014, 2016"
 
 #: ../src/preferences_dialog.vala:33
 msgid "Preferences"
@@ -2334,7 +2314,7 @@ msgid "character"
 msgid_plural "characters"
 msgstr[0] "karakter"
 
-#: ../src/preferences_dialog.vala:379
+#: ../src/preferences_dialog.vala:344
 #, c-format
 msgid "Use the system fixed width font (%s)"
 msgstr "Gunakan fonta lebar tetap sistem (%s)"
@@ -2575,6 +2555,10 @@ msgstr "_Bersihkan"
 #: ../src/symbols_view.vala:159
 msgid "Clear most used symbols"
 msgstr "Bersihkan simbol yang paling banyak dipakai"
+
+#: ../src/ui/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Jendela Baru"
 
 #: ../src/ui/preferences_dialog.ui.h:1
 msgid "Display line numbers"
