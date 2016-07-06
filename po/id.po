@@ -5,11 +5,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: latexila master\n"
+"Project-Id-Version: latexila gnome-3-18\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-05 09:22+0000\n"
-"PO-Revision-Date: 2014-09-05 19:56+0700\n"
+"POT-Creation-Date: 2015-11-20 17:49+0000\n"
+"PO-Revision-Date: 2016-07-06 11:58+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -18,10 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.8.8\n"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:43 ../src/build_tool_dialog.vala:166
+#: build_tools.xml:43 ../src/build_tool_dialog.vala:165
 msgid "View PDF"
 msgstr "Tilik PDF"
 
@@ -31,7 +31,7 @@ msgid "View the PDF file"
 msgstr "Tilik berkas PDF"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:49 ../src/build_tool_dialog.vala:165
+#: build_tools.xml:49 ../src/build_tool_dialog.vala:164
 msgid "View DVI"
 msgstr "Tilik DVI"
 
@@ -41,7 +41,7 @@ msgid "View the DVI file"
 msgstr "Tilik berkas DVI"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:55 ../src/build_tool_dialog.vala:167
+#: build_tools.xml:55 ../src/build_tool_dialog.vala:166
 msgid "View PS"
 msgstr "Tilik PS"
 
@@ -132,16 +132,16 @@ msgstr ""
 "maju dan mundur untuk bertukar antara .tex dan PDF."
 
 #: ../data/latexila.desktop.in.in.h:1
-msgid "LaTeXila"
-msgstr "LaTeXila"
-
-#: ../data/latexila.desktop.in.in.h:2
 msgid "Integrated LaTeX Environment"
 msgstr "Lingkungan LaTeX Terpadu"
 
-#: ../data/latexila.desktop.in.in.h:3
+#: ../data/latexila.desktop.in.in.h:2
 msgid "Edit LaTeX documents"
 msgstr "Sunting dokumen LaTeX"
+
+#: ../data/latexila.desktop.in.in.h:3
+msgid "text;tex;latex;editor;documents;"
+msgstr "teks;tex;latex;editor;penyunting;dokumen;"
 
 #: ../data/latexila.desktop.in.in.h:4
 msgid "Open a New Window"
@@ -284,77 +284,93 @@ msgid "Whether LaTeXila should highlight matching brackets."
 msgstr "Apakah LaTeXila mesti menyorot kurung pasangan."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:27
-msgid "Spell checking"
-msgstr "Pemeriksaan ejaan"
+msgid "Highlight Misspelled Words"
+msgstr "Sorot Kata Salah Eja"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:28
+msgid "Whether misspelled words are highlighted by default."
+msgstr "Apakah secara baku kata yang salah eja disorot."
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:29
+msgid "Spell Checking Language"
+msgstr "Bahasa Pemeriksaan Ejaan"
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:30
+msgid ""
+"The default language used for the spell checking. Set to the empty string to "
+"take the best language available based on the environment."
+msgstr ""
+"Bahasa baku yang dipakai untuk memeriksa ejaan. Isi dengan string kosong "
+"untuk memakai bahasa terbaik yang tersedia berbasis pada lingkungan."
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:31
 msgid "Main toolbar is visible"
 msgstr "Bilah alat utama tampak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:29
+#: ../data/org.gnome.latexila.gschema.xml.in.h:32
 msgid ""
 "Whether the main toolbar (file open, close, build, ...) should be visible."
 msgstr ""
 "Apakah bilah alat utama (berkas buka, tutup, bangun, ...) mesti tampak."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:30
+#: ../data/org.gnome.latexila.gschema.xml.in.h:33
 msgid "Edit toolbar is visible"
 msgstr "Bilah alat penyuntingan tampak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:31
+#: ../data/org.gnome.latexila.gschema.xml.in.h:34
 msgid ""
 "Whether the edit toolbar (bold, italic, character sizes, ...) should be "
 "visible."
 msgstr ""
 "Apakah bilah sunting (tebal, miring, ukuran karakter, ...) mesti tampak."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:32
+#: ../data/org.gnome.latexila.gschema.xml.in.h:35
 msgid "Side panel is Visible"
 msgstr "Panel sisi tampak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:33
+#: ../data/org.gnome.latexila.gschema.xml.in.h:36
 msgid ""
 "Whether the side panel at the left of editing windows should be visible."
 msgstr "Apakah panel sisi di kiri jendela penyuntingan mesti tampak."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:34
+#: ../data/org.gnome.latexila.gschema.xml.in.h:37
 msgid "Bottom panel is Visible"
 msgstr "Panel bawah tampak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:35
+#: ../data/org.gnome.latexila.gschema.xml.in.h:38
 msgid "Whether the bottom panel containing the build view should be visible."
 msgstr "Apakah panel bawah yang memuat tilikan bangun mesti tampak."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:36
+#: ../data/org.gnome.latexila.gschema.xml.in.h:39
 msgid "Side panel component"
 msgstr "Komponen panel sisi"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:37
+#: ../data/org.gnome.latexila.gschema.xml.in.h:40
 msgid ""
 "Side panel's active component. 0: Symbols. 1: File browser. 2: Structure."
 msgstr "Komponen aktif panel sisi. 0: Simbol. 1: Peramban berkas. 2: Struktur."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:38
+#: ../data/org.gnome.latexila.gschema.xml.in.h:41
 msgid "Show build output warnings"
 msgstr "Tampilkan peringatan keluaran pembangunan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:39
+#: ../data/org.gnome.latexila.gschema.xml.in.h:42
 msgid "Show build output badboxes"
 msgstr "Tampilkan kotak buruk keluaran pembangunan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:40
+#: ../data/org.gnome.latexila.gschema.xml.in.h:43
 msgid "Interactive completion"
 msgstr "Pelengkapan interaktif"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:41
+#: ../data/org.gnome.latexila.gschema.xml.in.h:44
 msgid "Automatically show LaTeX commands proposals"
 msgstr "Secara otomatis menampilkan usulan perintah LaTeX"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:42
+#: ../data/org.gnome.latexila.gschema.xml.in.h:45
 msgid "Minimum number of characters for interactive completion"
 msgstr "Cacah karakter minimum untuk pelengkapan interaktif"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:43
+#: ../data/org.gnome.latexila.gschema.xml.in.h:46
 msgid ""
 "Minimum number of characters after \"\\\" for the interactive completion of "
 "LaTeX commands"
@@ -362,76 +378,76 @@ msgstr ""
 "Cacah karakter minimum setelah \"\\\" untuk pelengkapan interaktif perintah "
 "LaTeX"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:44
-#: ../src/ui/preferences_dialog.ui.h:19
+#: ../data/org.gnome.latexila.gschema.xml.in.h:47
+#: ../src/ui/preferences_dialog.ui.h:22
 msgid "No confirmation when cleaning-up"
 msgstr "Tanpa konfirmasi ketika membersihkan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:45
+#: ../data/org.gnome.latexila.gschema.xml.in.h:48
 msgid "Automatic clean-up"
 msgstr "Otomatis bersihkan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:46
+#: ../data/org.gnome.latexila.gschema.xml.in.h:49
 msgid ""
 "Automatically clean-up files after close. no-confirm-clean must be true."
 msgstr ""
 "Otomatis bersihkan berkas setelah menutup. no-confirm-clean mesti berisi "
 "true."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:47
+#: ../data/org.gnome.latexila.gschema.xml.in.h:50
 msgid "File extensions for the clean-up"
 msgstr "Ekstensi berkas untuk pembersihan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:48
+#: ../data/org.gnome.latexila.gschema.xml.in.h:51
 msgid "The list of file extensions for the clean-up, separated by spaces"
 msgstr "Daftar ekstensi berkas untuk pembersihan, dipisahkan dengan spasi"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:49
+#: ../data/org.gnome.latexila.gschema.xml.in.h:52
 msgid "Enabled default build tools"
 msgstr "Fungsikan alat bangun baku"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:50
+#: ../data/org.gnome.latexila.gschema.xml.in.h:53
 msgid "The list of the default build tools that are enabled"
 msgstr "Daftar dari alat bangun baku yang difungsikan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:51
+#: ../data/org.gnome.latexila.gschema.xml.in.h:54
 msgid "Disabled default build tools"
 msgstr "Alat bangun baku yang dinonaktifkan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:52
+#: ../data/org.gnome.latexila.gschema.xml.in.h:55
 msgid "The list of the default build tools that are disabled"
 msgstr "Daftar dari alat bangun baku yang dinonaktifkan"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:53
+#: ../data/org.gnome.latexila.gschema.xml.in.h:56
 msgid "Current directory"
 msgstr "Direktori saat ini"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:54
+#: ../data/org.gnome.latexila.gschema.xml.in.h:57
 msgid "URI of the file browser current directory"
 msgstr "URI dari direktori peramban berkas saat ini"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:281
+#: ../data/org.gnome.latexila.gschema.xml.in.h:58 ../src/file_browser.vala:361
 msgid "Show build files"
 msgstr "Tampilkan berkas bangun"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:56
+#: ../data/org.gnome.latexila.gschema.xml.in.h:59
 msgid ""
 "Show files with an extension present in preferences.latex.clean-extensions."
 msgstr ""
 "Tampilkan berkas dengan ekstensi yang ada dalam preferences.latex.clean-"
 "extensions."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:289
+#: ../data/org.gnome.latexila.gschema.xml.in.h:60 ../src/file_browser.vala:369
 msgid "Show hidden files"
 msgstr "Tampilkan berkas tersembunyi"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:58
+#: ../data/org.gnome.latexila.gschema.xml.in.h:61
 msgid "Show files beginning with a dot."
 msgstr "Tampilkan berkas yang diawali dengan titik."
 
+#. (itstool) path: template/babel
 #. This must be translated by a usepackage LaTeX command.
-#: article.xml:8(template/babel) beamer.xml:8(template/babel)
-#: book.xml:8(template/babel) report.xml:8(template/babel)
+#: article.xml:8 beamer.xml:8 book.xml:8 report.xml:8
 #, no-wrap
 msgid ""
 "\n"
@@ -440,8 +456,8 @@ msgstr ""
 "\n"
 "% paket babel atau ekuivalen\n"
 
-#. There is a helper script in data/templates/tex2po.sh
-#: letter.xml:2(template/translatableChunk)
+#. (itstool) path: template/translatableChunk
+#: letter.xml:2
 #, no-wrap
 msgid ""
 "\n"
@@ -500,168 +516,191 @@ msgstr ""
 msgid "Hide panel"
 msgstr "Sembunyikan panel"
 
-#: ../src/build_tool_dialog.vala:81
-msgid "Build Tool (read-only)"
-msgstr "Perkakas Build (hanya baca)"
+#: ../src/build_tool_dialog.vala:71
+msgid "Personal Build Tool"
+msgstr "Perkakas Build Pribadi"
 
-#: ../src/build_tool_dialog.vala:88
-msgid "Build Tool"
-msgstr "Perkakas Build"
+#: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
+#: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
+#: ../src/document_tab.vala:291
+#: ../src/liblatexila/latexila-templates-dialogs.c:128
+#: ../src/liblatexila/latexila-templates-dialogs.c:238
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:145
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:758
+#: ../src/main_window.vala:854 ../src/main_window.vala:890
+#: ../src/preferences_dialog.vala:114 ../src/project_dialogs.vala:31
+#: ../src/project_dialogs.vala:122 ../src/project_dialogs.vala:276
+#: ../src/project_dialogs.vala:296
+msgid "_Cancel"
+msgstr "_Batal"
 
-#. icon stock-id
+#: ../src/build_tool_dialog.vala:73 ../src/project_dialogs.vala:123
+msgid "_Apply"
+msgstr "Ter_apkan"
+
+#: ../src/build_tool_dialog.vala:77
+msgid "Default Build Tool (read-only)"
+msgstr "Perkakas Build Baku (hanya baca)"
+
+#. icon-name
 #. label
-#: ../src/build_tool_dialog.vala:159
+#: ../src/build_tool_dialog.vala:158
 msgid "Execute"
 msgstr "Jalankan"
 
-#: ../src/build_tool_dialog.vala:163
+#: ../src/build_tool_dialog.vala:162
 msgid "Convert"
 msgstr "Mengkonversi"
 
-#: ../src/build_tool_dialog.vala:164
+#. FIXME don't use Stock
+#: ../src/build_tool_dialog.vala:163
 msgid "View File"
 msgstr "Tilik Berkas"
 
-#: ../src/build_tool_dialog.vala:228
+#. In all cases, the text must be selectable, but there is no property
+#. for that. So set as editable, but in read-only mode the edited text
+#. isn't changed (see below).
+#: ../src/build_tool_dialog.vala:231
 msgid "Commands"
 msgstr "Perintah"
 
-#: ../src/build_tool_dialog.vala:238
+#: ../src/build_tool_dialog.vala:241
 msgid "Post Processor"
 msgstr "Pemrosesan Pasca"
 
-#: ../src/build_tool_dialog.vala:265 ../src/build_tools_preferences.vala:289
+#: ../src/build_tool_dialog.vala:271 ../src/build_tools_preferences.vala:297
 msgid "Add..."
 msgstr "Tambah..."
 
-#: ../src/build_tool_dialog.vala:282 ../src/build_tools_preferences.vala:306
+#: ../src/build_tool_dialog.vala:288 ../src/build_tools_preferences.vala:314
 msgid "Remove"
 msgstr "Buang"
 
-#: ../src/build_tool_dialog.vala:312 ../src/build_tools_preferences.vala:346
+#: ../src/build_tool_dialog.vala:318 ../src/build_tools_preferences.vala:354
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:282
 msgid "Move up"
 msgstr "Naikkan"
 
-#: ../src/build_tool_dialog.vala:363 ../src/build_tools_preferences.vala:398
+#: ../src/build_tool_dialog.vala:369 ../src/build_tools_preferences.vala:406
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:294
 msgid "Move down"
 msgstr "Turunkan"
 
-#: ../src/build_tool_dialog.vala:563 ../src/build_tools_preferences.vala:181
-#: ../src/latex_menu.vala:52 ../src/structure.vala:782
+#: ../src/build_tool_dialog.vala:573 ../src/build_tools_preferences.vala:177
+#: ../src/latex_menu.vala:52 ../src/structure.vala:783
 msgid "Label"
 msgstr "Label"
 
-#: ../src/build_tool_dialog.vala:568
+#: ../src/build_tool_dialog.vala:578
 msgid "You can select this arrow and copy/paste it!"
 msgstr "Anda dapat memilih panah ini dan menyalin/menempelkannya!"
 
-#: ../src/build_tool_dialog.vala:584
+#: ../src/build_tool_dialog.vala:594
 msgid "Description"
 msgstr "Deskripsi"
 
-#: ../src/build_tool_dialog.vala:590
+#: ../src/build_tool_dialog.vala:600
 msgid "File extensions for which the build tool can be executed."
 msgstr "Ekstensi berkas yang bagi mereka alat build dapat dieksekusi."
 
-#: ../src/build_tool_dialog.vala:591
+#: ../src/build_tool_dialog.vala:601
 msgid "The extensions are separated by spaces."
 msgstr "Ekstensi dipisahkan dengan spasi."
 
-#: ../src/build_tool_dialog.vala:592
+#: ../src/build_tool_dialog.vala:602
 msgid "If it is empty, all extensions are allowed."
 msgstr "Bila kosong, semua ekstensi diijinkan."
 
-#: ../src/build_tool_dialog.vala:594
+#: ../src/build_tool_dialog.vala:604
 msgid "Extensions"
 msgstr "Ekstensi"
 
-#: ../src/build_tool_dialog.vala:599
+#: ../src/build_tool_dialog.vala:609
 msgid "Icon"
 msgstr "Ikon"
 
 #. Placeholders
-#: ../src/build_tool_dialog.vala:606
+#: ../src/build_tool_dialog.vala:616
 msgid "Placeholders:"
 msgstr "Placeholder:"
 
-#: ../src/build_tool_dialog.vala:610
+#: ../src/build_tool_dialog.vala:620
 msgid "The active document's filename."
 msgstr "Nama berkas dokumen aktif."
 
-#: ../src/build_tool_dialog.vala:611 ../src/build_tool_dialog.vala:616
+#: ../src/build_tool_dialog.vala:621 ../src/build_tool_dialog.vala:626
 msgid "If the active document belongs to a project, the main file is chosen."
 msgstr ""
 "Bila dokumen yang aktif termasuk ke suatu projek, berkas utama dipilih."
 
-#: ../src/build_tool_dialog.vala:615
+#: ../src/build_tool_dialog.vala:625
 msgid "The active document's filename without its extension."
 msgstr "Nama berkas dokumen aktif tanpa ekstensinya."
 
-#: ../src/build_tool_dialog.vala:659
+#: ../src/build_tool_dialog.vala:675
 msgid "Jobs"
 msgstr "Tugas"
 
-#: ../src/build_tool_dialog.vala:665
+#: ../src/build_tool_dialog.vala:681
 msgid "List of files to open after executing the build jobs."
 msgstr "Daftar berkas yang dibuka setelah mengeksekusi tugas build."
 
-#: ../src/build_tool_dialog.vala:666
+#: ../src/build_tool_dialog.vala:682
 msgid "The files are separated by spaces."
 msgstr "Berkas dipisahkan dengan spasi."
 
-#: ../src/build_tool_dialog.vala:667
+#: ../src/build_tool_dialog.vala:683
 msgid "You should use the placeholders to specify the files."
 msgstr "Anda mesti memakai placeholder untuk menyatakan berkas."
 
-#: ../src/build_tool_dialog.vala:670
+#: ../src/build_tool_dialog.vala:686
 msgid "Files to open"
 msgstr "Berkas untuk dibuka"
 
-#: ../src/build_tool_runner.vala:191
-#, c-format
-msgid "%s doesn't seem to be installed."
-msgstr "%s nampaknya tak terpasang."
-
-#: ../src/build_tool_runner.vala:263
-#, c-format
-msgid "Open %s"
-msgstr "Buka %s"
-
-#: ../src/build_tool_runner.vala:272
-#, c-format
-msgid "The file '%s' doesn't exist."
-msgstr "Berkas '%s' tak ada."
-
-#: ../src/build_tool_runner.vala:289
-#, c-format
-msgid "Failed to open '%s':"
-msgstr "Gagal membuka '%s':"
-
-#: ../src/build_tools_preferences.vala:53
+#: ../src/build_tools_preferences.vala:57
 msgid "Build Tools"
 msgstr "Alat Build"
 
-#: ../src/build_tools_preferences.vala:109
-msgid "Default build tools"
-msgstr "Alat build baku"
+#: ../src/build_tools_preferences.vala:113
+msgid "Default Build Tools"
+msgstr "Perkakas Build Baku"
 
-#: ../src/build_tools_preferences.vala:129
-msgid "Personal build tools"
-msgstr "Alat build pribadi"
+#: ../src/build_tools_preferences.vala:134
+msgid "Personal Build Tools"
+msgstr "Perkakas Build Pribadi"
 
-#: ../src/build_tools_preferences.vala:172
+#: ../src/build_tools_preferences.vala:168
 msgid "Enabled"
 msgstr "Diaktifkan"
 
-#: ../src/build_tools_preferences.vala:274
+#: ../src/build_tools_preferences.vala:241
+msgid "View the properties (read-only)"
+msgstr "Tilik properti (hanya baca)"
+
+#: ../src/build_tools_preferences.vala:246
+msgid "Edit the properties"
+msgstr "Sunting properti"
+
+#: ../src/build_tools_preferences.vala:266
+msgid "Create a copy"
+msgstr "Buat suatu salinan"
+
+#: ../src/build_tools_preferences.vala:281
 #, c-format
 msgid "%s [copy]"
 msgstr "%s [salinan]"
 
-#: ../src/build_tools_preferences.vala:324
+#: ../src/build_tools_preferences.vala:332
 #, c-format
 msgid "Do you really want to delete the build tool \"%s\"?"
 msgstr "Apakah Anda yakin hendak menghapus alat build \"%s\"?"
+
+#: ../src/build_tools_preferences.vala:336 ../src/clean_build_files.vala:243
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:146
+#: ../src/main_window_edit.vala:51 ../src/main_window_structure.vala:38
+#: ../src/project_dialogs.vala:242 ../src/project_dialogs.vala:277
+msgid "_Delete"
+msgstr "_Hapus"
 
 #: ../src/clean_build_files.vala:267
 msgid "Do you really want to delete these files?"
@@ -676,7 +715,7 @@ msgstr "Pilih berkas yang ingin Anda hapus:"
 msgid "No build file to clean up."
 msgstr "Tak ada berkas build untuk dibersihkan."
 
-#: ../src/completion.vala:318
+#: ../src/completion.vala:330
 msgid "No matching proposal"
 msgstr "Tak ada proposal yang cocok"
 
@@ -687,9 +726,14 @@ msgstr "Tak ada proposal yang cocok"
 msgid "Ln %d, Col %d"
 msgstr "Brs %d, Kol %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:765
-msgid "Close without Saving"
-msgstr "Tutup tanpa Menyimpan"
+#: ../src/dialogs.vala:40 ../src/main_window.vala:757
+msgid "Close _without Saving"
+msgstr "Tutup _tanpa Menyimpan"
+
+#: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
+#: ../src/main_window.vala:763 ../src/main_window.vala:855
+msgid "_Save"
+msgstr "_Simpan"
 
 #: ../src/dialogs.vala:66
 #, c-format
@@ -711,79 +755,79 @@ msgstr "Jika tidak disimpan, seluruh perubahan yang Anda buat akan hilang."
 msgid "The structure item already contains a sub-paragraph."
 msgstr "Butir struktur telah mengandung suatu sub paragraf."
 
-#: ../src/document_tab.vala:173
+#: ../src/document_tab.vala:174
 msgid "Close document"
 msgstr "Tutup dokumen"
 
 #. main file
-#: ../src/document_tab.vala:233 ../src/project_dialogs.vala:44
-#: ../src/project_dialogs.vala:47 ../src/project_dialogs.vala:139
-#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:216
+#: ../src/document_tab.vala:234 ../src/project_dialogs.vala:46
+#: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
+#: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
 msgid "Main File"
 msgstr "Berkas Utama"
 
-#: ../src/document_tab.vala:235
+#: ../src/document_tab.vala:236
 msgid "Main File:"
 msgstr "Berkas Utama:"
 
-#: ../src/document_tab.vala:259
+#: ../src/document_tab.vala:260
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktifkan '%s'"
 
-#: ../src/document_tab.vala:278
+#: ../src/document_tab.vala:279
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Berkas %s berubah pada cakram."
 
-#: ../src/document_tab.vala:283
+#: ../src/document_tab.vala:284
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Anda ingin membuang perubahan dan memuat ulang berkas?"
 
-#: ../src/document_tab.vala:285
+#: ../src/document_tab.vala:286
 msgid "Do you want to reload the file?"
 msgstr "Anda ingin memuat ulang berkas?"
 
-#: ../src/document_tab.vala:289
-msgid "Reload"
-msgstr "Muat ulang"
+#: ../src/document_tab.vala:290
+msgid "_Reload"
+msgstr "_Muat Ulang"
 
-#: ../src/document.vala:121
+#: ../src/document.vala:134
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Tak mungkin memuat berkas '%s'."
 
-#: ../src/document.vala:197
+#: ../src/document.vala:212
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Berkas %s telah diubah semenjak dibaca."
 
-#: ../src/document.vala:200
+#: ../src/document.vala:215
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Jika Anda menyimpannya, seluruh perubahan dari luar akan hilang. Simpan saja?"
 
-#: ../src/document.vala:203
-msgid "Save Anyway"
-msgstr "Simpan Saja"
+#: ../src/document.vala:218
+msgid "_Save Anyway"
+msgstr "_Simpan Saja"
 
-#: ../src/document.vala:205
-msgid "Don't Save"
-msgstr "Jangan Simpan"
+#: ../src/document.vala:219
+msgid "_Don't Save"
+msgstr "_Jangan Simpan"
 
-#: ../src/document.vala:217
+#: ../src/document.vala:231
 msgid "Impossible to save the file."
 msgstr "Tak mungkin menyimpan berkas."
 
-#: ../src/document.vala:242
+#: ../src/document.vala:256
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Galat saat mencoba mengkonversi dokumen ke UTF-8"
 
-#: ../src/document.vala:296
+#: ../src/document.vala:310
 msgid "Unsaved Document"
 msgstr "Dokumen Belum Disimpan"
 
-#: ../src/document.vala:575
+#: ../src/document.vala:594
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
@@ -791,28 +835,66 @@ msgstr ""
 "Berkas berada pada lokasi sementara. Data bisa hilang setelah komputer Anda "
 "reboot."
 
-#: ../src/document.vala:576
+#: ../src/document.vala:595
 msgid "Do you want to save the file in a safer place?"
 msgstr "Apakah Anda ingin menyimpan berkas ke tempat yang lebih aman?"
 
-#: ../src/file_browser.vala:216
+#: ../src/document.vala:598 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:761
+msgid "Save _As"
+msgstr "Simp_an Sebagai"
+
+#: ../src/document.vala:599
+msgid "Cancel"
+msgstr "Batal"
+
+#: ../src/document_view.vala:370
+msgid "No dictionaries available for the spell checking."
+msgstr "Tak tersedia kamus untuk pemeriksaan ejaan."
+
+#. Help
+#: ../src/document_view.vala:372 ../src/main_window.vala:62
+msgid "_Help"
+msgstr "Ba_ntuan"
+
+#: ../src/document_view.vala:373 ../src/tab_info_bar.vala:77
+msgid "_OK"
+msgstr "_OK"
+
+#: ../src/file_browser.vala:219
 msgid "Go to the home directory"
 msgstr "Ke direktori rumah"
 
-#: ../src/file_browser.vala:231
+#: ../src/file_browser.vala:234
 msgid "Go to the parent directory"
 msgstr "Ke direktori induk"
 
-#: ../src/file_browser.vala:247
+#: ../src/file_browser.vala:250
 msgid "Go to the active document directory"
 msgstr "Ke direktori dokumen aktif"
 
-#: ../src/file_browser.vala:336
+#: ../src/file_browser.vala:303
+msgid "Open in a file manager"
+msgstr "Buka dalam manajer berkas"
+
+#: ../src/file_browser.vala:305
+msgid "Open the current directory in a file manager"
+msgstr "Buka direktori saat ini dalam suatu manajer berkas"
+
+#: ../src/file_browser.vala:327
+msgid "Open in a terminal"
+msgstr "Buka dalam terminal"
+
+#: ../src/file_browser.vala:328
+msgid "Open the current directory in a terminal"
+msgstr "Buka direktori saat ini dalam suatu terminal"
+
+#: ../src/file_browser.vala:417
 msgid "File System"
 msgstr "Sistem Berkas"
 
 #. File browser
-#: ../src/file_browser.vala:455 ../src/main_window.vala:404
+#: ../src/file_browser.vala:536 ../src/main_window.vala:410
 msgid "File Browser"
 msgstr "Peramban Berkas"
 
@@ -821,31 +903,31 @@ msgstr "Peramban Berkas"
 msgid "_Sectioning"
 msgstr "Penentuan _Seksi"
 
-#: ../src/latex_menu.vala:34 ../src/structure.vala:775
+#: ../src/latex_menu.vala:34 ../src/structure.vala:776
 msgid "Part"
 msgstr "Bagian"
 
-#: ../src/latex_menu.vala:36 ../src/structure.vala:776
+#: ../src/latex_menu.vala:36 ../src/structure.vala:777
 msgid "Chapter"
 msgstr "Bab"
 
-#: ../src/latex_menu.vala:38 ../src/structure.vala:777
+#: ../src/latex_menu.vala:38 ../src/structure.vala:778
 msgid "Section"
 msgstr "Seksi"
 
-#: ../src/latex_menu.vala:40 ../src/structure.vala:778
+#: ../src/latex_menu.vala:40 ../src/structure.vala:779
 msgid "Sub-section"
 msgstr "Sub-seksi"
 
-#: ../src/latex_menu.vala:42 ../src/structure.vala:779
+#: ../src/latex_menu.vala:42 ../src/structure.vala:780
 msgid "Sub-sub-section"
 msgstr "Sub-sub-seksi"
 
-#: ../src/latex_menu.vala:44 ../src/structure.vala:780
+#: ../src/latex_menu.vala:44 ../src/structure.vala:781
 msgid "Paragraph"
 msgstr "Paragraf"
 
-#: ../src/latex_menu.vala:46 ../src/structure.vala:781
+#: ../src/latex_menu.vala:46 ../src/structure.vala:782
 msgid "Sub-paragraph"
 msgstr "Sub-paragraf"
 
@@ -890,633 +972,750 @@ msgstr "Rata Kanan - \\begin{flushright}"
 msgid "Figure - \\begin{figure}"
 msgstr "Gambar - \\begin{figure}"
 
-#: ../src/latex_menu.vala:76 ../src/latex_menu.vala:78
+#: ../src/latex_menu.vala:76
 msgid "Table - \\begin{table}"
 msgstr "Tabel - \\begin{table}"
 
-#: ../src/latex_menu.vala:80
+#: ../src/latex_menu.vala:78
 msgid "Quote - \\begin{quote}"
 msgstr "Kutip - \\begin{quote}"
 
-#: ../src/latex_menu.vala:82
+#: ../src/latex_menu.vala:80
 msgid "Quotation - \\begin{quotation}"
 msgstr "Kutipan - \\begin{quotation}"
 
-#: ../src/latex_menu.vala:84
+#: ../src/latex_menu.vala:82
 msgid "Verse - \\begin{verse}"
 msgstr "Verse - \\begin{verse}"
 
-#: ../src/latex_menu.vala:86
+#: ../src/latex_menu.vala:84
 msgid "Verbatim - \\begin{verbatim}"
 msgstr "Verbatim - \\begin{verbatim}"
 
-#: ../src/latex_menu.vala:88
+#: ../src/latex_menu.vala:86
 msgid "Minipage - \\begin{minipage}"
 msgstr "Laman mini - \\begin{minipage}"
 
-#: ../src/latex_menu.vala:90
+#: ../src/latex_menu.vala:88
 msgid "Title page - \\begin{titlepage}"
 msgstr "Halaman judul - \\begin{titlepage}"
 
 #. LaTeX: list environments
-#: ../src/latex_menu.vala:94
+#: ../src/latex_menu.vala:92
 msgid "_List Environments"
 msgstr "Daftar _Lingkungan"
 
-#: ../src/latex_menu.vala:96 ../src/latex_menu.vala:98
+#: ../src/latex_menu.vala:94
 msgid "Bulleted List - \\begin{itemize}"
 msgstr "Daftar Bulet - \\begin{itemize}"
 
-#: ../src/latex_menu.vala:100 ../src/latex_menu.vala:102
+#: ../src/latex_menu.vala:96
 msgid "Enumeration - \\begin{enumerate}"
 msgstr "Enumerasi - \\begin{enumerate}"
 
-#: ../src/latex_menu.vala:104 ../src/latex_menu.vala:106
+#: ../src/latex_menu.vala:98
 msgid "Description - \\begin{description}"
 msgstr "Deskripsi - \\begin{description}"
 
-#: ../src/latex_menu.vala:108
+#: ../src/latex_menu.vala:100
 msgid "Custom list - \\begin{list}"
 msgstr "Daftar ubahan - \\begin{list}"
 
-#: ../src/latex_menu.vala:110
+#: ../src/latex_menu.vala:102
 msgid "List item - \\item"
 msgstr "Butir daftar - \\item"
 
 #. LaTeX: character sizes
-#: ../src/latex_menu.vala:114
+#: ../src/latex_menu.vala:106
 msgid "_Characters Sizes"
 msgstr "Ukuran _Karakter"
 
 #. LaTeX: font styles
-#: ../src/latex_menu.vala:138
+#: ../src/latex_menu.vala:130
 msgid "_Font Styles"
 msgstr "Gaya _Fonta"
 
-#: ../src/latex_menu.vala:140
+#: ../src/latex_menu.vala:132
 msgid "Bold - \\textbf"
 msgstr "Tebal - \\textbf"
 
-#: ../src/latex_menu.vala:142
+#: ../src/latex_menu.vala:134
 msgid "Italic - \\textit"
 msgstr "Miring - \\textit"
 
-#: ../src/latex_menu.vala:144
+#: ../src/latex_menu.vala:136
 msgid "Typewriter - \\texttt"
 msgstr "Mesin tik - \\texttt"
 
-#: ../src/latex_menu.vala:146
+#: ../src/latex_menu.vala:138
 msgid "Slanted - \\textsl"
 msgstr "Slanted - \\textsl"
 
-#: ../src/latex_menu.vala:148
+#: ../src/latex_menu.vala:140
 msgid "Small Capitals - \\textsc"
 msgstr "Kapital Kecil - \\textsc"
 
-#: ../src/latex_menu.vala:150
+#: ../src/latex_menu.vala:142
 msgid "Sans Serif - \\textsf"
 msgstr "Sans Serif - \\textsf"
 
-#: ../src/latex_menu.vala:152
+#: ../src/latex_menu.vala:144
 msgid "Emphasized - \\emph"
 msgstr "Ditegaskan - \\emph"
 
-#: ../src/latex_menu.vala:154
+#: ../src/latex_menu.vala:146
 msgid "Underline - \\underline"
 msgstr "Garis bawah - \\underline"
 
-#: ../src/latex_menu.vala:156
+#: ../src/latex_menu.vala:148
 msgid "_Font Family"
 msgstr "Keluarga _Fonta"
 
-#: ../src/latex_menu.vala:158
+#: ../src/latex_menu.vala:150
 msgid "Roman - \\rmfamily"
 msgstr "Roman - \\rmfamily"
 
-#: ../src/latex_menu.vala:160
+#: ../src/latex_menu.vala:152
 msgid "Sans Serif - \\sffamily"
 msgstr "Sans Serif - \\sffamily"
 
-#: ../src/latex_menu.vala:162
+#: ../src/latex_menu.vala:154
 msgid "Monospace - \\ttfamily"
 msgstr "Monospace - \\ttfamily"
 
-#: ../src/latex_menu.vala:164
+#: ../src/latex_menu.vala:156
 msgid "F_ont Series"
 msgstr "Seri F_onta"
 
-#: ../src/latex_menu.vala:166
+#: ../src/latex_menu.vala:158
 msgid "Medium - \\mdseries"
 msgstr "Medium - \\mdseries"
 
-#: ../src/latex_menu.vala:168
+#: ../src/latex_menu.vala:160
 msgid "Bold - \\bfseries"
 msgstr "Tebal - \\bfseries"
 
-#: ../src/latex_menu.vala:170
+#: ../src/latex_menu.vala:162
 msgid "Fo_nt Shape"
 msgstr "Bentuk Fo_nta"
 
-#: ../src/latex_menu.vala:172
+#: ../src/latex_menu.vala:164
 msgid "Upright - \\upshape"
 msgstr "Tegak - \\upshape"
 
-#: ../src/latex_menu.vala:174
+#: ../src/latex_menu.vala:166
 msgid "Italic - \\itshape"
 msgstr "Miring - \\itshape"
 
-#: ../src/latex_menu.vala:176
+#: ../src/latex_menu.vala:168
 msgid "Slanted - \\slshape"
 msgstr "Slanted - \\slshape"
 
-#: ../src/latex_menu.vala:178
+#: ../src/latex_menu.vala:170
 msgid "Small Capitals - \\scshape"
 msgstr "Kapital Kecil - \\scshape"
 
 #. LaTeX: Tabular
-#: ../src/latex_menu.vala:182
+#: ../src/latex_menu.vala:174
 msgid "_Tabular"
 msgstr "_Tabular"
 
-#: ../src/latex_menu.vala:184
+#: ../src/latex_menu.vala:176
 msgid "Tabbing - \\begin{tabbing}"
 msgstr "Tabbing - \\begin{tabbing}"
 
-#: ../src/latex_menu.vala:186
+#: ../src/latex_menu.vala:178
 msgid "Tabular - \\begin{tabular}"
 msgstr "Tabular - \\begin{tabular}"
 
-#: ../src/latex_menu.vala:188
+#: ../src/latex_menu.vala:180
 msgid "Multicolumn - \\multicolumn"
 msgstr "Multi kolom - \\multicolumn"
 
-#: ../src/latex_menu.vala:190
+#: ../src/latex_menu.vala:182
 msgid "Horizontal line - \\hline"
 msgstr "Garis horisontal - \\hline"
 
-#: ../src/latex_menu.vala:192
+#: ../src/latex_menu.vala:184
 msgid "Vertical line - \\vline"
 msgstr "Garis vertikal - \\vline"
 
-#: ../src/latex_menu.vala:194
+#: ../src/latex_menu.vala:186
 msgid "Horizontal line (columns specified) - \\cline"
 msgstr "Garis horisontal (kolom dinyatakan) - \\cline"
 
-#: ../src/latex_menu.vala:200
+#: ../src/latex_menu.vala:192
 msgid "Frame - \\begin{frame}"
 msgstr "Bingkai - \\begin{frame}"
 
-#: ../src/latex_menu.vala:202
+#: ../src/latex_menu.vala:194
 msgid "Block - \\begin{block}"
 msgstr "Blok - \\begin{block}"
 
-#: ../src/latex_menu.vala:204
+#: ../src/latex_menu.vala:196
 msgid "Two columns - \\begin{columns}"
 msgstr "Dua kolom - \\begin{columns}"
 
 #. LaTeX: Spacing
-#: ../src/latex_menu.vala:208
+#: ../src/latex_menu.vala:200
 msgid "_Spacing"
 msgstr "Jarak bari_s"
 
-#: ../src/latex_menu.vala:209
+#: ../src/latex_menu.vala:201
 msgid "New _Line"
 msgstr "_Baris Baru"
 
-#: ../src/latex_menu.vala:210
+#: ../src/latex_menu.vala:202
 msgid "New Line - \\\\"
 msgstr "Baris Baru - \\\\"
 
-#: ../src/latex_menu.vala:212
+#: ../src/latex_menu.vala:204
 msgid "New page - \\newpage"
 msgstr "Halaman baru - \\newpage"
 
-#: ../src/latex_menu.vala:214
+#: ../src/latex_menu.vala:206
 msgid "Line break - \\linebreak"
 msgstr "Putus baris - \\linebreak"
 
-#: ../src/latex_menu.vala:216
+#: ../src/latex_menu.vala:208
 msgid "Page break - \\pagebreak"
 msgstr "Putus halaman - \\pagebreak"
 
-#: ../src/latex_menu.vala:218
+#: ../src/latex_menu.vala:210
 msgid "Big skip - \\bigskip"
 msgstr "Lewati banyak - \\bigskip"
 
-#: ../src/latex_menu.vala:220
+#: ../src/latex_menu.vala:212
 msgid "Medium skip - \\medskip"
 msgstr "Lewati sedang - \\medskip"
 
-#: ../src/latex_menu.vala:222
+#: ../src/latex_menu.vala:214
 msgid "Horizontal space - \\hspace"
 msgstr "Spasi horisontal - \\hspace"
 
-#: ../src/latex_menu.vala:224
+#: ../src/latex_menu.vala:216
 msgid "Vertical space - \\vspace"
 msgstr "Spasi vertikal - \\vspace"
 
-#: ../src/latex_menu.vala:226
+#: ../src/latex_menu.vala:218
 msgid "No paragraph indentation - \\noindent"
 msgstr "Tanpa indentasi paragraf - \\noindent"
 
 #. LaTeX: International accents
-#: ../src/latex_menu.vala:230
+#: ../src/latex_menu.vala:222
 msgid "International _Accents"
 msgstr "_Aksen Internasional"
 
-#: ../src/latex_menu.vala:231
+#: ../src/latex_menu.vala:223
 msgid "Acute accent - \\'"
 msgstr "Aksen acute - \\'"
 
-#: ../src/latex_menu.vala:232
+#: ../src/latex_menu.vala:224
 msgid "Grave accent - \\`"
 msgstr "Aksen grave - \\`"
 
-#: ../src/latex_menu.vala:233
+#: ../src/latex_menu.vala:225
 msgid "Circumflex accent - \\^"
 msgstr "Akses circumflex - \\^"
 
-#: ../src/latex_menu.vala:234
+#: ../src/latex_menu.vala:226
 msgid "Trema - \\\""
 msgstr "Trema - \\\""
 
-#: ../src/latex_menu.vala:235
+#: ../src/latex_menu.vala:227
 msgid "Tilde - \\~"
 msgstr "Tilde - \\~"
 
-#: ../src/latex_menu.vala:236
+#: ../src/latex_menu.vala:228
 msgid "Macron - \\="
 msgstr "Macron - \\="
 
-#: ../src/latex_menu.vala:237
+#: ../src/latex_menu.vala:229
 msgid "Dot above - \\."
 msgstr "Titik di atas - \\."
 
-#: ../src/latex_menu.vala:238
+#: ../src/latex_menu.vala:230
 msgid "Caron - \\v"
 msgstr "Caron - \\v"
 
-#: ../src/latex_menu.vala:239
+#: ../src/latex_menu.vala:231
 msgid "Breve - \\u"
 msgstr "Breve - \\u"
 
-#: ../src/latex_menu.vala:241
+#: ../src/latex_menu.vala:233
 msgid "Double acute accent - \\H"
 msgstr "Aksen acute ganda - \\H"
 
-#: ../src/latex_menu.vala:242
+#: ../src/latex_menu.vala:234
 msgid "Cedilla - \\c"
 msgstr "Cedilla - \\c"
 
-#: ../src/latex_menu.vala:243
+#: ../src/latex_menu.vala:235
 msgid "Ogonek - \\k"
 msgstr "Ogonek - \\k"
 
-#: ../src/latex_menu.vala:244
+#: ../src/latex_menu.vala:236
 msgid "Dot below - \\d"
 msgstr "Titik di bawah - \\d"
 
-#: ../src/latex_menu.vala:245
+#: ../src/latex_menu.vala:237
 msgid "Macron below - \\b"
 msgstr "Macron di bawah - \\b"
 
-#: ../src/latex_menu.vala:246
+#: ../src/latex_menu.vala:238
 msgid "Ring - \\r"
 msgstr "Cincin - \\r"
 
-#: ../src/latex_menu.vala:247
+#: ../src/latex_menu.vala:239
 msgid "Tie - \\t"
 msgstr "Tie - \\t"
 
 #. LaTeX: Others
-#: ../src/latex_menu.vala:251
+#: ../src/latex_menu.vala:243
 msgid "_Misc"
 msgstr "_Rupa-rupa"
 
-#: ../src/latex_menu.vala:253
+#: ../src/latex_menu.vala:245
 msgid "Document class - \\documentclass"
 msgstr "Kelas dokumen - \\documentclass"
 
-#: ../src/latex_menu.vala:255
+#: ../src/latex_menu.vala:247
 msgid "Use package - \\usepackage"
 msgstr "Gunakan paket - \\usepackage"
 
-#: ../src/latex_menu.vala:256
+#: ../src/latex_menu.vala:248
 msgid "_AMS packages"
 msgstr "Paket _AMS"
 
-#: ../src/latex_menu.vala:257
+#: ../src/latex_menu.vala:249
 msgid "AMS packages"
 msgstr "Paket AMS"
 
-#: ../src/latex_menu.vala:258
+#: ../src/latex_menu.vala:250
 msgid "Author - \\author"
 msgstr "Penulis - \\author"
 
-#: ../src/latex_menu.vala:259
+#: ../src/latex_menu.vala:251
 msgid "Title - \\title"
 msgstr "Judul - \\title"
 
-#: ../src/latex_menu.vala:261
+#: ../src/latex_menu.vala:253
 msgid "Content of the document - \\begin{document}"
 msgstr "Isi dokumen - \\begin{document}"
 
-#: ../src/latex_menu.vala:263
+#: ../src/latex_menu.vala:255
 msgid "Make title - \\maketitle"
 msgstr "Buat judul - \\maketitle"
 
-#: ../src/latex_menu.vala:265
+#: ../src/latex_menu.vala:257
 msgid "Table of contents - \\tableofcontents"
 msgstr "Daftar isi - \\tableofcontents"
 
-#: ../src/latex_menu.vala:267
+#: ../src/latex_menu.vala:259
 msgid "Abstract - \\begin{abstract}"
 msgstr "Abstrak - \\begin{abstract}"
 
-#: ../src/latex_menu.vala:269
+#: ../src/latex_menu.vala:261
 msgid "Include an image (graphicx package) - \\includegraphics"
 msgstr "Sisipkan citra (paket graphicx) - \\includegraphics"
 
-#: ../src/latex_menu.vala:272
+#: ../src/latex_menu.vala:264
 msgid "Include a file - \\input"
 msgstr "Sertakan suatu berkas - \\input"
 
 #. Math
-#: ../src/latex_menu.vala:276
+#: ../src/latex_menu.vala:268
 msgid "_Math"
 msgstr "_Matematika"
 
 #. Math Environments
-#: ../src/latex_menu.vala:280
+#: ../src/latex_menu.vala:272
 msgid "_Math Environments"
 msgstr "Lingkungan _Math"
 
-#: ../src/latex_menu.vala:281
+#: ../src/latex_menu.vala:273
 msgid "_Mathematical Environment - $...$"
 msgstr "Lingkungan _Matematis - $...$"
 
-#: ../src/latex_menu.vala:282
+#: ../src/latex_menu.vala:274
 msgid "Mathematical Environment - $...$"
 msgstr "Lingkungan Matematis - $...$"
 
-#: ../src/latex_menu.vala:283
+#: ../src/latex_menu.vala:275
 msgid "_Centered Formula - \\[...\\]"
 msgstr "Rumus Di _Tengah - \\[...\\]"
 
-#: ../src/latex_menu.vala:284
+#: ../src/latex_menu.vala:276
 msgid "Centered Formula - \\[...\\]"
 msgstr "Rumus Di Tengah - \\[...\\]"
 
-#: ../src/latex_menu.vala:286
+#: ../src/latex_menu.vala:278
 msgid "_Numbered Equation - \\begin{equation}"
 msgstr "Persamaan Ber_nomor - \\begin{equation}"
 
-#: ../src/latex_menu.vala:287
+#: ../src/latex_menu.vala:279
 msgid "Numbered Equation - \\begin{equation}"
 msgstr "Persamaan Bernomor - \\begin{equation}"
 
-#: ../src/latex_menu.vala:288
+#: ../src/latex_menu.vala:280
 msgid "_Array of Equations - \\begin{align*}"
 msgstr "L_arik Persamaan - \\begin{align*}"
 
-#: ../src/latex_menu.vala:289
+#: ../src/latex_menu.vala:281
 msgid "Array of Equations - \\begin{align*}"
 msgstr "Larik Persamaan - \\begin{align*}"
 
-#: ../src/latex_menu.vala:291
+#: ../src/latex_menu.vala:283
 msgid "Numbered Array of _Equations - \\begin{align}"
 msgstr "Larik P_ersamaan Bernomor - \\begin{align}"
 
-#: ../src/latex_menu.vala:292
+#: ../src/latex_menu.vala:284
 msgid "Numbered Array of Equations - \\begin{align}"
 msgstr "Larik Persamaan Bernomor - \\begin{align}"
 
-#: ../src/latex_menu.vala:295
+#: ../src/latex_menu.vala:287
 msgid "_Superscript - ^{}"
 msgstr "_Superskrip - ^{}"
 
-#: ../src/latex_menu.vala:296
+#: ../src/latex_menu.vala:288
 msgid "Superscript - ^{}"
 msgstr "Superskrip - ^{}"
 
-#: ../src/latex_menu.vala:297
+#: ../src/latex_menu.vala:289
 msgid "Su_bscript - __{}"
 msgstr "Su_bskrip - __{}"
 
-#: ../src/latex_menu.vala:298
+#: ../src/latex_menu.vala:290
 msgid "Subscript - _{}"
 msgstr "Subskrip - _{}"
 
-#: ../src/latex_menu.vala:299
+#: ../src/latex_menu.vala:291
 msgid "_Fraction - \\frac{}{}"
 msgstr "_Pecahan - \\frac{}{}"
 
-#: ../src/latex_menu.vala:300
+#: ../src/latex_menu.vala:292
 msgid "Fraction - \\frac{}{}"
 msgstr "Pecahan - \\frac{}{}"
 
-#: ../src/latex_menu.vala:301
+#: ../src/latex_menu.vala:293
 msgid "Square _Root - \\sqrt{}"
 msgstr "Aka_r Kuadrat - \\sqrt{}"
 
-#: ../src/latex_menu.vala:302
+#: ../src/latex_menu.vala:294
 msgid "Square Root - \\sqrt{}"
 msgstr "Akar Kuadrat - \\sqrt{}"
 
-#: ../src/latex_menu.vala:303
+#: ../src/latex_menu.vala:295
 msgid "_N-th Root - \\sqrt[]{}"
 msgstr "Akar Pangkat-_N - \\sqrt[]{}"
 
-#: ../src/latex_menu.vala:304
+#: ../src/latex_menu.vala:296
 msgid "N-th Root - \\sqrt[]{}"
 msgstr "Akar Pangkat-N - \\sqrt[]{}"
 
 #. Math functions
-#: ../src/latex_menu.vala:308
+#: ../src/latex_menu.vala:300
 msgid "Math _Functions"
 msgstr "_Fungsi-fungsi Matematika"
 
 #. Math Font Styles
-#: ../src/latex_menu.vala:342
+#: ../src/latex_menu.vala:334
 msgid "Math Font _Styles"
 msgstr "_Gaya Fonta Math"
 
-#: ../src/latex_menu.vala:344
+#: ../src/latex_menu.vala:336
 msgid "Roman - \\mathrm"
 msgstr "Roman - \\mathrm"
 
-#: ../src/latex_menu.vala:346
+#: ../src/latex_menu.vala:338
 msgid "Italic - \\mathit"
 msgstr "Miring - \\mathit"
 
-#: ../src/latex_menu.vala:348
+#: ../src/latex_menu.vala:340
 msgid "Bold - \\mathbf"
 msgstr "Tebal - \\mathbf"
 
-#: ../src/latex_menu.vala:350
+#: ../src/latex_menu.vala:342
 msgid "Sans Serif - \\mathsf"
 msgstr "Sans Serif - \\mathsf"
 
-#: ../src/latex_menu.vala:352
+#: ../src/latex_menu.vala:344
 msgid "Typewriter - \\mathtt"
 msgstr "Mesin tik - \\mathtt"
 
-#: ../src/latex_menu.vala:354
+#: ../src/latex_menu.vala:346
 msgid "Calligraphic - \\mathcal"
 msgstr "Kaligrafis - \\mathcal"
 
-#: ../src/latex_menu.vala:356
+#: ../src/latex_menu.vala:348
 msgid "Blackboard (uppercase only)  - \\mathbb (amsfonts package)"
 msgstr "Blackboard (hanya huruf besar)  - \\mathbb (paket amsfonts)"
 
-#: ../src/latex_menu.vala:359
+#: ../src/latex_menu.vala:351
 msgid "Euler Fraktur - \\mathfrak (amsfonts package)"
 msgstr "Fraktur Euler - \\mathfrak (paket amsfonts)"
 
 #. Math Accents
-#: ../src/latex_menu.vala:364
+#: ../src/latex_menu.vala:356
 msgid "Math _Accents"
 msgstr "_Aksen Math"
 
 #. Math Spaces
-#: ../src/latex_menu.vala:385
+#: ../src/latex_menu.vala:377
 msgid "Math _Spaces"
 msgstr "_Spasi Math"
 
-#: ../src/latex_menu.vala:386
+#: ../src/latex_menu.vala:378
 msgid "_Small"
 msgstr "_Kecil"
 
-#: ../src/latex_menu.vala:387
+#: ../src/latex_menu.vala:379
 msgid "Small - \\,"
 msgstr "Kecil - \\,"
 
-#: ../src/latex_menu.vala:388
+#: ../src/latex_menu.vala:380
 msgid "_Medium"
 msgstr "_Sedang"
 
-#: ../src/latex_menu.vala:389
+#: ../src/latex_menu.vala:381
 msgid "Medium - \\:"
 msgstr "Sedang - \\:"
 
-#: ../src/latex_menu.vala:390
+#: ../src/latex_menu.vala:382
 msgid "_Large"
 msgstr "_Besar"
 
-#: ../src/latex_menu.vala:391
+#: ../src/latex_menu.vala:383
 msgid "Large - \\;"
 msgstr "Besar - \\;"
 
 #. Math: Left Delimiters
-#: ../src/latex_menu.vala:397
+#: ../src/latex_menu.vala:389
 msgid "_Left Delimiters"
 msgstr "Pembatas K_iri"
 
-#: ../src/latex_menu.vala:398
+#: ../src/latex_menu.vala:390
 msgid "left ("
 msgstr "( kiri"
 
-#: ../src/latex_menu.vala:400
+#: ../src/latex_menu.vala:392
 msgid "left ["
 msgstr "[ kiri"
 
-#: ../src/latex_menu.vala:402
+#: ../src/latex_menu.vala:394
 msgid "left { "
 msgstr "{ kiri"
 
-#: ../src/latex_menu.vala:404
+#: ../src/latex_menu.vala:396
 msgid "left <"
 msgstr "< kiri"
 
-#: ../src/latex_menu.vala:406
+#: ../src/latex_menu.vala:398
 msgid "left )"
 msgstr ") kiri"
 
-#: ../src/latex_menu.vala:408
+#: ../src/latex_menu.vala:400
 msgid "left ]"
 msgstr "] kiri"
 
-#: ../src/latex_menu.vala:410
+#: ../src/latex_menu.vala:402
 msgid "left  }"
 msgstr "} kiri"
 
-#: ../src/latex_menu.vala:412
+#: ../src/latex_menu.vala:404
 msgid "left >"
 msgstr "> kiri"
 
-#: ../src/latex_menu.vala:414
+#: ../src/latex_menu.vala:406
 msgid "left ."
 msgstr ". kiri"
 
 #. Math: Right Delimiters
-#: ../src/latex_menu.vala:419
+#: ../src/latex_menu.vala:411
 msgid "Right _Delimiters"
 msgstr "Pembatas K_anan"
 
-#: ../src/latex_menu.vala:420
+#: ../src/latex_menu.vala:412
 msgid "right )"
 msgstr ") kanan"
 
-#: ../src/latex_menu.vala:422
+#: ../src/latex_menu.vala:414
 msgid "right ]"
 msgstr "] kanan"
 
-#: ../src/latex_menu.vala:424
+#: ../src/latex_menu.vala:416
 msgid "right  }"
 msgstr "} kanan"
 
-#: ../src/latex_menu.vala:426
+#: ../src/latex_menu.vala:418
 msgid "right >"
 msgstr "> kanan"
 
-#: ../src/latex_menu.vala:428
+#: ../src/latex_menu.vala:420
 msgid "right ("
 msgstr "( kanan"
 
-#: ../src/latex_menu.vala:430
+#: ../src/latex_menu.vala:422
 msgid "right ["
 msgstr "[ kanan"
 
-#: ../src/latex_menu.vala:432
+#: ../src/latex_menu.vala:424
 msgid "right { "
 msgstr "{ kanan"
 
-#: ../src/latex_menu.vala:434
+#: ../src/latex_menu.vala:426
 msgid "right <"
 msgstr "< kanan"
 
-#: ../src/latex_menu.vala:436
+#: ../src/latex_menu.vala:428
 msgid "right ."
 msgstr ". kanan"
 
 #. menus under toolitems
-#: ../src/latex_menu.vala:451
+#: ../src/latex_menu.vala:443
 msgid "Sectioning"
 msgstr "Penentuan Seksi"
 
-#: ../src/latex_menu.vala:454
+#: ../src/latex_menu.vala:446
 msgid "Characters Sizes"
 msgstr "Ukuran Karakter"
 
-#: ../src/latex_menu.vala:457
+#: ../src/latex_menu.vala:449
 msgid "References"
 msgstr "Rujukan"
 
-#: ../src/latex_menu.vala:460
+#: ../src/latex_menu.vala:452
 msgid "Presentation Environments"
 msgstr "Lingkungan Presentasi"
 
-#: ../src/latex_menu.vala:463
+#: ../src/latex_menu.vala:455
 msgid "Math Environments"
 msgstr "Lingkungan Math"
 
-#: ../src/latex_menu.vala:466
-msgid "Left Delimiters"
-msgstr "Pembatas Kiri"
+#: ../src/liblatexila/latexila-build-job.c:359
+#, c-format
+msgid "%s doesn't seem to be installed."
+msgstr "%s nampaknya tak terpasang."
 
-#: ../src/latex_menu.vala:469
-msgid "Right Delimiters"
-msgstr "Pembatas Kanan"
+#: ../src/liblatexila/latexila-build-tool.c:547
+#, c-format
+msgid "The file '%s' doesn't exist."
+msgstr "Berkas '%s' tak ada."
+
+#: ../src/liblatexila/latexila-build-tool.c:575
+#, c-format
+msgid "Failed to open '%s':"
+msgstr "Gagal membuka '%s':"
+
+#: ../src/liblatexila/latexila-build-tool.c:677
+#, c-format
+msgid "Open %s"
+msgstr "Buka %s"
+
+#: ../src/liblatexila/latexila-synctex.c:189
+msgid "Impossible to do the forward search."
+msgstr "Tak mungkin melakukan pencarian maju."
+
+#: ../src/liblatexila/latexila-synctex.c:526
+msgid "Can not communicate with evince."
+msgstr "Tak bisa berkomunikasi dengan evince."
+
+#: ../src/liblatexila/latexila-synctex.c:556
+#, c-format
+msgid "The file \"%s\" doesn't exist."
+msgstr "Berkas \"%s\" tak ada."
+
+#: ../src/liblatexila/latexila-synctex.c:590
+msgid "The PDF file doesn't exist."
+msgstr "Berkas PDF tak ada."
+
+#: ../src/liblatexila/latexila-synctex.c:641
+msgid "The document is not saved."
+msgstr "Dokumen tak disimpan."
+
+#: ../src/liblatexila/latexila-templates-default.c:90
+msgid "Empty"
+msgstr "Kosong"
+
+#: ../src/liblatexila/latexila-templates-default.c:94
+msgid "Article"
+msgstr "Artikel"
+
+#: ../src/liblatexila/latexila-templates-default.c:95
+msgid "Report"
+msgstr "Laporan"
+
+#: ../src/liblatexila/latexila-templates-default.c:96
+msgid "Book"
+msgstr "Buku"
+
+#: ../src/liblatexila/latexila-templates-default.c:97
+msgid "Letter"
+msgstr "Surat"
+
+#: ../src/liblatexila/latexila-templates-default.c:98
+msgid "Presentation"
+msgstr "Presentasi"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:50
+msgid "Default Templates"
+msgstr "Templat Baku"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:62
+msgid "Personal Templates"
+msgstr "Templat Pribadi"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:122
+msgid "New File..."
+msgstr "Berkas Baru..."
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:129
+#: ../src/main_window_file.vala:32
+msgid "_New"
+msgstr "_Baru"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:232
+msgid "New Template..."
+msgstr "Templat Baru..."
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:239
+#: ../src/project_dialogs.vala:32
+msgid "Crea_te"
+msgstr "Bua_t"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:249
+msgid "Name of the new template"
+msgstr "Nama templat baru"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:267
+msgid "Choose an icon"
+msgstr "Pilih ikon"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:332
+msgid "Impossible to create the personal template."
+msgstr "Tak mungkin membuat templat pribadi."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:141
+#, c-format
+msgid "Do you really want to delete the template “%s”?"
+msgstr "Anda memang hendak menghapus templat \"%s\"?"
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:168
+#, c-format
+msgid "Error when deleting the template “%s”."
+msgstr "Kesalahan ketika menghapus templat \"%s\"."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:226
+msgid "Error when moving the template."
+msgstr "Kesalahan sewaktu memindahkan templat."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:270
+msgid "Delete"
+msgstr "Hapus"
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:362
+msgid "Manage Personal Templates"
+msgstr "Kelola Templat Pribadi"
 
 #: ../src/main.vala:51
 msgid "Show the application's version"
@@ -1649,26 +1848,46 @@ msgstr "Pindahkan dokumen ini ke jendela baru"
 msgid "_Edit"
 msgstr "_Sunting"
 
+#: ../src/main_window_edit.vala:32
+msgid "_Undo"
+msgstr "_Batalkan"
+
 #: ../src/main_window_edit.vala:33
 msgid "Undo the last action"
 msgstr "Batalkan aksi terakhir"
+
+#: ../src/main_window_edit.vala:35
+msgid "_Redo"
+msgstr "_Jadi Lagi"
 
 #: ../src/main_window_edit.vala:36
 msgid "Redo the last undone action"
 msgstr "Lakukan lagi aksi terakhir yang dibatalkan"
 
+#: ../src/main_window_edit.vala:38 ../src/main_window_structure.vala:32
+msgid "Cu_t"
+msgstr "Po_tong"
+
 #: ../src/main_window_edit.vala:39
 msgid "Cut the selection"
 msgstr "Potong pilihan"
+
+#: ../src/main_window_edit.vala:41 ../src/main_window_structure.vala:35
+msgid "_Copy"
+msgstr "_Salin"
 
 #: ../src/main_window_edit.vala:42
 msgid "Copy the selection"
 msgstr "Salin pilihan"
 
-#. No shortcut here because if the shortcut is null, Ctrl+V is used for the _all_
+#. No shortcut here because if the shortcut is null, Ctrl+V is used for _all_
 #. the window. In this case Ctrl+V in the search text entry would be broken (the
 #. text is pasted in the document instead of the entry).
 #. Anyway if we press Ctrl+V when the cursor is in the document, no problem.
+#: ../src/main_window_edit.vala:48
+msgid "_Paste"
+msgstr "Tem_pel"
+
 #: ../src/main_window_edit.vala:49
 msgid "Paste the clipboard"
 msgstr "Ambil dari papan tempel"
@@ -1677,41 +1896,61 @@ msgstr "Ambil dari papan tempel"
 msgid "Delete the selected text"
 msgstr "Hapus teks yang dipilih"
 
+#: ../src/main_window_edit.vala:54
+msgid "Select _All"
+msgstr "Pilih Semu_a"
+
 #: ../src/main_window_edit.vala:55
 msgid "Select the entire document"
 msgstr "Pilih seluruh dokumen"
 
-#: ../src/main_window_edit.vala:57 ../src/main_window_structure.vala:44
+#: ../src/main_window_edit.vala:57
+msgid "_Indent"
+msgstr "_Indentasi"
+
+#: ../src/main_window_edit.vala:58
+msgid "Indent the selected lines"
+msgstr "Indentasikan baris yang dipilih"
+
+#: ../src/main_window_edit.vala:60
+msgid "_Unindent"
+msgstr "_Unindent"
+
+#: ../src/main_window_edit.vala:61
+msgid "Unindent the selected lines"
+msgstr "Indentasi mundur baris yang dipilih"
+
+#: ../src/main_window_edit.vala:63 ../src/main_window_structure.vala:44
 msgid "_Comment"
 msgstr "_Komentar"
 
-#: ../src/main_window_edit.vala:58
+#: ../src/main_window_edit.vala:64
 msgid "Comment the selected lines (add the character \"%\")"
 msgstr "Jadikan komentar baris yang dipilih (tambah karakter \"%\")"
 
-#: ../src/main_window_edit.vala:61
+#: ../src/main_window_edit.vala:67
 msgid "_Uncomment"
 msgstr "Hap_us Komentar"
 
-#: ../src/main_window_edit.vala:62
+#: ../src/main_window_edit.vala:68
 msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "Jadikan bukan komentar baris yang dipilih (hapus karakter \"%\")"
 
-#: ../src/main_window_edit.vala:65
+#: ../src/main_window_edit.vala:71
 msgid "_Completion"
 msgstr "_Pelengkapan"
 
-#: ../src/main_window_edit.vala:66
+#: ../src/main_window_edit.vala:72
 msgid "Complete the LaTeX command"
 msgstr "Lengkapi perintah LaTeX"
 
-#: ../src/main_window_edit.vala:69
-msgid "Configure the application"
-msgstr "Mengonfigurasi aplikasi"
+#: ../src/main_window_edit.vala:74
+msgid "_Preferences"
+msgstr "_Preferensi"
 
 #: ../src/main_window_edit.vala:75
-msgid "Activate or disable the spell checking"
-msgstr "Aktifkan atau nonaktifkan pemeriksaan ejaan"
+msgid "Configure the application"
+msgstr "Mengonfigurasi aplikasi"
 
 #: ../src/main_window_file.vala:30
 msgid "_File"
@@ -1729,7 +1968,11 @@ msgstr "_Jendela Baru"
 msgid "Create a new window"
 msgstr "Membuat jendela baru"
 
-#: ../src/main_window_file.vala:39 ../src/main_window_file.vala:85
+#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:154
+msgid "_Open"
+msgstr "_Buka"
+
+#: ../src/main_window_file.vala:39 ../src/main_window_file.vala:86
 msgid "Open a file"
 msgstr "Buka suatu berkas"
 
@@ -1750,12 +1993,16 @@ msgid "Create a new template from the current document"
 msgstr "Buat templat baru dari dokumen kini"
 
 #: ../src/main_window_file.vala:50
-msgid "_Delete Template..."
-msgstr "_Hapus Templat..."
+msgid "_Manage Personal Templates..."
+msgstr "Kelola Te_mplat Pribadi..."
 
 #: ../src/main_window_file.vala:51
-msgid "Delete personal template(s)"
-msgstr "Hapus templat pribadi"
+msgid "Manage personal templates"
+msgstr "Kelola templat pribadi"
+
+#: ../src/main_window_file.vala:53
+msgid "_Close"
+msgstr "_Tutup"
 
 #: ../src/main_window_file.vala:54
 msgid "Close the current file"
@@ -1770,21 +2017,21 @@ msgstr "Buka Te_rkini"
 msgid "Open recently used files"
 msgstr "Buka berkas yang baru-baru ini dipakai"
 
-#: ../src/main_window_file.vala:86
+#: ../src/main_window_file.vala:87
 msgid "Open a recently used file"
 msgstr "Buka berkas yang baru-baru ini digunakan"
 
-#: ../src/main_window_file.vala:143
+#: ../src/main_window_file.vala:150
 msgid "Open Files"
 msgstr "Buka Berkas"
 
 #. Filter: by default show only .tex and .bib files
-#: ../src/main_window_file.vala:157
+#: ../src/main_window_file.vala:172
 msgid "All LaTeX Files"
 msgstr "Semua Berkas LaTeX"
 
 #. All files filter
-#: ../src/main_window_file.vala:164
+#: ../src/main_window_file.vala:179
 msgid "All Files"
 msgstr "Semua Berkas"
 
@@ -1840,6 +2087,10 @@ msgstr "_Buka Berkas"
 msgid "Open the file referenced by the selected structure item"
 msgstr "Buka berkas yang diacu oleh butir struktur yang dipilih"
 
+#: ../src/main_window.vala:28
+msgid "_Quit"
+msgstr "_Keluar"
+
 #: ../src/main_window.vala:29
 msgid "Quit the program"
 msgstr "Keluar program"
@@ -1878,9 +2129,17 @@ msgstr "Reset ukuran fonta"
 msgid "_Search"
 msgstr "_Cari"
 
+#: ../src/main_window.vala:42
+msgid "_Find"
+msgstr "_Cari"
+
 #: ../src/main_window.vala:43
 msgid "Search for text"
 msgstr "Mencari teks"
+
+#: ../src/main_window.vala:44
+msgid "Find and _Replace"
+msgstr "Ca_ri dan Ganti"
 
 #: ../src/main_window.vala:45
 msgid "Search for and replace text"
@@ -1927,14 +2186,9 @@ msgstr "Ubah berkas utama dari projek kini"
 msgid "_Manage Projects"
 msgstr "_Kelola Projek"
 
-#: ../src/main_window.vala:59 ../src/project_dialogs.vala:183
+#: ../src/main_window.vala:59 ../src/project_dialogs.vala:187
 msgid "Manage Projects"
 msgstr "Kelola Projek"
-
-#. Help
-#: ../src/main_window.vala:62
-msgid "_Help"
-msgstr "Ba_ntuan"
 
 #: ../src/main_window.vala:63
 msgid "_Contents"
@@ -1952,19 +2206,11 @@ msgstr "Referensi _LaTeX"
 msgid "The Kile LaTeX Reference"
 msgstr "Referensi LaTeX Kile"
 
-#: ../src/main_window.vala:67
-msgid "_Donate"
-msgstr "_Sumbang"
+#: ../src/main_window.vala:70
+msgid "_About"
+msgstr "Tent_ang"
 
-#: ../src/main_window.vala:68
-msgid ""
-"Donate to demonstrate your appreciation of LaTeXila and help its future "
-"development"
-msgstr ""
-"Sumbanglah untuk menunjukkan penghargaan Anda atas LaTeXila dan bantulah "
-"pengembangannya di masa mendatang"
-
-#: ../src/main_window.vala:71 ../src/main_window.vala:1244
+#: ../src/main_window.vala:71 ../src/main_window.vala:1226
 msgid "About LaTeXila"
 msgstr "Tentang LaTeXila"
 
@@ -2002,20 +2248,20 @@ msgid "Show or hide the bottom panel"
 msgstr "Tampilkan atau sembunyikan panel bawah"
 
 #. Symbols
-#: ../src/main_window.vala:400
+#: ../src/main_window.vala:406
 msgid "Symbols"
 msgstr "Simbol"
 
-#: ../src/main_window.vala:409
+#: ../src/main_window.vala:415
 msgid "Structure"
 msgstr "Struktur"
 
-#: ../src/main_window.vala:655
+#: ../src/main_window.vala:646
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Berkas (%s) ini sedang dibuka dalam jendela LaTeXila lain."
 
-#: ../src/main_window.vala:657
+#: ../src/main_window.vala:648
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2023,117 +2269,121 @@ msgstr ""
 "LaTeXila membuka instansi berkas ini dalam cari yang tak dapat disunting. "
 "Apakah Anda ingin menyuntingnya saja?"
 
-#: ../src/main_window.vala:660
+#: ../src/main_window.vala:651
 msgid "Edit Anyway"
 msgstr "Sunting Saja"
 
-#: ../src/main_window.vala:661
+#: ../src/main_window.vala:652
 msgid "Don't Edit"
 msgstr "Jangan Sunting"
 
-#: ../src/main_window.vala:762
+#: ../src/main_window.vala:754
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Simpan perubahan ke dokumen \"%s\" sebelum menutup?"
 
-#: ../src/main_window.vala:842
+#: ../src/main_window.vala:834
 msgid "Read-Only"
 msgstr "Hanya-Baca"
 
-#: ../src/main_window.vala:860
+#: ../src/main_window.vala:852
 msgid "Save File"
 msgstr "Simpan Berkas"
 
-#: ../src/main_window.vala:895
+#: ../src/main_window.vala:887
 #, c-format
 msgid "A file named \"%s\" already exists. Do you want to replace it?"
 msgstr "Berkas \"%s\" sudah ada. Ingin menimpanya?"
 
-#: ../src/main_window.vala:900 ../src/search.vala:182
-msgid "Replace"
-msgstr "Ganti"
+#: ../src/main_window.vala:891
+msgid "_Replace"
+msgstr "_Ganti"
 
-#: ../src/main_window.vala:1206
+#: ../src/main_window.vala:1187
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeXila adalah Lingkungan LaTeX Terpadu bagi Desktop GNOME"
 
-#: ../src/main_window.vala:1245
+#: ../src/main_window.vala:1227
 msgid "translator-credits"
-msgstr "Andika Triwidada <andika@gmail.com>, 2012, 2013, 2014"
+msgstr "Andika Triwidada <andika@gmail.com>, 2012-2014, 2016"
 
-#: ../src/post_processors.vala:188
-msgid "Latexmk messages"
-msgstr "Pesan Latexmk"
-
-#: ../src/preferences_dialog.vala:31
+#: ../src/preferences_dialog.vala:33
 msgid "Preferences"
 msgstr "Preferensi"
 
 #. reset all button
-#: ../src/preferences_dialog.vala:36 ../src/utils.vala:400
-msgid "Reset All"
-msgstr "Reset Semua"
+#: ../src/preferences_dialog.vala:42 ../src/preferences_dialog.vala:115
+msgid "_Reset All"
+msgstr "_Reset Semua"
 
-#: ../src/preferences_dialog.vala:39
+#: ../src/preferences_dialog.vala:43
 msgid "Reset all preferences"
 msgstr "Reset semua preferensi"
 
-#: ../src/preferences_dialog.vala:118
+#: ../src/preferences_dialog.vala:112
 msgid "Do you really want to reset all preferences?"
 msgstr "Apakah Anda yakin hendak mereset semua preferensi?"
 
-#: ../src/preferences_dialog.vala:191
+#: ../src/preferences_dialog.vala:189
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "menit"
 
-#: ../src/preferences_dialog.vala:291
+#: ../src/preferences_dialog.vala:289
 msgid "character"
 msgid_plural "characters"
 msgstr[0] "karakter"
 
-#: ../src/preferences_dialog.vala:331
+#: ../src/preferences_dialog.vala:379
 #, c-format
 msgid "Use the system fixed width font (%s)"
 msgstr "Gunakan fonta lebar tetap sistem (%s)"
 
-#: ../src/project_dialogs.vala:26
+#: ../src/project_dialogs.vala:28
 msgid "New Project"
 msgstr "Projek Baru"
 
 #. directory
-#: ../src/project_dialogs.vala:36 ../src/project_dialogs.vala:40
-#: ../src/project_dialogs.vala:203
+#: ../src/project_dialogs.vala:40 ../src/project_dialogs.vala:42
+#: ../src/project_dialogs.vala:204
 msgid "Directory"
 msgstr "Direktori"
 
-#: ../src/project_dialogs.vala:101
+#: ../src/project_dialogs.vala:102
 #, c-format
 msgid "There is a conflict with the project \"%s\"."
 msgstr "Ada konflik dengan projek \"%s\"."
 
-#: ../src/project_dialogs.vala:116
+#: ../src/project_dialogs.vala:119
 msgid "Configure Project"
 msgstr "Konfigurasikan Projek"
 
-#: ../src/project_dialogs.vala:134
+#: ../src/project_dialogs.vala:137
 msgid "Location of the project"
 msgstr "Lokasi projek"
 
-#: ../src/project_dialogs.vala:243 ../src/project_dialogs.vala:300
-msgid "Clear All"
-msgstr "Hapus Semua"
+#: ../src/project_dialogs.vala:241
+msgid "_Properties"
+msgstr "_Properti"
 
-#: ../src/project_dialogs.vala:275
+#: ../src/project_dialogs.vala:243
+msgid "_Clear All"
+msgstr "_Bersihkan Semua"
+
+#: ../src/project_dialogs.vala:273
 #, c-format
 msgid "Do you really want to delete the project \"%s\"?"
 msgstr "Apakah Anda yakin hendak menghapus projek \"%s\"?"
 
-#: ../src/project_dialogs.vala:296
+#: ../src/project_dialogs.vala:294
 msgid "Do you really want to clear all projects?"
 msgstr "Apakah Anda yakin hendak membersihkan semua projek?"
 
-#: ../src/project_dialogs.vala:328
+#: ../src/project_dialogs.vala:297
+msgid "Clear _All"
+msgstr "Bersihk_an Semua"
+
+#: ../src/project_dialogs.vala:321
 msgid "The Main File is not in the directory."
 msgstr "Berkas Utama tak di dalam direktori."
 
@@ -2148,6 +2398,10 @@ msgstr "Pindahkan kursor ke baris"
 #: ../src/search.vala:174
 msgid "Replace with"
 msgstr "Gantikan dengan"
+
+#: ../src/search.vala:182
+msgid "Replace"
+msgstr "Ganti"
 
 #. replace all: image + label
 #: ../src/search.vala:186
@@ -2189,96 +2443,96 @@ msgid "%d match"
 msgid_plural "%d matches"
 msgstr[0] "%d cocok"
 
-#: ../src/structure.vala:163
+#: ../src/structure.vala:164
 msgid "Refresh"
 msgstr "Segarkan"
 
-#: ../src/structure.vala:177
+#: ../src/structure.vala:179
 msgid "Collapse All"
 msgstr "Lipat Semua"
 
-#: ../src/structure.vala:187
+#: ../src/structure.vala:189
 msgid "Show labels"
 msgstr "Tampilkan label"
 
-#: ../src/structure.vala:188
+#: ../src/structure.vala:190
 msgid "Show included files"
 msgstr "Tampilkan berkas yang disertakan"
 
-#: ../src/structure.vala:189
+#: ../src/structure.vala:191
 msgid "Show tables"
 msgstr "Tampilkan tabel"
 
-#: ../src/structure.vala:190
+#: ../src/structure.vala:192
 msgid "Show figures and images"
 msgstr "Tampilkan gambar dan citra"
 
 #. Translators: do not translate the words TODO and FIXME. They are special
 #. comments that can be inserted in LaTeX documents.
-#: ../src/structure.vala:193
+#: ../src/structure.vala:195
 msgid "Show TODOs and FIXMEs"
 msgstr "Tampilkan TODO dan FIXME"
 
-#: ../src/structure.vala:633
+#: ../src/structure.vala:634
 #, c-format
 msgid "Structure action error: %s"
 msgstr "Galat aksi struktur: %s"
 
-#: ../src/structure.vala:638
+#: ../src/structure.vala:639
 msgid "The structure data seems outdated. Please refresh the structure."
 msgstr "Data struktur sepertinya kedaluarsa. Silakan segarkan struktur."
 
 #. Translators: it's a verb
-#: ../src/structure.vala:729
+#: ../src/structure.vala:730
 msgid "cut"
 msgstr "potong"
 
 #. Translators: it's a verb
-#: ../src/structure.vala:731
+#: ../src/structure.vala:732
 msgid "copy"
 msgstr "salin"
 
-#: ../src/structure.vala:732
+#: ../src/structure.vala:733
 msgid "delete"
 msgstr "hapus"
 
-#: ../src/structure.vala:733
+#: ../src/structure.vala:734
 msgid "select"
 msgstr "pilih"
 
 #. Translators: it's a verb
-#: ../src/structure.vala:735
+#: ../src/structure.vala:736
 msgid "comment"
 msgstr "komentar"
 
 #. Translators: it's a verb
-#: ../src/structure.vala:737
+#: ../src/structure.vala:738
 msgid "shift left"
 msgstr "geser kiri"
 
 #. Translators: it's a verb
-#: ../src/structure.vala:739
+#: ../src/structure.vala:740
 msgid "shift right"
 msgstr "geser kanan"
 
-#: ../src/structure.vala:740
+#: ../src/structure.vala:741
 msgid "open file"
 msgstr "buka berkas"
 
-#: ../src/structure.vala:785
+#: ../src/structure.vala:786
 msgid "Table"
 msgstr "Tabel"
 
 #. Translators: "Figure" here means a diagram (\begin{figure}...\end{figure})
-#: ../src/structure.vala:787
+#: ../src/structure.vala:788
 msgid "Figure"
 msgstr "Gambar"
 
-#: ../src/structure.vala:788
+#: ../src/structure.vala:789
 msgid "Image"
 msgstr "Citra"
 
-#: ../src/structure.vala:789
+#: ../src/structure.vala:790
 msgid "File included"
 msgstr "Berkas sertaan"
 
@@ -2314,82 +2568,13 @@ msgstr "Teks rupa-rupa"
 msgid "Most Used"
 msgstr "Paling Sering Dipakai"
 
-#: ../src/synctex.vala:84
-msgid "The document is not saved."
-msgstr "Dokumen tak disimpan."
+#: ../src/symbols_view.vala:157
+msgid "_Clear"
+msgstr "_Bersihkan"
 
-#: ../src/synctex.vala:91
-msgid "The PDF file doesn't exist."
-msgstr "Berkas PDF tak ada."
-
-#: ../src/synctex.vala:100
-#, c-format
-msgid "The file \"%s\" doesn't exist."
-msgstr "Berkas \"%s\" tak ada."
-
-#: ../src/synctex.vala:107
-msgid "Can not communicate with evince."
-msgstr "Tak bisa berkomunikasi dengan evince."
-
-#: ../src/synctex.vala:125
-msgid "Impossible to do the forward search."
-msgstr "Tak mungkin melakukan pencarian maju."
-
-#: ../src/templates_dialogs.vala:34
-msgid "New File..."
-msgstr "Berkas Baru..."
-
-#: ../src/templates_dialogs.vala:55
-msgid "Default templates"
-msgstr "Templat baku"
-
-#: ../src/templates_dialogs.vala:64
-msgid "Your personal templates"
-msgstr "Templat pribadi Anda"
-
-#: ../src/templates_dialogs.vala:173
-msgid "New Template..."
-msgstr "Templat Baru..."
-
-#: ../src/templates_dialogs.vala:185
-msgid "Name of the new template"
-msgstr "Nama templat baru"
-
-#: ../src/templates_dialogs.vala:198
-msgid "Choose an icon"
-msgstr "Pilih ikon"
-
-#: ../src/templates_dialogs.vala:242
-msgid "Delete Template(s)..."
-msgstr "Hapus Templat..."
-
-#: ../src/templates_dialogs.vala:259
-msgid "Personal templates"
-msgstr "Templat pribadi"
-
-#: ../src/templates.vala:75
-msgid "Empty"
-msgstr "Kosong"
-
-#: ../src/templates.vala:77
-msgid "Article"
-msgstr "Artikel"
-
-#: ../src/templates.vala:78
-msgid "Report"
-msgstr "Laporan"
-
-#: ../src/templates.vala:79
-msgid "Book"
-msgstr "Buku"
-
-#: ../src/templates.vala:80
-msgid "Letter"
-msgstr "Surat"
-
-#: ../src/templates.vala:81
-msgid "Presentation"
-msgstr "Presentasi"
+#: ../src/symbols_view.vala:159
+msgid "Clear most used symbols"
+msgstr "Bersihkan simbol yang paling banyak dipakai"
 
 #: ../src/ui/preferences_dialog.ui.h:1
 msgid "Display line numbers"
@@ -2453,25 +2638,45 @@ msgid "Font & Colors"
 msgstr "Fonta & Warna"
 
 #: ../src/ui/preferences_dialog.ui.h:18
-msgid "File Clean-Up"
-msgstr "Pembersihan Berkas"
-
-#: ../src/ui/preferences_dialog.ui.h:20
-msgid "Automatically clean-up files after close"
-msgstr "Otomatis bersihkan berkas setelah menutup"
-
-#: ../src/ui/preferences_dialog.ui.h:21
 msgid "Interactive completion after"
 msgstr "Pelengkapan interaktif setelah"
 
-#: ../src/ui/preferences_dialog.ui.h:22
+#: ../src/ui/preferences_dialog.ui.h:19
 msgid "Number of characters after &apos;\\&apos;"
 msgstr "Cacah karakter setelah &apos;\\&apos;"
 
-#: ../src/ui/preferences_dialog.ui.h:23
+#: ../src/ui/preferences_dialog.ui.h:20
 msgid "Number of characters after '\\'"
 msgstr "Cacah karakter setelah '\\'"
 
+#: ../src/ui/preferences_dialog.ui.h:21
+msgid "File Clean-Up"
+msgstr "Pembersihan Berkas"
+
+#: ../src/ui/preferences_dialog.ui.h:23
+msgid "Automatically clean-up files after close"
+msgstr "Otomatis bersihkan berkas setelah menutup"
+
 #: ../src/ui/preferences_dialog.ui.h:24
+msgid ""
+"The spell checking settings can also be changed on a file-by-file basis via "
+"the Tools menu."
+msgstr ""
+"Pengaturan pemeriksaan ejaan juga dapat diubah berbasis berkas per berkas "
+"melalui menu Perkakas."
+
+#: ../src/ui/preferences_dialog.ui.h:25
+msgid "Default Spell Checking Settings"
+msgstr "Pengaturan Pemeriksaan Ejaan Baku"
+
+#: ../src/ui/preferences_dialog.ui.h:26
+msgid "Language:"
+msgstr "Bahasa:"
+
+#: ../src/ui/preferences_dialog.ui.h:27
+msgid "Highlight misspelled words"
+msgstr "Sorot kata salah eja"
+
+#: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Lainnya"
