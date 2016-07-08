@@ -5,14 +5,14 @@
 # gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Paweł Żołnowski <pawel@zolnowski.name>, 2014.
-# Piotr Drąg <piotrdrag@gmail.com>, 2014-2015.
-# Aviary.pl <gnomepl@aviary.pl>, 2014-2015.
+# Piotr Drąg <piotrdrag@gmail.com>, 2014-2016.
+# Aviary.pl <gnomepl@aviary.pl>, 2014-2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-20 17:14+0100\n"
-"PO-Revision-Date: 2015-12-20 17:15+0100\n"
+"POT-Creation-Date: 2016-07-09 00:58+0200\n"
+"PO-Revision-Date: 2016-07-09 00:59+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -547,8 +547,8 @@ msgstr "Własne narzędzie budowania"
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:762
-#: ../src/main_window.vala:858 ../src/preferences_dialog.vala:114
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:757
+#: ../src/main_window.vala:853 ../src/preferences_dialog.vala:114
 #: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
 #: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
@@ -747,12 +747,12 @@ msgstr "Brak propozycji uzupełnienia"
 msgid "Ln %d, Col %d"
 msgstr "Wrsz %d, kol %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:761
+#: ../src/dialogs.vala:40 ../src/main_window.vala:756
 msgid "Close _without Saving"
 msgstr "Zamknij _bez zapisywania"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:767 ../src/main_window.vala:859
+#: ../src/main_window.vala:762 ../src/main_window.vala:854
 msgid "_Save"
 msgstr "_Zapisz"
 
@@ -863,7 +863,7 @@ msgid "Do you want to save the file in a safer place?"
 msgstr "Zapisać plik w bezpiecznym miejscu?"
 
 #: ../src/document.vala:598 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:765
+#: ../src/main_window.vala:760
 msgid "Save _As"
 msgstr "Z_apisz jako"
 
@@ -871,17 +871,17 @@ msgstr "Z_apisz jako"
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: ../src/document_view.vala:372
+#: ../src/document_view.vala:367
 msgid "No dictionaries available for the spell checking."
 msgstr "Brak dostępnych słowników do sprawdzania pisowni."
 
 #. Help
-#: ../src/document_view.vala:374 ../src/main_window.vala:62
+#: ../src/document_view.vala:369 ../src/main_window.vala:62
 #: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "Pomo_c"
 
-#: ../src/document_view.vala:375 ../src/tab_info_bar.vala:77
+#: ../src/document_view.vala:370 ../src/tab_info_bar.vala:77
 msgid "_OK"
 msgstr "_OK"
 
@@ -918,37 +918,37 @@ msgid "File System"
 msgstr "System plików"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:411
+#: ../src/file_browser.vala:536 ../src/main_window.vala:406
 msgid "File Browser"
 msgstr "Przeglądarka plików"
 
-#: ../src/latexila_app.vala:78
+#: ../src/latexila_app.vala:77
 msgid "Show the application's version"
 msgstr "Wyświetla wersję programu"
 
-#: ../src/latexila_app.vala:81
+#: ../src/latexila_app.vala:80
 msgid "Create new document"
 msgstr "Tworzy nowy dokument"
 
-#: ../src/latexila_app.vala:84
+#: ../src/latexila_app.vala:83
 msgid "Create a new top-level window in an existing instance of LaTeXila"
 msgstr ""
 "Tworzy nowe główne okno w ramach istniejącej instancji programu LaTeXila"
 
-#: ../src/latexila_app.vala:223
+#: ../src/latexila_app.vala:217
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "Program LaTeXila to zintegrowane środowisko LaTeX-a dla GNOME"
 
-#: ../src/latexila_app.vala:262 ../src/main_window.vala:71
+#: ../src/latexila_app.vala:256 ../src/main_window.vala:68
 msgid "About LaTeXila"
 msgstr "O programie LaTeXila"
 
-#: ../src/latexila_app.vala:263
+#: ../src/latexila_app.vala:257
 msgid "translator-credits"
 msgstr ""
 "Paweł Żołnowski <pawel@zolnowski.name>, 2014\n"
-"Piotr Drąg <piotrdrag@gmail.com>, 2014-2015\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2014-2015"
+"Piotr Drąg <piotrdrag@gmail.com>, 2014-2016\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2014-2016"
 
 #. LaTeX: Sectioning
 #: ../src/latex_menu.vala:32
@@ -2116,7 +2116,35 @@ msgstr "_Otwórz plik"
 msgid "Open the file referenced by the selected structure item"
 msgstr "Otwiera plik, do którego odnosi się zaznaczony element struktury"
 
-#: ../src/main_window.vala:28 ../src/ui/menus.ui.h:7
+#: ../src/main_window_tools.vala:28
+msgid "_Tools"
+msgstr "_Narzędzia"
+
+#: ../src/main_window_tools.vala:29
+msgid "_Check Spelling…"
+msgstr "_Sprawdź pisownię…"
+
+#: ../src/main_window_tools.vala:30
+msgid "Check the spelling of the current document"
+msgstr "Sprawdza pisownię bieżącego dokumentu"
+
+#: ../src/main_window_tools.vala:31
+msgid "_Set Language…"
+msgstr "Usta_w język…"
+
+#: ../src/main_window_tools.vala:32
+msgid "Set the language used for the spell checking for the current document"
+msgstr "Ustawia język używany do sprawdzania pisowni bieżącego dokumentu"
+
+#: ../src/main_window_tools.vala:38
+msgid "_Highlight Misspelled Words"
+msgstr "_Wyróżnianie błędów pisowni"
+
+#: ../src/main_window_tools.vala:39
+msgid "Highlight misspelled words in the current document"
+msgstr "Wyróżnia błędy pisowni w bieżącym dokumencie"
+
+#: ../src/main_window.vala:28 ../src/ui/menus.ui.h:6
 msgid "_Quit"
 msgstr "Za_kończ"
 
@@ -2235,58 +2263,58 @@ msgstr "Materiały _LaTeX-a"
 msgid "The Kile LaTeX Reference"
 msgstr "Materiały LaTeX-a programu Kile"
 
-#: ../src/main_window.vala:70 ../src/ui/menus.ui.h:6
+#: ../src/main_window.vala:67 ../src/ui/menus.ui.h:5
 msgid "_About"
 msgstr "_O programie"
 
-#: ../src/main_window.vala:76
+#: ../src/main_window.vala:73
 msgid "_Main Toolbar"
 msgstr "_Główny pasek narzędziowy"
 
-#: ../src/main_window.vala:77
+#: ../src/main_window.vala:74
 msgid "Show or hide the main toolbar"
 msgstr "Wyświetla lub ukrywa główny pasek narzędziowy"
 
 #. Translators: "Edit" here is an adjective.
-#: ../src/main_window.vala:79
+#: ../src/main_window.vala:76
 msgid "_Edit Toolbar"
 msgstr "Pasek narzędziowy _edycji"
 
-#: ../src/main_window.vala:80
+#: ../src/main_window.vala:77
 msgid "Show or hide the edit toolbar"
 msgstr "Wyświetla lub ukrywa pasek narzędziowy edycji"
 
-#: ../src/main_window.vala:81
+#: ../src/main_window.vala:78
 msgid "_Side panel"
 msgstr "Panel bo_czny"
 
-#: ../src/main_window.vala:82
+#: ../src/main_window.vala:79
 msgid "Show or hide the side panel"
 msgstr "Wyświetla lub ukrywa panel boczny"
 
-#: ../src/main_window.vala:83
+#: ../src/main_window.vala:80
 msgid "_Bottom panel"
 msgstr "Panel _dolny"
 
-#: ../src/main_window.vala:84
+#: ../src/main_window.vala:81
 msgid "Show or hide the bottom panel"
 msgstr "Wyświetla lub ukrywa panel dolny"
 
 #. Symbols
-#: ../src/main_window.vala:407
+#: ../src/main_window.vala:402
 msgid "Symbols"
 msgstr "Symbole"
 
-#: ../src/main_window.vala:416
+#: ../src/main_window.vala:411
 msgid "Structure"
 msgstr "Struktura"
 
-#: ../src/main_window.vala:650
+#: ../src/main_window.vala:645
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Ten plik (%s) jest już otwarty w innym oknie programu."
 
-#: ../src/main_window.vala:652
+#: ../src/main_window.vala:647
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2294,24 +2322,24 @@ msgstr ""
 "Program LaTeXila otworzył tę instancję pliku w formie niemożliwej do "
 "modyfikowania. Modyfikować go mimo to?"
 
-#: ../src/main_window.vala:655
+#: ../src/main_window.vala:650
 msgid "Edit Anyway"
 msgstr "Modyfikuj mimo to"
 
-#: ../src/main_window.vala:656
+#: ../src/main_window.vala:651
 msgid "Don't Edit"
 msgstr "Nie modyfikuj"
 
-#: ../src/main_window.vala:758
+#: ../src/main_window.vala:753
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Zapisać zmiany w dokumencie „%s” przed zamknięciem?"
 
-#: ../src/main_window.vala:838
+#: ../src/main_window.vala:833
 msgid "Read-Only"
 msgstr "Tylko do odczytu"
 
-#: ../src/main_window.vala:856
+#: ../src/main_window.vala:851
 msgid "Save File"
 msgstr "Zapisywanie pliku"
 
@@ -2346,7 +2374,7 @@ msgstr[0] "znak"
 msgstr[1] "znaki"
 msgstr[2] "znaków"
 
-#: ../src/preferences_dialog.vala:379
+#: ../src/preferences_dialog.vala:344
 #, c-format
 msgid "Use the system fixed width font (%s)"
 msgstr "Użycie systemowej czcionki o stałej szerokości (%s)"
@@ -2593,10 +2621,6 @@ msgstr "Czyści najczęściej używane symbole"
 #: ../src/ui/menus.ui.h:1
 msgid "_New Window"
 msgstr "_Nowe okno"
-
-#: ../src/ui/menus.ui.h:5
-msgid "LaTeXila _Fundraiser"
-msgstr "_Zbiórka funduszy na rozwój programu LaTeXila"
 
 #: ../src/ui/preferences_dialog.ui.h:1
 msgid "Display line numbers"
