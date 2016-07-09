@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: latexila master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-07-06 04:59+0000\n"
-"PO-Revision-Date: 2016-07-06 12:24+0700\n"
-"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"POT-Creation-Date: 2016-07-08 22:14+0000\n"
+"PO-Revision-Date: 2016-07-09 18:49+0700\n"
+"Last-Translator: Andika Triwidada <atriwidada@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.6.10\n"
 
 #. (itstool) path: tool/label
 #: build_tools.xml:43 ../src/build_tool_dialog.vala:165
@@ -2087,6 +2087,34 @@ msgstr "_Buka Berkas"
 #: ../src/main_window_structure.vala:56
 msgid "Open the file referenced by the selected structure item"
 msgstr "Buka berkas yang diacu oleh butir struktur yang dipilih"
+
+#: ../src/main_window_tools.vala:28
+msgid "_Tools"
+msgstr "Perala_tan"
+
+#: ../src/main_window_tools.vala:29
+msgid "_Check Spelling…"
+msgstr "_Periksa Ejaan..."
+
+#: ../src/main_window_tools.vala:30
+msgid "Check the spelling of the current document"
+msgstr "Periksa ejaan dokumen saat ini"
+
+#: ../src/main_window_tools.vala:31
+msgid "_Set Language…"
+msgstr "_Atur Bahasa..."
+
+#: ../src/main_window_tools.vala:32
+msgid "Set the language used for the spell checking for the current document"
+msgstr "Atur bahasa yang dipakai untuk memeriksa ejaan dokumen saat ini"
+
+#: ../src/main_window_tools.vala:38
+msgid "_Highlight Misspelled Words"
+msgstr "_Sorot Kata Salah Eja"
+
+#: ../src/main_window_tools.vala:39
+msgid "Highlight misspelled words in the current document"
+msgstr "Sorot kata salah eja dalam dokumen saat ini"
 
 #: ../src/main_window.vala:28 ../src/ui/menus.ui.h:6
 msgid "_Quit"
