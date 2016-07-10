@@ -8,10 +8,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LaTeXila\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=latexi"
-"la&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-03-18 00:50+0000\n"
-"PO-Revision-Date: 2016-03-18 03:57-0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=latexil"
+"a&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-07-08 22:14+0000\n"
+"PO-Revision-Date: 2016-07-09 21:58-0200\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -521,8 +521,8 @@ msgstr ""
 "\n"
 "\\begin{document}\n"
 "\n"
-"\\begin{letter}{Destinatário\\\\Endereço de destinatário\\\\Número de telefone de "
-"destinatário}\n"
+"\\begin{letter}{Destinatário\\\\Endereço de destinatário\\\\Número de "
+"telefone de destinatário}\n"
 "\n"
 "\\opening{Caro Sr.,}\n"
 "\n"
@@ -852,7 +852,6 @@ msgid "Error trying to convert the document to UTF-8"
 msgstr "Erro ao tentar converter documento para UTF-8"
 
 #: ../src/document.vala:310
-#| msgid "Unsaved Document"
 msgid "Untitled Document"
 msgstr "Documento sem título"
 
@@ -1565,7 +1564,7 @@ msgstr "[ esquerdo"
 
 #: ../src/latex_menu.vala:394
 msgid "left { "
-msgstr "{ esquerda"
+msgstr "{ esquerda "
 
 #: ../src/latex_menu.vala:396
 msgid "left <"
@@ -1623,7 +1622,7 @@ msgstr "[ direito"
 
 #: ../src/latex_menu.vala:424
 msgid "right { "
-msgstr "{ direita"
+msgstr "{ direita "
 
 #: ../src/latex_menu.vala:426
 msgid "right <"
@@ -2131,6 +2130,39 @@ msgstr "_Abrir arquivo"
 msgid "Open the file referenced by the selected structure item"
 msgstr "Abrir o arquivo referenciado pelo item selecionado da estrutura"
 
+#: ../src/main_window_tools.vala:28
+msgid "_Tools"
+msgstr "_Ferramentas"
+
+#: ../src/main_window_tools.vala:29
+msgid "_Check Spelling…"
+msgstr "Verificar _ortografia…"
+
+#: ../src/main_window_tools.vala:30
+#| msgid "Change the main file of the current project"
+msgid "Check the spelling of the current document"
+msgstr "Verifica a ortografia do documento atual"
+
+#: ../src/main_window_tools.vala:31
+#| msgid "Language:"
+msgid "_Set Language…"
+msgstr "_Definir idioma…"
+
+#: ../src/main_window_tools.vala:32
+#| msgid "Create a new template from the current document"
+msgid "Set the language used for the spell checking for the current document"
+msgstr "Define o idioma usado para a verificação ortográfica do documento atual"
+
+#: ../src/main_window_tools.vala:38
+#| msgid "Highlight Misspelled Words"
+msgid "_Highlight Misspelled Words"
+msgstr "Des_tacar palavras com erros ortográficos"
+
+#: ../src/main_window_tools.vala:39
+#| msgid "Highlight misspelled words"
+msgid "Highlight misspelled words in the current document"
+msgstr "Destaca palavras com erros ortográficos no documento atual"
+
 #: ../src/main_window.vala:28 ../src/ui/menus.ui.h:6
 msgid "_Quit"
 msgstr "Sa_ir"
@@ -2162,7 +2194,7 @@ msgstr "Diminuir a fonte"
 
 #: ../src/main_window.vala:37
 msgid "_Reset Zoom"
-msgstr "Tamanho No_rmal"
+msgstr "Tamanho no_rmal"
 
 #: ../src/main_window.vala:38
 msgid "Reset the size of the font"
@@ -2605,7 +2637,6 @@ msgid "Clear most used symbols"
 msgstr "Limpa os símbolos mais usados"
 
 #: ../src/ui/menus.ui.h:1
-#| msgid "New _Window"
 msgid "_New Window"
 msgstr "_Nova janela"
 
