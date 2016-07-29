@@ -932,7 +932,7 @@ msgstr "Yeni belge oluştur"
 
 #: ../src/latexila_app.vala:83
 msgid "Create a new top-level window in an existing instance of LaTeXila"
-msgstr "LaTexila 'nın mevcut bir örneğinde yeni bir en üst düzey pencere yarat"
+msgstr "LaTeXila 'nın mevcut bir örneğinde yeni bir en üst düzey pencere yarat"
 
 #: ../src/latexila_app.vala:217
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
@@ -2073,7 +2073,7 @@ msgstr "Dosyaları Aç"
 #. Filter: by default show only .tex and .bib files
 #: ../src/main_window_file.vala:173
 msgid "All LaTeX Files"
-msgstr "Tüm LaTex Dosyaları"
+msgstr "Tüm LaTeX Dosyaları"
 
 #. All files filter
 #: ../src/main_window_file.vala:180

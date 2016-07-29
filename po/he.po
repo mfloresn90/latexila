@@ -110,7 +110,7 @@ msgid ""
 "LaTeXila has also other features like the spell checking, or the forward and "
 "backward search to switch between the .tex and the PDF."
 msgstr ""
-"ל־LaTexila יש יכולות נוספות, כגון בדיקת איות וחיפוש דו־כיווני המאפשר מעבר "
+"ל־LaTeXila יש יכולות נוספות, כגון בדיקת איות וחיפוש דו־כיווני המאפשר מעבר "
 "בין קובץ ה־tex וקובץ ה־PDF."
 
 #: ../data/latexila.desktop.in.in.h:1
@@ -1896,7 +1896,7 @@ msgstr "_תרומה"
 msgid ""
 "Donate to demonstrate your appreciation of LaTeXila and help its future "
 "development"
-msgstr "תרום לאות הערכה ל־LaTexila וסייע להמשך הפיתוח"
+msgstr "תרום לאות הערכה ל־LaTeXila וסייע להמשך הפיתוח"
 
 #: ../src/main_window.vala:71 ../src/main_window.vala:1244
 msgid "About LaTeXila"

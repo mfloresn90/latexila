@@ -338,7 +338,7 @@ msgid ""
 "When a LaTeX document is split into several *.tex files, creating a project "
 "is useful."
 msgstr ""
-"Wenn ein LaTex-Dokument in verschiedene *.tex-Dateien unterteilt wird, ist "
+"Wenn ein LaTeX-Dokument in verschiedene *.tex-Dateien unterteilt wird, ist "
 "es sinnvoll, ein Projekt anzulegen."
 
 #. (itstool) path: section/title
