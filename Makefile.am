@@ -2,7 +2,7 @@ ACLOCAL_AMFLAGS = -I m4
 
 SUBDIRS = data man po help src tests docs
 
-AM_DISTCHECK_CONFIGURE_FLAGS = --enable-introspection
+AM_DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --enable-introspection --enable-vala
 
 EXTRA_DIST =			\
 	README			\
