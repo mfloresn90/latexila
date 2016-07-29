@@ -1,5 +1,11 @@
 LaTeXila NEWS
 
+Release 3.20.1
+--------------
+* Bug fix: initialize correctly the build view settings (to hide
+  warnings/badboxes).
+* Translation updates
+
 Release 3.20.0
 --------------
 * Add Turkish translation
