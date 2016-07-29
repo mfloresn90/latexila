@@ -413,33 +413,33 @@ public class MainWindowBuildTools
         ToggleAction action_details =
             _static_action_group.get_action ("BuildShowDetails") as ToggleAction;
 
+        action_details.active = false;
+
         action_details.bind_property ("active", _build_view, "show-details",
-            BindingFlags.DEFAULT);
+            BindingFlags.DEFAULT | BindingFlags.SYNC_CREATE);
 
         _build_view.bind_property ("has-details", action_details, "sensitive",
-            BindingFlags.SYNC_CREATE);
-
-        action_details.active = false;
+            BindingFlags.DEFAULT | BindingFlags.SYNC_CREATE);
 
         /* Show warnings */
 
         ToggleAction action_warnings =
             _static_action_group.get_action ("BuildShowWarnings") as ToggleAction;
 
-        _build_view.bind_property ("show-warnings", action_warnings, "active",
-            BindingFlags.BIDIRECTIONAL);
-
         action_warnings.active = settings.get_boolean ("show-build-warnings");
+
+        action_warnings.bind_property ("active", _build_view, "show-warnings",
+            BindingFlags.BIDIRECTIONAL | BindingFlags.SYNC_CREATE);
 
         /* Show badboxes */
 
         ToggleAction action_badboxes =
             _static_action_group.get_action ("BuildShowBadBoxes") as ToggleAction;
 
-        _build_view.bind_property ("show-badboxes", action_badboxes, "active",
-            BindingFlags.BIDIRECTIONAL);
-
         action_badboxes.active = settings.get_boolean ("show-build-badboxes");
+
+        action_badboxes.bind_property ("active", _build_view, "show-badboxes",
+            BindingFlags.BIDIRECTIONAL | BindingFlags.SYNC_CREATE);
     }
 
     /* Gtk.Action callbacks */
