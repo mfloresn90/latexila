@@ -41,6 +41,7 @@
     <kudo>UserDocs</kudo>
   </kudos>
   <url type="homepage">https://wiki.gnome.org/Apps/LaTeXila</url>
+  <url type="donation">https://people.gnome.org/~swilmet/latexila/support.html</url>
   <translation type="gettext">latexila</translation>
   <updatecontact>swilmet@gnome.org</updatecontact>
 </application>
