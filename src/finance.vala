@@ -159,7 +159,7 @@ namespace Finance
     {
         try
         {
-            string uri = "https://wiki.gnome.org/Apps/LaTeXila/donate";
+            string uri = "https://people.gnome.org/~swilmet/latexila/support.html";
             show_uri (parent_window.get_screen (), uri, Gdk.CURRENT_TIME);
         }
         catch (Error e)
