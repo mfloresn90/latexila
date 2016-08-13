@@ -26,7 +26,13 @@ namespace Finance
         if (startup && ! should_show_dialog_on_startup ())
             return;
 
-        Dialog dialog = new Dialog.with_buttons ("LaTeXila Finance",
+        string title;
+        if (startup)
+            title = "Welcome in LaTeXila!";
+        else
+            title = "LaTeXila Finance";
+
+        Dialog dialog = new Dialog.with_buttons (title,
             parent_window,
             DialogFlags.DESTROY_WITH_PARENT,
             "_Close", ResponseType.CLOSE,
