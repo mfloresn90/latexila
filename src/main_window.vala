@@ -64,7 +64,7 @@ public class MainWindow : ApplicationWindow
             N_("Open the LaTeXila documentation"), on_help_contents },
         { "HelpLatexReference", null, N_("_LaTeX Reference"), null,
             N_("The Kile LaTeX Reference"), on_help_latex_reference },
-        { "HelpFinance", null, "LaTeXila _Fundraiser", null,
+        { "HelpFinance", null, "LaTeXila _Fundraising", null,
             "Donate to demonstrate your appreciation of LaTeXila and help its future development",
             on_help_finance },
         { "HelpAbout", "help-about", N_("_About"), null,
@@ -1164,7 +1164,7 @@ public class MainWindow : ApplicationWindow
 
     public void on_help_finance ()
     {
-        LatexilaApp.get_instance ().activate_action ("fundraiser", null);
+        LatexilaApp.get_instance ().activate_action ("fundraising", null);
     }
 
     public void on_about_dialog ()

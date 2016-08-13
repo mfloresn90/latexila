@@ -30,7 +30,7 @@ namespace Finance
             parent_window,
             DialogFlags.DESTROY_WITH_PARENT,
             "_Close", ResponseType.CLOSE,
-            "LaTeXila _Fundraiser", ResponseType.ACCEPT,
+            "LaTeXila _Fundraising", ResponseType.ACCEPT,
             null);
 
         dialog.set_resizable (false);

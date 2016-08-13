@@ -31,7 +31,7 @@ public class LatexilaApp : Gtk.Application
         { "preferences", preferences_cb },
         { "manage-build-tools", manage_build_tools_cb },
         { "help", help_cb },
-        { "fundraiser", fundraiser_cb },
+        { "fundraising", fundraising_cb },
         { "about", about_cb },
         { "quit", quit_cb }
     };
@@ -212,7 +212,7 @@ public class LatexilaApp : Gtk.Application
         }
     }
 
-    private void fundraiser_cb ()
+    private void fundraising_cb ()
     {
         Finance.show_dialog (get_active_main_window (), false);
     }
