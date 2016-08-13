@@ -3,21 +3,22 @@
 # This file is distributed under the same license as the latexila package.
 # Daniel Nylander <po@danielnylander.se>, 2011.
 # Josef Andersson <josef.andersson@fripost.org>, 2016.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-04-08 00:24+0000\n"
-"PO-Revision-Date: 2016-04-11 00:30+0200\n"
-"Last-Translator: Josef Andersson <josef.andersson@fripost.org>\n"
-"Language-Team: Swedish\n"
+"POT-Creation-Date: 2016-08-11 13:24+0000\n"
+"PO-Revision-Date: 2016-08-02 00:39+0200\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Project-Style: gnome\n"
 
 #. (itstool) path: tool/label
@@ -48,7 +49,7 @@ msgstr "Visa PS"
 #. (itstool) path: tool/description
 #: build_tools.xml:56
 msgid "View the PostScript file"
-msgstr "Visa PostScript-filen"
+msgstr "Visa Postscript-filen"
 
 #. (itstool) path: tool/description
 #: build_tools.xml:64
@@ -78,12 +79,12 @@ msgstr "Konvertera DVI-dokumentet till PDF-formatet"
 #. (itstool) path: tool/description
 #: build_tools.xml:98
 msgid "Convert the DVI document to the PostScript format"
-msgstr "Konvertera DVI-dokumentet till PostScript-formatet"
+msgstr "Konvertera DVI-dokumentet till Postscript-formatet"
 
 #. (itstool) path: tool/description
 #: build_tools.xml:104
 msgid "Convert the PostScript document to the PDF format"
-msgstr "Konvertera PostScript-dokumentet till PDF-formatet"
+msgstr "Konvertera Postscript-dokumentet till PDF-formatet"
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:1
 msgid ""
@@ -130,6 +131,24 @@ msgid ""
 msgstr ""
 "LaTeXila har också andra egenskaper som stavningskontroll eller framåt- och "
 "bakåtsökning för att växla mellan en .tex och dess motsvarande PDF."
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:6
+#, fuzzy
+#| msgid "Complete the LaTeX command"
+msgid "Completion of LaTeX commands"
+msgstr "Komplettera LaTeX-kommandot"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:7
+#, fuzzy
+#| msgid "View the PDF file"
+msgid "Generating the PDF file"
+msgstr "Visa PDF-filen"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:8
+#, fuzzy
+#| msgid "Show or hide the side panel"
+msgid "Document structure in the side panel"
+msgstr "Visa eller dölj sidopanelen"
 
 #: ../data/org.gnome.latexila.desktop.in.in.h:1
 msgid "Integrated LaTeX Environment"
@@ -2094,6 +2113,36 @@ msgstr "_Öppna fil"
 #: ../src/main_window_structure.vala:56
 msgid "Open the file referenced by the selected structure item"
 msgstr "Öppna filen som refereras av det markerade strukturobjektet"
+
+#: ../src/main_window_tools.vala:28
+msgid "_Tools"
+msgstr "_Verktyg"
+
+#: ../src/main_window_tools.vala:29
+msgid "_Check Spelling…"
+msgstr "_Kontrollera stavning…"
+
+#: ../src/main_window_tools.vala:30
+msgid "Check the spelling of the current document"
+msgstr "Kontrollera stavningen i det aktuella dokumentet"
+
+#: ../src/main_window_tools.vala:31
+msgid "_Set Language…"
+msgstr "Ställ in _språk…"
+
+#: ../src/main_window_tools.vala:32
+msgid "Set the language used for the spell checking for the current document"
+msgstr ""
+"Ställ in språket som används för stavningskontrollen i det aktuella "
+"dokumentet"
+
+#: ../src/main_window_tools.vala:38
+msgid "_Highlight Misspelled Words"
+msgstr "_Markera felstavade ord"
+
+#: ../src/main_window_tools.vala:39
+msgid "Highlight misspelled words in the current document"
+msgstr "Markera felstavade ord i det aktuella dokumentet"
 
 #: ../src/main_window.vala:28 ../src/ui/menus.ui.h:6
 msgid "_Quit"
