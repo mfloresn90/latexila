@@ -52,7 +52,7 @@ namespace Finance
         content_area.add (label);
 
         label = new Label (null);
-        label.set_markup ("LaTeXila is a free/<i>libre</i> LaTeX editor and comes" +
+        label.set_markup ("LaTeXila is a Free/<i>Libre</i> LaTeX editor and comes" +
             " free of charge. But if you appreciate this software, you are encouraged" +
             " to make a donation to help its future development.");
         label.max_width_chars = 60;
