@@ -1,3 +1,5 @@
+# List of source files that should *not* be translated.
+# Please keep this file sorted alphabetically.
 data/org.gnome.latexila.desktop.in
 src/app_settings.c
 src/bottom_panel.c
@@ -16,6 +18,7 @@ src/document_view.c
 src/encodings.c
 src/error_entry.c
 src/file_browser.c
+src/finance.c
 src/latexila_app.c
 src/latex_menu.c
 src/main.c
