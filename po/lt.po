@@ -1,15 +1,15 @@
 # Lithuanian translation for latexila.
 # Copyright (C) 2013 latexila's COPYRIGHT HOLDER
 # This file is distributed under the same license as the latexila package.
-# Aurimas Černius <aurisc4@gmail.com>, 2013, 2014, 2015.
+# Aurimas Černius <aurisc4@gmail.com>, 2013, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-01-16 12:45+0000\n"
-"PO-Revision-Date: 2016-01-08 17:14+0200\n"
+"POT-Creation-Date: 2016-08-11 13:24+0000\n"
+"PO-Revision-Date: 2016-08-15 13:32+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #. (itstool) path: tool/label
 #: build_tools.xml:43 ../src/build_tool_dialog.vala:165
@@ -130,6 +130,21 @@ msgid ""
 msgstr ""
 "LaTeXila taip pat turi kitų savybių, tokių kaip rašybos tikrinimas bei "
 "paieška pirmyn ir atgal persijungimui tarp .tex ir PDF."
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:6
+#| msgid "Complete the LaTeX command"
+msgid "Completion of LaTeX commands"
+msgstr "LaTeX komandų užbaigimas"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:7
+#| msgid "View the PDF file"
+msgid "Generating the PDF file"
+msgstr "Generuojamas PDF failas"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:8
+#| msgid "Show or hide the side panel"
+msgid "Document structure in the side panel"
+msgstr "Dokumento struktūra šoniniame polangyje"
 
 #: ../data/org.gnome.latexila.desktop.in.in.h:1
 msgid "Integrated LaTeX Environment"
@@ -523,8 +538,8 @@ msgstr "Asmeninis kūrimo įrankis"
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:762
-#: ../src/main_window.vala:858 ../src/preferences_dialog.vala:114
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:757
+#: ../src/main_window.vala:853 ../src/preferences_dialog.vala:114
 #: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
 #: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
@@ -722,12 +737,12 @@ msgstr "Nėra atitinkančio siūlymo"
 msgid "Ln %d, Col %d"
 msgstr "Eil %d, Stlp %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:761
+#: ../src/dialogs.vala:40 ../src/main_window.vala:756
 msgid "Close _without Saving"
 msgstr "Užverti _neįrašant"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:767 ../src/main_window.vala:859
+#: ../src/main_window.vala:762 ../src/main_window.vala:854
 msgid "_Save"
 msgstr "Į_rašyti"
 
@@ -837,7 +852,7 @@ msgid "Do you want to save the file in a safer place?"
 msgstr "Ar norite įrašyti failą į saugesnę vietą?"
 
 #: ../src/document.vala:598 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:765
+#: ../src/main_window.vala:760
 msgid "Save _As"
 msgstr "Įrašyti _taip"
 
@@ -845,17 +860,17 @@ msgstr "Įrašyti _taip"
 msgid "Cancel"
 msgstr "Atsisakyti"
 
-#: ../src/document_view.vala:357
+#: ../src/document_view.vala:367
 msgid "No dictionaries available for the spell checking."
 msgstr "Nėra žodynų rašybos tikrinimui."
 
 #. Help
-#: ../src/document_view.vala:359 ../src/main_window.vala:62
+#: ../src/document_view.vala:369 ../src/main_window.vala:62
 #: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "_Žinynas"
 
-#: ../src/document_view.vala:360 ../src/tab_info_bar.vala:77
+#: ../src/document_view.vala:370 ../src/tab_info_bar.vala:77
 msgid "_OK"
 msgstr "_Gerai"
 
@@ -892,31 +907,31 @@ msgid "File System"
 msgstr "Failų sistema"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:411
+#: ../src/file_browser.vala:536 ../src/main_window.vala:406
 msgid "File Browser"
 msgstr "Failų naršyklė"
 
-#: ../src/latexila_app.vala:78
+#: ../src/latexila_app.vala:77
 msgid "Show the application's version"
 msgstr "Rodyti programos versiją"
 
-#: ../src/latexila_app.vala:81
+#: ../src/latexila_app.vala:80
 msgid "Create new document"
 msgstr "Sukurti naują dokumentą"
 
-#: ../src/latexila_app.vala:84
+#: ../src/latexila_app.vala:83
 msgid "Create a new top-level window in an existing instance of LaTeXila"
 msgstr "Sukurti naują aukščiausio lygio langą veikiančioje LaTeXila"
 
-#: ../src/latexila_app.vala:223
+#: ../src/latexila_app.vala:217
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeXila yra integruota LaTeX aplinka GNOME darbalaukiui"
 
-#: ../src/latexila_app.vala:262 ../src/main_window.vala:71
+#: ../src/latexila_app.vala:256 ../src/main_window.vala:68
 msgid "About LaTeXila"
 msgstr "Apie LaTeXila"
 
-#: ../src/latexila_app.vala:263
+#: ../src/latexila_app.vala:257
 msgid "translator-credits"
 msgstr ""
 "Išvertė:\n"
@@ -2090,7 +2105,40 @@ msgstr "_Atverti failą"
 msgid "Open the file referenced by the selected structure item"
 msgstr "Atverti struktūros elemento nurodomą failą"
 
-#: ../src/main_window.vala:28 ../src/ui/menus.ui.h:7
+#: ../src/main_window_tools.vala:28
+msgid "_Tools"
+msgstr "Į_rankiai"
+
+#: ../src/main_window_tools.vala:29
+msgid "_Check Spelling…"
+msgstr "_Rašybos tikrinimas…"
+
+#: ../src/main_window_tools.vala:30
+#| msgid "Change the main file of the current project"
+msgid "Check the spelling of the current document"
+msgstr "Tikrinti rašybą dabartiniame dokumente"
+
+#: ../src/main_window_tools.vala:31
+#| msgid "Language:"
+msgid "_Set Language…"
+msgstr "_Nustatyti kalbą…"
+
+#: ../src/main_window_tools.vala:32
+#| msgid "Create a new template from the current document"
+msgid "Set the language used for the spell checking for the current document"
+msgstr "Nustatyti rašybos tikrinimo kalbą dabartiniam dokumentui"
+
+#: ../src/main_window_tools.vala:38
+#| msgid "Highlight Misspelled Words"
+msgid "_Highlight Misspelled Words"
+msgstr "_Paryškinti neteisingai parašytus žodžius"
+
+#: ../src/main_window_tools.vala:39
+#| msgid "Highlight misspelled words"
+msgid "Highlight misspelled words in the current document"
+msgstr "Paryškinti neteisingai parašytus žodžius dabartiniame dokumente"
+
+#: ../src/main_window.vala:28 ../src/ui/menus.ui.h:6
 msgid "_Quit"
 msgstr "_Išeiti"
 
@@ -2209,82 +2257,82 @@ msgstr "_LaTeX žinynas"
 msgid "The Kile LaTeX Reference"
 msgstr "Kile LaTeX žinynas"
 
-#: ../src/main_window.vala:70 ../src/ui/menus.ui.h:6
+#: ../src/main_window.vala:67 ../src/ui/menus.ui.h:5
 msgid "_About"
 msgstr "_Apie"
 
-#: ../src/main_window.vala:76
+#: ../src/main_window.vala:73
 msgid "_Main Toolbar"
 msgstr "_Pagrindinė įrankinė"
 
-#: ../src/main_window.vala:77
+#: ../src/main_window.vala:74
 msgid "Show or hide the main toolbar"
 msgstr "Rodyti arba slėpti pagrindinę įrankinę"
 
 #. Translators: "Edit" here is an adjective.
-#: ../src/main_window.vala:79
+#: ../src/main_window.vala:76
 msgid "_Edit Toolbar"
 msgstr "R_edagavimo įrankinė"
 
-#: ../src/main_window.vala:80
+#: ../src/main_window.vala:77
 msgid "Show or hide the edit toolbar"
 msgstr "Rodyti arba slėpti redagavimo įrankinę"
 
-#: ../src/main_window.vala:81
+#: ../src/main_window.vala:78
 msgid "_Side panel"
 msgstr "Š_oninis polangis"
 
-#: ../src/main_window.vala:82
+#: ../src/main_window.vala:79
 msgid "Show or hide the side panel"
 msgstr "Rodyti arba slėpti šoninį polangį"
 
-#: ../src/main_window.vala:83
+#: ../src/main_window.vala:80
 msgid "_Bottom panel"
 msgstr "_Apatinis skydelis"
 
-#: ../src/main_window.vala:84
+#: ../src/main_window.vala:81
 msgid "Show or hide the bottom panel"
 msgstr "Rodyti arba slėpti apatinį skydelį"
 
 #. Symbols
-#: ../src/main_window.vala:407
+#: ../src/main_window.vala:402
 msgid "Symbols"
 msgstr "Simboliai"
 
-#: ../src/main_window.vala:416
+#: ../src/main_window.vala:411
 msgid "Structure"
 msgstr "Struktūra"
 
-#: ../src/main_window.vala:650
+#: ../src/main_window.vala:645
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Failas (%s) jau atvertas kitame LaTeXila lange."
 
-#: ../src/main_window.vala:652
+#: ../src/main_window.vala:647
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
 msgstr ""
 "LaTeXila atvėrė šį failą ne redagavimui. Ar vistiek norite jį redaguoti?"
 
-#: ../src/main_window.vala:655
+#: ../src/main_window.vala:650
 msgid "Edit Anyway"
 msgstr "Vistiek redaguoti"
 
-#: ../src/main_window.vala:656
+#: ../src/main_window.vala:651
 msgid "Don't Edit"
 msgstr "Neredaguoti"
 
-#: ../src/main_window.vala:758
+#: ../src/main_window.vala:753
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Įrašyti dokumento „%s“ pakeitimus prieš užveriant?"
 
-#: ../src/main_window.vala:838
+#: ../src/main_window.vala:833
 msgid "Read-Only"
 msgstr "Tik skaitymui"
 
-#: ../src/main_window.vala:856
+#: ../src/main_window.vala:851
 msgid "Save File"
 msgstr "Įrašyti failą"
 
@@ -2567,10 +2615,6 @@ msgstr "Išvalyti dažniausiai naudojamus simbolius"
 msgid "_New Window"
 msgstr "_Naujas langas"
 
-#: ../src/ui/menus.ui.h:5
-msgid "LaTeXila _Fundraiser"
-msgstr "LaTeXila lėšų rinki_mas"
-
 #: ../src/ui/preferences_dialog.ui.h:1
 msgid "Display line numbers"
 msgstr "Rodyti eilučių numerius"
@@ -2675,6 +2719,9 @@ msgstr "Paryškinti blogai parašytus žodžius"
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Kita"
+
+#~ msgid "LaTeXila _Fundraiser"
+#~ msgstr "LaTeXila lėšų rinki_mas"
 
 #~ msgid "- Integrated LaTeX Environment for GNOME"
 #~ msgstr "- integruota LaTeX aplinka GNOME darbastaliui"
