@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: latexila master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-12-22 00:48+0000\n"
-"PO-Revision-Date: 2015-12-22 10:21+0100\n"
+"POT-Creation-Date: 2016-08-11 13:24+0000\n"
+"PO-Revision-Date: 2016-08-19 23:07+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -130,6 +130,18 @@ msgid ""
 msgstr ""
 "LaTeXila umí i další funkce, jako je kontrola pravopisu nebo dopředné a "
 "zpětné vyhledávání sloužící k přepínání mezi .tex a PDF."
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:6
+msgid "Completion of LaTeX commands"
+msgstr "Doplňování příkazů LaTeX"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:7
+msgid "Generating the PDF file"
+msgstr "Generování souboru PDF"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:8
+msgid "Document structure in the side panel"
+msgstr "Struktura dokumentu v postranním panelu"
 
 #: ../data/org.gnome.latexila.desktop.in.in.h:1
 msgid "Integrated LaTeX Environment"
@@ -363,7 +375,7 @@ msgstr "Zobrazovat chybné oblasti ve výstupu sestavení"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:43
 msgid "Interactive completion"
-msgstr "Interaktivní dokončování"
+msgstr "Interaktivní doplňování"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:44
 msgid "Automatically show LaTeX commands proposals"
@@ -371,14 +383,14 @@ msgstr "Automaticky zobrazovat navrhované příkazy LaTeX"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:45
 msgid "Minimum number of characters for interactive completion"
-msgstr "Minimální počet znaků pro interaktivní dokončování"
+msgstr "Minimální počet znaků pro interaktivní doplňování"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:46
 msgid ""
 "Minimum number of characters after \"\\\" for the interactive completion of "
 "LaTeX commands"
 msgstr ""
-"Minimální počet znaků za „\\“ pro interaktivní dokončování příkazů LaTeX."
+"Minimální počet znaků za „\\“ pro interaktivní doplňování příkazů LaTeX."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:47
 #: ../src/ui/preferences_dialog.ui.h:22
@@ -531,8 +543,8 @@ msgstr "Osobní nástroj pro sestavení"
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:762
-#: ../src/main_window.vala:858 ../src/preferences_dialog.vala:114
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:757
+#: ../src/main_window.vala:853 ../src/preferences_dialog.vala:114
 #: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
 #: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
@@ -731,12 +743,12 @@ msgstr "Žádný odpovídající návrh"
 msgid "Ln %d, Col %d"
 msgstr "Řá %d, Sl %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:761
+#: ../src/dialogs.vala:40 ../src/main_window.vala:756
 msgid "Close _without Saving"
 msgstr "Za_vřít bez ukládání"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:767 ../src/main_window.vala:859
+#: ../src/main_window.vala:762 ../src/main_window.vala:854
 msgid "_Save"
 msgstr "_Uložit"
 
@@ -842,7 +854,7 @@ msgid "Do you want to save the file in a safer place?"
 msgstr "Chcete soubor uložit na bezpečnější místo?"
 
 #: ../src/document.vala:598 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:765
+#: ../src/main_window.vala:760
 msgid "Save _As"
 msgstr "Uložit j_ako"
 
@@ -850,17 +862,17 @@ msgstr "Uložit j_ako"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: ../src/document_view.vala:372
+#: ../src/document_view.vala:367
 msgid "No dictionaries available for the spell checking."
 msgstr "Není k dispozici žádný slovník pro kontrolu pravopisu."
 
 #. Help
-#: ../src/document_view.vala:374 ../src/main_window.vala:62
+#: ../src/document_view.vala:369 ../src/main_window.vala:62
 #: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "_Nápověda"
 
-#: ../src/document_view.vala:375 ../src/tab_info_bar.vala:77
+#: ../src/document_view.vala:370 ../src/tab_info_bar.vala:77
 msgid "_OK"
 msgstr "_Budiž"
 
@@ -897,31 +909,31 @@ msgid "File System"
 msgstr "Souborový systém"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:411
+#: ../src/file_browser.vala:536 ../src/main_window.vala:406
 msgid "File Browser"
 msgstr "Procházení souborů"
 
-#: ../src/latexila_app.vala:78
+#: ../src/latexila_app.vala:77
 msgid "Show the application's version"
 msgstr "Zobrazit verzi aplikace"
 
-#: ../src/latexila_app.vala:81
+#: ../src/latexila_app.vala:80
 msgid "Create new document"
 msgstr "Vytvořit nový dokument"
 
-#: ../src/latexila_app.vala:84
+#: ../src/latexila_app.vala:83
 msgid "Create a new top-level window in an existing instance of LaTeXila"
 msgstr "Vytvořit nové okno nejvyšší úrovně ve stávající instanci LaTeXila"
 
-#: ../src/latexila_app.vala:223
+#: ../src/latexila_app.vala:217
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeXila je integrované prostředí LaTeX pro GNOME"
 
-#: ../src/latexila_app.vala:262 ../src/main_window.vala:71
+#: ../src/latexila_app.vala:256 ../src/main_window.vala:68
 msgid "About LaTeXila"
 msgstr "O aplikaci LaTeXila"
 
-#: ../src/latexila_app.vala:263
+#: ../src/latexila_app.vala:257
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
 
@@ -2091,7 +2103,37 @@ msgstr "_Otevřít soubor"
 msgid "Open the file referenced by the selected structure item"
 msgstr "Otevřít soubor odkazovaný vybranou položku struktury"
 
-#: ../src/main_window.vala:28 ../src/ui/menus.ui.h:7
+#: ../src/main_window_tools.vala:28
+msgid "_Tools"
+msgstr "Nás_troje"
+
+#: ../src/main_window_tools.vala:29
+msgid "_Check Spelling…"
+msgstr "Zkontrolovat _pravopis…"
+
+#: ../src/main_window_tools.vala:30
+msgid "Check the spelling of the current document"
+msgstr "Zkontrolovat pravopis v aktuálním dokumentu"
+
+#: ../src/main_window_tools.vala:31
+msgid "_Set Language…"
+msgstr "Na_stavit jazyk…"
+
+#: ../src/main_window_tools.vala:32
+msgid "Set the language used for the spell checking for the current document"
+msgstr ""
+"Nastavit jazyk, který se bude používat pro kontrolu pravopisu v aktuálním "
+"dokumentu"
+
+#: ../src/main_window_tools.vala:38
+msgid "_Highlight Misspelled Words"
+msgstr "Z_výrazňovat pravopisné chyby"
+
+#: ../src/main_window_tools.vala:39
+msgid "Highlight misspelled words in the current document"
+msgstr "Zvýrazňovat pravopisné chyby v aktuálním dokumentu"
+
+#: ../src/main_window.vala:28 ../src/ui/menus.ui.h:6
 msgid "_Quit"
 msgstr "U_končit"
 
@@ -2210,58 +2252,58 @@ msgstr "Příručka _LaTeX"
 msgid "The Kile LaTeX Reference"
 msgstr "Příručka Kile LaTeX"
 
-#: ../src/main_window.vala:70 ../src/ui/menus.ui.h:6
+#: ../src/main_window.vala:67 ../src/ui/menus.ui.h:5
 msgid "_About"
 msgstr "O _aplikaci"
 
-#: ../src/main_window.vala:76
+#: ../src/main_window.vala:73
 msgid "_Main Toolbar"
 msgstr "_Hlavní lišta nástrojů"
 
-#: ../src/main_window.vala:77
+#: ../src/main_window.vala:74
 msgid "Show or hide the main toolbar"
 msgstr "Zobrazit nebo skrýt hlavní lištu nástrojů"
 
 #. Translators: "Edit" here is an adjective.
-#: ../src/main_window.vala:79
+#: ../src/main_window.vala:76
 msgid "_Edit Toolbar"
 msgstr "Lišta úprav"
 
-#: ../src/main_window.vala:80
+#: ../src/main_window.vala:77
 msgid "Show or hide the edit toolbar"
 msgstr "Zobrazit nebo skrýt lištu nástrojů pro úpravy"
 
-#: ../src/main_window.vala:81
+#: ../src/main_window.vala:78
 msgid "_Side panel"
 msgstr "Po_stranní panel"
 
-#: ../src/main_window.vala:82
+#: ../src/main_window.vala:79
 msgid "Show or hide the side panel"
 msgstr "Zobrazit nebo skrýt postranní panel"
 
-#: ../src/main_window.vala:83
+#: ../src/main_window.vala:80
 msgid "_Bottom panel"
 msgstr "S_podní panel"
 
-#: ../src/main_window.vala:84
+#: ../src/main_window.vala:81
 msgid "Show or hide the bottom panel"
 msgstr "Zobrazit nebo skrýt spodní panel"
 
 #. Symbols
-#: ../src/main_window.vala:407
+#: ../src/main_window.vala:402
 msgid "Symbols"
 msgstr "Symboly"
 
-#: ../src/main_window.vala:416
+#: ../src/main_window.vala:411
 msgid "Structure"
 msgstr "Struktura"
 
-#: ../src/main_window.vala:650
+#: ../src/main_window.vala:645
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Tento soubor (%s) je již otevřen v jiném okně aplikace LaTeXila."
 
-#: ../src/main_window.vala:652
+#: ../src/main_window.vala:647
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2269,24 +2311,24 @@ msgstr ""
 "Aplikace LaTeXila otevřela tento soubor bez umožnění úprav. Přesto jej "
 "chcete upravit?"
 
-#: ../src/main_window.vala:655
+#: ../src/main_window.vala:650
 msgid "Edit Anyway"
 msgstr "Přesto upravit"
 
-#: ../src/main_window.vala:656
+#: ../src/main_window.vala:651
 msgid "Don't Edit"
 msgstr "Neupravovat"
 
-#: ../src/main_window.vala:758
+#: ../src/main_window.vala:753
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Uložit před zavřením změny v dokumentu „%s“?"
 
-#: ../src/main_window.vala:838
+#: ../src/main_window.vala:833
 msgid "Read-Only"
 msgstr "Jen ke čtení"
 
-#: ../src/main_window.vala:856
+#: ../src/main_window.vala:851
 msgid "Save File"
 msgstr "Uložení souboru"
 
@@ -2321,7 +2363,7 @@ msgstr[0] "znaku"
 msgstr[1] "znacích"
 msgstr[2] "znacích"
 
-#: ../src/preferences_dialog.vala:379
+#: ../src/preferences_dialog.vala:344
 #, c-format
 msgid "Use the system fixed width font (%s)"
 msgstr "Použít systémové písmo s pevnou šířkou (%s)"
@@ -2569,10 +2611,6 @@ msgstr "Vymazat nejpoužívanější symboly"
 msgid "_New Window"
 msgstr "_Nové okno"
 
-#: ../src/ui/menus.ui.h:5
-msgid "LaTeXila _Fundraiser"
-msgstr "_Podpořit projekt"
-
 #: ../src/ui/preferences_dialog.ui.h:1
 msgid "Display line numbers"
 msgstr "Zobrazovat čísla řádků"
@@ -2677,3 +2715,6 @@ msgstr "Zvýrazňovat pravopisné chyby"
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Ostatní"
+
+#~ msgid "LaTeXila _Fundraiser"
+#~ msgstr "_Podpořit projekt"
