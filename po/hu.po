@@ -1,5 +1,5 @@
 # Hungarian translation for latexila.
-# Copyright (C) 2014-2016 Gnome Project.
+# Copyright (C) 2014-2016 Free Software Foundation, Inc.
 # This file is distributed under the same license as the latexila package.
 #
 # Balázs Úr <urbalazs@gmail.com>, 2014, 2015, 2016.
@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: LaTeXila master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-07-29 14:25+0000\n"
-"PO-Revision-Date: 2016-07-31 15:25+0200\n"
-"Last-Translator: Meskó Balázs <meskobalazs@gmail.com>\n"
+"POT-Creation-Date: 2016-08-11 13:24+0000\n"
+"PO-Revision-Date: 2016-08-19 21:33+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Lokalize 1.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #. (itstool) path: tool/label
@@ -120,7 +120,7 @@ msgid ""
 "navigate in it; lists of symbols to insert them in a document; and an "
 "integrated file browser."
 msgstr ""
-"Az oldalsáv három összetevővel rendelkezik: a dokumentum-szerkezet "
+"Az oldalpanel három összetevővel rendelkezik: a dokumentum-szerkezet "
 "megjelenítője, amely megkönnyíti a navigációt; a dokumentumba beilleszthető "
 "szimbólumok listája; és egy integrált fájlböngésző."
 
@@ -132,6 +132,21 @@ msgstr ""
 "A LaTeXila további funkciói között található a helyesírás-ellenőrzés, vagy "
 "a .tex és PDF fájl közötti váltásra használható előre és hátra történő "
 "keresés."
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:6
+#| msgid "Complete the LaTeX command"
+msgid "Completion of LaTeX commands"
+msgstr "LaTeX parancsok kiegészítése"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:7
+#| msgid "View the PDF file"
+msgid "Generating the PDF file"
+msgstr "A PDF fájl előállítása"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:8
+#| msgid "Show or hide the side panel"
+msgid "Document structure in the side panel"
+msgstr "Dokumentumszerkezet az oldalpanelen"
 
 #: ../data/org.gnome.latexila.desktop.in.in.h:1
 msgid "Integrated LaTeX Environment"
@@ -475,7 +490,8 @@ msgid ""
 "\n"
 "\\begin{document}\n"
 "\n"
-"\\begin{letter}{Destination\\\\Address of the destination\\\\Phone number of the destination}\n"
+"\\begin{letter}{Destination\\\\Address of the destination\\\\Phone number of "
+"the destination}\n"
 "\n"
 "\\opening{Dear Sir,}\n"
 "\n"
@@ -2263,11 +2279,11 @@ msgstr "A szerkesztő eszköztár megjelenítése vagy rejtése"
 
 #: ../src/main_window.vala:78
 msgid "_Side panel"
-msgstr "_Oldalsáv"
+msgstr "_Oldalpanel"
 
 #: ../src/main_window.vala:79
 msgid "Show or hide the side panel"
-msgstr "Az oldalsáv megjelenítése vagy elrejtése"
+msgstr "Az oldalpanel megjelenítése vagy elrejtése"
 
 #: ../src/main_window.vala:80
 msgid "_Bottom panel"
