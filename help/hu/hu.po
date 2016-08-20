@@ -1,5 +1,5 @@
-# Hungarian translation of LaTeXila_help
-# Copyright (C) 2014. Free Software Foundation, Inc.
+# Hungarian translation for LaTeXila help.
+# Copyright (C) 2014-2016 Free Software Foundation, Inc.
 # This file is distributed under the same license as the user help.
 #
 # Anca Tibor Attila <anca dot tibor at posteo dot de>, 2014.
@@ -7,15 +7,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LaTeXila_help master\n"
-"POT-Creation-Date: 2014-07-14 09:17+0000\n"
-"PO-Revision-Date: 2014-07-14 19:12+0200\n"
-"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"POT-Creation-Date: 2015-11-20 17:50+0000\n"
+"PO-Revision-Date: 2016-08-20 13:53+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at gmail dot com>\n"
 "Language: hu_HU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -414,41 +414,53 @@ msgstr "A cél a helyesírási hibák egyszerű javítása."
 msgid "Use the spell checking"
 msgstr "A helyesírás-ellenőrzés használata"
 
-# The gui Spell Checking should have the style of a menuitem in the original help description.
 #. (itstool) path: section/p
 #: C/spell_checking.page:18
+#| msgid ""
+#| "By default, when a LaTeX command is typed, proposals will be shown after "
+#| "two characters. This can be configured in the preferences dialog: "
+#| "<guiseq> <gui style=\"menu\">Edit</gui> <gui style=\"menu\">Preferences</"
+#| "gui> <gui style=\"tab\">Other</gui> </guiseq>"
 msgid ""
-"The spell checking can be activated or disabled via the menu: <guiseq> <gui "
-"style=\"menu\">Edit</gui> <gui style=\"menu\">Spell Check</gui> </guiseq>"
+"The default spell checking settings can be changed in the preferences "
+"dialog: <guiseq> <gui style=\"menu\">Edit</gui> <gui style=\"menu"
+"\">Preferences</gui> <gui style=\"tab\">Other</gui> </guiseq>"
 msgstr ""
-"A helyesírás-ellenőrzést a <guiseq><gui style=\"menu\">Szerkesztés</gui><gui "
-"style=\"menu\">Helyesírás-ellenőrzés</gui></guiseq> menüponttal lehet "
-"aktiválni vagy letiltani."
+"Az alapértelmezett helyesírás-ellenőrzési beállítások megváltoztathatók a "
+"beállítások párbeszédablakban: <guiseq> <gui style=\"menu\">Szerkesztés</gui> "
+"<gui style=\"menu\">Beállítások</gui> <gui style=\"tab\">Egyéb</gui> </guiseq>"
 
 #. (itstool) path: section/p
-#: C/spell_checking.page:26
+#: C/spell_checking.page:27
 msgid ""
-"Once the spell checking is activated, the misspelled words will be "
-"underlined in red. A right click on a misspelled word will show proposals."
+"The settings can also be changed on a file-by-file basis via the <gui style="
+"\"menu\">Tools</gui> menu."
 msgstr ""
-"A helyesírás-ellenőrzés aktiválását követően a helytelenül írt szavak "
-"pirossal lesznek aláhúzva. Ha a jobb egérgombbal ezekre a szavakra kattint, "
-"megjelennek a javítási javaslatok."
+"A beállítások fájlonkénti alapon is megváltoztathatók az <gui style=\"menu\">"
+"Eszközök</gui> menün keresztül."
 
-# "do a right click somewhere in the document" would be less ambiguous.
 #. (itstool) path: section/p
-#: C/spell_checking.page:31
-msgid "To change the language, do a right click on the document."
+#: C/spell_checking.page:32
+#| msgid ""
+#| "Once the spell checking is activated, the misspelled words will be "
+#| "underlined in red. A right click on a misspelled word will show proposals."
+msgid ""
+"If you activate the <gui style=\"menu\">Highlight Misspelled Words</gui> "
+"option, the misspelled words will be underlined in red in the document. A "
+"right click on a misspelled word will show proposals."
 msgstr ""
-"A nyelv megváltoztatásához kattintson a jobb egérgombbal a dokumentumba."
+"Ha bekapcsolja a <gui style=\"menu\">Helytelenül írt szavak kiemelése</gui> "
+"lehetőséget, akkor a helytelenül írt szavak "
+"pirossal lesznek aláhúzva a dokumentumban. Ha a jobb egérgombbal rákattint "
+"egy helytelenül írt szóra, akkor javaslatok fognak megjelenni."
 
 #. (itstool) path: section/title
-#: C/spell_checking.page:35
+#: C/spell_checking.page:40
 msgid "Dictionaries"
 msgstr "Szótárak"
 
 #. (itstool) path: section/p
-#: C/spell_checking.page:36
+#: C/spell_checking.page:41
 msgid ""
 "<link href=\"http://www.abisource.com/projects/enchant/\">Enchant</link> is "
 "used for the spell checking in LaTeXila. Enchant uses one or several "
@@ -460,14 +472,16 @@ msgstr ""
 "Aspell) használ."
 
 #. (itstool) path: section/p
-#: C/spell_checking.page:42
+#: C/spell_checking.page:47
+#| msgid ""
+#| "If your language is not listed when doing a right click, install a "
+#| "dictionary for one of the supported backends."
 msgid ""
-"If your language is not listed when doing a right click, install a "
-"dictionary for one of the supported backends."
+"If your language is not listed, install a dictionary for one of the "
+"supported backends."
 msgstr ""
-"Ha a jobb oldali egérgombbal való kattintáskor az Ön nyelve nem jelenik meg, "
-"akkor telepítsen egy szótárt, amely illik a támogatott háttérprogramok "
-"egyikéhez."
+"Ha az ön nyelve nincs felsorolva, akkor telepítsen egy szótárat a támogatott "
+"háttérprogramok egyikéhez."
 
 #. (itstool) path: page/title
 #: C/structure.page:10
@@ -657,3 +671,18 @@ msgid ""
 msgstr ""
 "Az <app>Evince</app> alkalmazást a <app>LaTeXila</app> kell indítsa, másképp "
 "nem működik a hátra ugró keresés."
+
+# The gui Spell Checking should have the style of a menuitem in the original help description.
+#~ msgid ""
+#~ "The spell checking can be activated or disabled via the menu: <guiseq> "
+#~ "<gui style=\"menu\">Edit</gui> <gui style=\"menu\">Spell Check</gui> </"
+#~ "guiseq>"
+#~ msgstr ""
+#~ "A helyesírás-ellenőrzést a <guiseq><gui style=\"menu\">Szerkesztés</"
+#~ "gui><gui style=\"menu\">Helyesírás-ellenőrzés</gui></guiseq> menüponttal "
+#~ "lehet aktiválni vagy letiltani."
+
+# "do a right click somewhere in the document" would be less ambiguous.
+#~ msgid "To change the language, do a right click on the document."
+#~ msgstr ""
+#~ "A nyelv megváltoztatásához kattintson a jobb egérgombbal a dokumentumba."
