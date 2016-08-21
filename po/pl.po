@@ -1,20 +1,18 @@
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Aviary.pl
-# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
-# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
-# gnomepl@aviary.pl
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Polish translation for latexila.
+# Copyright © 2014-2016 the latexila authors.
+# This file is distributed under the same license as the latexila package.
 # Paweł Żołnowski <pawel@zolnowski.name>, 2014.
 # Piotr Drąg <piotrdrag@gmail.com>, 2014-2016.
-# Aviary.pl <gnomepl@aviary.pl>, 2014-2016.
+# Aviary.pl <community-poland@mozilla.org>, 2014-2016.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-14 23:40+0200\n"
-"PO-Revision-Date: 2016-08-14 23:42+0200\n"
+"POT-Creation-Date: 2016-08-21 15:28+0200\n"
+"PO-Revision-Date: 2016-08-21 15:29+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -98,7 +96,7 @@ msgid ""
 "simplifying as most as possible the writing of this LaTeX code."
 msgstr ""
 "Program LaTeXila to zintegrowane środowisko LaTeX-a dla GNOME. Ideą programu "
-"jest jak największe uproszczenie tworzenia kodu LaTeX-a, z którym użytkownik "
+"jest jak największe uproszczenie tworzenia kodu LaTeX-a, z którym użytkownik "
 "programu LaTeXila ma zawsze bezpośredni kontakt."
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:2
@@ -106,8 +104,8 @@ msgid ""
 "To help the writing of the LaTeX markup, auto-completion is available as "
 "well as menus and toolbars with the principal commands."
 msgstr ""
-"W celu ułatwienia pisania znaczników LaTeX-a dostępne jest automatyczne "
-"uzupełnianie, a także menu i paski narzędziowe z podstawowymi poleceniami."
+"W celu ułatwienia pisania znaczników LaTeX-a dostępne jest automatyczne "
+"uzupełnianie, a także menu i paski narzędziowe z podstawowymi poleceniami."
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:3
 msgid ""
@@ -115,8 +113,8 @@ msgid ""
 "convert and view a document in one click. And projects containing several ."
 "tex files are managed easily."
 msgstr ""
-"Nowe dokumenty tworzone są z szablonów. Dzięki przyciskom można jednym "
-"kliknięciem skompilować, skonwertować lub wyświetlić dokument. Z łatwością "
+"Nowe dokumenty tworzone są z szablonów. Dzięki przyciskom można jednym "
+"kliknięciem skompilować, skonwertować lub wyświetlić dokument. Z łatwością "
 "również można zarządzać projektami zawierającymi wiele plików .tex."
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:4
@@ -125,8 +123,8 @@ msgid ""
 "navigate in it; lists of symbols to insert them in a document; and an "
 "integrated file browser."
 msgstr ""
-"Panel boczny programu składa się z trzech elementów: struktury dokumentu do "
-"łatwej nawigacji, listy symboli do umieszczenia w dokumencie oraz "
+"Panel boczny programu składa się z trzech elementów: struktury dokumentu do "
+"łatwej nawigacji, listy symboli do umieszczenia w dokumencie oraz "
 "zintegrowanej przeglądarki plików."
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:5
@@ -135,7 +133,7 @@ msgid ""
 "backward search to switch between the .tex and the PDF."
 msgstr ""
 "Program LaTeXila posiada również inne funkcje, takie jak sprawdzanie pisowni "
-"i szybkie przełączanie pomiędzy plikiem .tex a plikiem PDF."
+"i szybkie przełączanie pomiędzy plikiem .tex a plikiem PDF."
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:6
 msgid "Completion of LaTeX commands"
@@ -147,7 +145,7 @@ msgstr "Tworzenie pliku PDF"
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:8
 msgid "Document structure in the side panel"
-msgstr "Struktura dokumentu w panelu bocznym"
+msgstr "Struktura dokumentu w panelu bocznym"
 
 #: ../data/org.gnome.latexila.desktop.in.in.h:1
 msgid "Integrated LaTeX Environment"
@@ -180,10 +178,10 @@ msgid ""
 "the font named in the \"Editor Font\" option will be used instead of the "
 "system font."
 msgstr ""
-"Określa, czy w obszarze redagowania tekstu powinna być używana domyślna "
-"czcionka systemowa o stałej szerokości zamiast czcionki właściwej dla "
+"Określa, czy w obszarze redagowania tekstu powinna być używana domyślna "
+"czcionka systemowa o stałej szerokości zamiast czcionki właściwej dla "
 "programu LaTeXila. Jeśli opcja jest wyłączona, używana jest czcionka "
-"określona w opcji „Czcionka edytora”."
+"określona w opcji „Czcionka edytora”."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:3
 msgid "Editor Font"
@@ -194,7 +192,7 @@ msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
 msgstr ""
-"Dowolna czcionka używana w obszarze redagowania tekstu. Opcja jest brana pod "
+"Dowolna czcionka używana w obszarze redagowania tekstu. Opcja jest brana pod "
 "uwagę tylko, gdy opcja „Użycie domyślnej czcionki” jest wyłączona."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:5
@@ -263,7 +261,7 @@ msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr ""
-"Określa liczbę spacji, używanych podczas wyświetlania w zastępstwie znaku "
+"Określa liczbę spacji, używanych podczas wyświetlania w zastępstwie znaku "
 "tabulacji."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:17
@@ -289,7 +287,7 @@ msgstr "Wyświetlanie numerów wierszy"
 #: ../data/org.gnome.latexila.gschema.xml.in.h:22
 msgid "Whether LaTeXila should display line numbers in the editing area."
 msgstr ""
-"Określa, czy numery wierszy powinny być wyświetlane w obszarze redagowania."
+"Określa, czy numery wierszy powinny być wyświetlane w obszarze redagowania."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:23
 msgid "Highlight Current Line"
@@ -325,7 +323,7 @@ msgid ""
 "take the best language available based on the environment."
 msgstr ""
 "Domyślny język używany do sprawdzania pisowni. Pusty ciąg powoduje wybranie "
-"najlepszego dostępnego języka w oparciu o środowisko."
+"najlepszego dostępnego języka w oparciu o środowisko."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:31
 msgid "Main toolbar is visible"
@@ -387,7 +385,7 @@ msgstr "Wyświetlanie ostrzeżeń budowania"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:42
 msgid "Show build output badboxes"
-msgstr "Wyświetlanie błędnych pudełek w komunikatach budowania"
+msgstr "Wyświetlanie błędnych pudełek w komunikatach budowania"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:43
 msgid "Interactive completion"
@@ -465,7 +463,7 @@ msgstr "Wyświetlanie plików budowania"
 msgid ""
 "Show files with an extension present in preferences.latex.clean-extensions."
 msgstr ""
-"Wyświetlanie plików z rozszerzeniem obecnym w „preferences.latex.clean-"
+"Wyświetlanie plików z rozszerzeniem obecnym w „preferences.latex.clean-"
 "extensions”."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:60 ../src/file_browser.vala:369
@@ -523,8 +521,8 @@ msgstr ""
 "\\usepackage[utf8]{inputenc}\n"
 "\\usepackage{lmodern}\n"
 "\n"
-"\\address{Imię i nazwisko nadawcy\\\\Adres\\\\Numer telefonu}\n"
-"\\signature{Imię i nazwisko nadawcy}\n"
+"\\address{Imię i nazwisko nadawcy\\\\Adres\\\\Numer telefonu}\n"
+"\\signature{Imię i nazwisko nadawcy}\n"
 "\n"
 "\\begin{document}\n"
 "\n"
@@ -609,12 +607,12 @@ msgstr "Usuń"
 #: ../src/build_tool_dialog.vala:318 ../src/build_tools_preferences.vala:354
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:282
 msgid "Move up"
-msgstr "Przesuń w górę"
+msgstr "Przesuń w górę"
 
 #: ../src/build_tool_dialog.vala:369 ../src/build_tools_preferences.vala:406
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:294
 msgid "Move down"
-msgstr "Przesuń w dół"
+msgstr "Przesuń w dół"
 
 #: ../src/build_tool_dialog.vala:573 ../src/build_tools_preferences.vala:177
 #: ../src/latex_menu.vala:52 ../src/structure.vala:783
@@ -623,7 +621,7 @@ msgstr "Etykieta"
 
 #: ../src/build_tool_dialog.vala:578
 msgid "You can select this arrow and copy/paste it!"
-msgstr "Można zaznaczyć tę strzałkę, a następnie skopiować i wkleić."
+msgstr "Można zaznaczyć tę strzałkę, a następnie skopiować i wkleić."
 
 #: ../src/build_tool_dialog.vala:594
 msgid "Description"
@@ -771,7 +769,7 @@ msgstr "_Zapisz"
 msgid ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr ""
-"Są dokumenty (%d) z niezapisanymi zmianami. Zapisać zmiany przed zamknięciem?"
+"Są dokumenty (%d) z niezapisanymi zmianami. Zapisać zmiany przed zamknięciem?"
 
 #: ../src/dialogs.vala:72
 msgid "Select the documents you want to save:"
@@ -814,7 +812,7 @@ msgstr "Plik %s został zmieniony przez inny program."
 
 #: ../src/document_tab.vala:284
 msgid "Do you want to drop your changes and reload the file?"
-msgstr "Porzucić zmiany i wczytać plik ponownie?"
+msgstr "Porzucić zmiany i wczytać plik ponownie?"
 
 #: ../src/document_tab.vala:286
 msgid "Do you want to reload the file?"
@@ -870,7 +868,7 @@ msgstr ""
 
 #: ../src/document.vala:595
 msgid "Do you want to save the file in a safer place?"
-msgstr "Zapisać plik w bezpiecznym miejscu?"
+msgstr "Zapisać plik w bezpiecznym miejscu?"
 
 #: ../src/document.vala:598 ../src/main_window_file.vala:44
 #: ../src/main_window.vala:765
@@ -909,19 +907,19 @@ msgstr "Przechodzi do katalogu aktywnego dokumentu"
 
 #: ../src/file_browser.vala:303
 msgid "Open in a file manager"
-msgstr "Otwórz w menedżerze plików"
+msgstr "Otwórz w menedżerze plików"
 
 #: ../src/file_browser.vala:305
 msgid "Open the current directory in a file manager"
-msgstr "Otwiera bieżący katalog w menedżerze plików"
+msgstr "Otwiera bieżący katalog w menedżerze plików"
 
 #: ../src/file_browser.vala:327
 msgid "Open in a terminal"
-msgstr "Otwórz w terminalu"
+msgstr "Otwórz w terminalu"
 
 #: ../src/file_browser.vala:328
 msgid "Open the current directory in a terminal"
-msgstr "Otwiera bieżący katalog w terminalu"
+msgstr "Otwiera bieżący katalog w terminalu"
 
 #: ../src/file_browser.vala:417
 msgid "File System"
@@ -943,7 +941,7 @@ msgstr "Tworzy nowy dokument"
 #: ../src/latexila_app.vala:84
 msgid "Create a new top-level window in an existing instance of LaTeXila"
 msgstr ""
-"Tworzy nowe główne okno w ramach istniejącej instancji programu LaTeXila"
+"Tworzy nowe główne okno w ramach istniejącej instancji programu LaTeXila"
 
 #: ../src/latexila_app.vala:223
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
@@ -951,14 +949,14 @@ msgstr "Program LaTeXila to zintegrowane środowisko LaTeX-a dla GNOME"
 
 #: ../src/latexila_app.vala:262 ../src/main_window.vala:71
 msgid "About LaTeXila"
-msgstr "O programie LaTeXila"
+msgstr "O programie LaTeXila"
 
 #: ../src/latexila_app.vala:263
 msgid "translator-credits"
 msgstr ""
 "Paweł Żołnowski <pawel@zolnowski.name>, 2014\n"
 "Piotr Drąg <piotrdrag@gmail.com>, 2014-2016\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2014-2016"
+"Aviary.pl <community-poland@mozilla.org>, 2014-2016"
 
 #. LaTeX: Sectioning
 #: ../src/latex_menu.vala:32
@@ -1143,7 +1141,7 @@ msgstr "Czcionka bezszeryfowa — \\sffamily"
 
 #: ../src/latex_menu.vala:154
 msgid "Monospace - \\ttfamily"
-msgstr "Czcionka o stałej szerokości — \\ttfamily"
+msgstr "Czcionka o stałej szerokości — \\ttfamily"
 
 #: ../src/latex_menu.vala:156
 msgid "F_ont Series"
@@ -1192,7 +1190,7 @@ msgstr "Tabela — \\begin{tabular}"
 
 #: ../src/latex_menu.vala:180
 msgid "Multicolumn - \\multicolumn"
-msgstr "Łączenie komórek w wierszu — \\multicolumn"
+msgstr "Łączenie komórek w wierszu — \\multicolumn"
 
 #: ../src/latex_menu.vala:182
 msgid "Horizontal line - \\hline"
@@ -1680,7 +1678,7 @@ msgstr "Wyszukiwanie do przodu jest niemożliwe."
 
 #: ../src/liblatexila/latexila-synctex.c:526
 msgid "Can not communicate with evince."
-msgstr "Nie można się połączyć z programem Evince."
+msgstr "Nie można się połączyć z programem Evince."
 
 #: ../src/liblatexila/latexila-synctex.c:556
 #, c-format
@@ -1957,7 +1955,7 @@ msgstr "_Usuń wcięcie"
 
 #: ../src/main_window_edit.vala:61
 msgid "Unindent the selected lines"
-msgstr "Usuwa wcięcie z zaznaczonych wierszy"
+msgstr "Usuwa wcięcie z zaznaczonych wierszy"
 
 #: ../src/main_window_edit.vala:63 ../src/main_window_structure.vala:44
 msgid "_Comment"
@@ -1973,7 +1971,7 @@ msgstr "_Usuń komentarz"
 
 #: ../src/main_window_edit.vala:68
 msgid "Uncomment the selected lines (remove the character \"%\")"
-msgstr "Usuwa komentarz z zaznaczonego wiersza (usuwa znak „%”)"
+msgstr "Usuwa komentarz z zaznaczonego wiersza (usuwa znak „%”)"
 
 #: ../src/main_window_edit.vala:71
 msgid "_Completion"
@@ -2025,11 +2023,11 @@ msgstr "Zapisuje bieżący pliku za pomocą innej nazwy"
 
 #: ../src/main_window_file.vala:47
 msgid "Create _Template From Document..."
-msgstr "U_twórz szablon z dokumentu…"
+msgstr "U_twórz szablon z dokumentu…"
 
 #: ../src/main_window_file.vala:48
 msgid "Create a new template from the current document"
-msgstr "Tworzy nowy szablon z bieżącego dokumentu"
+msgstr "Tworzy nowy szablon z bieżącego dokumentu"
 
 #: ../src/main_window_file.vala:50
 msgid "_Manage Personal Templates..."
@@ -2104,19 +2102,19 @@ msgstr "Komentuje zaznaczony element struktury"
 
 #: ../src/main_window_structure.vala:47
 msgid "Shift _Left"
-msgstr "Przesuń w _lewo"
+msgstr "Przesuń w _lewo"
 
 #: ../src/main_window_structure.vala:48
 msgid "Shift the selected structure item to the left (e.g. section → chapter)"
-msgstr "Przesuwa zaznaczony element struktury w lewo (np. sekcja → rozdział)"
+msgstr "Przesuwa zaznaczony element struktury w lewo (np. sekcja → rozdział)"
 
 #: ../src/main_window_structure.vala:51
 msgid "Shift _Right"
-msgstr "Przesuń w p_rawo"
+msgstr "Przesuń w p_rawo"
 
 #: ../src/main_window_structure.vala:52
 msgid "Shift the selected structure item to the right (e.g. chapter → section)"
-msgstr "Przesuwa zaznaczony element struktury w prawo (np. rozdział → sekcja)"
+msgstr "Przesuwa zaznaczony element struktury w prawo (np. rozdział → sekcja)"
 
 #: ../src/main_window_structure.vala:55
 msgid "_Open File"
@@ -2152,7 +2150,7 @@ msgstr "_Wyróżnianie błędów pisowni"
 
 #: ../src/main_window_tools.vala:39
 msgid "Highlight misspelled words in the current document"
-msgstr "Wyróżnia błędy pisowni w bieżącym dokumencie"
+msgstr "Wyróżnia błędy pisowni w bieżącym dokumencie"
 
 #: ../src/main_window.vala:28 ../src/ui/menus.ui.h:6
 msgid "_Quit"
@@ -2206,11 +2204,11 @@ msgstr "Wyszukiwanie tekstu"
 
 #: ../src/main_window.vala:44
 msgid "Find and _Replace"
-msgstr "Z_najdź i zastąp"
+msgstr "Z_najdź i zastąp"
 
 #: ../src/main_window.vala:45
 msgid "Search for and replace text"
-msgstr "Wyszukiwanie i zamiana tekstu"
+msgstr "Wyszukiwanie i zamiana tekstu"
 
 #: ../src/main_window.vala:46
 msgid "_Go to Line..."
@@ -2226,7 +2224,7 @@ msgstr "_Wyszukaj do przodu"
 
 #: ../src/main_window.vala:49
 msgid "Jump to the associated position in the PDF file"
-msgstr "Przechodzi do powiązanej pozycji w pliku PDF"
+msgstr "Przechodzi do powiązanej pozycji w pliku PDF"
 
 #. Projects
 #: ../src/main_window.vala:52
@@ -2275,7 +2273,7 @@ msgstr "Materiały LaTeX-a programu Kile"
 
 #: ../src/main_window.vala:70 ../src/ui/menus.ui.h:5
 msgid "_About"
-msgstr "_O programie"
+msgstr "_O programie"
 
 #: ../src/main_window.vala:76
 msgid "_Main Toolbar"
@@ -2322,14 +2320,14 @@ msgstr "Struktura"
 #: ../src/main_window.vala:650
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
-msgstr "Ten plik (%s) jest już otwarty w innym oknie programu."
+msgstr "Ten plik (%s) jest już otwarty w innym oknie programu."
 
 #: ../src/main_window.vala:652
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
 msgstr ""
-"Program LaTeXila otworzył tę instancję pliku w formie niemożliwej do "
+"Program LaTeXila otworzył tę instancję pliku w formie niemożliwej do "
 "modyfikowania. Modyfikować go mimo to?"
 
 #: ../src/main_window.vala:655
@@ -2343,7 +2341,7 @@ msgstr "Nie modyfikuj"
 #: ../src/main_window.vala:758
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
-msgstr "Zapisać zmiany w dokumencie „%s” przed zamknięciem?"
+msgstr "Zapisać zmiany w dokumencie „%s” przed zamknięciem?"
 
 #: ../src/main_window.vala:838
 msgid "Read-Only"
@@ -2387,7 +2385,7 @@ msgstr[2] "znaków"
 #: ../src/preferences_dialog.vala:344
 #, c-format
 msgid "Use the system fixed width font (%s)"
-msgstr "Użycie systemowej czcionki o stałej szerokości (%s)"
+msgstr "Użycie systemowej czcionki o stałej szerokości (%s)"
 
 #: ../src/project_dialogs.vala:28
 msgid "New Project"
@@ -2402,7 +2400,7 @@ msgstr "Katalog"
 #: ../src/project_dialogs.vala:102
 #, c-format
 msgid "There is a conflict with the project \"%s\"."
-msgstr "Wystąpił konflikt z projektem „%s”."
+msgstr "Wystąpił konflikt z projektem „%s”."
 
 #: ../src/project_dialogs.vala:119
 msgid "Configure Project"
@@ -2435,7 +2433,7 @@ msgstr "Wyczyść _wszystko"
 
 #: ../src/project_dialogs.vala:321
 msgid "The Main File is not in the directory."
-msgstr "Plik główny nie znajduje się w katalogu."
+msgstr "Plik główny nie znajduje się w katalogu."
 
 #: ../src/search.vala:40
 msgid "Go to Line:"
@@ -2468,7 +2466,7 @@ msgstr "Wyszukiwanie"
 
 #: ../src/search.vala:320
 msgid "Case sensitive"
-msgstr "Rozróżnianie małych i wielkich liter"
+msgstr "Rozróżnianie małych i wielkich liter"
 
 #: ../src/search.vala:323
 msgid "Entire words only"
@@ -2484,7 +2482,7 @@ msgstr "Nie odnaleziono"
 #: ../src/search.vala:486
 #, c-format
 msgid "Match %d of %d"
-msgstr "Wynik %d z %d"
+msgstr "Wynik %d z %d"
 
 #. Translators: %d is the total number of search occurrences.
 #: ../src/search.vala:491
@@ -2517,13 +2515,13 @@ msgstr "Wyświetla tabele"
 
 #: ../src/structure.vala:192
 msgid "Show figures and images"
-msgstr "Wyświetla rysunki i obrazy"
+msgstr "Wyświetla rysunki i obrazy"
 
 #. Translators: do not translate the words TODO and FIXME. They are special
 #. comments that can be inserted in LaTeX documents.
 #: ../src/structure.vala:195
 msgid "Show TODOs and FIXMEs"
-msgstr "Wyświetla elementy TODO i FIXME"
+msgstr "Wyświetla elementy TODO i FIXME"
 
 #: ../src/structure.vala:634
 #, c-format
@@ -2560,12 +2558,12 @@ msgstr "skomentuj"
 #. Translators: it's a verb
 #: ../src/structure.vala:738
 msgid "shift left"
-msgstr "przesuń w lewo"
+msgstr "przesuń w lewo"
 
 #. Translators: it's a verb
 #: ../src/structure.vala:740
 msgid "shift right"
-msgstr "przesuń w prawo"
+msgstr "przesuń w prawo"
 
 #: ../src/structure.vala:741
 msgid "open file"
@@ -2675,7 +2673,7 @@ msgstr "Czcionka"
 #: ../src/ui/preferences_dialog.ui.h:13
 #, no-c-format
 msgid "_Use the system fixed width font (%s)"
-msgstr "_Użycie czcionki systemowej o stałej szerokości (%s)"
+msgstr "_Użycie czcionki systemowej o stałej szerokości (%s)"
 
 #: ../src/ui/preferences_dialog.ui.h:14
 msgid "Editor _font: "
@@ -2691,7 +2689,7 @@ msgstr "Schemat kolorów"
 
 #: ../src/ui/preferences_dialog.ui.h:17
 msgid "Font & Colors"
-msgstr "Czcionki i kolory"
+msgstr "Czcionki i kolory"
 
 #: ../src/ui/preferences_dialog.ui.h:18
 msgid "Interactive completion after"
@@ -2718,8 +2716,8 @@ msgid ""
 "The spell checking settings can also be changed on a file-by-file basis via "
 "the Tools menu."
 msgstr ""
-"Ustawienia sprawdzania pisowni można zmieniać także dla konkretnych plików w "
-"menu Narzędzia."
+"Ustawienia sprawdzania pisowni można zmieniać także dla konkretnych plików "
+"w menu Narzędzia."
 
 #: ../src/ui/preferences_dialog.ui.h:25
 msgid "Default Spell Checking Settings"
