@@ -23,12 +23,12 @@ public class DocumentView : Gtk.SourceView
 {
     public const double SCROLL_MARGIN = 0.02;
 
-    private static const string METADATA_ATTRIBUTE_SPELL_LANGUAGE =
+    private const string METADATA_ATTRIBUTE_SPELL_LANGUAGE =
         "metadata::latexila-spell-language";
-    private static const string METADATA_ATTRIBUTE_INLINE_SPELL =
+    private const string METADATA_ATTRIBUTE_INLINE_SPELL =
         "metadata::latexila-inline-spell";
-    private static const string INLINE_SPELL_ENABLED_STR = "1";
-    private static const string INLINE_SPELL_DISABLED_STR = "0";
+    private const string INLINE_SPELL_ENABLED_STR = "1";
+    private const string INLINE_SPELL_DISABLED_STR = "0";
 
     private GLib.Settings _editor_settings;
     private Pango.FontDescription _font_desc;

@@ -28,7 +28,7 @@ public class MostUsedSymbols : GLib.Object
     private Gtk.ListStore _store;
 
     // The column containing the number of times a symbol has been used.
-    private static const int SYMBOL_COLUMN_NUM = SymbolColumn.N_COLUMNS;
+    private const int SYMBOL_COLUMN_NUM = SymbolColumn.N_COLUMNS;
 
     private MostUsedSymbols ()
     {

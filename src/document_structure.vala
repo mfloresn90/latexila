@@ -35,7 +35,7 @@ public class DocumentStructure : GLib.Object
 
     private unowned Document _doc;
     private int _nb_marks = 0;
-    private static const string MARK_NAME_PREFIX = "struct_item_";
+    private const string MARK_NAME_PREFIX = "struct_item_";
     private TextMark? _end_document_mark = null;
 
     private StructureModel _model = null;
@@ -50,11 +50,11 @@ public class DocumentStructure : GLib.Object
 
     // Only captions, TODOs and FIXMEs are truncated if needed, because the other
     // items are normally short enough.
-    private static const int ITEM_MAX_LENGTH = 60;
+    private const int ITEM_MAX_LENGTH = 60;
 
-    private static const int MAX_NB_LINES_TO_PARSE = 2000;
+    private const int MAX_NB_LINES_TO_PARSE = 2000;
     private int _start_parsing_line = 0;
-    private static const bool _measure_parsing_time = false;
+    private const bool _measure_parsing_time = false;
     private Timer _timer = null;
 
     private static string[] _section_names = null;
