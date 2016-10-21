@@ -604,7 +604,7 @@ public class MainWindow : ApplicationWindow
 
     public Gee.List<DocumentView> get_views ()
     {
-        Gee.List<DocumentView> all_views = new Gee.LinkedList<Document> ();
+        Gee.List<DocumentView> all_views = new Gee.LinkedList<DocumentView> ();
 
         if (_documents_panel == null)
             return all_views;
