@@ -235,7 +235,7 @@ public class SearchAndReplace : GLib.Object
             Document doc = _search_context.get_buffer () as Document;
             doc.get_selection_bounds (out iter, null);
 
-            if (_search_context.backward (iter, out match_start, out match_end))
+            if (_search_context.backward2 (iter, out match_start, out match_end, null))
             {
                 doc.select_range (match_start, match_end);
                 doc.tab.view.scroll_to_cursor ();
@@ -505,7 +505,7 @@ public class SearchAndReplace : GLib.Object
         Document doc = _search_context.get_buffer () as Document;
         doc.get_selection_bounds (null, out iter);
 
-        if (_search_context.forward (iter, out match_start, out match_end))
+        if (_search_context.forward2 (iter, out match_start, out match_end, null))
         {
             doc.select_range (match_start, match_end);
             doc.tab.view.scroll_to_cursor ();
@@ -526,7 +526,7 @@ public class SearchAndReplace : GLib.Object
 
         try
         {
-            if (! _search_context.replace (match_start, match_end,
+            if (! _search_context.replace2 (match_start, match_end,
                 _entry_replace.text, -1))
                 search_forward ();
         }
