@@ -275,8 +275,11 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
             else
                 pixbuf = _icon_choice;
 
-            SourceCompletionItem item = new SourceCompletionItem (
-                choice.name, choice.name, pixbuf, arg_info ?? cmd_info);
+            SourceCompletionItem item = SourceCompletionItem.new2 ();
+            item.set_label (choice.name);
+            item.set_text (choice.name);
+            item.set_icon (pixbuf);
+            item.set_info (arg_info ?? cmd_info);
             items.prepend (item);
         }
 
@@ -327,8 +330,9 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
         // No match, show a message so the completion widget doesn't disappear.
         else
         {
-            var dummy_proposal = new SourceCompletionItem (_("No matching proposal"),
-                "", null, null);
+            SourceCompletionItem dummy_proposal = SourceCompletionItem.new2 ();
+            dummy_proposal.set_label (_("No matching proposal"));
+            dummy_proposal.set_text ("");
             filtered_proposals.prepend (dummy_proposal);
         }
 
@@ -922,11 +926,11 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
                 Gdk.Pixbuf pixbuf = _current_command.package != null
                     ? _icon_package_required : _icon_cmd;
 
-                var item = new SourceCompletionItem (_current_command.name,
-                    get_command_text_to_insert (_current_command),
-                    pixbuf,
-                    get_command_info (_current_command));
-
+                SourceCompletionItem item = SourceCompletionItem.new2 ();
+                item.set_label (_current_command.name);
+                item.set_text (get_command_text_to_insert (_current_command));
+                item.set_icon (pixbuf);
+                item.set_info (get_command_info (_current_command));
                 _proposals.prepend (item);
 
                 // We don't need to store commands that have no arguments,
