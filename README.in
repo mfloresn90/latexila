@@ -18,6 +18,7 @@ Requirements
 GLib >= @GLIB_REQUIRED_VERSION@
 GTK+ >= @GTK_REQUIRED_VERSION@
 GtkSourceView >= @GTKSOURCEVIEW_REQUIRED_VERSION@
+Gtef >= @GTEF_REQUIRED_VERSION@
 gspell >= @GSPELL_REQUIRED_VERSION@
 gee-0.8 >= @GEE_REQUIRED_VERSION@
 gettext
@@ -30,6 +31,10 @@ yelp-tools
 
 If you are installing LaTeXila from a tarball, you don't have to install Vala
 because the C code is already generated.
+
+Gtef is hosted at:
+
+    https://github.com/swilmet/gtef
 
 
 Installation
