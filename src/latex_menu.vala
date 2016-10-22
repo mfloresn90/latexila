@@ -549,7 +549,7 @@ public class LatexMenu : Gtk.ActionGroup
         return_if_fail (main_window.active_tab != null);
 
         if (main_window.active_document.get_selection_type ()
-            == SelectionType.MULTIPLE_LINES)
+            == Gtef.SelectionType.MULTIPLE_LINES)
             text_buffer_insert (@"\\begin{$style}\n", @"\n\\end{$style}");
         else
             text_buffer_insert (@"{\\$style ", "}", @"\\$style ");

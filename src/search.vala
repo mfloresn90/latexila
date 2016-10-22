@@ -378,7 +378,7 @@ public class SearchAndReplace : GLib.Object
         // if text is selected in the active document, and if this text contains no \n,
         // search this text
         Document doc = _main_window.active_document;
-        if (doc.get_selection_type () == SelectionType.ONE_LINE)
+        if (doc.get_selection_type () == Gtef.SelectionType.ON_SAME_LINE)
         {
             TextIter start, end;
             doc.get_selection_bounds (out start, out end);
