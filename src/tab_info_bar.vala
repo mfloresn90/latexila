@@ -23,36 +23,11 @@ public class TabInfoBar : Gtef.InfoBar
 {
     public TabInfoBar (string primary_msg, string secondary_msg, MessageType msg_type)
     {
-        Box content_area = get_content_area () as Box;
+        set_message_type (msg_type);
 
-        // icon
-        string icon_name;
-        switch (msg_type)
-        {
-            case MessageType.ERROR:
-                icon_name = "dialog-error";
-                break;
-            case MessageType.QUESTION:
-                icon_name = "dialog-question";
-                break;
-            case MessageType.WARNING:
-                icon_name = "dialog-warning";
-                break;
-            case MessageType.INFO:
-            default:
-                icon_name = "dialog-information";
-                break;
-        }
-
-        Image image = new Image.from_icon_name (icon_name, IconSize.DIALOG);
-        image.set_valign (Align.START);
-        content_area.pack_start (image, false, false, 0);
-
-        // text
         Grid grid = new Grid ();
         grid.orientation = Orientation.VERTICAL;
         grid.set_row_spacing (10);
-        content_area.pack_start (grid);
 
         Label primary_label = Gtef.InfoBar.create_label ();
         primary_label.set_markup ("<b>" + primary_msg + "</b>");
@@ -62,7 +37,9 @@ public class TabInfoBar : Gtef.InfoBar
         secondary_label.set_markup ("<small>" + secondary_msg + "</small>");
         grid.add (secondary_label);
 
-        set_message_type (msg_type);
+        Box content_area = get_content_area () as Box;
+        content_area.pack_start (grid);
+
         show_all ();
     }
 
