@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2010-2011 Sébastien Wilmet
+ * Copyright © 2010-2011, 2016 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 
 using Gtk;
 
-public class TabInfoBar : InfoBar
+public class TabInfoBar : Gtef.InfoBar
 {
     public TabInfoBar (string primary_msg, string secondary_msg, MessageType msg_type)
     {
@@ -54,19 +54,13 @@ public class TabInfoBar : InfoBar
         grid.set_row_spacing (10);
         content_area.pack_start (grid);
 
-        Label primary_label = new Label ("<b>" + primary_msg + "</b>");
+        Label primary_label = Gtef.InfoBar.create_label ();
+        primary_label.set_markup ("<b>" + primary_msg + "</b>");
         grid.add (primary_label);
-        primary_label.set_halign (Align.START);
-        primary_label.set_selectable (true);
-        primary_label.set_line_wrap (true);
-        primary_label.set_use_markup (true);
 
-        Label secondary_label = new Label ("<small>" + secondary_msg + "</small>");
+        Label secondary_label = Gtef.InfoBar.create_label ();
+        secondary_label.set_markup ("<small>" + secondary_msg + "</small>");
         grid.add (secondary_label);
-        secondary_label.set_halign (Align.START);
-        secondary_label.set_selectable (true);
-        secondary_label.set_line_wrap (true);
-        secondary_label.set_use_markup (true);
 
         set_message_type (msg_type);
         show_all ();
