@@ -203,19 +203,19 @@ public class MainWindowEdit
     public void on_cut ()
     {
         return_if_fail (_main_window.active_tab != null);
-        _main_window.active_view.cut_selection ();
+        _main_window.active_view.cut_clipboard ();
     }
 
     public void on_copy ()
     {
         return_if_fail (_main_window.active_tab != null);
-        _main_window.active_view.copy_selection ();
+        _main_window.active_view.copy_clipboard ();
     }
 
     public void on_paste ()
     {
         return_if_fail (_main_window.active_tab != null);
-        _main_window.active_view.my_paste_clipboard ();
+        _main_window.active_view.paste_clipboard ();
     }
 
     public void on_delete ()
@@ -227,7 +227,7 @@ public class MainWindowEdit
     public void on_select_all ()
     {
         return_if_fail (_main_window.active_tab != null);
-        _main_window.active_view.my_select_all ();
+        _main_window.active_view.select_all ();
     }
 
     public void on_indent ()

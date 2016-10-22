@@ -19,10 +19,8 @@
 
 using Gtk;
 
-public class DocumentView : Gtk.SourceView
+public class DocumentView : Gtef.View
 {
-    public const double SCROLL_MARGIN = 0.02;
-
     private const string METADATA_ATTRIBUTE_SPELL_LANGUAGE =
         "metadata::latexila-spell-language";
     private const string METADATA_ATTRIBUTE_INLINE_SPELL =
@@ -91,53 +89,6 @@ public class DocumentView : Gtk.SourceView
 
         // forward search
         button_release_event.connect (on_button_release_event);
-    }
-
-    public void scroll_to_cursor (double margin = 0.25)
-    {
-        scroll_to_mark (this.buffer.get_insert (), margin, false, 0, 0);
-    }
-
-    public void cut_selection ()
-    {
-        return_if_fail (this.buffer != null);
-        Clipboard clipboard = get_clipboard (Gdk.SELECTION_CLIPBOARD);
-        this.buffer.cut_clipboard (clipboard, ! ((Document) this.buffer).readonly);
-        scroll_to_cursor (SCROLL_MARGIN);
-        grab_focus ();
-    }
-
-    public void copy_selection ()
-    {
-        return_if_fail (this.buffer != null);
-        Clipboard clipboard = get_clipboard (Gdk.SELECTION_CLIPBOARD);
-        this.buffer.copy_clipboard (clipboard);
-        grab_focus ();
-    }
-
-    public void my_paste_clipboard ()
-    {
-        return_if_fail (this.buffer != null);
-        Clipboard clipboard = get_clipboard (Gdk.SELECTION_CLIPBOARD);
-        this.buffer.paste_clipboard (clipboard, null,
-            ! ((Document) this.buffer).readonly);
-        scroll_to_cursor (SCROLL_MARGIN);
-        grab_focus ();
-    }
-
-    public void delete_selection ()
-    {
-        return_if_fail (this.buffer != null);
-        this.buffer.delete_selection (true, ! ((Document) this.buffer).readonly);
-        scroll_to_cursor (SCROLL_MARGIN);
-    }
-
-    public void my_select_all ()
-    {
-        return_if_fail (this.buffer != null);
-        TextIter start, end;
-        this.buffer.get_bounds (out start, out end);
-        this.buffer.select_range (start, end);
     }
 
     public void set_font_from_settings ()
