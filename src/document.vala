@@ -58,14 +58,6 @@ public class Document : Gtef.Buffer
         });
     }
 
-    public new bool get_modified ()
-    {
-        if (new_file)
-            return false;
-
-        return base.get_modified ();
-    }
-
     public new void insert (ref TextIter iter, string text, int len)
     {
         Gtk.SourceCompletion completion = tab.view.completion;
