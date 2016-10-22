@@ -26,7 +26,7 @@ public enum SelectionType
     MULTIPLE_LINES
 }
 
-public class Document : Gtk.SourceBuffer
+public class Document : Gtef.Buffer
 {
     public File location { get; set; }
     public bool readonly { get; set; default = false; }
@@ -40,8 +40,6 @@ public class Document : Gtk.SourceBuffer
     private DocumentStructure _structure = null;
     private FileInfo _metadata_info = new FileInfo ();
 
-    public signal void cursor_moved ();
-
     public Document ()
     {
         // syntax highlighting: LaTeX by default
@@ -54,16 +52,9 @@ public class Document : Gtk.SourceBuffer
             update_project_id ();
         });
 
-        mark_set.connect ((location, mark) =>
-        {
-            if (mark == get_insert ())
-                cursor_moved ();
-        });
-
         changed.connect (() =>
         {
             new_file = false;
-            cursor_moved ();
         });
     }
 
