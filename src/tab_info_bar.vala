@@ -27,7 +27,6 @@ public class TabInfoBar : Gtef.InfoBar
 
         Grid grid = new Grid ();
         grid.orientation = Orientation.VERTICAL;
-        grid.set_row_spacing (10);
 
         Label primary_label = Gtef.InfoBar.create_label ();
         primary_label.set_markup ("<b>" + primary_msg + "</b>");
