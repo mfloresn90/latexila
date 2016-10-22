@@ -12,7 +12,7 @@ VALAFLAGS =			\
 	--pkg gspell-1		\
 	--pkg gee-0.8		\
 	--pkg posix		\
-	--target-glib=2.40	\
+	--target-glib=2.50	\
 	--vapidir liblatexila	\
 	--pkg latexila
 
