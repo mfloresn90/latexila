@@ -69,12 +69,17 @@ latexila_SOURCES = 				\
 	$(vapidir)/gedit.vapi			\
 	$(vapidir)/menu_tool_action.vapi
 
+# -w: silence all warnings, because we already have the valac warnings. The
+# generated C code currently triggers a lot of warnings because deprecated
+# functions are used. So by silencing the GCC warnings, we can more easily
+# scroll up the build output to see the valac warnings.
 latexila_CPPFLAGS =			\
 	-I$(top_srcdir)			\
 	-I$(srcdir)/gedit		\
 	-I$(srcdir)/liblatexila		\
 	-I$(builddir)/liblatexila	\
-	-include config.h
+	-include config.h		\
+	-w
 
 latexila_LDADD = 			\
 	gedit/libgedit.la		\
