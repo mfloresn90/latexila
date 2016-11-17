@@ -62,7 +62,6 @@ src/structure_model.vala
 src/structure.vala
 src/symbols.vala
 src/symbols_view.vala
-src/tab_info_bar.vala
 [type: gettext/glade]src/ui/menus.ui
 [type: gettext/glade]src/ui/preferences_dialog.ui
 src/utils.vala

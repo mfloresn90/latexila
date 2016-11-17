@@ -202,11 +202,14 @@ public class DocumentTab : Grid
         });
     }
 
-    public TabInfoBar add_message (string primary_msg, string secondary_msg,
+    public Gtef.InfoBar add_message (string primary_msg, string secondary_msg,
         MessageType msg_type)
     {
-        TabInfoBar infobar = new TabInfoBar (primary_msg, secondary_msg, msg_type);
+        Gtef.InfoBar infobar = new Gtef.InfoBar.simple (msg_type, primary_msg,
+            secondary_msg);
         attach_next_to (infobar, get_child_at (0, 0), PositionType.TOP, 1, 1);
+        infobar.show ();
+
         return infobar;
     }
 
@@ -285,7 +288,7 @@ public class DocumentTab : Grid
             else
                 secondary_msg = _("Do you want to reload the file?");
 
-            TabInfoBar infobar = add_message (primary_msg, secondary_msg,
+            Gtef.InfoBar infobar = add_message (primary_msg, secondary_msg,
                 MessageType.WARNING);
             infobar.add_button (_("_Reload"), ResponseType.OK);
             infobar.add_button (_("_Cancel"), ResponseType.CANCEL);

@@ -189,7 +189,7 @@ public class Document : Gtef.Buffer
                     .printf (location.get_parse_name ());
                 string secondary_msg =
                     _("If you save it, all the external changes could be lost. Save it anyway?");
-                TabInfoBar infobar = tab.add_message (primary_msg, secondary_msg,
+                Gtef.InfoBar infobar = tab.add_message (primary_msg, secondary_msg,
                     MessageType.WARNING);
                 infobar.add_button (_("_Save Anyway"), ResponseType.YES);
                 infobar.add_button (_("_Don't Save"), ResponseType.CANCEL);
@@ -205,9 +205,9 @@ public class Document : Gtef.Buffer
                 warning ("%s", e.message);
 
                 string primary_msg = _("Impossible to save the file.");
-                TabInfoBar infobar = tab.add_message (primary_msg, e.message,
+                Gtef.InfoBar infobar = tab.add_message (primary_msg, e.message,
                     MessageType.ERROR);
-                infobar.add_ok_button ();
+                infobar.add_close_button ();
             }
         }
     }
@@ -553,7 +553,7 @@ public class Document : Gtef.Buffer
 
         /* Warn the user that the file can be lost */
 
-        TabInfoBar infobar = tab.add_message (
+        Gtef.InfoBar infobar = tab.add_message (
             _("The file has a temporary location. The data can be lost after rebooting your computer."),
             _("Do you want to save the file in a safer place?"),
             MessageType.WARNING);

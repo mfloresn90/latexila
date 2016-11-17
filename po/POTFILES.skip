@@ -43,7 +43,6 @@ src/structure_model.c
 src/symbols.c
 src/symbols_view.c
 src/synctex.c
-src/tab_info_bar.c
 src/templates.c
 src/templates_dialogs.c
 src/utils.c
