@@ -84,12 +84,10 @@ public class GotoLine : Grid
 
         int line = int.parse (text) - 1;
 
-        if (main_window.active_document.goto_line (line))
+        if (main_window.active_view.goto_line (line))
             ErrorEntry.remove_error (entry);
         else
             ErrorEntry.add_error (entry);
-
-        main_window.active_view.scroll_to_cursor ();
     }
 }
 
