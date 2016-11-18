@@ -49,6 +49,11 @@ public class Document : Gtef.Buffer
         {
             new_file = false;
         });
+
+        GLib.Settings editor_settings =
+            new GLib.Settings ("org.gnome.latexila.preferences.editor");
+        editor_settings.bind ("scheme", this, "gtef-style-scheme-id",
+            SettingsBindFlags.GET);
     }
 
     public new void insert (ref TextIter iter, string text, int len)
@@ -338,12 +343,6 @@ public class Document : Gtef.Buffer
         }
 
         return current_etag != null && current_etag != _etag;
-    }
-
-    public void set_style_scheme_from_string (string scheme_id)
-    {
-        SourceStyleSchemeManager manager = SourceStyleSchemeManager.get_default ();
-        style_scheme = manager.get_scheme (scheme_id);
     }
 
     public void comment_selected_lines ()

@@ -64,7 +64,6 @@ public class DocumentView : Gtef.View
         highlight_current_line = _editor_settings.get_boolean ("highlight-current-line");
         doc.highlight_matching_brackets =
             _editor_settings.get_boolean ("bracket-matching");
-        doc.set_style_scheme_from_string (_editor_settings.get_string ("scheme"));
         set_smart_home_end (SourceSmartHomeEndType.AFTER);
 
         // completion
