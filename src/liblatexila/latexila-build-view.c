@@ -359,6 +359,9 @@ latexila_build_view_class_init (LatexilaBuildViewClass *klass)
    * The file should be opened and presented to the user. If @start_line and
    * @end_line are not -1, jump to the @start_line and select those lines. If
    * @start_line is provided, @end_line is also provided (different than -1).
+   *
+   * The selection should stop at the end of @end_line (not at the start of
+   * @end_line).
    */
   signals[SIGNAL_JUMP_TO_FILE] = g_signal_new ("jump-to-file",
                                                LATEXILA_TYPE_BUILD_VIEW,
@@ -728,7 +731,7 @@ latexila_build_view_append_single_message (LatexilaBuildView *build_view,
 
   end_line = message->end_line;
   if (message->start_line != -1 && end_line == -1)
-    end_line = message->start_line + 1;
+    end_line = message->start_line;
 
   gtk_tree_store_append (build_view->priv->store, &iter, parent);
   gtk_tree_store_set (build_view->priv->store, &iter,

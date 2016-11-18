@@ -108,7 +108,7 @@ public class MainWindowBuildTools
             if (start_line == -1)
                 _main_window.open_document (file);
             else
-                _main_window.jump_to_file_position (file, start_line - 1, end_line -1);
+                _main_window.jump_to_file_position (file, start_line - 1, end_line - 1);
         });
     }
 

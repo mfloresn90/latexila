@@ -438,15 +438,6 @@ public class Document : Gtef.Buffer
         end_user_action ();
     }
 
-    public void select_lines (int start, int end)
-    {
-        TextIter start_iter, end_iter;
-        get_iter_at_line (out start_iter, start);
-        get_iter_at_line (out end_iter, end);
-        select_range (start_iter, end_iter);
-        tab.view.scroll_to_cursor ();
-    }
-
     // If line is bigger than the number of lines of the document, the cursor is moved
     // to the last line and false is returned.
     public bool goto_line (int line)

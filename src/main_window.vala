@@ -991,6 +991,7 @@ public class MainWindow : ApplicationWindow
     }
 
     // start_line and end_line begins at 0.
+    // The selection stops at the end of end_line (not at the start of end_line).
     public void jump_to_file_position (File file, int start_line, int end_line)
     {
         return_if_fail (start_line >= 0 && end_line >= 0);
@@ -1000,7 +1001,7 @@ public class MainWindow : ApplicationWindow
         // Ensure that the file is fully loaded before selecting the lines.
         Utils.flush_queue ();
 
-        tab.document.select_lines (start_line, end_line);
+        tab.view.select_lines (start_line, end_line);
     }
 
     /*************************************************************************/

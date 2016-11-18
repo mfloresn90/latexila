@@ -77,15 +77,15 @@ typedef enum
  * @type: the message type.
  * @text: the text.
  * @filename: reference to a certain file.
- * @start_line: reference to a line in the file. -1 to unset.
- * @end_line: reference to a line in the file. -1 to unset.
+ * @start_line: reference to a line in the file, counting from 1. -1 to unset.
+ * @end_line: reference to a line in the file, counting from 1. -1 to unset.
  * @children: list of children of type #LatexilaBuildMsg.
  * @expand: if the message has children, whether to initially show them.
  *
  * A build message, one line in the #GtkTreeView. If a @filename is provided,
  * the file will be opened when the user clicks on the message. If @start_line
  * and @end_line are provided, the lines between the two positions will be
- * selected.
+ * selected (the selection stops at the end of @end_line).
  */
 struct _LatexilaBuildMsg
 {

@@ -457,7 +457,7 @@ public class LatexilaApp : Gtk.Application
             MainWindow? main_window = get_active_main_window ();
             if (main_window != null)
             {
-                main_window.jump_to_file_position (tex_file, line, line + 1);
+                main_window.jump_to_file_position (tex_file, line, line);
                 main_window.present_with_time (timestamp);
             }
         });
