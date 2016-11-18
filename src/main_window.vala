@@ -727,7 +727,7 @@ public class MainWindow : ApplicationWindow
 
         tab.document.modified_changed.connect (() => sync_name (tab));
         tab.document.notify["readonly"].connect (() => sync_name (tab));
-        tab.document.cursor_moved.connect (update_cursor_position_statusbar);
+        tab.document.gtef_cursor_moved.connect (update_cursor_position_statusbar);
 
         tab.show ();
 

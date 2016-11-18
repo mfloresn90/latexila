@@ -28,7 +28,7 @@ LT_INIT
 GLIB_REQUIRED_VERSION="2.50"
 GTK_REQUIRED_VERSION="3.20"
 GTKSOURCEVIEW_REQUIRED_VERSION="3.23.1"
-GTEF_REQUIRED_VERSION="1.1.1"
+GTEF_REQUIRED_VERSION="1.99.0"
 GSPELL_REQUIRED_VERSION="1.0"
 VALA_REQUIRED_VERSION="0.34"
 GEE_REQUIRED_VERSION="0.10"
@@ -100,8 +100,8 @@ if ! pkg-config --atleast-version=${GTKSOURCEVIEW_REQUIRED_VERSION} gtksourcevie
 	AC_MSG_ERROR([gtksourceview-3.0 >= ${GTKSOURCEVIEW_REQUIRED_VERSION} required.])
 fi
 
-if ! pkg-config --atleast-version=${GTEF_REQUIRED_VERSION} gtef-1; then
-	AC_MSG_ERROR([gtef-1 >= ${GTEF_REQUIRED_VERSION} required.])
+if ! pkg-config --atleast-version=${GTEF_REQUIRED_VERSION} gtef-2; then
+	AC_MSG_ERROR([gtef-2 >= ${GTEF_REQUIRED_VERSION} required.])
 fi
 
 if ! pkg-config --atleast-version=${GSPELL_REQUIRED_VERSION} gspell-1; then
@@ -121,7 +121,7 @@ dependencies="
 	gio-2.0
 	gtk+-3.0
 	gtksourceview-3.0
-	gtef-1
+	gtef-2
 	gspell-1
 	gsettings-desktop-schemas
 	gee-0.8"
