@@ -351,8 +351,8 @@ latexila_build_view_class_init (LatexilaBuildViewClass *klass)
    * LatexilaBuildView::jump-to-file:
    * @build_view: a #LatexilaBuildView.
    * @file: the file to open.
-   * @start_line: the line where to jump and the start of the selection, or -1.
-   * @end_line: the end of the selection, or -1.
+   * @start_line: the start of the selection, counting from 0. Or -1 if unset.
+   * @end_line: the end of the selection, counting from 0. Or -1 if unset.
    *
    * The ::jump-to-file signal is emitted when a row in the build view is
    * selected. The row must contain a file, otherwise the signal is not emitted.
@@ -455,6 +455,13 @@ select_row (LatexilaBuildView *build_view,
                       COLUMN_START_LINE, &start_line,
                       COLUMN_END_LINE, &end_line,
                       -1);
+
+  /* For the signal, we count from 0. */
+  if (start_line > 0)
+    start_line--;
+
+  if (end_line > 0)
+    end_line--;
 
   if (file != NULL)
     {
