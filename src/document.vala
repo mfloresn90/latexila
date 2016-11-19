@@ -468,29 +468,6 @@ public class Document : Gtef.Buffer
         return path.has_suffix (".tex");
     }
 
-    public string get_current_indentation (TextIter iter)
-    {
-        TextIter start_iter, end_iter;
-        int line = iter.get_line ();
-        get_iter_at_line (out start_iter, line);
-        get_iter_at_line (out end_iter, line + 1);
-
-        string text = get_text (start_iter, end_iter, false);
-        string current_indent = "";
-
-        int index = 0;
-        unichar cur_char;
-        while (text.get_next_char (ref index, out cur_char))
-        {
-            if (cur_char == ' ' || cur_char == '\t')
-                current_indent += cur_char.to_string ();
-            else
-                break;
-        }
-
-        return current_indent;
-    }
-
     public DocumentStructure get_structure ()
     {
         if (_structure == null)

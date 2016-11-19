@@ -490,7 +490,7 @@ public class LatexMenu : Gtk.ActionGroup
 
         if (text_before.contains ("\n") || text_after.contains ("\n"))
         {
-            string current_indent = active_document.get_current_indentation (start);
+            string current_indent = Gtef.iter_get_line_indentation (start);
 
             if (current_indent != "")
             {
