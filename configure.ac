@@ -15,7 +15,7 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
 # Init Automake
-AM_INIT_AUTOMAKE([1.12.5 foreign tar-ustar no-dist-gzip dist-xz -Wno-portability])
+AM_INIT_AUTOMAKE([1.14 foreign tar-ustar no-dist-gzip dist-xz -Wno-portability])
 AM_MAINTAINER_MODE([enable])
 AM_SILENT_RULES([yes])
 
@@ -74,7 +74,6 @@ AC_DEFINE_UNQUOTED([ICONS_DIR],
 # Checks for programs
 AC_PROG_CC
 AC_PROG_INSTALL
-AM_PROG_CC_C_O
 AC_PATH_PROG([GLIB_COMPILE_RESOURCES], [glib-compile-resources])
 AC_PATH_PROG([GLIB_MKENUMS], [glib-mkenums])
 AC_PATH_PROG([GDBUS_CODEGEN], [gdbus-codegen])
