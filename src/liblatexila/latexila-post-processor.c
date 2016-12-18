@@ -132,6 +132,7 @@ latexila_post_processor_get_name_from_type (LatexilaPostProcessorType type)
     case LATEXILA_POST_PROCESSOR_TYPE_NO_OUTPUT:
       return "no-output";
 
+    case LATEXILA_POST_PROCESSOR_TYPE_NB_TYPES:
     default:
       g_return_val_if_reached (NULL);
     }
