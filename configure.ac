@@ -10,6 +10,9 @@ AC_INIT([LaTeXila],
 	[latexila],
 	[https://wiki.gnome.org/Apps/LaTeXila])
 
+AX_REQUIRE_DEFINED([AX_IS_RELEASE])
+AX_IS_RELEASE([git-directory])
+
 AC_CONFIG_SRCDIR([src/liblatexila/latexila.h])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
