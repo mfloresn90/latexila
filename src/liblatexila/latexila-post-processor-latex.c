@@ -280,6 +280,10 @@ add_message (LatexilaPostProcessorLatex *pp,
       pp->priv->errors_count++;
       break;
 
+    case LATEXILA_BUILD_MSG_TYPE_MAIN_TITLE:
+    case LATEXILA_BUILD_MSG_TYPE_JOB_TITLE:
+    case LATEXILA_BUILD_MSG_TYPE_JOB_SUB_COMMAND:
+    case LATEXILA_BUILD_MSG_TYPE_INFO:
     default:
       break;
     }
@@ -518,6 +522,11 @@ detect_badbox (LatexilaPostProcessorLatex *pp,
       /* The return value is not important here. */
       return TRUE;
 
+    case STATE_WARNING:
+    case STATE_ERROR:
+    case STATE_ERROR_SEARCH_LINE:
+    case STATE_FILENAME:
+    case STATE_FILENAME_HEURISTIC:
     default:
       g_return_val_if_reached (FALSE);
     }
@@ -720,6 +729,11 @@ detect_warning (LatexilaPostProcessorLatex *pp,
       /* The return value is not important here. */
       return TRUE;
 
+    case STATE_BADBOX:
+    case STATE_ERROR:
+    case STATE_ERROR_SEARCH_LINE:
+    case STATE_FILENAME:
+    case STATE_FILENAME_HEURISTIC:
     default:
       g_return_val_if_reached (FALSE);
     }
@@ -903,6 +917,10 @@ detect_error (LatexilaPostProcessorLatex *pp,
 
       return FALSE;
 
+    case STATE_BADBOX:
+    case STATE_WARNING:
+    case STATE_FILENAME:
+    case STATE_FILENAME_HEURISTIC:
     default:
       g_return_val_if_reached (FALSE);
     }
@@ -1320,6 +1338,10 @@ update_stack_file (LatexilaPostProcessorLatex *pp,
           g_free (line_stripped);
         }
 
+    case STATE_BADBOX:
+    case STATE_WARNING:
+    case STATE_ERROR:
+    case STATE_ERROR_SEARCH_LINE:
     default:
       g_return_if_reached ();
     }
