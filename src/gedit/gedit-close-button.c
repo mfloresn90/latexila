@@ -71,7 +71,7 @@ gedit_close_button_init (GeditCloseButton *button)
 }
 
 GtkWidget *
-gedit_close_button_new ()
+gedit_close_button_new (void)
 {
 	return GTK_WIDGET (g_object_new (GEDIT_TYPE_CLOSE_BUTTON,
 	                                 "relief", GTK_RELIEF_NONE,
