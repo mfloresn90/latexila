@@ -103,7 +103,7 @@ load_rc_file (LatexilaTemplatesPersonal *templates)
   gsize n_icons;
   gsize n_files;
   gboolean has_files;
-  gint i;
+  guint i;
   GError *error = NULL;
 
   rc_file = get_rc_file ();
