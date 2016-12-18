@@ -33,6 +33,7 @@ MAINTAINERCLEANFILES =		\
 	install-sh		\
 	ltmain.sh		\
 	m4/ax_code_coverage.m4	\
+	m4/ax_require_defined.m4 \
 	m4/codeset.m4		\
 	m4/gettext.m4		\
 	m4/glibc21.m4		\
