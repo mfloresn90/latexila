@@ -8,7 +8,9 @@ liblatexila_la_CFLAGS =			\
 	$(CODE_COVERAGE_CFLAGS)		\
 	-I$(top_builddir)/src/evince
 
-liblatexila_la_LDFLAGS = $(CODE_COVERAGE_LDFLAGS)
+liblatexila_la_LDFLAGS =		\
+	$(WARN_LDFLAGS)			\
+	$(CODE_COVERAGE_LDFLAGS)
 
 liblatexila_la_LIBADD =		\
 	$(LATEXILA_LIBS)	\
@@ -98,6 +100,7 @@ Latexila_gir_NAMESPACE = Latexila
 Latexila_gir_INCLUDES = Gtk-3.0
 Latexila_gir_LIBS = liblatexila.la
 Latexila_gir_FILES = $(liblatexila_la_SOURCES) $(nodist_liblatexila_la_SOURCES)
+Latexila_gir_SCANNERFLAGS = $(WARN_SCANNERFLAGS)
 
 noinst_DATA += Latexila.gir Latexila.typelib
 CLEANFILES += Latexila.gir Latexila.typelib

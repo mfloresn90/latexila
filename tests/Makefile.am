@@ -7,6 +7,8 @@ AM_CPPFLAGS =					\
 	$(LATEXILA_CFLAGS)			\
 	$(WARN_CFLAGS)
 
+AM_LDFLAGS = $(WARN_LDFLAGS)
+
 LDADD =	$(top_builddir)/src/liblatexila/liblatexila.la	\
 	$(LATEXILA_LIBS)
 
