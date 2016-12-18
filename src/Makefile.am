@@ -80,7 +80,11 @@ latexila_CPPFLAGS =			\
 	-include config.h		\
 	-w
 
+latexila_CFLAGS =		\
+	$(LATEXILA_CFLAGS)
+
 latexila_LDADD = 			\
+	$(LATEXILA_LIBS)		\
 	gedit/libgedit.la		\
 	liblatexila/liblatexila.la
 

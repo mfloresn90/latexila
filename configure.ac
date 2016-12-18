@@ -81,52 +81,21 @@ AM_PROG_VALAC([${VALA_REQUIRED_VERSION}],
               [found_vala=true]
 	      [found_vala=false])
 
+AX_REQUIRE_DEFINED([PKG_PROG_PKG_CONFIG])
+PKG_PROG_PKG_CONFIG
+
 # Checks for dependencies
-
-if ! pkg-config --atleast-version=${GLIB_REQUIRED_VERSION} glib-2.0; then
-	AC_MSG_ERROR([glib-2.0 >= ${GLIB_REQUIRED_VERSION} required.])
-fi
-
-if ! pkg-config --atleast-version=${GLIB_REQUIRED_VERSION} gio-2.0; then
-	AC_MSG_ERROR([gio-2.0 >= ${GLIB_REQUIRED_VERSION} required.])
-fi
-
-if ! pkg-config --atleast-version=${GTK_REQUIRED_VERSION} gtk+-3.0; then
-	AC_MSG_ERROR([gtk+-3.0 >= ${GTK_REQUIRED_VERSION} required.])
-fi
-
-if ! pkg-config --atleast-version=${GTKSOURCEVIEW_REQUIRED_VERSION} gtksourceview-3.0; then
-	AC_MSG_ERROR([gtksourceview-3.0 >= ${GTKSOURCEVIEW_REQUIRED_VERSION} required.])
-fi
-
-if ! pkg-config --atleast-version=${GTEF_REQUIRED_VERSION} gtef-2; then
-	AC_MSG_ERROR([gtef-2 >= ${GTEF_REQUIRED_VERSION} required.])
-fi
-
-if ! pkg-config --atleast-version=${GSPELL_REQUIRED_VERSION} gspell-1; then
-	AC_MSG_ERROR([gspell-1 ${GSPELL_REQUIRED_VERSION} required.])
-fi
-
-if ! pkg-config gsettings-desktop-schemas; then
-	AC_MSG_ERROR([gsettings-desktop-schemas required.])
-fi
-
-if ! pkg-config --atleast-version=${GEE_REQUIRED_VERSION} gee-0.8; then
-	AC_MSG_ERROR([gee-0.8 >= ${GEE_REQUIRED_VERSION} required.])
-fi
-
-dependencies="
-	glib-2.0
-	gio-2.0
-	gtk+-3.0
-	gtksourceview-3.0
-	gtef-2
-	gspell-1
+AX_REQUIRE_DEFINED([PKG_CHECK_MODULES])
+PKG_CHECK_MODULES([LATEXILA], [
+	glib-2.0 >= ${GLIB_REQUIRED_VERSION}
+	gio-2.0 >= ${GLIB_REQUIRED_VERSION}
+	gtk+-3.0 >= ${GTK_REQUIRED_VERSION}
+	gtksourceview-3.0 >= ${GTKSOURCEVIEW_REQUIRED_VERSION}
+	gtef-2 >= ${GTEF_REQUIRED_VERSION}
+	gspell-1 >= ${GSPELL_REQUIRED_VERSION}
+	gee-0.8 >= ${GEE_REQUIRED_VERSION}
 	gsettings-desktop-schemas
-	gee-0.8"
-
-CFLAGS="$CFLAGS `pkg-config --cflags ${dependencies}`"
-LIBS="$LIBS `pkg-config --libs ${dependencies}`"
+])
 
 # Native Language Support
 AX_REQUIRE_DEFINED([IT_PROG_INTLTOOL])

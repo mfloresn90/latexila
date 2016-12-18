@@ -4,9 +4,11 @@ AM_CPPFLAGS =					\
 	-I$(top_srcdir)				\
 	-I$(top_srcdir)/src/liblatexila		\
 	-I$(top_builddir)/src/liblatexila	\
+	$(LATEXILA_CFLAGS)			\
 	$(WARN_CFLAGS)
 
-LDADD = $(top_builddir)/src/liblatexila/liblatexila.la
+LDADD =	$(top_builddir)/src/liblatexila/liblatexila.la	\
+	$(LATEXILA_LIBS)
 
 build-tools-resources.c: build-tools.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/build-tools.gresource.xml)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source $(srcdir)/build-tools.gresource.xml

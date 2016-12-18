@@ -3,12 +3,16 @@
 noinst_LTLIBRARIES = liblatexila.la
 
 liblatexila_la_CFLAGS =			\
+	$(LATEXILA_CFLAGS)		\
 	$(WARN_CFLAGS)			\
 	$(CODE_COVERAGE_CFLAGS)		\
 	-I$(top_builddir)/src/evince
 
 liblatexila_la_LDFLAGS = $(CODE_COVERAGE_LDFLAGS)
-liblatexila_la_LIBADD = ../evince/libevince.la
+
+liblatexila_la_LIBADD =		\
+	$(LATEXILA_LIBS)	\
+	../evince/libevince.la
 
 liblatexila_headers =				\
 	latexila.h				\
