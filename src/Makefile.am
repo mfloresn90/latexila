@@ -88,10 +88,6 @@ latexila_LDADD = 			\
 	gedit/libgedit.la		\
 	liblatexila/liblatexila.la
 
-MAINTAINERCLEANFILES =		\
-	$(vala_files:.vala=.c)	\
-	latexila_vala.stamp
-
 # GResource
 
 latexila-resources.c: latexila.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/latexila.gresource.xml)
@@ -102,6 +98,9 @@ nodist_latexila_SOURCES = $(BUILT_SOURCES)
 
 EXTRA_DIST = latexila.gresource.xml
 
-CLEANFILES = $(BUILT_SOURCES)
+CLEANFILES =			\
+	$(BUILT_SOURCES)	\
+	$(vala_files:.vala=.c)	\
+	latexila_vala.stamp
 
 -include $(top_srcdir)/git.mk
