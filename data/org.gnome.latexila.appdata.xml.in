@@ -4,6 +4,8 @@
   <id>org.gnome.latexila.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
+  <name>LaTeXila</name>
+  <_summary>Integrated LaTeX environment</_summary>
   <description>
     <_p>
       LaTeXila is an integrated LaTeX environment for the GNOME desktop.
@@ -12,12 +14,10 @@
     </_p>
     <_p>
       To help the writing of the LaTeX markup, auto-completion is available as
-      well as menus and toolbars with the principal commands.
-    </_p>
-    <_p>
-      New documents are created from templates. There are buttons to compile,
-      convert and view a document in one click. And projects containing several
-      .tex files are managed easily.
+      well as menus and toolbars with the principal commands. New documents are
+      created from templates. There are buttons to compile, convert and view a
+      document in one click. And projects containing several .tex files are
+      managed easily.
     </_p>
     <_p>
       A side panel contains three components: the document structure to easily
