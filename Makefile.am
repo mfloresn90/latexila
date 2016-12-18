@@ -23,7 +23,6 @@ MAINTAINERCLEANFILES =		\
 	compile			\
 	config.guess		\
 	config.h.in		\
-	config.rpath		\
 	config.sub		\
 	configure.scan		\
 	depcomp			\
