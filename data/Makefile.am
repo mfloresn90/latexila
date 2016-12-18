@@ -9,8 +9,9 @@ desktop_DATA = org.gnome.latexila.desktop
 @INTLTOOL_DESKTOP_RULE@
 
 @INTLTOOL_XML_RULE@
-appdatadir = $(datadir)/appdata
-appdata_DATA = org.gnome.latexila.appdata.xml
+
+appstream_XML = org.gnome.latexila.appdata.xml
+@APPSTREAM_XML_RULES@
 
 gsettings_SCHEMAS = org.gnome.latexila.gschema.xml
 @GSETTINGS_RULES@

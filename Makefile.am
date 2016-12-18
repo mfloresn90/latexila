@@ -1,6 +1,10 @@
 SUBDIRS = data man po help src tests docs
 
-AM_DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --enable-introspection --enable-vala
+AM_DISTCHECK_CONFIGURE_FLAGS =	\
+	--enable-gtk-doc	\
+	--enable-introspection	\
+	--enable-vala		\
+	--enable-appstream-util
 
 EXTRA_DIST =			\
 	README			\
@@ -29,6 +33,7 @@ MAINTAINERCLEANFILES =		\
 	gtk-doc.make		\
 	install-sh		\
 	ltmain.sh		\
+	m4/appstream-xml.m4	\
 	m4/ax_append_compile_flags.m4	\
 	m4/ax_append_flag.m4		\
 	m4/ax_append_link_flags.m4	\
