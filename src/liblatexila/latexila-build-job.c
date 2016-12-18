@@ -584,6 +584,7 @@ launch_subprocess (GTask *task)
       data->post_processor = latexila_post_processor_latexmk_new ();
       break;
 
+    case LATEXILA_POST_PROCESSOR_TYPE_NB_TYPES:
     default:
       g_return_if_reached ();
     }
