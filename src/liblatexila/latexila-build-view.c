@@ -212,6 +212,9 @@ get_icon_name_from_msg_type (LatexilaBuildMsgType type)
     case LATEXILA_BUILD_MSG_TYPE_BADBOX:
       return "badbox";
 
+    case LATEXILA_BUILD_MSG_TYPE_MAIN_TITLE:
+    case LATEXILA_BUILD_MSG_TYPE_JOB_TITLE:
+    case LATEXILA_BUILD_MSG_TYPE_INFO:
     default:
       return NULL;
     }
@@ -394,6 +397,11 @@ visible_func (GtkTreeModel *model,
     case LATEXILA_BUILD_MSG_TYPE_BADBOX:
       return build_view->priv->show_badboxes;
 
+    case LATEXILA_BUILD_MSG_TYPE_MAIN_TITLE:
+    case LATEXILA_BUILD_MSG_TYPE_JOB_TITLE:
+    case LATEXILA_BUILD_MSG_TYPE_JOB_SUB_COMMAND:
+    case LATEXILA_BUILD_MSG_TYPE_ERROR:
+    case LATEXILA_BUILD_MSG_TYPE_INFO:
     default:
       return TRUE;
     }
