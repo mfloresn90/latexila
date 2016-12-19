@@ -1,15 +1,15 @@
 # Czech translation for latexila.
 # Copyright (C) 2011 latexila's COPYRIGHT HOLDER
 # This file is distributed under the same license as the latexila package.
-# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013, 2014, 2015.
+# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013, 2014, 2015m 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-11 13:24+0000\n"
-"PO-Revision-Date: 2016-08-19 23:07+0200\n"
+"POT-Creation-Date: 2016-12-18 16:00+0000\n"
+"PO-Revision-Date: 2016-12-19 10:25+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -86,6 +86,10 @@ msgid "Convert the PostScript document to the PDF format"
 msgstr "Převést postskriptový dokument do formátu PDF"
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:1
+msgid "Integrated LaTeX environment"
+msgstr "Integrované prostředí LaTeX"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:2
 msgid ""
 "LaTeXila is an integrated LaTeX environment for the GNOME desktop. The idea "
 "of LaTeXila is to always deal directly with the LaTeX code, while "
@@ -95,21 +99,17 @@ msgstr ""
 "pracovat vždy přímo s kódem LaTeX, ale přitom psaní tohoto kódu zjednodušit, "
 "co nejvíce to jde."
 
-#: ../data/org.gnome.latexila.appdata.xml.in.h:2
-msgid ""
-"To help the writing of the LaTeX markup, auto-completion is available as "
-"well as menus and toolbars with the principal commands."
-msgstr ""
-"Aby se vám snadněji psaly značky LaTeX, máte k dispozici automatické "
-"doplňování a nabídkové a nástrojové lišty s hlavními přikazy LaTeX."
-
 #: ../data/org.gnome.latexila.appdata.xml.in.h:3
 msgid ""
-"New documents are created from templates. There are buttons to compile, "
-"convert and view a document in one click. And projects containing several ."
-"tex files are managed easily."
+"To help the writing of the LaTeX markup, auto-completion is available as "
+"well as menus and toolbars with the principal commands. New documents are "
+"created from templates. There are buttons to compile, convert and view a "
+"document in one click. And projects containing several .tex files are "
+"managed easily."
 msgstr ""
-"Nové dokumenty se vytváří ze šablon. K dispozici jsou tlačítka pro překlad, "
+"Aby se vám snadněji psaly značky LaTeX, máte k dispozici automatické "
+"doplňování a nabídkové a nástrojové lišty s hlavními přikazy LaTeX. Nové "
+"dokumenty se vytváří ze šablon. K dispozici jsou tlačítka pro překlad, "
 "převod a zobrazení dokumentu jedním kliknutím. Snadná je i správa projektů "
 "obsahujících více souborů .tex."
 
@@ -539,12 +539,12 @@ msgstr "Osobní nástroj pro sestavení"
 
 #: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:291
+#: ../src/document_tab.vala:294
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:757
-#: ../src/main_window.vala:853 ../src/preferences_dialog.vala:114
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:762
+#: ../src/main_window.vala:858 ../src/preferences_dialog.vala:114
 #: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
 #: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
@@ -732,7 +732,7 @@ msgstr ""
 "Nenalezeny žádné nepotřebné soubory použité při sestavení, které by bylo "
 "možno smazat."
 
-#: ../src/completion.vala:330
+#: ../src/completion.vala:334
 msgid "No matching proposal"
 msgstr "Žádný odpovídající návrh"
 
@@ -743,12 +743,12 @@ msgstr "Žádný odpovídající návrh"
 msgid "Ln %d, Col %d"
 msgstr "Řá %d, Sl %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:756
+#: ../src/dialogs.vala:40 ../src/main_window.vala:761
 msgid "Close _without Saving"
 msgstr "Za_vřít bez ukládání"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:762 ../src/main_window.vala:854
+#: ../src/main_window.vala:767 ../src/main_window.vala:859
 msgid "_Save"
 msgstr "_Uložit"
 
@@ -775,104 +775,104 @@ msgid "Close document"
 msgstr "Zavřít dokument"
 
 #. main file
-#: ../src/document_tab.vala:234 ../src/project_dialogs.vala:46
+#: ../src/document_tab.vala:237 ../src/project_dialogs.vala:46
 #: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
 #: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
 msgid "Main File"
 msgstr "Hlavní soubor"
 
-#: ../src/document_tab.vala:236
+#: ../src/document_tab.vala:239
 msgid "Main File:"
 msgstr "Hlavní soubor:"
 
-#: ../src/document_tab.vala:260
+#: ../src/document_tab.vala:263
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktivovat „%s“"
 
-#: ../src/document_tab.vala:279
+#: ../src/document_tab.vala:282
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Soubor „%s“ se na disku změnil."
 
-#: ../src/document_tab.vala:284
+#: ../src/document_tab.vala:287
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Chcete zahodit své změny a soubor znovu načíst?"
 
-#: ../src/document_tab.vala:286
+#: ../src/document_tab.vala:289
 msgid "Do you want to reload the file?"
 msgstr "Chcete soubor znovu načíst?"
 
-#: ../src/document_tab.vala:290
+#: ../src/document_tab.vala:293
 msgid "_Reload"
 msgstr "Z_novu načíst"
 
-#: ../src/document.vala:134
+#: ../src/document.vala:115
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Soubor „%s“ není možné načíst."
 
-#: ../src/document.vala:212
+#: ../src/document.vala:193
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Soubor „%s“ byl od svého načtení změněn."
 
-#: ../src/document.vala:215
+#: ../src/document.vala:196
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Pokud jej uložíte, budou externě provedené změny ztraceny. Přesto uložit?"
 
-#: ../src/document.vala:218
+#: ../src/document.vala:199
 msgid "_Save Anyway"
 msgstr "Přesto _uložit"
 
-#: ../src/document.vala:219
+#: ../src/document.vala:200
 msgid "_Don't Save"
 msgstr "Neuklá_dat"
 
-#: ../src/document.vala:231
+#: ../src/document.vala:212
 msgid "Impossible to save the file."
 msgstr "Soubor není možné uložit."
 
-#: ../src/document.vala:256
+#: ../src/document.vala:237
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Chyba při pokusu o převod dokumentu do UTF-8"
 
-#: ../src/document.vala:310
+#: ../src/document.vala:291
 msgid "Untitled Document"
 msgstr "Nepojmenovaný dokument"
 
-#: ../src/document.vala:594
+#: ../src/document.vala:503
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
 msgstr ""
 "Soubor má dočasné umístění. Při restartu počítače mohou být data ztracena."
 
-#: ../src/document.vala:595
+#: ../src/document.vala:504
 msgid "Do you want to save the file in a safer place?"
 msgstr "Chcete soubor uložit na bezpečnější místo?"
 
-#: ../src/document.vala:598 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:760
+#: ../src/document.vala:507 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:765
 msgid "Save _As"
 msgstr "Uložit j_ako"
 
-#: ../src/document.vala:599
+#: ../src/document.vala:508
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: ../src/document_view.vala:367
+#: ../src/document_view.vala:317
 msgid "No dictionaries available for the spell checking."
 msgstr "Není k dispozici žádný slovník pro kontrolu pravopisu."
 
 #. Help
-#: ../src/document_view.vala:369 ../src/main_window.vala:62
+#: ../src/document_view.vala:319 ../src/main_window.vala:62
 #: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "_Nápověda"
 
-#: ../src/document_view.vala:370 ../src/tab_info_bar.vala:77
+#: ../src/document_view.vala:320
 msgid "_OK"
 msgstr "_Budiž"
 
@@ -909,31 +909,31 @@ msgid "File System"
 msgstr "Souborový systém"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:406
+#: ../src/file_browser.vala:536 ../src/main_window.vala:411
 msgid "File Browser"
 msgstr "Procházení souborů"
 
-#: ../src/latexila_app.vala:77
+#: ../src/latexila_app.vala:78
 msgid "Show the application's version"
 msgstr "Zobrazit verzi aplikace"
 
-#: ../src/latexila_app.vala:80
+#: ../src/latexila_app.vala:81
 msgid "Create new document"
 msgstr "Vytvořit nový dokument"
 
-#: ../src/latexila_app.vala:83
+#: ../src/latexila_app.vala:84
 msgid "Create a new top-level window in an existing instance of LaTeXila"
 msgstr "Vytvořit nové okno nejvyšší úrovně ve stávající instanci LaTeXila"
 
-#: ../src/latexila_app.vala:217
+#: ../src/latexila_app.vala:223
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeXila je integrované prostředí LaTeX pro GNOME"
 
-#: ../src/latexila_app.vala:256 ../src/main_window.vala:68
+#: ../src/latexila_app.vala:262 ../src/main_window.vala:71
 msgid "About LaTeXila"
 msgstr "O aplikaci LaTeXila"
 
-#: ../src/latexila_app.vala:257
+#: ../src/latexila_app.vala:263
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
 
@@ -2252,58 +2252,58 @@ msgstr "Příručka _LaTeX"
 msgid "The Kile LaTeX Reference"
 msgstr "Příručka Kile LaTeX"
 
-#: ../src/main_window.vala:67 ../src/ui/menus.ui.h:5
+#: ../src/main_window.vala:70 ../src/ui/menus.ui.h:5
 msgid "_About"
 msgstr "O _aplikaci"
 
-#: ../src/main_window.vala:73
+#: ../src/main_window.vala:76
 msgid "_Main Toolbar"
 msgstr "_Hlavní lišta nástrojů"
 
-#: ../src/main_window.vala:74
+#: ../src/main_window.vala:77
 msgid "Show or hide the main toolbar"
 msgstr "Zobrazit nebo skrýt hlavní lištu nástrojů"
 
 #. Translators: "Edit" here is an adjective.
-#: ../src/main_window.vala:76
+#: ../src/main_window.vala:79
 msgid "_Edit Toolbar"
 msgstr "Lišta úprav"
 
-#: ../src/main_window.vala:77
+#: ../src/main_window.vala:80
 msgid "Show or hide the edit toolbar"
 msgstr "Zobrazit nebo skrýt lištu nástrojů pro úpravy"
 
-#: ../src/main_window.vala:78
+#: ../src/main_window.vala:81
 msgid "_Side panel"
 msgstr "Po_stranní panel"
 
-#: ../src/main_window.vala:79
+#: ../src/main_window.vala:82
 msgid "Show or hide the side panel"
 msgstr "Zobrazit nebo skrýt postranní panel"
 
-#: ../src/main_window.vala:80
+#: ../src/main_window.vala:83
 msgid "_Bottom panel"
 msgstr "S_podní panel"
 
-#: ../src/main_window.vala:81
+#: ../src/main_window.vala:84
 msgid "Show or hide the bottom panel"
 msgstr "Zobrazit nebo skrýt spodní panel"
 
 #. Symbols
-#: ../src/main_window.vala:402
+#: ../src/main_window.vala:407
 msgid "Symbols"
 msgstr "Symboly"
 
-#: ../src/main_window.vala:411
+#: ../src/main_window.vala:416
 msgid "Structure"
 msgstr "Struktura"
 
-#: ../src/main_window.vala:645
+#: ../src/main_window.vala:650
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Tento soubor (%s) je již otevřen v jiném okně aplikace LaTeXila."
 
-#: ../src/main_window.vala:647
+#: ../src/main_window.vala:652
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2311,24 +2311,24 @@ msgstr ""
 "Aplikace LaTeXila otevřela tento soubor bez umožnění úprav. Přesto jej "
 "chcete upravit?"
 
-#: ../src/main_window.vala:650
+#: ../src/main_window.vala:655
 msgid "Edit Anyway"
 msgstr "Přesto upravit"
 
-#: ../src/main_window.vala:651
+#: ../src/main_window.vala:656
 msgid "Don't Edit"
 msgstr "Neupravovat"
 
-#: ../src/main_window.vala:753
+#: ../src/main_window.vala:758
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Uložit před zavřením změny v dokumentu „%s“?"
 
-#: ../src/main_window.vala:833
+#: ../src/main_window.vala:838
 msgid "Read-Only"
 msgstr "Jen ke čtení"
 
-#: ../src/main_window.vala:851
+#: ../src/main_window.vala:856
 msgid "Save File"
 msgstr "Uložení souboru"
 
@@ -2424,49 +2424,49 @@ msgstr "Přejít na řádek:"
 msgid "Line you want to move the cursor to"
 msgstr "Řádek, na který chcete přesunout kurzor"
 
-#: ../src/search.vala:174
+#: ../src/search.vala:172
 msgid "Replace with"
 msgstr "Nahradit za"
 
-#: ../src/search.vala:182
+#: ../src/search.vala:180
 msgid "Replace"
 msgstr "Nahradit"
 
 #. replace all: image + label
-#: ../src/search.vala:186
+#: ../src/search.vala:184
 msgid "Replace All"
 msgstr "Nahradit vše"
 
-#: ../src/search.vala:195
+#: ../src/search.vala:193
 msgid "All"
 msgstr "vše"
 
-#: ../src/search.vala:309
+#: ../src/search.vala:307
 msgid "Search for"
 msgstr "Hledat"
 
-#: ../src/search.vala:320
+#: ../src/search.vala:318
 msgid "Case sensitive"
 msgstr "Rozlišovat velikost písmen"
 
-#: ../src/search.vala:323
+#: ../src/search.vala:321
 msgid "Entire words only"
 msgstr "Pouze celá slova"
 
-#: ../src/search.vala:469
+#: ../src/search.vala:467
 msgid "Not found"
 msgstr "Nenalezeno"
 
 #. Translators: the first %d is the position of the current search occurrence,
 #. * and the second %d is the total number of search occurrences.
 #.
-#: ../src/search.vala:486
+#: ../src/search.vala:484
 #, c-format
 msgid "Match %d of %d"
 msgstr "Shoda %d z %d"
 
 #. Translators: %d is the total number of search occurrences.
-#: ../src/search.vala:491
+#: ../src/search.vala:489
 #, c-format
 msgid "%d match"
 msgid_plural "%d matches"
@@ -2716,5 +2716,3 @@ msgstr "Zvýrazňovat pravopisné chyby"
 msgid "Other"
 msgstr "Ostatní"
 
-#~ msgid "LaTeXila _Fundraiser"
-#~ msgstr "_Podpořit projekt"
