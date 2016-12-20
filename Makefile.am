@@ -1,5 +1,7 @@
 SUBDIRS = data man po help src tests docs
 
+@CODE_COVERAGE_RULES@
+
 AM_DISTCHECK_CONFIGURE_FLAGS =	\
 	--enable-gtk-doc	\
 	--enable-introspection	\
@@ -50,7 +52,6 @@ MAINTAINERCLEANFILES =		\
 	m4/gettext.m4		\
 	m4/glibc21.m4		\
 	m4/glibc2.m4		\
-	m4/gnome-code-coverage.m4 \
 	m4/gsettings.m4		\
 	m4/gtk-doc.m4		\
 	m4/iconv.m4		\
@@ -99,7 +100,5 @@ MAINTAINERCLEANFILES =		\
 	po/remove-potcdate.sin	\
 	test-driver		\
 	`find "$(srcdir)" -type f -name Makefile.in -print`
-
-@GNOME_CODE_COVERAGE_RULES@
 
 -include $(top_srcdir)/git.mk

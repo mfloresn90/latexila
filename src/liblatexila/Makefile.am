@@ -1,6 +1,9 @@
-@GNOME_CODE_COVERAGE_RULES@
+@CODE_COVERAGE_RULES@
 
 noinst_LTLIBRARIES = liblatexila.la
+
+liblatexila_la_CPPFLAGS =		\
+	$(CODE_COVERAGE_CPPFLAGS)
 
 liblatexila_la_CFLAGS =			\
 	$(LATEXILA_CFLAGS)		\
@@ -8,12 +11,12 @@ liblatexila_la_CFLAGS =			\
 	$(CODE_COVERAGE_CFLAGS)		\
 	-I$(top_builddir)/src/evince
 
-liblatexila_la_LDFLAGS =		\
-	$(WARN_LDFLAGS)			\
-	$(CODE_COVERAGE_LDFLAGS)
+liblatexila_la_LDFLAGS = \
+	$(WARN_LDFLAGS)
 
 liblatexila_la_LIBADD =		\
 	$(LATEXILA_LIBS)	\
+	$(CODE_COVERAGE_LIBS)	\
 	../evince/libevince.la
 
 liblatexila_headers =				\
