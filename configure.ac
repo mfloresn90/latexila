@@ -192,14 +192,16 @@ fi
 
 # Print a summary of the configuration
 echo "
-
 Configuration:
 
-    ${PACKAGE_NAME} version ${PACKAGE_VERSION}
+	${PACKAGE_NAME} version ${PACKAGE_VERSION}
 
-    Prefix: ${prefix}
-    Vala Compiler: ${vala_compiler}
-    C Compiler: ${CC}
-    GObject introspection: ${found_introspection}
-    Generate latexila.vapi: ${enable_vala}
+	Source code location:	${srcdir}
+	Prefix:			${prefix}
+	C compiler:		${CC}
+	Vala compiler:		${vala_compiler}
+	Dev documentation:	${enable_gtk_doc}
+	GObject introspection:	${found_introspection}
+	Generate latexila.vapi:	${enable_vala}
+	Code coverage:		${enable_code_coverage}
 "
