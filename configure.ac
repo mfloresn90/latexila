@@ -5,8 +5,8 @@
 AC_PREREQ([2.64])
 
 AC_INIT([LaTeXila],
-        [3.23.1],
-        [https://bugzilla.gnome.org/enter_bug.cgi?product=latexila],
+	[3.23.1],
+	[https://bugzilla.gnome.org/enter_bug.cgi?product=latexila],
 	[latexila],
 	[https://wiki.gnome.org/Apps/LaTeXila])
 
@@ -81,7 +81,7 @@ AC_PATH_PROG([GLIB_COMPILE_RESOURCES], [glib-compile-resources])
 AC_PATH_PROG([GLIB_MKENUMS], [glib-mkenums])
 AC_PATH_PROG([GDBUS_CODEGEN], [gdbus-codegen])
 AM_PROG_VALAC([${VALA_REQUIRED_VERSION}],
-              [found_vala=true]
+	      [found_vala=true]
 	      [found_vala=false])
 
 AX_REQUIRE_DEFINED([PKG_PROG_PKG_CONFIG])
@@ -107,12 +107,12 @@ IT_PROG_INTLTOOL([0.50.1])
 GETTEXT_PACKAGE=${PACKAGE_TARNAME}
 AC_SUBST([GETTEXT_PACKAGE])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],
-                   ["${GETTEXT_PACKAGE}"],
-                   [The domain to use with gettext])
+		   ["${GETTEXT_PACKAGE}"],
+		   [The domain to use with gettext])
 
 adl_RECURSIVE_EVAL(["${localedir}"], [LOCALE_DIR])
 AC_DEFINE_UNQUOTED([LOCALE_DIR],
-                   ["${LOCALE_DIR}"],
+		   ["${LOCALE_DIR}"],
 		   [locale directory])
 
 # Misc
@@ -141,43 +141,45 @@ AX_REQUIRE_DEFINED([APPSTREAM_XML])
 APPSTREAM_XML
 
 # Generate files
-AC_CONFIG_FILES([Makefile
-		 data/Makefile
-		 data/org.gnome.latexila.desktop.in
-		 data/org.gnome.latexila.gschema.xml
-		 data/build_tools/Makefile
-		 data/icons/Makefile
-		 data/icons/16x16/Makefile
-		 data/icons/16x16/apps/Makefile
-		 data/icons/22x22/Makefile
-		 data/icons/22x22/apps/Makefile
-		 data/icons/24x24/Makefile
-		 data/icons/24x24/apps/Makefile
-		 data/icons/32x32/Makefile
-		 data/icons/32x32/apps/Makefile
-		 data/icons/48x48/Makefile
-		 data/icons/48x48/apps/Makefile
-		 data/icons/128x128/Makefile
-		 data/icons/128x128/apps/Makefile
-		 data/icons/256x256/Makefile
-		 data/icons/256x256/apps/Makefile
-		 data/icons/scalable/Makefile
-		 data/icons/scalable/apps/Makefile
-		 data/images/Makefile
-		 data/images/app/Makefile
-		 data/templates/Makefile
-		 docs/Makefile
-		 docs/reference/Makefile
-		 help/Makefile
-		 man/Makefile
-		 po/Makefile.in
-                 src/Makefile
-		 src/evince/Makefile
-		 src/gedit/Makefile
-		 src/liblatexila/Makefile
-		 src/ui/Makefile
-		 tests/Makefile
-                 README])
+AC_CONFIG_FILES([
+	Makefile
+	data/Makefile
+	data/org.gnome.latexila.desktop.in
+	data/org.gnome.latexila.gschema.xml
+	data/build_tools/Makefile
+	data/icons/Makefile
+	data/icons/16x16/Makefile
+	data/icons/16x16/apps/Makefile
+	data/icons/22x22/Makefile
+	data/icons/22x22/apps/Makefile
+	data/icons/24x24/Makefile
+	data/icons/24x24/apps/Makefile
+	data/icons/32x32/Makefile
+	data/icons/32x32/apps/Makefile
+	data/icons/48x48/Makefile
+	data/icons/48x48/apps/Makefile
+	data/icons/128x128/Makefile
+	data/icons/128x128/apps/Makefile
+	data/icons/256x256/Makefile
+	data/icons/256x256/apps/Makefile
+	data/icons/scalable/Makefile
+	data/icons/scalable/apps/Makefile
+	data/images/Makefile
+	data/images/app/Makefile
+	data/templates/Makefile
+	docs/Makefile
+	docs/reference/Makefile
+	help/Makefile
+	man/Makefile
+	po/Makefile.in
+	src/Makefile
+	src/evince/Makefile
+	src/gedit/Makefile
+	src/liblatexila/Makefile
+	src/ui/Makefile
+	tests/Makefile
+	README
+])
 
 AC_OUTPUT
 
