@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: latexila\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 14:13+0000\n"
-"PO-Revision-Date: 2016-08-20 22:39+0200\n"
-"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
+"POT-Creation-Date: 2016-12-18 16:00+0000\n"
+"PO-Revision-Date: 2016-12-21 22:49+0100\n"
+"Last-Translator: Josef Andersson <josef.andersson@fripost.org>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Project-Style: gnome\n"
 
 #. (itstool) path: tool/label
@@ -87,6 +87,10 @@ msgid "Convert the PostScript document to the PDF format"
 msgstr "Konvertera Postscript-dokumentet till PDF-formatet"
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:1
+msgid "Integrated LaTeX environment"
+msgstr "Integrerad LaTeX-miljö"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:2
 msgid ""
 "LaTeXila is an integrated LaTeX environment for the GNOME desktop. The idea "
 "of LaTeXila is to always deal directly with the LaTeX code, while "
@@ -96,23 +100,19 @@ msgstr ""
 "är att alltid ha att göra med LaTeX-kod direkt samt att göra det så enkelt "
 "som möjligt att skriva denna LaTeX-kod."
 
-#: ../data/org.gnome.latexila.appdata.xml.in.h:2
-msgid ""
-"To help the writing of the LaTeX markup, auto-completion is available as "
-"well as menus and toolbars with the principal commands."
-msgstr ""
-"För att hjälpa till att skriva LaTeX-markup finns autokomplettering såväl "
-"som menyer och verktygsfält med de vanligaste kommandona."
-
 #: ../data/org.gnome.latexila.appdata.xml.in.h:3
 msgid ""
-"New documents are created from templates. There are buttons to compile, "
-"convert and view a document in one click. And projects containing several ."
-"tex files are managed easily."
+"To help the writing of the LaTeX markup, auto-completion is available as "
+"well as menus and toolbars with the principal commands. New documents are "
+"created from templates. There are buttons to compile, convert and view a "
+"document in one click. And projects containing several .tex files are "
+"managed easily."
 msgstr ""
-"Nya dokument skapas från mallar. Det finns knappar för att kompilera, "
-"konvertera och visa ett dokument med ett klick. Projekt som innehåller "
-"flera .tex-filer hanteras enkelt."
+"För att underlätta skapandet av LaTeX-taggspråk finns automatisk "
+"komplettering såväl som menyer och verktygsfält med huvudkommandon "
+"tillgängliga. Nya dokument skapas från mallar. Det finns knappar för att "
+"kompilera, konvertera och visa ett dokument med ett klick. Projekt som "
+"innehåller flera .tex-filer hanteras enkelt."
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:4
 msgid ""
@@ -536,7 +536,7 @@ msgstr "Personligt byggverktyg"
 
 #: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:291
+#: ../src/document_tab.vala:294
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
@@ -728,7 +728,7 @@ msgstr "Välj filer som du vill ta bort:"
 msgid "No build file to clean up."
 msgstr "Inga byggfiler att städa upp."
 
-#: ../src/completion.vala:330
+#: ../src/completion.vala:334
 msgid "No matching proposal"
 msgstr "Inga matchande förslag"
 
@@ -773,104 +773,104 @@ msgid "Close document"
 msgstr "Stäng dokument"
 
 #. main file
-#: ../src/document_tab.vala:234 ../src/project_dialogs.vala:46
+#: ../src/document_tab.vala:237 ../src/project_dialogs.vala:46
 #: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
 #: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
 msgid "Main File"
 msgstr "Huvudfil"
 
-#: ../src/document_tab.vala:236
+#: ../src/document_tab.vala:239
 msgid "Main File:"
 msgstr "Huvudfil:"
 
-#: ../src/document_tab.vala:260
+#: ../src/document_tab.vala:263
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktivera ”%s”"
 
-#: ../src/document_tab.vala:279
+#: ../src/document_tab.vala:282
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Filen %s har ändrats på disken."
 
-#: ../src/document_tab.vala:284
+#: ../src/document_tab.vala:287
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Vill du förkasta dina ändringar och läsa in filen igen?"
 
-#: ../src/document_tab.vala:286
+#: ../src/document_tab.vala:289
 msgid "Do you want to reload the file?"
 msgstr "Vill du läsa om filen?"
 
-#: ../src/document_tab.vala:290
+#: ../src/document_tab.vala:293
 msgid "_Reload"
 msgstr "_Läs om"
 
-#: ../src/document.vala:134
+#: ../src/document.vala:115
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Omöjligt att läsa in filen ”%s”."
 
-#: ../src/document.vala:212
+#: ../src/document.vala:193
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Filen %s har ändrats sedan den lästes in."
 
-#: ../src/document.vala:215
+#: ../src/document.vala:196
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Om du sparar den så kan alla externa ändringar gå förlorade. Spara den ändå?"
 
-#: ../src/document.vala:218
+#: ../src/document.vala:199
 msgid "_Save Anyway"
 msgstr "_Spara ändå"
 
-#: ../src/document.vala:219
+#: ../src/document.vala:200
 msgid "_Don't Save"
 msgstr "_Spara inte"
 
-#: ../src/document.vala:231
+#: ../src/document.vala:212
 msgid "Impossible to save the file."
 msgstr "Omöjligt att spara filen."
 
-#: ../src/document.vala:256
+#: ../src/document.vala:237
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Fel vid försök att konvertera dokumentet till UTF-8"
 
-#: ../src/document.vala:310
+#: ../src/document.vala:291
 msgid "Untitled Document"
 msgstr "Namnlöst dokument"
 
-#: ../src/document.vala:594
+#: ../src/document.vala:503
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
 msgstr ""
 "Filen har en temporär plats. Data kan gå förlorat efter omstart av din dator."
 
-#: ../src/document.vala:595
+#: ../src/document.vala:504
 msgid "Do you want to save the file in a safer place?"
 msgstr "Vill du spara filen på ett säkrare ställe?"
 
-#: ../src/document.vala:598 ../src/main_window_file.vala:44
+#: ../src/document.vala:507 ../src/main_window_file.vala:44
 #: ../src/main_window.vala:765
 msgid "Save _As"
 msgstr "_Spara som"
 
-#: ../src/document.vala:599
+#: ../src/document.vala:508
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: ../src/document_view.vala:367
+#: ../src/document_view.vala:317
 msgid "No dictionaries available for the spell checking."
 msgstr "Inga ordböcker tillgängliga för stavningskontroll."
 
 #. Help
-#: ../src/document_view.vala:369 ../src/main_window.vala:62
+#: ../src/document_view.vala:319 ../src/main_window.vala:62
 #: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: ../src/document_view.vala:370 ../src/tab_info_bar.vala:77
+#: ../src/document_view.vala:320
 msgid "_OK"
 msgstr "_OK"
 
@@ -2427,49 +2427,49 @@ msgstr "Gå till rad:"
 msgid "Line you want to move the cursor to"
 msgstr "Rad du vill flytta markören till"
 
-#: ../src/search.vala:174
+#: ../src/search.vala:172
 msgid "Replace with"
 msgstr "Ersätt med"
 
-#: ../src/search.vala:182
+#: ../src/search.vala:180
 msgid "Replace"
 msgstr "Ersätt"
 
 #. replace all: image + label
-#: ../src/search.vala:186
+#: ../src/search.vala:184
 msgid "Replace All"
 msgstr "Ersätt alla"
 
-#: ../src/search.vala:195
+#: ../src/search.vala:193
 msgid "All"
 msgstr "Alla"
 
-#: ../src/search.vala:309
+#: ../src/search.vala:307
 msgid "Search for"
 msgstr "Sök efter"
 
-#: ../src/search.vala:320
+#: ../src/search.vala:318
 msgid "Case sensitive"
 msgstr "Skiftlägeskänslig"
 
-#: ../src/search.vala:323
+#: ../src/search.vala:321
 msgid "Entire words only"
 msgstr "Endast hela ord"
 
-#: ../src/search.vala:469
+#: ../src/search.vala:467
 msgid "Not found"
 msgstr "Hittades inte"
 
 #. Translators: the first %d is the position of the current search occurrence,
 #. * and the second %d is the total number of search occurrences.
 #.
-#: ../src/search.vala:486
+#: ../src/search.vala:484
 #, c-format
 msgid "Match %d of %d"
 msgstr "Sökträff %d av %d"
 
 #. Translators: %d is the total number of search occurrences.
-#: ../src/search.vala:491
+#: ../src/search.vala:489
 #, c-format
 msgid "%d match"
 msgid_plural "%d matches"
@@ -2717,6 +2717,13 @@ msgstr "Markera felstavade ord"
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Övriga"
+
+#~ msgid ""
+#~ "To help the writing of the LaTeX markup, auto-completion is available as "
+#~ "well as menus and toolbars with the principal commands."
+#~ msgstr ""
+#~ "För att hjälpa till att skriva LaTeX-markup finns autokomplettering såväl "
+#~ "som menyer och verktygsfält med de vanligaste kommandona."
 
 #~ msgid "Job"
 #~ msgstr "Jobb"
