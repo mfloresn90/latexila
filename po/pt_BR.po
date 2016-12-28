@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: LaTeXila\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=latexil"
 "a&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-10-22 13:14+0000\n"
-"PO-Revision-Date: 2016-11-20 20:57-0200\n"
+"POT-Creation-Date: 2016-12-18 16:00+0000\n"
+"PO-Revision-Date: 2016-12-28 17:15-0200\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -93,6 +93,11 @@ msgid "Convert the PostScript document to the PDF format"
 msgstr "Converter o documento PostScript para o formato PDF"
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:1
+#| msgid "Integrated LaTeX Environment"
+msgid "Integrated LaTeX environment"
+msgstr "Ambiente LaTeX integrado"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:2
 msgid ""
 "LaTeXila is an integrated LaTeX environment for the GNOME desktop. The idea "
 "of LaTeXila is to always deal directly with the LaTeX code, while "
@@ -102,23 +107,23 @@ msgstr ""
 "ideia do LaTeXila é a de sempre manipular diretamente o código LaTeX, "
 "enquanto simplifica o máximo possível a escrita de tal código LaTeX."
 
-#: ../data/org.gnome.latexila.appdata.xml.in.h:2
+#: ../data/org.gnome.latexila.appdata.xml.in.h:3
+#| msgid ""
+#| "New documents are created from templates. There are buttons to compile, "
+#| "convert and view a document in one click. And projects containing "
+#| "several .tex files are managed easily."
 msgid ""
 "To help the writing of the LaTeX markup, auto-completion is available as "
-"well as menus and toolbars with the principal commands."
+"well as menus and toolbars with the principal commands. New documents are "
+"created from templates. There are buttons to compile, convert and view a "
+"document in one click. And projects containing several .tex files are "
+"managed easily."
 msgstr ""
-"Para ajudar a escrita da marcação LaTeX, autocompletamento está disponível "
-"assim como menus e barras de ferramentas com os comandos principais."
-
-#: ../data/org.gnome.latexila.appdata.xml.in.h:3
-msgid ""
-"New documents are created from templates. There are buttons to compile, "
-"convert and view a document in one click. And projects containing several ."
-"tex files are managed easily."
-msgstr ""
-"Novos documentos são criados a partir de modelos. Há botões para efetuar "
-"compilação, conversão e visualização de um documento em um único clique. E "
-"projetos que possuem vários arquivos .tex são gerenciados de forma fácil."
+"Para ajudar na escrita da marcação LaTeX, autocompletamento está disponível "
+"assim como menus e barras de ferramentas com os comandos principais. Novos "
+"documentos são criados a partir de modelos. Há botões para compilar, "
+"converter e visualizar um documento em um clique. E projetos contendo vários "
+"arquivos .tex são gerenciados com facilidade."
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:4
 msgid ""
@@ -349,8 +354,8 @@ msgid ""
 "Whether the edit toolbar (bold, italic, character sizes, ...) should be "
 "visible."
 msgstr ""
-"Indica quando a barra de edição (negrito, itálico, tamanho dos "
-"caracteres, …) deve estar visível."
+"Indica quando a barra de edição (negrito, itálico, tamanho dos caracteres, "
+"…) deve estar visível."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:35
 msgid "Side panel is Visible"
@@ -410,8 +415,8 @@ msgid ""
 "Minimum number of characters after \"\\\" for the interactive completion of "
 "LaTeX commands"
 msgstr ""
-"Número mínimo de caracteres após “\\” para o autocompletamento interativo "
-"de comandos LaTeX"
+"Número mínimo de caracteres após “\\” para o autocompletamento interativo de "
+"comandos LaTeX"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:47
 #: ../src/ui/preferences_dialog.ui.h:22
@@ -533,7 +538,8 @@ msgstr ""
 "\n"
 "\\begin{document}\n"
 "\n"
-"\\begin{letter}{Destinatário\\\\Endereço de destinatário\\\\Número de telefone de destinatário}\n"
+"\\begin{letter}{Destinatário\\\\Endereço de destinatário\\\\Número de "
+"telefone de destinatário}\n"
 "\n"
 "\\opening{Caro Sr.,}\n"
 "\n"
@@ -558,7 +564,7 @@ msgstr "Ferramenta de construção pessoal"
 
 #: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:291
+#: ../src/document_tab.vala:294
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
@@ -752,7 +758,7 @@ msgstr "Selecione os arquivos que deseja excluir:"
 msgid "No build file to clean up."
 msgstr "Sem arquivos de construção para limpar."
 
-#: ../src/completion.vala:330
+#: ../src/completion.vala:334
 msgid "No matching proposal"
 msgstr "Nenhuma sugestão correspondente"
 
@@ -798,75 +804,75 @@ msgid "Close document"
 msgstr "Fechar documento"
 
 #. main file
-#: ../src/document_tab.vala:234 ../src/project_dialogs.vala:46
+#: ../src/document_tab.vala:237 ../src/project_dialogs.vala:46
 #: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
 #: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
 msgid "Main File"
 msgstr "Arquivo principal"
 
-#: ../src/document_tab.vala:236
+#: ../src/document_tab.vala:239
 msgid "Main File:"
 msgstr "Arquivo principal:"
 
-#: ../src/document_tab.vala:260
+#: ../src/document_tab.vala:263
 #, c-format
 msgid "Activate '%s'"
 msgstr "Ativar “%s”"
 
-#: ../src/document_tab.vala:279
+#: ../src/document_tab.vala:282
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "O arquivo %s foi mudado no disco."
 
-#: ../src/document_tab.vala:284
+#: ../src/document_tab.vala:287
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Você deseja descartar suas alterações e recarregar o arquivo?"
 
-#: ../src/document_tab.vala:286
+#: ../src/document_tab.vala:289
 msgid "Do you want to reload the file?"
 msgstr "Você deseja recarregar o arquivo?"
 
-#: ../src/document_tab.vala:290
+#: ../src/document_tab.vala:293
 msgid "_Reload"
 msgstr "_Recarregar"
 
-#: ../src/document.vala:134
+#: ../src/document.vala:115
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Impossível carregar o arquivo “%s”."
 
-#: ../src/document.vala:212
+#: ../src/document.vala:193
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "O arquivo %s foi modificado desde a leitura."
 
-#: ../src/document.vala:215
+#: ../src/document.vala:196
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Se você salvá-lo, todas as mudanças externas podem ser perdidos. Salvar "
 "mesmo assim?"
 
-#: ../src/document.vala:218
+#: ../src/document.vala:199
 msgid "_Save Anyway"
 msgstr "Sal_var mesmo assim"
 
-#: ../src/document.vala:219
+#: ../src/document.vala:200
 msgid "_Don't Save"
 msgstr "_Não salvar"
 
-#: ../src/document.vala:231
+#: ../src/document.vala:212
 msgid "Impossible to save the file."
 msgstr "Impossível salvar o arquivo."
 
-#: ../src/document.vala:256
+#: ../src/document.vala:237
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Erro ao tentar converter documento para UTF-8"
 
-#: ../src/document.vala:310
+#: ../src/document.vala:291
 msgid "Untitled Document"
 msgstr "Documento sem título"
 
-#: ../src/document.vala:594
+#: ../src/document.vala:503
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
@@ -874,30 +880,30 @@ msgstr ""
 "O arquivo tem uma localização temporária. Os dados podem ser perdidos após "
 "reinicializar o computador."
 
-#: ../src/document.vala:595
+#: ../src/document.vala:504
 msgid "Do you want to save the file in a safer place?"
 msgstr "Você deseja salvar o arquivo em um lugar mais seguro?"
 
-#: ../src/document.vala:598 ../src/main_window_file.vala:44
+#: ../src/document.vala:507 ../src/main_window_file.vala:44
 #: ../src/main_window.vala:765
 msgid "Save _As"
 msgstr "Salvar co_mo"
 
-#: ../src/document.vala:599
+#: ../src/document.vala:508
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../src/document_view.vala:367
+#: ../src/document_view.vala:317
 msgid "No dictionaries available for the spell checking."
 msgstr "Nenhum dicionário disponível para verificação ortográfica."
 
 #. Help
-#: ../src/document_view.vala:369 ../src/main_window.vala:62
+#: ../src/document_view.vala:319 ../src/main_window.vala:62
 #: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "Aj_uda"
 
-#: ../src/document_view.vala:370 ../src/tab_info_bar.vala:77
+#: ../src/document_view.vala:320
 msgid "_OK"
 msgstr "_OK"
 
@@ -963,7 +969,7 @@ msgid "translator-credits"
 msgstr ""
 "Átila Camurça <camurca.home@gmail.com>\n"
 "Darlildo Lima <darlildo.cefetce@gmail.com>\n"
-"Rafael Ferreira <rafael.f.f1@gmail.com>\n"
+"Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Enrico Nicoletto <liverig@gmail.com>"
 
 #. LaTeX: Sectioning
@@ -1268,7 +1274,7 @@ msgstr "Espaço vertical - \\vspace"
 
 #: ../src/latex_menu.vala:218
 msgid "No paragraph indentation - \\noindent"
-msgstr "Sem indentação de parágrafo - \\noindent"
+msgstr "Sem recuo de parágrafo - \\noindent"
 
 # no Português pode significar Acentos Nacionais!
 #. LaTeX: International accents
@@ -1633,7 +1639,7 @@ msgstr "[ direito"
 
 #: ../src/latex_menu.vala:424
 msgid "right { "
-msgstr "{ direita "
+msgstr "{ direita"
 
 #: ../src/latex_menu.vala:426
 msgid "right <"
@@ -2459,49 +2465,49 @@ msgstr "Ir para linha:"
 msgid "Line you want to move the cursor to"
 msgstr "Linha que deseja mover o curso"
 
-#: ../src/search.vala:174
+#: ../src/search.vala:172
 msgid "Replace with"
 msgstr "Substituir por"
 
-#: ../src/search.vala:182
+#: ../src/search.vala:180
 msgid "Replace"
 msgstr "Substituir"
 
 #. replace all: image + label
-#: ../src/search.vala:186
+#: ../src/search.vala:184
 msgid "Replace All"
 msgstr "Substituir todos"
 
-#: ../src/search.vala:195
+#: ../src/search.vala:193
 msgid "All"
 msgstr "Todos"
 
-#: ../src/search.vala:309
+#: ../src/search.vala:307
 msgid "Search for"
 msgstr "Pesquisar por"
 
-#: ../src/search.vala:320
+#: ../src/search.vala:318
 msgid "Case sensitive"
 msgstr "Diferenciar maiúsculas/minúsculas"
 
-#: ../src/search.vala:323
+#: ../src/search.vala:321
 msgid "Entire words only"
 msgstr "Apenas palavras inteiras"
 
-#: ../src/search.vala:469
+#: ../src/search.vala:467
 msgid "Not found"
 msgstr "Não encontrado"
 
 #. Translators: the first %d is the position of the current search occurrence,
 #. * and the second %d is the total number of search occurrences.
 #.
-#: ../src/search.vala:486
+#: ../src/search.vala:484
 #, c-format
 msgid "Match %d of %d"
 msgstr "Ocorrência %d de %d"
 
 #. Translators: %d is the total number of search occurrences.
-#: ../src/search.vala:491
+#: ../src/search.vala:489
 #, c-format
 msgid "%d match"
 msgid_plural "%d matches"
@@ -2752,6 +2758,14 @@ msgstr "Destacar palavras com erros ortográficos"
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Outro"
+
+#~ msgid ""
+#~ "To help the writing of the LaTeX markup, auto-completion is available as "
+#~ "well as menus and toolbars with the principal commands."
+#~ msgstr ""
+#~ "Para ajudar a escrita da marcação LaTeX, autocompletamento está "
+#~ "disponível assim como menus e barras de ferramentas com os comandos "
+#~ "principais."
 
 #~ msgid "- Integrated LaTeX Environment for GNOME"
 #~ msgstr "- Ambiente LaTeX Integrado para GNOME"
