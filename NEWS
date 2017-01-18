@@ -1,5 +1,10 @@
 LaTeXila NEWS
 
+Release 3.22.1, 2016-12-18
+--------------------------
+* Fix Vala compilation error with newer valac compiler
+* Translation updates
+
 Release 3.22.0, 2016-09-18
 --------------------------
 * Fundraising
