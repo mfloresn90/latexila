@@ -1,36 +1,36 @@
 LaTeXila NEWS
 
-Release 3.22.0
---------------
+Release 3.22.0, 2016-09-18
+--------------------------
 * Fundraising
 * Update AppData
 * Translation updates
 
-Release 3.20.1
---------------
+Release 3.20.1, 2016-07-29
+--------------------------
 * Bug fix: initialize correctly the build view settings (to hide
   warnings/badboxes).
 * Translation updates
 
-Release 3.20.0
---------------
+Release 3.20.0, 2016-03-20
+--------------------------
 * Add Turkish translation
 * Other translation update
 
-Release 3.19.5
---------------
+Release 3.19.5, 2016-03-13
+--------------------------
 * Adapt code for gspell API changes
 * Translation updates
 
-Release 3.19.4
---------------
+Release 3.19.4, 2016-02-15
+--------------------------
 * Close fundraiser
 * Adapt code for gspell API changes
 * AppData: add translation tag
 * Translation updates
 
-Release 3.19.3
---------------
+Release 3.19.3, 2016-01-17
+--------------------------
 * Adapt code for gspell API changes
 * Adapt code to support again loading and saving remote files
 * Better gnome-shell integration: add an application menu and fix the
@@ -40,20 +40,20 @@ Release 3.19.3
 * Other various small code improvements
 * Translation updates
 
-Release 3.19.2
---------------
+Release 3.19.2, 2015-12-13
+--------------------------
 * Adapt code for GspellLanguage API changes
 * Adapt CSS to track GTK+ changes
 * Rename latexila.deskop to org.gnome.latexila.desktop
 * Rename AppData to org.gnome.latexila.appdata.xml
 * Other various small improvements and bug fixes
 
-Release 3.19.1
---------------
+Release 3.19.1, 2015-11-23
+--------------------------
 * Adapt code for GspellLanguageChooserDialog change
 
-Release 3.18.1
---------------
+Release 3.18.1, 2015-11-08
+--------------------------
 * After some GTK+ changes during the last few releases, there were some
   regressions in LaTeXila. Because of the overlay scrollbars, it was not
   possible to select some characters with the mouse. And when (1) line numbers
@@ -68,12 +68,12 @@ Release 3.18.1
 * Added Portuguese translation
 * Added Ukrainian help translation
 
-Release 3.18.0
---------------
+Release 3.18.0, 2015-10-14
+--------------------------
 * Translation updates
 
-Release 3.17.90
----------------
+Release 3.17.90, 2015-10-01
+---------------------------
 * Use gspell instead of GtkSpell. WARNING: gspell = 0.1.x is required, the 0.2
   or 1.0 version of gspell will most probably be incompatible with gspell 0.1.
 * Add default spell checking settings in the preferences dialog.
@@ -86,8 +86,8 @@ Release 3.17.90
 * Other various small improvements and bug fixes
 * Translation updates
 
-Release 3.17.0
---------------
+Release 3.17.0, 2015-07-23
+--------------------------
 * Integrated file browser: new buttons to open the current directory in a file
   manager (e.g. Nautilus) or in the terminal (Arnaud Blouin)
 * Completion: close environment in a different user action, to have two undo
@@ -99,76 +99,76 @@ Release 3.17.0
 * Use an headerbar for the dialog windows
 * Rewrite of the templates feature
 
-Release 3.16.0
---------------
+Release 3.16.0, 2015-03-25
+--------------------------
 * Show information about LaTeXila fundraiser
 * Various small improvements
 * Translation updates
 * Added Bosnian translation
 
-Release 3.15.2
---------------
+Release 3.15.2, 2015-01-09
+--------------------------
 * Add keywords to latexila.desktop (Tanguy Ortolo)
 * Build tools icons in size 16x16 (Alexander Wilms)
 * A good bunch of source code maintenance (use less deprecated GTK+ APIs)
 * A few bug fixes and small improvements
 * Translation updates
 
-Release 3.15.1
---------------
+Release 3.15.1, 2014-10-26
+--------------------------
 * Rewrite of the build tools and synctex code in C
 
-Release 3.14.1
---------------
+Release 3.14.1, 2014-10-01
+--------------------------
 * A few bug fixes and small improvements
 * GTK+ 3.14 is required because LaTeXila overrides some CSS properties
   and assumes that GTK+ 3.14 is used.
 
-Release 3.14.0
---------------
+Release 3.14.0, 2014-09-22
+--------------------------
 * Now LaTeXila follows the GNOME versions
 * Better icons
 * Upgrade to gee-0.8
 * Other small improvements
 * Translation updates
 
-Release 2.12.0
---------------
+Release 2.12.0, 2014-03-26
+--------------------------
 * Refresh structure when saving
 * Misc bugfixes and small improvements
 * Translations updates
 
-Release 2.10.0
---------------
+Release 2.10.0, 2013-11-01
+--------------------------
 * Added Lithuanian translation
 * Translations updates
 
-Release 2.9.0
--------------
+Release 2.9.0, 2013-10-11
+-------------------------
 * Search and replace: use the new API from GtkSourceView
 * Use upstream GtkSpell (LaTeXila depends on GtkSpell now, instead of Enchant)
 * Improvements to the completion
 * AppData file
 * Translations updates
 
-Release 2.8.3
--------------
+Release 2.8.3, 2013-08-31
+-------------------------
 * Build tools: fix crash on unknown post processor
 * Updated Galician translations
 
-Release 2.8.2
--------------
+Release 2.8.2, 2013-06-07
+-------------------------
 * Misc bugfixes
 
-Release 2.8.1
--------------
+Release 2.8.1, 2013-05-06
+-------------------------
 * Bump required version of GLib to 2.36
 * Add Catalan and Greek translations
 * Translations updates
 * Misc bugfixes
 
-Release 2.8.0
--------------
+Release 2.8.0, 2013-03-28
+-------------------------
 * Allow the menu bar to shrink below its minimum size
 * Load and save accelerator maps (it's now possible to edit the keyboard shortcuts)
 * Change the application icons
@@ -177,8 +177,8 @@ Release 2.8.0
 * Misc bugfixes
 * Translations updates
 
-Release 2.7.0
--------------
+Release 2.7.0, 2013-01-22
+-------------------------
 * Insert table and tabular: more complete example
 * Changes in the toolbars
 * Build tools: use shorter options with Latexmk
@@ -186,28 +186,28 @@ Release 2.7.0
 * Misc bug fixes
 * Translations updates
 
-Release 2.6.2
--------------
+Release 2.6.2, 2012-11-24
+-------------------------
 * Misc bug fixes
 * Translations updates
 
-Release 2.6.1
--------------
+Release 2.6.1, 2012-10-20
+-------------------------
 * Autotools: required version of Vala is now optional
 * Comment selected lines: comment empty lines too
 * Misc bug fixes
 
-Release 2.6.0
--------------
+Release 2.6.0, 2012-10-07
+-------------------------
 * Change default style scheme from 'classic' to 'tango'
 * Translations updates
 
-Release 2.5.4
--------------
+Release 2.5.4, 2012-09-10
+-------------------------
 * Fix build issue
 
-Release 2.5.3
--------------
+Release 2.5.3, 2012-09-10
+-------------------------
 * Build system: switch from CMake to the Autotools
 * SyncTeX: forward and backward search
 * Import the GtkSpell source code
@@ -223,8 +223,8 @@ Release 2.5.3
 * Various code cleanups and refactoring
 * Translations updates
 
-Release 2.5.2
--------------
+Release 2.5.2, 2012-07-24
+-------------------------
 * Build Tools:
 	- Separate default and personal build tools
 	- To manage build tools, go to Build -> Manage Build Tools
@@ -244,28 +244,28 @@ Release 2.5.2
 * CMake: generate README and INSTALL from README.in and INSTALL.in
 * Various code cleanups and refactoring
 
-Release 2.5.1
--------------
+Release 2.5.1, 2012-05-31
+-------------------------
 * Figure insertion: swap \label and \caption
 * Use GResource for icons and symbols
 * Code refactoring for the symbols (in the side panel)
 * Fixes and improvements of the compilation with CMake
 * Updated Brazilian Portuguese, Czech, Serbian and Latvian translations
 
-Release 2.5.0
--------------
+Release 2.5.0, 2012-04-21
+-------------------------
 * Port to GTK+ 3
 * Migrate from libunique to GtkApplication
 * Updated Spanish, Slovenian and French translations
 
-Release 2.4.1
--------------
+Release 2.4.1, 2012-06-05
+-------------------------
 * Figure insertion: swap \label and \caption
 * Updated French, Czech translations
 * Added Indonesian translation
 
-Release 2.4.0
--------------
+Release 2.4.0, 2012-03-28
+-------------------------
 * Document compilation: set temporary location if file not saved
 * More documentation
 * Structure: bug fix for the display of simple lists
@@ -277,8 +277,8 @@ Release 2.4.0
 * Updated Spanish, Slovenian, Serbian, French, German, Latvian,
   Norwegian bokmål and Czech translations
 
-Release 2.3.1
--------------
+Release 2.3.1, 2012-02-05
+-------------------------
 * More completion data
 * Support drag and drop of a list of files
 * Completion: code clean-up
@@ -288,8 +288,8 @@ Release 2.3.1
 * Add Simplified Chinese, Norwegian bokmål translations
 * Updated Spanish translation
 
-Release 2.3.0
--------------
+Release 2.3.0, 2011-11-26
+-------------------------
 * Spell checking with GtkSpell
 * Build Tools: add XeTeX -> PDF with Latexmk
 * Improve figure environment insertion
@@ -299,20 +299,20 @@ Release 2.3.0
 * New CMake option: VALAC
 * Switch to Vala 0.14
 
-Release 2.2.3
--------------
+Release 2.2.3, 2012-02-05
+-------------------------
 * Added Esperanto and Norwegian bokmål translations
 * Updated Swedish, German and Spanish translations
 
-Release 2.2.2
--------------
+Release 2.2.2, 2011-10-08
+-------------------------
 * Avoid critical messages about a GtkAction
 * Fix the right math delimiters
 * Added Galician translation
 * Updated Slovenian, Czech, Spanish translations
 
-Release 2.2.1
--------------
+Release 2.2.1, 2011-09-17
+-------------------------
 * Completion data: add some environments
 * Added Slovenian, Czech, Swedish and Serbian translations
 * Requirements fix: GLib >= 2.28 (instead of 2.26)
@@ -321,8 +321,8 @@ Release 2.2.1
   659129: space alone triggers completion with the fr-oss keyboard layout
   659290: avoid GCC error messages when using -Werror=format-security
 
-Release 2.2.0
--------------
+Release 2.2.0, 2011-08-26
+-------------------------
 * Integration with GNOME Damned Lies (use ITS Tool, …)
 * Structure: more robust, and more optimized
 * Latexmk post processor: extract Latexmk messages
@@ -333,8 +333,8 @@ Release 2.2.0
 * Translation updates: French, German and Spanish
 * Some other little improvements and bug fixes
 
-Release 2.1.1
--------------
+Release 2.1.1, 2011-07-15
+-------------------------
 * Structure:
 	- better implemenation (custom Gtk.TreeModel)
 	- better performances (line-by-line parsing)
@@ -350,8 +350,8 @@ Release 2.1.1
 * dconf: scripts for migrating latexila 2.0.x -> 2.2.x
 * Some other little improvements and bug fixes
 
-Release 2.1.0
--------------
+Release 2.1.0, 2011-05-06
+-------------------------
 * Build Tools: Latexmk by default instead of Rubber (Rubber is still available)
 * New build tools: "low level" commands (latex, pdflatex, dvipdf, etc.)
 * Show/hide a build tool
@@ -360,8 +360,8 @@ Release 2.1.0
 * Structure of a document to easily navigate in it
 * Some code clean-up and little fixes
 
-Release 2.0.8
--------------
+Release 2.0.8, 2011-06-14
+-------------------------
 * Fix a segmentation fault on search
 * Change behavior of HOME and END buttons
 * More completion data (Pieter Pareit)
@@ -369,49 +369,49 @@ Release 2.0.8
 * German translation: some fixes (Max Schillinger)
 * Some other little improvements and bug fixes
 
-Release 2.0.7
--------------
+Release 2.0.7, 2011-03-25
+-------------------------
 * Projects: avoid infinite loop at startup
 * Some other little fixes
 
-Release 2.0.6
--------------
+Release 2.0.6, 2011-03-04
+-------------------------
 * More robust save and load of build tools
 * Italian translation
 * Some little improvements and bug fixes
 
-Release 2.0.5
--------------
+Release 2.0.5, 2011-02-13
+-------------------------
 * German translation
 * GSettings desktop schemas are now optional
 * New post processor for build tools: 'all-output'
 * Rename 'generic' post processor to 'no-output'
 * Bug fixes in build tools
 
-Release 2.0.4
--------------
+Release 2.0.4, 2011-01-28
+-------------------------
 * Bug fix: slowness at the end of long lines
 * Bug fix: "save all" modifies which tab is active
 
-Release 2.0.3
--------------
+Release 2.0.3, 2011-01-15
+-------------------------
 * Fix path issues in RubberPostProcessor
 * C code generated (Vala is no longer required)
 
-Release 2.0.2
--------------
+Release 2.0.2, 2010-12-25
+-------------------------
 * Brazilian Portuguese translation
 * New application icon
 
-Release 2.0.1
--------------
+Release 2.0.1, 2010-11-21
+-------------------------
 * Editor setting: forget you're not using tabs
 * File browser: show all files except clean-up
 * Centered Formula: \[...\] instead of $$...$$
 * Some other little improvements and bug fixes
 
-Release 2.0.0
--------------
+Release 2.0.0, 2010-11-13
+-------------------------
 * LaTeX commands auto-completion
 * Manage build tools with a GUI
 * Most used symbols
@@ -423,14 +423,14 @@ Release 2.0.0
 * French and Spanish translations updated
 * Some other little improvements and bug fixes
 
-Release 1.99.1
---------------
+Release 1.99.1, 2010-09-02
+--------------------------
 * Bug fix: critical messages with several windows
 * Bug fix: save a new document on disk
 * ChangeLog updated
 
-Release 1.99.0
---------------
+Release 1.99.0, 2010-08-25
+--------------------------
 * Rewrite in Vala
 * One instance of LaTeXila can manage several windows
 * Thanks to unique, a new file is opened in an existing window if it's in the
@@ -440,8 +440,8 @@ same workspace
 * French translation updated
 * Spanish translation added
 
-Release 0.2
------------
+Release 0.2, 2010-02-20
+-----------------------
 * New logo and icon (Eric Forgeot)
 * User-friendly output for the compilation:
 	* The output is filtered: only errors, warnings and badboxes are
@@ -462,8 +462,8 @@ Release 0.2
 * Create personnal templates: choose an icon
 * French translation updated
 
-Release 0.1
------------
+Release 0.1, 2009-12-28
+-----------------------
 * File browser integrated
 * BibTeX and MakeIndex support
 * Templates:
@@ -488,8 +488,8 @@ Release 0.1
 * Some icons updated
 * French translation updated
 
-Release 0.0.2
--------------
+Release 0.0.2, 2009-10-17
+-------------------------
 * Symbol tables: Greek letters, arrows, relations, operators,
 delimiters, misc math, misc text (661 symbols)
 * Edit toolbar and the LaTeX menu: sectioning, references,
@@ -503,8 +503,8 @@ document (the output is showed progressivly line per line)
 * Log zone: keep only the five last actions
 * French translation updated
 
-Release 0.0.1
--------------
+Release 0.0.1, 2009-09-02
+-------------------------
 * Syntaxic color
 * Buttons to compile, convert and view the document
 * All common things found in a text editor...
