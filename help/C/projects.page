@@ -36,8 +36,9 @@
   <list>
     <item><p>A <link xref="build_tools">build tool</link> is executed on the
     project's main file.</p></item>
-    <item><p>The <link xref="synctex#forward_search">forward search</link>
-    works for a secondary file of a project.</p></item>
+    <item><p><link xref="synctex#from_tex_to_pdf">Jumping from a .tex file to
+    the PDF</link> works for a secondary .tex file belonging to a
+    project.</p></item>
   </list>
 </section>
 </page>
