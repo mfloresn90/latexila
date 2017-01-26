@@ -1,5 +1,18 @@
 LaTeXila NEWS
 
+Release 3.23.1, 2017-01-26
+--------------------------
+* Update code to not use deprecated GtkSourceView APIs.
+* Use the Gtef library, available at:
+  https://github.com/swilmet/gtef
+  Some functionality has been moved from LaTeXila to Gtef.
+* Change menu item label "Search Forward" -> "Jump to PDF" to not confuse it
+  with the normal search and replace feature. And adapt the docs accordingly.
+* Update the build system to use autoconf-archive macros instead of
+  gnome-common. See:
+  https://wiki.gnome.org/Projects/GnomeCommon/Migration
+* Translation updates
+
 Release 3.22.1, 2016-12-18
 --------------------------
 * Fix Vala compilation error with newer valac compiler
