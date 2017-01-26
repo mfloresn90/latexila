@@ -28,6 +28,9 @@
  * the forward search: source file -> PDF. And backward search: PDF -> source
  * file.
  *
+ * It works only with PDF files, it doesn't work with DVI or PS or other
+ * generated document formats.
+ *
  * D-Bus is used to communicate between LaTeXila and Evince. The implementation
  * uses the asynchronous gdbus generated functions.
  *
