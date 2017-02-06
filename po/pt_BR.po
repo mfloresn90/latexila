@@ -1,17 +1,17 @@
 # Brazilian Portuguese translation for LaTeXila package.
-# Copyright (C) 2016 COMSOLiD - Comunidade Maracanauense de Software Livre e Inclusão Digital
+# Copyright (C) 2017 COMSOLiD - Comunidade Maracanauense de Software Livre e Inclusão Digital
 # This file is distributed under the same license as the LaTeXila package.
 # Átila Camurça <camurca.home@gmail.com>, 2012.
 # Darlildo Souza <darlildo.cefetce@gmail.com>, 2012.
 # Enrico Nicoletto <liverig@gmail.com>, 2014, 2015.
-# Rafael Fontenelle <rafaelff@gnome.org>, 2013, 2016.
+# Rafael Fontenelle <rafaelff@gnome.org>, 2013, 2016, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: LaTeXila\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=latexil"
 "a&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-12-18 16:00+0000\n"
-"PO-Revision-Date: 2016-12-28 17:15-0200\n"
+"POT-Creation-Date: 2017-01-26 12:21+0000\n"
+"PO-Revision-Date: 2017-02-06 08:42-0200\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -93,7 +93,6 @@ msgid "Convert the PostScript document to the PDF format"
 msgstr "Converter o documento PostScript para o formato PDF"
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:1
-#| msgid "Integrated LaTeX Environment"
 msgid "Integrated LaTeX environment"
 msgstr "Ambiente LaTeX integrado"
 
@@ -108,10 +107,6 @@ msgstr ""
 "enquanto simplifica o máximo possível a escrita de tal código LaTeX."
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:3
-#| msgid ""
-#| "New documents are created from templates. There are buttons to compile, "
-#| "convert and view a document in one click. And projects containing "
-#| "several .tex files are managed easily."
 msgid ""
 "To help the writing of the LaTeX markup, auto-completion is available as "
 "well as menus and toolbars with the principal commands. New documents are "
@@ -538,8 +533,7 @@ msgstr ""
 "\n"
 "\\begin{document}\n"
 "\n"
-"\\begin{letter}{Destinatário\\\\Endereço de destinatário\\\\Número de "
-"telefone de destinatário}\n"
+"\\begin{letter}{Destinatário\\\\Endereço de destinatário\\\\Número de telefone de destinatário}\n"
 "\n"
 "\\opening{Caro Sr.,}\n"
 "\n"
@@ -568,8 +562,8 @@ msgstr "Ferramenta de construção pessoal"
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:762
-#: ../src/main_window.vala:858 ../src/preferences_dialog.vala:114
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:763
+#: ../src/main_window.vala:859 ../src/preferences_dialog.vala:114
 #: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
 #: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
@@ -769,12 +763,12 @@ msgstr "Nenhuma sugestão correspondente"
 msgid "Ln %d, Col %d"
 msgstr "Ln %d, Col %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:761
+#: ../src/dialogs.vala:40 ../src/main_window.vala:762
 msgid "Close _without Saving"
 msgstr "Fechar s_em salvar"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:767 ../src/main_window.vala:859
+#: ../src/main_window.vala:768 ../src/main_window.vala:860
 msgid "_Save"
 msgstr "_Salvar"
 
@@ -885,7 +879,7 @@ msgid "Do you want to save the file in a safer place?"
 msgstr "Você deseja salvar o arquivo em um lugar mais seguro?"
 
 #: ../src/document.vala:507 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:765
+#: ../src/main_window.vala:766
 msgid "Save _As"
 msgstr "Salvar co_mo"
 
@@ -898,7 +892,7 @@ msgid "No dictionaries available for the spell checking."
 msgstr "Nenhum dicionário disponível para verificação ortográfica."
 
 #. Help
-#: ../src/document_view.vala:319 ../src/main_window.vala:62
+#: ../src/document_view.vala:319 ../src/main_window.vala:63
 #: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "Aj_uda"
@@ -940,7 +934,7 @@ msgid "File System"
 msgstr "Sistema de arquivos"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:411
+#: ../src/file_browser.vala:536 ../src/main_window.vala:412
 msgid "File Browser"
 msgstr "Navegador de arquivos"
 
@@ -960,7 +954,7 @@ msgstr "Criar uma nova janela em uma instância existente do LaTeXila"
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeXila é um Ambiente Integrado LaTeX para a Plataforma GNOME"
 
-#: ../src/latexila_app.vala:262 ../src/main_window.vala:71
+#: ../src/latexila_app.vala:262 ../src/main_window.vala:72
 msgid "About LaTeXila"
 msgstr "Sobre LaTeXila"
 
@@ -1691,24 +1685,24 @@ msgstr "Falhou ao abrir “%s”:"
 msgid "Open %s"
 msgstr "Abrir %s"
 
-#: ../src/liblatexila/latexila-synctex.c:189
+#: ../src/liblatexila/latexila-synctex.c:192
 msgid "Impossible to do the forward search."
 msgstr "Impossível realizar a busca do próximo."
 
-#: ../src/liblatexila/latexila-synctex.c:526
+#: ../src/liblatexila/latexila-synctex.c:529
 msgid "Can not communicate with evince."
 msgstr "Não foi possível abrir o visualizador de documentos Evince."
 
-#: ../src/liblatexila/latexila-synctex.c:556
+#: ../src/liblatexila/latexila-synctex.c:559
 #, c-format
 msgid "The file \"%s\" doesn't exist."
 msgstr "O arquivo “%s” não existe."
 
-#: ../src/liblatexila/latexila-synctex.c:590
+#: ../src/liblatexila/latexila-synctex.c:593
 msgid "The PDF file doesn't exist."
 msgstr "O arquivo PDF não existe."
 
-#: ../src/liblatexila/latexila-synctex.c:641
+#: ../src/liblatexila/latexila-synctex.c:644
 msgid "The document is not saved."
 msgstr "O documento não está salvo."
 
@@ -2243,110 +2237,114 @@ msgid "Go to a specific line"
 msgstr "Ir para uma linha específica"
 
 #: ../src/main_window.vala:48
-msgid "_Search Forward"
-msgstr "_Pesquisar próxima"
+msgid "_Jump to PDF"
+msgstr "P_ular par PDF"
 
 #: ../src/main_window.vala:49
-msgid "Jump to the associated position in the PDF file"
-msgstr "Ir para a posição associada no arquivo PDF"
+msgid ""
+"Jump to the associated position in the PDF file. Another shortcut: Ctrl"
+"+click, which works in both directions."
+msgstr ""
+"Pula para a posição associada no arquivo PDF. Um outro atalho: Ctrl+clique, "
+"que funciona em ambas direções."
 
 #. Projects
-#: ../src/main_window.vala:52
+#: ../src/main_window.vala:53
 msgid "_Projects"
 msgstr "_Projetos"
 
-#: ../src/main_window.vala:53
+#: ../src/main_window.vala:54
 msgid "_New Project"
 msgstr "_Novo projeto"
 
-#: ../src/main_window.vala:54
+#: ../src/main_window.vala:55
 msgid "Create a new project"
 msgstr "Cria um novo projeto"
 
-#: ../src/main_window.vala:55
+#: ../src/main_window.vala:56
 msgid "_Configure Current Project"
 msgstr "_Configurar o projeto atual"
 
-#: ../src/main_window.vala:56
+#: ../src/main_window.vala:57
 msgid "Change the main file of the current project"
 msgstr "Alterar o arquivo principal do projeto atual"
 
-#: ../src/main_window.vala:58
+#: ../src/main_window.vala:59
 msgid "_Manage Projects"
 msgstr "_Gerenciar projetos"
 
-#: ../src/main_window.vala:59 ../src/project_dialogs.vala:187
+#: ../src/main_window.vala:60 ../src/project_dialogs.vala:187
 msgid "Manage Projects"
 msgstr "Gerenciar projetos"
 
-#: ../src/main_window.vala:63
+#: ../src/main_window.vala:64
 msgid "_Contents"
 msgstr "_Conteúdo"
 
-#: ../src/main_window.vala:64
+#: ../src/main_window.vala:65
 msgid "Open the LaTeXila documentation"
 msgstr "Abrir a documentação do LaTeXila"
 
-#: ../src/main_window.vala:65
+#: ../src/main_window.vala:66
 msgid "_LaTeX Reference"
 msgstr "Referência _LaTeX"
 
-#: ../src/main_window.vala:66
+#: ../src/main_window.vala:67
 msgid "The Kile LaTeX Reference"
 msgstr "Referência LaTeX do editor Kile"
 
-#: ../src/main_window.vala:70 ../src/ui/menus.ui.h:5
+#: ../src/main_window.vala:71 ../src/ui/menus.ui.h:5
 msgid "_About"
 msgstr "_Sobre"
 
-#: ../src/main_window.vala:76
+#: ../src/main_window.vala:77
 msgid "_Main Toolbar"
 msgstr "_Barra de ferramentas principal"
 
-#: ../src/main_window.vala:77
+#: ../src/main_window.vala:78
 msgid "Show or hide the main toolbar"
 msgstr "Mostrar ou ocultar a barra de ferramentas principal"
 
 #. Translators: "Edit" here is an adjective.
-#: ../src/main_window.vala:79
+#: ../src/main_window.vala:80
 msgid "_Edit Toolbar"
 msgstr "_Editar barra de ferramentas"
 
-#: ../src/main_window.vala:80
+#: ../src/main_window.vala:81
 msgid "Show or hide the edit toolbar"
 msgstr "Mostrar ou ocultar a barra de ferramentas de edição"
 
-#: ../src/main_window.vala:81
+#: ../src/main_window.vala:82
 msgid "_Side panel"
 msgstr "Painel _lateral"
 
-#: ../src/main_window.vala:82
+#: ../src/main_window.vala:83
 msgid "Show or hide the side panel"
 msgstr "Mostrar ou ocultar o painel lateral"
 
-#: ../src/main_window.vala:83
+#: ../src/main_window.vala:84
 msgid "_Bottom panel"
 msgstr "Painel _inferior"
 
-#: ../src/main_window.vala:84
+#: ../src/main_window.vala:85
 msgid "Show or hide the bottom panel"
 msgstr "Mostrar ou esconder o painel inferior"
 
 #. Symbols
-#: ../src/main_window.vala:407
+#: ../src/main_window.vala:408
 msgid "Symbols"
 msgstr "Sí­mbolos"
 
-#: ../src/main_window.vala:416
+#: ../src/main_window.vala:417
 msgid "Structure"
 msgstr "Estrutura"
 
-#: ../src/main_window.vala:650
+#: ../src/main_window.vala:651
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Este arquivo (%s) já está aberto em outra janela do LaTeXila."
 
-#: ../src/main_window.vala:652
+#: ../src/main_window.vala:653
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2354,24 +2352,24 @@ msgstr ""
 "LaTeXila abriu esta instância do arquivo de uma forma não-editável. Você "
 "deseja editá-lo mesmo assim?"
 
-#: ../src/main_window.vala:655
+#: ../src/main_window.vala:656
 msgid "Edit Anyway"
 msgstr "Editar mesmo assim"
 
-#: ../src/main_window.vala:656
+#: ../src/main_window.vala:657
 msgid "Don't Edit"
 msgstr "Não editar"
 
-#: ../src/main_window.vala:758
+#: ../src/main_window.vala:759
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Salvar mudanças no documento “%s” antes de fechar?"
 
-#: ../src/main_window.vala:838
+#: ../src/main_window.vala:839
 msgid "Read-Only"
 msgstr "Apenas leitura"
 
-#: ../src/main_window.vala:856
+#: ../src/main_window.vala:857
 msgid "Save File"
 msgstr "Salvar arquivo"
 
@@ -2758,6 +2756,12 @@ msgstr "Destacar palavras com erros ortográficos"
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Outro"
+
+#~ msgid "_Search Forward"
+#~ msgstr "_Pesquisar próxima"
+
+#~ msgid "Jump to the associated position in the PDF file"
+#~ msgstr "Ir para a posição associada no arquivo PDF"
 
 #~ msgid ""
 #~ "To help the writing of the LaTeX markup, auto-completion is available as "
