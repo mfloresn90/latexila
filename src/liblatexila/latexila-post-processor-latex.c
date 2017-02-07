@@ -1337,6 +1337,7 @@ update_stack_file (LatexilaPostProcessorLatex *pp,
           append_to_filename_buffer (pp, line_stripped);
           g_free (line_stripped);
         }
+      break;
 
     case STATE_BADBOX:
     case STATE_WARNING:
