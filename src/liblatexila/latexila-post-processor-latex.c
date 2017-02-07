@@ -1196,8 +1196,10 @@ update_stack_file_heuristic (LatexilaPostProcessorLatex *pp,
           /* Guess the filename is continued on the next line, only if the
            * current filename does not exist.
            */
-          else if (is_last_char)
+          else
             {
+              g_assert (is_last_char);
+
               if (file_exists (pp, pp->priv->filename_buffer->str))
                 {
                   push_file_on_stack (pp, FALSE);
@@ -1208,20 +1210,6 @@ update_stack_file_heuristic (LatexilaPostProcessorLatex *pp,
                 {
                   pp->priv->state = STATE_FILENAME_HEURISTIC;
                 }
-            }
-
-          /* Filename not detected. */
-          else
-            {
-              pp->priv->state = STATE_START;
-
-              if (pp->priv->filename_buffer != NULL)
-                {
-                  g_string_free (pp->priv->filename_buffer, TRUE);
-                  pp->priv->filename_buffer = NULL;
-                }
-
-              expect_filename = FALSE;
             }
         }
 
