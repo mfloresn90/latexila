@@ -416,7 +416,7 @@ get_first_free_template_index (LatexilaTemplatesPersonal *templates)
 {
   gint template_num;
 
-  for (template_num = 0; template_num <= G_MAXINT; template_num++)
+  for (template_num = 0; template_num < G_MAXINT; template_num++)
     {
       if (!is_template_index_used (templates, template_num))
         return template_num;
