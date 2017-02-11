@@ -1,15 +1,15 @@
 # Czech translation for latexila.
 # Copyright (C) 2011 latexila's COPYRIGHT HOLDER
 # This file is distributed under the same license as the latexila package.
-# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013, 2015.
+# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013, 2015, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila master\n"
-"POT-Creation-Date: 2015-09-26 18:24+0000\n"
-"PO-Revision-Date: 2015-10-12 00:01+0200\n"
+"POT-Creation-Date: 2017-01-26 12:21+0000\n"
+"PO-Revision-Date: 2017-02-11 10:13+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
-"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -384,11 +384,11 @@ msgstr ""
 #. (itstool) path: item/p
 #: C/projects.page:39
 msgid ""
-"The <link xref=\"synctex#forward_search\">forward search</link> works for a "
-"secondary file of a project."
+"<link xref=\"synctex#from_tex_to_pdf\">Jumping from a .tex file to the PDF</"
+"link> works for a secondary .tex file belonging to a project."
 msgstr ""
-"<link xref=\"synctex#forward_search\">Dopředné hledání</link> funguje pro "
-"podružné soubory projektu."
+"<link xref=\"synctex#from_tex_to_pdf\">Přechod ze souboru .tex do PDF</link> "
+"funguje pro podružné soubory .tex projektu."
 
 #. (itstool) path: page/title
 #: C/spell_checking.page:10
@@ -553,17 +553,17 @@ msgstr ""
 
 #. (itstool) path: page/title
 #: C/synctex.page:10
-msgid "Forward and Backward Search"
-msgstr "Dopředné a zpětné hledání"
+msgid "Jumping Between .tex and PDF"
+msgstr "Přecházení mezi .tex a PDF"
 
 #. (itstool) path: synopsis/p
 #: C/synctex.page:13
 msgid ""
-"Synchronization between the document's *.tex files and the resulting PDF "
-"output, opened with the <app>Evince</app> document viewer."
+"Jumping between the document's *.tex files and the resulting PDF output, "
+"opened with the <app>Evince</app> document viewer."
 msgstr ""
-"Synchronizace mezi soubory *.tex dokumentu a výsledným výstupem v PDF "
-"otevřeným v prohlížeči dokumentů <app>Evince</app>."
+"Přecházení mezi soubory *.tex dokumentu a výsledným výstupem v PDF otevřeným "
+"v prohlížeči dokumentů <app>Evince</app>."
 
 #. (itstool) path: note/p
 #: C/synctex.page:18
@@ -576,31 +576,31 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/synctex.page:23
-msgid "Forward Search: from .tex to PDF"
-msgstr "Hledat vpřed: z .tex do PDF"
+msgid "Jumping from .tex to PDF"
+msgstr "Přecházení z .tex do PDF"
 
 #. (itstool) path: section/p
 #: C/synctex.page:25
 msgid ""
 "From a certain position in the .tex source file, jump to the corresponding "
-"position in the PDF file."
+"position in the PDF file. Also called “forward search”."
 msgstr ""
 "Z určeného místa ve zdrojovém souboru .tex skočí na odpovídající místo v "
-"souboru PDF."
+"souboru PDF. Tzv. „dopředné hledání“.1"
 
 #. (itstool) path: section/p
 #: C/synctex.page:28
-msgid "There are different ways to do a forward search:"
-msgstr "Jsou různé způsoby, jak dopředné hledání provést:"
+msgid "There are different ways to do this action:"
+msgstr "Jsou různé způsoby, jak tuto věc provést:"
 
 #. (itstool) path: item/p
 #: C/synctex.page:30
 msgid ""
 "In the menu: <guiseq> <gui style=\"menu\">Search</gui> <gui style=\"menu"
-"\">Search Forward</gui> </guiseq>"
+"\">Jump to PDF</gui> </guiseq>"
 msgstr ""
-"V nabídce: <guiseq> <gui style=\"menu\">Hledat</gui> <gui style=\"menu"
-"\">Hledat vpřed</gui> </guiseq>"
+"V nabídce: <guiseq><gui style=\"menu\">Hledat</gui> <gui style=\"menu"
+"\">Přejít do PDF</gui></guiseq>"
 
 #. (itstool) path: item/p
 #: C/synctex.page:36
@@ -611,10 +611,10 @@ msgstr "Zmáčknutím <keyseq> <key>Ctrl</key> <key>levý klik</key> </keyseq>"
 #: C/synctex.page:44
 msgid ""
 "If a document is split into several .tex files, create a <link xref="
-"\"projects\">project</link>. There is no need to mention the main file with "
-"a LaTeX comment in each secondary .tex file, like it is explained in the "
-"<link href=\"help:evince/synctex-search#forward-search\"> <app>Evince</app> "
-"documentation. </link>"
+"\"projects\">project</link>. Unlike what is explained in the <link href="
+"\"help:evince/synctex-search#forward-search\"> <app>Evince</app> "
+"documentation </link>, there is no need to mention the main file with a "
+"LaTeX comment in each secondary .tex file."
 msgstr ""
 "Pokud je dokument rozdělen do více souborů .tex, vytvořte <link xref="
 "\"projects\">projekt</link>. Není snad potřeba zmiňovat, že hlavní soubor je "
@@ -624,11 +624,20 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/synctex.page:53
-msgid "Backward Search"
-msgstr "Zpětné hledání"
+msgid "Jumping from PDF to .tex"
+msgstr "Přecházení z PDF do .tex"
 
 #. (itstool) path: section/p
 #: C/synctex.page:55
+msgid ""
+"From a certain position in the PDF file, jump to the corresponding position "
+"in the .tex source file. Also called “backward search”."
+msgstr ""
+"Z určeného místa v souboru PDF skočí na odpovídající místo ve zdrojovém "
+"souboru .tex. Tzv. „zpětné hledání“."
+
+#. (itstool) path: section/p
+#: C/synctex.page:58
 msgid ""
 "In <app>Evince</app>, press <keyseq> <key>Ctrl</key> <key>left click</key> </"
 "keyseq>, and the corresponding position in the .tex file will be opened in "
@@ -639,10 +648,10 @@ msgstr ""
 "příslušné místo v souboru .tex."
 
 #. (itstool) path: section/p
-#: C/synctex.page:63
+#: C/synctex.page:66
 msgid ""
-"<app>Evince</app> have to be launched by <app>LaTeXila</app>. Else, the "
-"backward search will not work."
+"<app>Evince</app> has to be launched by <app>LaTeXila</app>. Else, jumping "
+"from the PDF to the .tex file will not work."
 msgstr ""
 "Aplikace <app>Evince</app> musí být spuštěna z aplikace <app>LaTeXila</app>. "
-"Jinak nebude zpětné hledání fungovat."
+"Jinak přechod z PDF do souboru .tex nebude fungovat."
