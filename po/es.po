@@ -3,18 +3,17 @@
 # This file is distributed under the same license as the latexila package.
 # Jorge González <jorgegonz@svn.gnome.org>, 2011.
 # miguel <bokerones.fritos@gmail.com>, 2012.
-# 
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila 2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-21 13:31+0000\n"
-"PO-Revision-Date: 2016-07-20 09:34+0200\n"
+"POT-Creation-Date: 2016-10-22 13:14+0000\n"
+"PO-Revision-Date: 2017-02-06 18:35+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -136,22 +135,19 @@ msgstr ""
 "tex y el PDF."
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:6
-#, fuzzy
 #| msgid "Complete the LaTeX command"
 msgid "Completion of LaTeX commands"
-msgstr "Completar el comando de LaTeX"
+msgstr "Completado de comandos de LaTeX"
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:7
-#, fuzzy
 #| msgid "View the PDF file"
 msgid "Generating the PDF file"
-msgstr "Ver el archivo PDF"
+msgstr "Generando el archivo PDF"
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:8
-#, fuzzy
 #| msgid "Show or hide the side panel"
 msgid "Document structure in the side panel"
-msgstr "Mostrar u ocultar el panel lateral"
+msgstr "Estructura del documento en el panel lateral"
 
 #: ../data/org.gnome.latexila.desktop.in.in.h:1
 msgid "Integrated LaTeX Environment"
