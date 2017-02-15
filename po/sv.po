@@ -1,17 +1,18 @@
 # Swedish translation for latexila.
-# Copyright © 2011-2016 Free Software Foundation, Inc.
+# Copyright © 2011-2017 Free Software Foundation, Inc.
 # This file is distributed under the same license as the latexila package.
 # Daniel Nylander <po@danielnylander.se>, 2011.
-# Josef Andersson <josef.andersson@fripost.org>, 2016.
 # Anders Jonsson <anders.jonsson@norsjovallen.se>, 2016.
+# Josef Andersson <l10nl18nsweja@gmail.com>, 2016, 2017.
+
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-12-18 16:00+0000\n"
-"PO-Revision-Date: 2016-12-21 22:49+0100\n"
-"Last-Translator: Josef Andersson <josef.andersson@fripost.org>\n"
+"POT-Creation-Date: 2017-01-26 12:21+0000\n"
+"PO-Revision-Date: 2017-02-14 22:29+0100\n"
+"Last-Translator: Josef Andersson <l10nl18nsweja@gmail.com>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -540,8 +541,8 @@ msgstr "Personligt byggverktyg"
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:762
-#: ../src/main_window.vala:858 ../src/preferences_dialog.vala:114
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:763
+#: ../src/main_window.vala:859 ../src/preferences_dialog.vala:114
 #: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
 #: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
@@ -739,12 +740,12 @@ msgstr "Inga matchande förslag"
 msgid "Ln %d, Col %d"
 msgstr "Rad %d, Kol %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:761
+#: ../src/dialogs.vala:40 ../src/main_window.vala:762
 msgid "Close _without Saving"
 msgstr "Stäng _utan att spara"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:767 ../src/main_window.vala:859
+#: ../src/main_window.vala:768 ../src/main_window.vala:860
 msgid "_Save"
 msgstr "_Spara"
 
@@ -852,7 +853,7 @@ msgid "Do you want to save the file in a safer place?"
 msgstr "Vill du spara filen på ett säkrare ställe?"
 
 #: ../src/document.vala:507 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:765
+#: ../src/main_window.vala:766
 msgid "Save _As"
 msgstr "_Spara som"
 
@@ -865,7 +866,7 @@ msgid "No dictionaries available for the spell checking."
 msgstr "Inga ordböcker tillgängliga för stavningskontroll."
 
 #. Help
-#: ../src/document_view.vala:319 ../src/main_window.vala:62
+#: ../src/document_view.vala:319 ../src/main_window.vala:63
 #: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "_Hjälp"
@@ -907,7 +908,7 @@ msgid "File System"
 msgstr "Filsystem"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:411
+#: ../src/file_browser.vala:536 ../src/main_window.vala:412
 msgid "File Browser"
 msgstr "Filbläddrare"
 
@@ -927,7 +928,7 @@ msgstr "Skapa ett nytt toppnivåfönster i en befintlig instans av LaTeXila"
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeXila är en integrerad LaTeX-miljö för GNOME-skrivbordet"
 
-#: ../src/latexila_app.vala:262 ../src/main_window.vala:71
+#: ../src/latexila_app.vala:262 ../src/main_window.vala:72
 msgid "About LaTeXila"
 msgstr "Om LaTeXila"
 
@@ -1654,24 +1655,24 @@ msgstr "Misslyckades med att öppna ”%s”:"
 msgid "Open %s"
 msgstr "Öppna %s"
 
-#: ../src/liblatexila/latexila-synctex.c:189
+#: ../src/liblatexila/latexila-synctex.c:192
 msgid "Impossible to do the forward search."
 msgstr "Omöjligt att genomföra sökningen."
 
-#: ../src/liblatexila/latexila-synctex.c:526
+#: ../src/liblatexila/latexila-synctex.c:529
 msgid "Can not communicate with evince."
 msgstr "Kan inte kommunicera med evince."
 
-#: ../src/liblatexila/latexila-synctex.c:556
+#: ../src/liblatexila/latexila-synctex.c:559
 #, c-format
 msgid "The file \"%s\" doesn't exist."
 msgstr "Filen ”%s” finns inte."
 
-#: ../src/liblatexila/latexila-synctex.c:590
+#: ../src/liblatexila/latexila-synctex.c:593
 msgid "The PDF file doesn't exist."
 msgstr "PDF-filen finns inte."
 
-#: ../src/liblatexila/latexila-synctex.c:641
+#: ../src/liblatexila/latexila-synctex.c:644
 msgid "The document is not saved."
 msgstr "Dokumentet är inte sparat."
 
@@ -2205,110 +2206,114 @@ msgid "Go to a specific line"
 msgstr "Gå till en specifik rad"
 
 #: ../src/main_window.vala:48
-msgid "_Search Forward"
-msgstr "_Sök framåt"
+msgid "_Jump to PDF"
+msgstr "_Hoppa till PDF"
 
 #: ../src/main_window.vala:49
-msgid "Jump to the associated position in the PDF file"
-msgstr "Hoppa till den associerade positionen i PDF-filen"
+msgid ""
+"Jump to the associated position in the PDF file. Another shortcut: Ctrl"
+"+click, which works in both directions."
+msgstr ""
+"Hoppa till den associerade positionen i PDF-filen. En annan genväg är Ctrl"
+"+klick, vilket fungerar åt båda hållen."
 
 #. Projects
-#: ../src/main_window.vala:52
+#: ../src/main_window.vala:53
 msgid "_Projects"
 msgstr "_Projekt"
 
-#: ../src/main_window.vala:53
+#: ../src/main_window.vala:54
 msgid "_New Project"
 msgstr "_Nytt projekt"
 
-#: ../src/main_window.vala:54
+#: ../src/main_window.vala:55
 msgid "Create a new project"
 msgstr "Skapa ett nytt projekt"
 
-#: ../src/main_window.vala:55
+#: ../src/main_window.vala:56
 msgid "_Configure Current Project"
 msgstr "_Konfigurera aktuellt projekt"
 
-#: ../src/main_window.vala:56
+#: ../src/main_window.vala:57
 msgid "Change the main file of the current project"
 msgstr "Ändra huvudfilen för det aktuella projektet"
 
-#: ../src/main_window.vala:58
+#: ../src/main_window.vala:59
 msgid "_Manage Projects"
 msgstr "_Hantera projekt"
 
-#: ../src/main_window.vala:59 ../src/project_dialogs.vala:187
+#: ../src/main_window.vala:60 ../src/project_dialogs.vala:187
 msgid "Manage Projects"
 msgstr "Hantera projekt"
 
-#: ../src/main_window.vala:63
+#: ../src/main_window.vala:64
 msgid "_Contents"
 msgstr "_Innehåll"
 
-#: ../src/main_window.vala:64
+#: ../src/main_window.vala:65
 msgid "Open the LaTeXila documentation"
 msgstr "Öppna dokumentation för LaTeXila"
 
-#: ../src/main_window.vala:65
+#: ../src/main_window.vala:66
 msgid "_LaTeX Reference"
 msgstr "_LaTeX-referens"
 
-#: ../src/main_window.vala:66
+#: ../src/main_window.vala:67
 msgid "The Kile LaTeX Reference"
 msgstr "Kile LaTeX-referensen"
 
-#: ../src/main_window.vala:70 ../src/ui/menus.ui.h:5
+#: ../src/main_window.vala:71 ../src/ui/menus.ui.h:5
 msgid "_About"
 msgstr "_Om"
 
-#: ../src/main_window.vala:76
+#: ../src/main_window.vala:77
 msgid "_Main Toolbar"
 msgstr "_Huvudverktygsfält"
 
-#: ../src/main_window.vala:77
+#: ../src/main_window.vala:78
 msgid "Show or hide the main toolbar"
 msgstr "Visa eller dölj huvudverktygsfältet"
 
 #. Translators: "Edit" here is an adjective.
-#: ../src/main_window.vala:79
+#: ../src/main_window.vala:80
 msgid "_Edit Toolbar"
 msgstr "_Redigeringsverktygsfält"
 
-#: ../src/main_window.vala:80
+#: ../src/main_window.vala:81
 msgid "Show or hide the edit toolbar"
 msgstr "Visa eller dölj redigeringsverktygsfältet"
 
-#: ../src/main_window.vala:81
+#: ../src/main_window.vala:82
 msgid "_Side panel"
 msgstr "_Sidopanel"
 
-#: ../src/main_window.vala:82
+#: ../src/main_window.vala:83
 msgid "Show or hide the side panel"
 msgstr "Visa eller dölj sidopanelen"
 
-#: ../src/main_window.vala:83
+#: ../src/main_window.vala:84
 msgid "_Bottom panel"
 msgstr "_Bottenpanel"
 
-#: ../src/main_window.vala:84
+#: ../src/main_window.vala:85
 msgid "Show or hide the bottom panel"
 msgstr "Visa eller dölj bottenpanelen"
 
 #. Symbols
-#: ../src/main_window.vala:407
+#: ../src/main_window.vala:408
 msgid "Symbols"
 msgstr "Symboler"
 
-#: ../src/main_window.vala:416
+#: ../src/main_window.vala:417
 msgid "Structure"
 msgstr "Struktur"
 
-#: ../src/main_window.vala:650
+#: ../src/main_window.vala:651
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Filen (%s) är redan öppnad i ett annat LaTeXila-fönster."
 
-#: ../src/main_window.vala:652
+#: ../src/main_window.vala:653
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2316,24 +2321,24 @@ msgstr ""
 "LaTeXila öppnade denna filinstans på ett oredigerbart sätt. Vill du redigera "
 "den ändå?"
 
-#: ../src/main_window.vala:655
+#: ../src/main_window.vala:656
 msgid "Edit Anyway"
 msgstr "Redigera ändå"
 
-#: ../src/main_window.vala:656
+#: ../src/main_window.vala:657
 msgid "Don't Edit"
 msgstr "Redigera inte"
 
-#: ../src/main_window.vala:758
+#: ../src/main_window.vala:759
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Spara ändringar i dokumentet ”%s” innan stängning?"
 
-#: ../src/main_window.vala:838
+#: ../src/main_window.vala:839
 msgid "Read-Only"
 msgstr "Skrivskyddad"
 
-#: ../src/main_window.vala:856
+#: ../src/main_window.vala:857
 msgid "Save File"
 msgstr "Spara fil"
 
@@ -2717,6 +2722,12 @@ msgstr "Markera felstavade ord"
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Övriga"
+
+#~ msgid "_Search Forward"
+#~ msgstr "_Sök framåt"
+
+#~ msgid "Jump to the associated position in the PDF file"
+#~ msgstr "Hoppa till den associerade positionen i PDF-filen"
 
 #~ msgid ""
 #~ "To help the writing of the LaTeX markup, auto-completion is available as "
