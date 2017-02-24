@@ -128,9 +128,9 @@ public class LatexMenu : Gtk.ActionGroup
         // LaTeX: font styles
 
         { "FontStyles", "bold", N_("_Font Styles") },
-        { "Bold", "bold", "\\text_bf", "<Alt><Shift>B",
+        { "Bold", "bold", "\\text_bf", "<Control>B",
             N_("Bold - \\textbf"), on_text_bold },
-        { "Italic", "italic", "\\text_it", "<Alt><Shift>I",
+        { "Italic", "italic", "\\text_it", "<Control>I",
             N_("Italic - \\textit"), on_text_italic },
         { "Typewriter", "typewriter", "\\text_tt", "<Alt><Shift>T",
             N_("Typewriter - \\texttt"), on_text_typewriter },
@@ -142,7 +142,7 @@ public class LatexMenu : Gtk.ActionGroup
             N_("Sans Serif - \\textsf"), on_text_sans_serif },
         { "Emph", null, "\\_emph", "<Control>E",
             N_("Emphasized - \\emph"), on_text_emph },
-        { "Underline", "underline", "\\_underline", null,
+        { "Underline", "underline", "\\_underline", "<Control>U",
             N_("Underline - \\underline"), on_text_underline },
 
         { "FontFamily", null, N_("_Font Family") },
