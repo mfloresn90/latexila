@@ -95,6 +95,7 @@ public class MainWindowFile
     private void configure_recent_chooser (RecentChooser recent_chooser)
     {
         recent_chooser.set_local_only (false);
+        recent_chooser.set_show_tips (true);
         recent_chooser.set_sort_type (RecentSortType.MRU);
 
         RecentFilter filter = new RecentFilter ();
