@@ -72,7 +72,7 @@ public class DocumentStructure : GLib.Object
         {
             _chars_regex = new Regex ("\\\\|%");
 
-            _comment_regex = new Regex ("^(?P<type>TODO|FIXME)\\s+:?\\s*(?P<text>.*)$",
+            _comment_regex = new Regex ("^(?P<type>TODO|FIXME)\\s*:?\\s*(?P<text>.*)$",
                 RegexCompileFlags.OPTIMIZE);
 
             // Stop at the first argument, which can be optional (a '[').
