@@ -23,7 +23,7 @@ public class Document : Gtef.Buffer
 {
     public File location { get; set; }
     public bool readonly { get; set; default = false; }
-    public DocumentTab tab;
+    public weak DocumentTab tab;
     public uint _unsaved_doc_num = 0;
     public int project_id { get; set; default = -1; }
     private bool backup_made = false;
