@@ -58,8 +58,13 @@ public class Document : Gtef.Buffer
 
     public new void insert (ref TextIter iter, string text, int len)
     {
-        Gtk.SourceCompletion completion = tab.view.completion;
-        completion.block_interactive ();
+        Gtk.SourceCompletion? completion = null;
+
+        if (tab != null)
+        {
+            completion = tab.view.completion;
+            completion.block_interactive ();
+        }
 
         base.insert (ref iter, text, len);
 
@@ -67,7 +72,9 @@ public class Document : Gtef.Buffer
         // Utils.flush_queue ().
         Timeout.add_seconds (1, () =>
         {
-            completion.unblock_interactive ();
+            if (completion != null)
+                completion.unblock_interactive ();
+
             return false;
         });
     }
@@ -112,9 +119,12 @@ public class Document : Gtef.Buffer
         {
             warning ("%s", e.message);
 
-            string primary_msg = _("Impossible to load the file '%s'.")
-                .printf (location.get_parse_name ());
-            tab.add_message (primary_msg, e.message, MessageType.ERROR);
+            if (tab != null)
+            {
+                string primary_msg = _("Impossible to load the file '%s'.")
+                    .printf (location.get_parse_name ());
+                tab.add_message (primary_msg, e.message, MessageType.ERROR);
+            }
         }
     }
 
@@ -188,7 +198,7 @@ public class Document : Gtef.Buffer
         }
         catch (Error e)
         {
-            if (e is IOError.WRONG_ETAG)
+            if (e is IOError.WRONG_ETAG && tab != null)
             {
                 string primary_msg = _("The file %s has been modified since reading it.")
                     .printf (location.get_parse_name ());
@@ -209,10 +219,13 @@ public class Document : Gtef.Buffer
             {
                 warning ("%s", e.message);
 
-                string primary_msg = _("Impossible to save the file.");
-                Gtef.InfoBar infobar = tab.add_message (primary_msg, e.message,
-                    MessageType.ERROR);
-                infobar.add_close_button ();
+                if (tab != null)
+                {
+                    string primary_msg = _("Impossible to save the file.");
+                    Gtef.InfoBar infobar = tab.add_message (primary_msg, e.message,
+                        MessageType.ERROR);
+                    infobar.add_close_button ();
+                }
             }
         }
     }
@@ -498,6 +511,9 @@ public class Document : Gtef.Buffer
         this.location = File.new_for_path (Path.build_filename (tmp_dir, "tmp.tex"));
 
         /* Warn the user that the file can be lost */
+
+        if (tab == null)
+            return true;
 
         Gtef.InfoBar infobar = tab.add_message (
             _("The file has a temporary location. The data can be lost after rebooting your computer."),
