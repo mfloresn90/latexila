@@ -2,13 +2,14 @@
 # Copyright (C) 2014 latexila's COPYRIGHT HOLDER
 # This file is distributed under the same license as the latexila package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2014, 2015, 2016.
+# Yuri Chornoivan <yurchor@ukr.net>, 2014, 2015, 2016, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-26 23:32+0300\n"
-"PO-Revision-Date: 2016-10-26 17:44+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=latexila&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-01-26 12:21+0000\n"
+"PO-Revision-Date: 2017-01-26 20:18+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -86,6 +87,11 @@ msgid "Convert the PostScript document to the PDF format"
 msgstr "Перетворити документ у форматі PostScript на документ у форматі PDF"
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:1
+#| msgid "Integrated LaTeX Environment"
+msgid "Integrated LaTeX environment"
+msgstr "Комплексне середовище роботи з LaTeX"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:2
 msgid ""
 "LaTeXila is an integrated LaTeX environment for the GNOME desktop. The idea "
 "of LaTeXila is to always deal directly with the LaTeX code, while "
@@ -95,23 +101,22 @@ msgstr ""
 "LaTeXila ви можете зосередитися над роботою з кодом LaTeX. Програма "
 "максимально спрощує створення документів за допомогою LaTeX."
 
-#: ../data/org.gnome.latexila.appdata.xml.in.h:2
+#: ../data/org.gnome.latexila.appdata.xml.in.h:3
+#| msgid ""
+#| "New documents are created from templates. There are buttons to compile, "
+#| "convert and view a document in one click. And projects containing "
+#| "several .tex files are managed easily."
 msgid ""
 "To help the writing of the LaTeX markup, auto-completion is available as "
-"well as menus and toolbars with the principal commands."
+"well as menus and toolbars with the principal commands. New documents are "
+"created from templates. There are buttons to compile, convert and view a "
+"document in one click. And projects containing several .tex files are "
+"managed easily."
 msgstr ""
-"Для спрощення використання розмітки LaTeX у програмі передбачено засоби "
-"автоматичного доповнення коду, а також меню та панелі інструментів для "
-"основних команд."
-
-#: ../data/org.gnome.latexila.appdata.xml.in.h:3
-msgid ""
-"New documents are created from templates. There are buttons to compile, "
-"convert and view a document in one click. And projects containing several ."
-"tex files are managed easily."
-msgstr ""
-"Нові документи створюються на основі шаблонів. Передбачено кнопки для "
-"збирання, перетворення та перегляду документів у відповідь на одне клацання "
+"Корисними для написання коду LaTeX будуть можливості автоматичного доповнення "
+"команд, а також пункти меню та панелі інструментів для основних команд. Нові "
+"документи створюються на основі шаблонів. Передбачено кнопки для збирання, "
+"перетворення та перегляду документів у відповідь на одне клацання "
 "кнопкою миші. Передбачено інструмент для керування проектів, що складаються "
 "з декількох файлів .tex."
 
@@ -504,7 +509,8 @@ msgid ""
 "\n"
 "\\begin{document}\n"
 "\n"
-"\\begin{letter}{Destination\\\\Address of the destination\\\\Phone number of the destination}\n"
+"\\begin{letter}{Destination\\\\Address of the destination\\\\Phone number of "
+"the destination}\n"
 "\n"
 "\\opening{Dear Sir,}\n"
 "\n"
@@ -530,7 +536,8 @@ msgstr ""
 "\n"
 "\\begin{document}\n"
 "\n"
-"\\begin{letter}{Країна\\\\Адреса призначення\\\\Телефонний номер призначення}\n"
+"\\begin{letter}{Країна\\\\Адреса призначення\\\\Телефонний номер "
+"призначення}\n"
 "\n"
 "\\opening{Шановний,}\n"
 "\n"
@@ -555,12 +562,12 @@ msgstr "Особистий засіб збирання"
 
 #: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:291
+#: ../src/document_tab.vala:294
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:762
-#: ../src/main_window.vala:858 ../src/preferences_dialog.vala:114
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:763
+#: ../src/main_window.vala:859 ../src/preferences_dialog.vala:114
 #: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
 #: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
@@ -758,12 +765,12 @@ msgstr "Немає відповідних варіантів"
 msgid "Ln %d, Col %d"
 msgstr "Ряд: %d, Поз: %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:761
+#: ../src/dialogs.vala:40 ../src/main_window.vala:762
 msgid "Close _without Saving"
 msgstr "_Не зберігати"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:767 ../src/main_window.vala:859
+#: ../src/main_window.vala:768 ../src/main_window.vala:860
 msgid "_Save"
 msgstr "З_берегти"
 
@@ -791,75 +798,75 @@ msgid "Close document"
 msgstr "Закрити документ"
 
 #. main file
-#: ../src/document_tab.vala:234 ../src/project_dialogs.vala:46
+#: ../src/document_tab.vala:237 ../src/project_dialogs.vala:46
 #: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
 #: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
 msgid "Main File"
 msgstr "Основний файл"
 
-#: ../src/document_tab.vala:236
+#: ../src/document_tab.vala:239
 msgid "Main File:"
 msgstr "Основний файл:"
 
-#: ../src/document_tab.vala:260
+#: ../src/document_tab.vala:263
 #, c-format
 msgid "Activate '%s'"
 msgstr "Задіяти «%s»"
 
-#: ../src/document_tab.vala:279
+#: ../src/document_tab.vala:282
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Файл %s змінено на диску."
 
-#: ../src/document_tab.vala:284
+#: ../src/document_tab.vala:287
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Хочете відкинути внесені вами зміни і перезавантажити цей файл?"
 
-#: ../src/document_tab.vala:286
+#: ../src/document_tab.vala:289
 msgid "Do you want to reload the file?"
 msgstr "Хочете перезавантажити файл?"
 
-#: ../src/document_tab.vala:290
+#: ../src/document_tab.vala:293
 msgid "_Reload"
 msgstr "П_ерезавантажити"
 
-#: ../src/document.vala:110
+#: ../src/document.vala:115
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Завантаження файла «%s» неможливе."
 
-#: ../src/document.vala:188
+#: ../src/document.vala:193
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "До файла %s з моменту його читання було внесено зміни."
 
-#: ../src/document.vala:191
+#: ../src/document.vala:196
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Якщо ви збережете його, зміни, внесені зовнішньою програмою, буде втрачено. "
 "Зберегти файл попри це?"
 
-#: ../src/document.vala:194
+#: ../src/document.vala:199
 msgid "_Save Anyway"
 msgstr "З_берегти попри це"
 
-#: ../src/document.vala:195
+#: ../src/document.vala:200
 msgid "_Don't Save"
 msgstr "_Не зберігати"
 
-#: ../src/document.vala:207
+#: ../src/document.vala:212
 msgid "Impossible to save the file."
 msgstr "Збереження файла неможливе."
 
-#: ../src/document.vala:232
+#: ../src/document.vala:237
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Помилка під час спроби перетворити дані документа у кодування UTF-8"
 
-#: ../src/document.vala:286
+#: ../src/document.vala:291
 msgid "Untitled Document"
 msgstr "Документ без назви"
 
-#: ../src/document.vala:557
+#: ../src/document.vala:503
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
@@ -867,30 +874,30 @@ msgstr ""
 "Файл зберігається у тимчасовому каталозі. Дані буде втрачено під час "
 "перезавантаження системи."
 
-#: ../src/document.vala:558
+#: ../src/document.vala:504
 msgid "Do you want to save the file in a safer place?"
 msgstr "Хочете зберегти файл у безпечнішому місці?"
 
-#: ../src/document.vala:561 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:765
+#: ../src/document.vala:507 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:766
 msgid "Save _As"
 msgstr "Зберегти _як"
 
-#: ../src/document.vala:562
+#: ../src/document.vala:508
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: ../src/document_view.vala:318
+#: ../src/document_view.vala:317
 msgid "No dictionaries available for the spell checking."
 msgstr "Не встановлено жодних словників для перевірки правопису."
 
 #. Help
-#: ../src/document_view.vala:320 ../src/main_window.vala:62
+#: ../src/document_view.vala:319 ../src/main_window.vala:63
 #: ../src/ui/menus.ui.h:4
 msgid "_Help"
 msgstr "_Довідка"
 
-#: ../src/document_view.vala:321 ../src/tab_info_bar.vala:47
+#: ../src/document_view.vala:320
 msgid "_OK"
 msgstr "_Гаразд"
 
@@ -927,7 +934,7 @@ msgid "File System"
 msgstr "Файлова система"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:411
+#: ../src/file_browser.vala:536 ../src/main_window.vala:412
 msgid "File Browser"
 msgstr "Навігація файлами"
 
@@ -947,7 +954,7 @@ msgstr "Створити нове вікно верхнього рівня у н
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeXila — комплексне середовище роботи з LaTeX для GNOME"
 
-#: ../src/latexila_app.vala:262 ../src/main_window.vala:71
+#: ../src/latexila_app.vala:262 ../src/main_window.vala:72
 msgid "About LaTeXila"
 msgstr "Про LaTeXila"
 
@@ -1669,24 +1676,24 @@ msgstr "Не вдалося відкрити «%s»:"
 msgid "Open %s"
 msgstr "Відкрити %s"
 
-#: ../src/liblatexila/latexila-synctex.c:189
+#: ../src/liblatexila/latexila-synctex.c:192
 msgid "Impossible to do the forward search."
 msgstr "Не вдалося виконати прямий пошук."
 
-#: ../src/liblatexila/latexila-synctex.c:526
+#: ../src/liblatexila/latexila-synctex.c:529
 msgid "Can not communicate with evince."
 msgstr "Не вдалося встановити зв’язок з evince."
 
-#: ../src/liblatexila/latexila-synctex.c:556
+#: ../src/liblatexila/latexila-synctex.c:559
 #, c-format
 msgid "The file \"%s\" doesn't exist."
 msgstr "Файла «%s» не існує."
 
-#: ../src/liblatexila/latexila-synctex.c:590
+#: ../src/liblatexila/latexila-synctex.c:593
 msgid "The PDF file doesn't exist."
 msgstr "Файла PDF не існує."
 
-#: ../src/liblatexila/latexila-synctex.c:641
+#: ../src/liblatexila/latexila-synctex.c:644
 msgid "The document is not saved."
 msgstr "Документ не збережено."
 
@@ -2218,110 +2225,114 @@ msgid "Go to a specific line"
 msgstr "Перейти до вказаного рядка"
 
 #: ../src/main_window.vala:48
-msgid "_Search Forward"
-msgstr "П_рямий пошук"
+msgid "_Jump to PDF"
+msgstr "Пере_йти до PDF"
 
 #: ../src/main_window.vala:49
-msgid "Jump to the associated position in the PDF file"
-msgstr "Перейти до пов’язаного місця у файлі PDF"
+msgid ""
+"Jump to the associated position in the PDF file. Another shortcut: Ctrl"
+"+click, which works in both directions."
+msgstr ""
+"Перейти до відповідного місця у файлі PDF. Комбінація Ctrl+клацання лівою "
+"кнопкою миші працює для переходів у обох напрямках."
 
 #. Projects
-#: ../src/main_window.vala:52
+#: ../src/main_window.vala:53
 msgid "_Projects"
 msgstr "П_роекти"
 
-#: ../src/main_window.vala:53
+#: ../src/main_window.vala:54
 msgid "_New Project"
 msgstr "С_творити проект"
 
-#: ../src/main_window.vala:54
+#: ../src/main_window.vala:55
 msgid "Create a new project"
 msgstr "Створити новий проект"
 
-#: ../src/main_window.vala:55
+#: ../src/main_window.vala:56
 msgid "_Configure Current Project"
 msgstr "_Налаштувати поточний проект"
 
-#: ../src/main_window.vala:56
+#: ../src/main_window.vala:57
 msgid "Change the main file of the current project"
 msgstr "Змінити основний файл поточного проекту"
 
-#: ../src/main_window.vala:58
+#: ../src/main_window.vala:59
 msgid "_Manage Projects"
 msgstr "_Керування проектами"
 
-#: ../src/main_window.vala:59 ../src/project_dialogs.vala:187
+#: ../src/main_window.vala:60 ../src/project_dialogs.vala:187
 msgid "Manage Projects"
 msgstr "Керування проектами"
 
-#: ../src/main_window.vala:63
+#: ../src/main_window.vala:64
 msgid "_Contents"
 msgstr "_Зміст"
 
-#: ../src/main_window.vala:64
+#: ../src/main_window.vala:65
 msgid "Open the LaTeXila documentation"
 msgstr "Відкрити документацію з LaTeXila"
 
-#: ../src/main_window.vala:65
+#: ../src/main_window.vala:66
 msgid "_LaTeX Reference"
 msgstr "Д_овідник із LaTeX"
 
-#: ../src/main_window.vala:66
+#: ../src/main_window.vala:67
 msgid "The Kile LaTeX Reference"
 msgstr "Довідник з LaTeX для Kile"
 
-#: ../src/main_window.vala:70 ../src/ui/menus.ui.h:5
+#: ../src/main_window.vala:71 ../src/ui/menus.ui.h:5
 msgid "_About"
 msgstr "_Про програму"
 
-#: ../src/main_window.vala:76
+#: ../src/main_window.vala:77
 msgid "_Main Toolbar"
 msgstr "_Головна панель"
 
-#: ../src/main_window.vala:77
+#: ../src/main_window.vala:78
 msgid "Show or hide the main toolbar"
 msgstr "Показати або приховати головну панель інструментів"
 
 #. Translators: "Edit" here is an adjective.
-#: ../src/main_window.vala:79
+#: ../src/main_window.vala:80
 msgid "_Edit Toolbar"
 msgstr "Панель _редагування"
 
-#: ../src/main_window.vala:80
+#: ../src/main_window.vala:81
 msgid "Show or hide the edit toolbar"
 msgstr "Показати або сховати панель редагування"
 
-#: ../src/main_window.vala:81
+#: ../src/main_window.vala:82
 msgid "_Side panel"
 msgstr "_Бічна панель"
 
-#: ../src/main_window.vala:82
+#: ../src/main_window.vala:83
 msgid "Show or hide the side panel"
 msgstr "Показати або сховати бічну панель"
 
-#: ../src/main_window.vala:83
+#: ../src/main_window.vala:84
 msgid "_Bottom panel"
 msgstr "_Нижня панель"
 
-#: ../src/main_window.vala:84
+#: ../src/main_window.vala:85
 msgid "Show or hide the bottom panel"
 msgstr "Показати або сховати нижню панель"
 
 #. Symbols
-#: ../src/main_window.vala:407
+#: ../src/main_window.vala:408
 msgid "Symbols"
 msgstr "Символи"
 
-#: ../src/main_window.vala:416
+#: ../src/main_window.vala:417
 msgid "Structure"
 msgstr "Структура"
 
-#: ../src/main_window.vala:650
+#: ../src/main_window.vala:651
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Цей файл (%s) вже відкрито у іншому вікні LaTeXila."
 
-#: ../src/main_window.vala:652
+#: ../src/main_window.vala:653
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2329,24 +2340,24 @@ msgstr ""
 "У LaTeXila цей екземпляр файла відкрито у режимі лише читання. Хочете "
 "редагувати його попри це?"
 
-#: ../src/main_window.vala:655
+#: ../src/main_window.vala:656
 msgid "Edit Anyway"
 msgstr "Редагувати попри це"
 
-#: ../src/main_window.vala:656
+#: ../src/main_window.vala:657
 msgid "Don't Edit"
 msgstr "Не редагувати"
 
-#: ../src/main_window.vala:758
+#: ../src/main_window.vala:759
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Зберегти зміни у документі «%s» до закриття вікна програми?"
 
-#: ../src/main_window.vala:838
+#: ../src/main_window.vala:839
 msgid "Read-Only"
 msgstr "Лише читання"
 
-#: ../src/main_window.vala:856
+#: ../src/main_window.vala:857
 msgid "Save File"
 msgstr "Зберегти файл"
 
@@ -2444,49 +2455,49 @@ msgstr "Перейти до рядка:"
 msgid "Line you want to move the cursor to"
 msgstr "Рядок, до якого слід пересунути курсор"
 
-#: ../src/search.vala:174
+#: ../src/search.vala:172
 msgid "Replace with"
 msgstr "Замінити на"
 
-#: ../src/search.vala:182
+#: ../src/search.vala:180
 msgid "Replace"
 msgstr "Замінити"
 
 #. replace all: image + label
-#: ../src/search.vala:186
+#: ../src/search.vala:184
 msgid "Replace All"
 msgstr "Замінити все"
 
-#: ../src/search.vala:195
+#: ../src/search.vala:193
 msgid "All"
 msgstr "Все"
 
-#: ../src/search.vala:309
+#: ../src/search.vala:307
 msgid "Search for"
 msgstr "Шукати"
 
-#: ../src/search.vala:320
+#: ../src/search.vala:318
 msgid "Case sensitive"
 msgstr "З врахуванням регістру"
 
-#: ../src/search.vala:323
+#: ../src/search.vala:321
 msgid "Entire words only"
 msgstr "Лише цілі слова"
 
-#: ../src/search.vala:469
+#: ../src/search.vala:467
 msgid "Not found"
 msgstr "Не знайдено"
 
 #. Translators: the first %d is the position of the current search occurrence,
 #. * and the second %d is the total number of search occurrences.
 #.
-#: ../src/search.vala:486
+#: ../src/search.vala:484
 #, c-format
 msgid "Match %d of %d"
 msgstr "Відповідник %d з %d"
 
 #. Translators: %d is the total number of search occurrences.
-#: ../src/search.vala:491
+#: ../src/search.vala:489
 #, c-format
 msgid "%d match"
 msgid_plural "%d matches"
@@ -2738,6 +2749,20 @@ msgstr "Позначати слова з помилками у правопис�
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Інше"
+
+#~ msgid ""
+#~ "To help the writing of the LaTeX markup, auto-completion is available as "
+#~ "well as menus and toolbars with the principal commands."
+#~ msgstr ""
+#~ "Для спрощення використання розмітки LaTeX у програмі передбачено засоби "
+#~ "автоматичного доповнення коду, а також меню та панелі інструментів для "
+#~ "основних команд."
+
+#~ msgid "_Search Forward"
+#~ msgstr "П_рямий пошук"
+
+#~ msgid "Jump to the associated position in the PDF file"
+#~ msgstr "Перейти до пов’язаного місця у файлі PDF"
 
 #~ msgid "- Integrated LaTeX Environment for GNOME"
 #~ msgstr "— комплексне середовище LaTeX для GNOME"
