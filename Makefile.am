@@ -11,7 +11,6 @@ AM_DISTCHECK_CONFIGURE_FLAGS =	\
 EXTRA_DIST =			\
 	README			\
 	HACKING			\
-	MAINTAINERS		\
 	latexila.doap		\
 	intltool-extract.in	\
 	intltool-merge.in	\
