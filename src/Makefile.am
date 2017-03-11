@@ -4,7 +4,7 @@ bin_PROGRAMS = latexila
 
 # TODO remember to remove --disable-since-check when GtkSourceView 3.24 is
 # released...
-VALAFLAGS =			\
+AM_VALAFLAGS =			\
 	--pkg gtk+-3.0		\
 	--disable-since-check	\
 	--pkg gtksourceview-3.0	\
