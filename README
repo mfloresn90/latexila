@@ -1,75 +1,57 @@
-General Information
-===================
+LaTeXila
+========
 
 This is the version 3.23.2 of LaTeXila.
+
 LaTeXila is an Integrated LaTeX Environment for the GNOME desktop.
 
 LaTeXila is released under the GNU General Public License (GPL) version 3 or
-later, see the file "COPYING" for more information.
+later, see the file 'COPYING' for more information.
 
 The web site:
 
     https://wiki.gnome.org/Apps/LaTeXila
 
+Dependencies
+------------
 
-Requirements
-============
-
-GLib >= 2.50
-GTK+ >= 3.20
-GtkSourceView >= 3.23.1
-Gtef >= 1.99.1 - https://wiki.gnome.org/Projects/Gtef
-gspell >= 1.0
-gee-0.8 >= 0.10
-gettext
-gsettings-desktop-schemas
-Latexmk >= 4.31 (optional, but strongly recommended)
+* GLib >= 2.50
+* GTK+ >= 3.20
+* GtkSourceView >= 3.23.1
+* Gtef >= 1.99.1 - https://wiki.gnome.org/Projects/Gtef
+* gspell >= 1.0
+* gee-0.8 >= 0.10
+* gettext
+* gsettings-desktop-schemas
+* Latexmk >= 4.31 (optional, but strongly recommended)
 
 And for building the sources:
-Vala >= 0.34 (may be optional)
-yelp-tools
+* Vala >= 0.34 (may be optional)
+* yelp-tools
 
 If you are installing LaTeXila from a tarball, you don't have to install Vala
 because the C code is already generated.
 
+Installation from a tarball
+---------------------------
 
-Installation
-============
+Simple install procedure:
 
-From a tarball:
-$ ./configure
+  $ ./configure
+  $ make
+  [ Become root if necessary ]
+  $ make install
 
-From a git repository:
-$ ./autogen.sh
+See the file 'INSTALL' for more detailed information.
 
-Then build the sources:
-$ make
+Installation from Git
+---------------------
 
-And install everything:
-[ Become root if necessary ]
-$ make install
+It is recommended to use Jhbuild:
 
-To uninstall:
-$ make uninstall
+    https://wiki.gnome.org/Projects/Jhbuild
 
-See the file "INSTALL" for more details.
+How to contribute
+-----------------
 
-
-Where to report bugs
-====================
-
-Bugs should be reported on the GNOME bugzilla:
-
-    https://bugzilla.gnome.org/browse.cgi?product=latexila
-
-
-Translations
-============
-
-Here is a summary page about the translation status of LaTeXila:
-
-    https://l10n.gnome.org/module/latexila/
-
-If you want to help, see:
-
-    https://wiki.gnome.org/TranslationProject
+See the file 'HACKING'.
