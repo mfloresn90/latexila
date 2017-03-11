@@ -178,7 +178,6 @@ AC_CONFIG_FILES([
 	src/liblatexila/Makefile
 	src/ui/Makefile
 	tests/Makefile
-	README
 ])
 
 AC_OUTPUT

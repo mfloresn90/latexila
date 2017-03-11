@@ -1,7 +1,7 @@
 General Information
 ===================
 
-This is the version @PACKAGE_VERSION@ of LaTeXila.
+This is the version 3.23.2 of LaTeXila.
 LaTeXila is an Integrated LaTeX Environment for the GNOME desktop.
 
 LaTeXila is released under the GNU General Public License (GPL) version 3 or
@@ -15,26 +15,22 @@ The web site:
 Requirements
 ============
 
-GLib >= @GLIB_REQUIRED_VERSION@
-GTK+ >= @GTK_REQUIRED_VERSION@
-GtkSourceView >= @GTKSOURCEVIEW_REQUIRED_VERSION@
-Gtef >= @GTEF_REQUIRED_VERSION@
-gspell >= @GSPELL_REQUIRED_VERSION@
-gee-0.8 >= @GEE_REQUIRED_VERSION@
+GLib >= 2.50
+GTK+ >= 3.20
+GtkSourceView >= 3.23.1
+Gtef >= 1.99.1 - https://wiki.gnome.org/Projects/Gtef
+gspell >= 1.0
+gee-0.8 >= 0.10
 gettext
 gsettings-desktop-schemas
 Latexmk >= 4.31 (optional, but strongly recommended)
 
 And for building the sources:
-Vala >= @VALA_REQUIRED_VERSION@ (may be optional)
+Vala >= 0.34 (may be optional)
 yelp-tools
 
 If you are installing LaTeXila from a tarball, you don't have to install Vala
 because the C code is already generated.
-
-Gtef URL:
-
-    https://wiki.gnome.org/Projects/Gtef
 
 
 Installation
