@@ -305,7 +305,7 @@ public class BuildToolDialog : GLib.Object
             TreeIter iter;
             int selected_row = Utils.get_selected_row (_jobs_view, out iter);
             if (selected_row >= 0)
-                _jobs_store.remove (iter);
+                _jobs_store.remove (ref iter);
         });
 
         return remove_button;

@@ -278,7 +278,7 @@ namespace ProjectDialogs
 
             if (delete_dialog.run () == ResponseType.YES)
             {
-                store.remove (iter);
+                store.remove (ref iter);
                 Projects.get_default ().delete (i);
             }
 

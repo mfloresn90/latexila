@@ -337,7 +337,7 @@ public class BuildToolsPreferences : GLib.Object
 
             if (dialog.run () == ResponseType.YES)
             {
-                _personal_store.remove (iter);
+                _personal_store.remove (ref iter);
                 Latexila.BuildToolsPersonal.get_instance ().delete (selected_row);
             }
 
