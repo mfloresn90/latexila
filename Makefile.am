@@ -9,7 +9,6 @@ AM_DISTCHECK_CONFIGURE_FLAGS =	\
 	--enable-appstream-util
 
 EXTRA_DIST =			\
-	README			\
 	HACKING			\
 	latexila.doap		\
 	intltool-extract.in	\
