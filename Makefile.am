@@ -26,6 +26,7 @@ MAINTAINERCLEANFILES =		\
 	$(GITIGNORE_MAINTAINERCLEANFILES_MAKEFILE_IN) \
 	$(GITIGNORE_MAINTAINERCLEANFILES_M4_LIBTOOL) \
 	gtk-doc.make \
+	INSTALL \
 	m4/appstream-xml.m4 \
 	m4/ax_append_compile_flags.m4 \
 	m4/ax_append_flag.m4 \

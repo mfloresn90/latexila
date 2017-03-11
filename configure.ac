@@ -18,7 +18,8 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
 # Init Automake
-AM_INIT_AUTOMAKE([1.14 foreign tar-ustar no-dist-gzip dist-xz -Wno-portability])
+# gnu strictness to generate the INSTALL file.
+AM_INIT_AUTOMAKE([1.14 gnu tar-ustar no-dist-gzip dist-xz -Wno-portability])
 AM_MAINTAINER_MODE([enable])
 AM_SILENT_RULES([yes])
 
