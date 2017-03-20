@@ -1,7 +1,7 @@
 LaTeXila
 ========
 
-This is the version 3.23.2 of LaTeXila.
+This is the version 3.24.0 of LaTeXila.
 
 LaTeXila is an Integrated LaTeX Environment for the GNOME desktop.
 
@@ -17,8 +17,8 @@ Dependencies
 
 * GLib >= 2.50
 * GTK+ >= 3.20
-* GtkSourceView >= 3.23.1
-* Gtef >= 1.99.1 - https://wiki.gnome.org/Projects/Gtef
+* GtkSourceView >= 3.24
+* Gtef >= 2.0 - https://wiki.gnome.org/Projects/Gtef
 * gspell >= 1.0
 * gee-0.8 >= 0.10
 * gettext
