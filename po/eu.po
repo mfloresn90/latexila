@@ -1,27 +1,27 @@
 # Basque translation for latexila
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014.
+#
+#
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014, 2017.
 # Edurne Labaka <elabaka@uzei.com>, 2015.
-# 
 msgid ""
 msgstr ""
-"Project-Id-Version: latexila master\n"
+"Project-Id-Version: latexila gnome-3-22\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-07 17:35+0100\n"
-"PO-Revision-Date: 2014-11-19 14:59+0100\n"
+"POT-Creation-Date: 2017-04-03 11:30+0200\n"
+"PO-Revision-Date: 2017-03-26 00:42+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
-"Language-Team: Basque <librezale@librezale.org>\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Lokalize 1.5\n"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:43 ../src/build_tool_dialog.vala:168
+#: build_tools.xml:43 ../src/build_tool_dialog.vala:165
 msgid "View PDF"
 msgstr "Ikusi PDF"
 
@@ -31,7 +31,7 @@ msgid "View the PDF file"
 msgstr "Ikusi PDF fitxategia"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:49 ../src/build_tool_dialog.vala:167
+#: build_tools.xml:49 ../src/build_tool_dialog.vala:164
 msgid "View DVI"
 msgstr "Ikusi DVI"
 
@@ -41,7 +41,7 @@ msgid "View the DVI file"
 msgstr "Ikusi DVI fitxategia"
 
 #. (itstool) path: tool/label
-#: build_tools.xml:55 ../src/build_tool_dialog.vala:169
+#: build_tools.xml:55 ../src/build_tool_dialog.vala:166
 msgid "View PS"
 msgstr "Ikusi PS"
 
@@ -85,7 +85,7 @@ msgstr "Bihurtu DVI dokumentua PostScript formatura"
 msgid "Convert the PostScript document to the PDF format"
 msgstr "Bihurtu PostScript dokumentua PDF formatura"
 
-#: ../data/latexila.appdata.xml.in.h:1
+#: ../data/org.gnome.latexila.appdata.xml.in.h:1
 msgid ""
 "LaTeXila is an integrated LaTeX environment for the GNOME desktop. The idea "
 "of LaTeXila is to always deal directly with the LaTeX code, while "
@@ -95,13 +95,15 @@ msgstr ""
 "helburua LaTeX kodearekin beti zuzenean aritzea da, LaTeX kodea idaztea "
 "ahalik eta gehien erraztuz."
 
-#: ../data/latexila.appdata.xml.in.h:2
+#: ../data/org.gnome.latexila.appdata.xml.in.h:2
 msgid ""
 "To help the writing of the LaTeX markup, auto-completion is available as "
 "well as menus and toolbars with the principal commands."
 msgstr ""
+"LaTeX-eko markaketa idazten laguntzeko, osaketa automatikoa erabilgarri "
+"dago, menu eta tresna-barrekin batera komando nagusiekin batera. "
 
-#: ../data/latexila.appdata.xml.in.h:3
+#: ../data/org.gnome.latexila.appdata.xml.in.h:3
 msgid ""
 "New documents are created from templates. There are buttons to compile, "
 "convert and view a document in one click. And projects containing several ."
@@ -111,8 +113,7 @@ msgstr ""
 "konpilatzeko, dokumentua bihurtzeko eta ikusteko botoiak daude. Eta hainbat ."
 "tex fitxategi dituzten proiektuan oso erraz kudeatzen dira."
 
-#: ../data/latexila.appdata.xml.in.h:4
-#, fuzzy
+#: ../data/org.gnome.latexila.appdata.xml.in.h:4
 msgid ""
 "A side panel contains three components: the document structure to easily "
 "navigate in it; lists of symbols to insert them in a document; and an "
@@ -122,7 +123,7 @@ msgstr ""
 "nabigatzeko; ikurren zerrenda haiek dokumentuan txertatzeko; eta "
 "barneratutako fitxategi-arakatzailea."
 
-#: ../data/latexila.appdata.xml.in.h:5
+#: ../data/org.gnome.latexila.appdata.xml.in.h:5
 msgid ""
 "LaTeXila has also other features like the spell checking, or the forward and "
 "backward search to switch between the .tex and the PDF."
@@ -130,27 +131,35 @@ msgstr ""
 "LaTeXila-k beste eginbide batzuk ditu: zuzentzaile-ortografikoa, edo aurrera "
 "eta atzera bilatzeko aukera .tex eta PDF artean aldatzeko."
 
-#: ../data/latexila.desktop.in.in.h:1
-msgid "LaTeXila"
-msgstr "LaTeXila"
+#: ../data/org.gnome.latexila.appdata.xml.in.h:6
+msgid "Completion of LaTeX commands"
+msgstr "LaTeX komandoen osaketa"
 
-#: ../data/latexila.desktop.in.in.h:2
+#: ../data/org.gnome.latexila.appdata.xml.in.h:7
+msgid "Generating the PDF file"
+msgstr "PDF fitxategia sortzen"
+
+#: ../data/org.gnome.latexila.appdata.xml.in.h:8
+msgid "Document structure in the side panel"
+msgstr "Dokumentuaren egitura albo-panelean"
+
+#: ../data/org.gnome.latexila.desktop.in.in.h:1
 msgid "Integrated LaTeX Environment"
 msgstr "Barneratutako LaTeX ingurunea"
 
-#: ../data/latexila.desktop.in.in.h:3
+#: ../data/org.gnome.latexila.desktop.in.in.h:2
 msgid "Edit LaTeX documents"
 msgstr "Editatu LaTeX dokumentuak"
 
-#: ../data/latexila.desktop.in.in.h:4
+#: ../data/org.gnome.latexila.desktop.in.in.h:3
 msgid "text;tex;latex;editor;documents;"
-msgstr ""
+msgstr "testua;tex;latex;editorea;dokumentuak;"
 
-#: ../data/latexila.desktop.in.in.h:5
+#: ../data/org.gnome.latexila.desktop.in.in.h:4
 msgid "Open a New Window"
 msgstr "Ireki Leiho berria"
 
-#: ../data/latexila.desktop.in.in.h:6
+#: ../data/org.gnome.latexila.desktop.in.in.h:5
 msgid "Open a New Document"
 msgstr "Ireki dokumentu berria"
 
@@ -290,25 +299,41 @@ msgid "Whether LaTeXila should highlight matching brackets."
 msgstr "LaTeXila-k bat datozen parentesiak nabarmendu behar dituen edo ez."
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:27
-msgid "Spell checking"
-msgstr "Zuzentzaile ortografikoa"
+msgid "Highlight Misspelled Words"
+msgstr "Nabarmendu gaizki idatzitako hitzak"
 
 #: ../data/org.gnome.latexila.gschema.xml.in.h:28
+msgid "Whether misspelled words are highlighted by default."
+msgstr "Gaizki idatzitako hitzak lehenetsi gisa nabarmenduta daude."
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:29
+msgid "Spell Checking Language"
+msgstr "Hizkuntzaren zuzentzaile ortografikoa"
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:30
+msgid ""
+"The default language used for the spell checking. Set to the empty string to "
+"take the best language available based on the environment."
+msgstr ""
+"Zuzentzaile ortografikoaren hizkuntza lehenetsia. Ezarri kate huts gisa "
+"ingurunean oinarrituta dagoen hizkuntza erabilgarri onena hartzeko."
+
+#: ../data/org.gnome.latexila.gschema.xml.in.h:31
 msgid "Main toolbar is visible"
 msgstr "Tresna-barra nagusia ikusgai dago"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:29
+#: ../data/org.gnome.latexila.gschema.xml.in.h:32
 msgid ""
 "Whether the main toolbar (file open, close, build, ...) should be visible."
 msgstr ""
 "Tresna-barra nagusia (ireki fitxategia, itxi, eraikia, ...) ikusgai egongo "
 "den edo ez."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:30
+#: ../data/org.gnome.latexila.gschema.xml.in.h:33
 msgid "Edit toolbar is visible"
 msgstr "Editatzearen tresna-barra ikusgai dago"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:31
+#: ../data/org.gnome.latexila.gschema.xml.in.h:34
 msgid ""
 "Whether the edit toolbar (bold, italic, character sizes, ...) should be "
 "visible."
@@ -316,57 +341,57 @@ msgstr ""
 "Editatzearen tresna-barra ikusgai (lodia, etzana, karaktere-tamaina, ... ) "
 "egon behar duen edo ez."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:32
+#: ../data/org.gnome.latexila.gschema.xml.in.h:35
 msgid "Side panel is Visible"
 msgstr "Alboko panela ikusgai dago"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:33
+#: ../data/org.gnome.latexila.gschema.xml.in.h:36
 msgid ""
 "Whether the side panel at the left of editing windows should be visible."
 msgstr ""
 "Editatzeko leihoen ezkerreko albo-panelak ikusgai egon behar duen ala ez."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:34
+#: ../data/org.gnome.latexila.gschema.xml.in.h:37
 msgid "Bottom panel is Visible"
 msgstr "Beheko panela ikusgai dago"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:35
+#: ../data/org.gnome.latexila.gschema.xml.in.h:38
 msgid "Whether the bottom panel containing the build view should be visible."
 msgstr ""
 "Eraikitzearen ikuspegia duen azpiko panela ikusgai egon behar duen edo ez."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:36
+#: ../data/org.gnome.latexila.gschema.xml.in.h:39
 msgid "Side panel component"
 msgstr "Alboko panelaren osagaia"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:37
+#: ../data/org.gnome.latexila.gschema.xml.in.h:40
 msgid ""
 "Side panel's active component. 0: Symbols. 1: File browser. 2: Structure."
 msgstr ""
 "Alboko panelaren osagai aktiboa. 0: ikurrak; 1: fitxategi-arakatzailea; 2: "
 "egitura."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:38
+#: ../data/org.gnome.latexila.gschema.xml.in.h:41
 msgid "Show build output warnings"
 msgstr "Erakutsi eraikitzearen irteerako abisuak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:39
+#: ../data/org.gnome.latexila.gschema.xml.in.h:42
 msgid "Show build output badboxes"
 msgstr "Erakutsi eraikinaren irteerako akatsen koadroa"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:40
+#: ../data/org.gnome.latexila.gschema.xml.in.h:43
 msgid "Interactive completion"
 msgstr "Osaketa interaktiboa"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:41
+#: ../data/org.gnome.latexila.gschema.xml.in.h:44
 msgid "Automatically show LaTeX commands proposals"
 msgstr "Erakutsi automatikoki LaTeX komandoen proposamenak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:42
+#: ../data/org.gnome.latexila.gschema.xml.in.h:45
 msgid "Minimum number of characters for interactive completion"
 msgstr "Gutxieneko karaktere kopurua osaketa interaktiboarentzako"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:43
+#: ../data/org.gnome.latexila.gschema.xml.in.h:46
 msgid ""
 "Minimum number of characters after \"\\\" for the interactive completion of "
 "LaTeX commands"
@@ -374,70 +399,70 @@ msgstr ""
 "Gutxieneko karaktere kopurua \"\\\" ondoren LaTeX komandoen osaketa "
 "interaktiboarentzako"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:44
-#: ../src/ui/preferences_dialog.ui.h:19
+#: ../data/org.gnome.latexila.gschema.xml.in.h:47
+#: ../src/ui/preferences_dialog.ui.h:22
 msgid "No confirmation when cleaning-up"
 msgstr "Ez eskatu berrespena garbitzean"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:45
+#: ../data/org.gnome.latexila.gschema.xml.in.h:48
 msgid "Automatic clean-up"
 msgstr "Garbiketa automatikoa"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:46
+#: ../data/org.gnome.latexila.gschema.xml.in.h:49
 msgid ""
 "Automatically clean-up files after close. no-confirm-clean must be true."
 msgstr ""
 "Garbitu fitxategiak automatikoki itxi ondoren, 'no-confirm-clean' TRUE gisa "
 "egon behar du."
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:47
+#: ../data/org.gnome.latexila.gschema.xml.in.h:50
 msgid "File extensions for the clean-up"
 msgstr "Fitxategien luzapenak garbiketarako"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:48
+#: ../data/org.gnome.latexila.gschema.xml.in.h:51
 msgid "The list of file extensions for the clean-up, separated by spaces"
 msgstr "Fitxategien luzapenen zerrenda garbiketarako, zuriunez bereizita"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:49
+#: ../data/org.gnome.latexila.gschema.xml.in.h:52
 msgid "Enabled default build tools"
 msgstr "Eraikitzeko tresna lehenetsiak gaituta"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:50
+#: ../data/org.gnome.latexila.gschema.xml.in.h:53
 msgid "The list of the default build tools that are enabled"
 msgstr "Gaituta dauden eraikitzeko tresna lehenetsien zerrenda"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:51
+#: ../data/org.gnome.latexila.gschema.xml.in.h:54
 msgid "Disabled default build tools"
 msgstr "Eraikitzeko tresna lehenetsiak desgaituta"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:52
+#: ../data/org.gnome.latexila.gschema.xml.in.h:55
 msgid "The list of the default build tools that are disabled"
 msgstr "Desgaituta dauden eraikitzeko tresna lehenetsien zerrenda"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:53
+#: ../data/org.gnome.latexila.gschema.xml.in.h:56
 msgid "Current directory"
 msgstr "Uneko direktorioa"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:54
+#: ../data/org.gnome.latexila.gschema.xml.in.h:57
 msgid "URI of the file browser current directory"
 msgstr "Uneko direktorioaren URIa fitxategi-arakatzailean"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:55 ../src/file_browser.vala:282
+#: ../data/org.gnome.latexila.gschema.xml.in.h:58 ../src/file_browser.vala:361
 msgid "Show build files"
 msgstr "Erakutsi eraikinen fitxategiak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:56
+#: ../data/org.gnome.latexila.gschema.xml.in.h:59
 msgid ""
 "Show files with an extension present in preferences.latex.clean-extensions."
 msgstr ""
 "Erakutsi 'preferences.latex.clean-extensions' agertzen diren luzapeneko "
 "fitxategiak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:57 ../src/file_browser.vala:290
+#: ../data/org.gnome.latexila.gschema.xml.in.h:60 ../src/file_browser.vala:369
 msgid "Show hidden files"
 msgstr "Erakutsi ezkutuko fitxategiak"
 
-#: ../data/org.gnome.latexila.gschema.xml.in.h:58
+#: ../data/org.gnome.latexila.gschema.xml.in.h:61
 msgid "Show files beginning with a dot."
 msgstr "Erakutsi puntu batekin hasten diren fitxategiak."
 
@@ -453,7 +478,6 @@ msgstr ""
 "% babel paketea edo baliokidea\n"
 
 #. (itstool) path: template/translatableChunk
-#. There is a helper script in data/templates/tex2po.sh
 #: letter.xml:2
 #, no-wrap
 msgid ""
@@ -514,184 +538,191 @@ msgstr ""
 msgid "Hide panel"
 msgstr "Ezkutatu panela"
 
-#. close button
-#: ../src/build_tool_dialog.vala:80 ../src/build_tools_preferences.vala:55
-#: ../src/main_window_file.vala:53 ../src/preferences_dialog.vala:42
-#: ../src/project_dialogs.vala:186 ../src/templates_dialogs.vala:244
-#, fuzzy
-msgid "_Close"
-msgstr "It_xi denak"
+#: ../src/build_tool_dialog.vala:71
+msgid "Personal Build Tool"
+msgstr "Eraikitzeko tresna pertsonalizatua"
 
-#: ../src/build_tool_dialog.vala:81
-msgid "Build Tool (read-only)"
-msgstr "Eraikitzeko tresna (irakurtzeko soilik)"
-
-#: ../src/build_tool_dialog.vala:86 ../src/build_tools_preferences.vala:332
+#: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:290 ../src/main_window_file.vala:147
-#: ../src/main_window.vala:744 ../src/main_window.vala:840
-#: ../src/main_window.vala:876 ../src/preferences_dialog.vala:117
-#: ../src/project_dialogs.vala:28 ../src/project_dialogs.vala:119
-#: ../src/project_dialogs.vala:274 ../src/project_dialogs.vala:294
-#: ../src/templates_dialogs.vala:36 ../src/templates_dialogs.vala:176
+#: ../src/document_tab.vala:291
+#: ../src/liblatexila/latexila-templates-dialogs.c:128
+#: ../src/liblatexila/latexila-templates-dialogs.c:238
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:145
+#: ../src/main_window_file.vala:153 ../src/main_window.vala:762
+#: ../src/main_window.vala:858 ../src/preferences_dialog.vala:114
+#: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
+#: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
-msgstr ""
+msgstr "_Utzi"
 
-#: ../src/build_tool_dialog.vala:87 ../src/project_dialogs.vala:120
-#: ../src/tab_info_bar.vala:77 ../src/templates_dialogs.vala:37
-#: ../src/templates_dialogs.vala:177
-msgid "_OK"
-msgstr ""
+#: ../src/build_tool_dialog.vala:73 ../src/project_dialogs.vala:123
+msgid "_Apply"
+msgstr "_Aplikatu"
 
-#: ../src/build_tool_dialog.vala:88
-msgid "Build Tool"
-msgstr "Eraikitzeko tresna"
+#: ../src/build_tool_dialog.vala:77
+msgid "Default Build Tool (read-only)"
+msgstr "Eraikitzeko tresna lehenetsia (irakurtzeko soilik)"
 
-#: ../src/build_tool_dialog.vala:161
+#. icon-name
+#. label
+#: ../src/build_tool_dialog.vala:158
 msgid "Execute"
 msgstr "Exekutatu"
 
-#: ../src/build_tool_dialog.vala:165
+#: ../src/build_tool_dialog.vala:162
 msgid "Convert"
 msgstr "Bihurtu"
 
 #. FIXME don't use Stock
-#: ../src/build_tool_dialog.vala:166
+#: ../src/build_tool_dialog.vala:163
 msgid "View File"
 msgstr "Ikusi fitxategia"
 
-#: ../src/build_tool_dialog.vala:230
+#. In all cases, the text must be selectable, but there is no property
+#. for that. So set as editable, but in read-only mode the edited text
+#. isn't changed (see below).
+#: ../src/build_tool_dialog.vala:231
 msgid "Commands"
 msgstr "Komandoak"
 
-#: ../src/build_tool_dialog.vala:240
+#: ../src/build_tool_dialog.vala:241
 msgid "Post Processor"
 msgstr "Postprozesadorea"
 
-#: ../src/build_tool_dialog.vala:267 ../src/build_tools_preferences.vala:294
+#: ../src/build_tool_dialog.vala:271 ../src/build_tools_preferences.vala:297
 msgid "Add..."
 msgstr "Gehitu..."
 
-#: ../src/build_tool_dialog.vala:284 ../src/build_tools_preferences.vala:311
+#: ../src/build_tool_dialog.vala:288 ../src/build_tools_preferences.vala:314
 msgid "Remove"
 msgstr "Kendu"
 
-#: ../src/build_tool_dialog.vala:314 ../src/build_tools_preferences.vala:351
+#: ../src/build_tool_dialog.vala:318 ../src/build_tools_preferences.vala:354
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:282
 msgid "Move up"
 msgstr "Eraman gora"
 
-#: ../src/build_tool_dialog.vala:365 ../src/build_tools_preferences.vala:403
+#: ../src/build_tool_dialog.vala:369 ../src/build_tools_preferences.vala:406
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:294
 msgid "Move down"
 msgstr "Eraman behera"
 
-#: ../src/build_tool_dialog.vala:569 ../src/build_tools_preferences.vala:183
+#: ../src/build_tool_dialog.vala:573 ../src/build_tools_preferences.vala:177
 #: ../src/latex_menu.vala:52 ../src/structure.vala:783
 msgid "Label"
 msgstr "Etiketa"
 
-#: ../src/build_tool_dialog.vala:574
+#: ../src/build_tool_dialog.vala:578
 msgid "You can select this arrow and copy/paste it!"
 msgstr "Gezi hau hautatu eta kopia/itsatsi dezakezu."
 
-#: ../src/build_tool_dialog.vala:590
+#: ../src/build_tool_dialog.vala:594
 msgid "Description"
 msgstr "Azalpena"
 
-#: ../src/build_tool_dialog.vala:596
+#: ../src/build_tool_dialog.vala:600
 msgid "File extensions for which the build tool can be executed."
 msgstr ""
 "Fitxategien luzapena (hauentzako eraikitzeko tresna exekuta daitekeena)."
 
-#: ../src/build_tool_dialog.vala:597
+#: ../src/build_tool_dialog.vala:601
 msgid "The extensions are separated by spaces."
 msgstr "Luzapenak zuriunez bereizten dira."
 
-#: ../src/build_tool_dialog.vala:598
+#: ../src/build_tool_dialog.vala:602
 msgid "If it is empty, all extensions are allowed."
 msgstr "Hutsik egonez gero, luzapen guztiak baimentzen dira."
 
-#: ../src/build_tool_dialog.vala:600
+#: ../src/build_tool_dialog.vala:604
 msgid "Extensions"
 msgstr "Luzapenak"
 
-#: ../src/build_tool_dialog.vala:605
+#: ../src/build_tool_dialog.vala:609
 msgid "Icon"
 msgstr "Ikonoa"
 
 #. Placeholders
-#: ../src/build_tool_dialog.vala:612
+#: ../src/build_tool_dialog.vala:616
 msgid "Placeholders:"
 msgstr "Leku-markak:"
 
-#: ../src/build_tool_dialog.vala:616
+#: ../src/build_tool_dialog.vala:620
 msgid "The active document's filename."
 msgstr "Dokumentu aktiboaren fitxategi-izena."
 
-#: ../src/build_tool_dialog.vala:617 ../src/build_tool_dialog.vala:622
-#, fuzzy
+#: ../src/build_tool_dialog.vala:621 ../src/build_tool_dialog.vala:626
 msgid "If the active document belongs to a project, the main file is chosen."
 msgstr ""
-"Dokumentu aktiboa proiektu bati badagokio, fitxategi nagusia aukeratuko da."
+"Dokumentu aktiboa proiektu bati badagokio, fitxategi nagusia aukeratu da."
 
-#: ../src/build_tool_dialog.vala:621
+#: ../src/build_tool_dialog.vala:625
 msgid "The active document's filename without its extension."
 msgstr "Dokumentu aktiboaren fitxategi-izena luzapenik gabe."
 
-#: ../src/build_tool_dialog.vala:665
+#: ../src/build_tool_dialog.vala:675
 msgid "Jobs"
 msgstr "Lanak"
 
-#: ../src/build_tool_dialog.vala:671
+#: ../src/build_tool_dialog.vala:681
 msgid "List of files to open after executing the build jobs."
 msgstr "Fitxategien zerrenda eraikitze-lanak exekutatu ondoren irekitzeko."
 
-#: ../src/build_tool_dialog.vala:672
+#: ../src/build_tool_dialog.vala:682
 msgid "The files are separated by spaces."
 msgstr "Fitxategiak zuriunez bereizten dira."
 
-#: ../src/build_tool_dialog.vala:673
+#: ../src/build_tool_dialog.vala:683
 msgid "You should use the placeholders to specify the files."
 msgstr "Leku-markak erabili beharko zenituzke fitxategiak zehazteko."
 
-#: ../src/build_tool_dialog.vala:676
+#: ../src/build_tool_dialog.vala:686
 msgid "Files to open"
 msgstr "Fitxategiak irekitzeko"
 
-#: ../src/build_tools_preferences.vala:53
+#: ../src/build_tools_preferences.vala:57
 msgid "Build Tools"
 msgstr "Eraikitzeko tresnak"
 
-#: ../src/build_tools_preferences.vala:111
-#, fuzzy
+#: ../src/build_tools_preferences.vala:113
 msgid "Default Build Tools"
 msgstr "Eraikitzeko tresna lehenetsiak"
 
-#: ../src/build_tools_preferences.vala:132
-#, fuzzy
+#: ../src/build_tools_preferences.vala:134
 msgid "Personal Build Tools"
 msgstr "Eraikitzeko tresna pertsonalizatuak"
 
-#: ../src/build_tools_preferences.vala:174
+#: ../src/build_tools_preferences.vala:168
 msgid "Enabled"
 msgstr "Gaituta"
 
-#: ../src/build_tools_preferences.vala:278
+#: ../src/build_tools_preferences.vala:241
+msgid "View the properties (read-only)"
+msgstr "Ikusi propietateak (irakurtzeko soilik)"
+
+#: ../src/build_tools_preferences.vala:246
+msgid "Edit the properties"
+msgstr "Editatu propietateak"
+
+#: ../src/build_tools_preferences.vala:266
+msgid "Create a copy"
+msgstr "Sortu kopia bat"
+
+#: ../src/build_tools_preferences.vala:281
 #, c-format
 msgid "%s [copy]"
 msgstr "%s [kopia]"
 
-#: ../src/build_tools_preferences.vala:329
+#: ../src/build_tools_preferences.vala:332
 #, c-format
 msgid "Do you really want to delete the build tool \"%s\"?"
 msgstr "Ziur zaude eraikitzeko '%s' tresna ezabatzea nahi duzula?"
 
-#: ../src/build_tools_preferences.vala:333 ../src/clean_build_files.vala:243
+#: ../src/build_tools_preferences.vala:336 ../src/clean_build_files.vala:243
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:146
 #: ../src/main_window_edit.vala:51 ../src/main_window_structure.vala:38
-#: ../src/project_dialogs.vala:240 ../src/project_dialogs.vala:275
-#: ../src/templates_dialogs.vala:243
-#, fuzzy
+#: ../src/project_dialogs.vala:242 ../src/project_dialogs.vala:277
 msgid "_Delete"
-msgstr "ezabatu"
+msgstr "_Ezabatu"
 
 #: ../src/clean_build_files.vala:267
 msgid "Do you really want to delete these files?"
@@ -717,16 +748,14 @@ msgstr "Ez da bat datorrenik proposatu"
 msgid "Ln %d, Col %d"
 msgstr "%d ler., %d zut."
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:743
-#, fuzzy
+#: ../src/dialogs.vala:40 ../src/main_window.vala:761
 msgid "Close _without Saving"
-msgstr "Itxi gorde gabe"
+msgstr "Itxi gorde _gabe"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:749 ../src/main_window.vala:841
-#, fuzzy
+#: ../src/main_window.vala:767 ../src/main_window.vala:859
 msgid "_Save"
-msgstr "_Gorde denak"
+msgstr "_Gorde"
 
 #: ../src/dialogs.vala:66
 #, c-format
@@ -747,81 +776,78 @@ msgstr "Ez baduzu gordetzen, aldaketak betiko galduko dira."
 msgid "The structure item already contains a sub-paragraph."
 msgstr "Egituraren elementuak jadanik badu azpiparagrafo bat."
 
-#: ../src/document_tab.vala:173
+#: ../src/document_tab.vala:174
 msgid "Close document"
 msgstr "Itxi dokumentua"
 
 #. main file
-#: ../src/document_tab.vala:233 ../src/project_dialogs.vala:44
-#: ../src/project_dialogs.vala:47 ../src/project_dialogs.vala:139
-#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:215
+#: ../src/document_tab.vala:234 ../src/project_dialogs.vala:46
+#: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
+#: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
 msgid "Main File"
 msgstr "Fitxategi nagusia"
 
-#: ../src/document_tab.vala:235
+#: ../src/document_tab.vala:236
 msgid "Main File:"
 msgstr "Fitxategi nagusia:"
 
-#: ../src/document_tab.vala:259
+#: ../src/document_tab.vala:260
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktibatu '%s'"
 
-#: ../src/document_tab.vala:278
+#: ../src/document_tab.vala:279
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "%s fitxategia diskoan aldatu da."
 
-#: ../src/document_tab.vala:283
+#: ../src/document_tab.vala:284
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Nahi duzu aldaketak jaregin eta fitxategia berriro kargatzea?"
 
-#: ../src/document_tab.vala:285
+#: ../src/document_tab.vala:286
 msgid "Do you want to reload the file?"
 msgstr "Nahi duzu fitxategia berriro kargatzea?"
 
-#: ../src/document_tab.vala:289
-#, fuzzy
+#: ../src/document_tab.vala:290
 msgid "_Reload"
-msgstr "Birkargatu"
+msgstr "_Birkargatu"
 
-#: ../src/document.vala:121
+#: ../src/document.vala:134
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Ezin da '%s' fitxategia kargatu."
 
-#: ../src/document.vala:197
+#: ../src/document.vala:212
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "%s fitxategia aldatu egin da azken irakurketatik."
 
-#: ../src/document.vala:200
+#: ../src/document.vala:215
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr "Gordetzen baduzu kanpoko aldaketak galdu egingo dira. Gorde dena den?"
 
-#: ../src/document.vala:203
-#, fuzzy
+#: ../src/document.vala:218
 msgid "_Save Anyway"
-msgstr "Gorde dena den"
+msgstr "_Gorde dena den"
 
-#: ../src/document.vala:204
-#, fuzzy
+#: ../src/document.vala:219
 msgid "_Don't Save"
-msgstr "Ez gorde"
+msgstr "_Ez gorde"
 
-#: ../src/document.vala:216
+#: ../src/document.vala:231
 msgid "Impossible to save the file."
 msgstr "Ezin da fitxategia gorde."
 
-#: ../src/document.vala:241
+#: ../src/document.vala:256
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Errorea dokumentua UTF-8 kodeketara bihurtzean"
 
-#: ../src/document.vala:295
-msgid "Unsaved Document"
-msgstr "Gorde gabeko dokumentua"
+#: ../src/document.vala:310
+msgid "Untitled Document"
+msgstr "Izenik gabeko dokumentua"
 
-#: ../src/document.vala:579
+#: ../src/document.vala:594
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
@@ -829,39 +855,95 @@ msgstr ""
 "Fitxategiak aldi baterako kokalekua du. Datuak gal daitezke ordenagailua "
 "berrabiarazi ondoren."
 
-#: ../src/document.vala:580
+#: ../src/document.vala:595
 msgid "Do you want to save the file in a safer place?"
 msgstr "Fitxategia kokaleku seguru batean gordetzea nahi duzu?"
 
-#: ../src/document.vala:583 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:747
-#, fuzzy
+#: ../src/document.vala:598 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:765
 msgid "Save _As"
-msgstr "_Gorde denak"
+msgstr "Gorde _honela"
 
-#: ../src/document.vala:584
+#: ../src/document.vala:599
 msgid "Cancel"
-msgstr ""
+msgstr "Utzi"
 
-#: ../src/file_browser.vala:218
+#: ../src/document_view.vala:367
+msgid "No dictionaries available for the spell checking."
+msgstr "Ez dago hiztegirik erabilgarri zuzentzaile ortografikoarentzako"
+
+#. Help
+#: ../src/document_view.vala:369 ../src/main_window.vala:62
+#: ../src/ui/menus.ui.h:4
+msgid "_Help"
+msgstr "_Laguntza"
+
+#: ../src/document_view.vala:370 ../src/tab_info_bar.vala:77
+msgid "_OK"
+msgstr "_Ados"
+
+#: ../src/file_browser.vala:219
 msgid "Go to the home directory"
 msgstr "Joan karpeta nagusira"
 
-#: ../src/file_browser.vala:233
+#: ../src/file_browser.vala:234
 msgid "Go to the parent directory"
 msgstr "Joan karpeta gurasora"
 
-#: ../src/file_browser.vala:249
+#: ../src/file_browser.vala:250
 msgid "Go to the active document directory"
 msgstr "Joan dokumentu aktiboaren direktoriora"
 
-#: ../src/file_browser.vala:338
+#: ../src/file_browser.vala:303
+msgid "Open in a file manager"
+msgstr "Ireki fitxategi-kudeatzailean"
+
+#: ../src/file_browser.vala:305
+msgid "Open the current directory in a file manager"
+msgstr "Ireki uneko direktorioa fitxategi-kudeatzailean"
+
+#: ../src/file_browser.vala:327
+msgid "Open in a terminal"
+msgstr "Ireki terminalean"
+
+#: ../src/file_browser.vala:328
+msgid "Open the current directory in a terminal"
+msgstr "Ireki uneko direktorioa terminalean"
+
+#: ../src/file_browser.vala:417
 msgid "File System"
 msgstr "Fitxategi-sistema"
 
-#: ../src/file_browser.vala:457 ../src/main_window.vala:406
+#. File browser
+#: ../src/file_browser.vala:536 ../src/main_window.vala:411
 msgid "File Browser"
 msgstr "Fitxategi-arakatzailea"
+
+#: ../src/latexila_app.vala:78
+msgid "Show the application's version"
+msgstr "Erakutsi aplikazioaren bertsioa"
+
+#: ../src/latexila_app.vala:81
+msgid "Create new document"
+msgstr "Sortu dokumentu berria"
+
+#: ../src/latexila_app.vala:84
+msgid "Create a new top-level window in an existing instance of LaTeXila"
+msgstr ""
+"Sortu goi-mailako leiho berri bat lehendik dagoen LaTeXila-ren instantzia "
+"batean"
+
+#: ../src/latexila_app.vala:223
+msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
+msgstr "GNOME mahaigainerako LaTeX ingurune barneratua da LaTeXila"
+
+#: ../src/latexila_app.vala:262 ../src/main_window.vala:71
+msgid "About LaTeXila"
+msgstr "LaTeXila-ri buruz"
+
+#: ../src/latexila_app.vala:263
+msgid "translator-credits"
+msgstr "Iñaki Larrañaga Murgoitio <dooteo@zundan.com>"
 
 #. LaTeX: Sectioning
 #: ../src/latex_menu.vala:32
@@ -1536,6 +1618,7 @@ msgstr "eskuineko <"
 msgid "right ."
 msgstr "eskuineko ."
 
+#. menus under toolitems
 #: ../src/latex_menu.vala:443
 msgid "Sectioning"
 msgstr "Zatitzea"
@@ -1597,30 +1680,89 @@ msgstr "PDF fitxategia ez da existitzen."
 msgid "The document is not saved."
 msgstr "Dokumentua ez da gorde."
 
-#: ../src/main.vala:51
-msgid "Show the application's version"
-msgstr "Erakutsi aplikazioaren bertsioa"
+#: ../src/liblatexila/latexila-templates-default.c:90
+msgid "Empty"
+msgstr "Hutsik"
 
-#: ../src/main.vala:54
-msgid "Create new document"
-msgstr "Sortu dokumentu berria"
+#: ../src/liblatexila/latexila-templates-default.c:94
+msgid "Article"
+msgstr "Artikulua"
 
-#: ../src/main.vala:57
-msgid "Create a new top-level window in an existing instance of LaTeXila"
-msgstr ""
-"Sortu goi-mailako leiho berri bat lehendik dagoen LaTeXila-ren instantzia "
-"batean"
+#: ../src/liblatexila/latexila-templates-default.c:95
+msgid "Report"
+msgstr "Txostena"
 
-#: ../src/main.vala:66
-msgid "- Integrated LaTeX Environment for GNOME"
-msgstr "- GNOMErako LaTeX ingurune barneratua"
+#: ../src/liblatexila/latexila-templates-default.c:96
+msgid "Book"
+msgstr "Liburua"
 
-#: ../src/main.vala:78
+#: ../src/liblatexila/latexila-templates-default.c:97
+msgid "Letter"
+msgstr "Gutuna"
+
+#: ../src/liblatexila/latexila-templates-default.c:98
+msgid "Presentation"
+msgstr "Aurkezpena"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:50
+msgid "Default Templates"
+msgstr "Txantiloi lehenetsiak"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:62
+msgid "Personal Templates"
+msgstr "Txantiloi pertsonalak"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:122
+msgid "New File..."
+msgstr "Fitxategi berria..."
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:129
+#: ../src/main_window_file.vala:32
+msgid "_New"
+msgstr "_Berria"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:232
+msgid "New Template..."
+msgstr "Txantiloi berria..."
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:239
+#: ../src/project_dialogs.vala:32
+msgid "Crea_te"
+msgstr "_Sortu"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:249
+msgid "Name of the new template"
+msgstr "Txantiloi berriaren izena"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:267
+msgid "Choose an icon"
+msgstr "Hautatu ikono bat"
+
+#: ../src/liblatexila/latexila-templates-dialogs.c:332
+msgid "Impossible to create the personal template."
+msgstr "Ezinezkoa da txantiloi pertsonala sortzea."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:141
 #, c-format
-msgid "Run '%s --help' to see a full list of available command line options.\n"
-msgstr ""
-"Exekutatu '%s --help' komando-lerroko aukera erabilgarrien zerrenda "
-"ikusteko.\n"
+msgid "Do you really want to delete the template “%s”?"
+msgstr "Benetan ezabatu nahi duzu “%s” txantiloia?"
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:168
+#, c-format
+msgid "Error when deleting the template “%s”."
+msgstr "Errorea “%s” txantiloia ezabatzean"
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:226
+msgid "Error when moving the template."
+msgstr "Errorea txantiloia lekuz aldatzean."
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:270
+msgid "Delete"
+msgstr "Ezabatu"
+
+#: ../src/liblatexila/latexila-templates-manage-dialog.c:362
+msgid "Manage Personal Templates"
+msgstr "Kudeatu txantiloi pertsonalak"
 
 #: ../src/main_window_build_tools.vala:28
 msgid "_Build"
@@ -1650,7 +1792,7 @@ msgstr "Ikusi _egunkaria"
 msgid "View Log"
 msgstr "Ikusi egunkaria"
 
-#: ../src/main_window_build_tools.vala:40
+#: ../src/main_window_build_tools.vala:40 ../src/ui/menus.ui.h:3
 msgid "_Manage Build Tools"
 msgstr "_Kudeatu eraikitzeko tresnak"
 
@@ -1732,7 +1874,7 @@ msgstr "_Editatu"
 
 #: ../src/main_window_edit.vala:32
 msgid "_Undo"
-msgstr ""
+msgstr "_Desegin"
 
 #: ../src/main_window_edit.vala:33
 msgid "Undo the last action"
@@ -1740,7 +1882,7 @@ msgstr "Azken ekintza desegiten du"
 
 #: ../src/main_window_edit.vala:35
 msgid "_Redo"
-msgstr ""
+msgstr "_Berregin"
 
 #: ../src/main_window_edit.vala:36
 msgid "Redo the last undone action"
@@ -1748,7 +1890,7 @@ msgstr "Desegindako azken urratsa berregiten du"
 
 #: ../src/main_window_edit.vala:38 ../src/main_window_structure.vala:32
 msgid "Cu_t"
-msgstr ""
+msgstr "_Ebaki"
 
 #: ../src/main_window_edit.vala:39
 msgid "Cut the selection"
@@ -1756,7 +1898,7 @@ msgstr "Ebaki hautapena"
 
 #: ../src/main_window_edit.vala:41 ../src/main_window_structure.vala:35
 msgid "_Copy"
-msgstr ""
+msgstr "_Kopiatu"
 
 #: ../src/main_window_edit.vala:42
 msgid "Copy the selection"
@@ -1768,7 +1910,7 @@ msgstr "Kopiatu hautapena"
 #. Anyway if we press Ctrl+V when the cursor is in the document, no problem.
 #: ../src/main_window_edit.vala:48
 msgid "_Paste"
-msgstr ""
+msgstr "_Itsatsi"
 
 #: ../src/main_window_edit.vala:49
 msgid "Paste the clipboard"
@@ -1779,64 +1921,64 @@ msgid "Delete the selected text"
 msgstr "Ezabatu hautatutako testua"
 
 #: ../src/main_window_edit.vala:54
-#, fuzzy
 msgid "Select _All"
-msgstr "_Hautatu"
+msgstr "Hautatu _dena"
 
 #: ../src/main_window_edit.vala:55
 msgid "Select the entire document"
 msgstr "Hautatu dokumentu osoa"
 
-#: ../src/main_window_edit.vala:57 ../src/main_window_structure.vala:44
+#: ../src/main_window_edit.vala:57
+msgid "_Indent"
+msgstr "_Koska"
+
+#: ../src/main_window_edit.vala:58
+msgid "Indent the selected lines"
+msgstr "Koskatu hautatutako lerroak"
+
+#: ../src/main_window_edit.vala:60
+msgid "_Unindent"
+msgstr "_Kendu koska"
+
+#: ../src/main_window_edit.vala:61
+msgid "Unindent the selected lines"
+msgstr "Kendu hautatutako lerroetako kostak"
+
+#: ../src/main_window_edit.vala:63 ../src/main_window_structure.vala:44
 msgid "_Comment"
 msgstr "I_ruzkina"
 
-#: ../src/main_window_edit.vala:58
+#: ../src/main_window_edit.vala:64
 msgid "Comment the selected lines (add the character \"%\")"
 msgstr "Ezarri iruzkin gisa hautatutako lerroak (gehitu '%' karakterea)"
 
-#: ../src/main_window_edit.vala:61
+#: ../src/main_window_edit.vala:67
 msgid "_Uncomment"
 msgstr "_Kendu iruzkina"
 
-#: ../src/main_window_edit.vala:62
+#: ../src/main_window_edit.vala:68
 msgid "Uncomment the selected lines (remove the character \"%\")"
 msgstr "Kendu iruzkina hautatutako lerroetatik (kendu '%' karakterea)"
 
-#: ../src/main_window_edit.vala:65
-#, fuzzy
+#: ../src/main_window_edit.vala:71
 msgid "_Completion"
-msgstr "I_ruzkina"
+msgstr "_Osaketa"
 
-#: ../src/main_window_edit.vala:66
+#: ../src/main_window_edit.vala:72
 msgid "Complete the LaTeX command"
-msgstr ""
+msgstr "Latex komandoen osaketa"
 
-#: ../src/main_window_edit.vala:68
-#, fuzzy
+#: ../src/main_window_edit.vala:74 ../src/ui/menus.ui.h:2
 msgid "_Preferences"
-msgstr "Hobespenak"
-
-#: ../src/main_window_edit.vala:69
-msgid "Configure the application"
-msgstr "Konfiguratu aplikazioa"
-
-#: ../src/main_window_edit.vala:74
-#, fuzzy
-msgid "_Spell Check"
-msgstr "Zuzentzaile ortografikoa"
+msgstr "_Hobespenak"
 
 #: ../src/main_window_edit.vala:75
-msgid "Activate or disable the spell checking"
-msgstr "Gaitu edo desgaitu zuzentzaile ortografikoa"
+msgid "Configure the application"
+msgstr "Konfiguratu aplikazioa"
 
 #: ../src/main_window_file.vala:30
 msgid "_File"
 msgstr "_Fitxategia"
-
-#: ../src/main_window_file.vala:32 ../src/project_dialogs.vala:29
-msgid "_New"
-msgstr ""
 
 #: ../src/main_window_file.vala:33
 msgid "New file"
@@ -1850,10 +1992,9 @@ msgstr "Leiho _berria"
 msgid "Create a new window"
 msgstr "Sortu leiho berria"
 
-#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:148
-#, fuzzy
+#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:154
 msgid "_Open"
-msgstr "_Ireki fitxategia"
+msgstr "_Ireki"
 
 #: ../src/main_window_file.vala:39 ../src/main_window_file.vala:86
 msgid "Open a file"
@@ -1876,12 +2017,16 @@ msgid "Create a new template from the current document"
 msgstr "Sortu txantiloi berria uneko dokumentutik"
 
 #: ../src/main_window_file.vala:50
-msgid "_Delete Template..."
-msgstr "_Ezabatu txantiloia..."
+msgid "_Manage Personal Templates..."
+msgstr "_Kudeatu txantiloi pertsonalak..."
 
 #: ../src/main_window_file.vala:51
-msgid "Delete personal template(s)"
-msgstr "Ezabatu txantiloi pertsonalak"
+msgid "Manage personal templates"
+msgstr "Kudeatu txantiloi pertsonalak"
+
+#: ../src/main_window_file.vala:53
+msgid "_Close"
+msgstr "It_xi"
 
 #: ../src/main_window_file.vala:54
 msgid "Close the current file"
@@ -1900,15 +2045,17 @@ msgstr "Ireki erabilitako azken fitxategiak"
 msgid "Open a recently used file"
 msgstr "Ireki erabili berri duzun fitxategia"
 
-#: ../src/main_window_file.vala:144
+#: ../src/main_window_file.vala:150
 msgid "Open Files"
 msgstr "Ireki fitxategiak"
 
-#: ../src/main_window_file.vala:166
+#. Filter: by default show only .tex and .bib files
+#: ../src/main_window_file.vala:173
 msgid "All LaTeX Files"
 msgstr "LaTeX fitxategi guztiak"
 
-#: ../src/main_window_file.vala:173
+#. All files filter
+#: ../src/main_window_file.vala:180
 msgid "All Files"
 msgstr "Fitxategi guztiak"
 
@@ -1968,9 +2115,38 @@ msgstr "_Ireki fitxategia"
 msgid "Open the file referenced by the selected structure item"
 msgstr "Ireki hautatutako egituraren elementuak erreferentziatutako fitxategia"
 
-#: ../src/main_window.vala:28
-msgid "_Quit"
+#: ../src/main_window_tools.vala:28
+msgid "_Tools"
+msgstr "_Tresnak"
+
+#: ../src/main_window_tools.vala:29
+msgid "_Check Spelling…"
+msgstr "_Ortografia-egiaztapena…"
+
+#: ../src/main_window_tools.vala:30
+msgid "Check the spelling of the current document"
+msgstr "Uneko dokumentuaren ortografia egiaztatzen du"
+
+#: ../src/main_window_tools.vala:31
+msgid "_Set Language…"
+msgstr "_Ezarri hizkuntza…"
+
+#: ../src/main_window_tools.vala:32
+msgid "Set the language used for the spell checking for the current document"
 msgstr ""
+"Ezarri uneko dokumentuan zuzentzaile ortografikoan erabilitako hizkuntza"
+
+#: ../src/main_window_tools.vala:38
+msgid "_Highlight Misspelled Words"
+msgstr "_Nabarmendu gaziki osatutako hitzak"
+
+#: ../src/main_window_tools.vala:39
+msgid "Highlight misspelled words in the current document"
+msgstr "_Nabarmendu gaziki osatutako hitzak uneko dokumentuan"
+
+#: ../src/main_window.vala:28 ../src/ui/menus.ui.h:6
+msgid "_Quit"
+msgstr "I_rten"
 
 #: ../src/main_window.vala:29
 msgid "Quit the program"
@@ -2012,7 +2188,7 @@ msgstr "_Bilatu"
 
 #: ../src/main_window.vala:42
 msgid "_Find"
-msgstr ""
+msgstr "_Bilatu"
 
 #: ../src/main_window.vala:43
 msgid "Search for text"
@@ -2020,7 +2196,7 @@ msgstr "Bilatu testua"
 
 #: ../src/main_window.vala:44
 msgid "Find and _Replace"
-msgstr ""
+msgstr "Bilatu eta _ordeztu"
 
 #: ../src/main_window.vala:45
 msgid "Search for and replace text"
@@ -2067,14 +2243,9 @@ msgstr "Aldatu uneko proiektuaren fitxategi nagusia"
 msgid "_Manage Projects"
 msgstr "_Kudeatu proiektuak"
 
-#: ../src/main_window.vala:59 ../src/project_dialogs.vala:183
+#: ../src/main_window.vala:59 ../src/project_dialogs.vala:187
 msgid "Manage Projects"
 msgstr "Kudeatu proiektuak"
-
-#. Help
-#: ../src/main_window.vala:62
-msgid "_Help"
-msgstr "_Laguntza"
 
 #: ../src/main_window.vala:63
 msgid "_Contents"
@@ -2092,25 +2263,9 @@ msgstr "_LaTeX-en erreferentzia"
 msgid "The Kile LaTeX Reference"
 msgstr "Kile LaTeX erreferentzia"
 
-#: ../src/main_window.vala:67
-msgid "_Donate"
-msgstr "_Eman dirua"
-
-#: ../src/main_window.vala:68
-msgid ""
-"Donate to demonstrate your appreciation of LaTeXila and help its future "
-"development"
-msgstr ""
-"Eman dirua LaTeXila-rekin esker onekoa izateko eta bere etorkizuna garatzen "
-"laguntzeko"
-
-#: ../src/main_window.vala:70
+#: ../src/main_window.vala:70 ../src/ui/menus.ui.h:5
 msgid "_About"
-msgstr ""
-
-#: ../src/main_window.vala:71 ../src/main_window.vala:1219
-msgid "About LaTeXila"
-msgstr "LaTeXila-ri buruz"
+msgstr "Honi _buruz"
 
 #: ../src/main_window.vala:76
 msgid "_Main Toolbar"
@@ -2145,21 +2300,22 @@ msgstr "_Beheko panela"
 msgid "Show or hide the bottom panel"
 msgstr "Erakutsi edo ezkutatu beheko panela"
 
-#: ../src/main_window.vala:402
+#. Symbols
+#: ../src/main_window.vala:407
 msgid "Symbols"
 msgstr "Ikurrak"
 
-#: ../src/main_window.vala:411
+#: ../src/main_window.vala:416
 msgid "Structure"
 msgstr "Egitura"
 
-#: ../src/main_window.vala:633
+#: ../src/main_window.vala:650
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr ""
 "Fitxategi hau (%s) jadanik irekita dago LaTeXila-ren beste leiho batean."
 
-#: ../src/main_window.vala:635
+#: ../src/main_window.vala:652
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2167,128 +2323,106 @@ msgstr ""
 "LaTeXila-k fitxategiaren instantzia irakurtzeko soilik moduan ireki du. Dena "
 "den editatzea nahi duzu?"
 
-#: ../src/main_window.vala:638
+#: ../src/main_window.vala:655
 msgid "Edit Anyway"
 msgstr "Editatu dena den"
 
-#: ../src/main_window.vala:639
+#: ../src/main_window.vala:656
 msgid "Don't Edit"
 msgstr "Ez editatu"
 
-#: ../src/main_window.vala:740
+#: ../src/main_window.vala:758
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Aldaketak '%s' dokumentuan gorde itxi aurretik?"
 
-#: ../src/main_window.vala:820
+#: ../src/main_window.vala:838
 msgid "Read-Only"
 msgstr "Irakurtzeko soilik"
 
-#: ../src/main_window.vala:838
+#: ../src/main_window.vala:856
 msgid "Save File"
 msgstr "Gorde fitxategia"
 
-#: ../src/main_window.vala:873
-#, c-format
-msgid "A file named \"%s\" already exists. Do you want to replace it?"
-msgstr "'%s' izeneko fitxategia badago lehendik. Ordeztu nahi duzu?"
-
-#: ../src/main_window.vala:877
-#, fuzzy
-msgid "_Replace"
-msgstr "Ordeztu"
-
-#: ../src/main_window.vala:1180
-msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
-msgstr "GNOME mahaigainerako LaTeX ingurune barneratua da LaTeXila"
-
-#: ../src/main_window.vala:1220
-msgid "translator-credits"
-msgstr "Iñaki Larrañaga Murgoitio <dooteo@zundan.com>"
-
-#: ../src/preferences_dialog.vala:31
+#: ../src/preferences_dialog.vala:33
 msgid "Preferences"
 msgstr "Hobespenak"
 
 #. reset all button
-#: ../src/preferences_dialog.vala:36 ../src/preferences_dialog.vala:118
-#, fuzzy
+#: ../src/preferences_dialog.vala:42 ../src/preferences_dialog.vala:115
 msgid "_Reset All"
-msgstr "Leheneratu denak"
+msgstr "_Berrezarri dena"
 
-#: ../src/preferences_dialog.vala:37
+#: ../src/preferences_dialog.vala:43
 msgid "Reset all preferences"
 msgstr "Leheneratu hobespen guztiak"
 
-#: ../src/preferences_dialog.vala:115
+#: ../src/preferences_dialog.vala:112
 msgid "Do you really want to reset all preferences?"
 msgstr "Nahi duzu hobespen guztiak balio lehenetsiekin berrezartzea?"
 
-#: ../src/preferences_dialog.vala:192
+#: ../src/preferences_dialog.vala:189
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "minutu"
 msgstr[1] "minutu"
 
-#: ../src/preferences_dialog.vala:292
+#: ../src/preferences_dialog.vala:289
 msgid "character"
 msgid_plural "characters"
 msgstr[0] "karaktere"
 msgstr[1] "karaktere"
 
-#: ../src/preferences_dialog.vala:332
+#: ../src/preferences_dialog.vala:344
 #, c-format
 msgid "Use the system fixed width font (%s)"
 msgstr "Erabili sistemako letra-zabalera (%s)"
 
-#: ../src/project_dialogs.vala:26
+#: ../src/project_dialogs.vala:28
 msgid "New Project"
 msgstr "Proiektu berria"
 
 #. directory
-#: ../src/project_dialogs.vala:36 ../src/project_dialogs.vala:40
-#: ../src/project_dialogs.vala:202
+#: ../src/project_dialogs.vala:40 ../src/project_dialogs.vala:42
+#: ../src/project_dialogs.vala:204
 msgid "Directory"
 msgstr "Direktorioa"
 
-#: ../src/project_dialogs.vala:101
+#: ../src/project_dialogs.vala:102
 #, c-format
 msgid "There is a conflict with the project \"%s\"."
 msgstr "Gatazka dago '%s' proiektuarekin."
 
-#: ../src/project_dialogs.vala:116
+#: ../src/project_dialogs.vala:119
 msgid "Configure Project"
 msgstr "Konfiguratu proiektua"
 
-#: ../src/project_dialogs.vala:134
+#: ../src/project_dialogs.vala:137
 msgid "Location of the project"
 msgstr "Proiektuaren kokalekua"
 
-#: ../src/project_dialogs.vala:239
-#, fuzzy
-msgid "_Properties"
-msgstr "_Proiektuak"
-
 #: ../src/project_dialogs.vala:241
-#, fuzzy
-msgid "_Clear All"
-msgstr "Garbitu denak"
+msgid "_Properties"
+msgstr "_Propietateak"
 
-#: ../src/project_dialogs.vala:271
+#: ../src/project_dialogs.vala:243
+msgid "_Clear All"
+msgstr "_Garbitu denak"
+
+#: ../src/project_dialogs.vala:273
 #, c-format
 msgid "Do you really want to delete the project \"%s\"?"
 msgstr "Ziur zaude '%s' proiektua ezabatzea nahi duzula?"
 
-#: ../src/project_dialogs.vala:292
+#: ../src/project_dialogs.vala:294
 msgid "Do you really want to clear all projects?"
 msgstr "Ziur zaude proiektu guztiak garbitu nahi dituzula?"
 
-#: ../src/project_dialogs.vala:295
-#, fuzzy
+#: ../src/project_dialogs.vala:297
 msgid "Clear _All"
-msgstr "Garbitu denak"
+msgstr "Garbitu _dena"
 
-#: ../src/project_dialogs.vala:319
+#: ../src/project_dialogs.vala:321
 msgid "The Main File is not in the directory."
 msgstr "Fitxategi nagusia ez dago direktorioan."
 
@@ -2308,6 +2442,7 @@ msgstr "Ordeztu honekin:"
 msgid "Replace"
 msgstr "Ordeztu"
 
+#. replace all: image + label
 #: ../src/search.vala:186
 msgid "Replace All"
 msgstr "Ordeztu denak"
@@ -2474,69 +2609,16 @@ msgid "Most Used"
 msgstr "Erabiliena"
 
 #: ../src/symbols_view.vala:157
-#, fuzzy
 msgid "_Clear"
-msgstr "Garbitu denak"
+msgstr "_Garbitu"
 
 #: ../src/symbols_view.vala:159
 msgid "Clear most used symbols"
-msgstr ""
+msgstr "Garbitu gehien erabilitako ikurrak"
 
-#: ../src/templates_dialogs.vala:34
-msgid "New File..."
-msgstr "Fitxategi berria..."
-
-#: ../src/templates_dialogs.vala:55
-msgid "Default templates"
-msgstr "Txantiloi lehenetsiak"
-
-#: ../src/templates_dialogs.vala:64
-msgid "Your personal templates"
-msgstr "Zure txantiloi pertsonalak"
-
-#: ../src/templates_dialogs.vala:173
-msgid "New Template..."
-msgstr "Txantiloi berria..."
-
-#: ../src/templates_dialogs.vala:185
-msgid "Name of the new template"
-msgstr "Txantiloi berriaren izena"
-
-#: ../src/templates_dialogs.vala:198
-msgid "Choose an icon"
-msgstr "Hautatu ikono bat"
-
-#: ../src/templates_dialogs.vala:242
-msgid "Delete Template(s)..."
-msgstr "Ezabatu txantiloiak..."
-
-#: ../src/templates_dialogs.vala:259
-msgid "Personal templates"
-msgstr "Txantiloi pertsonalak"
-
-#: ../src/templates.vala:75
-msgid "Empty"
-msgstr "Hutsik"
-
-#: ../src/templates.vala:77
-msgid "Article"
-msgstr "Artikulua"
-
-#: ../src/templates.vala:78
-msgid "Report"
-msgstr "Txostena"
-
-#: ../src/templates.vala:79
-msgid "Book"
-msgstr "Liburua"
-
-#: ../src/templates.vala:80
-msgid "Letter"
-msgstr "Gutuna"
-
-#: ../src/templates.vala:81
-msgid "Presentation"
-msgstr "Aurkezpena"
+#: ../src/ui/menus.ui.h:1
+msgid "_New Window"
+msgstr "_Leiho berria"
 
 #: ../src/ui/preferences_dialog.ui.h:1
 msgid "Display line numbers"
@@ -2600,28 +2682,93 @@ msgid "Font & Colors"
 msgstr "Letra-tipoak eta koloreak"
 
 #: ../src/ui/preferences_dialog.ui.h:18
-msgid "File Clean-Up"
-msgstr "Fitxategiaren garbiketa"
-
-#: ../src/ui/preferences_dialog.ui.h:20
-msgid "Automatically clean-up files after close"
-msgstr "Garbitu fitxategiak automatikoki itxi ondoren"
-
-#: ../src/ui/preferences_dialog.ui.h:21
 msgid "Interactive completion after"
 msgstr "Osaketa interaktiboa honen ondoren"
 
-#: ../src/ui/preferences_dialog.ui.h:22
+#: ../src/ui/preferences_dialog.ui.h:19
 msgid "Number of characters after &apos;\\&apos;"
 msgstr "Karaktere kopurua honen ondoren: &apos;\\&apos;"
 
-#: ../src/ui/preferences_dialog.ui.h:23
+#: ../src/ui/preferences_dialog.ui.h:20
 msgid "Number of characters after '\\'"
 msgstr "Karaktere kopurua honen ondoren: '\\'"
 
+#: ../src/ui/preferences_dialog.ui.h:21
+msgid "File Clean-Up"
+msgstr "Fitxategiaren garbiketa"
+
+#: ../src/ui/preferences_dialog.ui.h:23
+msgid "Automatically clean-up files after close"
+msgstr "Garbitu fitxategiak automatikoki itxi ondoren"
+
 #: ../src/ui/preferences_dialog.ui.h:24
+msgid ""
+"The spell checking settings can also be changed on a file-by-file basis via "
+"the Tools menu."
+msgstr ""
+"Zuzentzaile ortografikoaren ezarpenak fitxategiz fitxategi oinarriko Tresnak "
+"menuaren bidez alda daitezke."
+
+#: ../src/ui/preferences_dialog.ui.h:25
+msgid "Default Spell Checking Settings"
+msgstr "Zuzentzaile ortografikoaren ezarpen lehenetsiak"
+
+#: ../src/ui/preferences_dialog.ui.h:26
+msgid "Language:"
+msgstr "Hizkuntza:"
+
+#: ../src/ui/preferences_dialog.ui.h:27
+msgid "Highlight misspelled words"
+msgstr "Nabarmendu gaizki idatzitako hitzak"
+
+#: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Bestelakoa"
+
+#~ msgid "LaTeXila"
+#~ msgstr "LaTeXila"
+
+#~ msgid "Build Tool"
+#~ msgstr "Eraikitzeko tresna"
+
+#~ msgid "- Integrated LaTeX Environment for GNOME"
+#~ msgstr "- GNOMErako LaTeX ingurune barneratua"
+
+#~ msgid ""
+#~ "Run '%s --help' to see a full list of available command line options.\n"
+#~ msgstr ""
+#~ "Exekutatu '%s --help' komando-lerroko aukera erabilgarrien zerrenda "
+#~ "ikusteko.\n"
+
+#, fuzzy
+#~ msgid "_Spell Check"
+#~ msgstr "Zuzentzaile ortografikoa"
+
+#~ msgid "_Delete Template..."
+#~ msgstr "_Ezabatu txantiloia..."
+
+#~ msgid "Delete personal template(s)"
+#~ msgstr "Ezabatu txantiloi pertsonalak"
+
+#~ msgid "_Donate"
+#~ msgstr "_Eman dirua"
+
+#~ msgid ""
+#~ "Donate to demonstrate your appreciation of LaTeXila and help its future "
+#~ "development"
+#~ msgstr ""
+#~ "Eman dirua LaTeXila-rekin esker onekoa izateko eta bere etorkizuna "
+#~ "garatzen laguntzeko"
+
+#~ msgid "A file named \"%s\" already exists. Do you want to replace it?"
+#~ msgstr "'%s' izeneko fitxategia badago lehendik. Ordeztu nahi duzu?"
+
+#, fuzzy
+#~ msgid "_Replace"
+#~ msgstr "Ordeztu"
+
+#~ msgid "Delete Template(s)..."
+#~ msgstr "Ezabatu txantiloiak..."
 
 #~ msgid ""
 #~ "There are menus and toolbars with the principal LaTeX commands. To help "
