@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <interface>
-  <menu id="app-menu">
+  <!-- The app menu is set manually if needed. -->
+  <menu id="manual-app-menu">
     <section>
       <item>
         <attribute name="label" translatable="yes">_New Window</attribute>

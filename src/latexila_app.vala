@@ -117,7 +117,20 @@ public class LatexilaApp : Gtk.Application
     private void startup_cb ()
     {
         hold ();
+
         add_action_entries (_app_actions, this);
+
+        GLib.MenuModel manual_app_menu = get_menu_by_id ("manual-app-menu");
+        if (manual_app_menu == null)
+            warning ("manual-app-menu not available.");
+
+        // The menubar contains everything, so we don't need the fallback app
+        // menu on desktops that don't support app menus (e.g. on Xfce).
+        if (prefers_app_menu ())
+        {
+            set_app_menu (manual_app_menu);
+        }
+
         set_application_icons ();
         Latexila.utils_register_icons ();
         StockIcons.register_stock_icons ();
@@ -125,6 +138,7 @@ public class LatexilaApp : Gtk.Application
         AppSettings.get_default ();
         support_backward_search ();
         Gtk.AccelMap.load (get_accel_filename ());
+
         release ();
     }
 
