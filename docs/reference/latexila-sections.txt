@@ -14,6 +14,7 @@ LATEXILA_IS_BUILD_TOOLS
 LATEXILA_IS_BUILD_TOOLS_CLASS
 LATEXILA_TYPE_BUILD_TOOLS
 latexila_build_tools_get_type
+LatexilaBuildToolsClass
 LatexilaBuildToolsPrivate
 </SECTION>
 
@@ -29,6 +30,7 @@ LATEXILA_IS_BUILD_TOOLS_DEFAULT
 LATEXILA_IS_BUILD_TOOLS_DEFAULT_CLASS
 LATEXILA_TYPE_BUILD_TOOLS_DEFAULT
 latexila_build_tools_default_get_type
+LatexilaBuildToolsDefaultClass
 LatexilaBuildToolsDefaultPrivate
 </SECTION>
 
@@ -51,6 +53,7 @@ LATEXILA_IS_BUILD_TOOLS_PERSONAL
 LATEXILA_IS_BUILD_TOOLS_PERSONAL_CLASS
 LATEXILA_TYPE_BUILD_TOOLS_PERSONAL
 latexila_build_tools_personal_get_type
+LatexilaBuildToolsPersonalClass
 LatexilaBuildToolsPersonalPrivate
 </SECTION>
 
@@ -122,6 +125,7 @@ LATEXILA_BUILD_VIEW_GET_CLASS
 LATEXILA_IS_BUILD_VIEW
 LATEXILA_IS_BUILD_VIEW_CLASS
 LATEXILA_TYPE_BUILD_VIEW
+LatexilaBuildViewClass
 LatexilaBuildViewPrivate
 latexila_build_view_get_type
 </SECTION>
