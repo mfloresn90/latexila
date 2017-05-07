@@ -2,7 +2,6 @@
 
 <SECTION>
 <FILE>build-tools</FILE>
-<TITLE>LatexilaBuildTools</TITLE>
 LatexilaBuildTools
 latexila_build_tools_load
 latexila_build_tools_set_enabled
@@ -20,7 +19,6 @@ LatexilaBuildToolsPrivate
 
 <SECTION>
 <FILE>build-tools-default</FILE>
-<TITLE>LatexilaBuildToolsDefault</TITLE>
 LatexilaBuildToolsDefault
 latexila_build_tools_default_get_instance
 <SUBSECTION Standard>
@@ -36,7 +34,6 @@ LatexilaBuildToolsDefaultPrivate
 
 <SECTION>
 <FILE>build-tools-personal</FILE>
-<TITLE>LatexilaBuildToolsPersonal</TITLE>
 LatexilaBuildToolsPersonal
 latexila_build_tools_personal_get_instance
 latexila_build_tools_personal_save
@@ -59,7 +56,6 @@ LatexilaBuildToolsPersonalPrivate
 
 <SECTION>
 <FILE>build-tool</FILE>
-<TITLE>LatexilaBuildTool</TITLE>
 LatexilaBuildTool
 latexila_build_tool_new
 latexila_build_tool_clone
@@ -83,7 +79,6 @@ latexila_build_tool_get_type
 
 <SECTION>
 <FILE>build-job</FILE>
-<TITLE>LatexilaBuildJob</TITLE>
 LatexilaBuildJob
 latexila_build_job_new
 latexila_build_job_clone
@@ -104,7 +99,6 @@ latexila_build_job_get_type
 
 <SECTION>
 <FILE>build-view</FILE>
-<TITLE>LatexilaBuildView</TITLE>
 LatexilaBuildView
 LatexilaBuildMsg
 LatexilaBuildMsgType
@@ -134,7 +128,6 @@ latexila_build_view_get_type
 
 <SECTION>
 <FILE>post-processor</FILE>
-<TITLE>LatexilaPostProcessor</TITLE>
 LatexilaPostProcessor
 LatexilaPostProcessorType
 latexila_post_processor_get_name_from_type
@@ -160,7 +153,6 @@ latexila_post_processor_get_type
 
 <SECTION>
 <FILE>post-processor-all-output</FILE>
-<TITLE>LatexilaPostProcessorAllOutput</TITLE>
 LatexilaPostProcessorAllOutput
 latexila_post_processor_all_output_new
 <SUBSECTION Standard>
@@ -177,7 +169,6 @@ latexila_post_processor_all_output_get_type
 
 <SECTION>
 <FILE>post-processor-latex</FILE>
-<TITLE>LatexilaPostProcessorLatex</TITLE>
 LatexilaPostProcessorLatex
 latexila_post_processor_latex_new
 latexila_post_processor_latex_get_errors_count
@@ -195,7 +186,6 @@ latexila_post_processor_latex_get_type
 
 <SECTION>
 <FILE>post-processor-latexmk</FILE>
-<TITLE>LatexilaPostProcessorLatexmk</TITLE>
 LatexilaPostProcessorLatexmk
 latexila_post_processor_latexmk_new
 <SUBSECTION Standard>
@@ -212,7 +202,6 @@ latexila_post_processor_latexmk_get_type
 
 <SECTION>
 <FILE>synctex</FILE>
-<TITLE>LatexilaSynctex</TITLE>
 LatexilaSynctex
 latexila_synctex_get_instance
 latexila_synctex_connect_evince_window
@@ -238,7 +227,6 @@ latexila_templates_dialogs_create_template
 
 <SECTION>
 <FILE>templates-manage-dialog</FILE>
-<TITLE>LatexilaTemplatesManageDialog</TITLE>
 LatexilaTemplatesManageDialog
 latexila_templates_manage_dialog_new
 <SUBSECTION Standard>
@@ -247,7 +235,6 @@ LATEXILA_TYPE_TEMPLATES_MANAGE_DIALOG
 
 <SECTION>
 <FILE>templates-default</FILE>
-<TITLE>LatexilaTemplatesDefault</TITLE>
 LatexilaTemplatesDefault
 latexila_templates_default_get_instance
 latexila_templates_default_get_contents
@@ -257,7 +244,6 @@ LATEXILA_TYPE_TEMPLATES_DEFAULT
 
 <SECTION>
 <FILE>templates-personal</FILE>
-<TITLE>LatexilaTemplatesPersonal</TITLE>
 LatexilaTemplatesPersonal
 latexila_templates_personal_get_instance
 latexila_templates_personal_get_contents
@@ -271,7 +257,6 @@ LATEXILA_TYPE_TEMPLATES_PERSONAL
 
 <SECTION>
 <FILE>utils</FILE>
-<TITLE>LatexilaUtils</TITLE>
 latexila_utils_get_shortname
 latexila_utils_get_extension
 latexila_utils_replace_home_dir_with_tilde
