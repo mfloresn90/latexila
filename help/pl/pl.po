@@ -1,0 +1,662 @@
+# Polish translation for latexila help.
+# Copyright © 2017 the latexila authors.
+# This file is distributed under the same license as the latexila package.
+# Piotr Drąg <piotrdrag@gmail.com>, 2017.
+# Aviary.pl <community-poland@mozilla.org>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: latexila-help\n"
+"POT-Creation-Date: 2017-05-07 16:40+0000\n"
+"PO-Revision-Date: 2017-06-04 17:25+0200\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"Language-Team: Polish <community-poland@mozilla.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Piotr Drąg <piotrdrag@gmail.com>, 2017\n"
+"Aviary.pl <community-poland@mozilla.org>, 2017"
+
+#. (itstool) path: page/title
+#: C/build_tools.page:10
+msgid "Build Tools"
+msgstr "Narzędzia budowania"
+
+#. (itstool) path: synopsis/p
+#: C/build_tools.page:13
+msgid ""
+"The purpose of the build tools is to generate a document in the PDF, DVI or "
+"PS format."
+msgstr ""
+"Narzędzia budowania służą do tworzenia dokumentów w formatach PDF, DVI lub "
+"PostScript."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:20
+msgid "Introduction"
+msgstr "Wprowadzenie"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:22
+msgid ""
+"Several different tools can be used for a document compilation. There are "
+"some low-level commands, and one higher-level tool: Latexmk."
+msgstr ""
+"Do kompilowania dokumentów można używać kilka różnych narzędzi. Niektóre są "
+"poleceniami niskiego poziomu, a jedno jest narzędziem wyższego poziomu: "
+"Latexmk."
+
+#. (itstool) path: table/title
+#: C/build_tools.page:26
+msgid "Low-level commands"
+msgstr "Polecenia niskopoziomowe"
+
+#. (itstool) path: td/p
+#: C/build_tools.page:29
+msgid "Label"
+msgstr "Etykieta"
+
+#. (itstool) path: td/p
+#: C/build_tools.page:30
+msgid "Command"
+msgstr "Polecenie"
+
+#. (itstool) path: td/p
+#: C/build_tools.page:59
+msgid "Bibliography"
+msgstr "Bibliografia"
+
+#. (itstool) path: td/p
+#: C/build_tools.page:63
+msgid "Index"
+msgstr "Indeks"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:69
+msgid ""
+"Compiling a LaTeX document can involve to execute several low-level "
+"commands, in a certain order and a certain number of times. Here is an "
+"example:"
+msgstr ""
+"Kompilowanie dokumentu LaTeX obejmuje wykonanie kilku poleceń niskiego "
+"poziomu w określonej kolejności i określoną liczbę razy. Przykład:"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:78
+msgid ""
+"Using a higher-level tool such as Latexmk simplify a lot all this process, "
+"since only one command is required. Indeed, Latexmk can detect how many "
+"times the <cmd>latex</cmd> or <cmd>pdflatex</cmd> command must be called, "
+"and whether <cmd>bibtex</cmd> or <cmd>makeindex</cmd> is required. By "
+"default, LaTeXila uses Latexmk."
+msgstr ""
+"Użycie narzędzia wyższego poziomu, takiego jak Latexmk, upraszcza ten "
+"proces, jako że wymaga to tylko jednego polecenia. Latexmk samo wykrywa, ile "
+"razy trzeba wywołać polecenia <cmd>latex</cmd> i <cmd>pdflatex</cmd> oraz "
+"czy wymagane są polecenia <cmd>bibtex</cmd> i <cmd>makeindex</cmd>. "
+"Domyślnie LaTeXila używa narzędzia Latexmk."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:86
+msgid "Execute a Build Tool"
+msgstr "Wykonywanie narzędzia budowania"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:88
+msgid "There are several means to execute a build tool:"
+msgstr "Istnieje kilka sposób wykonywania narzędzia budowania:"
+
+#. (itstool) path: item/p
+#: C/build_tools.page:90
+msgid "Open the <gui style=\"menu\">Build</gui> menu."
+msgstr "Otwarcie menu <gui style=\"menu\">Budowanie</gui>."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:91
+msgid "Use the buttons in the main toolbar."
+msgstr "Użycie przycisków na głównym pasku narzędziowym."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:92
+msgid "Use the shortcut: <key>F2</key> → <key>F11</key>."
+msgstr "Użycie skrótu <key>F2</key> → <key>F11</key>."
+
+#. (itstool) path: section/p
+#: C/build_tools.page:95
+msgid ""
+"The build tool is executed on the currently opened file. If the file belongs "
+"to a <link xref=\"projects\">project</link>, it is executed on the project's "
+"main file."
+msgstr ""
+"Narzędzie budowania jest wykonywane na obecnie otwartym pliku. Jeśli plik "
+"należy do <link xref=\"projects\">projektu</link>, to jest ono wykonywane na "
+"głównym pliku projektu."
+
+#. (itstool) path: note/title
+#: C/build_tools.page:99
+msgid "Hidden Build Tools"
+msgstr "Ukryte narzędzia budowania"
+
+#. (itstool) path: note/p
+#: C/build_tools.page:100
+msgid ""
+"By default, a lot of build tools are hidden, so they can't be executed. To "
+"view the full list of build tools, activate or configure them, read the "
+"<link xref=\"#general_configuration\"/> section."
+msgstr ""
+"Domyślnie wiele narzędzi budowania jest ukrytych, więc nie mogą być "
+"wykonywane. Sekcja <link xref=\"#general_configuration\"/> zawiera pełną "
+"listę narzędzi budowania oraz informacje o ich włączaniu i konfigurowaniu."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:107
+msgid "General Configuration"
+msgstr "Ogólna konfiguracja"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:109
+msgid ""
+"To configure the build tools, go to: <guiseq> <gui style=\"menu\">Build</"
+"gui> <gui style=\"menu\">Manage Build Tools</gui> </guiseq>"
+msgstr ""
+"Aby skonfigurować narzędzia budowania, przejdź do <guiseq> <gui style=\"menu"
+"\">Budowanie</gui> <gui style=\"menu\">Zarządzaj narzędziami budowania</gui> "
+"</guiseq>"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:117
+msgid ""
+"You will see the list of all the default build tools, and a second list with "
+"your personal build tools. There are check buttons to enable or disable "
+"them. When a build tool is disabled, it's not possible to execute it. You "
+"can perform some actions, like moving a tool up or down, open its "
+"properties, delete or copy it, create a new one, etc."
+msgstr ""
+"Zostanie wyświetlona lista wszystkich domyślnych narzędzi budowania oraz "
+"druga lista zawierająca narzędzia użytkownika. Obok narzędzi znajdują się "
+"przyciski do ich włączania/wyłączania. Kiedy narzędzie jest wyłączone, to "
+"nie można go wykonywać. Można wykonywać pewne działania, na przykład "
+"przenoszenie narzędzia w górę i w dół, otwieranie jego właściwości, usuwanie "
+"lub kopiowanie go, tworzenie nowego itd."
+
+#. (itstool) path: note/p
+#: C/build_tools.page:124
+msgid "Double-click on a build tool will open its properties."
+msgstr "Podwójne kliknięcie narzędzia budowania otworzy jego właściwości."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:129
+msgid "Jobs of a Build Tool"
+msgstr "Zadania narzędzia budowania"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:131
+msgid ""
+"In the properties of a build tool, the tricky part is to configure the jobs. "
+"A build tool can execute several jobs. Each job contains two pieces of "
+"information:"
+msgstr ""
+"Najtrudniejszą częścią właściwości narzędzia budowania jest konfigurowanie "
+"zadań. Narzędzie może wykonywać kilka zadań. Każde zadanie zawiera dwie "
+"informacje:"
+
+#. (itstool) path: item/p
+#: C/build_tools.page:135
+msgid "The command, which can use placeholders."
+msgstr "Polecenie, które może zawierać symbole zastępcze."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:136
+msgid "The post processor (see <link xref=\"#post-processors\"/>)."
+msgstr ""
+"Przetwarzanie końcowe (więcej informacji: <link xref=\"#post-processors\"/>)."
+
+#. (itstool) path: section/p
+#: C/build_tools.page:139
+msgid ""
+"When an error occurs during a job's execution, the execution of the build "
+"tool is aborted, so the next jobs are not launched."
+msgstr ""
+"Po wystąpieniu błędu podczas wykonywania zadania wykonywanie narzędzia "
+"budowania zostaje przerwane, więc następne zadania nie są uruchamiane."
+
+#. (itstool) path: section/title
+#: C/build_tools.page:144
+msgid "Post Processors"
+msgstr "Przetwarzanie końcowe"
+
+#. (itstool) path: section/p
+#: C/build_tools.page:145
+msgid ""
+"The purpose of a post processor is to filter the command output and extract "
+"the useful information. Four post processors are available:"
+msgstr ""
+"Przetwarzanie końcowe służy do filtrowania wyjścia polecenia i wydobywania "
+"z niego przydatnych informacji. Dostępne są cztery rodzaje przetwarzania "
+"końcowego:"
+
+#. (itstool) path: item/p
+#: C/build_tools.page:151
+msgid "The output is simply not displayed."
+msgstr "Wyjście nie jest wyświetlane."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:155
+msgid "All the output is displayed, without filter."
+msgstr "Całość wyjścia jest wyświetlana bez filtrowania."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:159
+msgid ""
+"Filter the output of the <cmd>latex</cmd> or <cmd>pdflatex</cmd> commands. "
+"There can be three types of errors: critical errors, warnings, or bad boxes. "
+"There are also some other useful information: the size of the document, the "
+"number of pages, and the number of errors."
+msgstr ""
+"Filtrowanie wyjścia poleceń <cmd>latex</cmd> i <cmd>pdflatex</cmd>. Są trzy "
+"typy błędów: błędy krytyczne, ostrzeżenia i błędne pudełka. Przydatne są "
+"także inne informacje: rozmiar dokumentu, liczba stron i liczba błędów."
+
+#. (itstool) path: item/p
+#: C/build_tools.page:166
+msgid ""
+"Used for the <cmd>latexmk</cmd> command. Internally, this post processor "
+"uses other ones: <em>latex</em> and <em>all-output</em>."
+msgstr ""
+"Używane dla polecenia <cmd>latexmk</cmd>. Wewnętrznie to przetwarzanie "
+"końcowe używa innych: <em>latex</em> i <em>all-output</em>."
+
+#. (itstool) path: page/title
+#: C/completion.page:10
+msgid "Completion of LaTeX commands"
+msgstr "Uzupełnianie poleceń LaTeX"
+
+#. (itstool) path: synopsis/p
+#: C/completion.page:13
+msgid ""
+"The purpose is to facilitate the writing of LaTeX commands, by showing "
+"proposals."
+msgstr "Wyświetlanie propozycji ułatwia pisanie poleceń LaTeX."
+
+#. (itstool) path: section/title
+#: C/completion.page:17
+msgid "Interactive completion"
+msgstr "Uzupełnianie interaktywne"
+
+#. (itstool) path: section/p
+#: C/completion.page:18
+msgid ""
+"By default, when a LaTeX command is typed, proposals will be shown after two "
+"characters. This can be configured in the preferences dialog: <guiseq> <gui "
+"style=\"menu\">Edit</gui> <gui style=\"menu\">Preferences</gui> <gui style="
+"\"tab\">Other</gui> </guiseq>"
+msgstr ""
+"Domyślnie podczas wpisywania polecenia LaTeX propozycje są wyświetlane po "
+"dwóch znakach. Można to skonfigurować w oknie preferencji: <guiseq> <gui "
+"style=\"menu\">Edit</gui> <gui style=\"menu\">Preferencje</gui> <gui style="
+"\"tab\">Inne</gui> </guiseq>"
+
+#. (itstool) path: section/title
+#: C/completion.page:30
+msgid "Manual completion"
+msgstr "Uzupełnianie ręczne"
+
+#. (itstool) path: section/p
+#: C/completion.page:31
+msgid ""
+"At any time, press <keyseq> <key>Ctrl</key> <key>Space</key> </keyseq> to "
+"show proposals."
+msgstr ""
+"W każdej chwili można nacisnąć klawisze <keyseq> <key>Ctrl</key> "
+"<key>spacja</key> </keyseq>, aby wyświetlić propozycje."
+
+#. (itstool) path: page/title
+#: C/index.page:4
+msgid "LaTeXila Help"
+msgstr "Pomoc programu LaTeXila"
+
+#. (itstool) path: page/title
+#: C/projects.page:10
+msgid "Projects"
+msgstr "Projekty"
+
+#. (itstool) path: synopsis/p
+#: C/projects.page:13
+msgid ""
+"When a LaTeX document is split into several *.tex files, creating a project "
+"is useful."
+msgstr ""
+"Utworzenie projektu jest przydatne, kiedy dokument LaTeX jest podzielony na "
+"kilka plików *.tex."
+
+#. (itstool) path: section/title
+#: C/projects.page:18
+msgid "Manage projects"
+msgstr "Zarządzanie projektami"
+
+#. (itstool) path: section/p
+#: C/projects.page:20
+msgid ""
+"All actions related to projects are located in the <gui style=\"menu"
+"\">Projects</gui> menu. A project contains only two pieces of information:"
+msgstr ""
+"Wszystkie działanie związane z projektami znajdują się w menu <gui style="
+"\"menu\">Projekty</gui>. Projekt zawiera dwie informacje:"
+
+#. (itstool) path: item/p
+#: C/projects.page:25
+msgid "The directory where the project is located."
+msgstr "Katalog zawierający projekt."
+
+#. (itstool) path: item/p
+#: C/projects.page:26
+msgid "The main *.tex file."
+msgstr "Główny plik *.tex."
+
+#. (itstool) path: section/p
+#: C/projects.page:29
+msgid ""
+"As a consequence, a directory can contain only one project, which is quite "
+"logical."
+msgstr "Z tego powodu katalog może zawierać tylko jeden projekt."
+
+#. (itstool) path: section/title
+#: C/projects.page:35
+msgid "Usefulness of projects"
+msgstr "Przydatność projektów"
+
+#. (itstool) path: item/p
+#: C/projects.page:37
+msgid ""
+"A <link xref=\"build_tools\">build tool</link> is executed on the project's "
+"main file."
+msgstr ""
+"<link xref=\"build_tools\">Narzędzie budowania</link> jest wykonywane na "
+"głównym pliku projektu."
+
+#. (itstool) path: item/p
+#: C/projects.page:39
+msgid ""
+"<link xref=\"synctex#from_tex_to_pdf\">Jumping from a .tex file to the PDF</"
+"link> works for a secondary .tex file belonging to a project."
+msgstr ""
+"<link xref=\"synctex#from_tex_to_pdf\">Przełączanie między plikiem .tex "
+"a PDF</link> działa dla drugorzędnego pliku .tex należącego do projektu."
+
+#. (itstool) path: page/title
+#: C/spell_checking.page:10
+msgid "Spell Checking"
+msgstr "Sprawdzanie pisowni"
+
+#. (itstool) path: synopsis/p
+#: C/spell_checking.page:13
+msgid "The purpose is to correct spelling mistakes easily."
+msgstr "Sprawdzanie pisowni ułatwia poprawianie błędów."
+
+#. (itstool) path: section/title
+#: C/spell_checking.page:17
+msgid "Use the spell checking"
+msgstr "Używanie sprawdzania pisowni"
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:18
+msgid ""
+"The default spell checking settings can be changed in the preferences "
+"dialog: <guiseq> <gui style=\"menu\">Edit</gui> <gui style=\"menu"
+"\">Preferences</gui> <gui style=\"tab\">Other</gui> </guiseq>"
+msgstr ""
+"Domyślne ustawienia sprawdzania pisowni można zmieniać w oknie preferencji: "
+"<guiseq> <gui style=\"menu\">Edycja</gui> <gui style=\"menu\">Preferencje</"
+"gui> <gui style=\"tab\">Inne</gui> </guiseq>"
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:27
+msgid ""
+"The settings can also be changed on a file-by-file basis via the <gui style="
+"\"menu\">Tools</gui> menu."
+msgstr ""
+"Można także zmieniać ustawienia dla każdego pliku przez menu <gui style="
+"\"menu\">Narzędzia</gui>."
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:32
+msgid ""
+"If you activate the <gui style=\"menu\">Highlight Misspelled Words</gui> "
+"option, the misspelled words will be underlined in red in the document. A "
+"right click on a misspelled word will show proposals."
+msgstr ""
+"Po włączeniu opcji <gui style=\"menu\">Wyróżnianie błędów pisowni</gui> "
+"słowa z błędami będą podkreślane na czerwono. Kliknięcie słowa prawym "
+"przyciskiem myszy wyświetli propozycje."
+
+#. (itstool) path: section/title
+#: C/spell_checking.page:40
+msgid "Dictionaries"
+msgstr "Słowniki"
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:41
+msgid ""
+"<link href=\"http://www.abisource.com/projects/enchant/\">Enchant</link> is "
+"used for the spell checking in LaTeXila. Enchant uses one or several "
+"backends such as Hunspell or Aspell for the dictionaries."
+msgstr ""
+"Do sprawdzania pisowni LaTeXila używa mechanizmu <link href=\"http://www."
+"abisource.com/projects/enchant/\">Enchant</link>. Korzysta on z różnych "
+"bibliotek słowników, takich jak Hunspell lub Aspell."
+
+#. (itstool) path: section/p
+#: C/spell_checking.page:47
+msgid ""
+"If your language is not listed, install a dictionary for one of the "
+"supported backends."
+msgstr ""
+"Jeśli języka nie ma na liście, to zainstaluj jego słownik dla jednej "
+"z obsługiwanych bibliotek."
+
+#. (itstool) path: page/title
+#: C/structure.page:10
+msgid "Document's Structure"
+msgstr "Struktura dokumentu"
+
+#. (itstool) path: synopsis/p
+#: C/structure.page:13
+msgid ""
+"The list of chapters, sections, sub-sections and other things like tables, "
+"figures, … of a document, to easily navigate in it."
+msgstr ""
+"Lista rozdziałów, sekcji, podsekcji i innych elementów, takich jak tabele, "
+"rysunki, itd. dokumentu, ułatwiająca nawigację."
+
+#. (itstool) path: section/title
+#: C/structure.page:18
+msgid "Display the structure"
+msgstr "Wyświetlanie struktury"
+
+#. (itstool) path: section/p
+#: C/structure.page:20
+msgid ""
+"The structure can be displayed in the side panel. If the side panel is "
+"hidden, go to <guiseq> <gui style=\"menu\">View</gui> <gui style=\"menu"
+"\">Side panel</gui> </guiseq>."
+msgstr ""
+"W bocznym panelu można wyświetlić strukturę dokumentu. Jeśli panel jest "
+"ukryty, przejdź do <guiseq> <gui style=\"menu\">Widok</gui> <gui style=\"menu"
+"\">Panel boczny</gui> </guiseq>."
+
+#. (itstool) path: section/p
+#: C/structure.page:29
+msgid ""
+"The structure's content is not automatically updated. That's why there is a "
+"refresh button. If text is inserted in the document, the position of an item "
+"(e.g. a section) remains correct, as far as the item is still there, and is "
+"not modified."
+msgstr ""
+"Treść struktury nie jest automatycznie aktualizowana, więc dostępny jest "
+"przycisk Odśwież. Po wstawieniu tekstu do dokumentu położenie elementu (tzn. "
+"sekcja) pozostaje poprawne dopóty, dopóki element nadal jest na miejscu, "
+"i nie jest zmodyfikowany."
+
+#. (itstool) path: section/title
+#: C/structure.page:37
+msgid "Actions"
+msgstr "Działania"
+
+#. (itstool) path: section/p
+#: C/structure.page:39
+msgid ""
+"Some actions such as \"cut\", \"copy\" or \"comment\" can be performed on a "
+"structure's item. Either by a right click, or via the <gui style=\"menu"
+"\">Structure</gui> menu."
+msgstr ""
+"Na elemencie struktury można wykonywać niektóre działania, takie jak "
+"wycinanie, kopiowanie i wstawianie komentarza. Kliknij prawym przyciskiem "
+"myszy lub użyj menu <gui style=\"menu\">Struktura</gui>."
+
+#. (itstool) path: section/title
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:48
+msgid "TODOs and FIXMEs"
+msgstr "TODO i FIXME"
+
+#. (itstool) path: section/p
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:50
+msgid ""
+"It can be useful to add TODOs and FIXMEs comments in the document. They will "
+"be displayed in the structure. Example:"
+msgstr ""
+"Dodawanie komentarzy TODO i FIXME do dokumentu może być przydatne. Będą one "
+"wyświetlane w strukturze. Przykład:"
+
+#. (itstool) path: section/code
+#. Do not translate the words TODO and FIXME. They are special comments
+#. that can be inserted in LaTeX documents.
+#: C/structure.page:55
+#, no-wrap
+msgid ""
+"\n"
+"%TODO a remaining task\n"
+"%FIXME something is broken"
+msgstr ""
+"\n"
+"%TODO coś jest do zrobienia\n"
+"%FIXME coś jest zepsute"
+
+#. (itstool) path: page/title
+#: C/synctex.page:10
+msgid "Jumping Between .tex and PDF"
+msgstr "Przełączanie między plikiem .tex a PDF"
+
+#. (itstool) path: synopsis/p
+#: C/synctex.page:13
+msgid ""
+"Jumping between the document's *.tex files and the resulting PDF output, "
+"opened with the <app>Evince</app> document viewer."
+msgstr ""
+"Przełączanie między plikami *.tex dokumentu a wynikowym plikiem PDF, "
+"otwartym za pomocą przeglądarki dokumentów <app>Evince</app>."
+
+#. (itstool) path: note/p
+#: C/synctex.page:18
+msgid ""
+"For more information, read the <link href=\"help:evince#synctex"
+"\"><app>Evince</app> documentation</link>."
+msgstr ""
+"Więcej informacji znajduje się w <link href=\"help:evince#synctex"
+"\">dokumentacji programu <app>Evince</app></link>."
+
+#. (itstool) path: section/title
+#: C/synctex.page:23
+msgid "Jumping from .tex to PDF"
+msgstr "Przełączanie z pliku .tex na PDF"
+
+#. (itstool) path: section/p
+#: C/synctex.page:25
+msgid ""
+"From a certain position in the .tex source file, jump to the corresponding "
+"position in the PDF file. Also called “forward search”."
+msgstr ""
+"Przechodzenie z danego położenia w pliku źródłowym .tex do odpowiadającemu "
+"mu położeniu w pliku PDF. Zwane także „wyszukiwaniem do przodu”."
+
+#. (itstool) path: section/p
+#: C/synctex.page:28
+msgid "There are different ways to do this action:"
+msgstr "Można to zrobić na kilka sposobów:"
+
+#. (itstool) path: item/p
+#: C/synctex.page:30
+msgid ""
+"In the menu: <guiseq> <gui style=\"menu\">Search</gui> <gui style=\"menu"
+"\">Jump to PDF</gui> </guiseq>"
+msgstr ""
+"W menu: <guiseq> <gui style=\"menu\">Wyszukiwanie</gui> <gui style=\"menu"
+"\">Przejdź do pliku PDF</gui> </guiseq>"
+
+#. (itstool) path: item/p
+#: C/synctex.page:36
+msgid "By pressing <keyseq> <key>Ctrl</key> <key>left click</key> </keyseq>"
+msgstr ""
+"Naciskając klawisz <keyseq> <key>Ctrl</key> + <key>klikając lewym "
+"przyciskiem myszy</key> </keyseq>"
+
+#. (itstool) path: section/p
+#: C/synctex.page:44
+msgid ""
+"If a document is split into several .tex files, create a <link xref="
+"\"projects\">project</link>. Unlike what is explained in the <link href="
+"\"help:evince/synctex-search#forward-search\"> <app>Evince</app> "
+"documentation </link>, there is no need to mention the main file with a "
+"LaTeX comment in each secondary .tex file."
+msgstr ""
+"Jeśli dokument jest podzielony na kilka plików .tex, to utwórz <link xref="
+"\"projects\">projekt</link>. W przeciwieństwie do tego, co napisano w <link "
+"href=\"help:evince/synctex-search#forward-search\">dokumentacji programu "
+"<app>Evince</app></link>, nie ma potrzeby wymieniać głównego pliku za pomocą "
+"komentarza LaTeX w każdym drugorzędnym pliku .tex."
+
+#. (itstool) path: section/title
+#: C/synctex.page:53
+msgid "Jumping from PDF to .tex"
+msgstr "Przełączanie z pliku PDF na .tex"
+
+#. (itstool) path: section/p
+#: C/synctex.page:55
+msgid ""
+"From a certain position in the PDF file, jump to the corresponding position "
+"in the .tex source file. Also called “backward search”."
+msgstr ""
+"Przechodzenie z danego położenia w pliku PDF do odpowiadającemu mu położeniu "
+"w pliku źródłowym PDF. Zwane także „wyszukiwaniem do tyłu”."
+
+#. (itstool) path: section/p
+#: C/synctex.page:58
+msgid ""
+"In <app>Evince</app>, press <keyseq> <key>Ctrl</key> <key>left click</key> </"
+"keyseq>, and the corresponding position in the .tex file will be opened in "
+"<app>LaTeXila</app>."
+msgstr ""
+"Naciśnij klawisz <keyseq> <key>Ctrl</key> + <key>kliknij lewym przyciskiem "
+"myszy</key> </keyseq> w programie <app>Evince</app>, a odpowiednie położenie "
+"w pliku .tex zostanie otwarte w programie <app>LaTeXila</app>."
+
+#. (itstool) path: section/p
+#: C/synctex.page:66
+msgid ""
+"<app>Evince</app> has to be launched by <app>LaTeXila</app>. Else, jumping "
+"from the PDF to the .tex file will not work."
+msgstr ""
+"Program <app>Evince</app> musi zostać uruchomiony przez program "
+"<app>LaTeXila</app>. W przeciwnym wypadku przełączanie między plikiem PDF a ."
+"tex nie będzie działać."

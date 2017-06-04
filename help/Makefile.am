@@ -11,6 +11,6 @@ HELP_FILES = \
 	structure.page		\
 	synctex.page
 
-HELP_LINGUAS = cs de el es fr gl hu pt_BR ru sv uk
+HELP_LINGUAS = cs de el es fr gl hu pl pt_BR ru sv uk
 
 -include $(top_srcdir)/git.mk
