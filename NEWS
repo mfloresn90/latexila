@@ -1,5 +1,12 @@
 LaTeXila NEWS
 
+Release 3.24.1, 2017-06-11
+--------------------------
+* Create app menu only if the desktop prefers one, to avoid a double menubar on
+  e.g. Xfce.
+* Add Polish help translation.
+* Other small code improvements.
+
 Release 3.24.0, 2017-03-20
 --------------------------
 * Translation updates
