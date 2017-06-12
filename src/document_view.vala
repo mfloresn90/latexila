@@ -19,7 +19,7 @@
 
 using Gtk;
 
-public class DocumentView : Gtef.View
+public class DocumentView : Tepl.View
 {
     private const string METADATA_ATTRIBUTE_SPELL_LANGUAGE =
         "metadata::latexila-spell-language";

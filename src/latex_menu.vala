@@ -490,7 +490,7 @@ public class LatexMenu : Gtk.ActionGroup
 
         if (text_before.contains ("\n") || text_after.contains ("\n"))
         {
-            string current_indent = Gtef.iter_get_line_indentation (start);
+            string current_indent = Tepl.iter_get_line_indentation (start);
 
             if (current_indent != "")
             {
@@ -549,7 +549,7 @@ public class LatexMenu : Gtk.ActionGroup
         return_if_fail (main_window.active_tab != null);
 
         if (main_window.active_document.get_selection_type ()
-            == Gtef.SelectionType.MULTIPLE_LINES)
+            == Tepl.SelectionType.MULTIPLE_LINES)
             text_buffer_insert (@"\\begin{$style}\n", @"\n\\end{$style}");
         else
             text_buffer_insert (@"{\\$style ", "}", @"\\$style ");

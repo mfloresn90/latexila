@@ -19,7 +19,7 @@
 
 using Gtk;
 
-public class Document : Gtef.Buffer
+public class Document : Tepl.Buffer
 {
     public File location { get; set; }
     public bool readonly { get; set; default = false; }
@@ -52,7 +52,7 @@ public class Document : Gtef.Buffer
 
         GLib.Settings editor_settings =
             new GLib.Settings ("org.gnome.latexila.preferences.editor");
-        editor_settings.bind ("scheme", this, "gtef-style-scheme-id",
+        editor_settings.bind ("scheme", this, "tepl-style-scheme-id",
             SettingsBindFlags.GET);
     }
 
@@ -204,7 +204,7 @@ public class Document : Gtef.Buffer
                     .printf (location.get_parse_name ());
                 string secondary_msg =
                     _("If you save it, all the external changes could be lost. Save it anyway?");
-                Gtef.InfoBar infobar = tab.add_message (primary_msg, secondary_msg,
+                Tepl.InfoBar infobar = tab.add_message (primary_msg, secondary_msg,
                     MessageType.WARNING);
                 infobar.add_button (_("_Save Anyway"), ResponseType.YES);
                 infobar.add_button (_("_Don't Save"), ResponseType.CANCEL);
@@ -222,7 +222,7 @@ public class Document : Gtef.Buffer
                 if (tab != null)
                 {
                     string primary_msg = _("Impossible to save the file.");
-                    Gtef.InfoBar infobar = tab.add_message (primary_msg, e.message,
+                    Tepl.InfoBar infobar = tab.add_message (primary_msg, e.message,
                         MessageType.ERROR);
                     infobar.add_close_button ();
                 }
@@ -515,7 +515,7 @@ public class Document : Gtef.Buffer
         if (tab == null)
             return true;
 
-        Gtef.InfoBar infobar = tab.add_message (
+        Tepl.InfoBar infobar = tab.add_message (
             _("The file has a temporary location. The data can be lost after rebooting your computer."),
             _("Do you want to save the file in a safer place?"),
             MessageType.WARNING);
