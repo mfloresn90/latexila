@@ -16,7 +16,7 @@ Dependencies
 ------------
 
 * GLib >= 2.50
-* GTK+ >= 3.20
+* GTK+ >= 3.22
 * GtkSourceView >= 3.24
 * Tepl >= 2.99.0 - https://wiki.gnome.org/Projects/Tepl
 * gspell >= 1.0

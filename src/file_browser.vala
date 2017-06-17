@@ -187,7 +187,7 @@ public class FileBrowser : Grid
 
             try
             {
-                Latexila.utils_show_uri (this.get_screen (), file.get_uri (), Gdk.CURRENT_TIME);
+                Latexila.utils_show_uri (this, file.get_uri (), Gdk.CURRENT_TIME);
             }
             catch (Error e)
             {
@@ -310,8 +310,8 @@ public class FileBrowser : Grid
 
             try
             {
-                Latexila.utils_show_uri (this.get_screen (),
-                    _current_directory.get_uri (), Gdk.CURRENT_TIME);
+                Latexila.utils_show_uri (this, _current_directory.get_uri (),
+                    Gdk.CURRENT_TIME);
             }
             catch (Error error)
             {

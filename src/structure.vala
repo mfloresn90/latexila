@@ -713,7 +713,7 @@ public class Structure : Grid
     {
         try
         {
-            Latexila.utils_show_uri (get_screen (), referenced_file.get_uri (), Gdk.CURRENT_TIME);
+            Latexila.utils_show_uri (this, referenced_file.get_uri (), Gdk.CURRENT_TIME);
         }
         catch (Error e)
         {

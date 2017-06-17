@@ -6,7 +6,7 @@
  * Copyright (C) 2000, 2002 - Chema Celorio, Paolo Maggi
  * Copyright (C) 2003-2005 - Paolo Maggi
  *
- * Copyright (C) 2014-2015 - Sébastien Wilmet <swilmet@gnome.org>
+ * Copyright (C) 2014, 2015, 2017 - Sébastien Wilmet <swilmet@gnome.org>
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -304,7 +304,7 @@ default_document_viewer_is_evince (const gchar *uri)
 
 /**
  * latexila_utils_show_uri:
- * @screen: (nullable): a #GdkScreen, or %NULL.
+ * @widget: (nullable): the associated #GtkWidget, or %NULL.
  * @uri: the URI to show.
  * @timestamp: a timestamp.
  * @error: (out) (optional): a %NULL #GError, or %NULL.
@@ -314,15 +314,28 @@ default_document_viewer_is_evince (const gchar *uri)
  * backward search works (switch from the PDF to the source file).
  */
 void
-latexila_utils_show_uri (GdkScreen    *screen,
+latexila_utils_show_uri (GtkWidget    *widget,
                          const gchar  *uri,
                          guint32       timestamp,
                          GError      **error)
 {
+  GtkWindow *parent = NULL;
+
+  g_return_if_fail (widget == NULL || GTK_IS_WIDGET (widget));
   g_return_if_fail (uri != NULL);
   g_return_if_fail (error == NULL || *error == NULL);
 
-  if (gtk_show_uri (screen, uri, timestamp, error))
+  if (widget != NULL)
+    {
+      GtkWidget *toplevel;
+
+      toplevel = gtk_widget_get_toplevel (widget);
+      if (gtk_widget_is_toplevel (toplevel) &&
+          GTK_IS_WINDOW (toplevel))
+        parent = GTK_WINDOW (toplevel);
+    }
+
+  if (gtk_show_uri_on_window (parent, uri, timestamp, error))
     {
       gchar *extension = latexila_utils_get_extension (uri);
 
