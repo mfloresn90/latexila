@@ -1156,7 +1156,7 @@ public class MainWindow : ApplicationWindow
         {
             string uri = Filename.to_uri (Path.build_filename (Config.DATA_DIR,
                 "latexhelp.html", null));
-            show_uri (this.get_screen (), uri, Gdk.CURRENT_TIME);
+            Latexila.utils_show_uri (this, uri, Gdk.CURRENT_TIME);
         }
         catch (Error e)
         {

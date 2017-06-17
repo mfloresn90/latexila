@@ -95,7 +95,7 @@ namespace Finance
 
             if (response == ResponseType.ACCEPT)
             {
-                open_donate_page (parent_window);
+                open_donate_page (dialog);
                 continue;
             }
 
@@ -155,12 +155,12 @@ namespace Finance
         settings.set_string ("last-shown-date", date);
     }
 
-    private void open_donate_page (Window parent_window)
+    private void open_donate_page (Widget widget)
     {
         try
         {
             string uri = "https://people.gnome.org/~swilmet/latexila/support.html";
-            show_uri (parent_window.get_screen (), uri, Gdk.CURRENT_TIME);
+            Latexila.utils_show_uri (widget, uri, Gdk.CURRENT_TIME);
         }
         catch (Error e)
         {

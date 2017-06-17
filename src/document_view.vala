@@ -326,7 +326,7 @@ public class DocumentView : Tepl.View
         {
             try
             {
-                show_uri (this.get_screen (), "help:latexila/spell_checking",
+                Latexila.utils_show_uri (this, "help:latexila/spell_checking",
                     Gdk.CURRENT_TIME);
             }
             catch (Error e)

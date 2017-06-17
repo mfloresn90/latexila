@@ -211,14 +211,11 @@ public class LatexilaApp : Gtk.Application
 
     private void help_cb ()
     {
-        Gdk.Screen? screen = null;
         MainWindow? window = get_active_main_window ();
-        if (window != null)
-            screen = window.get_screen ();
 
         try
         {
-            Gtk.show_uri (screen, "help:latexila", Gdk.CURRENT_TIME);
+            Latexila.utils_show_uri (window, "help:latexila", Gdk.CURRENT_TIME);
         }
         catch (Error e)
         {
