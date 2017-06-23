@@ -77,7 +77,6 @@ public class DocumentsPanel : Notebook
 
         int pos = page_num (tab);
         remove_page (pos);
-        tab.destroy ();
     }
 
     public void remove_all_tabs ()
