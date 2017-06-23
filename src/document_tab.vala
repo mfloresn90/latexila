@@ -22,7 +22,11 @@ using Gtk;
 public class DocumentTab : Grid
 {
     public DocumentView document_view { get; private set; }
-    public Document document { get; private set; }
+
+    public Document document
+    {
+        get { return document_view.buffer as Document; }
+    }
 
     private bool ask_if_externally_modified = false;
 
@@ -110,8 +114,7 @@ public class DocumentTab : Grid
 
     public DocumentTab ()
     {
-        document = new Document ();
-        document_view = new DocumentView (document);
+        document_view = new DocumentView (new Document ());
         initialize ();
     }
 
@@ -124,7 +127,6 @@ public class DocumentTab : Grid
     public DocumentTab.with_view (DocumentView view)
     {
         document_view = view;
-        document = (Document) view.buffer;
         initialize ();
     }
 
