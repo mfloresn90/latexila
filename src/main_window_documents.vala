@@ -286,6 +286,10 @@ public class MainWindowDocuments
         DocumentView view = tab.document_view;
         _documents_panel.remove_tab (tab);
 
+        Container? parent = (Container) view.get_parent ();
+        if (parent != null)
+            parent.remove (view);
+
         new_window.create_tab_with_view (view);
     }
 }

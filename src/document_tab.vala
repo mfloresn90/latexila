@@ -133,9 +133,6 @@ public class DocumentTab : Grid
 
     private void initialize ()
     {
-        // usefull when moving a tab to a new window
-        bool reparent = document.tab != null;
-
         document.tab = this;
 
         document.notify["location"].connect (() =>
@@ -158,12 +155,7 @@ public class DocumentTab : Grid
         // with a scrollbar
         ScrolledWindow sw = new ScrolledWindow (null, null);
         sw.overlay_scrolling = false;
-
-        if (reparent)
-            document_view.reparent (sw);
-        else
-            sw.add (document_view);
-
+        sw.add (document_view);
         sw.show_all ();
 
         // pack at the end so we can display message above
