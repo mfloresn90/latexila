@@ -496,7 +496,7 @@ public class CompletionProvider : GLib.Object, SourceCompletionProvider
         Document doc = iter.get_buffer () as Document;
 
         string cur_indent = Tepl.iter_get_line_indentation (iter);
-        string indent = doc.tab.view.get_indentation_style ();
+        string indent = doc.tab.document_view.get_indentation_style ();
 
         CompletionChoice? env = _environments[env_name];
 

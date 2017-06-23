@@ -21,7 +21,7 @@ using Gtk;
 
 public class DocumentTab : Grid
 {
-    public DocumentView view { get; private set; }
+    public DocumentView document_view { get; private set; }
     public Document document { get; private set; }
 
     private bool ask_if_externally_modified = false;
@@ -111,7 +111,7 @@ public class DocumentTab : Grid
     public DocumentTab ()
     {
         document = new Document ();
-        view = new DocumentView (document);
+        document_view = new DocumentView (document);
         initialize ();
     }
 
@@ -123,7 +123,7 @@ public class DocumentTab : Grid
 
     public DocumentTab.with_view (DocumentView view)
     {
-        this.view = view;
+        document_view = view;
         document = (Document) view.buffer;
         initialize ();
     }
@@ -150,16 +150,16 @@ public class DocumentTab : Grid
             _label_mark.label = document.get_modified () ? "*" : "";
         });
 
-        view.focus_in_event.connect (view_focused_in);
+        document_view.focus_in_event.connect (view_focused_in);
 
         // with a scrollbar
         ScrolledWindow sw = new ScrolledWindow (null, null);
         sw.overlay_scrolling = false;
 
         if (reparent)
-            view.reparent (sw);
+            document_view.reparent (sw);
         else
-            sw.add (view);
+            sw.add (document_view);
 
         sw.show_all ();
 
@@ -302,7 +302,7 @@ public class DocumentTab : Grid
                 }
 
                 infobar.destroy ();
-                view.grab_focus ();
+                document_view.grab_focus ();
             });
         }
 

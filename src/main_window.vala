@@ -133,7 +133,7 @@ public class MainWindow : ApplicationWindow
         {
             if (active_tab == null)
                 return null;
-            return active_tab.view;
+            return active_tab.document_view;
         }
     }
 
@@ -615,7 +615,7 @@ public class MainWindow : ApplicationWindow
         for (int i = 0 ; i < nb_documents ; i++)
         {
             DocumentTab tab = _documents_panel.get_nth_page (i) as DocumentTab;
-            all_views.add (tab.view);
+            all_views.add (tab.document_view);
         }
 
         return all_views;
@@ -660,7 +660,7 @@ public class MainWindow : ApplicationWindow
                     if (response_id == ResponseType.YES)
                         tab.document.readonly = false;
                     infobar.destroy ();
-                    tab.view.grab_focus ();
+                    tab.document_view.grab_focus ();
                 });
                 return tab;
             }
@@ -1002,7 +1002,7 @@ public class MainWindow : ApplicationWindow
         // Ensure that the file is fully loaded before selecting the lines.
         Utils.flush_queue ();
 
-        tab.view.select_lines (start_line, end_line);
+        tab.document_view.select_lines (start_line, end_line);
     }
 
     /*************************************************************************/

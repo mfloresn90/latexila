@@ -62,7 +62,7 @@ public class Document : Tepl.Buffer
 
         if (tab != null)
         {
-            completion = tab.view.completion;
+            completion = tab.document_view.completion;
             completion.block_interactive ();
         }
 
