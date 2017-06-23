@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2010-2011 Sébastien Wilmet
+ * Copyright © 2010, 2011, 2017 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,13 +19,16 @@
 
 using Gtk;
 
-public class DocumentTab : Grid
+public class DocumentTab : Tepl.Tab
 {
-    public DocumentView document_view { get; construct; }
+    public DocumentView document_view
+    {
+        get { return get_view () as DocumentView; }
+    }
 
     public Document document
     {
-        get { return document_view.buffer as Document; }
+        get { return get_buffer () as Document; }
     }
 
     private bool ask_if_externally_modified = false;
@@ -115,7 +118,7 @@ public class DocumentTab : Grid
     public DocumentTab ()
     {
         DocumentView document_view = new DocumentView (new Document ());
-        Object (document_view: document_view);
+        Object (view: document_view);
         initialize ();
     }
 
@@ -127,7 +130,7 @@ public class DocumentTab : Grid
 
     public DocumentTab.with_view (DocumentView document_view)
     {
-        Object (document_view: document_view);
+        Object (view: document_view);
         initialize ();
     }
 
@@ -152,15 +155,7 @@ public class DocumentTab : Grid
 
         document_view.focus_in_event.connect (view_focused_in);
 
-        // with a scrollbar
-        ScrolledWindow sw = new ScrolledWindow (null, null);
-        sw.overlay_scrolling = false;
-        sw.add (document_view);
-        sw.show_all ();
-
-        // pack at the end so we can display message above
-        sw.expand = true;
-        attach (sw, 0, 0, 1, 1);
+        view.show_all ();
 
         update_label_text ();
 
@@ -202,7 +197,7 @@ public class DocumentTab : Grid
     {
         Tepl.InfoBar infobar = new Tepl.InfoBar.simple (msg_type, primary_msg,
             secondary_msg);
-        attach_next_to (infobar, get_child_at (0, 0), PositionType.TOP, 1, 1);
+        add_info_bar (infobar);
         infobar.show ();
 
         return infobar;
