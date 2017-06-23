@@ -21,7 +21,7 @@ using Gtk;
 
 public class DocumentTab : Grid
 {
-    public DocumentView document_view { get; private set; }
+    public DocumentView document_view { get; construct; }
 
     public Document document
     {
@@ -114,7 +114,8 @@ public class DocumentTab : Grid
 
     public DocumentTab ()
     {
-        document_view = new DocumentView (new Document ());
+        DocumentView document_view = new DocumentView (new Document ());
+        Object (document_view: document_view);
         initialize ();
     }
 
@@ -124,9 +125,9 @@ public class DocumentTab : Grid
         document.load (location);
     }
 
-    public DocumentTab.with_view (DocumentView view)
+    public DocumentTab.with_view (DocumentView document_view)
     {
-        document_view = view;
+        Object (document_view: document_view);
         initialize ();
     }
 
