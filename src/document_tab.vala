@@ -192,17 +192,6 @@ public class DocumentTab : Tepl.Tab
         });
     }
 
-    public Tepl.InfoBar add_message (string primary_msg, string secondary_msg,
-        MessageType msg_type)
-    {
-        Tepl.InfoBar infobar = new Tepl.InfoBar.simple (msg_type, primary_msg,
-            secondary_msg);
-        add_info_bar (infobar);
-        infobar.show ();
-
-        return infobar;
-    }
-
     private void update_label_text ()
     {
         label_text = Utils.str_middle_truncate (
@@ -278,10 +267,12 @@ public class DocumentTab : Tepl.Tab
             else
                 secondary_msg = _("Do you want to reload the file?");
 
-            Tepl.InfoBar infobar = add_message (primary_msg, secondary_msg,
-                MessageType.WARNING);
+            Tepl.InfoBar infobar = new Tepl.InfoBar.simple (MessageType.WARNING,
+                primary_msg, secondary_msg);
             infobar.add_button (_("_Reload"), ResponseType.OK);
             infobar.add_button (_("_Cancel"), ResponseType.CANCEL);
+            add_info_bar (infobar);
+            infobar.show ();
 
             infobar.response.connect ((response_id) =>
             {

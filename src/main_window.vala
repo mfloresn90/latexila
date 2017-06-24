@@ -647,14 +647,19 @@ public class MainWindow : ApplicationWindow
                 /* the document is already opened in another window */
                 DocumentTab tab = create_tab_from_location (location, jump_to);
                 tab.document.readonly = true;
+
                 string primary_msg =
                     _("This file (%s) is already opened in another LaTeXila window.")
                     .printf (location.get_parse_name ());
                 string secondary_msg = _("LaTeXila opened this instance of the file in a non-editable way. Do you want to edit it anyway?");
-                InfoBar infobar = tab.add_message (primary_msg, secondary_msg,
-                    MessageType.WARNING);
+
+                InfoBar infobar = new Tepl.InfoBar.simple (MessageType.WARNING,
+                    primary_msg, secondary_msg);
                 infobar.add_button (_("Edit Anyway"), ResponseType.YES);
                 infobar.add_button (_("Don't Edit"), ResponseType.NO);
+                tab.add_info_bar (infobar);
+                infobar.show ();
+
                 infobar.response.connect ((response_id) =>
                 {
                     if (response_id == ResponseType.YES)
@@ -662,6 +667,7 @@ public class MainWindow : ApplicationWindow
                     infobar.destroy ();
                     tab.document_view.grab_focus ();
                 });
+
                 return tab;
             }
         }

@@ -123,7 +123,10 @@ public class Document : Tepl.Buffer
             {
                 string primary_msg = _("Impossible to load the file '%s'.")
                     .printf (location.get_parse_name ());
-                tab.add_message (primary_msg, e.message, MessageType.ERROR);
+                Tepl.InfoBar infobar = new Tepl.InfoBar.simple (MessageType.ERROR,
+                    primary_msg, e.message);
+                tab.add_info_bar (infobar);
+                infobar.show ();
             }
         }
     }
@@ -204,10 +207,14 @@ public class Document : Tepl.Buffer
                     .printf (location.get_parse_name ());
                 string secondary_msg =
                     _("If you save it, all the external changes could be lost. Save it anyway?");
-                Tepl.InfoBar infobar = tab.add_message (primary_msg, secondary_msg,
-                    MessageType.WARNING);
+
+                Tepl.InfoBar infobar = new Tepl.InfoBar.simple (MessageType.WARNING,
+                    primary_msg, secondary_msg);
                 infobar.add_button (_("_Save Anyway"), ResponseType.YES);
                 infobar.add_button (_("_Don't Save"), ResponseType.CANCEL);
+                tab.add_info_bar (infobar);
+                infobar.show ();
+
                 infobar.response.connect ((response_id) =>
                 {
                     if (response_id == ResponseType.YES)
@@ -222,9 +229,11 @@ public class Document : Tepl.Buffer
                 if (tab != null)
                 {
                     string primary_msg = _("Impossible to save the file.");
-                    Tepl.InfoBar infobar = tab.add_message (primary_msg, e.message,
-                        MessageType.ERROR);
+                    Tepl.InfoBar infobar = new Tepl.InfoBar.simple (MessageType.ERROR,
+                        primary_msg, e.message);
                     infobar.add_close_button ();
+                    tab.add_info_bar (infobar);
+                    infobar.show ();
                 }
             }
         }
@@ -515,13 +524,13 @@ public class Document : Tepl.Buffer
         if (tab == null)
             return true;
 
-        Tepl.InfoBar infobar = tab.add_message (
+        Tepl.InfoBar infobar = new Tepl.InfoBar.simple (MessageType.WARNING,
             _("The file has a temporary location. The data can be lost after rebooting your computer."),
-            _("Do you want to save the file in a safer place?"),
-            MessageType.WARNING);
-
+            _("Do you want to save the file in a safer place?"));
         infobar.add_button (_("Save _As"), ResponseType.YES);
         infobar.add_button (_("Cancel"), ResponseType.NO);
+        tab.add_info_bar (infobar);
+        infobar.show ();
 
         infobar.response.connect ((response_id) =>
         {
