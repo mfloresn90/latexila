@@ -665,7 +665,7 @@ public class MainWindow : ApplicationWindow
                     if (response_id == ResponseType.YES)
                         tab.document.readonly = false;
                     infobar.destroy ();
-                    tab.document_view.grab_focus ();
+                    tab.view.grab_focus ();
                 });
 
                 return tab;
@@ -700,41 +700,43 @@ public class MainWindow : ApplicationWindow
 
         tab.close_document.connect (() => { close_tab (tab); });
 
+        Document doc = tab.document;
+
         /* sensitivity of undo and redo */
-        tab.document.notify["can-undo"].connect (() =>
+        doc.notify["can-undo"].connect (() =>
         {
             if (tab == active_tab)
                 _main_window_edit.update_sensitivity ();
         });
 
-        tab.document.notify["can-redo"].connect (() =>
+        doc.notify["can-redo"].connect (() =>
         {
             if (tab == active_tab)
                 _main_window_edit.update_sensitivity ();
         });
 
         /* sensitivity of cut/copy/delete */
-        tab.document.notify["has-selection"].connect (() =>
+        doc.notify["has-selection"].connect (() =>
         {
             if (tab == active_tab)
                 _main_window_edit.update_sensitivity ();
         });
 
-        tab.document.notify["location"].connect (() =>
+        doc.notify["location"].connect (() =>
         {
             sync_name (tab);
             _main_window_build_tools.update_sensitivity ();
         });
 
-        tab.document.notify["project-id"].connect (() =>
+        doc.notify["project-id"].connect (() =>
         {
             _main_window_build_tools.update_sensitivity ();
         });
 
 
-        tab.document.modified_changed.connect (() => sync_name (tab));
-        tab.document.notify["readonly"].connect (() => sync_name (tab));
-        tab.document.tepl_cursor_moved.connect (update_cursor_position_statusbar);
+        doc.modified_changed.connect (() => sync_name (tab));
+        doc.notify["readonly"].connect (() => sync_name (tab));
+        doc.tepl_cursor_moved.connect (update_cursor_position_statusbar);
 
         tab.show ();
 
@@ -756,7 +758,7 @@ public class MainWindow : ApplicationWindow
         /* If document not saved
          * Ask the user if he wants to save the file, or close without saving, or cancel
          */
-        if (! force_close && tab.document.get_modified ())
+        if (! force_close && tab.get_buffer ().get_modified ())
         {
             Dialog dialog = new MessageDialog (this,
                 DialogFlags.DESTROY_WITH_PARENT,
@@ -1008,7 +1010,7 @@ public class MainWindow : ApplicationWindow
         // Ensure that the file is fully loaded before selecting the lines.
         Utils.flush_queue ();
 
-        tab.document_view.select_lines (start_line, end_line);
+        tab.view.select_lines (start_line, end_line);
     }
 
     /*************************************************************************/

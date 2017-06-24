@@ -236,7 +236,7 @@ public class SearchAndReplace : GLib.Object
             if (_search_context.backward2 (iter, out match_start, out match_end, null))
             {
                 doc.select_range (match_start, match_end);
-                doc.tab.document_view.scroll_to_cursor ();
+                doc.tab.view.scroll_to_cursor ();
             }
         });
 
@@ -506,7 +506,7 @@ public class SearchAndReplace : GLib.Object
         if (_search_context.forward2 (iter, out match_start, out match_end, null))
         {
             doc.select_range (match_start, match_end);
-            doc.tab.document_view.scroll_to_cursor ();
+            doc.tab.view.scroll_to_cursor ();
         }
     }
 

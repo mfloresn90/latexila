@@ -237,9 +237,9 @@ public class MainWindowEdit
 
         TextIter start;
         TextIter end;
-        tab.document.get_selection_bounds (out start, out end);
+        tab.get_buffer ().get_selection_bounds (out start, out end);
 
-        tab.document_view.indent_lines (start, end);
+        tab.view.indent_lines (start, end);
     }
 
     public void on_unindent ()
@@ -249,9 +249,9 @@ public class MainWindowEdit
 
         TextIter start;
         TextIter end;
-        tab.document.get_selection_bounds (out start, out end);
+        tab.get_buffer ().get_selection_bounds (out start, out end);
 
-        tab.document_view.unindent_lines (start, end);
+        tab.view.unindent_lines (start, end);
     }
 
     public void on_comment ()
