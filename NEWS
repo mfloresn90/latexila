@@ -1,5 +1,9 @@
 LaTeXila NEWS
 
+Release 3.24.2, 2017-06-25
+--------------------------
+* Fix a crash when moving a tab to a new window (regression in 3.24).
+
 Release 3.24.1, 2017-06-11
 --------------------------
 * Create app menu only if the desktop prefers one, to avoid a double menubar on
