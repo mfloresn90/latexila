@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2010-2011 Sébastien Wilmet
+ * Copyright © 2010, 2011, 2017 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 
 using Gtk;
 
-public class DocumentsPanel : Notebook
+public class DocumentsPanel : Tepl.Notebook
 {
     public DocumentTab active_tab { get; private set; }
     public signal void right_click (Gdk.EventButton event);

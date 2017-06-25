@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2010-2015 Sébastien Wilmet
+ * Copyright © 2010-2015, 2017 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -230,6 +230,10 @@ public class MainWindow : ApplicationWindow
         // Documents panel
         init_documents_panel ();
         docs_vgrid.add (_documents_panel);
+
+        Tepl.ApplicationWindow tepl_window =
+            Tepl.ApplicationWindow.get_from_gtk_application_window (this);
+        tepl_window.set_tab_group (_documents_panel);
 
         // Goto Line
         _goto_line = new GotoLine (this);
