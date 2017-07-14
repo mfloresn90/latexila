@@ -8,7 +8,7 @@ AM_VALAFLAGS =			\
 	--disable-since-check	\
 	--pkg gtk+-3.0		\
 	--pkg gtksourceview-3.0	\
-	--pkg tepl-3		\
+	--pkg Tepl-3		\
 	--pkg gspell-1		\
 	--pkg gee-0.8		\
 	--pkg posix		\
