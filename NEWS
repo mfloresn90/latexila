@@ -1,5 +1,12 @@
 LaTeXila NEWS
 
+Release 3.25.1, 2017-07-18
+--------------------------
+* The Gtef library has been renamed to Tepl, adapt the code accordingly.
+* Use more Tepl features.
+* Code maintenance to not use a deprecated GTK+ function.
+* Translation updates.
+
 Release 3.24.2, 2017-06-25
 --------------------------
 * Fix a crash when moving a tab to a new window (regression in 3.24).
