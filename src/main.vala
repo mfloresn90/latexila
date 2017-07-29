@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2010-2015 Sébastien Wilmet
+ * Copyright © 2010-2015, 2017 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,8 +31,12 @@ private void init_i18n ()
 int main (string[] argv)
 {
     init_i18n ();
+    Tepl.init ();
 
     LatexilaApp app = new LatexilaApp ();
+    int status = app.run (argv);
 
-    return app.run (argv);
+    Tepl.finalize ();
+
+    return status;
 }
