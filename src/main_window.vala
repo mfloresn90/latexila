@@ -955,6 +955,9 @@ public class MainWindow : ApplicationWindow
 
     private void update_cursor_position_statusbar ()
     {
+        if (active_view == null)
+            return;
+
         TextIter iter;
         active_document.get_iter_at_mark (out iter, active_document.get_insert ());
         int row = (int) iter.get_line ();
