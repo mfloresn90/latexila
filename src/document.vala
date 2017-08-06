@@ -24,7 +24,6 @@ public class Document : Tepl.Buffer
     public File location { get; set; }
     public bool readonly { get; set; default = false; }
     public weak DocumentTab tab;
-    public uint _unsaved_doc_num = 0;
     public int project_id { get; set; default = -1; }
     private bool backup_made = false;
     private string _etag;
@@ -299,7 +298,7 @@ public class Document : Tepl.Buffer
     public string get_uri_for_display ()
     {
         if (location == null)
-            return get_unsaved_document_name ();
+            return get_file ().get_short_name ();
 
         return Latexila.utils_replace_home_dir_with_tilde (location.get_parse_name ());
     }
@@ -307,42 +306,9 @@ public class Document : Tepl.Buffer
     public string get_short_name_for_display ()
     {
         if (location == null)
-            return get_unsaved_document_name ();
+            return get_file ().get_short_name ();
 
         return location.get_basename ();
-    }
-
-    private string get_unsaved_document_name ()
-    {
-        uint num = get_unsaved_document_num ();
-        return _("Untitled Document") + @" $num";
-    }
-
-    private uint get_unsaved_document_num ()
-    {
-        return_val_if_fail (location == null, 0);
-
-        if (_unsaved_doc_num > 0)
-            return _unsaved_doc_num;
-
-        // get all unsaved document numbers
-        uint[] all_nums = {};
-        foreach (Document doc in LatexilaApp.get_instance ().get_documents ())
-        {
-            // avoid infinite loop
-            if (doc == this)
-                continue;
-
-            if (doc.location == null)
-                all_nums += doc.get_unsaved_document_num ();
-        }
-
-        // take the first free num
-        uint num;
-        for (num = 1 ; num in all_nums ; num++);
-
-        _unsaved_doc_num = num;
-        return num;
     }
 
     public bool is_externally_modified ()
