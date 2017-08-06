@@ -90,7 +90,7 @@ namespace Dialogs
             store.append (out iter);
             store.set (iter,
                 UnsavedDocColumn.SAVE, true,
-                UnsavedDocColumn.NAME, doc.tab.label_text,
+                UnsavedDocColumn.NAME, doc.get_file ().get_short_name (),
                 UnsavedDocColumn.DOC, doc,
                 -1);
         }
