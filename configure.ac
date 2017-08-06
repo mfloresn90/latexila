@@ -177,7 +177,6 @@ AC_CONFIG_FILES([
 	po/Makefile.in
 	src/Makefile
 	src/evince/Makefile
-	src/gedit/Makefile
 	src/liblatexila/Makefile
 	src/ui/Makefile
 	tests/Makefile

@@ -1,4 +1,4 @@
-SUBDIRS = evince gedit liblatexila ui
+SUBDIRS = evince liblatexila ui
 
 bin_PROGRAMS = latexila
 
@@ -65,7 +65,6 @@ vala_files =				\
 latexila_SOURCES = 				\
 	$(vala_files)				\
 	$(vapidir)/config.vapi			\
-	$(vapidir)/gedit.vapi			\
 	$(vapidir)/menu_tool_action.vapi
 
 # -w: silence all warnings, because we already have the valac warnings. The
@@ -74,7 +73,6 @@ latexila_SOURCES = 				\
 # scroll up the build output to see the valac warnings.
 latexila_CPPFLAGS =			\
 	-I$(top_srcdir)			\
-	-I$(srcdir)/gedit		\
 	-I$(srcdir)/liblatexila		\
 	-I$(builddir)/liblatexila	\
 	-include config.h		\
@@ -85,7 +83,6 @@ latexila_CFLAGS =		\
 
 latexila_LDADD = 			\
 	$(LATEXILA_LIBS)		\
-	gedit/libgedit.la		\
 	liblatexila/liblatexila.la
 
 # GResource
