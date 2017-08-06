@@ -875,10 +875,11 @@ public class MainWindow : ApplicationWindow
         file_chooser.set_do_overwrite_confirmation (true);
         file_chooser.set_local_only (false);
 
+        string short_name = doc.get_file ().get_short_name ();
         if (doc.location == null)
-            file_chooser.set_current_name (doc.tab.label_text + ".tex");
+            file_chooser.set_current_name (short_name + ".tex");
         else
-            file_chooser.set_current_name (doc.tab.label_text);
+            file_chooser.set_current_name (short_name);
 
         if (this.default_location != null)
             file_chooser.set_current_folder (this.default_location);
