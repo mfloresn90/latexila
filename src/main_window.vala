@@ -769,7 +769,7 @@ public class MainWindow : ApplicationWindow
                 MessageType.QUESTION,
                 ButtonsType.NONE,
                 _("Save changes to document \"%s\" before closing?"),
-                tab.label_text);
+                tab.get_buffer ().get_file ().get_short_name ());
 
             dialog.add_buttons (_("Close _without Saving"), ResponseType.CLOSE,
                 _("_Cancel"), ResponseType.CANCEL);
