@@ -114,9 +114,9 @@ public class MainWindow : ApplicationWindow
     {
         get
         {
-            if (_documents_panel == null || _documents_panel.get_n_pages () == 0)
+            if (_documents_panel == null)
                 return null;
-            return _documents_panel.active_tab;
+            return (DocumentTab?) _documents_panel.active_tab;
         }
 
         set

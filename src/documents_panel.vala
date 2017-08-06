@@ -21,7 +21,6 @@ using Gtk;
 
 public class DocumentsPanel : Tepl.Notebook
 {
-    public DocumentTab active_tab { get; private set; }
     public signal void right_click (Gdk.EventButton event);
 
     private unowned MainWindow main_window;
@@ -29,10 +28,6 @@ public class DocumentsPanel : Tepl.Notebook
     public DocumentsPanel (MainWindow main_window)
     {
         this.main_window = main_window;
-        switch_page.connect ((page, page_num) =>
-        {
-            active_tab = (DocumentTab) get_nth_page ((int) page_num);
-        });
     }
 
     public void add_tab (DocumentTab tab, int position, bool jump_to)
