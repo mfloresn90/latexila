@@ -29,7 +29,6 @@ public class DocumentsPanel : Tepl.Notebook
     public DocumentsPanel (MainWindow main_window)
     {
         this.main_window = main_window;
-        this.scrollable = true;
         switch_page.connect ((page, page_num) =>
         {
             active_tab = (DocumentTab) get_nth_page ((int) page_num);
