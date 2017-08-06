@@ -345,13 +345,6 @@ public class Document : Tepl.Buffer
         return num;
     }
 
-    public bool is_local ()
-    {
-        if (location == null)
-            return false;
-        return location.has_uri_scheme ("file");
-    }
-
     public bool is_externally_modified ()
     {
         if (location == null)
