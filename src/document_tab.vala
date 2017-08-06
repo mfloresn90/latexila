@@ -31,11 +31,9 @@ public class DocumentTab : Tepl.Tab
         get { return get_buffer () as Document; }
     }
 
-    private bool ask_if_externally_modified = false;
+    private Tepl.TabLabel _label;
 
-    private Grid _label;
-    private Label _label_text = new Label (null);
-    private Label _label_mark = new Label (null);
+    private bool ask_if_externally_modified = false;
 
     private uint auto_save_timeout;
 
@@ -125,42 +123,16 @@ public class DocumentTab : Tepl.Tab
     {
         document.tab = this;
 
-        document.notify["location"].connect (() =>
-        {
-            update_label_text ();
-            update_label_tooltip ();
-        });
-
+        document.notify["location"].connect (update_label_tooltip);
         document.notify["project-id"].connect (update_label_tooltip);
-
-        document.notify["unsaved-document-n"].connect (update_label_text);
-
-        document.modified_changed.connect ((s) =>
-        {
-            _label_mark.label = document.get_modified () ? "*" : "";
-        });
 
         document_view.focus_in_event.connect (view_focused_in);
 
         view.show_all ();
 
-        update_label_text ();
-
-        Gedit.CloseButton close_button = new Gedit.CloseButton ();
-        close_button.set_margin_start (2);
-        close_button.tooltip_text = _("Close document");
-        close_button.clicked.connect (() => this.close_request ());
-
-        _label = new Grid ();
-        _label.set_hexpand (false);
-        _label.orientation = Orientation.HORIZONTAL;
-        _label.add (_label_mark);
-        _label_text.set_hexpand (true);
-        _label_text.set_halign (Align.CENTER);
-        _label.add (_label_text);
-        _label.add (close_button);
+        _label = new Tepl.TabLabel (this);
         update_label_tooltip ();
-        _label.show_all ();
+        _label.show ();
 
         /* auto save */
         GLib.Settings settings =
@@ -179,15 +151,9 @@ public class DocumentTab : Tepl.Tab
         });
     }
 
-    public Grid get_label ()
+    public Tepl.TabLabel get_label ()
     {
         return _label;
-    }
-
-    private void update_label_text ()
-    {
-        _label_text.label = Utils.str_middle_truncate (
-            document.get_short_name_for_display (), 42);
     }
 
     private void update_label_tooltip ()
