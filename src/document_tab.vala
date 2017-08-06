@@ -37,11 +37,6 @@ public class DocumentTab : Tepl.Tab
     private Label _label_text = new Label (null);
     private Label _label_mark = new Label (null);
 
-    public Grid label
-    {
-        get { return _label; }
-    }
-
     private uint auto_save_timeout;
 
     private uint _auto_save_interval;
@@ -182,6 +177,11 @@ public class DocumentTab : Tepl.Tab
             if (auto_save_timeout <= 0)
                 install_auto_save_timeout_if_needed ();
         });
+    }
+
+    public Grid get_label ()
+    {
+        return _label;
     }
 
     private void update_label_text ()
