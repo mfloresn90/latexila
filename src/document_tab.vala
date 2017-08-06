@@ -213,9 +213,9 @@ public class DocumentTab : Tepl.Tab
             return;
 
         if (project.main_file.equal (document.location))
-            _label.tooltip_markup += "\n<b>" + _("Main File") + "</b>";
+            _label.tooltip_markup += "\n<b>" + _("Project main file") + "</b>";
         else
-            _label.tooltip_markup += "\n<b>" + _("Main File:") + "</b> "
+            _label.tooltip_markup += "\n<b>" + _("Project main file:") + "</b> "
                 + get_main_file_relative_path ();
     }
 
