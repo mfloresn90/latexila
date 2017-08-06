@@ -113,8 +113,6 @@ public class DocumentTab : Tepl.Tab
         }
     }
 
-    public signal void close_document ();
-
     public DocumentTab ()
     {
         DocumentView document_view = new DocumentView (new Document ());
@@ -162,7 +160,7 @@ public class DocumentTab : Tepl.Tab
         Gedit.CloseButton close_button = new Gedit.CloseButton ();
         close_button.set_margin_start (2);
         close_button.tooltip_text = _("Close document");
-        close_button.clicked.connect (() => this.close_document ());
+        close_button.clicked.connect (() => this.close_request ());
 
         _label = new Grid ();
         _label.set_hexpand (false);

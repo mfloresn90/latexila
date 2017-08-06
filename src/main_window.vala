@@ -702,7 +702,7 @@ public class MainWindow : ApplicationWindow
         if (tab == null)
             return null;
 
-        tab.close_document.connect (() => { close_tab (tab); });
+        tab.close_request.connect (() => { close_tab (tab); });
 
         Document doc = tab.document;
 
