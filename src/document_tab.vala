@@ -42,12 +42,6 @@ public class DocumentTab : Tepl.Tab
         get { return _label; }
     }
 
-    public string label_text
-    {
-        get { return _label_text.label; }
-        private set { _label_text.label = value; }
-    }
-
     private uint auto_save_timeout;
 
     private uint _auto_save_interval;
@@ -192,7 +186,7 @@ public class DocumentTab : Tepl.Tab
 
     private void update_label_text ()
     {
-        label_text = Utils.str_middle_truncate (
+        _label_text.label = Utils.str_middle_truncate (
             document.get_short_name_for_display (), 42);
     }
 
@@ -232,7 +226,7 @@ public class DocumentTab : Tepl.Tab
 
     public string get_name ()
     {
-        return _label_mark.label + label_text;
+        return _label_mark.label + _label_text.label;
     }
 
     public string get_menu_tip ()
