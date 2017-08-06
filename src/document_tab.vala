@@ -224,11 +224,6 @@ public class DocumentTab : Tepl.Tab
         return Utils.get_relative_path (origin, target, common_dir);
     }
 
-    public string get_name ()
-    {
-        return _label_mark.label + _label_text.label;
-    }
-
     public string get_menu_tip ()
     {
         return _("Activate '%s'").printf (document.get_uri_for_display ());

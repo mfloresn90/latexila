@@ -133,7 +133,7 @@ public class MainWindowDocuments
         {
             DocumentTab tab = _documents_panel.get_nth_page (doc_num) as DocumentTab;
             string action_name = get_list_action_name (doc_num);
-            string name = tab.get_name ().replace ("_", "__");
+            string name = tab.get_buffer ().get_short_title ().replace ("_", "__");
             string tip = tab.get_menu_tip ();
 
             string accel = null;
@@ -184,7 +184,7 @@ public class MainWindowDocuments
         Gtk.Action? action = _list_action_group.get_action (action_name);
         return_if_fail (action != null);
 
-        action.label = tab.get_name ().replace ("_", "__");
+        action.label = tab.get_buffer ().get_short_title ().replace ("_", "__");
         action.tooltip = tab.get_menu_tip ();
     }
 

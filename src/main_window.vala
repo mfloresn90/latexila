@@ -732,6 +732,11 @@ public class MainWindow : ApplicationWindow
             _main_window_build_tools.update_sensitivity ();
         });
 
+        doc.notify["tepl-short-title"].connect (() =>
+        {
+            sync_name (tab);
+        });
+
         doc.notify["project-id"].connect (() =>
         {
             _main_window_build_tools.update_sensitivity ();
