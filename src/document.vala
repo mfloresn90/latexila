@@ -54,6 +54,11 @@ public class Document : Tepl.Buffer
             new GLib.Settings ("org.gnome.latexila.preferences.editor");
         editor_settings.bind ("scheme", this, "tepl-style-scheme-id",
             SettingsBindFlags.GET);
+
+        // Longer-term it would be better of course to get rid of the
+        // Document:location property.
+        this.bind_property ("location", get_file (), "location",
+            BindingFlags.DEFAULT | BindingFlags.SYNC_CREATE);
     }
 
     public new void insert (ref TextIter iter, string text, int len)
