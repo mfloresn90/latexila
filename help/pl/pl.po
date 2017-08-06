@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila-help\n"
-"POT-Creation-Date: 2017-05-07 16:40+0000\n"
-"PO-Revision-Date: 2017-06-04 17:25+0200\n"
+"POT-Creation-Date: 2017-06-28 17:57+0000\n"
+"PO-Revision-Date: 2017-08-06 21:15+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -321,7 +321,7 @@ msgstr ""
 #. (itstool) path: page/title
 #: C/index.page:4
 msgid "LaTeXila Help"
-msgstr "Pomoc programu LaTeXila"
+msgstr "LaTeXila"
 
 #. (itstool) path: page/title
 #: C/projects.page:10

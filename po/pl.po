@@ -8,10 +8,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-01-26 12:21+0000\n"
-"PO-Revision-Date: 2017-06-04 17:15+0200\n"
+"POT-Creation-Date: 2017-08-06 15:54+0000\n"
+"PO-Revision-Date: 2017-08-06 21:15+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -529,11 +529,11 @@ msgstr ""
 "\n"
 "\\begin{letter}{Odbiorca\\\\Adres odbiorcy\\\\Numer telefonu odbiorcy}\n"
 "\n"
-"\\opening{Szanowny Panie,}\n"
+"\\opening{Szanowna Pani,}\n"
 "\n"
 "% corps of the letter\n"
 "\n"
-"\\closing{Z poważaniem,}\n"
+"\\closing{Z poważaniem,}\n"
 "\n"
 "%\\cc{Inny odbiorca}\n"
 "%\\ps{PS: PostScriptum}\n"
@@ -552,12 +552,12 @@ msgstr "Własne narzędzie budowania"
 
 #: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:294
+#: ../src/document_tab.vala:226
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:763
-#: ../src/main_window.vala:859 ../src/preferences_dialog.vala:114
+#: ../src/main_window_file.vala:154 ../src/main_window.vala:780
+#: ../src/main_window.vala:876 ../src/preferences_dialog.vala:114
 #: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
 #: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
@@ -579,7 +579,7 @@ msgstr "Wykonaj"
 
 #: ../src/build_tool_dialog.vala:162
 msgid "Convert"
-msgstr "Skonwertuj"
+msgstr "Konwertuj"
 
 #. FIXME don't use Stock
 #: ../src/build_tool_dialog.vala:163
@@ -718,7 +718,7 @@ msgstr "Tworzy kopię"
 #: ../src/build_tools_preferences.vala:281
 #, c-format
 msgid "%s [copy]"
-msgstr "%s [kopia]"
+msgstr "%s (kopia)"
 
 #: ../src/build_tools_preferences.vala:332
 #, c-format
@@ -756,12 +756,12 @@ msgstr "Brak propozycji uzupełnienia"
 msgid "Ln %d, Col %d"
 msgstr "Wrsz %d, kol %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:762
+#: ../src/dialogs.vala:40 ../src/main_window.vala:779
 msgid "Close _without Saving"
 msgstr "Zamknij _bez zapisywania"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:768 ../src/main_window.vala:860
+#: ../src/main_window.vala:785 ../src/main_window.vala:877
 msgid "_Save"
 msgstr "_Zapisz"
 
@@ -787,79 +787,68 @@ msgid "The structure item already contains a sub-paragraph."
 msgstr "Element struktury zawiera już podparagraf."
 
 #: ../src/document_tab.vala:174
-msgid "Close document"
-msgstr "Zamknij dokument"
+msgid "Project main file"
+msgstr "Główny plik projektu"
 
-#. main file
-#: ../src/document_tab.vala:237 ../src/project_dialogs.vala:46
-#: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
-#: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
-msgid "Main File"
-msgstr "Plik główny"
+#: ../src/document_tab.vala:176
+msgid "Project main file:"
+msgstr "Główny plik projektu:"
 
-#: ../src/document_tab.vala:239
-msgid "Main File:"
-msgstr "Plik główny:"
-
-#: ../src/document_tab.vala:263
+#: ../src/document_tab.vala:195
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktywacja dokumentu „%s”"
 
-#: ../src/document_tab.vala:282
+#: ../src/document_tab.vala:214
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Plik %s został zmieniony przez inny program."
 
-#: ../src/document_tab.vala:287
+#: ../src/document_tab.vala:219
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Porzucić zmiany i wczytać plik ponownie?"
 
-#: ../src/document_tab.vala:289
+#: ../src/document_tab.vala:221
 msgid "Do you want to reload the file?"
 msgstr "Wczytać plik ponownie?"
 
-#: ../src/document_tab.vala:293
+#: ../src/document_tab.vala:225
 msgid "_Reload"
 msgstr "_Wczytaj ponownie"
 
-#: ../src/document.vala:115
+#: ../src/document.vala:128
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Wczytanie pliku „%s” jest niemożliwe."
 
-#: ../src/document.vala:193
+#: ../src/document.vala:210
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Plik %s został zmieniony od momentu wczytania."
 
-#: ../src/document.vala:196
+#: ../src/document.vala:213
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Jeśli plik zostanie zapisany, wszystkie zmiany dokonane zewnętrznie mogą "
 "zostać utracone. Zapisać mimo to?"
 
-#: ../src/document.vala:199
+#: ../src/document.vala:217
 msgid "_Save Anyway"
 msgstr "Zapisz _mimo to"
 
-#: ../src/document.vala:200
+#: ../src/document.vala:218
 msgid "_Don't Save"
 msgstr "_Nie zapisuj"
 
-#: ../src/document.vala:212
+#: ../src/document.vala:235
 msgid "Impossible to save the file."
 msgstr "Zapisanie pliku jest niemożliwe."
 
-#: ../src/document.vala:237
+#: ../src/document.vala:263
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Błąd podczas konwertowania dokumentu do kodowania UTF-8"
 
-#: ../src/document.vala:291
-msgid "Untitled Document"
-msgstr "Dokument bez tytułu"
-
-#: ../src/document.vala:503
+#: ../src/document.vala:492
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
@@ -867,16 +856,16 @@ msgstr ""
 "Plik ma tymczasowe położenie. Dane mogą zostać utracone po ponownym "
 "uruchomieniu komputera."
 
-#: ../src/document.vala:504
+#: ../src/document.vala:493
 msgid "Do you want to save the file in a safer place?"
 msgstr "Zapisać plik w bezpiecznym miejscu?"
 
-#: ../src/document.vala:507 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:766
+#: ../src/document.vala:494 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:783
 msgid "Save _As"
 msgstr "Z_apisz jako"
 
-#: ../src/document.vala:508
+#: ../src/document.vala:495
 msgid "Cancel"
 msgstr "Anuluj"
 
@@ -927,7 +916,7 @@ msgid "File System"
 msgstr "System plików"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:412
+#: ../src/file_browser.vala:536 ../src/main_window.vala:416
 msgid "File Browser"
 msgstr "Przeglądarka plików"
 
@@ -944,15 +933,15 @@ msgid "Create a new top-level window in an existing instance of LaTeXila"
 msgstr ""
 "Tworzy nowe główne okno w ramach istniejącej instancji programu LaTeXila"
 
-#: ../src/latexila_app.vala:223
+#: ../src/latexila_app.vala:234
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "Program LaTeXila to zintegrowane środowisko LaTeX-a dla GNOME"
 
-#: ../src/latexila_app.vala:262 ../src/main_window.vala:72
+#: ../src/latexila_app.vala:273 ../src/main_window.vala:72
 msgid "About LaTeXila"
 msgstr "O programie LaTeXila"
 
-#: ../src/latexila_app.vala:263
+#: ../src/latexila_app.vala:274
 msgid "translator-credits"
 msgstr ""
 "Paweł Żołnowski <pawel@zolnowski.name>, 2014\n"
@@ -2006,7 +1995,7 @@ msgstr "Nowe _okno"
 msgid "Create a new window"
 msgstr "Tworzy nowe okno"
 
-#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:154
+#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:155
 msgid "_Open"
 msgstr "_Otwórz"
 
@@ -2059,17 +2048,17 @@ msgstr "Otwiera ostatnio używane pliki"
 msgid "Open a recently used file"
 msgstr "Otwiera ostatnio używany plik"
 
-#: ../src/main_window_file.vala:150
+#: ../src/main_window_file.vala:151
 msgid "Open Files"
 msgstr "Otwieranie plików"
 
 #. Filter: by default show only .tex and .bib files
-#: ../src/main_window_file.vala:173
+#: ../src/main_window_file.vala:174
 msgid "All LaTeX Files"
 msgstr "Wszystkie pliki LaTeX-a"
 
 #. All files filter
-#: ../src/main_window_file.vala:180
+#: ../src/main_window_file.vala:181
 msgid "All Files"
 msgstr "Wszystkie pliki"
 
@@ -2314,20 +2303,20 @@ msgid "Show or hide the bottom panel"
 msgstr "Wyświetla lub ukrywa panel dolny"
 
 #. Symbols
-#: ../src/main_window.vala:408
+#: ../src/main_window.vala:412
 msgid "Symbols"
 msgstr "Symbole"
 
-#: ../src/main_window.vala:417
+#: ../src/main_window.vala:421
 msgid "Structure"
 msgstr "Struktura"
 
-#: ../src/main_window.vala:651
+#: ../src/main_window.vala:656
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Ten plik (%s) jest już otwarty w innym oknie programu."
 
-#: ../src/main_window.vala:653
+#: ../src/main_window.vala:658
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2335,24 +2324,24 @@ msgstr ""
 "Program LaTeXila otworzył tę instancję pliku w formie niemożliwej do "
 "modyfikowania. Modyfikować go mimo to?"
 
-#: ../src/main_window.vala:656
+#: ../src/main_window.vala:662
 msgid "Edit Anyway"
 msgstr "Modyfikuj mimo to"
 
-#: ../src/main_window.vala:657
+#: ../src/main_window.vala:663
 msgid "Don't Edit"
 msgstr "Nie modyfikuj"
 
-#: ../src/main_window.vala:759
+#: ../src/main_window.vala:776
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Zapisać zmiany w dokumencie „%s” przed zamknięciem?"
 
-#: ../src/main_window.vala:839
+#: ../src/main_window.vala:856
 msgid "Read-Only"
 msgstr "Tylko do odczytu"
 
-#: ../src/main_window.vala:857
+#: ../src/main_window.vala:874
 msgid "Save File"
 msgstr "Zapisywanie pliku"
 
@@ -2401,6 +2390,13 @@ msgstr "Nowy projekt"
 #: ../src/project_dialogs.vala:204
 msgid "Directory"
 msgstr "Katalog"
+
+#. main file
+#: ../src/project_dialogs.vala:46 ../src/project_dialogs.vala:48
+#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:144
+#: ../src/project_dialogs.vala:217
+msgid "Main File"
+msgstr "Plik główny"
 
 #: ../src/project_dialogs.vala:102
 #, c-format
@@ -2487,7 +2483,7 @@ msgstr "Nie odnaleziono"
 #: ../src/search.vala:484
 #, c-format
 msgid "Match %d of %d"
-msgstr "Wynik %d z %d"
+msgstr "%d. wynik z %d"
 
 #. Translators: %d is the total number of search occurrences.
 #: ../src/search.vala:489
