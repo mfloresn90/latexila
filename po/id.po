@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: latexila master\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-03-04 12:18+0000\n"
-"PO-Revision-Date: 2017-03-20 01:57+0700\n"
-"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"POT-Creation-Date: 2017-08-06 11:34+0000\n"
+"PO-Revision-Date: 2017-08-06 21:12+0700\n"
+"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #. (itstool) path: tool/label
 #: build_tools.xml:43 ../src/build_tool_dialog.vala:165
@@ -534,12 +534,12 @@ msgstr "Perkakas Build Pribadi"
 
 #: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:294
+#: ../src/document_tab.vala:273
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:154 ../src/main_window.vala:763
-#: ../src/main_window.vala:859 ../src/preferences_dialog.vala:114
+#: ../src/main_window_file.vala:154 ../src/main_window.vala:775
+#: ../src/main_window.vala:871 ../src/preferences_dialog.vala:114
 #: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
 #: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
@@ -737,12 +737,12 @@ msgstr "Tak ada proposal yang cocok"
 msgid "Ln %d, Col %d"
 msgstr "Brs %d, Kol %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:762
+#: ../src/dialogs.vala:40 ../src/main_window.vala:774
 msgid "Close _without Saving"
 msgstr "Tutup _tanpa Menyimpan"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:768 ../src/main_window.vala:860
+#: ../src/main_window.vala:780 ../src/main_window.vala:872
 msgid "_Save"
 msgstr "_Simpan"
 
@@ -766,79 +766,76 @@ msgstr "Jika tidak disimpan, seluruh perubahan yang Anda buat akan hilang."
 msgid "The structure item already contains a sub-paragraph."
 msgstr "Butir struktur telah mengandung suatu sub paragraf."
 
-#: ../src/document_tab.vala:174
+#: ../src/document_tab.vala:164
 msgid "Close document"
 msgstr "Tutup dokumen"
 
-#. main file
-#: ../src/document_tab.vala:237 ../src/project_dialogs.vala:46
-#: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
-#: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
-msgid "Main File"
-msgstr "Berkas Utama"
+#: ../src/document_tab.vala:216
+msgid "Project main file"
+msgstr "Berkas utama proyek"
 
-#: ../src/document_tab.vala:239
-msgid "Main File:"
-msgstr "Berkas Utama:"
+#: ../src/document_tab.vala:218
+msgid "Project main file:"
+msgstr "Berkas utama proyek:"
 
-#: ../src/document_tab.vala:263
+#: ../src/document_tab.vala:242
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktifkan '%s'"
 
-#: ../src/document_tab.vala:282
+#: ../src/document_tab.vala:261
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Berkas %s berubah pada cakram."
 
-#: ../src/document_tab.vala:287
+#: ../src/document_tab.vala:266
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Anda ingin membuang perubahan dan memuat ulang berkas?"
 
-#: ../src/document_tab.vala:289
+#: ../src/document_tab.vala:268
 msgid "Do you want to reload the file?"
 msgstr "Anda ingin memuat ulang berkas?"
 
-#: ../src/document_tab.vala:293
+#: ../src/document_tab.vala:272
 msgid "_Reload"
 msgstr "_Muat Ulang"
 
-#: ../src/document.vala:115
+#: ../src/document.vala:124
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Tak mungkin memuat berkas '%s'."
 
-#: ../src/document.vala:193
+#: ../src/document.vala:206
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Berkas %s telah diubah semenjak dibaca."
 
-#: ../src/document.vala:196
+#: ../src/document.vala:209
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Jika Anda menyimpannya, seluruh perubahan dari luar akan hilang. Simpan saja?"
 
-#: ../src/document.vala:199
+#: ../src/document.vala:213
 msgid "_Save Anyway"
 msgstr "_Simpan Saja"
 
-#: ../src/document.vala:200
+#: ../src/document.vala:214
 msgid "_Don't Save"
 msgstr "_Jangan Simpan"
 
-#: ../src/document.vala:212
+#: ../src/document.vala:231
 msgid "Impossible to save the file."
 msgstr "Tak mungkin menyimpan berkas."
 
-#: ../src/document.vala:237
+#: ../src/document.vala:259
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Galat saat mencoba mengkonversi dokumen ke UTF-8"
 
-#: ../src/document.vala:291
+#: ../src/document.vala:313
 msgid "Untitled Document"
 msgstr "Dokumen Tanpa Judul"
 
-#: ../src/document.vala:503
+#: ../src/document.vala:528
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
@@ -846,16 +843,16 @@ msgstr ""
 "Berkas berada pada lokasi sementara. Data bisa hilang setelah komputer Anda "
 "reboot."
 
-#: ../src/document.vala:504
+#: ../src/document.vala:529
 msgid "Do you want to save the file in a safer place?"
 msgstr "Apakah Anda ingin menyimpan berkas ke tempat yang lebih aman?"
 
-#: ../src/document.vala:507 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:766
+#: ../src/document.vala:530 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:778
 msgid "Save _As"
 msgstr "Simp_an Sebagai"
 
-#: ../src/document.vala:508
+#: ../src/document.vala:531
 msgid "Cancel"
 msgstr "Batal"
 
@@ -906,7 +903,7 @@ msgid "File System"
 msgstr "Sistem Berkas"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:412
+#: ../src/file_browser.vala:536 ../src/main_window.vala:416
 msgid "File Browser"
 msgstr "Peramban Berkas"
 
@@ -922,17 +919,19 @@ msgstr "Buat dokumen baru"
 msgid "Create a new top-level window in an existing instance of LaTeXila"
 msgstr "Buat jendela tingkat tertinggi dalam instansi LaTeXila yang ada"
 
-#: ../src/latexila_app.vala:223
+#: ../src/latexila_app.vala:234
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeXila adalah Lingkungan LaTeX Terpadu bagi Desktop GNOME"
 
-#: ../src/latexila_app.vala:262 ../src/main_window.vala:72
+#: ../src/latexila_app.vala:273 ../src/main_window.vala:72
 msgid "About LaTeXila"
 msgstr "Tentang LaTeXila"
 
-#: ../src/latexila_app.vala:263
+#: ../src/latexila_app.vala:274
 msgid "translator-credits"
-msgstr "Andika Triwidada <andika@gmail.com>, 2012-2014, 2016, 2017"
+msgstr ""
+"Andika Triwidada <andika@gmail.com>, 2012-2014, 2016, 2017.\n"
+"Kukuh Syafaat <syafaatkukuh@gmail.com>, 2017."
 
 #. LaTeX: Sectioning
 #: ../src/latex_menu.vala:32
@@ -2289,20 +2288,20 @@ msgid "Show or hide the bottom panel"
 msgstr "Tampilkan atau sembunyikan panel bawah"
 
 #. Symbols
-#: ../src/main_window.vala:408
+#: ../src/main_window.vala:412
 msgid "Symbols"
 msgstr "Simbol"
 
-#: ../src/main_window.vala:417
+#: ../src/main_window.vala:421
 msgid "Structure"
 msgstr "Struktur"
 
-#: ../src/main_window.vala:651
+#: ../src/main_window.vala:656
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Berkas (%s) ini sedang dibuka dalam jendela LaTeXila lain."
 
-#: ../src/main_window.vala:653
+#: ../src/main_window.vala:658
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2310,24 +2309,24 @@ msgstr ""
 "LaTeXila membuka instansi berkas ini dalam cari yang tak dapat disunting. "
 "Apakah Anda ingin menyuntingnya saja?"
 
-#: ../src/main_window.vala:656
+#: ../src/main_window.vala:662
 msgid "Edit Anyway"
 msgstr "Sunting Saja"
 
-#: ../src/main_window.vala:657
+#: ../src/main_window.vala:663
 msgid "Don't Edit"
 msgstr "Jangan Sunting"
 
-#: ../src/main_window.vala:759
+#: ../src/main_window.vala:771
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Simpan perubahan ke dokumen \"%s\" sebelum menutup?"
 
-#: ../src/main_window.vala:839
+#: ../src/main_window.vala:851
 msgid "Read-Only"
 msgstr "Hanya-Baca"
 
-#: ../src/main_window.vala:857
+#: ../src/main_window.vala:869
 msgid "Save File"
 msgstr "Simpan Berkas"
 
@@ -2372,6 +2371,13 @@ msgstr "Projek Baru"
 #: ../src/project_dialogs.vala:204
 msgid "Directory"
 msgstr "Direktori"
+
+#. main file
+#: ../src/project_dialogs.vala:46 ../src/project_dialogs.vala:48
+#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:144
+#: ../src/project_dialogs.vala:217
+msgid "Main File"
+msgstr "Berkas Utama"
 
 #: ../src/project_dialogs.vala:102
 #, c-format
@@ -2708,3 +2714,6 @@ msgstr "Sorot kata salah eja"
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Lainnya"
+
+#~ msgid "Main File:"
+#~ msgstr "Berkas Utama:"
