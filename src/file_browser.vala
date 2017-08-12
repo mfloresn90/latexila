@@ -251,24 +251,10 @@ public class FileBrowser : Grid
 
         jump_button.clicked.connect (() =>
         {
-            return_if_fail (_main_window.active_tab != null);
-            return_if_fail (_main_window.active_document.location != null);
-
-            set_directory (_main_window.active_document.location.get_parent ());
-        });
-
-        // sensitivity
-        _main_window.notify["active-document"].connect (() =>
-        {
-            update_jump_button_sensitivity (jump_button);
-
-            // update when location changes
-            if (_main_window.active_document != null)
+            if (_main_window.active_document != null &&
+                _main_window.active_document.location != null)
             {
-                _main_window.active_document.notify["location"].connect (() =>
-                {
-                    update_jump_button_sensitivity (jump_button);
-                });
+                set_directory (_main_window.active_document.location.get_parent ());
             }
         });
 
@@ -625,12 +611,6 @@ public class FileBrowser : Grid
         update_parent_directories ();
         update_list ();
         monitor_directory ();
-    }
-
-    private void update_jump_button_sensitivity (ToolButton jump_button)
-    {
-        jump_button.sensitive = _main_window.active_tab != null
-            && _main_window.active_document.location != null;
     }
 
     private int on_sort (TreeModel model, TreeIter a, TreeIter b)
