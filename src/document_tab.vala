@@ -31,8 +31,6 @@ public class DocumentTab : Tepl.Tab
         get { return get_buffer () as Document; }
     }
 
-    private TabLabel _label;
-
     private bool ask_if_externally_modified = false;
 
     private uint auto_save_timeout;
@@ -127,9 +125,6 @@ public class DocumentTab : Tepl.Tab
 
         view.show_all ();
 
-        _label = new TabLabel (this);
-        _label.show ();
-
         /* auto save */
         GLib.Settings settings =
             new GLib.Settings ("org.gnome.latexila.preferences.editor");
@@ -145,11 +140,6 @@ public class DocumentTab : Tepl.Tab
             if (auto_save_timeout <= 0)
                 install_auto_save_timeout_if_needed ();
         });
-    }
-
-    public TabLabel get_label ()
-    {
-        return _label;
     }
 
     public string get_menu_tip ()

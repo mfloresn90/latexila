@@ -35,7 +35,10 @@ public class DocumentsPanel : Tepl.Notebook
         EventBox event_box = new EventBox ();
         event_box.set_visible_window (false);
 
-        event_box.add (tab.get_label ());
+        TabLabel tab_label = new TabLabel (tab);
+        tab_label.show ();
+        event_box.add (tab_label);
+
         event_box.button_press_event.connect ((event) =>
         {
             // right click
