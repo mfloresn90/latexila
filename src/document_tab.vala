@@ -31,7 +31,7 @@ public class DocumentTab : Tepl.Tab
         get { return get_buffer () as Document; }
     }
 
-    private Tepl.TabLabel _label;
+    private TabLabel _label;
 
     private bool ask_if_externally_modified = false;
 
@@ -123,15 +123,11 @@ public class DocumentTab : Tepl.Tab
     {
         document.tab = this;
 
-        document.notify["location"].connect (update_label_tooltip);
-        document.notify["project-id"].connect (update_label_tooltip);
-
         document_view.focus_in_event.connect (view_focused_in);
 
         view.show_all ();
 
-        _label = new Tepl.TabLabel (this);
-        update_label_tooltip ();
+        _label = new TabLabel (this);
         _label.show ();
 
         /* auto save */
@@ -151,43 +147,9 @@ public class DocumentTab : Tepl.Tab
         });
     }
 
-    public Tepl.TabLabel get_label ()
+    public TabLabel get_label ()
     {
         return _label;
-    }
-
-    private void update_label_tooltip ()
-    {
-        if (document.location == null)
-        {
-            _label.tooltip_markup = "";
-            return;
-        }
-
-        _label.tooltip_markup = document.get_uri_for_display ();
-
-        Project? project = document.get_project ();
-        if (project == null)
-            return;
-
-        if (project.main_file.equal (document.location))
-            _label.tooltip_markup += "\n<b>" + _("Project main file") + "</b>";
-        else
-            _label.tooltip_markup += "\n<b>" + _("Project main file:") + "</b> "
-                + get_main_file_relative_path ();
-    }
-
-    private string? get_main_file_relative_path ()
-    {
-        Project? project = document.get_project ();
-        if (project == null)
-            return null;
-
-        File origin = document.location;
-        File target = project.main_file;
-        File common_dir = project.directory;
-
-        return Utils.get_relative_path (origin, target, common_dir);
     }
 
     public string get_menu_tip ()

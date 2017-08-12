@@ -60,6 +60,7 @@ vala_files =				\
 	structure.vala			\
 	symbols.vala			\
 	symbols_view.vala		\
+	tab_label.vala			\
 	utils.vala
 
 latexila_SOURCES = 				\
