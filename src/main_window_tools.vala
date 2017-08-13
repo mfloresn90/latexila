@@ -82,6 +82,12 @@ public class MainWindowTools
         Gspell.TextView gspell_view =
             Gspell.TextView.get_from_gtk_text_view (_main_window.active_view as TextView);
         spell_checking_action.active = gspell_view.inline_spell_checking;
+
+        // FIXME: listen to the current GspellTextView's
+        // notify::inline-spell-checking signal to update action state.
+        // Not sure it is worth implementing it in Vala, I anyway plan to
+        // integrate spell-checking with the Tepl framework, in C.
+        // It's not a critical bug.
     }
 
     /* Sensitivity */
