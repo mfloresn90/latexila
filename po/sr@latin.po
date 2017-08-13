@@ -1,17 +1,17 @@
 # Serbian language latexila translations for F package.
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2011—2017.
-# Copyright (C) 2011 THE F'S COPYRIGHT HOLDER
+# Copyright © 2011 THE F'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the F package.
 # Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011—2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: F 677-CF0E\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=latexil"
-"a&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-01-26 12:21+0000\n"
-"PO-Revision-Date: 2017-02-12 18:18+0200\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=latexi"
+"la&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-08-06 15:54+0000\n"
+"PO-Revision-Date: 2017-08-13 08:10+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: Serbian <(nothing)>\n"
+"Language-Team: srpski <gnome-sr@googlegroups.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,7 +86,6 @@ msgid "Convert the PostScript document to the PDF format"
 msgstr "Pretvorite Post-skript dokument u PDF format"
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:1
-#| msgid "Integrated LaTeX Environment"
 msgid "Integrated LaTeX environment"
 msgstr "Integrisano LaTeKs okruženje"
 
@@ -101,10 +100,6 @@ msgstr ""
 "moguće pojednostavljuje pisanje tog koda LaTeKs-a."
 
 #: ../data/org.gnome.latexila.appdata.xml.in.h:3
-#| msgid ""
-#| "New documents are created from templates. There are buttons to compile, "
-#| "convert and view a document in one click. And projects containing "
-#| "several .tex files are managed easily."
 msgid ""
 "To help the writing of the LaTeX markup, auto-completion is available as "
 "well as menus and toolbars with the principal commands. New documents are "
@@ -545,12 +540,12 @@ msgstr "Lična alatka izgradnje"
 
 #: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:294
+#: ../src/document_tab.vala:226
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:763
-#: ../src/main_window.vala:859 ../src/preferences_dialog.vala:114
+#: ../src/main_window_file.vala:154 ../src/main_window.vala:780
+#: ../src/main_window.vala:876 ../src/preferences_dialog.vala:114
 #: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
 #: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
@@ -747,12 +742,12 @@ msgstr "Nema predloga poklapanja"
 msgid "Ln %d, Col %d"
 msgstr "Red %d, kolona %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:762
+#: ../src/dialogs.vala:40 ../src/main_window.vala:779
 msgid "Close _without Saving"
 msgstr "Zatvori _bez čuvanja"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:768 ../src/main_window.vala:860
+#: ../src/main_window.vala:785 ../src/main_window.vala:877
 msgid "_Save"
 msgstr "_Sačuvaj"
 
@@ -775,79 +770,69 @@ msgid "The structure item already contains a sub-paragraph."
 msgstr "Stavka strukture već sadrži pod-pasus."
 
 #: ../src/document_tab.vala:174
-msgid "Close document"
-msgstr "Zatvorite dokument"
+#| msgid "open file"
+msgid "Project main file"
+msgstr "Glavna datoteka projekta"
 
-#. main file
-#: ../src/document_tab.vala:237 ../src/project_dialogs.vala:46
-#: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
-#: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
-msgid "Main File"
-msgstr "Glavna datoteka"
+#: ../src/document_tab.vala:176
+msgid "Project main file:"
+msgstr "Glavna datoteka projekta:"
 
-#: ../src/document_tab.vala:239
-msgid "Main File:"
-msgstr "Glavna datoteka:"
-
-#: ../src/document_tab.vala:263
+#: ../src/document_tab.vala:195
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktiviraj „%s“"
 
-#: ../src/document_tab.vala:282
+#: ../src/document_tab.vala:214
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Sadržaj datoteke „%s“ se promenio mimo programa."
 
-#: ../src/document_tab.vala:287
+#: ../src/document_tab.vala:219
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Da li želite da odbacite izmene i da ponovo učitate datoteku?"
 
-#: ../src/document_tab.vala:289
+#: ../src/document_tab.vala:221
 msgid "Do you want to reload the file?"
 msgstr "Da li želite ponovo da učitate datoteku?"
 
-#: ../src/document_tab.vala:293
+#: ../src/document_tab.vala:225
 msgid "_Reload"
 msgstr "_Osveži"
 
-#: ../src/document.vala:115
+#: ../src/document.vala:128
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Učitavanje datoteke „%s“ nije moguće."
 
-#: ../src/document.vala:193
+#: ../src/document.vala:210
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Datoteka „%s“ je izmenjena nakon što ste je pročitali."
 
-#: ../src/document.vala:196
+#: ../src/document.vala:213
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Ako je sačuvate, sve spoljne izmene mogu biti izgubljene. Sačuvaćete je i "
 "pored toga?"
 
-#: ../src/document.vala:199
+#: ../src/document.vala:217
 msgid "_Save Anyway"
 msgstr "Ipak _sačuvaj"
 
-#: ../src/document.vala:200
+#: ../src/document.vala:218
 msgid "_Don't Save"
 msgstr "_Ne čuvaj"
 
-#: ../src/document.vala:212
+#: ../src/document.vala:235
 msgid "Impossible to save the file."
 msgstr "Nije moguće sačuvati datoteku."
 
-#: ../src/document.vala:237
+#: ../src/document.vala:263
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Greška prilikom pokušaja pretvaranja dokumenta u UTF-8"
 
-#: ../src/document.vala:291
-msgid "Untitled Document"
-msgstr "Neimenovani dokument"
-
-#: ../src/document.vala:503
+#: ../src/document.vala:492
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
@@ -855,16 +840,16 @@ msgstr ""
 "Datoteka je na privremenom mestu. Podaci mogu biti izgubljeni nakon ponovnog "
 "pokretanja računara."
 
-#: ../src/document.vala:504
+#: ../src/document.vala:493
 msgid "Do you want to save the file in a safer place?"
 msgstr "Da li želite da sačuvate datoteku na bezbednijem mestu?"
 
-#: ../src/document.vala:507 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:766
+#: ../src/document.vala:494 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:783
 msgid "Save _As"
 msgstr "Sačuvaj _kao"
 
-#: ../src/document.vala:508
+#: ../src/document.vala:495
 msgid "Cancel"
 msgstr "Otkaži"
 
@@ -915,7 +900,7 @@ msgid "File System"
 msgstr "Sistem datoteka"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:412
+#: ../src/file_browser.vala:536 ../src/main_window.vala:416
 msgid "File Browser"
 msgstr "Preglednik datoteka"
 
@@ -931,15 +916,15 @@ msgstr "Pravi novi dokument"
 msgid "Create a new top-level window in an existing instance of LaTeXila"
 msgstr "Pravi novi prozor najvišeg nivoa u postojećoj instanci programa"
 
-#: ../src/latexila_app.vala:223
+#: ../src/latexila_app.vala:234
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeKsila je integrisano LaTeKs okruženje za radnu površ Gnoma"
 
-#: ../src/latexila_app.vala:262 ../src/main_window.vala:72
+#: ../src/latexila_app.vala:273 ../src/main_window.vala:72
 msgid "About LaTeXila"
 msgstr "O LaTeKsili"
 
-#: ../src/latexila_app.vala:263
+#: ../src/latexila_app.vala:274
 msgid "translator-credits"
 msgstr ""
 "Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
@@ -1993,7 +1978,7 @@ msgstr "Novi _prozor"
 msgid "Create a new window"
 msgstr "Napravite novi prozor"
 
-#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:154
+#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:155
 msgid "_Open"
 msgstr "_Otvori"
 
@@ -2046,17 +2031,17 @@ msgstr "Otvorite nedavno korišćene datoteke"
 msgid "Open a recently used file"
 msgstr "Otvorite nedavno korišćenu datoteku"
 
-#: ../src/main_window_file.vala:150
+#: ../src/main_window_file.vala:151
 msgid "Open Files"
 msgstr "Otvorite datoteku"
 
 #. Filter: by default show only .tex and .bib files
-#: ../src/main_window_file.vala:173
+#: ../src/main_window_file.vala:174
 msgid "All LaTeX Files"
 msgstr "Sve LaTeKs datoteke"
 
 #. All files filter
-#: ../src/main_window_file.vala:180
+#: ../src/main_window_file.vala:181
 msgid "All Files"
 msgstr "Sve datoteke"
 
@@ -2301,20 +2286,20 @@ msgid "Show or hide the bottom panel"
 msgstr "Prikažite ili sakrijte donju površ"
 
 #. Symbols
-#: ../src/main_window.vala:408
+#: ../src/main_window.vala:412
 msgid "Symbols"
 msgstr "Simboli"
 
-#: ../src/main_window.vala:417
+#: ../src/main_window.vala:421
 msgid "Structure"
 msgstr "Struktura"
 
-#: ../src/main_window.vala:651
+#: ../src/main_window.vala:656
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Ova datoteka (%s) je već otvorena u drugom prozoru LaTeKsile."
 
-#: ../src/main_window.vala:653
+#: ../src/main_window.vala:658
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2322,24 +2307,24 @@ msgstr ""
 "LaTeKsila je otvorio ovaj primerak dokumenta na način u kome menjanje sadržaja "
 "nije moguće. Da li i pored toga želite da menjate sadržaj?"
 
-#: ../src/main_window.vala:656
+#: ../src/main_window.vala:662
 msgid "Edit Anyway"
 msgstr "Ipak uredi"
 
-#: ../src/main_window.vala:657
+#: ../src/main_window.vala:663
 msgid "Don't Edit"
 msgstr "Ne uređuj"
 
-#: ../src/main_window.vala:759
+#: ../src/main_window.vala:776
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Da sačuvam izmene u dokumentu „%s“ pre zatvaranja?"
 
-#: ../src/main_window.vala:839
+#: ../src/main_window.vala:856
 msgid "Read-Only"
 msgstr "Samo čitanje"
 
-#: ../src/main_window.vala:857
+#: ../src/main_window.vala:874
 msgid "Save File"
 msgstr "Sačuvajte datoteku"
 
@@ -2390,6 +2375,13 @@ msgstr "Novi projekat"
 #: ../src/project_dialogs.vala:204
 msgid "Directory"
 msgstr "Direktorijum"
+
+#. main file
+#: ../src/project_dialogs.vala:46 ../src/project_dialogs.vala:48
+#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:144
+#: ../src/project_dialogs.vala:217
+msgid "Main File"
+msgstr "Glavna datoteka"
 
 #: ../src/project_dialogs.vala:102
 #, c-format
@@ -2729,6 +2721,15 @@ msgstr "Istakni pogrešno napisane reči"
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Ostalo"
+
+#~ msgid "Close document"
+#~ msgstr "Zatvorite dokument"
+
+#~ msgid "Main File:"
+#~ msgstr "Glavna datoteka:"
+
+#~ msgid "Untitled Document"
+#~ msgstr "Neimenovani dokument"
 
 #~ msgid ""
 #~ "To help the writing of the LaTeX markup, auto-completion is available as "
