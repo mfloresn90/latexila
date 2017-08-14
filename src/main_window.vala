@@ -26,7 +26,7 @@ public class MainWindow : ApplicationWindow
     private const Gtk.ActionEntry[] _action_entries =
     {
         { "FileQuit", "application-exit", N_("_Quit"), "<Control>Q",
-            N_("Quit the program"), on_quit },
+            N_("Quit the program") },
 
         // View
         { "View", null, N_("_View") },
@@ -62,14 +62,13 @@ public class MainWindow : ApplicationWindow
         // Help
         { "Help", null, N_("_Help") },
         { "HelpContents", "help-browser", N_("_Contents"), "<Release>F1",
-            N_("Open the LaTeXila documentation"), on_help_contents },
+            N_("Open the LaTeXila documentation") },
         { "HelpLatexReference", null, N_("_LaTeX Reference"), null,
             N_("The Kile LaTeX Reference"), on_help_latex_reference },
         { "HelpFinance", null, "LaTeXila _Fundraising", null,
-            "Donate to demonstrate your appreciation of LaTeXila and help its future development",
-            on_help_finance },
+            "Donate to demonstrate your appreciation of LaTeXila and help its future development" },
         { "HelpAbout", "help-about", N_("_About"), null,
-            N_("About LaTeXila"), on_about_dialog }
+            N_("About LaTeXila") }
     };
 
     private const ToggleActionEntry[] _toggle_action_entries =
@@ -316,6 +315,16 @@ public class MainWindow : ApplicationWindow
         }
 
         add_accel_group (_ui_manager.get_accel_group ());
+
+        LatexilaApp app = LatexilaApp.get_instance ();
+        Amtk.utils_bind_g_action_to_gtk_action (app, "quit",
+            _action_group, "FileQuit");
+        Amtk.utils_bind_g_action_to_gtk_action (app, "help",
+            _action_group, "HelpContents");
+        Amtk.utils_bind_g_action_to_gtk_action (app, "fundraising",
+            _action_group, "HelpFinance");
+        Amtk.utils_bind_g_action_to_gtk_action (app, "about",
+            _action_group, "HelpAbout");
 
         /* Show tooltips in the statusbar */
 
@@ -1091,11 +1100,6 @@ public class MainWindow : ApplicationWindow
     /*************************************************************************/
     // Gtk.Action callbacks
 
-    public void on_quit ()
-    {
-        LatexilaApp.get_instance ().activate_action ("quit", null);
-    }
-
     /* View */
 
     public void on_view_zoom_in ()
@@ -1166,11 +1170,6 @@ public class MainWindow : ApplicationWindow
 
     /* Help */
 
-    public void on_help_contents ()
-    {
-        LatexilaApp.get_instance ().activate_action ("help", null);
-    }
-
     public void on_help_latex_reference ()
     {
         try
@@ -1183,15 +1182,5 @@ public class MainWindow : ApplicationWindow
         {
             warning ("Impossible to open the LaTeX reference: %s", e.message);
         }
-    }
-
-    public void on_help_finance ()
-    {
-        LatexilaApp.get_instance ().activate_action ("fundraising", null);
-    }
-
-    public void on_about_dialog ()
-    {
-        LatexilaApp.get_instance ().activate_action ("about", null);
     }
 }

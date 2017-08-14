@@ -33,7 +33,7 @@ public class MainWindowFile
             N_("New file"), on_file_new },
 
         { "FileNewWindow", null, N_("New _Window"), null,
-            N_("Create a new window"), on_new_window },
+            N_("Create a new window") },
 
         { "FileOpen", "document-open", N_("_Open"), "<Control>O",
             N_("Open a file"), on_file_open },
@@ -72,6 +72,10 @@ public class MainWindowFile
         _action_group.add_action (recent_action);
 
         ui_manager.insert_action_group (_action_group, 0);
+
+        LatexilaApp app = LatexilaApp.get_instance ();
+        Amtk.utils_bind_g_action_to_gtk_action (app, "new-window",
+            _action_group, "FileNewWindow");
     }
 
     public ToolItem get_toolbar_open_button ()
@@ -139,11 +143,6 @@ public class MainWindowFile
             DocumentTab tab = _main_window.create_tab (true);
             tab.document.set_contents (contents);
         }
-    }
-
-    public void on_new_window ()
-    {
-        LatexilaApp.get_instance ().activate_action ("new-window", null);
     }
 
     public void on_file_open ()

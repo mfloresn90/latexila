@@ -72,7 +72,7 @@ public class MainWindowEdit
             N_("Complete the LaTeX command"), on_completion },
 
         { "EditPreferences", "preferences-system", N_("_Preferences"), null,
-            N_("Configure the application"), on_open_preferences }
+            N_("Configure the application") }
     };
 
     private unowned MainWindow _main_window;
@@ -88,6 +88,8 @@ public class MainWindowEdit
 
         ui_manager.insert_action_group (_action_group, 0);
 
+        LatexilaApp app = LatexilaApp.get_instance ();
+
         Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-cut",
             _action_group, "EditCut");
         Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-copy",
@@ -98,6 +100,8 @@ public class MainWindowEdit
             _action_group, "EditDelete");
         Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-select-all",
             _action_group, "EditSelectAll");
+        Amtk.utils_bind_g_action_to_gtk_action (app, "preferences",
+            _action_group, "EditPreferences");
     }
 
     /* Sensitivity */
@@ -223,10 +227,5 @@ public class MainWindowEdit
     {
         return_if_fail (_main_window.active_tab != null);
         _main_window.active_view.show_completion ();
-    }
-
-    public void on_open_preferences ()
-    {
-        LatexilaApp.get_instance ().activate_action ("preferences", null);
     }
 }

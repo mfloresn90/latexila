@@ -38,7 +38,7 @@ public class MainWindowBuildTools
             N_("View Log"), on_view_log },
 
         { "BuildToolsPreferences", "preferences-system", N_("_Manage Build Tools"), null,
-            N_("Manage Build Tools"), on_preferences }
+            N_("Manage Build Tools") }
     };
 
     private const ToggleActionEntry[] _toggle_action_entries =
@@ -81,6 +81,10 @@ public class MainWindowBuildTools
         stop_exec.sensitive = false;
 
         ui_manager.insert_action_group (_static_action_group, 0);
+
+        LatexilaApp app = LatexilaApp.get_instance ();
+        Amtk.utils_bind_g_action_to_gtk_action (app, "manage-build-tools",
+            _static_action_group, "BuildToolsPreferences");
 
         /* Dynamic Gtk.Actions (the placeholder) */
         _dynamic_action_group = new Gtk.ActionGroup ("BuildToolsActions");
@@ -476,10 +480,5 @@ public class MainWindowBuildTools
             warning ("Impossible to view log");
         else
             tab.document.readonly = true;
-    }
-
-    public void on_preferences ()
-    {
-        LatexilaApp.get_instance ().activate_action ("manage-build-tools", null);
     }
 }
