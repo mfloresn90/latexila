@@ -113,16 +113,16 @@ public class MainWindow : ApplicationWindow
     {
         get
         {
-            if (_documents_panel == null)
-                return null;
-            return (DocumentTab?) _documents_panel.active_tab;
+            Tepl.ApplicationWindow tepl_window =
+                Tepl.ApplicationWindow.get_from_gtk_application_window (this);
+            return tepl_window.get_active_tab () as DocumentTab?;
         }
 
         set
         {
-            int n = _documents_panel.page_num (value);
-            if (n != -1)
-                _documents_panel.set_current_page (n);
+            Tepl.ApplicationWindow tepl_window =
+                Tepl.ApplicationWindow.get_from_gtk_application_window (this);
+            tepl_window.set_active_tab (value);
         }
     }
 
@@ -130,9 +130,9 @@ public class MainWindow : ApplicationWindow
     {
         get
         {
-            if (active_tab == null)
-                return null;
-            return active_tab.document_view;
+            Tepl.ApplicationWindow tepl_window =
+                Tepl.ApplicationWindow.get_from_gtk_application_window (this);
+            return tepl_window.get_active_view () as DocumentView?;
         }
     }
 
@@ -140,9 +140,9 @@ public class MainWindow : ApplicationWindow
     {
         get
         {
-            if (active_tab == null)
-                return null;
-            return active_tab.document;
+            Tepl.ApplicationWindow tepl_window =
+                Tepl.ApplicationWindow.get_from_gtk_application_window (this);
+            return tepl_window.get_active_buffer () as Document?;
         }
     }
 
@@ -154,8 +154,27 @@ public class MainWindow : ApplicationWindow
         Object (application: app);
         this.title = "LaTeXila";
 
+        /* TeplApplicationWindow */
+
         Tepl.ApplicationWindow tepl_window =
             Tepl.ApplicationWindow.get_from_gtk_application_window (this);
+
+        tepl_window.notify["active-tab"].connect (() =>
+        {
+            this.notify_property ("active-tab");
+        });
+
+        tepl_window.notify["active-view"].connect (() =>
+        {
+            this.notify_property ("active-view");
+        });
+
+        tepl_window.notify["active-buffer"].connect (() =>
+        {
+            this.notify_property ("active-document");
+        });
+
+        /* GtkUIManager */
 
         initialize_ui_manager ();
 
@@ -466,10 +485,6 @@ public class MainWindow : ApplicationWindow
                 set_file_actions_sensitivity (false);
                 _goto_line.hide ();
                 _search_and_replace.hide ();
-
-                notify_property ("active-tab");
-                notify_property ("active-document");
-                notify_property ("active-view");
             }
 
             my_set_title ();
@@ -483,10 +498,6 @@ public class MainWindow : ApplicationWindow
             update_config_project_sensitivity ();
             my_set_title ();
             update_cursor_position_statusbar ();
-
-            notify_property ("active-tab");
-            notify_property ("active-document");
-            notify_property ("active-view");
         });
     }
 
