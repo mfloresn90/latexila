@@ -115,8 +115,12 @@ public class MainWindowFile
 
     /* Sensitivity */
 
-    public void update_sensitivity (bool sensitive)
+    public void update_sensitivity ()
     {
+        Tepl.ApplicationWindow tepl_window =
+            Tepl.ApplicationWindow.get_from_gtk_application_window (_main_window);
+        bool sensitive = tepl_window.active_tab != null;
+
         string[] action_names =
         {
             "FileSave",

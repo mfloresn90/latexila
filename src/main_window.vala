@@ -161,6 +161,17 @@ public class MainWindow : ApplicationWindow
 
         tepl_window.notify["active-tab"].connect (() =>
         {
+            update_file_actions_sensitivity ();
+            update_config_project_sensitivity ();
+            update_cursor_position_statusbar ();
+            my_set_title ();
+
+            if (this.active_tab == null)
+            {
+                _goto_line.hide ();
+                _search_and_replace.hide ();
+            }
+
             this.notify_property ("active-tab");
         });
 
@@ -186,7 +197,7 @@ public class MainWindow : ApplicationWindow
         _main_window_tools = new MainWindowTools (this, _ui_manager);
 
         show_images_in_menu ();
-        set_file_actions_sensitivity (false);
+        update_file_actions_sensitivity ();
 
         /* Main vertical grid */
 
@@ -464,40 +475,6 @@ public class MainWindow : ApplicationWindow
         {
             Gtk.Menu popup_menu = _ui_manager.get_widget ("/NotebookPopup") as Gtk.Menu;
             popup_menu.popup (null, null, null, event.button, event.time);
-        });
-
-        _documents_panel.page_added.connect (() =>
-        {
-            int nb_pages = _documents_panel.get_n_pages ();
-
-            // actions for which there must be 1 document minimum
-            if (nb_pages == 1)
-                set_file_actions_sensitivity (true);
-        });
-
-        _documents_panel.page_removed.connect (() =>
-        {
-            int nb_pages = _documents_panel.get_n_pages ();
-
-            if (nb_pages == 0)
-            {
-                _statusbar.set_cursor_position (-1, -1);
-                set_file_actions_sensitivity (false);
-                _goto_line.hide ();
-                _search_and_replace.hide ();
-            }
-
-            my_set_title ();
-        });
-
-        _documents_panel.switch_page.connect ((pg, page_num) =>
-        {
-            _main_window_edit.update_sensitivity ();
-            _main_window_build_tools.update_sensitivity ();
-            _main_window_tools.update_sensitivity ();
-            update_config_project_sensitivity ();
-            my_set_title ();
-            update_cursor_position_statusbar ();
         });
     }
 
@@ -982,7 +959,10 @@ public class MainWindow : ApplicationWindow
     private void update_cursor_position_statusbar ()
     {
         if (active_view == null)
+        {
+            _statusbar.set_cursor_position (-1, -1);
             return;
+        }
 
         TextIter iter;
         active_document.get_iter_at_mark (out iter, active_document.get_insert ());
@@ -1049,9 +1029,13 @@ public class MainWindow : ApplicationWindow
     /*************************************************************************/
     // Sensitivity
 
-    private void set_file_actions_sensitivity (bool sensitive)
+    private void update_file_actions_sensitivity ()
     {
-        // actions that must be insensitive if the notebook is empty
+        Tepl.ApplicationWindow tepl_window =
+            Tepl.ApplicationWindow.get_from_gtk_application_window (this);
+        bool sensitive = tepl_window.active_tab != null;
+
+        // Actions that must be insensitive if the notebook is empty.
         string[] file_actions =
         {
             "ViewZoomIn",
@@ -1071,7 +1055,8 @@ public class MainWindow : ApplicationWindow
         }
 
         _latex_action_group.set_sensitive (sensitive);
-        _main_window_file.update_sensitivity (sensitive);
+
+        _main_window_file.update_sensitivity ();
         _main_window_edit.update_sensitivity ();
         _main_window_build_tools.update_sensitivity ();
         _main_window_tools.update_sensitivity ();
