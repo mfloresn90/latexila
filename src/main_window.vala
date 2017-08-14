@@ -154,36 +154,9 @@ public class MainWindow : ApplicationWindow
         Object (application: app);
         this.title = "LaTeXila";
 
-        /* TeplApplicationWindow */
-
+        // Init TeplApplicationWindow GActions.
         Tepl.ApplicationWindow tepl_window =
             Tepl.ApplicationWindow.get_from_gtk_application_window (this);
-
-        tepl_window.notify["active-tab"].connect (() =>
-        {
-            update_file_actions_sensitivity ();
-            update_config_project_sensitivity ();
-            update_cursor_position_statusbar ();
-            my_set_title ();
-
-            if (this.active_tab == null)
-            {
-                _goto_line.hide ();
-                _search_and_replace.hide ();
-            }
-
-            this.notify_property ("active-tab");
-        });
-
-        tepl_window.notify["active-view"].connect (() =>
-        {
-            this.notify_property ("active-view");
-        });
-
-        tepl_window.notify["active-buffer"].connect (() =>
-        {
-            this.notify_property ("active-document");
-        });
 
         /* GtkUIManager */
 
@@ -262,7 +235,6 @@ public class MainWindow : ApplicationWindow
         // Documents panel
         init_documents_panel ();
         docs_vgrid.add (_documents_panel);
-        tepl_window.set_tab_group (_documents_panel);
 
         // Goto Line
         _goto_line = new GotoLine (this);
@@ -288,6 +260,36 @@ public class MainWindow : ApplicationWindow
         main_vgrid.add (_statusbar);
 
         _tip_message_cid = _statusbar.get_context_id ("tip_message");
+
+        /* TeplApplicationWindow */
+
+        tepl_window.notify["active-tab"].connect (() =>
+        {
+            update_file_actions_sensitivity ();
+            update_config_project_sensitivity ();
+            update_cursor_position_statusbar ();
+            my_set_title ();
+
+            if (this.active_tab == null)
+            {
+                _goto_line.hide ();
+                _search_and_replace.hide ();
+            }
+
+            this.notify_property ("active-tab");
+        });
+
+        tepl_window.notify["active-view"].connect (() =>
+        {
+            this.notify_property ("active-view");
+        });
+
+        tepl_window.notify["active-buffer"].connect (() =>
+        {
+            this.notify_property ("active-document");
+        });
+
+        tepl_window.set_tab_group (_documents_panel);
 
         /* Other misc stuff */
 
