@@ -126,11 +126,14 @@ public class MainWindowBuildTools
         bool build_tool_is_running = _cancellable != null;
 
         Gtk.Action stop_exec_action = _static_action_group.get_action ("BuildStopExecution");
-        Gtk.Action preferences_action = _static_action_group.get_action ("BuildToolsPreferences");
         stop_exec_action.set_sensitive (build_tool_is_running);
 
+        LatexilaApp app = LatexilaApp.get_instance ();
+        GLib.SimpleAction preferences_action = app.lookup_action ("manage-build-tools")
+            as GLib.SimpleAction;
+
         // a build tool can not be modified when it is running
-        preferences_action.set_sensitive (! build_tool_is_running);
+        preferences_action.set_enabled (! build_tool_is_running);
 
         Gtk.Action clean_action = _static_action_group.get_action ("BuildClean");
         Gtk.Action view_log_action = _static_action_group.get_action ("BuildViewLog");
