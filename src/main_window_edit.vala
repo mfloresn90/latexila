@@ -36,23 +36,23 @@ public class MainWindowEdit
             N_("Redo the last undone action"), on_redo },
 
         { "EditCut", "edit-cut", N_("Cu_t"), "<Control>X",
-            N_("Cut the selection"), on_cut },
+            N_("Cut the selection") },
 
         { "EditCopy", "edit-copy", N_("_Copy"), "<Control>C",
-            N_("Copy the selection"), on_copy },
+            N_("Copy the selection") },
 
         // No shortcut here because if the shortcut is null, Ctrl+V is used for _all_
         // the window. In this case Ctrl+V in the search text entry would be broken (the
         // text is pasted in the document instead of the entry).
         // Anyway if we press Ctrl+V when the cursor is in the document, no problem.
         { "EditPaste", "edit-paste", N_("_Paste"), "",
-            N_("Paste the clipboard"), on_paste },
+            N_("Paste the clipboard") },
 
         { "EditDelete", "edit-delete", N_("_Delete"), null,
-            N_("Delete the selected text"), on_delete },
+            N_("Delete the selected text") },
 
         { "EditSelectAll", "edit-select-all", N_("Select _All"), "<Control>A",
-            N_("Select the entire document"), on_select_all },
+            N_("Select the entire document") },
 
         { "EditIndent", "format-indent-more", N_("_Indent"), "Tab",
             N_("Indent the selected lines"), on_indent },
@@ -87,6 +87,17 @@ public class MainWindowEdit
         _action_group.add_actions (_action_entries, this);
 
         ui_manager.insert_action_group (_action_group, 0);
+
+        Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-cut",
+            _action_group, "EditCut");
+        Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-copy",
+            _action_group, "EditCopy");
+        Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-paste",
+            _action_group, "EditPaste");
+        Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-delete",
+            _action_group, "EditDelete");
+        Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-select-all",
+            _action_group, "EditSelectAll");
     }
 
     /* Sensitivity */
@@ -99,7 +110,6 @@ public class MainWindowEdit
 
         if (sensitive)
         {
-            set_has_selection_sensitivity ();
             set_undo_sensitivity ();
             set_redo_sensitivity ();
         }
@@ -111,11 +121,6 @@ public class MainWindowEdit
         {
             "EditUndo",
             "EditRedo",
-            "EditCut",
-            "EditCopy",
-            "EditPaste",
-            "EditDelete",
-            "EditSelectAll",
             "EditIndent",
             "EditUnindent",
             "EditComment",
@@ -127,28 +132,6 @@ public class MainWindowEdit
         {
             Gtk.Action action = _action_group.get_action (action_name);
             action.sensitive = sensitive;
-        }
-    }
-
-    private void set_has_selection_sensitivity ()
-    {
-        bool has_selection = false;
-
-        if (_main_window.active_tab != null)
-            has_selection = _main_window.active_document.has_selection;
-
-        // Actions that must be insensitive if there is no selection.
-        string[] action_names =
-        {
-            "EditCut",
-            "EditCopy",
-            "EditDelete"
-        };
-
-        foreach (string action_name in action_names)
-        {
-            Gtk.Action action = _action_group.get_action (action_name);
-            action.sensitive = has_selection;
         }
     }
 
@@ -198,36 +181,6 @@ public class MainWindowEdit
             _main_window.active_view.scroll_to_cursor ();
             _main_window.active_view.grab_focus ();
         }
-    }
-
-    public void on_cut ()
-    {
-        return_if_fail (_main_window.active_tab != null);
-        _main_window.active_view.cut_clipboard ();
-    }
-
-    public void on_copy ()
-    {
-        return_if_fail (_main_window.active_tab != null);
-        _main_window.active_view.copy_clipboard ();
-    }
-
-    public void on_paste ()
-    {
-        return_if_fail (_main_window.active_tab != null);
-        _main_window.active_view.paste_clipboard ();
-    }
-
-    public void on_delete ()
-    {
-        return_if_fail (_main_window.active_tab != null);
-        _main_window.active_view.delete_selection ();
-    }
-
-    public void on_select_all ()
-    {
-        return_if_fail (_main_window.active_tab != null);
-        _main_window.active_view.select_all ();
     }
 
     public void on_indent ()

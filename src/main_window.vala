@@ -155,6 +155,9 @@ public class MainWindow : ApplicationWindow
         Object (application: app);
         this.title = "LaTeXila";
 
+        Tepl.ApplicationWindow tepl_window =
+            Tepl.ApplicationWindow.get_from_gtk_application_window (this);
+
         initialize_ui_manager ();
 
         _main_window_file = new MainWindowFile (this, _ui_manager);
@@ -230,9 +233,6 @@ public class MainWindow : ApplicationWindow
         // Documents panel
         init_documents_panel ();
         docs_vgrid.add (_documents_panel);
-
-        Tepl.ApplicationWindow tepl_window =
-            Tepl.ApplicationWindow.get_from_gtk_application_window (this);
         tepl_window.set_tab_group (_documents_panel);
 
         // Goto Line
