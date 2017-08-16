@@ -537,6 +537,8 @@ public class LatexMenu : Gtk.ActionGroup
         }
 
         active_document.end_user_action ();
+
+        main_window.active_view.grab_focus ();
     }
 
     private string get_indentation ()
