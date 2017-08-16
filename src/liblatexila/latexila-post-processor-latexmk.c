@@ -359,19 +359,15 @@ fetch_latexmk_messages (LatexilaPostProcessorLatexmk *pp,
   add_sub_message (pp, msg);
 }
 
-static void
-fetch_sub_command_output (LatexilaPostProcessorLatexmk *pp,
-                          gchar                        *line)
+static gboolean
+sub_command_output_matches_start_latexmk_message (const gchar *line)
 {
   static GRegex *regex_for_rule = NULL;
-  static GRegex *regex_rule = NULL;
-  GError *error = NULL;
-
-  g_assert (pp->priv->state == STATE_SUB_COMMAND_OUTPUT_START ||
-            pp->priv->state == STATE_SUB_COMMAND_OUTPUT_IN);
 
   if (G_UNLIKELY (regex_for_rule == NULL))
     {
+      GError *error = NULL;
+
       regex_for_rule = g_regex_new ("^For rule '.*', running",
                                     G_REGEX_OPTIMIZE,
                                     0,
@@ -381,12 +377,27 @@ fetch_sub_command_output (LatexilaPostProcessorLatexmk *pp,
         {
           g_warning ("PostProcessorLatexmk: %s", error->message);
           g_error_free (error);
-          return;
+          return FALSE;
         }
     }
 
+  return (g_str_has_prefix (line, "Latexmk: applying rule") ||
+          g_regex_match (regex_for_rule, line, 0, NULL));
+}
+
+static void
+fetch_sub_command_output (LatexilaPostProcessorLatexmk *pp,
+                          gchar                        *line)
+{
+  static GRegex *regex_rule = NULL;
+
+  g_assert (pp->priv->state == STATE_SUB_COMMAND_OUTPUT_START ||
+            pp->priv->state == STATE_SUB_COMMAND_OUTPUT_IN);
+
   if (G_UNLIKELY (regex_rule == NULL))
     {
+      GError *error = NULL;
+
       regex_rule = g_regex_new ("^Rule '.*':",
                                 G_REGEX_OPTIMIZE,
                                 0,
@@ -402,15 +413,15 @@ fetch_sub_command_output (LatexilaPostProcessorLatexmk *pp,
 
   if (pp->priv->state == STATE_SUB_COMMAND_OUTPUT_START)
     {
-      if (g_str_has_prefix (line, "Latexmk: applying rule") ||
-          g_regex_match (regex_for_rule, line, 0, NULL))
+      if (sub_command_output_matches_start_latexmk_message (line))
         goto end;
 
       pp->priv->state = STATE_SUB_COMMAND_OUTPUT_IN;
     }
 
-  if (g_str_has_prefix (line, "Latexmk:") ||
-      g_regex_match (regex_rule, line, 0, NULL))
+  if (!sub_command_output_matches_start_latexmk_message (line) &&
+      (g_str_has_prefix (line, "Latexmk:") ||
+       g_regex_match (regex_rule, line, 0, NULL)))
     {
       LatexilaBuildMsg *msg;
 
