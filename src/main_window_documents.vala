@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2012, 2015 Sébastien Wilmet
+ * Copyright © 2012, 2015, 2017 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -80,25 +80,25 @@ public class MainWindowDocuments
     {
         return_if_fail (_documents_panel != null);
 
-        _documents_panel.page_reordered.connect (() =>
+        _documents_panel.page_reordered.connect_after (() =>
         {
             update_sensitivity ();
             update_documents_list ();
         });
 
-        _documents_panel.switch_page.connect ((pg, page_num) =>
+        _documents_panel.switch_page.connect_after ((pg, page_num) =>
         {
             set_active_document (page_num);
             update_sensitivity ();
         });
 
-        _documents_panel.page_removed.connect (() =>
+        _documents_panel.page_removed.connect_after (() =>
         {
             update_documents_list ();
             update_sensitivity ();
         });
 
-        _documents_panel.page_added.connect (() =>
+        _documents_panel.page_added.connect_after (() =>
         {
             update_documents_list ();
             update_sensitivity ();
@@ -214,8 +214,6 @@ public class MainWindowDocuments
         {
             "DocumentsSaveAll",
             "DocumentsCloseAll",
-            "DocumentsPrevious",
-            "DocumentsNext",
             "DocumentsMoveToNewWindow"
         };
 
@@ -225,19 +223,22 @@ public class MainWindowDocuments
             action.sensitive = sensitive;
         }
 
-        if (sensitive)
-            update_next_prev_doc_sensitivity ();
+        update_next_prev_doc_sensitivity ();
     }
 
     private void update_next_prev_doc_sensitivity ()
     {
         return_if_fail (_documents_panel != null);
 
-        if (_main_window.active_tab == null)
-            return;
-
         Gtk.Action action_prev = _static_action_group.get_action ("DocumentsPrevious");
         Gtk.Action action_next = _static_action_group.get_action ("DocumentsNext");
+
+        if (_main_window.active_tab == null)
+        {
+            action_prev.sensitive = false;
+            action_next.sensitive = false;
+            return;
+        }
 
         int current_page = _documents_panel.page_num (_main_window.active_tab);
         action_prev.sensitive = current_page > 0;
