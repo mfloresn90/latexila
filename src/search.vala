@@ -186,6 +186,7 @@ public class SearchAndReplace : GLib.Object
         Grid replace_all_grid = new Grid ();
         replace_all_grid.set_orientation (Orientation.HORIZONTAL);
         replace_all_grid.set_column_spacing (8);
+        replace_all_grid.set_valign (Align.CENTER);
 
         Image image = new Image.from_icon_name ("edit-find-replace", IconSize.MENU);
         replace_all_grid.add (image);
