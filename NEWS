@@ -1,5 +1,14 @@
 LaTeXila NEWS
 
+Release 3.xx.y, 2017-xx-yy (not yet released)
+--------------------------
+* Use more Tepl features (15935 -> 15815 lines of Vala code and
+  gedit-close-button.c removed).
+* Small improvements here and there.
+* latexmk post-processor: fix bug with LaTeX warnings and badboxes not
+  detected with new versions of latexmk.
+* Translation updates.
+
 Release 3.25.1, 2017-07-18
 --------------------------
 * The Gtef library has been renamed to Tepl, adapt the code accordingly.
