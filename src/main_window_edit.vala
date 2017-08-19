@@ -1,7 +1,7 @@
 /*
  * This file is part of LaTeXila.
  *
- * Copyright © 2012, 2015 Sébastien Wilmet
+ * Copyright © 2012, 2015, 2017 Sébastien Wilmet
  *
  * LaTeXila is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -55,10 +55,10 @@ public class MainWindowEdit
             N_("Select the entire document") },
 
         { "EditIndent", "format-indent-more", N_("_Indent"), "Tab",
-            N_("Indent the selected lines"), on_indent },
+            N_("Indent the selected lines") },
 
         { "EditUnindent", "format-indent-less", N_("_Unindent"), "<Shift>Tab",
-            N_("Unindent the selected lines"), on_unindent },
+            N_("Unindent the selected lines") },
 
         { "EditComment", null, N_("_Comment"), "<Control>M",
             N_("Comment the selected lines (add the character \"%\")"),
@@ -104,6 +104,10 @@ public class MainWindowEdit
             _action_group, "EditDelete");
         Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-select-all",
             _action_group, "EditSelectAll");
+        Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-indent",
+            _action_group, "EditIndent");
+        Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-unindent",
+            _action_group, "EditUnindent");
         Amtk.utils_bind_g_action_to_gtk_action (app, "preferences",
             _action_group, "EditPreferences");
     }
@@ -116,8 +120,6 @@ public class MainWindowEdit
 
         string[] action_names =
         {
-            "EditIndent",
-            "EditUnindent",
             "EditComment",
             "EditUncomment",
             "EditCompletion"
@@ -131,30 +133,6 @@ public class MainWindowEdit
     }
 
     /* Gtk.Action callbacks */
-
-    public void on_indent ()
-    {
-        DocumentTab? tab = _main_window.active_tab;
-        return_if_fail (tab != null);
-
-        TextIter start;
-        TextIter end;
-        tab.get_buffer ().get_selection_bounds (out start, out end);
-
-        tab.view.indent_lines (start, end);
-    }
-
-    public void on_unindent ()
-    {
-        DocumentTab? tab = _main_window.active_tab;
-        return_if_fail (tab != null);
-
-        TextIter start;
-        TextIter end;
-        tab.get_buffer ().get_selection_bounds (out start, out end);
-
-        tab.view.unindent_lines (start, end);
-    }
 
     public void on_comment ()
     {
