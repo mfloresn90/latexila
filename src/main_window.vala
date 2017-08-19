@@ -705,26 +705,6 @@ public class MainWindow : ApplicationWindow
 
         Document doc = tab.document;
 
-        /* sensitivity of undo and redo */
-        doc.notify["can-undo"].connect (() =>
-        {
-            if (tab == active_tab)
-                _main_window_edit.update_sensitivity ();
-        });
-
-        doc.notify["can-redo"].connect (() =>
-        {
-            if (tab == active_tab)
-                _main_window_edit.update_sensitivity ();
-        });
-
-        /* sensitivity of cut/copy/delete */
-        doc.notify["has-selection"].connect (() =>
-        {
-            if (tab == active_tab)
-                _main_window_edit.update_sensitivity ();
-        });
-
         doc.notify["location"].connect (() =>
         {
             sync_name (tab);
@@ -740,7 +720,6 @@ public class MainWindow : ApplicationWindow
         {
             _main_window_build_tools.update_sensitivity ();
         });
-
 
         doc.modified_changed.connect (() => sync_name (tab));
         doc.notify["readonly"].connect (() => sync_name (tab));

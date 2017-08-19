@@ -30,10 +30,10 @@ public class MainWindowEdit
         { "Edit", null, N_("_Edit") },
 
         { "EditUndo", "edit-undo", N_("_Undo"), "<Control>Z",
-            N_("Undo the last action"), on_undo },
+            N_("Undo the last action") },
 
         { "EditRedo", "edit-redo", N_("_Redo"), "<Shift><Control>Z",
-            N_("Redo the last undone action"), on_redo },
+            N_("Redo the last undone action") },
 
         { "EditCut", "edit-cut", N_("Cu_t"), "<Control>X",
             N_("Cut the selection") },
@@ -90,6 +90,10 @@ public class MainWindowEdit
 
         LatexilaApp app = LatexilaApp.get_instance ();
 
+        Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-undo",
+            _action_group, "EditUndo");
+        Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-redo",
+            _action_group, "EditRedo");
         Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-cut",
             _action_group, "EditCut");
         Amtk.utils_bind_g_action_to_gtk_action (main_window, "tepl-copy",
@@ -110,21 +114,8 @@ public class MainWindowEdit
     {
         bool sensitive = _main_window.active_tab != null;
 
-        set_edit_actions_sensitivity (sensitive);
-
-        if (sensitive)
-        {
-            set_undo_sensitivity ();
-            set_redo_sensitivity ();
-        }
-    }
-
-    private void set_edit_actions_sensitivity (bool sensitive)
-    {
         string[] action_names =
         {
-            "EditUndo",
-            "EditRedo",
             "EditIndent",
             "EditUnindent",
             "EditComment",
@@ -139,53 +130,7 @@ public class MainWindowEdit
         }
     }
 
-    private void set_undo_sensitivity ()
-    {
-        bool can_undo = false;
-
-        if (_main_window.active_tab != null)
-            can_undo = _main_window.active_document.can_undo;
-
-        Gtk.Action action = _action_group.get_action ("EditUndo");
-        action.sensitive = can_undo;
-    }
-
-    private void set_redo_sensitivity ()
-    {
-        bool can_redo = false;
-
-        if (_main_window.active_tab != null)
-            can_redo = _main_window.active_document.can_redo;
-
-        Gtk.Action action = _action_group.get_action ("EditRedo");
-        action.sensitive = can_redo;
-    }
-
     /* Gtk.Action callbacks */
-
-    public void on_undo ()
-    {
-        return_if_fail (_main_window.active_tab != null);
-
-        if (_main_window.active_document.can_undo)
-        {
-            _main_window.active_document.undo ();
-            _main_window.active_view.scroll_to_cursor ();
-            _main_window.active_view.grab_focus ();
-        }
-    }
-
-    public void on_redo ()
-    {
-        return_if_fail (_main_window.active_tab != null);
-
-        if (_main_window.active_document.can_redo)
-        {
-            _main_window.active_document.redo ();
-            _main_window.active_view.scroll_to_cursor ();
-            _main_window.active_view.grab_focus ();
-        }
-    }
 
     public void on_indent ()
     {
