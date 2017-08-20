@@ -4,22 +4,21 @@
 # Daniel Nylander <po@danielnylander.se>, 2011.
 # Anders Jonsson <anders.jonsson@norsjovallen.se>, 2016.
 # Josef Andersson <l10nl18nsweja@gmail.com>, 2016, 2017.
-
 msgid ""
 msgstr ""
 "Project-Id-Version: latexila\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=latexila&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-01-26 12:21+0000\n"
-"PO-Revision-Date: 2017-02-14 22:29+0100\n"
-"Last-Translator: Josef Andersson <l10nl18nsweja@gmail.com>\n"
+"POT-Creation-Date: 2017-08-06 15:54+0000\n"
+"PO-Revision-Date: 2017-08-19 07:29+0200\n"
+"Last-Translator: Josef Andersson <josef.andersson@fripost.org>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Project-Style: gnome\n"
 
 #. (itstool) path: tool/label
@@ -537,12 +536,12 @@ msgstr "Personligt byggverktyg"
 
 #: ../src/build_tool_dialog.vala:72 ../src/build_tools_preferences.vala:335
 #: ../src/clean_build_files.vala:242 ../src/dialogs.vala:41
-#: ../src/document_tab.vala:294
+#: ../src/document_tab.vala:226
 #: ../src/liblatexila/latexila-templates-dialogs.c:128
 #: ../src/liblatexila/latexila-templates-dialogs.c:238
 #: ../src/liblatexila/latexila-templates-manage-dialog.c:145
-#: ../src/main_window_file.vala:153 ../src/main_window.vala:763
-#: ../src/main_window.vala:859 ../src/preferences_dialog.vala:114
+#: ../src/main_window_file.vala:154 ../src/main_window.vala:780
+#: ../src/main_window.vala:876 ../src/preferences_dialog.vala:114
 #: ../src/project_dialogs.vala:31 ../src/project_dialogs.vala:122
 #: ../src/project_dialogs.vala:276 ../src/project_dialogs.vala:296
 msgid "_Cancel"
@@ -740,12 +739,12 @@ msgstr "Inga matchande förslag"
 msgid "Ln %d, Col %d"
 msgstr "Rad %d, Kol %d"
 
-#: ../src/dialogs.vala:40 ../src/main_window.vala:762
+#: ../src/dialogs.vala:40 ../src/main_window.vala:779
 msgid "Close _without Saving"
 msgstr "Stäng _utan att spara"
 
 #: ../src/dialogs.vala:42 ../src/main_window_file.vala:41
-#: ../src/main_window.vala:768 ../src/main_window.vala:860
+#: ../src/main_window.vala:785 ../src/main_window.vala:877
 msgid "_Save"
 msgstr "_Spara"
 
@@ -770,94 +769,83 @@ msgid "The structure item already contains a sub-paragraph."
 msgstr "Strukturobjektet innehåller redan ett understycke."
 
 #: ../src/document_tab.vala:174
-msgid "Close document"
-msgstr "Stäng dokument"
+msgid "Project main file"
+msgstr "Projekthuvudfil"
 
-#. main file
-#: ../src/document_tab.vala:237 ../src/project_dialogs.vala:46
-#: ../src/project_dialogs.vala:48 ../src/project_dialogs.vala:142
-#: ../src/project_dialogs.vala:144 ../src/project_dialogs.vala:217
-msgid "Main File"
-msgstr "Huvudfil"
+#: ../src/document_tab.vala:176
+msgid "Project main file:"
+msgstr "Projekthuvudfil:"
 
-#: ../src/document_tab.vala:239
-msgid "Main File:"
-msgstr "Huvudfil:"
-
-#: ../src/document_tab.vala:263
+#: ../src/document_tab.vala:195
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktivera ”%s”"
 
-#: ../src/document_tab.vala:282
+#: ../src/document_tab.vala:214
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Filen %s har ändrats på disken."
 
-#: ../src/document_tab.vala:287
+#: ../src/document_tab.vala:219
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Vill du förkasta dina ändringar och läsa in filen igen?"
 
-#: ../src/document_tab.vala:289
+#: ../src/document_tab.vala:221
 msgid "Do you want to reload the file?"
 msgstr "Vill du läsa om filen?"
 
-#: ../src/document_tab.vala:293
+#: ../src/document_tab.vala:225
 msgid "_Reload"
 msgstr "_Läs om"
 
-#: ../src/document.vala:115
+#: ../src/document.vala:128
 #, c-format
 msgid "Impossible to load the file '%s'."
 msgstr "Omöjligt att läsa in filen ”%s”."
 
-#: ../src/document.vala:193
+#: ../src/document.vala:210
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Filen %s har ändrats sedan den lästes in."
 
-#: ../src/document.vala:196
+#: ../src/document.vala:213
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Om du sparar den så kan alla externa ändringar gå förlorade. Spara den ändå?"
 
-#: ../src/document.vala:199
+#: ../src/document.vala:217
 msgid "_Save Anyway"
 msgstr "_Spara ändå"
 
-#: ../src/document.vala:200
+#: ../src/document.vala:218
 msgid "_Don't Save"
 msgstr "_Spara inte"
 
-#: ../src/document.vala:212
+#: ../src/document.vala:235
 msgid "Impossible to save the file."
 msgstr "Omöjligt att spara filen."
 
-#: ../src/document.vala:237
+#: ../src/document.vala:263
 msgid "Error trying to convert the document to UTF-8"
 msgstr "Fel vid försök att konvertera dokumentet till UTF-8"
 
-#: ../src/document.vala:291
-msgid "Untitled Document"
-msgstr "Namnlöst dokument"
-
-#: ../src/document.vala:503
+#: ../src/document.vala:492
 msgid ""
 "The file has a temporary location. The data can be lost after rebooting your "
 "computer."
 msgstr ""
 "Filen har en temporär plats. Data kan gå förlorat efter omstart av din dator."
 
-#: ../src/document.vala:504
+#: ../src/document.vala:493
 msgid "Do you want to save the file in a safer place?"
 msgstr "Vill du spara filen på ett säkrare ställe?"
 
-#: ../src/document.vala:507 ../src/main_window_file.vala:44
-#: ../src/main_window.vala:766
+#: ../src/document.vala:494 ../src/main_window_file.vala:44
+#: ../src/main_window.vala:783
 msgid "Save _As"
 msgstr "_Spara som"
 
-#: ../src/document.vala:508
+#: ../src/document.vala:495
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -908,7 +896,7 @@ msgid "File System"
 msgstr "Filsystem"
 
 #. File browser
-#: ../src/file_browser.vala:536 ../src/main_window.vala:412
+#: ../src/file_browser.vala:536 ../src/main_window.vala:416
 msgid "File Browser"
 msgstr "Filbläddrare"
 
@@ -924,15 +912,15 @@ msgstr "Skapa nytt dokument"
 msgid "Create a new top-level window in an existing instance of LaTeXila"
 msgstr "Skapa ett nytt toppnivåfönster i en befintlig instans av LaTeXila"
 
-#: ../src/latexila_app.vala:223
+#: ../src/latexila_app.vala:234
 msgid "LaTeXila is an Integrated LaTeX Environment for the GNOME Desktop"
 msgstr "LaTeXila är en integrerad LaTeX-miljö för GNOME-skrivbordet"
 
-#: ../src/latexila_app.vala:262 ../src/main_window.vala:72
+#: ../src/latexila_app.vala:273 ../src/main_window.vala:72
 msgid "About LaTeXila"
 msgstr "Om LaTeXila"
 
-#: ../src/latexila_app.vala:263
+#: ../src/latexila_app.vala:274
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -1988,7 +1976,7 @@ msgstr "Nytt _fönster"
 msgid "Create a new window"
 msgstr "Skapa ett nytt fönster"
 
-#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:154
+#: ../src/main_window_file.vala:38 ../src/main_window_file.vala:155
 msgid "_Open"
 msgstr "_Öppna"
 
@@ -2041,17 +2029,17 @@ msgstr "Öppna nyligen använda filer"
 msgid "Open a recently used file"
 msgstr "Öppna en tidigare använd fil"
 
-#: ../src/main_window_file.vala:150
+#: ../src/main_window_file.vala:151
 msgid "Open Files"
 msgstr "Öppna filer"
 
 #. Filter: by default show only .tex and .bib files
-#: ../src/main_window_file.vala:173
+#: ../src/main_window_file.vala:174
 msgid "All LaTeX Files"
 msgstr "Alla LaTeX-filer"
 
 #. All files filter
-#: ../src/main_window_file.vala:180
+#: ../src/main_window_file.vala:181
 msgid "All Files"
 msgstr "Alla filer"
 
@@ -2300,20 +2288,20 @@ msgid "Show or hide the bottom panel"
 msgstr "Visa eller dölj bottenpanelen"
 
 #. Symbols
-#: ../src/main_window.vala:408
+#: ../src/main_window.vala:412
 msgid "Symbols"
 msgstr "Symboler"
 
-#: ../src/main_window.vala:417
+#: ../src/main_window.vala:421
 msgid "Structure"
 msgstr "Struktur"
 
-#: ../src/main_window.vala:651
+#: ../src/main_window.vala:656
 #, c-format
 msgid "This file (%s) is already opened in another LaTeXila window."
 msgstr "Filen (%s) är redan öppnad i ett annat LaTeXila-fönster."
 
-#: ../src/main_window.vala:653
+#: ../src/main_window.vala:658
 msgid ""
 "LaTeXila opened this instance of the file in a non-editable way. Do you want "
 "to edit it anyway?"
@@ -2321,24 +2309,24 @@ msgstr ""
 "LaTeXila öppnade denna filinstans på ett oredigerbart sätt. Vill du redigera "
 "den ändå?"
 
-#: ../src/main_window.vala:656
+#: ../src/main_window.vala:662
 msgid "Edit Anyway"
 msgstr "Redigera ändå"
 
-#: ../src/main_window.vala:657
+#: ../src/main_window.vala:663
 msgid "Don't Edit"
 msgstr "Redigera inte"
 
-#: ../src/main_window.vala:759
+#: ../src/main_window.vala:776
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Spara ändringar i dokumentet ”%s” innan stängning?"
 
-#: ../src/main_window.vala:839
+#: ../src/main_window.vala:856
 msgid "Read-Only"
 msgstr "Skrivskyddad"
 
-#: ../src/main_window.vala:857
+#: ../src/main_window.vala:874
 msgid "Save File"
 msgstr "Spara fil"
 
@@ -2385,6 +2373,13 @@ msgstr "Nytt projekt"
 #: ../src/project_dialogs.vala:204
 msgid "Directory"
 msgstr "Katalog"
+
+#. main file
+#: ../src/project_dialogs.vala:46 ../src/project_dialogs.vala:48
+#: ../src/project_dialogs.vala:142 ../src/project_dialogs.vala:144
+#: ../src/project_dialogs.vala:217
+msgid "Main File"
+msgstr "Huvudfil"
 
 #: ../src/project_dialogs.vala:102
 #, c-format
@@ -2722,6 +2717,15 @@ msgstr "Markera felstavade ord"
 #: ../src/ui/preferences_dialog.ui.h:28
 msgid "Other"
 msgstr "Övriga"
+
+#~ msgid "Close document"
+#~ msgstr "Stäng dokument"
+
+#~ msgid "Main File:"
+#~ msgstr "Huvudfil:"
+
+#~ msgid "Untitled Document"
+#~ msgstr "Namnlöst dokument"
 
 #~ msgid "_Search Forward"
 #~ msgstr "_Sök framåt"
