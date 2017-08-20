@@ -1,5 +1,13 @@
 LaTeXila NEWS
 
+Release 3.24.3, 2017-08-20
+--------------------------
+* latexmk post-processor: fix bug with LaTeX errors and warnings not detected
+  with new versions of latexmk.
+* Small bug fixes:
+  * Search: replace all button: center content vertically.
+  * LaTeX and Math menus: grab focus to active text view after inserting text.
+
 Release 3.24.2, 2017-06-25
 --------------------------
 * Fix a crash when moving a tab to a new window (regression in 3.24).
