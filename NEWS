@@ -2,12 +2,31 @@ LaTeXila NEWS
 
 Release 3.xx.y, 2017-xx-yy (not yet released)
 --------------------------
-* Use more Tepl features (15935 -> 15815 lines of Vala code and
-  gedit-close-button.c removed).
-* Small improvements here and there.
-* latexmk post-processor: fix bug with LaTeX warnings and badboxes not
-  detected with new versions of latexmk.
+* Internal code refactoring, use more Tepl features:
+  * Use TeplNotebook/TeplTabGroup properties (especially :active-tab).
+  * Use TeplTab::close-request signal.
+  * Use TeplTabLabel (and create subclass to add more info to the tooltip).
+    This permitted to remove gedit-close-button.c.
+  * Bind Document:location property to TeplFile:location to be able to use some
+    TeplFile and TeplBuffer APIs.
+  * Use some Tepl GActions for the Edit menu (cut/copy/paste etc).
+
+* latexmk post-processor: fix bug with LaTeX errors and warnings not detected
+  with new versions of latexmk.
+* Small bug fixes:
+  * Search: replace all button: center content vertically.
+  * LaTeX and Math menus: grab focus to active text view after inserting text.
+* Small improvement: make the tab label tooltip clearer: "Main file" ->
+  "Project main file".
 * Translation updates.
+
+Release 3.24.3, 2017-08-20
+--------------------------
+* latexmk post-processor: fix bug with LaTeX errors and warnings not detected
+  with new versions of latexmk.
+* Small bug fixes:
+  * Search: replace all button: center content vertically.
+  * LaTeX and Math menus: grab focus to active text view after inserting text.
 
 Release 3.25.1, 2017-07-18
 --------------------------
