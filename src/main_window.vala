@@ -268,7 +268,6 @@ public class MainWindow : ApplicationWindow
             update_file_actions_sensitivity ();
             update_config_project_sensitivity ();
             update_cursor_position_statusbar ();
-            my_set_title ();
 
             if (this.active_tab == null)
             {
@@ -290,6 +289,7 @@ public class MainWindow : ApplicationWindow
         });
 
         tepl_window.set_tab_group (_documents_panel);
+        tepl_window.set_handle_title (true);
 
         /* Other misc stuff */
 
@@ -794,46 +794,7 @@ public class MainWindow : ApplicationWindow
 
     private void sync_name (DocumentTab tab)
     {
-        if (tab == active_tab)
-            my_set_title ();
-
         _main_window_documents.update_document_name (tab);
-    }
-
-    private void my_set_title ()
-    {
-        if (active_tab == null)
-        {
-            this.title = "LaTeXila";
-            return;
-        }
-
-        uint max_title_length = 100;
-        string title = null;
-        string dirname = null;
-
-        File loc = active_document.location;
-        if (loc == null)
-            title = active_document.get_short_name_for_display ();
-        else
-        {
-            string basename = loc.get_basename ();
-            if (basename.length > max_title_length)
-                title = Utils.str_middle_truncate (basename, max_title_length);
-            else
-            {
-                title = basename;
-                dirname = Utils.str_middle_truncate (
-                    Utils.get_dirname_for_display (loc),
-                    (uint) long.max (20, max_title_length - basename.length));
-            }
-        }
-
-        this.title = (active_document.get_modified () ? "*" : "") +
-                     title +
-                     (active_document.readonly ? " [" + _("Read-Only") + "]" : "") +
-                     (dirname != null ? " (" + dirname + ")" : "") +
-                     " - LaTeXila";
     }
 
     // return true if the document has been saved
