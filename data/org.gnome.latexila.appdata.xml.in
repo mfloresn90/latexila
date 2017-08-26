@@ -53,7 +53,7 @@
     <id>evince.desktop</id>
   </suggests>
   <url type="homepage">https://wiki.gnome.org/Apps/LaTeXila</url>
-  <url type="donation">https://people.gnome.org/~swilmet/latexila/support.html</url>
+  <url type="donation">https://liberapay.com/LaTeXila/</url>
   <url type="bugtracker">https://bugzilla.gnome.org/browse.cgi?product=latexila</url>
   <url type="translate">https://wiki.gnome.org/TranslationProject</url>
   <translation type="gettext">latexila</translation>
