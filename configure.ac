@@ -5,7 +5,7 @@
 AC_PREREQ([2.64])
 
 AC_INIT([LaTeXila],
-	[3.26.0],
+	[3.27.0],
 	[https://bugzilla.gnome.org/enter_bug.cgi?product=latexila],
 	[latexila],
 	[https://wiki.gnome.org/Apps/LaTeXila])
@@ -32,7 +32,7 @@ LT_INIT
 GLIB_REQUIRED_VERSION="2.50"
 GTK_REQUIRED_VERSION="3.22"
 GTKSOURCEVIEW_REQUIRED_VERSION="3.24"
-TEPL_REQUIRED_VERSION="3.0"
+TEPL_REQUIRED_VERSION="3.1.0"
 GSPELL_REQUIRED_VERSION="1.0"
 VALA_REQUIRED_VERSION="0.34"
 GEE_REQUIRED_VERSION="0.10"
