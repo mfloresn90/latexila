@@ -1,6 +1,6 @@
 LaTeXila NEWS
 
-Release 3.xx.y, 2017-xx-yy (not yet released)
+Release 3.26.0, 2017-09-09
 --------------------------
 * Internal code refactoring, use more Tepl features:
   * Use TeplNotebook/TeplTabGroup properties (especially :active-tab).
@@ -11,11 +11,7 @@ Release 3.xx.y, 2017-xx-yy (not yet released)
     TeplFile and TeplBuffer APIs.
   * Use some Tepl GActions for the Edit menu (cut/copy/paste etc).
 
-* latexmk post-processor: fix bug with LaTeX errors and warnings not detected
-  with new versions of latexmk.
-* Small bug fixes:
-  * Search: replace all button: center content vertically.
-  * LaTeX and Math menus: grab focus to active text view after inserting text.
+* Same bug fixes as already backported on 3.24.3.
 * Small improvement: make the tab label tooltip clearer: "Main file" ->
   "Project main file".
 * Translation updates.
